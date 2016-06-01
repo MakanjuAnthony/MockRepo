@@ -1,0 +1,11 @@
+SearchData  : !!com.components.yaml.SearchData {
+ keyword    : milk,
+ brand		: 3M,
+ size		: 10,
+ splitOnly  : 2433415,
+ cAndS_CW   : 7377930,
+ cAndS_NCW  : 4015434,
+ dmndStatus	: 7168537,
+ remoteStock: 1967421,
+ caseOnly	: 3441920
+ }

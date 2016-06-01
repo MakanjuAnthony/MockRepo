@@ -1,0 +1,16 @@
+LoginData   : !!com.components.yaml.LoginData {
+ UserName   : Normal88,
+ Password   : welcome1,
+ }
+LoginData1  : !!com.components.yaml.LoginData {
+ UserName   : mmuomapp25,
+ Password   : welcome1,
+ }
+LoginDataMA : !!com.components.yaml.LoginData {
+ UserName   : Mauser88,
+ Password   : welcome1,
+ }
+LoginDataNU : !!com.components.yaml.LoginData {
+ UserName   : normal93,
+ Password   : welcome1,
+ }
