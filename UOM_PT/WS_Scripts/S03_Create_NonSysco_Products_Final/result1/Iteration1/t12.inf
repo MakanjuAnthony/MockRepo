@@ -1,0 +1,10 @@
+[t12]
+SnapshotXmlFile=snapshot_12.xml
+ContentType=DummyContentType
+StepName=Custom Request: InsertNSproducts
+Total=1
+FileName1=t12.UNK
+RequestHeaderFile=t12_RequestHeader.txt
+ResponseHeaderFile=t12_ResponseHeader.txt
+RequestBodyFile=t12_RequestBody.txt
+URL1=http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products

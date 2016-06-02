@@ -1,0 +1,638 @@
+Virtual User Script started at : 5/10/2016 7:05:39 AM
+Starting action vuser_init.
+Web Turbo Replay of LoadRunner 12.0.0 for Windows 2008 R2; build 2739 (Nov 30 2014 23:13:05)  	[MsgId: MMSG-27143]
+Run mode: HTML  	[MsgId: MMSG-26993]
+Run-Time Settings file: "G:\11_UOM\Scripts\QA\Sprint5\S06_Create_Purchase_Integrated_Final_0420\\default.cfg"  	[MsgId: MMSG-27141]
+Ending action vuser_init.
+Running Vuser...
+Starting iteration 1.
+Maximum number of concurrent connections per server: 6  	[MsgId: MMSG-26989]
+Starting action Action.
+Action.c(16): Notify: Transaction "WS02_00_Get_AccountByCustomerID" started.
+Action.c(18): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(18): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(18): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(18): Notify: Parameter Substitution: parameter "P_CustomerID" =  "800540"
+Action.c(18): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(18): Notify: Parameter Substitution: parameter "P_UserID" =  "800540"
+Action.c(18): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(18): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(20): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(20): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(21): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(21): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(23): web_url("GetAccount") started  	[MsgId: MMSG-26355]
+Action.c(23): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(23): t=1551ms: 132-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/accounts/mine" (RelFrameId=1, Internal ID=1)
+Action.c(23):     HTTP/1.1 200 OK\r\n
+Action.c(23):     Content-Type: application/json\r\n
+Action.c(23):     Date: Tue, 10 May 2016 07:05:40 GMT\r\n
+Action.c(23):     Content-Length: 50\r\n
+Action.c(23):     Connection: keep-alive\r\n
+Action.c(23):     \r\n
+Action.c(23): t=1630ms: 50-byte response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/accounts/mine" (RelFrameId=1, Internal ID=1)
+Action.c(23):     {"opCo":"067","customerId":"800540","isCogs":true}
+Action.c(23): Notify: Saving Parameter "Corr_CustomerID = 800540".
+Action.c(23): Notify: Saving Parameter "Corr_isCogs = true".
+Action.c(23): HTML parsing not performed for Content-Type "application/json" ("ParseHtmlContentType" Run-Time Setting is "TEXT"). URL="http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/accounts/mine"  	[MsgId: MMSG-26548]
+Action.c(23): web_url("GetAccount") was successful, 50 body bytes, 132 header bytes  	[MsgId: MMSG-26386]
+Action.c(31): Notify: Transaction "WS02_00_Get_AccountByCustomerID" ended with a "Pass" status (Duration: 0.7127 Wasted Time: 0.2202).
+Action.c(35): Notify: Parameter Substitution: parameter "Corr_CustomerID" =  "800540"
+Action.c(81): Notify: Transaction "WS02_05_Get_ListOfSuppliers" started.
+Action.c(83): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(83): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(83): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(83): Notify: Parameter Substitution: parameter "P_CustomerID" =  "800540"
+Action.c(83): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(83): Notify: Parameter Substitution: parameter "P_UserID" =  "800540"
+Action.c(83): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(83): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(85): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(85): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(86): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(86): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(88): web_url("SuppliersList") started  	[MsgId: MMSG-26355]
+Action.c(88): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(88): t=1956ms: 180-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/suppliers" (RelFrameId=1, Internal ID=2)
+Action.c(88):     HTTP/1.1 200 OK\r\n
+Action.c(88):     Content-Encoding: gzip\r\n
+Action.c(88):     Content-Type: application/json\r\n
+Action.c(88):     Date: Tue, 10 May 2016 07:05:40 GMT\r\n
+Action.c(88):     Vary: Accept-Encoding\r\n
+Action.c(88):     Content-Length: 466\r\n
+Action.c(88):     Connection: keep-alive\r\n
+Action.c(88):     \r\n
+Action.c(88): t=1986ms: 466-byte ENCODED response body received for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/suppliers" (RelFrameId=1, Internal ID=2)
+Action.c(88): t=1991ms: 1905-byte DECODED response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/suppliers" (RelFrameId=1, Internal ID=2)
+Action.c(88):     {"suppliers":[{"id":"9e5d804f-435c-459a-8fb9-b5be642dbd71","name":"PT_Sup2257","contactInf
+Action.c(88):     ormation":{"address":"PT_Add2257","contactName":"PT_ContactName2257","emailAddress":"PT_EM
+Action.c(88):     AIL01@test.com","phoneNumber":"PT_Phone2257"},"associatedAccount":{"opCo":"067","customerI
+Action.c(88):     d":"800540"},"notes":"PT_SampleNotes2257","deleted":false},{"id":"6d72d419-6576-4111-b39b-
+Action.c(88):     3435e3f45219","name":"PT_Sup2258","contactInformation":{"address":"PT_Add2258","contactNam
+Action.c(88):     e":"PT_ContactName2258","emailAddress":"PT_EMAIL02@test.com","phoneNumber":"PT_Phone2258"}
+Action.c(88):     ,"associatedAccount":{"opCo":"067","customerId":"800540"},"notes":"PT_SampleNotes2258","de
+Action.c(88):     leted":false},{"id":"a04c13aa-0eae-4b02-943a-77267a413943","name":"PT_Sup2259","contactInf
+Action.c(88):     ormation":{"address":"PT_Add2259","contactName":"PT_ContactName2259","emailAddress":"PT_EM
+Action.c(88):     AIL01@test.com","phoneNumber":"PT_Phone2259"},"associatedAccount":{"opCo":"067","customerI
+Action.c(88):     d":"800540"},"notes":"PT_SampleNotes2259","deleted":false},{"id":"ba6c86d0-b5ff-4ad5-a7a8-
+Action.c(88):     f190d47beb1d","name":"PT_Sup2260","contactInformation":{"address":"PT_Add2260","contactNam
+Action.c(88):     e":"PT_ContactName2260","emailAddress":"PT_EMAIL02@test.com","phoneNumber":"PT_Phone2260"}
+Action.c(88):     ,"associatedAccount":{"opCo":"067","customerId":"800540"},"notes":"PT_SampleNotes2260","de
+Action.c(88):     leted":false},{"id":"4660bd8a-ec59-44db-9ed1-a56a63a5c50e","name":"PT_Sup2261","contactInf
+Action.c(88):     ormation":{"address":"PT_Add2261","contactName":"PT_ContactName2261","emailAddress":"PT_EM
+Action.c(88):     AIL01@test.com","phoneNumber":"PT_Phone2261"},"associatedAccount":{"opCo":"067","customerI
+Action.c(88):     d":"800540"},"notes":"PT_SampleNotes2261","deleted":false},{"id":"001dac49-7540-44f2-943e-
+Action.c(88):     e66ed885be72","name":"PT_Sup2262","contactInformation":{"address":"PT_Add2262","contactNam
+Action.c(88):     e":"PT_ContactName2262","emailAddress":"PT_EMAIL02@test.com","phoneNumber":"PT_Phone2262"}
+Action.c(88):     ,"associatedAccount":{"opCo":"067","customerId":"800540"},"notes":"PT_SampleNotes2262","de
+Action.c(88):     leted":false}]}
+Action.c(88): Notify: Saving Parameter "Corr_SupplierID_1 = 9e5d804f-435c-459a-8fb9-b5be642dbd71".
+Action.c(88): Notify: Saving Parameter "Corr_SupplierID_2 = 6d72d419-6576-4111-b39b-3435e3f45219".
+Action.c(88): HTML parsing not performed for Content-Type "application/json" ("ParseHtmlContentType" Run-Time Setting is "TEXT"). URL="http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/suppliers"  	[MsgId: MMSG-26548]
+Action.c(88): web_url("SuppliersList") was successful, 466 body bytes, 180 header bytes  	[MsgId: MMSG-26386]
+Action.c(96): Notify: Transaction "WS02_05_Get_ListOfSuppliers" ended with a "Pass" status (Duration: 0.2712 Wasted Time: 0.0124).
+Action.c(100): Notify: Parameter Substitution: parameter "Corr_SupplierID_2" =  "6d72d419-6576-4111-b39b-3435e3f45219"
+Action.c(137): Notify: Transaction "WS02_02_GetGroups" started.
+Action.c(139): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(139): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(139): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(139): Notify: Parameter Substitution: parameter "P_CustomerID" =  "800540"
+Action.c(139): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(139): Notify: Parameter Substitution: parameter "P_UserID" =  "800540"
+Action.c(139): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(139): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(141): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(141): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(142): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(142): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(143): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(143): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(144): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(144): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(145): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(145): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(146): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(146): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(147): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(147): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(149): web_url("GetGroups") started  	[MsgId: MMSG-26355]
+Action.c(149): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(149): t=2230ms: 180-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/groups" (RelFrameId=1, Internal ID=3)
+Action.c(149):     HTTP/1.1 200 OK\r\n
+Action.c(149):     Content-Encoding: gzip\r\n
+Action.c(149):     Content-Type: application/json\r\n
+Action.c(149):     Date: Tue, 10 May 2016 07:05:41 GMT\r\n
+Action.c(149):     Vary: Accept-Encoding\r\n
+Action.c(149):     Content-Length: 341\r\n
+Action.c(149):     Connection: keep-alive\r\n
+Action.c(149):     \r\n
+Action.c(149): t=2260ms: 341-byte ENCODED response body received for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/groups" (RelFrameId=1, Internal ID=3)
+Action.c(149): t=2264ms: 978-byte DECODED response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/groups" (RelFrameId=1, Internal ID=3)
+Action.c(149):     {"groups":[{"id":"eae30572-266d-4790-bd2d-8155cd50a748","name":"PT_Group2272U","type":"exp
+Action.c(149):     enseCategory","foodType":"food","opCo":"067","customerId":"800540","deleted":false},{"id":
+Action.c(149):     "f9e6b505-2470-4844-b6ca-4d0591f9e99d","name":"{Corr_GName}U","type":"expenseCategory","fo
+Action.c(149):     odType":"food","opCo":"067","customerId":"800540","deleted":false},{"id":"16195f16-3eff-47
+Action.c(149):     55-8abe-9acd47db0bd8","name":"PT_Group2164","type":"expenseCategory","foodType":"food","op
+Action.c(149):     Co":"067","customerId":"800540","deleted":false},{"id":"a018ac59-5714-4982-b79b-6bcac5ee2b
+Action.c(149):     88","name":"PT_Group2163","type":"expenseCategory","foodType":"nonFood","opCo":"067","cust
+Action.c(149):     omerId":"800540","deleted":false},{"id":"90eb2937-c945-4449-95b8-3021135eb377","name":"PT_
+Action.c(149):     Group2162","type":"expenseCategory","foodType":"food","opCo":"067","customerId":"800540","
+Action.c(149):     deleted":false},{"id":"49624d7b-6f99-4306-b551-1fa1686bb4b2","name":"PT_Group2161","storag
+Action.c(149):     e":"D","type":"location","opCo":"067","customerId":"800540","deleted":false}]}
+Action.c(149): Notify: Saving Parameter "Corr_GroupID_1 = eae30572-266d-4790-bd2d-8155cd50a748".
+Action.c(149): Notify: Saving Parameter "Corr_Type = expenseCategory".
+Action.c(149): Notify: Saving Parameter "Corr_GroupID_2 = f9e6b505-2470-4844-b6ca-4d0591f9e99d".
+Action.c(149): Notify: Saving Parameter "Corr_GroupID_3 = 16195f16-3eff-4755-8abe-9acd47db0bd8".
+Action.c(149): Notify: Saving Parameter "Corr_GroupID_4 = a018ac59-5714-4982-b79b-6bcac5ee2b88".
+Action.c(149): Notify: Saving Parameter "Corr_GroupID_5 = 90eb2937-c945-4449-95b8-3021135eb377".
+Action.c(149): Notify: Saving Parameter "Corr_Storage = D".
+Action.c(149): HTML parsing not performed for Content-Type "application/json" ("ParseHtmlContentType" Run-Time Setting is "TEXT"). URL="http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/groups"  	[MsgId: MMSG-26548]
+Action.c(149): web_url("GetGroups") was successful, 341 body bytes, 180 header bytes  	[MsgId: MMSG-26386]
+Action.c(157): Notify: Transaction "WS02_02_GetGroups" ended with a "Pass" status (Duration: 0.2729 Wasted Time: 0.0296).
+Action.c(161): Notify: Parameter Substitution: parameter "Corr_GroupID_2" =  "f9e6b505-2470-4844-b6ca-4d0591f9e99d"
+Action.c(229): Notify: Parameter Substitution: parameter "Corr_GroupID_1" =  "eae30572-266d-4790-bd2d-8155cd50a748"
+Action.c(234): Notify: Parameter Substitution: parameter "Corr_GroupID_2" =  "f9e6b505-2470-4844-b6ca-4d0591f9e99d"
+Action.c(238): Notify: Parameter Substitution: parameter "Corr_GroupID_3" =  "16195f16-3eff-4755-8abe-9acd47db0bd8"
+Action.c(242): Notify: Parameter Substitution: parameter "Corr_GroupID_4" =  "a018ac59-5714-4982-b79b-6bcac5ee2b88"
+Action.c(246): Notify: Parameter Substitution: parameter "Corr_GroupID_5" =  "90eb2937-c945-4449-95b8-3021135eb377"
+Action.c(254): Warning: The string '
+     "groupId": "eae30572-266d-4790-bd2d-8155cd50a748",
+     "currentExtendedPrice": 20
+   ' with parameter delimiters is not a parameter.
+Action.c(254): Warning: The string '
+     "groupId": "f9e6b505-2470-4844-b6ca-4d0591f9e99d",
+     "currentExtendedPrice": 20
+   ' with parameter delimiters is not a parameter.
+Action.c(254): Warning: The string '
+     "groupId": "16195f16-3eff-4755-8abe-9acd47db0bd8",
+     "currentExtendedPrice": 20
+   ' with parameter delimiters is not a parameter.
+Action.c(254): Warning: The string '
+     "groupId": "a018ac59-5714-4982-b79b-6bcac5ee2b88",
+     "currentExtendedPrice": 20
+   ' with parameter delimiters is not a parameter.
+Action.c(254): Warning: The string '
+     "groupId": "90eb2937-c945-4449-95b8-3021135eb377",
+     "currentExtendedPrice": 20
+   ' with parameter delimiters is not a parameter.
+Action.c(254): Notify: Saving Parameter "Purbody0 = {\n     "groupId": "eae30572-266d-4790-bd2d-8155cd50a748",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "f9e6b505-2470-4844-b6ca-4d0591f9e99d",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "16195f16-3eff-4755-8abe-9acd47db0bd8",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "a018ac59-5714-4982-b79b-6bcac5ee2b88",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "90eb2937-c945-4449-95b8-3021135eb377",\n     "currentExtendedPrice": 20\n   }".
+Action.c(255): Notify: Parameter Substitution: parameter "Purbody0" =  "{\n     "groupId": "eae30572-266d-4790-bd2d-8155cd50a748",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "f9e6b505-2470-4844-b6ca-4d0591f9e99d",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "16195f16-3eff-4755-8abe-9acd47db0bd8",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "a018ac59-5714-4982-b79b-6bcac5ee2b88",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "90eb2937-c945-4449-95b8-3021135eb377",\n     "currentExtendedPrice": 20\n   }"
+Action.c(255): {
+     "groupId": "eae30572-266d-4790-bd2d-8155cd50a748",
+     "currentExtendedPrice": 20
+   },{
+     "groupId": "f9e6b505-2470-4844-b6ca-4d0591f9e99d",
+     "currentExtendedPrice": 20
+   },{
+     "groupId": "16195f16-3eff-4755-8abe-9acd47db0bd8",
+     "currentExtendedPrice": 20
+   },{
+     "groupId": "a018ac59-5714-4982-b79b-6bcac5ee2b88",
+     "currentExtendedPrice": 20
+   },{
+     "groupId": "90eb2937-c945-4449-95b8-3021135eb377",
+     "currentExtendedPrice": 20
+   }
+Action.c(261): Notify: Transaction "WS06_01_Get_Create_NonSysco_Purchase" started.
+Action.c(263): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(263): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(263): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(263): Notify: Parameter Substitution: parameter "P_CustomerID" =  "800540"
+Action.c(263): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(263): Notify: Parameter Substitution: parameter "P_UserID" =  "800540"
+Action.c(263): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(263): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(265): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(265): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(266): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(266): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(267): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(267): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(268): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(268): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(273): web_custom_request("CreateNonSyscoPurchase") started  	[MsgId: MMSG-26355]
+Action.c(273): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(273): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(273): Notify: Parameter Substitution: parameter "Corr_SupplierID_1" =  "9e5d804f-435c-459a-8fb9-b5be642dbd71"
+Action.c(273): Notify: Parameter Substitution: parameter "P_Inv_Time" =  "2016-05-10T02:05:41.340Z"
+Action.c(273): Notify: Getting new value for parameter 'P_InvoiceNumber': table = 'P_OpCo.dat' column = '20' row = '1'.
+Action.c(273): Notify: Parameter Substitution: parameter "P_InvoiceNumber" =  "PTINV6267"
+Action.c(273): Notify: Parameter Substitution: parameter "Purbody0" =  "{\n     "groupId": "eae30572-266d-4790-bd2d-8155cd50a748",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "f9e6b505-2470-4844-b6ca-4d0591f9e99d",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "16195f16-3eff-4755-8abe-9acd47db0bd8",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "a018ac59-5714-4982-b79b-6bcac5ee2b88",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "90eb2937-c945-4449-95b8-3021135eb377",\n     "currentExtendedPrice": 20\n   }"
+Action.c(273): t=2554ms: 278-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/purchases" (RelFrameId=1, Internal ID=4)
+Action.c(273):     HTTP/1.1 201 Created\r\n
+Action.c(273):     Content-Type: application/json\r\n
+Action.c(273):     Date: Tue, 10 May 2016 07:05:41 GMT\r\n
+Action.c(273):     Location: http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.co
+Action.c(273):     m/purchases/a9172e6a-1acc-48a8-aebc-93b73ffcda6d\r\n
+Action.c(273):     Content-Length: 622\r\n
+Action.c(273):     Connection: keep-alive\r\n
+Action.c(273):     \r\n
+Action.c(273): t=2609ms: 622-byte response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/purchases" (RelFrameId=1, Internal ID=4)
+Action.c(273):     {"opCo":"067","customerId":"800540","id":"a9172e6a-1acc-48a8-aebc-93b73ffcda6d","supplier"
+Action.c(273):     :"9e5d804f-435c-459a-8fb9-b5be642dbd71","date":"2016-05-10T02:05:41.340Z","invoiceNumber":
+Action.c(273):     "PTINV6267","invoiceTotal":100,"deleted":false,"items":[{"groupId":"eae30572-266d-4790-bd2
+Action.c(273):     d-8155cd50a748","currentExtendedPrice":20},{"groupId":"f9e6b505-2470-4844-b6ca-4d0591f9e99
+Action.c(273):     d","currentExtendedPrice":20},{"groupId":"16195f16-3eff-4755-8abe-9acd47db0bd8","currentEx
+Action.c(273):     tendedPrice":20},{"groupId":"a018ac59-5714-4982-b79b-6bcac5ee2b88","currentExtendedPrice":
+Action.c(273):     20},{"groupId":"90eb2937-c945-4449-95b8-3021135eb377","currentExtendedPrice":20}]}
+Action.c(273): Notify: Saving Parameter "Corr_PurchaseID = a9172e6a-1acc-48a8-aebc-93b73ffcda6d".
+Action.c(273): Notify: Saving Parameter "Corr_SupplierID = 9e5d804f-435c-459a-8fb9-b5be642dbd71".
+Action.c(273): Notify: Saving Parameter "Corr_GroupID = eae30572-266d-4790-bd2d-8155cd50a748".
+Action.c(273): Notify: Saving Parameter "Corr_DeletedStatus = false,"items":[{"groupId":"eae30572-266d-4790-bd2d-8155cd50a748","currentExtendedPrice":20".
+Action.c(273): web_custom_request("CreateNonSyscoPurchase") was successful, 622 body bytes, 278 header bytes  	[MsgId: MMSG-26386]
+Action.c(306): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(306): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(306): Notify: Parameter Substitution: parameter "P_CustomerID" =  "800540"
+Action.c(306): Notify: Parameter Substitution: parameter "Corr_PurchaseID" =  "a9172e6a-1acc-48a8-aebc-93b73ffcda6d"
+Action.c(306): Notify: Parameter Substitution: parameter "Corr_SupplierID" =  "9e5d804f-435c-459a-8fb9-b5be642dbd71"
+Action.c(306): Notify: Parameter Substitution: parameter "Corr_GroupID" =  "eae30572-266d-4790-bd2d-8155cd50a748"
+Action.c(309): Notify: Transaction "WS06_01_Get_Create_NonSysco_Purchase" ended with a "Pass" status (Duration: 0.4068 Wasted Time: 0.0177).
+Action.c(229): Notify: Parameter Substitution: parameter "Corr_GroupID_1" =  "eae30572-266d-4790-bd2d-8155cd50a748"
+Action.c(234): Notify: Parameter Substitution: parameter "Corr_GroupID_2" =  "f9e6b505-2470-4844-b6ca-4d0591f9e99d"
+Action.c(238): Notify: Parameter Substitution: parameter "Corr_GroupID_3" =  "16195f16-3eff-4755-8abe-9acd47db0bd8"
+Action.c(242): Notify: Parameter Substitution: parameter "Corr_GroupID_4" =  "a018ac59-5714-4982-b79b-6bcac5ee2b88"
+Action.c(246): Notify: Parameter Substitution: parameter "Corr_GroupID_5" =  "90eb2937-c945-4449-95b8-3021135eb377"
+Action.c(254): Warning: The string '
+     "groupId": "eae30572-266d-4790-bd2d-8155cd50a748",
+     "currentExtendedPrice": 20
+   ' with parameter delimiters is not a parameter.
+Action.c(254): Warning: The string '
+     "groupId": "f9e6b505-2470-4844-b6ca-4d0591f9e99d",
+     "currentExtendedPrice": 20
+   ' with parameter delimiters is not a parameter.
+Action.c(254): Warning: The string '
+     "groupId": "16195f16-3eff-4755-8abe-9acd47db0bd8",
+     "currentExtendedPrice": 20
+   ' with parameter delimiters is not a parameter.
+Action.c(254): Warning: The string '
+     "groupId": "a018ac59-5714-4982-b79b-6bcac5ee2b88",
+     "currentExtendedPrice": 20
+   ' with parameter delimiters is not a parameter.
+Action.c(254): Warning: The string '
+     "groupId": "90eb2937-c945-4449-95b8-3021135eb377",
+     "currentExtendedPrice": 20
+   ' with parameter delimiters is not a parameter.
+Action.c(254): Notify: Saving Parameter "Purbody0 = {\n     "groupId": "eae30572-266d-4790-bd2d-8155cd50a748",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "f9e6b505-2470-4844-b6ca-4d0591f9e99d",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "16195f16-3eff-4755-8abe-9acd47db0bd8",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "a018ac59-5714-4982-b79b-6bcac5ee2b88",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "90eb2937-c945-4449-95b8-3021135eb377",\n     "currentExtendedPrice": 20\n   }".
+Action.c(255): Notify: Parameter Substitution: parameter "Purbody0" =  "{\n     "groupId": "eae30572-266d-4790-bd2d-8155cd50a748",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "f9e6b505-2470-4844-b6ca-4d0591f9e99d",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "16195f16-3eff-4755-8abe-9acd47db0bd8",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "a018ac59-5714-4982-b79b-6bcac5ee2b88",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "90eb2937-c945-4449-95b8-3021135eb377",\n     "currentExtendedPrice": 20\n   }"
+Action.c(255): {
+     "groupId": "eae30572-266d-4790-bd2d-8155cd50a748",
+     "currentExtendedPrice": 20
+   },{
+     "groupId": "f9e6b505-2470-4844-b6ca-4d0591f9e99d",
+     "currentExtendedPrice": 20
+   },{
+     "groupId": "16195f16-3eff-4755-8abe-9acd47db0bd8",
+     "currentExtendedPrice": 20
+   },{
+     "groupId": "a018ac59-5714-4982-b79b-6bcac5ee2b88",
+     "currentExtendedPrice": 20
+   },{
+     "groupId": "90eb2937-c945-4449-95b8-3021135eb377",
+     "currentExtendedPrice": 20
+   }
+Action.c(261): Notify: Transaction "WS06_01_Get_Create_NonSysco_Purchase" started.
+Action.c(263): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(263): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(263): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(263): Notify: Parameter Substitution: parameter "P_CustomerID" =  "800540"
+Action.c(263): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(263): Notify: Parameter Substitution: parameter "P_UserID" =  "800540"
+Action.c(263): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(263): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(265): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(265): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(266): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(266): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(267): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(267): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(268): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(268): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(289): web_custom_request("CreateNonSyscoPurchase") started  	[MsgId: MMSG-26355]
+Action.c(289): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(289): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(289): Notify: Parameter Substitution: parameter "Corr_SupplierID_2" =  "6d72d419-6576-4111-b39b-3435e3f45219"
+Action.c(289): Notify: Parameter Substitution: parameter "P_Inv_Time" =  "2016-05-10T02:05:41.788Z"
+Action.c(289): Notify: Next row for parameter P_InvoiceNumber = 2 [table  = P_InvoiceNumber].
+Action.c(289): Notify: Getting new value for parameter 'P_InvoiceNumber': table = 'P_OpCo.dat' column = '20' row = '2'.
+Action.c(289): Notify: Parameter Substitution: parameter "P_InvoiceNumber" =  "PTINV6268"
+Action.c(289): Notify: Parameter Substitution: parameter "Purbody0" =  "{\n     "groupId": "eae30572-266d-4790-bd2d-8155cd50a748",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "f9e6b505-2470-4844-b6ca-4d0591f9e99d",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "16195f16-3eff-4755-8abe-9acd47db0bd8",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "a018ac59-5714-4982-b79b-6bcac5ee2b88",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "90eb2937-c945-4449-95b8-3021135eb377",\n     "currentExtendedPrice": 20\n   }"
+Action.c(289): t=3127ms: 278-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/purchases" (RelFrameId=1, Internal ID=5)
+Action.c(289):     HTTP/1.1 201 Created\r\n
+Action.c(289):     Content-Type: application/json\r\n
+Action.c(289):     Date: Tue, 10 May 2016 07:05:41 GMT\r\n
+Action.c(289):     Location: http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.co
+Action.c(289):     m/purchases/7ba79cb3-0c4b-4f63-b458-862a200bcb4c\r\n
+Action.c(289):     Content-Length: 622\r\n
+Action.c(289):     Connection: keep-alive\r\n
+Action.c(289):     \r\n
+Action.c(289): t=3168ms: 622-byte response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/purchases" (RelFrameId=1, Internal ID=5)
+Action.c(289):     {"opCo":"067","customerId":"800540","id":"7ba79cb3-0c4b-4f63-b458-862a200bcb4c","supplier"
+Action.c(289):     :"6d72d419-6576-4111-b39b-3435e3f45219","date":"2016-05-10T02:05:41.788Z","invoiceNumber":
+Action.c(289):     "PTINV6268","invoiceTotal":100,"deleted":false,"items":[{"groupId":"eae30572-266d-4790-bd2
+Action.c(289):     d-8155cd50a748","currentExtendedPrice":20},{"groupId":"f9e6b505-2470-4844-b6ca-4d0591f9e99
+Action.c(289):     d","currentExtendedPrice":20},{"groupId":"16195f16-3eff-4755-8abe-9acd47db0bd8","currentEx
+Action.c(289):     tendedPrice":20},{"groupId":"a018ac59-5714-4982-b79b-6bcac5ee2b88","currentExtendedPrice":
+Action.c(289):     20},{"groupId":"90eb2937-c945-4449-95b8-3021135eb377","currentExtendedPrice":20}]}
+Action.c(289): Notify: Saving Parameter "Corr_PurchaseID = 7ba79cb3-0c4b-4f63-b458-862a200bcb4c".
+Action.c(289): Notify: Saving Parameter "Corr_SupplierID = 6d72d419-6576-4111-b39b-3435e3f45219".
+Action.c(289): Notify: Saving Parameter "Corr_GroupID = eae30572-266d-4790-bd2d-8155cd50a748".
+Action.c(289): Notify: Saving Parameter "Corr_DeletedStatus = false,"items":[{"groupId":"eae30572-266d-4790-bd2d-8155cd50a748","currentExtendedPrice":20".
+Action.c(289): web_custom_request("CreateNonSyscoPurchase") was successful, 622 body bytes, 278 header bytes  	[MsgId: MMSG-26386]
+Action.c(306): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(306): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(306): Notify: Parameter Substitution: parameter "P_CustomerID" =  "800540"
+Action.c(306): Notify: Parameter Substitution: parameter "Corr_PurchaseID" =  "7ba79cb3-0c4b-4f63-b458-862a200bcb4c"
+Action.c(306): Notify: Parameter Substitution: parameter "Corr_SupplierID" =  "6d72d419-6576-4111-b39b-3435e3f45219"
+Action.c(306): Notify: Parameter Substitution: parameter "Corr_GroupID" =  "eae30572-266d-4790-bd2d-8155cd50a748"
+Action.c(309): Notify: Transaction "WS06_01_Get_Create_NonSysco_Purchase" ended with a "Pass" status (Duration: 0.4128 Wasted Time: 0.0175).
+Action.c(337): Notify: Transaction "WS06_02_Get_All_Purchases" started.
+Action.c(339): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(339): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(339): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(339): Notify: Parameter Substitution: parameter "P_CustomerID" =  "800540"
+Action.c(339): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(339): Notify: Parameter Substitution: parameter "P_UserID" =  "800540"
+Action.c(339): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(339): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(341): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(341): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(342): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(342): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(343): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(343): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(345): web_url("GetAllPurchaseWithDateRange") started  	[MsgId: MMSG-26355]
+Action.c(345): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(345): Notify: Parameter Substitution: parameter "P_StartDate" =  "2016-05-05T07:05:42.194Z"
+Action.c(345): Notify: Parameter Substitution: parameter "P_EndDate" =  "2016-05-10T07:05:42.196Z"
+Action.c(345): t=3401ms: 180-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/purchases?withSupplierDefinitions=true&fromDate=2016-05-05T07:05:42.194Z&toDate=2016-05-10T07:05:42.196Z" (RelFrameId=1, Internal ID=6)
+Action.c(345):     HTTP/1.1 200 OK\r\n
+Action.c(345):     Content-Encoding: gzip\r\n
+Action.c(345):     Content-Type: application/json\r\n
+Action.c(345):     Date: Tue, 10 May 2016 07:05:42 GMT\r\n
+Action.c(345):     Vary: Accept-Encoding\r\n
+Action.c(345):     Content-Length: 606\r\n
+Action.c(345):     Connection: keep-alive\r\n
+Action.c(345):     \r\n
+Action.c(345): t=3443ms: 606-byte ENCODED response body received for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/purchases?withSupplierDefinitions=true&fromDate=2016-05-05T07:05:42.194Z&toDate=2016-05-10T07:05:42.196Z" (RelFrameId=1, Internal ID=6)
+Action.c(345): t=3448ms: 1899-byte DECODED response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/purchases?withSupplierDefinitions=true&fromDate=2016-05-05T07:05:42.194Z&toDate=2016-05-10T07:05:42.196Z" (RelFrameId=1, Internal ID=6)
+Action.c(345):     {"purchases":[{"opCo":"067","customerId":"800540","id":"7ba79cb3-0c4b-4f63-b458-862a200bcb
+Action.c(345):     4c","supplier":"6d72d419-6576-4111-b39b-3435e3f45219","date":"2016-05-10T02:05:41.788Z","i
+Action.c(345):     nvoiceNumber":"PTINV6268","invoiceTotal":100,"deleted":false,"items":[{"groupId":"eae30572
+Action.c(345):     -266d-4790-bd2d-8155cd50a748","currentExtendedPrice":20},{"groupId":"f9e6b505-2470-4844-b6
+Action.c(345):     ca-4d0591f9e99d","currentExtendedPrice":20},{"groupId":"16195f16-3eff-4755-8abe-9acd47db0b
+Action.c(345):     d8","currentExtendedPrice":20},{"groupId":"a018ac59-5714-4982-b79b-6bcac5ee2b88","currentE
+Action.c(345):     xtendedPrice":20},{"groupId":"90eb2937-c945-4449-95b8-3021135eb377","currentExtendedPrice"
+Action.c(345):     :20}]},{"opCo":"067","customerId":"800540","id":"a9172e6a-1acc-48a8-aebc-93b73ffcda6d","su
+Action.c(345):     pplier":"9e5d804f-435c-459a-8fb9-b5be642dbd71","date":"2016-05-10T02:05:41.340Z","invoiceN
+Action.c(345):     umber":"PTINV6267","invoiceTotal":100,"deleted":false,"items":[{"groupId":"eae30572-266d-4
+Action.c(345):     790-bd2d-8155cd50a748","currentExtendedPrice":20},{"groupId":"f9e6b505-2470-4844-b6ca-4d05
+Action.c(345):     91f9e99d","currentExtendedPrice":20},{"groupId":"16195f16-3eff-4755-8abe-9acd47db0bd8","cu
+Action.c(345):     rrentExtendedPrice":20},{"groupId":"a018ac59-5714-4982-b79b-6bcac5ee2b88","currentExtended
+Action.c(345):     Price":20},{"groupId":"90eb2937-c945-4449-95b8-3021135eb377","currentExtendedPrice":20}]}]
+Action.c(345):     ,"suppliers":[{"id":"6d72d419-6576-4111-b39b-3435e3f45219","name":"PT_Sup2258","contactInf
+Action.c(345):     ormation":{"address":"PT_Add2258","contactName":"PT_ContactName2258","emailAddress":"PT_EM
+Action.c(345):     AIL02@test.com","phoneNumber":"PT_Phone2258"},"notes":"PT_SampleNotes2258","associatedAcco
+Action.c(345):     unt":{"opCo":"067","customerId":"800540"}},{"id":"9e5d804f-435c-459a-8fb9-b5be642dbd71","n
+Action.c(345):     ame":"PT_Sup2257","contactInformation":{"address":"PT_Add2257","contactName":"PT_ContactNa
+Action.c(345):     me2257","emailAddress":"PT_EMAIL01@test.com","phoneNumber":"PT_Phone2257"},"notes":"PT_Sam
+Action.c(345):     pleNotes2257","associatedAccount":{"opCo":"067","customerId":"800540"}}],"totalPurchasesVa
+Action.c(345):     lue":200}
+Action.c(345): Notify: Saving Parameter "Corr_PurchaseID_1 = 7ba79cb3-0c4b-4f63-b458-862a200bcb4c".
+Action.c(345): Notify: Saving Parameter "Corr_SupplierID = 6d72d419-6576-4111-b39b-3435e3f45219".
+Action.c(345): Notify: Saving Parameter "Corr_GroupID_1 = eae30572-266d-4790-bd2d-8155cd50a748".
+Action.c(345): Notify: Saving Parameter "Corr_GroupID_2 = f9e6b505-2470-4844-b6ca-4d0591f9e99d".
+Action.c(345): Notify: Saving Parameter "Corr_GroupID_3 = 16195f16-3eff-4755-8abe-9acd47db0bd8".
+Action.c(345): Notify: Saving Parameter "Corr_GroupID_4 = a018ac59-5714-4982-b79b-6bcac5ee2b88".
+Action.c(345): Notify: Saving Parameter "Corr_GroupID_5 = 90eb2937-c945-4449-95b8-3021135eb377".
+Action.c(345): Notify: Saving Parameter "Corr_PurchaseID_2 = a9172e6a-1acc-48a8-aebc-93b73ffcda6d".
+Action.c(345): Notify: Saving Parameter "Corr_GroupID_6 = eae30572-266d-4790-bd2d-8155cd50a748".
+Action.c(345): Notify: Saving Parameter "Corr_GroupID_7 = f9e6b505-2470-4844-b6ca-4d0591f9e99d".
+Action.c(345): Notify: Saving Parameter "Corr_GroupID_8 = 16195f16-3eff-4755-8abe-9acd47db0bd8".
+Action.c(345): Notify: Saving Parameter "Corr_GroupID_9 = a018ac59-5714-4982-b79b-6bcac5ee2b88".
+Action.c(345): Notify: Saving Parameter "Corr_GroupID_10 = 90eb2937-c945-4449-95b8-3021135eb377".
+Action.c(345): Notify: Saving Parameter "Corr_PurchaseID_3 = 6d72d419-6576-4111-b39b-3435e3f45219".
+Action.c(345): Notify: Saving Parameter "Corr_PurchaseID_4 = 9e5d804f-435c-459a-8fb9-b5be642dbd71".
+Action.c(345): HTML parsing not performed for Content-Type "application/json" ("ParseHtmlContentType" Run-Time Setting is "TEXT"). URL="http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/purchases?withSupplierDefinitions=true&fromDate=2016-05-05T07:05:42.194Z&toDate=2016-05-10T07:05:42.196Z"  	[MsgId: MMSG-26548]
+Action.c(345): Notify: Saving Parameter "Corr_PurchaseID_count = 4".
+Action.c(345): Notify: Saving Parameter "Corr_GroupID_count = 10".
+Action.c(345): web_url("GetAllPurchaseWithDateRange") was successful, 606 body bytes, 180 header bytes  	[MsgId: MMSG-26386]
+Action.c(353): Notify: Transaction "WS06_02_Get_All_Purchases" ended with a "Pass" status (Duration: 0.3627 Wasted Time: 0.0848).
+Action.c(355): Notify: Transaction "WS06_03_Get_PurchaseByID" started.
+Action.c(357): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(357): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(357): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(357): Notify: Parameter Substitution: parameter "P_CustomerID" =  "800540"
+Action.c(357): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(357): Notify: Parameter Substitution: parameter "P_UserID" =  "800540"
+Action.c(357): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(357): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(359): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(359): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(360): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(360): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(361): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(361): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(362): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(362): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(363): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(363): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(365): web_url("GetPurchaseByID") started  	[MsgId: MMSG-26355]
+Action.c(365): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(365): Notify: Parameter Substitution: parameter "Corr_PurchaseID" =  "7ba79cb3-0c4b-4f63-b458-862a200bcb4c"
+Action.c(365): t=3813ms: 180-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/purchases/7ba79cb3-0c4b-4f63-b458-862a200bcb4c" (RelFrameId=1, Internal ID=7)
+Action.c(365):     HTTP/1.1 200 OK\r\n
+Action.c(365):     Content-Encoding: gzip\r\n
+Action.c(365):     Content-Type: application/json\r\n
+Action.c(365):     Date: Tue, 10 May 2016 07:05:42 GMT\r\n
+Action.c(365):     Vary: Accept-Encoding\r\n
+Action.c(365):     Content-Length: 419\r\n
+Action.c(365):     Connection: keep-alive\r\n
+Action.c(365):     \r\n
+Action.c(365): t=3851ms: 419-byte ENCODED response body received for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/purchases/7ba79cb3-0c4b-4f63-b458-862a200bcb4c" (RelFrameId=1, Internal ID=7)
+Action.c(365): t=3856ms: 936-byte DECODED response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/purchases/7ba79cb3-0c4b-4f63-b458-862a200bcb4c" (RelFrameId=1, Internal ID=7)
+Action.c(365):     {"opCo":"067","customerId":"800540","id":"7ba79cb3-0c4b-4f63-b458-862a200bcb4c","supplier"
+Action.c(365):     :"6d72d419-6576-4111-b39b-3435e3f45219","date":"2016-05-10T02:05:41.788Z","invoiceNumber":
+Action.c(365):     "PTINV6268","invoiceTotal":100,"deleted":false,"items":[{"groupId":"eae30572-266d-4790-bd2
+Action.c(365):     d-8155cd50a748","currentExtendedPrice":20},{"groupId":"f9e6b505-2470-4844-b6ca-4d0591f9e99
+Action.c(365):     d","currentExtendedPrice":20},{"groupId":"16195f16-3eff-4755-8abe-9acd47db0bd8","currentEx
+Action.c(365):     tendedPrice":20},{"groupId":"a018ac59-5714-4982-b79b-6bcac5ee2b88","currentExtendedPrice":
+Action.c(365):     20},{"groupId":"90eb2937-c945-4449-95b8-3021135eb377","currentExtendedPrice":20}],"purchas
+Action.c(365):     esValue":{"perExpenseCategory":[{"groupId":"eae30572-266d-4790-bd2d-8155cd50a748","value":
+Action.c(365):     20},{"groupId":"f9e6b505-2470-4844-b6ca-4d0591f9e99d","value":20},{"groupId":"16195f16-3ef
+Action.c(365):     f-4755-8abe-9acd47db0bd8","value":20},{"groupId":"90eb2937-c945-4449-95b8-3021135eb377","v
+Action.c(365):     alue":20}],"foodPurchasesTotal":80}}
+Action.c(365): Notify: Saving Parameter "Corr_PurchaseID = 7ba79cb3-0c4b-4f63-b458-862a200bcb4c".
+Action.c(365): Notify: Saving Parameter "Corr_SupplierID = 6d72d419-6576-4111-b39b-3435e3f45219".
+Action.c(365): Notify: Saving Parameter "Corr_date = 2016-05-10T02:05:41.788Z".
+Action.c(365): Notify: Saving Parameter "Corr_InvNumber = PTINV6268".
+Action.c(365): Notify: Saving Parameter "Corr_GroupID_1 = eae30572-266d-4790-bd2d-8155cd50a748".
+Action.c(365): Notify: Saving Parameter "Corr_GroupID_2 = f9e6b505-2470-4844-b6ca-4d0591f9e99d".
+Action.c(365): Notify: Saving Parameter "Corr_GroupID_3 = 16195f16-3eff-4755-8abe-9acd47db0bd8".
+Action.c(365): Notify: Saving Parameter "Corr_GroupID_4 = a018ac59-5714-4982-b79b-6bcac5ee2b88".
+Action.c(365): Notify: Saving Parameter "Corr_GroupID_5 = 90eb2937-c945-4449-95b8-3021135eb377".
+Action.c(365): Notify: Saving Parameter "Corr_GroupID_6 = eae30572-266d-4790-bd2d-8155cd50a748".
+Action.c(365): Notify: Saving Parameter "Corr_GroupID_7 = f9e6b505-2470-4844-b6ca-4d0591f9e99d".
+Action.c(365): Notify: Saving Parameter "Corr_GroupID_8 = 16195f16-3eff-4755-8abe-9acd47db0bd8".
+Action.c(365): Notify: Saving Parameter "Corr_GroupID_9 = 90eb2937-c945-4449-95b8-3021135eb377".
+Action.c(365): HTML parsing not performed for Content-Type "application/json" ("ParseHtmlContentType" Run-Time Setting is "TEXT"). URL="http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/purchases/7ba79cb3-0c4b-4f63-b458-862a200bcb4c"  	[MsgId: MMSG-26548]
+Action.c(365): Notify: Saving Parameter "Corr_GroupID_count = 9".
+Action.c(365): web_url("GetPurchaseByID") was successful, 419 body bytes, 180 header bytes  	[MsgId: MMSG-26386]
+Action.c(373): Notify: Transaction "WS06_03_Get_PurchaseByID" ended with a "Pass" status (Duration: 0.3302 Wasted Time: 0.0392).
+Action.c(382): Notify: Parameter Substitution: parameter "Corr_GroupID_1" =  "eae30572-266d-4790-bd2d-8155cd50a748"
+Action.c(387): Notify: Parameter Substitution: parameter "Corr_GroupID_2" =  "f9e6b505-2470-4844-b6ca-4d0591f9e99d"
+Action.c(391): Notify: Parameter Substitution: parameter "Corr_GroupID_3" =  "16195f16-3eff-4755-8abe-9acd47db0bd8"
+Action.c(395): Notify: Parameter Substitution: parameter "Corr_GroupID_4" =  "a018ac59-5714-4982-b79b-6bcac5ee2b88"
+Action.c(399): Notify: Parameter Substitution: parameter "Corr_GroupID_5" =  "90eb2937-c945-4449-95b8-3021135eb377"
+Action.c(407): Warning: The string '
+     "groupId": "eae30572-266d-4790-bd2d-8155cd50a748",
+     "currentExtendedPrice": 30
+   ' with parameter delimiters is not a parameter.
+Action.c(407): Warning: The string '
+     "groupId": "f9e6b505-2470-4844-b6ca-4d0591f9e99d",
+     "currentExtendedPrice": 20
+   ' with parameter delimiters is not a parameter.
+Action.c(407): Warning: The string '
+     "groupId": "16195f16-3eff-4755-8abe-9acd47db0bd8",
+     "currentExtendedPrice": 30
+   ' with parameter delimiters is not a parameter.
+Action.c(407): Warning: The string '
+     "groupId": "a018ac59-5714-4982-b79b-6bcac5ee2b88",
+     "currentExtendedPrice": 20
+   ' with parameter delimiters is not a parameter.
+Action.c(407): Warning: The string '
+     "groupId": "90eb2937-c945-4449-95b8-3021135eb377",
+     "currentExtendedPrice": 30
+   ' with parameter delimiters is not a parameter.
+Action.c(407): Notify: Saving Parameter "Purbody4 = {\n     "groupId": "eae30572-266d-4790-bd2d-8155cd50a748",\n     "currentExtendedPrice": 30\n   },{\n     "groupId": "f9e6b505-2470-4844-b6ca-4d0591f9e99d",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "16195f16-3eff-4755-8abe-9acd47db0bd8",\n     "currentExtendedPrice": 30\n   },{\n     "groupId": "a018ac59-5714-4982-b79b-6bcac5ee2b88",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "90eb2937-c945-4449-95b8-3021135eb377",\n     "currentExtendedPrice": 30\n   }".
+Action.c(408): Notify: Parameter Substitution: parameter "Purbody4" =  "{\n     "groupId": "eae30572-266d-4790-bd2d-8155cd50a748",\n     "currentExtendedPrice": 30\n   },{\n     "groupId": "f9e6b505-2470-4844-b6ca-4d0591f9e99d",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "16195f16-3eff-4755-8abe-9acd47db0bd8",\n     "currentExtendedPrice": 30\n   },{\n     "groupId": "a018ac59-5714-4982-b79b-6bcac5ee2b88",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "90eb2937-c945-4449-95b8-3021135eb377",\n     "currentExtendedPrice": 30\n   }"
+Action.c(408): {
+     "groupId": "eae30572-266d-4790-bd2d-8155cd50a748",
+     "currentExtendedPrice": 30
+   },{
+     "groupId": "f9e6b505-2470-4844-b6ca-4d0591f9e99d",
+     "currentExtendedPrice": 20
+   },{
+     "groupId": "16195f16-3eff-4755-8abe-9acd47db0bd8",
+     "currentExtendedPrice": 30
+   },{
+     "groupId": "a018ac59-5714-4982-b79b-6bcac5ee2b88",
+     "currentExtendedPrice": 20
+   },{
+     "groupId": "90eb2937-c945-4449-95b8-3021135eb377",
+     "currentExtendedPrice": 30
+   }
+Action.c(412): Notify: Transaction "WS06_04_Update_Purchase" started.
+Action.c(414): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(414): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(414): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(414): Notify: Parameter Substitution: parameter "P_CustomerID" =  "800540"
+Action.c(414): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(414): Notify: Parameter Substitution: parameter "P_UserID" =  "800540"
+Action.c(414): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(414): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(416): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(416): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(417): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(417): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(418): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(418): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(419): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(419): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(421): web_custom_request("UpdatePurchase") started  	[MsgId: MMSG-26355]
+Action.c(421): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(421): Notify: Parameter Substitution: parameter "Corr_PurchaseID" =  "7ba79cb3-0c4b-4f63-b458-862a200bcb4c"
+Action.c(421): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(421): Notify: Parameter Substitution: parameter "Corr_SupplierID" =  "6d72d419-6576-4111-b39b-3435e3f45219"
+Action.c(421): Notify: Parameter Substitution: parameter "Corr_date" =  "2016-05-10T02:05:41.788Z"
+Action.c(421): Notify: Parameter Substitution: parameter "Corr_InvNumber" =  "PTINV6268"
+Action.c(421): Notify: Parameter Substitution: parameter "Purbody4" =  "{\n     "groupId": "eae30572-266d-4790-bd2d-8155cd50a748",\n     "currentExtendedPrice": 30\n   },{\n     "groupId": "f9e6b505-2470-4844-b6ca-4d0591f9e99d",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "16195f16-3eff-4755-8abe-9acd47db0bd8",\n     "currentExtendedPrice": 30\n   },{\n     "groupId": "a018ac59-5714-4982-b79b-6bcac5ee2b88",\n     "currentExtendedPrice": 20\n   },{\n     "groupId": "90eb2937-c945-4449-95b8-3021135eb377",\n     "currentExtendedPrice": 30\n   }"
+Action.c(421): t=4170ms: 133-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/purchases/7ba79cb3-0c4b-4f63-b458-862a200bcb4c" (RelFrameId=1, Internal ID=8)
+Action.c(421):     HTTP/1.1 200 OK\r\n
+Action.c(421):     Content-Type: application/json\r\n
+Action.c(421):     Date: Tue, 10 May 2016 07:05:43 GMT\r\n
+Action.c(421):     Content-Length: 622\r\n
+Action.c(421):     Connection: keep-alive\r\n
+Action.c(421):     \r\n
+Action.c(421): t=4205ms: 622-byte response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/purchases/7ba79cb3-0c4b-4f63-b458-862a200bcb4c" (RelFrameId=1, Internal ID=8)
+Action.c(421):     {"opCo":"067","customerId":"800540","id":"7ba79cb3-0c4b-4f63-b458-862a200bcb4c","supplier"
+Action.c(421):     :"6d72d419-6576-4111-b39b-3435e3f45219","date":"2016-05-10T02:05:41.788Z","invoiceNumber":
+Action.c(421):     "PTINV6268","invoiceTotal":130,"deleted":false,"items":[{"groupId":"eae30572-266d-4790-bd2
+Action.c(421):     d-8155cd50a748","currentExtendedPrice":30},{"groupId":"f9e6b505-2470-4844-b6ca-4d0591f9e99
+Action.c(421):     d","currentExtendedPrice":20},{"groupId":"16195f16-3eff-4755-8abe-9acd47db0bd8","currentEx
+Action.c(421):     tendedPrice":30},{"groupId":"a018ac59-5714-4982-b79b-6bcac5ee2b88","currentExtendedPrice":
+Action.c(421):     20},{"groupId":"90eb2937-c945-4449-95b8-3021135eb377","currentExtendedPrice":30}]}
+Action.c(421): Notify: Saving Parameter "Corr_PurchaseID = 7ba79cb3-0c4b-4f63-b458-862a200bcb4c".
+Action.c(421): Notify: Saving Parameter "Corr_SupplierID = 6d72d419-6576-4111-b39b-3435e3f45219".
+Action.c(421): Notify: Saving Parameter "Corr_GroupID_1 = eae30572-266d-4790-bd2d-8155cd50a748".
+Action.c(421): Notify: Saving Parameter "Corr_GroupID_2 = f9e6b505-2470-4844-b6ca-4d0591f9e99d".
+Action.c(421): Notify: Saving Parameter "Corr_GroupID_3 = 16195f16-3eff-4755-8abe-9acd47db0bd8".
+Action.c(421): Notify: Saving Parameter "Corr_GroupID_4 = a018ac59-5714-4982-b79b-6bcac5ee2b88".
+Action.c(421): Notify: Saving Parameter "Corr_GroupID_5 = 90eb2937-c945-4449-95b8-3021135eb377".
+Action.c(421): Notify: Saving Parameter "Corr_DeletedStatus = false,"items":[{"groupId":"eae30572-266d-4790-bd2d-8155cd50a748","currentExtendedPrice":30},{"groupId":"f9e6b505-2470-4844-b6ca-4d0591f9e99d","currentExtendedPrice":20},{"groupId":"16195f16-3eff-4755-8abe-9acd47db0bd8","currentExtendedPrice":30},{"groupId":"a018ac59-5714-4982-b79b-6bcac5ee2b88","currentExtendedPrice":20},{"groupId":"90eb2937-c945-4449-95b8-3021135eb377","currentExtendedPrice":30}]}".
+Action.c(421): Notify: Saving Parameter "Corr_GroupID_count = 5".
+Action.c(421): web_custom_request("UpdatePurchase") was successful, 622 body bytes, 133 header bytes  	[MsgId: MMSG-26386]
+Action.c(439): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(439): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(439): Notify: Parameter Substitution: parameter "P_CustomerID" =  "800540"
+Action.c(439): Notify: Parameter Substitution: parameter "Corr_PurchaseID" =  "7ba79cb3-0c4b-4f63-b458-862a200bcb4c"
+Action.c(439): Notify: Parameter Substitution: parameter "Corr_SupplierID" =  "6d72d419-6576-4111-b39b-3435e3f45219"
+Action.c(439): Notify: Parameter Substitution: parameter "Corr_GroupID" =  "eae30572-266d-4790-bd2d-8155cd50a748"
+Action.c(439): Notify: Parameter Substitution: parameter "P_Inv_Time" =  "2016-05-10T02:05:43.243Z"
+Action.c(439): Warning: The string 'P_InvoiceDate' with parameter delimiters is not a parameter.
+Action.c(439): Notify: Parameter Substitution: parameter "Corr_DeletedStatus" =  "false,"items":[{"groupId":"eae30572-266d-4790-bd2d-8155cd50a748","currentExtendedPrice":30},{"groupId":"f9e6b505-2470-4844-b6ca-4d0591f9e99d","currentExtendedPrice":20},{"groupId":"16195f16-3eff-4755-8abe-9acd47db0bd8","currentExtendedPrice":30},{"groupId":"a018ac59-5714-4982-b79b-6bcac5ee2b88","currentExtendedPrice":20},{"groupId":"90eb2937-c945-4449-95b8-3021135eb377","currentExtendedPrice":30}]}"
+Action.c(442): Notify: Transaction "WS06_04_Update_Purchase" ended with a "Pass" status (Duration: 0.3669 Wasted Time: 0.0256).
+Action.c(446): Notify: Transaction "WS06_05_Delete_Purchase" started.
+Action.c(448): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(448): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(448): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(448): Notify: Parameter Substitution: parameter "P_CustomerID" =  "800540"
+Action.c(448): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(448): Notify: Parameter Substitution: parameter "P_UserID" =  "800540"
+Action.c(448): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(448): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(452): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(452): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(453): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(453): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(454): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(454): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(455): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(455): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(457): web_custom_request("DeletePurchase") started  	[MsgId: MMSG-26355]
+Action.c(457): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(457): Notify: Parameter Substitution: parameter "Corr_PurchaseID_1" =  "7ba79cb3-0c4b-4f63-b458-862a200bcb4c"
+Action.c(457): t=4518ms: 133-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/purchases/7ba79cb3-0c4b-4f63-b458-862a200bcb4c" (RelFrameId=1, Internal ID=9)
+Action.c(457):     HTTP/1.1 200 OK\r\n
+Action.c(457):     Content-Type: application/json\r\n
+Action.c(457):     Date: Tue, 10 May 2016 07:05:43 GMT\r\n
+Action.c(457):     Content-Length: 643\r\n
+Action.c(457):     Connection: keep-alive\r\n
+Action.c(457):     \r\n
+Action.c(457): t=4552ms: 643-byte response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/purchases/7ba79cb3-0c4b-4f63-b458-862a200bcb4c" (RelFrameId=1, Internal ID=9)
+Action.c(457):     {"opCo":"067","customerId":"800540","id":"7ba79cb3-0c4b-4f63-b458-862a200bcb4c","supplier"
+Action.c(457):     :"6d72d419-6576-4111-b39b-3435e3f45219","date":"2016-05-10T02:05:41.788Z","invoiceNumber":
+Action.c(457):     "PTINV6268","invoiceTotal":130,"items":[{"groupId":"eae30572-266d-4790-bd2d-8155cd50a748",
+Action.c(457):     "currentExtendedPrice":30},{"groupId":"f9e6b505-2470-4844-b6ca-4d0591f9e99d","currentExten
+Action.c(457):     dedPrice":20},{"groupId":"16195f16-3eff-4755-8abe-9acd47db0bd8","currentExtendedPrice":30}
+Action.c(457):     ,{"groupId":"a018ac59-5714-4982-b79b-6bcac5ee2b88","currentExtendedPrice":20},{"groupId":"
+Action.c(457):     90eb2937-c945-4449-95b8-3021135eb377","currentExtendedPrice":30}],"deleted":true,"syscoPur
+Action.c(457):     chase":false}
+Action.c(457): Notify: Saving Parameter "Corr_PurchaseID = 7ba79cb3-0c4b-4f63-b458-862a200bcb4c".
+Action.c(457): Notify: Saving Parameter "Corr_SupplierID = 6d72d419-6576-4111-b39b-3435e3f45219".
+Action.c(457): Notify: Saving Parameter "Corr_GroupID_1 = eae30572-266d-4790-bd2d-8155cd50a748".
+Action.c(457): Notify: Saving Parameter "Corr_GroupID_2 = f9e6b505-2470-4844-b6ca-4d0591f9e99d".
+Action.c(457): Notify: Saving Parameter "Corr_GroupID_3 = 16195f16-3eff-4755-8abe-9acd47db0bd8".
+Action.c(457): Notify: Saving Parameter "Corr_GroupID_4 = a018ac59-5714-4982-b79b-6bcac5ee2b88".
+Action.c(457): Notify: Saving Parameter "Corr_GroupID_5 = 90eb2937-c945-4449-95b8-3021135eb377".
+Action.c(457): Notify: Saving Parameter "Corr_DeletedStatus = true,".
+Action.c(457): HTML parsing not performed for Content-Type "application/json" ("ParseHtmlContentType" Run-Time Setting is "TEXT"). URL="http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/purchases/7ba79cb3-0c4b-4f63-b458-862a200bcb4c"  	[MsgId: MMSG-26548]
+Action.c(457): Notify: Saving Parameter "Corr_GroupID_count = 5".
+Action.c(457): web_custom_request("DeletePurchase") was successful, 643 body bytes, 133 header bytes  	[MsgId: MMSG-26386]
+Action.c(466): Notify: Transaction "WS06_05_Delete_Purchase" ended with a "Pass" status (Duration: 0.2593 Wasted Time: 0.0246).
+Ending action Action.
+Ending iteration 1.
+Ending Vuser...
+Starting action vuser_end.
+Ending action vuser_end.
+Vuser Terminated.
+Vuser 0 (thread 7916), ended OK."

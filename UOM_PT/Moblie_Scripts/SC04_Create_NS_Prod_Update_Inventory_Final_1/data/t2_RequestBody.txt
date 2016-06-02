@@ -1,0 +1,3 @@
+"{\"id\":\"\",\"name\":\"PT_Supplier\",\"contactInformation\":{\"phoneNumber\":\"345 345 4567\""
+",\"address\":\"28 main st\",\"contactName\":\"Mr tester\",\"emailAddress\":\"mtester@tester.co"
+"m\"},\"notes\":\"Sample text\"}"

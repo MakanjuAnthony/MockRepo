@@ -1,0 +1,16 @@
+HTTP/1.1 200 OK
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE
+Access-Control-Allow-Origin: file://
+Content-Type: application/json; charset=utf-8
+Date: Fri, 13 May 2016 19:18:24 GMT
+Set-Cookie: JSESSIONID=0000XXrbIk3TUUjiVjvuBFMhor7:-1; path=/; expires=Fri, 13 May 2016 20:18:20 GMT; httponly
+Set-Cookie: system=sus; path=/; expires=Fri, 13 May 2016 20:18:20 GMT; httponly
+Set-Cookie: Path=/; path=/; expires=Fri, 13 May 2016 20:18:20 GMT; httponly
+Set-Cookie: homePath=OMAPX_r20.0.0.2; path=/; expires=Fri, 13 May 2016 20:18:20 GMT; httponly
+Set-Cookie: BNES_JSESSIONID=oBxr/YQ+J9DQBPdd85Qx7blmiLQstwyW/379F2GRUpuAjL8m7HN4yIemlWqF7rSbVxRNPi5TVpBYClPIH1p97aUu38Df5ieE28ESHqOnUxYl+BHqwRFeug==; path=/; expires=Fri, 13 May 2016 20:18:20 GMT; httponly
+Set-Cookie: BNES_system=SNRYDY4xGwuJN8+rmsiYSIeOMgq6ofWOuPCv5jH/6hcG0cHroaVEEPvdklrcwI4Ak3IdHGXC7Cs=; path=/; expires=Fri, 13 May 2016 20:18:20 GMT; httponly
+Set-Cookie: BNES_homePath=yGv4LPe2vIAPO34nKB9VgKR4W0tOEY4TIdaBbOlMuCVaTZX6X63hAqTfhMLwJ/jiCefg7mRV0Vw0rQitZugjOofDuzw3FOxy; path=/; expires=Fri, 13 May 2016 20:18:20 GMT; httponly
+Content-Length: 432
+Connection: keep-alive
+

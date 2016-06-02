@@ -1,0 +1,10 @@
+[t17]
+SnapshotXmlFile=snapshot_17.xml
+ContentType=DummyContentType
+StepName=Url: SyscoProductsList
+Total=1
+FileName1=t17.UNK
+RequestHeaderFile=t17_RequestHeader.txt
+ResponseHeaderFile=t17_ResponseHeader.txt
+RequestBodyFile=t17_RequestBody.txt
+URL1=file:

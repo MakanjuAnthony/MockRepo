@@ -1,0 +1,16 @@
+HTTP/1.1 200 OK
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: sus-session
+Content-Type: application/json; charset=utf-8
+Date: Mon, 30 May 2016 04:37:02 GMT
+Set-Cookie: homePath=EOPLogin; path=/; expires=Mon, 30 May 2016 05:37:02 GMT; httponly
+Set-Cookie: JSESSIONID=0000Dm6hOwlT8YP4qRvp5FL_xxG:-1; path=/; expires=Mon, 30 May 2016 05:37:02 GMT; httponly
+Set-Cookie: system=sus; path=/; expires=Mon, 30 May 2016 05:37:02 GMT; httponly
+Set-Cookie: BNES_homePath=ru4iNA1vzVGM6MUZZkgtyuFMDEY/upb8I/MX8m/kGutCgEzNvUSzVeF0jGtNMz0b2wDAreic1T0AF87NCKflKw==; path=/; expires=Mon, 30 May 2016 05:37:02 GMT; httponly
+Set-Cookie: BNES_JSESSIONID=c1CBSI0TMX/u/2BcixCIdYQfgdFZdrU8iJ7Lo8okHINRWghxBG4+Ref3obLUvX3QpTnGehJ8Jhh0t42l2GdZ0wdYKwkIztsjyGHAJ1DNnohpbxynHlfUbQ==; path=/; expires=Mon, 30 May 2016 05:37:02 GMT; httponly
+Set-Cookie: BNES_system=Z4DNSmsQlEhmdWiAf4mSYlt/fr1KgMlJmxBRmJaaCh2DB2vcx32W9kKDoWKa+v6BmjGSXcAKlo0=; path=/; expires=Mon, 30 May 2016 05:37:02 GMT; httponly
+Content-Length: 139
+Connection: keep-alive
+

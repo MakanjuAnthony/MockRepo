@@ -1,0 +1,10 @@
+[t4]
+SnapshotXmlFile=snapshot_4.xml
+ContentType=DummyContentType
+StepName=Custom Request: CreateNonSyscoPurchase
+Total=1
+FileName1=t4.UNK
+RequestHeaderFile=t4_RequestHeader.txt
+ResponseHeaderFile=t4_ResponseHeader.txt
+RequestBodyFile=t4_RequestBody.txt
+URL1=http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/purchases

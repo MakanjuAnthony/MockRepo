@@ -1,0 +1,10 @@
+[t8]
+SnapshotXmlFile=snapshot_8.xml
+ContentType=DummyContentType
+StepName=Url: GetInventory
+Total=1
+FileName1=t8.UNK
+RequestHeaderFile=t8_RequestHeader.txt
+ResponseHeaderFile=t8_ResponseHeader.txt
+RequestBodyFile=t8_RequestBody.txt
+URL1=file:

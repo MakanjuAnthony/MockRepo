@@ -1,0 +1,9 @@
+-+
+-DCCI
+-D_IDA_XL
+-DWINNT
+-IE:\UOM\Mobility Scripts\Final\SC03_CreateUpdate_Inventory_updated_0521_Large
+-IC:\Program Files (x86)\HP\LoadRunner\include
+-ee:\uom\mobility scripts\final\sc03_createupdate_inventory_updated_0521_large\\logfile.log
+e:\uom\mobility scripts\final\sc03_createupdate_inventory_updated_0521_large\\combined_SC03_CreateUpdate_Inventory_updated_0521_Large.c
+e:\uom\mobility scripts\final\sc03_createupdate_inventory_updated_0521_large\\pre_cci.c

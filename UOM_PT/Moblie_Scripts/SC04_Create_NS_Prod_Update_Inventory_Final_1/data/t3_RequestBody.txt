@@ -1,0 +1,3 @@
+"{\"name\":\"Prod01\",\"supplier\":\"1c6caa9c-2f6d-48b5-9f37-5c0c771cc26c\",\"materialId\":\"NS"
+"P01\",\"brand\":\"Pbrand\",\"nickName\":\"\",\"averageWeightPerCase\":2,\"packSize\":{\"pack\""
+":\"2\",\"size\":\"2\",\"uom\":\"\"},\"type\":\"nonsysco\"}"

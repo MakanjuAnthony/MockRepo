@@ -1,0 +1,9 @@
+-+
+-DCCI
+-D_IDA_XL
+-DWINNT
+-IG:\11_UOM\Scripts\MobileScripts\SC06_Create_Purchases_HTML_05_25
+-IC:\Program Files (x86)\HP\LoadRunner\include
+-eg:\11_uom\scripts\mobilescripts\sc06_create_purchases_html_05_25\\logfile.log
+g:\11_uom\scripts\mobilescripts\sc06_create_purchases_html_05_25\\combined_SC06_Create_Purchases_HTML_05_25.c
+g:\11_uom\scripts\mobilescripts\sc06_create_purchases_html_05_25\\pre_cci.c

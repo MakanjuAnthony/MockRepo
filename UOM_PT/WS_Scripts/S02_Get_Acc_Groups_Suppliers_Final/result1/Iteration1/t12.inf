@@ -1,0 +1,10 @@
+[t12]
+SnapshotXmlFile=snapshot_12.xml
+ContentType=DummyContentType
+StepName=Custom Request: DeleteSupplier
+Total=1
+FileName1=t10.UNK
+RequestHeaderFile=t12_RequestHeader.txt
+ResponseHeaderFile=t12_ResponseHeader.txt
+RequestBodyFile=t12_RequestBody.txt
+URL1=file:

@@ -1,0 +1,870 @@
+****** Start Log Message ******
+Web Recorder version : 12.0.2739.0 
+Recording Mode: URL-Based script
+	Using concurrent groups
+Not recording headers
+Not excluding content types
+Reset context between actions
+Protocol Type: Multi-Mobile
+
+$$$$$$ End Log Message $$$$$$
+
+Code generation version: 12.0.2739.0
+
+****** Analyze segments filter initialization ******
+****** Request Header For Transaction With Id 5 ******
+GET https://onlineapi-qa.cloud.sysco.com/app/user HTTP/1.1
+Host: onlineapi-qa.cloud.sysco.com
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-N920T Build/MMB29K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/50.0.2661.86 Mobile Safari/537.36
+JSESSIONID: 0000TyfmSAKniQyerkIoMLOzipA:-1
+Authorization: Bearer 067|431262|PTNormal41
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US
+Cookie: BNES_homePath=CbhVSMPeZNpfma6mGx2/iIdPDUZaHn8eqBj4bVByY4anr0kV+wQ3EyosLLze8hxvKULDHAjCGyUI+e26omUP2iBvkt+C1wqz
+X-Requested-With: com.syscocorp.uomqa
+
+
+$$$$$$ Request Header For Transaction With Id 5 Ended $$$$$$
+
+****** Response Header For Transaction With Id 5 ******
+HTTP/1.1 200 OK
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: sus-session
+Content-Type: application/json; charset=utf-8
+Date: Mon, 30 May 2016 04:37:02 GMT
+Set-Cookie: homePath=EOPLogin; path=/; expires=Mon, 30 May 2016 05:37:02 GMT; httponly
+Set-Cookie: JSESSIONID=0000Dm6hOwlT8YP4qRvp5FL_xxG:-1; path=/; expires=Mon, 30 May 2016 05:37:02 GMT; httponly
+Set-Cookie: system=sus; path=/; expires=Mon, 30 May 2016 05:37:02 GMT; httponly
+Set-Cookie: BNES_homePath=ru4iNA1vzVGM6MUZZkgtyuFMDEY/upb8I/MX8m/kGutCgEzNvUSzVeF0jGtNMz0b2wDAreic1T0AF87NCKflKw==; path=/; expires=Mon, 30 May 2016 05:37:02 GMT; httponly
+Set-Cookie: BNES_JSESSIONID=c1CBSI0TMX/u/2BcixCIdYQfgdFZdrU8iJ7Lo8okHINRWghxBG4+Ref3obLUvX3QpTnGehJ8Jhh0t42l2GdZ0wdYKwkIztsjyGHAJ1DNnohpbxynHlfUbQ==; path=/; expires=Mon, 30 May 2016 05:37:02 GMT; httponly
+Set-Cookie: BNES_system=Z4DNSmsQlEhmdWiAf4mSYlt/fr1KgMlJmxBRmJaaCh2DB2vcx32W9kKDoWKa+v6BmjGSXcAKlo0=; path=/; expires=Mon, 30 May 2016 05:37:02 GMT; httponly
+Content-Length: 139
+Connection: keep-alive
+
+
+$$$$$$ Response Header For Transaction With Id 5 Ended $$$$$$
+
+****** Response Body For Transaction With Id 5 ******
+{"locations":[],"territories":[],"nonSyscoPricingEnabled":true,"account":{"territory":"","opco":{"cutOffTime":"","payerId":"","phone":""}}}
+$$$$$$ Response Body For Transaction With Id 5 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+The Node has no URL
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Add Event For Transaction With Id 5 ****** (Location Flag : tFlagInsertEnd, Location ID : 5)
+	web_url("user",
+		"URL=https://onlineapi-qa.cloud.sysco.com/app/user",
+		"Resource=1",
+		"RecContentType=application/json",
+		"Referer=",
+		"Snapshot=t1.inf",
+		LAST);
+
+
+$$$$$$ Add Event For Transaction With Id 5 Ended $$$$$$
+
+****** Add Event For Transaction With Id 0 ****** (Location Flag : tFlagInsertBefore, Location ID : 5)
+	web_add_cookie("BNES_homePath=CbhVSMPeZNpfma6mGx2/iIdPDUZaHn8eqBj4bVByY4anr0kV+wQ3EyosLLze8hxvKULDHAjCGyUI+e26omUP2iBvkt+C1wqz; DOMAIN=onlineapi-qa.cloud.sysco.com");
+
+
+$$$$$$ Add Event For Transaction With Id 0 Ended $$$$$$
+
+****** Request Header For Transaction With Id 13 ******
+POST https://onlineapi-qa.cloud.sysco.com/app/login HTTP/1.1
+Host: onlineapi-qa.cloud.sysco.com
+Connection: keep-alive
+Content-Length: 48
+User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-N920T Build/MMB29K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/50.0.2661.86 Mobile Safari/537.36
+Origin: file://
+JSESSIONID: 0000TyfmSAKniQyerkIoMLOzipA:-1
+Authorization: Bearer ||
+Content-Type: application/json
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US
+Cookie: BNES_homePath=CbhVSMPeZNpfma6mGx2/iIdPDUZaHn8eqBj4bVByY4anr0kV+wQ3EyosLLze8hxvKULDHAjCGyUI+e26omUP2iBvkt+C1wqz; homePath=EOPLogin; JSESSIONID=0000Dm6hOwlT8YP4qRvp5FL_xxG:-1; system=sus; BNES_homePath=ru4iNA1vzVGM6MUZZkgtyuFMDEY/upb8I/MX8m/kGutCgEzNvUSzVeF0jGtNMz0b2wDAreic1T0AF87NCKflKw==; BNES_JSESSIONID=c1CBSI0TMX/u/2BcixCIdYQfgdFZdrU8iJ7Lo8okHINRWghxBG4+Ref3obLUvX3QpTnGehJ8Jhh0t42l2GdZ0wdYKwkIztsjyGHAJ1DNnohpbxynHlfUbQ==; BNES_system=Z4DNSmsQlEhmdWiAf4mSYlt/fr1KgMlJmxBRmJaaCh2DB2vcx32W9kKDoWKa+v6BmjGSXcAKlo0=
+X-Requested-With: com.syscocorp.uomqa
+
+
+$$$$$$ Request Header For Transaction With Id 13 Ended $$$$$$
+
+****** Request Body For Transaction With Id 13 ******
+{"username":"PTNormal41","password":"Security1"}
+$$$$$$ Request Body For Transaction With Id 13 Ended $$$$$$
+
+****** Response Header For Transaction With Id 13 ******
+HTTP/1.1 200 OK
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE
+Access-Control-Allow-Origin: file://
+Access-Control-Expose-Headers: sus-session
+Content-Type: application/json; charset=utf-8
+Date: Mon, 30 May 2016 04:37:12 GMT
+Set-Cookie: JSESSIONID=0000vuUvAYMh7FI5XmJ33JAZp4S:-1; path=/; expires=Mon, 30 May 2016 05:37:09 GMT; httponly
+Set-Cookie: system=sus; path=/; expires=Mon, 30 May 2016 05:37:09 GMT; httponly
+Set-Cookie: Path=/; path=/; expires=Mon, 30 May 2016 05:37:09 GMT; httponly
+Set-Cookie: homePath=OMAPX_r20.0.0.2; path=/; expires=Mon, 30 May 2016 05:37:09 GMT; httponly
+Set-Cookie: BNES_JSESSIONID=xPXvA5X+Aw5V4CP9YvdThUaZp+GRu7XOiQRy5gmVjOleVrnwDf9bIjoSChcYZPPBrS8k3LI8qXwRmMH44u32kO4oVy03kKu3PdLX/5jKIPVRO++B80qOgg==; path=/; expires=Mon, 30 May 2016 05:37:09 GMT; httponly
+Set-Cookie: BNES_system=29kP3kpLbi1wEdj4kOIbqrO7Pd/CB2oOU7ibPdgFMAN8IKrX7W0ci8gIr84h7rjRY+RjObaMqds=; path=/; expires=Mon, 30 May 2016 05:37:09 GMT; httponly
+Set-Cookie: BNES_homePath=omg3yBmQZ5oNznlwFvi/bCvGSzJJPiEa7eFRpm4tAJGtZgjdtNUVMs1LbPiT+rRBU5WXLLGm/HwwXHwibb3v1xAPiRvnW2Zc; path=/; expires=Mon, 30 May 2016 05:37:09 GMT; httponly
+sus-session: 0000vuUvAYMh7FI5XmJ33JAZp4S:-1
+Content-Length: 508
+Connection: keep-alive
+
+
+$$$$$$ Response Header For Transaction With Id 13 Ended $$$$$$
+
+****** Response Body For Transaction With Id 13 ******
+{"locations":[{"name":"Rainforest Cafe","address":"5310 Seawall Blvd, Galveston, TX 77550","id":"431262","opco":{"id":"067","name":" Houston Company     "}}],"territories":[],"nonSyscoPricingEnabled":true,"userRole":"single-buyer","userType":"1","account":{"id":"431262","name":"Rainforest Cafe","address":"5310 Seawall Blvd, Galveston, TX 77550","accountName":"PerformanceTest               ","territory":"","opco":{"id":"067","name":"Houston Company     ","cutOffTime":"17:00:00","payerId":"","phone":""}}}
+$$$$$$ Response Body For Transaction With Id 13 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+The Node has no URL
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Add Event For Transaction With Id 13 ****** (Location Flag : tFlagInsertEnd, Location ID : 13)
+	web_custom_request("login",
+		"URL=https://onlineapi-qa.cloud.sysco.com/app/login",
+		"Method=POST",
+		"Resource=0",
+		"RecContentType=application/json",
+		"Referer=",
+		"Snapshot=t2.inf",
+		"Mode=HTTP",
+		"EncType=application/json",
+		"Body={\"username\":\"PTNormal41\",\"password\":\"Security1\"}",
+		LAST);
+
+
+$$$$$$ Add Event For Transaction With Id 13 Ended $$$$$$
+
+****** Request Header For Transaction With Id 21 ******
+GET https://onlineapi-qa.cloud.sysco.com/inventories/current?withAllProductAttributes=true HTTP/1.1
+Host: onlineapi-qa.cloud.sysco.com
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-N920T Build/MMB29K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/50.0.2661.86 Mobile Safari/537.36
+JSESSIONID: 0000TyfmSAKniQyerkIoMLOzipA:-1
+Authorization: Bearer 067|431262|PTNormal41
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US
+Cookie: JSESSIONID=0000vuUvAYMh7FI5XmJ33JAZp4S:-1; system=sus; Path=/; homePath=OMAPX_r20.0.0.2; BNES_JSESSIONID=xPXvA5X+Aw5V4CP9YvdThUaZp+GRu7XOiQRy5gmVjOleVrnwDf9bIjoSChcYZPPBrS8k3LI8qXwRmMH44u32kO4oVy03kKu3PdLX/5jKIPVRO++B80qOgg==; BNES_system=29kP3kpLbi1wEdj4kOIbqrO7Pd/CB2oOU7ibPdgFMAN8IKrX7W0ci8gIr84h7rjRY+RjObaMqds=; BNES_homePath=omg3yBmQZ5oNznlwFvi/bCvGSzJJPiEa7eFRpm4tAJGtZgjdtNUVMs1LbPiT+rRBU5WXLLGm/HwwXHwibb3v1xAPiRvnW2Zc
+X-Requested-With: com.syscocorp.uomqa
+
+
+$$$$$$ Request Header For Transaction With Id 21 Ended $$$$$$
+
+****** Response Header For Transaction With Id 21 ******
+HTTP/1.1 404 Not Found
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: sus-session
+Content-Type: application/json; charset=utf-8
+Date: Mon, 30 May 2016 04:37:12 GMT
+Content-Length: 70
+Connection: keep-alive
+
+
+$$$$$$ Response Header For Transaction With Id 21 Ended $$$$$$
+
+****** Response Body For Transaction With Id 21 ******
+{"message":"There are no currently open inventories for the Account."}
+$$$$$$ Response Body For Transaction With Id 21 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+/app/login
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Request Header For Transaction With Id 29 ******
+GET https://onlineapi-qa.cloud.sysco.com/app/legacy-lists HTTP/1.1
+Host: onlineapi-qa.cloud.sysco.com
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-N920T Build/MMB29K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/50.0.2661.86 Mobile Safari/537.36
+JSESSIONID: 0000TyfmSAKniQyerkIoMLOzipA:-1
+Authorization: Bearer 067|431262|PTNormal41
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US
+Cookie: BNES_homePath=CbhVSMPeZNpfma6mGx2/iIdPDUZaHn8eqBj4bVByY4anr0kV+wQ3EyosLLze8hxvKULDHAjCGyUI+e26omUP2iBvkt+C1wqz; JSESSIONID=0000vuUvAYMh7FI5XmJ33JAZp4S:-1; system=sus; Path=/; homePath=OMAPX_r20.0.0.2; BNES_JSESSIONID=xPXvA5X+Aw5V4CP9YvdThUaZp+GRu7XOiQRy5gmVjOleVrnwDf9bIjoSChcYZPPBrS8k3LI8qXwRmMH44u32kO4oVy03kKu3PdLX/5jKIPVRO++B80qOgg==; BNES_system=29kP3kpLbi1wEdj4kOIbqrO7Pd/CB2oOU7ibPdgFMAN8IKrX7W0ci8gIr84h7rjRY+RjObaMqds=; BNES_homePath=omg3yBmQZ5oNznlwFvi/bCvGSzJJPiEa7eFRpm4tAJGtZgjdtNUVMs1LbPiT+rRBU5WXLLGm/HwwXHwibb3v1xAPiRvnW2Zc
+X-Requested-With: com.syscocorp.uomqa
+
+
+$$$$$$ Request Header For Transaction With Id 29 Ended $$$$$$
+
+****** Response Header For Transaction With Id 29 ******
+HTTP/1.1 200 OK
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: sus-session
+Content-Type: application/json; charset=utf-8
+Date: Mon, 30 May 2016 04:37:27 GMT
+Content-Length: 959
+Connection: keep-alive
+
+
+$$$$$$ Response Header For Transaction With Id 29 Ended $$$$$$
+
+****** Response Body For Transaction With Id 29 ******
+{"custom":[{"id":"27133","name":"PTNormal41_4/19/2016 11:53:22 AM_List","createdOn":"04/19/2016","modifiedOn":"04/19/2016","type":"C","owner":"PTNormal41","itemsCount":20},{"id":"27128","name":"PTNormal41_4/19/2016 11:50:39 AM_List","createdOn":"04/19/2016","modifiedOn":"04/19/2016","type":"C","owner":"PTNormal41","itemsCount":20},{"id":"27122","name":"PTNormal41_4/19/2016 11:47:31 AM_List","createdOn":"04/19/2016","modifiedOn":"04/19/2016","type":"C","owner":"PTNormal41","itemsCount":20},{"id":"27116","name":"PTNormal41_4/19/2016 11:44:07 AM_List","createdOn":"04/19/2016","modifiedOn":"04/19/2016","type":"C","owner":"PTNormal41","itemsCount":20},{"id":"27110","name":"PTNormal41_4/19/2016 11:40:45 AM_List","createdOn":"04/19/2016","modifiedOn":"04/19/2016","type":"C","owner":"PTNormal41","itemsCount":20}],"shared":[],"sysco":[{"id":"","name":"BB050","createdOn":"05/09/2016","modifiedOn":"05/09/2016","type":"R","owner":"SYSCO","itemsCount":303}]}
+$$$$$$ Response Body For Transaction With Id 29 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+/app/login
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Add Event For Transaction With Id 29 ****** (Location Flag : tFlagInsertEnd, Location ID : 29)
+	web_url("legacy-lists",
+		"URL=https://onlineapi-qa.cloud.sysco.com/app/legacy-lists",
+		"Resource=1",
+		"RecContentType=application/json",
+		"Referer=",
+		"Snapshot=t3.inf",
+		LAST);
+
+
+$$$$$$ Add Event For Transaction With Id 29 Ended $$$$$$
+
+****** Request Header For Transaction With Id 37 ******
+POST https://onlineapi-qa.cloud.sysco.com/app/inventory/import/legacylist HTTP/1.1
+Host: onlineapi-qa.cloud.sysco.com
+Connection: keep-alive
+Content-Length: 124
+User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-N920T Build/MMB29K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/50.0.2661.86 Mobile Safari/537.36
+Origin: file://
+JSESSIONID: 0000TyfmSAKniQyerkIoMLOzipA:-1
+Authorization: Bearer 067|431262|PTNormal41
+Content-Type: application/json
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US
+Cookie: BNES_homePath=CbhVSMPeZNpfma6mGx2/iIdPDUZaHn8eqBj4bVByY4anr0kV+wQ3EyosLLze8hxvKULDHAjCGyUI+e26omUP2iBvkt+C1wqz; JSESSIONID=0000vuUvAYMh7FI5XmJ33JAZp4S:-1; system=sus; Path=/; homePath=OMAPX_r20.0.0.2; BNES_JSESSIONID=xPXvA5X+Aw5V4CP9YvdThUaZp+GRu7XOiQRy5gmVjOleVrnwDf9bIjoSChcYZPPBrS8k3LI8qXwRmMH44u32kO4oVy03kKu3PdLX/5jKIPVRO++B80qOgg==; BNES_system=29kP3kpLbi1wEdj4kOIbqrO7Pd/CB2oOU7ibPdgFMAN8IKrX7W0ci8gIr84h7rjRY+RjObaMqds=; BNES_homePath=omg3yBmQZ5oNznlwFvi/bCvGSzJJPiEa7eFRpm4tAJGtZgjdtNUVMs1LbPiT+rRBU5WXLLGm/HwwXHwibb3v1xAPiRvnW2Zc
+X-Requested-With: com.syscocorp.uomqa
+
+
+$$$$$$ Request Header For Transaction With Id 37 Ended $$$$$$
+
+****** Request Body For Transaction With Id 37 ******
+{"lists":[{"id":"27128","name":"PTNormal41_4/19/2016 11:50:39 AM_List","type":"C","owner":"PTNormal41"}],"groups":"default"}
+$$$$$$ Request Body For Transaction With Id 37 Ended $$$$$$
+
+****** Response Header For Transaction With Id 37 ******
+HTTP/1.1 200 OK
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE
+Access-Control-Allow-Origin: file://
+Access-Control-Expose-Headers: sus-session
+Content-Type: application/json; charset=utf-8
+Date: Mon, 30 May 2016 04:37:45 GMT
+Content-Length: 3353
+Connection: keep-alive
+
+
+$$$$$$ Response Header For Transaction With Id 37 Ended $$$$$$
+
+****** Response Body For Transaction With Id 37 ******
+{"id":"8dc1e573-397f-40b8-bd3e-ba22a2c9e609","opCo":"067","customerId":"431262","openDate":"2016-05-30T04:37:45.481Z","state":"open","items":[{"id":"1112606","priceUom":"cs","groups":[{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":0,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1190669","priceUom":"cs","groups":[{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":1,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1190677","priceUom":"cs","groups":[{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":2,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1190727","priceUom":"cs","groups":[{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":3,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1190735","priceUom":"cs","groups":[{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":4,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1004449","priceUom":"cs","groups":[{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":5,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1006410","priceUom":"cs","groups":[{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":6,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1210996","priceUom":"cs","groups":[{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":7,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1290550","priceUom":"cs","groups":[{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":8,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1677442","priceUom":"cs","groups":[{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":9,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1003953","priceUom":"cs","groups":[{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":10,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1017086","priceUom":"cs","groups":[{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":11,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1017094","priceUom":"cs","groups":[{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":12,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1017102","priceUom":"cs","groups":[{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":13,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1017144","priceUom":"cs","groups":[{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":14,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1204908","priceUom":"cs","groups":[{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":15,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1557214","priceUom":"cs","groups":[{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":16,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"2522191","priceUom":"cs","groups":[{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":17,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"3505187","priceUom":"cs","groups":[{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":18,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"3872645","priceUom":"cs","groups":[{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":19,"quantity":0,"quantityUom":"cs"}],"customerImages":[]}]}
+$$$$$$ Response Body For Transaction With Id 37 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+/app/login
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Add Event For Transaction With Id 37 ****** (Location Flag : tFlagInsertEnd, Location ID : 37)
+	web_custom_request("legacylist",
+		"URL=https://onlineapi-qa.cloud.sysco.com/app/inventory/import/legacylist",
+		"Method=POST",
+		"Resource=0",
+		"RecContentType=application/json",
+		"Referer=",
+		"Snapshot=t4.inf",
+		"Mode=HTTP",
+		"EncType=application/json",
+		"Body={\"lists\":[{\"id\":\"27128\",\"name\":\"PTNormal41_4/19/2016 11:50:39 AM_List\",\"type\":\"C\",\"owner\":\"PTNormal41\"}],\"groups\":\"default\"}",
+		LAST);
+
+
+$$$$$$ Add Event For Transaction With Id 37 Ended $$$$$$
+
+****** Request Header For Transaction With Id 45 ******
+POST https://onlineapi-qa.cloud.sysco.com/app/inventory/setup/expensecategories HTTP/1.1
+Host: onlineapi-qa.cloud.sysco.com
+Connection: keep-alive
+Content-Length: 25
+User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-N920T Build/MMB29K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/50.0.2661.86 Mobile Safari/537.36
+Origin: file://
+JSESSIONID: 0000TyfmSAKniQyerkIoMLOzipA:-1
+Authorization: Bearer 067|431262|PTNormal41
+Content-Type: application/json
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US
+Cookie: BNES_homePath=CbhVSMPeZNpfma6mGx2/iIdPDUZaHn8eqBj4bVByY4anr0kV+wQ3EyosLLze8hxvKULDHAjCGyUI+e26omUP2iBvkt+C1wqz; JSESSIONID=0000vuUvAYMh7FI5XmJ33JAZp4S:-1; system=sus; Path=/; homePath=OMAPX_r20.0.0.2; BNES_JSESSIONID=xPXvA5X+Aw5V4CP9YvdThUaZp+GRu7XOiQRy5gmVjOleVrnwDf9bIjoSChcYZPPBrS8k3LI8qXwRmMH44u32kO4oVy03kKu3PdLX/5jKIPVRO++B80qOgg==; BNES_system=29kP3kpLbi1wEdj4kOIbqrO7Pd/CB2oOU7ibPdgFMAN8IKrX7W0ci8gIr84h7rjRY+RjObaMqds=; BNES_homePath=omg3yBmQZ5oNznlwFvi/bCvGSzJJPiEa7eFRpm4tAJGtZgjdtNUVMs1LbPiT+rRBU5WXLLGm/HwwXHwibb3v1xAPiRvnW2Zc
+X-Requested-With: com.syscocorp.uomqa
+
+
+$$$$$$ Request Header For Transaction With Id 45 Ended $$$$$$
+
+****** Request Body For Transaction With Id 45 ******
+{"groups":"food/nonfood"}
+$$$$$$ Request Body For Transaction With Id 45 Ended $$$$$$
+
+****** Response Header For Transaction With Id 45 ******
+HTTP/1.1 200 OK
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE
+Access-Control-Allow-Origin: file://
+Access-Control-Expose-Headers: sus-session
+Content-Type: application/json; charset=utf-8
+Date: Mon, 30 May 2016 04:37:56 GMT
+Content-Length: 4373
+Connection: keep-alive
+
+
+$$$$$$ Response Header For Transaction With Id 45 Ended $$$$$$
+
+****** Response Body For Transaction With Id 45 ******
+{"id":"8dc1e573-397f-40b8-bd3e-ba22a2c9e609","opCo":"067","customerId":"431262","openDate":"2016-05-30T04:37:45.481Z","state":"open","items":[{"id":"1112606","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":0,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1190669","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":1,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1190677","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":2,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1190727","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":3,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1190735","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":4,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1004449","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":5,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1006410","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":6,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1210996","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":7,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1290550","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":8,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1677442","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":9,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1003953","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":10,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1017086","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":11,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1017094","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":12,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1017102","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":13,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1017144","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":14,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1204908","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":15,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"1557214","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":16,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"2522191","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":17,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"3505187","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":18,"quantity":0,"quantityUom":"cs"}],"customerImages":[]},{"id":"3872645","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":19,"quantity":0,"quantityUom":"cs"}],"customerImages":[]}]}
+$$$$$$ Response Body For Transaction With Id 45 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+/app/inventory/import/legacylist
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Add Event For Transaction With Id 45 ****** (Location Flag : tFlagInsertEnd, Location ID : 45)
+	web_custom_request("expensecategories",
+		"URL=https://onlineapi-qa.cloud.sysco.com/app/inventory/setup/expensecategories",
+		"Method=POST",
+		"Resource=0",
+		"RecContentType=application/json",
+		"Referer=",
+		"Snapshot=t5.inf",
+		"Mode=HTTP",
+		"EncType=application/json",
+		"Body={\"groups\":\"food/nonfood\"}",
+		LAST);
+
+
+$$$$$$ Add Event For Transaction With Id 45 Ended $$$$$$
+
+****** Request Header For Transaction With Id 53 ******
+GET https://onlineapi-qa.cloud.sysco.com/inventories/current?withAllProductAttributes=true HTTP/1.1
+Host: onlineapi-qa.cloud.sysco.com
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-N920T Build/MMB29K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/50.0.2661.86 Mobile Safari/537.36
+JSESSIONID: 0000TyfmSAKniQyerkIoMLOzipA:-1
+Authorization: Bearer 067|431262|PTNormal41
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US
+Cookie: JSESSIONID=0000vuUvAYMh7FI5XmJ33JAZp4S:-1; system=sus; Path=/; homePath=OMAPX_r20.0.0.2; BNES_JSESSIONID=xPXvA5X+Aw5V4CP9YvdThUaZp+GRu7XOiQRy5gmVjOleVrnwDf9bIjoSChcYZPPBrS8k3LI8qXwRmMH44u32kO4oVy03kKu3PdLX/5jKIPVRO++B80qOgg==; BNES_system=29kP3kpLbi1wEdj4kOIbqrO7Pd/CB2oOU7ibPdgFMAN8IKrX7W0ci8gIr84h7rjRY+RjObaMqds=; BNES_homePath=omg3yBmQZ5oNznlwFvi/bCvGSzJJPiEa7eFRpm4tAJGtZgjdtNUVMs1LbPiT+rRBU5WXLLGm/HwwXHwibb3v1xAPiRvnW2Zc
+X-Requested-With: com.syscocorp.uomqa
+
+
+$$$$$$ Request Header For Transaction With Id 53 Ended $$$$$$
+
+****** Response Header For Transaction With Id 53 ******
+HTTP/1.1 200 OK
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: sus-session
+Content-Type: application/json; charset=utf-8
+Date: Mon, 30 May 2016 04:37:59 GMT
+Content-Length: 18153
+Connection: keep-alive
+
+
+$$$$$$ Response Header For Transaction With Id 53 Ended $$$$$$
+
+****** Response Body For Transaction With Id 53 ******
+{"id":"8dc1e573-397f-40b8-bd3e-ba22a2c9e609","opCo":"067","customerId":"431262","openDate":"2016-05-30T04:37:45.481Z","state":"open","items":[{"id":"1112606","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":0,"quantity":0,"quantityUom":"cs"}],"customerImages":[],"materialId":"1112606","packSize":{"pack":"1","size":"40 LB","uom":"cs"},"averageWeightPerCase":40,"name":"MILKFISH WHOLE","description":null,"type":"sysco","isSoldAs":{"case":true,"split":false},"split":{"min":0,"max":0},"bvRating":null,"brand":"PACKER","isCatchWeight":false,"storageFlag":"F","isAvailable":true,"replacement":{"hasReplacement":false,"replacementMaterialId":"1112606"},"category":{"completeCategoryId":"04003099099","mainCategoryId":4,"label":"MISC."},"messages":[{"type":"info","message":"Demand status"}],"flags":["null"],"images":["null"],"canBuy":true,"lastOrderedDate":"2016-05-30T04:37:59.393Z","nickName":null,"originalIndex":0},{"id":"1190669","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":1,"quantity":0,"quantityUom":"cs"}],"customerImages":[],"materialId":"1190669","packSize":{"pack":"16","size":".5 PT","uom":"cs"},"averageWeightPerCase":12,"name":"MILK WHL","description":null,"type":"sysco","isSoldAs":{"case":true,"split":false},"split":{"min":0,"max":0},"bvRating":null,"brand":"PACKER","isCatchWeight":false,"storageFlag":"C","isAvailable":true,"replacement":{"hasReplacement":true,"replacementMaterialId":"5069323"},"category":{"completeCategoryId":"02005004002","mainCategoryId":2,"label":"PORTION PACK"},"messages":[{"type":"info","message":"Stocked item"},{"type":"warning","message":"Leaving Soon. Replacement available"}],"flags":["null"],"images":["null"],"canBuy":true,"lastOrderedDate":"2016-05-30T04:37:59.394Z","nickName":null,"originalIndex":1},{"id":"1190677","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":2,"quantity":0,"quantityUom":"cs"}],"customerImages":[],"materialId":"1190677","packSize":{"pack":"16","size":".5 PT","uom":"cs"},"averageWeightPerCase":12,"name":"MILK LO FAT 2%","description":null,"type":"sysco","isSoldAs":{"case":true,"split":false},"split":{"min":0,"max":0},"bvRating":null,"brand":"PACKER","isCatchWeight":false,"storageFlag":"C","isAvailable":true,"replacement":{"hasReplacement":true,"replacementMaterialId":"5069323"},"category":{"completeCategoryId":"02005004002","mainCategoryId":2,"label":"PORTION PACK"},"messages":[{"type":"info","message":"Stocked item"},{"type":"warning","message":"Leaving Soon. Replacement available"}],"flags":["null"],"images":["null"],"canBuy":true,"lastOrderedDate":"2016-05-30T04:37:59.395Z","nickName":null,"originalIndex":2},{"id":"1190727","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":3,"quantity":0,"quantityUom":"cs"}],"customerImages":[],"materialId":"1190727","packSize":{"pack":"16","size":".5 PT","uom":"cs"},"averageWeightPerCase":12,"name":"MILK SKIM","description":null,"type":"sysco","isSoldAs":{"case":true,"split":false},"split":{"min":0,"max":0},"bvRating":null,"brand":"PACKER","isCatchWeight":false,"storageFlag":"C","isAvailable":true,"replacement":{"hasReplacement":false,"replacementMaterialId":"1190727"},"category":{"completeCategoryId":"02005004002","mainCategoryId":2,"label":"PORTION PACK"},"messages":[{"type":"info","message":"Stocked item"}],"flags":["null"],"images":["null"],"canBuy":true,"lastOrderedDate":"2016-05-30T04:37:59.396Z","nickName":null,"originalIndex":3},{"id":"1190735","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":4,"quantity":0,"quantityUom":"cs"}],"customerImages":[],"materialId":"1190735","packSize":{"pack":"16","size":".5 PT","uom":"cs"},"averageWeightPerCase":12,"name":"MILK CHOCOLATE","description":null,"type":"sysco","isSoldAs":{"case":true,"split":false},"split":{"min":0,"max":0},"bvRating":null,"brand":"PACKER","isCatchWeight":false,"storageFlag":"C","isAvailable":true,"replacement":{"hasReplacement":false,"replacementMaterialId":"1190735"},"category":{"completeCategoryId":"02005004002","mainCategoryId":2,"label":"PORTION PACK"},"messages":[{"type":"info","message":"Stocked item"}],"flags":["null"],"images":["null"],"canBuy":true,"lastOrderedDate":"2016-05-30T04:37:59.396Z","nickName":null,"originalIndex":4},{"id":"1004449","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":5,"quantity":0,"quantityUom":"cs"}],"customerImages":[],"materialId":"1004449","packSize":{"pack":"12","size":"8 CT","uom":"cs"},"averageWeightPerCase":12,"name":"DOUGH BISCUIT BUTR FLVR JB","description":"Dough Biscuit Butter Flavor Jumbo","type":"sysco","isSoldAs":{"case":true,"split":false},"split":{"min":0,"max":0},"bvRating":null,"brand":"MERICO","isCatchWeight":false,"storageFlag":"C","isAvailable":true,"replacement":{"hasReplacement":false,"replacementMaterialId":"1004449"},"category":{"completeCategoryId":"06001005020","mainCategoryId":6,"label":"RAW"},"messages":[{"type":"info","message":"Stocked item"}],"flags":["null"],"images":["null"],"canBuy":true,"lastOrderedDate":"2016-05-30T04:37:59.397Z","nickName":null,"originalIndex":5},{"id":"1006410","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":6,"quantity":0,"quantityUom":"cs"}],"customerImages":[],"materialId":"1006410","packSize":{"pack":"60","size":"2 CT","uom":"cs"},"averageWeightPerCase":10.3,"name":"SANDWICH SAUS &BISC PRCK 2.75Z","description":"Sandwich Sausage & Biscuit Precooked 2.75 oz","type":"sysco","isSoldAs":{"case":true,"split":false},"split":{"min":0,"max":0},"bvRating":null,"brand":"RUDYS","isCatchWeight":false,"storageFlag":"F","isAvailable":true,"replacement":{"hasReplacement":false,"replacementMaterialId":"1006410"},"category":{"completeCategoryId":"06002045005","mainCategoryId":6,"label":"BISCUIT"},"messages":[{"type":"info","message":"Stocked item"}],"flags":["null"],"images":["./1006410/web/1.jpg","./1006410/web/7.jpg","./1006410/web/6.jpg","./1006410/web/5.jpg","./1006410/web/4.jpg","./1006410/web/3.jpg","./1006410/web/2.jpg"],"canBuy":true,"lastOrderedDate":"2016-05-30T04:37:59.398Z","nickName":null,"originalIndex":6},{"id":"1210996","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":7,"quantity":0,"quantityUom":"cs"}],"customerImages":[],"materialId":"1210996","packSize":{"pack":"12","size":"10 CT","uom":"cs"},"averageWeightPerCase":9,"name":"DOUGH BISCUIT BTRMLK TX STYLE","description":null,"type":"sysco","isSoldAs":{"case":true,"split":false},"split":{"min":0,"max":0},"bvRating":null,"brand":"MERICO","isCatchWeight":false,"storageFlag":"C","isAvailable":true,"replacement":{"hasReplacement":false,"replacementMaterialId":"1210996"},"category":{"completeCategoryId":"06001005020","mainCategoryId":6,"label":"RAW"},"messages":[{"type":"info","message":"Stocked item"}],"flags":["null"],"images":["null"],"canBuy":true,"lastOrderedDate":"2016-05-30T04:37:59.399Z","nickName":null,"originalIndex":7},{"id":"1290550","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":8,"quantity":0,"quantityUom":"cs"}],"customerImages":[],"materialId":"1290550","packSize":{"pack":"153","size":"1.25OZ","uom":"cs"},"averageWeightPerCase":12,"name":"HAM SLI FOR BISCUIT 3.5 IN","description":"Ham Sliced For Biscuit 3.5","type":"sysco","isSoldAs":{"case":true,"split":false},"split":{"min":0,"max":0},"bvRating":null,"brand":"BRYAN","isCatchWeight":false,"storageFlag":"F","isAvailable":true,"replacement":{"hasReplacement":false,"replacementMaterialId":"1290550"},"category":{"completeCategoryId":"03004005001","mainCategoryId":3,"label":"COOKED HAM"},"messages":[{"type":"info","message":"Stocked item"}],"flags":["null"],"images":["null"],"canBuy":true,"lastOrderedDate":"2016-05-30T04:37:59.399Z","nickName":null,"originalIndex":8},{"id":"1677442","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":9,"quantity":0,"quantityUom":"cs"}],"customerImages":[],"materialId":"1677442","packSize":{"pack":"100","size":"2.5 OZ","uom":"cs"},"averageWeightPerCase":15.6,"name":"BISCUIT BTRMLK SLI 3\\"","description":null,"type":"sysco","isSoldAs":{"case":true,"split":false},"split":{"min":0,"max":0},"bvRating":null,"brand":"BRDGFRD","isCatchWeight":false,"storageFlag":"F","isAvailable":true,"replacement":{"hasReplacement":false,"replacementMaterialId":"1677442"},"category":{"completeCategoryId":"06001005010","mainCategoryId":6,"label":"FULLY BAKED"},"messages":[{"type":"info","message":"Stocked item"}],"flags":["null"],"images":["null"],"canBuy":true,"lastOrderedDate":"2016-05-30T04:37:59.400Z","nickName":null,"originalIndex":9},{"id":"1003953","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":10,"quantity":0,"quantityUom":"cs"}],"customerImages":[],"materialId":"1003953","packSize":{"pack":"50","size":"3.2 OZ","uom":"cs"},"averageWeightPerCase":10,"name":"BEEF PATTY CHKN-FRY PRECOOKED","description":null,"type":"sysco","isSoldAs":{"case":true,"split":false},"split":{"min":0,"max":0},"bvRating":null,"brand":"QTF","isCatchWeight":false,"storageFlag":"F","isAvailable":true,"replacement":{"hasReplacement":false,"replacementMaterialId":"1003953"},"category":{"completeCategoryId":"03002004003","mainCategoryId":3,"label":"PATTIES"},"messages":[{"type":"info","message":"Stocked item"}],"flags":["null"],"images":["null"],"canBuy":false,"lastOrderedDate":"2016-05-30T04:37:59.401Z","nickName":null,"originalIndex":10},{"id":"1017086","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":11,"quantity":0,"quantityUom":"cs"}],"customerImages":[],"materialId":"1017086","packSize":{"pack":"96","size":"4.5 OZ","uom":"cs"},"averageWeightPerCase":27,"name":"CHICKEN 8PC IQF CUT","description":null,"type":"sysco","isSoldAs":{"case":true,"split":false},"split":{"min":0,"max":0},"bvRating":null,"brand":"SYS CLS","isCatchWeight":false,"storageFlag":"F","isAvailable":true,"replacement":{"hasReplacement":false,"replacementMaterialId":"1017086"},"category":{"completeCategoryId":"05002001001","mainCategoryId":5,"label":"RAW IQF BONE-IN"},"messages":[{"type":"info","message":"Stocked item"}],"flags":["syscoBranded"],"images":["null"],"canBuy":true,"lastOrderedDate":"2016-05-30T04:37:59.402Z","nickName":null,"originalIndex":11},{"id":"1017094","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":12,"quantity":0,"quantityUom":"cs"}],"customerImages":[],"materialId":"1017094","packSize":{"pack":"60","size":"8.75OZ","uom":"cs"},"averageWeightPerCase":31,"name":"CHICKEN QUARTER IQF","description":null,"type":"sysco","isSoldAs":{"case":true,"split":false},"split":{"min":0,"max":0},"bvRating":null,"brand":"SYS CLS","isCatchWeight":false,"storageFlag":"F","isAvailable":true,"replacement":{"hasReplacement":false,"replacementMaterialId":"1017094"},"category":{"completeCategoryId":"05002001001","mainCategoryId":5,"label":"RAW IQF BONE-IN"},"messages":[{"type":"info","message":"Stocked item"}],"flags":["syscoBranded"],"images":["null"],"canBuy":true,"lastOrderedDate":"2016-05-30T04:37:59.402Z","nickName":null,"originalIndex":12},{"id":"1017102","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":13,"quantity":0,"quantityUom":"cs"}],"customerImages":[],"materialId":"1017102","packSize":{"pack":"48","size":"6.5 OZ","uom":"cs"},"averageWeightPerCase":19,"name":"CHICKEN BRST HALF IQF","description":null,"type":"sysco","isSoldAs":{"case":true,"split":false},"split":{"min":0,"max":0},"bvRating":null,"brand":"SYS CLS","isCatchWeight":false,"storageFlag":"F","isAvailable":true,"replacement":{"hasReplacement":false,"replacementMaterialId":"1017102"},"category":{"completeCategoryId":"05002001001","mainCategoryId":5,"label":"RAW IQF BONE-IN"},"messages":[{"type":"info","message":"Stocked item"}],"flags":["syscoBranded"],"images":["null"],"canBuy":true,"lastOrderedDate":"2016-05-30T04:37:59.403Z","nickName":null,"originalIndex":13},{"id":"1017144","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":14,"quantity":0,"quantityUom":"cs"}],"customerImages":[],"materialId":"1017144","packSize":{"pack":"1","size":"15 LB","uom":"cs"},"averageWeightPerCase":15,"name":"CHICKEN WING IQF DRUMET 1 JT","description":null,"type":"sysco","isSoldAs":{"case":true,"split":false},"split":{"min":0,"max":0},"bvRating":null,"brand":"SYS CLS","isCatchWeight":false,"storageFlag":"F","isAvailable":true,"replacement":{"hasReplacement":false,"replacementMaterialId":"1017144"},"category":{"completeCategoryId":"05002001001","mainCategoryId":5,"label":"RAW IQF BONE-IN"},"messages":[{"type":"info","message":"Stocked item"}],"flags":["syscoBranded"],"images":["null"],"canBuy":true,"lastOrderedDate":"2016-05-30T04:37:59.404Z","nickName":null,"originalIndex":14},{"id":"1204908","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":15,"quantity":0,"quantityUom":"cs"}],"customerImages":[],"materialId":"1204908","packSize":{"pack":"12","size":"4.4OZ","uom":"cs"},"averageWeightPerCase":4,"name":"CANDY BAR SNICKERS","description":"Candy Bar Snickers","type":"sysco","isSoldAs":{"case":true,"split":false},"split":{"min":0,"max":0},"bvRating":null,"brand":"MARS","isCatchWeight":false,"storageFlag":"C","isAvailable":true,"replacement":{"hasReplacement":false,"replacementMaterialId":"1204908"},"category":{"completeCategoryId":"07006001003","mainCategoryId":7,"label":"CANDY BARS"},"messages":[{"type":"info","message":"Stocked item"}],"flags":["null"],"images":["null"],"canBuy":true,"lastOrderedDate":"2016-05-30T04:37:59.404Z","nickName":null,"originalIndex":15},{"id":"1557214","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":16,"quantity":0,"quantityUom":"cs"}],"customerImages":[],"materialId":"1557214","packSize":{"pack":"1","size":"20 LB","uom":"cs"},"averageWeightPerCase":20,"name":"CANDY BAR SNICKER FUNSIZE","description":null,"type":"sysco","isSoldAs":{"case":true,"split":false},"split":{"min":0,"max":0},"bvRating":null,"brand":"MARS","isCatchWeight":false,"storageFlag":"C","isAvailable":true,"replacement":{"hasReplacement":false,"replacementMaterialId":"1557214"},"category":{"completeCategoryId":"07006001003","mainCategoryId":7,"label":"CANDY BARS"},"messages":[{"type":"info","message":"Stocked item"}],"flags":["null"],"images":["null"],"canBuy":true,"lastOrderedDate":"2016-05-30T04:37:59.405Z","nickName":null,"originalIndex":16},{"id":"2522191","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":17,"quantity":0,"quantityUom":"cs"}],"customerImages":[],"materialId":"2522191","packSize":{"pack":"2","size":"100 CT","uom":"cs"},"averageWeightPerCase":10,"name":"CANDY MINT CHANGEMAKER","description":null,"type":"sysco","isSoldAs":{"case":true,"split":false},"split":{"min":0,"max":0},"bvRating":null,"brand":"FAZRMNT","isCatchWeight":false,"storageFlag":"D","isAvailable":true,"replacement":{"hasReplacement":false,"replacementMaterialId":"2522191"},"category":{"completeCategoryId":"07006001001","mainCategoryId":7,"label":"MINTS"},"messages":[{"type":"info","message":"Remote stock / Drop ship"}],"flags":["null"],"images":["null"],"canBuy":true,"lastOrderedDate":"2016-05-30T04:37:59.406Z","nickName":null,"originalIndex":17},{"id":"3505187","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":18,"quantity":0,"quantityUom":"cs"}],"customerImages":[],"materialId":"3505187","packSize":{"pack":"240","size":"1.5 OZ","uom":"cs"},"averageWeightPerCase":22.5,"name":"DOUGH COOKIE CANDY CHOC CHIP","description":null,"type":"sysco","isSoldAs":{"case":true,"split":false},"split":{"min":0,"max":0},"bvRating":null,"brand":"MRSRICH","isCatchWeight":false,"storageFlag":"F","isAvailable":true,"replacement":{"hasReplacement":false,"replacementMaterialId":"3505187"},"category":{"completeCategoryId":"06001040020","mainCategoryId":6,"label":"RAW DGH-PIECES"},"messages":[{"type":"info","message":"Stocked item"}],"flags":["null"],"images":["null"],"canBuy":true,"lastOrderedDate":"2016-05-30T04:37:59.407Z","nickName":null,"originalIndex":18},{"id":"3872645","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":19,"quantity":0,"quantityUom":"cs"}],"customerImages":[],"materialId":"3872645","packSize":{"pack":"1","size":"11 LB","uom":"cs"},"averageWeightPerCase":11,"name":"CANDY GINGER CHEWS","description":"Candy Ginger Chews","type":"sysco","isSoldAs":{"case":true,"split":false},"split":{"min":0,"max":0},"bvRating":null,"brand":"GINGERP","isCatchWeight":false,"storageFlag":"D","isAvailable":true,"replacement":{"hasReplacement":false,"replacementMaterialId":"3872645"},"category":{"completeCategoryId":"07044030002","mainCategoryId":7,"label":"CANDY"},"messages":[{"type":"info","message":"Remote stock / Drop ship"}],"flags":["null"],"images":["null"],"canBuy":true,"lastOrderedDate":"2016-05-30T04:37:59.407Z","nickName":null,"originalIndex":19}]}
+$$$$$$ Response Body For Transaction With Id 53 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+/app/inventory/setup/expensecategories
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Add Event For Transaction With Id 53 ****** (Location Flag : tFlagInsertEnd, Location ID : 53)
+	web_url("current",
+		"URL=https://onlineapi-qa.cloud.sysco.com/inventories/current?withAllProductAttributes=true",
+		"Resource=1",
+		"RecContentType=application/json",
+		"Referer=",
+		"Snapshot=t6.inf",
+		LAST);
+
+
+$$$$$$ Add Event For Transaction With Id 53 Ended $$$$$$
+
+****** Request Header For Transaction With Id 61 ******
+GET https://onlineapi-qa.cloud.sysco.com/groups?type=location HTTP/1.1
+Host: onlineapi-qa.cloud.sysco.com
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-N920T Build/MMB29K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/50.0.2661.86 Mobile Safari/537.36
+JSESSIONID: 0000TyfmSAKniQyerkIoMLOzipA:-1
+Authorization: Bearer 067|431262|PTNormal41
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US
+Cookie: JSESSIONID=0000vuUvAYMh7FI5XmJ33JAZp4S:-1; system=sus; Path=/; homePath=OMAPX_r20.0.0.2; BNES_JSESSIONID=xPXvA5X+Aw5V4CP9YvdThUaZp+GRu7XOiQRy5gmVjOleVrnwDf9bIjoSChcYZPPBrS8k3LI8qXwRmMH44u32kO4oVy03kKu3PdLX/5jKIPVRO++B80qOgg==; BNES_system=29kP3kpLbi1wEdj4kOIbqrO7Pd/CB2oOU7ibPdgFMAN8IKrX7W0ci8gIr84h7rjRY+RjObaMqds=; BNES_homePath=omg3yBmQZ5oNznlwFvi/bCvGSzJJPiEa7eFRpm4tAJGtZgjdtNUVMs1LbPiT+rRBU5WXLLGm/HwwXHwibb3v1xAPiRvnW2Zc
+X-Requested-With: com.syscocorp.uomqa
+
+
+$$$$$$ Request Header For Transaction With Id 61 Ended $$$$$$
+
+****** Response Header For Transaction With Id 61 ******
+HTTP/1.1 200 OK
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: sus-session
+Content-Type: application/json; charset=utf-8
+Date: Mon, 30 May 2016 04:38:05 GMT
+Content-Length: 646
+Connection: keep-alive
+
+
+$$$$$$ Response Header For Transaction With Id 61 Ended $$$$$$
+
+****** Response Body For Transaction With Id 61 ******
+{"groups":[{"id":"df8eaa86-c00a-4f75-aca5-edc20541a4bf","name":"Cooler","storage":"C","type":"location","opCo":"067","customerId":"431262","deleted":false,"sequence":1},{"id":"a049505a-7615-4367-94e6-f112bc524b3a","name":"Freezer","storage":"F","type":"location","opCo":"067","customerId":"431262","deleted":false,"sequence":2},{"id":"edca4da3-00e4-48cd-9214-292ddb483eca","name":"Dry","storage":"D","type":"location","opCo":"067","customerId":"431262","deleted":false,"sequence":3},{"id":"abc546af-9c59-4319-9ca1-78d290731783","name":"no location","storage":"","type":"location","opCo":"067","customerId":"431262","deleted":false,"sequence":4}]}
+$$$$$$ Response Body For Transaction With Id 61 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+/app/inventory/setup/expensecategories
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Add Event For Transaction With Id 1000045 ****** (Location Flag : tFlagInsertBefore, Location ID : 53)
+	web_concurrent_start(NULL);
+
+
+$$$$$$ Add Event For Transaction With Id 1000045 Ended $$$$$$
+
+****** Add Event For Transaction With Id 0 ****** (Location Flag : tFlagInsertAfter, Location ID : 53)
+	web_concurrent_end(NULL);
+
+
+$$$$$$ Add Event For Transaction With Id 0 Ended $$$$$$
+
+****** Add Event For Transaction With Id 61 ****** (Location Flag : tFlagInsertAfter, Location ID : 53)
+	web_url("groups",
+		"URL=https://onlineapi-qa.cloud.sysco.com/groups?type=location",
+		"Resource=1",
+		"RecContentType=application/json",
+		"Referer=",
+		"Snapshot=t7.inf",
+		LAST);
+
+
+$$$$$$ Add Event For Transaction With Id 61 Ended $$$$$$
+
+****** Request Header For Transaction With Id 69 ******
+GET https://onlineapi-qa.cloud.sysco.com/groups HTTP/1.1
+Host: onlineapi-qa.cloud.sysco.com
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-N920T Build/MMB29K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/50.0.2661.86 Mobile Safari/537.36
+JSESSIONID: 0000TyfmSAKniQyerkIoMLOzipA:-1
+Authorization: Bearer 067|431262|PTNormal41
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US
+Cookie: JSESSIONID=0000vuUvAYMh7FI5XmJ33JAZp4S:-1; system=sus; Path=/; homePath=OMAPX_r20.0.0.2; BNES_JSESSIONID=xPXvA5X+Aw5V4CP9YvdThUaZp+GRu7XOiQRy5gmVjOleVrnwDf9bIjoSChcYZPPBrS8k3LI8qXwRmMH44u32kO4oVy03kKu3PdLX/5jKIPVRO++B80qOgg==; BNES_system=29kP3kpLbi1wEdj4kOIbqrO7Pd/CB2oOU7ibPdgFMAN8IKrX7W0ci8gIr84h7rjRY+RjObaMqds=; BNES_homePath=omg3yBmQZ5oNznlwFvi/bCvGSzJJPiEa7eFRpm4tAJGtZgjdtNUVMs1LbPiT+rRBU5WXLLGm/HwwXHwibb3v1xAPiRvnW2Zc
+X-Requested-With: com.syscocorp.uomqa
+
+
+$$$$$$ Request Header For Transaction With Id 69 Ended $$$$$$
+
+****** Response Header For Transaction With Id 69 ******
+HTTP/1.1 200 OK
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: sus-session
+Content-Type: application/json; charset=utf-8
+Date: Mon, 30 May 2016 04:38:06 GMT
+Content-Length: 987
+Connection: keep-alive
+
+
+$$$$$$ Response Header For Transaction With Id 69 Ended $$$$$$
+
+****** Response Body For Transaction With Id 69 ******
+{"groups":[{"id":"d94ad58d-b762-481c-b0a7-3c4d3738b380","name":"Food","type":"expenseCategory","foodType":"food","opCo":"067","customerId":"431262","deleted":false,"sequence":1},{"id":"df8eaa86-c00a-4f75-aca5-edc20541a4bf","name":"Cooler","storage":"C","type":"location","opCo":"067","customerId":"431262","deleted":false,"sequence":1},{"id":"08c01050-e0e8-42c9-9df0-3f9f200bb390","name":"Non-Food","type":"expenseCategory","foodType":"nonFood","opCo":"067","customerId":"431262","deleted":false,"sequence":2},{"id":"a049505a-7615-4367-94e6-f112bc524b3a","name":"Freezer","storage":"F","type":"location","opCo":"067","customerId":"431262","deleted":false,"sequence":2},{"id":"edca4da3-00e4-48cd-9214-292ddb483eca","name":"Dry","storage":"D","type":"location","opCo":"067","customerId":"431262","deleted":false,"sequence":3},{"id":"abc546af-9c59-4319-9ca1-78d290731783","name":"no location","storage":"","type":"location","opCo":"067","customerId":"431262","deleted":false,"sequence":6}]}
+$$$$$$ Response Body For Transaction With Id 69 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+/app/inventory/setup/expensecategories
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Add Event For Transaction With Id 69 ****** (Location Flag : tFlagInsertAfter, Location ID : 61)
+	web_url("groups_2",
+		"URL=https://onlineapi-qa.cloud.sysco.com/groups",
+		"Resource=1",
+		"RecContentType=application/json",
+		"Referer=",
+		"Snapshot=t8.inf",
+		LAST);
+
+
+$$$$$$ Add Event For Transaction With Id 69 Ended $$$$$$
+
+****** Request Header For Transaction With Id 77 ******
+PUT https://onlineapi-qa.cloud.sysco.com/inventories/8dc1e573-397f-40b8-bd3e-ba22a2c9e609 HTTP/1.1
+Host: onlineapi-qa.cloud.sysco.com
+Connection: keep-alive
+Content-Length: 18041
+User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-N920T Build/MMB29K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/50.0.2661.86 Mobile Safari/537.36
+Origin: file://
+JSESSIONID: 0000TyfmSAKniQyerkIoMLOzipA:-1
+Authorization: Bearer 067|431262|PTNormal41
+Content-Type: application/json
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US
+Cookie: JSESSIONID=0000vuUvAYMh7FI5XmJ33JAZp4S:-1; system=sus; Path=/; homePath=OMAPX_r20.0.0.2; BNES_JSESSIONID=xPXvA5X+Aw5V4CP9YvdThUaZp+GRu7XOiQRy5gmVjOleVrnwDf9bIjoSChcYZPPBrS8k3LI8qXwRmMH44u32kO4oVy03kKu3PdLX/5jKIPVRO++B80qOgg==; BNES_system=29kP3kpLbi1wEdj4kOIbqrO7Pd/CB2oOU7ibPdgFMAN8IKrX7W0ci8gIr84h7rjRY+RjObaMqds=; BNES_homePath=omg3yBmQZ5oNznlwFvi/bCvGSzJJPiEa7eFRpm4tAJGtZgjdtNUVMs1LbPiT+rRBU5WXLLGm/HwwXHwibb3v1xAPiRvnW2Zc
+X-Requested-With: com.syscocorp.uomqa
+
+
+$$$$$$ Request Header For Transaction With Id 77 Ended $$$$$$
+
+****** Request Body For Transaction With Id 77 ******
+{"items":[{"id":"1112606","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":0,"quantity":10,"quantityUom":"cs"}],"customerImages":[],"materialId":"1112606","packSize":{"pack":"1","size":"40 LB","uom":"cs"},"averageWeightPerCase":40,"name":"MILKFISH WHOLE","description":null,"type":"sysco","isSoldAs":{"case":true,"split":false},"split":{"min":0,"max":0},"bvRating":null,"brand":"PACKER","isCatchWeight":false,"storageFlag":"F","isAvailable":true,"replacement":{"hasReplacement":false,"replacementMaterialId":"1112606"},"category":{"completeCategoryId":"04003099099","mainCategoryId":4,"label":"MISC."},"messages":[{"type":"info","message":"Demand status"}],"flags":["null"],"images":["null"],"canBuy":true,"lastOrderedDate":"2016-05-30T04:37:59.393Z","nickName":null,"originalIndex":0},{"id":"1190669","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","seque
+$$$$$$ Request Body For Transaction With Id 77 Ended $$$$$$
+
+****** Response Header For Transaction With Id 77 ******
+HTTP/1.1 200 OK
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE
+Access-Control-Allow-Origin: file://
+Access-Control-Expose-Headers: sus-session
+Content-Type: application/json; charset=utf-8
+Date: Mon, 30 May 2016 04:39:04 GMT
+Content-Length: 4393
+Connection: keep-alive
+
+
+$$$$$$ Response Header For Transaction With Id 77 Ended $$$$$$
+
+****** Response Body For Transaction With Id 77 ******
+{"id":"8dc1e573-397f-40b8-bd3e-ba22a2c9e609","opCo":"067","customerId":"431262","openDate":"2016-05-30T04:37:45.481Z","state":"open","items":[{"id":"1112606","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":0,"quantity":10,"quantityUom":"cs"}],"customerImages":[]},{"id":"1190669","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":1,"quantity":10,"quantityUom":"cs"}],"customerImages":[]},{"id":"1190677","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":2,"quantity":10,"quantityUom":"cs"}],"customerImages":[]},{"id":"1190727","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":3,"quantity":10,"quantityUom":"cs"}],"customerImages":[]},{"id":"1190735","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":4,"quantity":10,"quantityUom":"cs"}],"customerImages":[]},{"id":"1004449","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":5,"quantity":10,"quantityUom":"cs"}],"customerImages":[]},{"id":"1006410","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":6,"quantity":10,"quantityUom":"cs"}],"customerImages":[]},{"id":"1210996","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":7,"quantity":10,"quantityUom":"cs"}],"customerImages":[]},{"id":"1290550","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":8,"quantity":10,"quantityUom":"cs"}],"customerImages":[]},{"id":"1677442","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":9,"quantity":10,"quantityUom":"cs"}],"customerImages":[]},{"id":"1003953","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":10,"quantity":10,"quantityUom":"cs"}],"customerImages":[]},{"id":"1017086","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":11,"quantity":10,"quantityUom":"cs"}],"customerImages":[]},{"id":"1017094","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":12,"quantity":10,"quantityUom":"cs"}],"customerImages":[]},{"id":"1017102","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":13,"quantity":10,"quantityUom":"cs"}],"customerImages":[]},{"id":"1017144","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":14,"quantity":10,"quantityUom":"cs"}],"customerImages":[]},{"id":"1204908","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":15,"quantity":10,"quantityUom":"cs"}],"customerImages":[]},{"id":"1557214","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":16,"quantity":10,"quantityUom":"cs"}],"customerImages":[]},{"id":"2522191","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":17,"quantity":10,"quantityUom":"cs"}],"customerImages":[]},{"id":"3505187","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":18,"quantity":10,"quantityUom":"cs"}],"customerImages":[]},{"id":"3872645","priceUom":"cs","groups":[{"groupId":"d94ad58d-b762-481c-b0a7-3c4d3738b380"},{"groupId":"edca4da3-00e4-48cd-9214-292ddb483eca","sequence":19,"quantity":10,"quantityUom":"cs"}],"customerImages":[]}]}
+$$$$$$ Response Body For Transaction With Id 77 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+/app/inventory/setup/expensecategories
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Add Event For Transaction With Id 77 ****** (Location Flag : tFlagInsertEnd, Location ID : 77)
+	web_custom_request("8dc1e573-397f-40b8-bd3e-ba22a2c9e609",
+		"URL=https://onlineapi-qa.cloud.sysco.com/inventories/8dc1e573-397f-40b8-bd3e-ba22a2c9e609",
+		"Method=PUT",
+		"Resource=0",
+		"RecContentType=application/json",
+		"Referer=",
+		"Snapshot=t9.inf",
+		"Mode=HTTP",
+		"Body={\"items\":[{\"id\":\"1112606\",\"priceUom\":\"cs\",\"groups\":[{\"groupId\":\"d94ad58d-b762-481c-b0a7-3c4d3738b380\"},{\"groupId\":\"edca4da3-00e4-48cd-9214-292ddb483eca\",\"sequence\":0,\"quantity\":10,\"quantityUom\":\"cs\"}],\"customerImages\":[],\"materialId\":\"1112606\",\"packSize\":{\"pack\":\"1\",\"size\":\"40 LB\",\"uom\":\"cs\"},\"averageWeightPerCase\":40,\"name\":\"MILKFISH WHOLE\",\"description\":null,\"type\":\"sysco\",\"isSoldAs\":{\"case\":true,\"split\":false},\"split\":{\"min\":0,\"max\":0},\"bvRating\":null,\"brand\":\"PACKER\",\"isCatchWeight\":false,\"storageFlag\":\"F\",\"isAvailable\":true,\"replacement\":{\"hasReplacement\":false,\"replacementMaterialId\":\"1112606\"},\"category\":{\"completeCategoryId\":\"04003099099\",\"mainCategoryId\":4,\"label\":\"MISC.\"},\"messages\":[{\"type\":\"info\",\"message\":\"Demand status\"}],\"flags\":[\"null\"],\"images\":[\"null\"],\"canBuy\":true,\"lastOrderedDate\":\"2016-05-30T04:37:59.393Z\",\"nickName\":null,\"originalIndex\":0},{\"id\":"
+		"\"1190669\",\"priceUom\":\"cs\",\"groups\":[{\"groupId\":\"d94ad58d-b762-481c-b0a7-3c4d3738b380\"},{\"groupId\":\"edca4da3-00e4-48cd-9214-292ddb483eca\",\"sequence\":1,\"quantity\":10,\"quantityUom\":\"cs\"}],\"customerImages\":[],\"materialId\":\"1190669\",\"packSize\":{\"pack\":\"16\",\"size\":\".5 PT\",\"uom\":\"cs\"},\"averageWeightPerCase\":12,\"name\":\"MILK WHL\",\"description\":null,\"type\":\"sysco\",\"isSoldAs\":{\"case\":true,\"split\":false},\"split\":{\"min\":0,\"max\":0},\"bvRating\":null,\"brand\":\"PACKER\",\"isCatchWeight\":false,\"storageFlag\":\"C\",\"isAvailable\":true,\"replacement\":{\"hasReplacement\":true,\"replacementMaterialId\":\"5069323\"},\"category\":{\"completeCategoryId\":\"02005004002\",\"mainCategoryId\":2,\"label\":\"PORTION PACK\"},\"messages\":[{\"type\":\"info\",\"message\":\"Stocked item\"},{\"type\":\"warning\",\"message\":\"Leaving Soon. Replacement available\"}],\"flags\":[\"null\"],\"images\":[\"null\"],\"canBuy\":true,\"lastOrderedDate\":\"2016-05-30T04:37:59.394Z"
+		"\",\"nickName\":null,\"originalIndex\":1},{\"id\":\"1190677\",\"priceUom\":\"cs\",\"groups\":[{\"groupId\":\"d94ad58d-b762-481c-b0a7-3c4d3738b380\"},{\"groupId\":\"edca4da3-00e4-48cd-9214-292ddb483eca\",\"sequence\":2,\"quantity\":10,\"quantityUom\":\"cs\"}],\"customerImages\":[],\"materialId\":\"1190677\",\"packSize\":{\"pack\":\"16\",\"size\":\".5 PT\",\"uom\":\"cs\"},\"averageWeightPerCase\":12,\"name\":\"MILK LO FAT 2%\",\"description\":null,\"type\":\"sysco\",\"isSoldAs\":{\"case\":true,\"split\":false},\"split\":{\"min\":0,\"max\":0},\"bvRating\":null,\"brand\":\"PACKER\",\"isCatchWeight\":false,\"storageFlag\":\"C\",\"isAvailable\":true,\"replacement\":{\"hasReplacement\":true,\"replacementMaterialId\":\"5069323\"},\"category\":{\"completeCategoryId\":\"02005004002\",\"mainCategoryId\":2,\"label\":\"PORTION PACK\"},\"messages\":[{\"type\":\"info\",\"message\":\"Stocked item\"},{\"type\":\"warning\",\"message\":\"Leaving Soon. Replacement available\"}],\"flags\":[\"null\"],\"images\":[\"null\"],\"canB"
+		"uy\":true,\"lastOrderedDate\":\"2016-05-30T04:37:59.395Z\",\"nickName\":null,\"originalIndex\":2},{\"id\":\"1190727\",\"priceUom\":\"cs\",\"groups\":[{\"groupId\":\"d94ad58d-b762-481c-b0a7-3c4d3738b380\"},{\"groupId\":\"edca4da3-00e4-48cd-9214-292ddb483eca\",\"sequence\":3,\"quantity\":10,\"quantityUom\":\"cs\"}],\"customerImages\":[],\"materialId\":\"1190727\",\"packSize\":{\"pack\":\"16\",\"size\":\".5 PT\",\"uom\":\"cs\"},\"averageWeightPerCase\":12,\"name\":\"MILK SKIM\",\"description\":null,\"type\":\"sysco\",\"isSoldAs\":{\"case\":true,\"split\":false},\"split\":{\"min\":0,\"max\":0},\"bvRating\":null,\"brand\":\"PACKER\",\"isCatchWeight\":false,\"storageFlag\":\"C\",\"isAvailable\":true,\"replacement\":{\"hasReplacement\":false,\"replacementMaterialId\":\"1190727\"},\"category\":{\"completeCategoryId\":\"02005004002\",\"mainCategoryId\":2,\"label\":\"PORTION PACK\"},\"messages\":[{\"type\":\"info\",\"message\":\"Stocked item\"}],\"flags\":[\"null\"],\"images\":[\"null\"],\"canBuy\":true,\"lastOrdered"
+		"Date\":\"2016-05-30T04:37:59.396Z\",\"nickName\":null,\"originalIndex\":3},{\"id\":\"1190735\",\"priceUom\":\"cs\",\"groups\":[{\"groupId\":\"d94ad58d-b762-481c-b0a7-3c4d3738b380\"},{\"groupId\":\"edca4da3-00e4-48cd-9214-292ddb483eca\",\"sequence\":4,\"quantity\":10,\"quantityUom\":\"cs\"}],\"customerImages\":[],\"materialId\":\"1190735\",\"packSize\":{\"pack\":\"16\",\"size\":\".5 PT\",\"uom\":\"cs\"},\"averageWeightPerCase\":12,\"name\":\"MILK CHOCOLATE\",\"description\":null,\"type\":\"sysco\",\"isSoldAs\":{\"case\":true,\"split\":false},\"split\":{\"min\":0,\"max\":0},\"bvRating\":null,\"brand\":\"PACKER\",\"isCatchWeight\":false,\"storageFlag\":\"C\",\"isAvailable\":true,\"replacement\":{\"hasReplacement\":false,\"replacementMaterialId\":\"1190735\"},\"category\":{\"completeCategoryId\":\"02005004002\",\"mainCategoryId\":2,\"label\":\"PORTION PACK\"},\"messages\":[{\"type\":\"info\",\"message\":\"Stocked item\"}],\"flags\":[\"null\"],\"images\":[\"null\"],\"canBuy\":true,\"lastOrderedDate\":\"2016-05-3"
+		"0T04:37:59.396Z\",\"nickName\":null,\"originalIndex\":4},{\"id\":\"1004449\",\"priceUom\":\"cs\",\"groups\":[{\"groupId\":\"d94ad58d-b762-481c-b0a7-3c4d3738b380\"},{\"groupId\":\"edca4da3-00e4-48cd-9214-292ddb483eca\",\"sequence\":5,\"quantity\":10,\"quantityUom\":\"cs\"}],\"customerImages\":[],\"materialId\":\"1004449\",\"packSize\":{\"pack\":\"12\",\"size\":\"8 CT\",\"uom\":\"cs\"},\"averageWeightPerCase\":12,\"name\":\"DOUGH BISCUIT BUTR FLVR JB\",\"description\":\"Dough Biscuit Butter Flavor Jumbo\",\"type\":\"sysco\",\"isSoldAs\":{\"case\":true,\"split\":false},\"split\":{\"min\":0,\"max\":0},\"bvRating\":null,\"brand\":\"MERICO\",\"isCatchWeight\":false,\"storageFlag\":\"C\",\"isAvailable\":true,\"replacement\":{\"hasReplacement\":false,\"replacementMaterialId\":\"1004449\"},\"category\":{\"completeCategoryId\":\"06001005020\",\"mainCategoryId\":6,\"label\":\"RAW\"},\"messages\":[{\"type\":\"info\",\"message\":\"Stocked item\"}],\"flags\":[\"null\"],\"images\":[\"null\"],\"canBuy\":true,\"lastOrderedD"
+		"ate\":\"2016-05-30T04:37:59.397Z\",\"nickName\":null,\"originalIndex\":5},{\"id\":\"1006410\",\"priceUom\":\"cs\",\"groups\":[{\"groupId\":\"d94ad58d-b762-481c-b0a7-3c4d3738b380\"},{\"groupId\":\"edca4da3-00e4-48cd-9214-292ddb483eca\",\"sequence\":6,\"quantity\":10,\"quantityUom\":\"cs\"}],\"customerImages\":[],\"materialId\":\"1006410\",\"packSize\":{\"pack\":\"60\",\"size\":\"2 CT\",\"uom\":\"cs\"},\"averageWeightPerCase\":10.3,\"name\":\"SANDWICH SAUS &BISC PRCK 2.75Z\",\"description\":\"Sandwich Sausage & Biscuit Precooked 2.75 oz\",\"type\":\"sysco\",\"isSoldAs\":{\"case\":true,\"split\":false},\"split\":{\"min\":0,\"max\":0},\"bvRating\":null,\"brand\":\"RUDYS\",\"isCatchWeight\":false,\"storageFlag\":\"F\",\"isAvailable\":true,\"replacement\":{\"hasReplacement\":false,\"replacementMaterialId\":\"1006410\"},\"category\":{\"completeCategoryId\":\"06002045005\",\"mainCategoryId\":6,\"label\":\"BISCUIT\"},\"messages\":[{\"type\":\"info\",\"message\":\"Stocked item\"}],\"flags\":[\"null\"],\"images\":[\"."
+		"/1006410/web/1.jpg\",\"./1006410/web/7.jpg\",\"./1006410/web/6.jpg\",\"./1006410/web/5.jpg\",\"./1006410/web/4.jpg\",\"./1006410/web/3.jpg\",\"./1006410/web/2.jpg\"],\"canBuy\":true,\"lastOrderedDate\":\"2016-05-30T04:37:59.398Z\",\"nickName\":null,\"originalIndex\":6},{\"id\":\"1210996\",\"priceUom\":\"cs\",\"groups\":[{\"groupId\":\"d94ad58d-b762-481c-b0a7-3c4d3738b380\"},{\"groupId\":\"edca4da3-00e4-48cd-9214-292ddb483eca\",\"sequence\":7,\"quantity\":10,\"quantityUom\":\"cs\"}],\"customerImages\":[],\"materialId\":\"1210996\",\"packSize\":{\"pack\":\"12\",\"size\":\"10 CT\",\"uom\":\"cs\"},\"averageWeightPerCase\":9,\"name\":\"DOUGH BISCUIT BTRMLK TX STYLE\",\"description\":null,\"type\":\"sysco\",\"isSoldAs\":{\"case\":true,\"split\":false},\"split\":{\"min\":0,\"max\":0},\"bvRating\":null,\"brand\":\"MERICO\",\"isCatchWeight\":false,\"storageFlag\":\"C\",\"isAvailable\":true,\"replacement\":{\"hasReplacement\":false,\"replacementMaterialId\":\"1210996\"},\"category\":{\"completeCategoryId\":\"06001005"
+		"020\",\"mainCategoryId\":6,\"label\":\"RAW\"},\"messages\":[{\"type\":\"info\",\"message\":\"Stocked item\"}],\"flags\":[\"null\"],\"images\":[\"null\"],\"canBuy\":true,\"lastOrderedDate\":\"2016-05-30T04:37:59.399Z\",\"nickName\":null,\"originalIndex\":7},{\"id\":\"1290550\",\"priceUom\":\"cs\",\"groups\":[{\"groupId\":\"d94ad58d-b762-481c-b0a7-3c4d3738b380\"},{\"groupId\":\"edca4da3-00e4-48cd-9214-292ddb483eca\",\"sequence\":8,\"quantity\":10,\"quantityUom\":\"cs\"}],\"customerImages\":[],\"materialId\":\"1290550\",\"packSize\":{\"pack\":\"153\",\"size\":\"1.25OZ\",\"uom\":\"cs\"},\"averageWeightPerCase\":12,\"name\":\"HAM SLI FOR BISCUIT 3.5 IN\",\"description\":\"Ham Sliced For Biscuit 3.5\",\"type\":\"sysco\",\"isSoldAs\":{\"case\":true,\"split\":false},\"split\":{\"min\":0,\"max\":0},\"bvRating\":null,\"brand\":\"BRYAN\",\"isCatchWeight\":false,\"storageFlag\":\"F\",\"isAvailable\":true,\"replacement\":{\"hasReplacement\":false,\"replacementMaterialId\":\"1290550\"},\"category\":{\"completeCategoryId"
+		"\":\"03004005001\",\"mainCategoryId\":3,\"label\":\"COOKED HAM\"},\"messages\":[{\"type\":\"info\",\"message\":\"Stocked item\"}],\"flags\":[\"null\"],\"images\":[\"null\"],\"canBuy\":true,\"lastOrderedDate\":\"2016-05-30T04:37:59.399Z\",\"nickName\":null,\"originalIndex\":8},{\"id\":\"1677442\",\"priceUom\":\"cs\",\"groups\":[{\"groupId\":\"d94ad58d-b762-481c-b0a7-3c4d3738b380\"},{\"groupId\":\"edca4da3-00e4-48cd-9214-292ddb483eca\",\"sequence\":9,\"quantity\":10,\"quantityUom\":\"cs\"}],\"customerImages\":[],\"materialId\":\"1677442\",\"packSize\":{\"pack\":\"100\",\"size\":\"2.5 OZ\",\"uom\":\"cs\"},\"averageWeightPerCase\":15.6,\"name\":\"BISCUIT BTRMLK SLI 3\\\"\",\"description\":null,\"type\":\"sysco\",\"isSoldAs\":{\"case\":true,\"split\":false},\"split\":{\"min\":0,\"max\":0},\"bvRating\":null,\"brand\":\"BRDGFRD\",\"isCatchWeight\":false,\"storageFlag\":\"F\",\"isAvailable\":true,\"replacement\":{\"hasReplacement\":false,\"replacementMaterialId\":\"1677442\"},\"category\":{\"completeCategoryId\":\""
+		"06001005010\",\"mainCategoryId\":6,\"label\":\"FULLY BAKED\"},\"messages\":[{\"type\":\"info\",\"message\":\"Stocked item\"}],\"flags\":[\"null\"],\"images\":[\"null\"],\"canBuy\":true,\"lastOrderedDate\":\"2016-05-30T04:37:59.400Z\",\"nickName\":null,\"originalIndex\":9},{\"id\":\"1003953\",\"priceUom\":\"cs\",\"groups\":[{\"groupId\":\"d94ad58d-b762-481c-b0a7-3c4d3738b380\"},{\"groupId\":\"edca4da3-00e4-48cd-9214-292ddb483eca\",\"sequence\":10,\"quantity\":10,\"quantityUom\":\"cs\"}],\"customerImages\":[],\"materialId\":\"1003953\",\"packSize\":{\"pack\":\"50\",\"size\":\"3.2 OZ\",\"uom\":\"cs\"},\"averageWeightPerCase\":10,\"name\":\"BEEF PATTY CHKN-FRY PRECOOKED\",\"description\":null,\"type\":\"sysco\",\"isSoldAs\":{\"case\":true,\"split\":false},\"split\":{\"min\":0,\"max\":0},\"bvRating\":null,\"brand\":\"QTF\",\"isCatchWeight\":false,\"storageFlag\":\"F\",\"isAvailable\":true,\"replacement\":{\"hasReplacement\":false,\"replacementMaterialId\":\"1003953\"},\"category\":{\"completeCategoryId\":\"03002"
+		"004003\",\"mainCategoryId\":3,\"label\":\"PATTIES\"},\"messages\":[{\"type\":\"info\",\"message\":\"Stocked item\"}],\"flags\":[\"null\"],\"images\":[\"null\"],\"canBuy\":false,\"lastOrderedDate\":\"2016-05-30T04:37:59.401Z\",\"nickName\":null,\"originalIndex\":10},{\"id\":\"1017086\",\"priceUom\":\"cs\",\"groups\":[{\"groupId\":\"d94ad58d-b762-481c-b0a7-3c4d3738b380\"},{\"groupId\":\"edca4da3-00e4-48cd-9214-292ddb483eca\",\"sequence\":11,\"quantity\":10,\"quantityUom\":\"cs\"}],\"customerImages\":[],\"materialId\":\"1017086\",\"packSize\":{\"pack\":\"96\",\"size\":\"4.5 OZ\",\"uom\":\"cs\"},\"averageWeightPerCase\":27,\"name\":\"CHICKEN 8PC IQF CUT\",\"description\":null,\"type\":\"sysco\",\"isSoldAs\":{\"case\":true,\"split\":false},\"split\":{\"min\":0,\"max\":0},\"bvRating\":null,\"brand\":\"SYS CLS\",\"isCatchWeight\":false,\"storageFlag\":\"F\",\"isAvailable\":true,\"replacement\":{\"hasReplacement\":false,\"replacementMaterialId\":\"1017086\"},\"category\":{\"completeCategoryId\":\"05002001001\",\"ma"
+		"inCategoryId\":5,\"label\":\"RAW IQF BONE-IN\"},\"messages\":[{\"type\":\"info\",\"message\":\"Stocked item\"}],\"flags\":[\"syscoBranded\"],\"images\":[\"null\"],\"canBuy\":true,\"lastOrderedDate\":\"2016-05-30T04:37:59.402Z\",\"nickName\":null,\"originalIndex\":11},{\"id\":\"1017094\",\"priceUom\":\"cs\",\"groups\":[{\"groupId\":\"d94ad58d-b762-481c-b0a7-3c4d3738b380\"},{\"groupId\":\"edca4da3-00e4-48cd-9214-292ddb483eca\",\"sequence\":12,\"quantity\":10,\"quantityUom\":\"cs\"}],\"customerImages\":[],\"materialId\":\"1017094\",\"packSize\":{\"pack\":\"60\",\"size\":\"8.75OZ\",\"uom\":\"cs\"},\"averageWeightPerCase\":31,\"name\":\"CHICKEN QUARTER IQF\",\"description\":null,\"type\":\"sysco\",\"isSoldAs\":{\"case\":true,\"split\":false},\"split\":{\"min\":0,\"max\":0},\"bvRating\":null,\"brand\":\"SYS CLS\",\"isCatchWeight\":false,\"storageFlag\":\"F\",\"isAvailable\":true,\"replacement\":{\"hasReplacement\":false,\"replacementMaterialId\":\"1017094\"},\"category\":{\"completeCategoryId\":\"05002001001\",\""
+		"mainCategoryId\":5,\"label\":\"RAW IQF BONE-IN\"},\"messages\":[{\"type\":\"info\",\"message\":\"Stocked item\"}],\"flags\":[\"syscoBranded\"],\"images\":[\"null\"],\"canBuy\":true,\"lastOrderedDate\":\"2016-05-30T04:37:59.402Z\",\"nickName\":null,\"originalIndex\":12},{\"id\":\"1017102\",\"priceUom\":\"cs\",\"groups\":[{\"groupId\":\"d94ad58d-b762-481c-b0a7-3c4d3738b380\"},{\"groupId\":\"edca4da3-00e4-48cd-9214-292ddb483eca\",\"sequence\":13,\"quantity\":10,\"quantityUom\":\"cs\"}],\"customerImages\":[],\"materialId\":\"1017102\",\"packSize\":{\"pack\":\"48\",\"size\":\"6.5 OZ\",\"uom\":\"cs\"},\"averageWeightPerCase\":19,\"name\":\"CHICKEN BRST HALF IQF\",\"description\":null,\"type\":\"sysco\",\"isSoldAs\":{\"case\":true,\"split\":false},\"split\":{\"min\":0,\"max\":0},\"bvRating\":null,\"brand\":\"SYS CLS\",\"isCatchWeight\":false,\"storageFlag\":\"F\",\"isAvailable\":true,\"replacement\":{\"hasReplacement\":false,\"replacementMaterialId\":\"1017102\"},\"category\":{\"completeCategoryId\":\"05002001001"
+		"\",\"mainCategoryId\":5,\"label\":\"RAW IQF BONE-IN\"},\"messages\":[{\"type\":\"info\",\"message\":\"Stocked item\"}],\"flags\":[\"syscoBranded\"],\"images\":[\"null\"],\"canBuy\":true,\"lastOrderedDate\":\"2016-05-30T04:37:59.403Z\",\"nickName\":null,\"originalIndex\":13},{\"id\":\"1017144\",\"priceUom\":\"cs\",\"groups\":[{\"groupId\":\"d94ad58d-b762-481c-b0a7-3c4d3738b380\"},{\"groupId\":\"edca4da3-00e4-48cd-9214-292ddb483eca\",\"sequence\":14,\"quantity\":10,\"quantityUom\":\"cs\"}],\"customerImages\":[],\"materialId\":\"1017144\",\"packSize\":{\"pack\":\"1\",\"size\":\"15 LB\",\"uom\":\"cs\"},\"averageWeightPerCase\":15,\"name\":\"CHICKEN WING IQF DRUMET 1 JT\",\"description\":null,\"type\":\"sysco\",\"isSoldAs\":{\"case\":true,\"split\":false},\"split\":{\"min\":0,\"max\":0},\"bvRating\":null,\"brand\":\"SYS CLS\",\"isCatchWeight\":false,\"storageFlag\":\"F\",\"isAvailable\":true,\"replacement\":{\"hasReplacement\":false,\"replacementMaterialId\":\"1017144\"},\"category\":{\"completeCategoryId\":\"05"
+		"002001001\",\"mainCategoryId\":5,\"label\":\"RAW IQF BONE-IN\"},\"messages\":[{\"type\":\"info\",\"message\":\"Stocked item\"}],\"flags\":[\"syscoBranded\"],\"images\":[\"null\"],\"canBuy\":true,\"lastOrderedDate\":\"2016-05-30T04:37:59.404Z\",\"nickName\":null,\"originalIndex\":14},{\"id\":\"1204908\",\"priceUom\":\"cs\",\"groups\":[{\"groupId\":\"d94ad58d-b762-481c-b0a7-3c4d3738b380\"},{\"groupId\":\"edca4da3-00e4-48cd-9214-292ddb483eca\",\"sequence\":15,\"quantity\":10,\"quantityUom\":\"cs\"}],\"customerImages\":[],\"materialId\":\"1204908\",\"packSize\":{\"pack\":\"12\",\"size\":\"4.4OZ\",\"uom\":\"cs\"},\"averageWeightPerCase\":4,\"name\":\"CANDY BAR SNICKERS\",\"description\":\"Candy Bar Snickers\",\"type\":\"sysco\",\"isSoldAs\":{\"case\":true,\"split\":false},\"split\":{\"min\":0,\"max\":0},\"bvRating\":null,\"brand\":\"MARS\",\"isCatchWeight\":false,\"storageFlag\":\"C\",\"isAvailable\":true,\"replacement\":{\"hasReplacement\":false,\"replacementMaterialId\":\"1204908\"},\"category\":{\"completeCat"
+		"egoryId\":\"07006001003\",\"mainCategoryId\":7,\"label\":\"CANDY BARS\"},\"messages\":[{\"type\":\"info\",\"message\":\"Stocked item\"}],\"flags\":[\"null\"],\"images\":[\"null\"],\"canBuy\":true,\"lastOrderedDate\":\"2016-05-30T04:37:59.404Z\",\"nickName\":null,\"originalIndex\":15},{\"id\":\"1557214\",\"priceUom\":\"cs\",\"groups\":[{\"groupId\":\"d94ad58d-b762-481c-b0a7-3c4d3738b380\"},{\"groupId\":\"edca4da3-00e4-48cd-9214-292ddb483eca\",\"sequence\":16,\"quantity\":10,\"quantityUom\":\"cs\"}],\"customerImages\":[],\"materialId\":\"1557214\",\"packSize\":{\"pack\":\"1\",\"size\":\"20 LB\",\"uom\":\"cs\"},\"averageWeightPerCase\":20,\"name\":\"CANDY BAR SNICKER FUNSIZE\",\"description\":null,\"type\":\"sysco\",\"isSoldAs\":{\"case\":true,\"split\":false},\"split\":{\"min\":0,\"max\":0},\"bvRating\":null,\"brand\":\"MARS\",\"isCatchWeight\":false,\"storageFlag\":\"C\",\"isAvailable\":true,\"replacement\":{\"hasReplacement\":false,\"replacementMaterialId\":\"1557214\"},\"category\":{\"completeCategoryId\":"
+		"\"07006001003\",\"mainCategoryId\":7,\"label\":\"CANDY BARS\"},\"messages\":[{\"type\":\"info\",\"message\":\"Stocked item\"}],\"flags\":[\"null\"],\"images\":[\"null\"],\"canBuy\":true,\"lastOrderedDate\":\"2016-05-30T04:37:59.405Z\",\"nickName\":null,\"originalIndex\":16},{\"id\":\"2522191\",\"priceUom\":\"cs\",\"groups\":[{\"groupId\":\"d94ad58d-b762-481c-b0a7-3c4d3738b380\"},{\"groupId\":\"edca4da3-00e4-48cd-9214-292ddb483eca\",\"sequence\":17,\"quantity\":10,\"quantityUom\":\"cs\"}],\"customerImages\":[],\"materialId\":\"2522191\",\"packSize\":{\"pack\":\"2\",\"size\":\"100 CT\",\"uom\":\"cs\"},\"averageWeightPerCase\":10,\"name\":\"CANDY MINT CHANGEMAKER\",\"description\":null,\"type\":\"sysco\",\"isSoldAs\":{\"case\":true,\"split\":false},\"split\":{\"min\":0,\"max\":0},\"bvRating\":null,\"brand\":\"FAZRMNT\",\"isCatchWeight\":false,\"storageFlag\":\"D\",\"isAvailable\":true,\"replacement\":{\"hasReplacement\":false,\"replacementMaterialId\":\"2522191\"},\"category\":{\"completeCategoryId\":\"0700600"
+		"1001\",\"mainCategoryId\":7,\"label\":\"MINTS\"},\"messages\":[{\"type\":\"info\",\"message\":\"Remote stock / Drop ship\"}],\"flags\":[\"null\"],\"images\":[\"null\"],\"canBuy\":true,\"lastOrderedDate\":\"2016-05-30T04:37:59.406Z\",\"nickName\":null,\"originalIndex\":17},{\"id\":\"3505187\",\"priceUom\":\"cs\",\"groups\":[{\"groupId\":\"d94ad58d-b762-481c-b0a7-3c4d3738b380\"},{\"groupId\":\"edca4da3-00e4-48cd-9214-292ddb483eca\",\"sequence\":18,\"quantity\":10,\"quantityUom\":\"cs\"}],\"customerImages\":[],\"materialId\":\"3505187\",\"packSize\":{\"pack\":\"240\",\"size\":\"1.5 OZ\",\"uom\":\"cs\"},\"averageWeightPerCase\":22.5,\"name\":\"DOUGH COOKIE CANDY CHOC CHIP\",\"description\":null,\"type\":\"sysco\",\"isSoldAs\":{\"case\":true,\"split\":false},\"split\":{\"min\":0,\"max\":0},\"bvRating\":null,\"brand\":\"MRSRICH\",\"isCatchWeight\":false,\"storageFlag\":\"F\",\"isAvailable\":true,\"replacement\":{\"hasReplacement\":false,\"replacementMaterialId\":\"3505187\"},\"category\":{\"completeCategoryId\":"
+		"\"06001040020\",\"mainCategoryId\":6,\"label\":\"RAW DGH-PIECES\"},\"messages\":[{\"type\":\"info\",\"message\":\"Stocked item\"}],\"flags\":[\"null\"],\"images\":[\"null\"],\"canBuy\":true,\"lastOrderedDate\":\"2016-05-30T04:37:59.407Z\",\"nickName\":null,\"originalIndex\":18},{\"id\":\"3872645\",\"priceUom\":\"cs\",\"groups\":[{\"groupId\":\"d94ad58d-b762-481c-b0a7-3c4d3738b380\"},{\"groupId\":\"edca4da3-00e4-48cd-9214-292ddb483eca\",\"sequence\":19,\"quantity\":10,\"quantityUom\":\"cs\"}],\"customerImages\":[],\"materialId\":\"3872645\",\"packSize\":{\"pack\":\"1\",\"size\":\"11 LB\",\"uom\":\"cs\"},\"averageWeightPerCase\":11,\"name\":\"CANDY GINGER CHEWS\",\"description\":\"Candy Ginger Chews\",\"type\":\"sysco\",\"isSoldAs\":{\"case\":true,\"split\":false},\"split\":{\"min\":0,\"max\":0},\"bvRating\":null,\"brand\":\"GINGERP\",\"isCatchWeight\":false,\"storageFlag\":\"D\",\"isAvailable\":true,\"replacement\":{\"hasReplacement\":false,\"replacementMaterialId\":\"3872645\"},\"category\":{\"completeCateg"
+		"oryId\":\"07044030002\",\"mainCategoryId\":7,\"label\":\"CANDY\"},\"messages\":[{\"type\":\"info\",\"message\":\"Remote stock / Drop ship\"}],\"flags\":[\"null\"],\"images\":[\"null\"],\"canBuy\":true,\"lastOrderedDate\":\"2016-05-30T04:37:59.407Z\",\"nickName\":null,\"originalIndex\":19}]}",
+		LAST);
+
+
+$$$$$$ Add Event For Transaction With Id 77 Ended $$$$$$
+
+****** Request Header For Transaction With Id 85 ******
+GET https://onlineapi-qa.cloud.sysco.com/groups?type=location HTTP/1.1
+Host: onlineapi-qa.cloud.sysco.com
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-N920T Build/MMB29K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/50.0.2661.86 Mobile Safari/537.36
+JSESSIONID: 0000TyfmSAKniQyerkIoMLOzipA:-1
+Authorization: Bearer 067|431262|PTNormal41
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US
+Cookie: JSESSIONID=0000vuUvAYMh7FI5XmJ33JAZp4S:-1; system=sus; Path=/; homePath=OMAPX_r20.0.0.2; BNES_JSESSIONID=xPXvA5X+Aw5V4CP9YvdThUaZp+GRu7XOiQRy5gmVjOleVrnwDf9bIjoSChcYZPPBrS8k3LI8qXwRmMH44u32kO4oVy03kKu3PdLX/5jKIPVRO++B80qOgg==; BNES_system=29kP3kpLbi1wEdj4kOIbqrO7Pd/CB2oOU7ibPdgFMAN8IKrX7W0ci8gIr84h7rjRY+RjObaMqds=; BNES_homePath=omg3yBmQZ5oNznlwFvi/bCvGSzJJPiEa7eFRpm4tAJGtZgjdtNUVMs1LbPiT+rRBU5WXLLGm/HwwXHwibb3v1xAPiRvnW2Zc
+X-Requested-With: com.syscocorp.uomqa
+
+
+$$$$$$ Request Header For Transaction With Id 85 Ended $$$$$$
+
+****** Response Header For Transaction With Id 85 ******
+HTTP/1.1 200 OK
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: sus-session
+Content-Type: application/json; charset=utf-8
+Date: Mon, 30 May 2016 04:39:18 GMT
+Content-Length: 646
+Connection: keep-alive
+
+
+$$$$$$ Response Header For Transaction With Id 85 Ended $$$$$$
+
+****** Response Body For Transaction With Id 85 ******
+{"groups":[{"id":"df8eaa86-c00a-4f75-aca5-edc20541a4bf","name":"Cooler","storage":"C","type":"location","opCo":"067","customerId":"431262","deleted":false,"sequence":1},{"id":"a049505a-7615-4367-94e6-f112bc524b3a","name":"Freezer","storage":"F","type":"location","opCo":"067","customerId":"431262","deleted":false,"sequence":2},{"id":"edca4da3-00e4-48cd-9214-292ddb483eca","name":"Dry","storage":"D","type":"location","opCo":"067","customerId":"431262","deleted":false,"sequence":3},{"id":"abc546af-9c59-4319-9ca1-78d290731783","name":"no location","storage":"","type":"location","opCo":"067","customerId":"431262","deleted":false,"sequence":4}]}
+$$$$$$ Response Body For Transaction With Id 85 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+/inventories/8dc1e573-397f-40b8-bd3e-ba22a2c9e609
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Add Event For Transaction With Id 85 ****** (Location Flag : tFlagInsertEnd, Location ID : 85)
+	web_url("groups_3",
+		"URL=https://onlineapi-qa.cloud.sysco.com/groups?type=location",
+		"Resource=1",
+		"RecContentType=application/json",
+		"Referer=",
+		"Snapshot=t10.inf",
+		LAST);
+
+
+$$$$$$ Add Event For Transaction With Id 85 Ended $$$$$$
+
+****** Request Header For Transaction With Id 93 ******
+GET https://onlineapi-qa.cloud.sysco.com/groups HTTP/1.1
+Host: onlineapi-qa.cloud.sysco.com
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-N920T Build/MMB29K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/50.0.2661.86 Mobile Safari/537.36
+JSESSIONID: 0000TyfmSAKniQyerkIoMLOzipA:-1
+Authorization: Bearer 067|431262|PTNormal41
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US
+Cookie: JSESSIONID=0000vuUvAYMh7FI5XmJ33JAZp4S:-1; system=sus; Path=/; homePath=OMAPX_r20.0.0.2; BNES_JSESSIONID=xPXvA5X+Aw5V4CP9YvdThUaZp+GRu7XOiQRy5gmVjOleVrnwDf9bIjoSChcYZPPBrS8k3LI8qXwRmMH44u32kO4oVy03kKu3PdLX/5jKIPVRO++B80qOgg==; BNES_system=29kP3kpLbi1wEdj4kOIbqrO7Pd/CB2oOU7ibPdgFMAN8IKrX7W0ci8gIr84h7rjRY+RjObaMqds=; BNES_homePath=omg3yBmQZ5oNznlwFvi/bCvGSzJJPiEa7eFRpm4tAJGtZgjdtNUVMs1LbPiT+rRBU5WXLLGm/HwwXHwibb3v1xAPiRvnW2Zc
+X-Requested-With: com.syscocorp.uomqa
+
+
+$$$$$$ Request Header For Transaction With Id 93 Ended $$$$$$
+
+****** Response Header For Transaction With Id 93 ******
+HTTP/1.1 200 OK
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: sus-session
+Content-Type: application/json; charset=utf-8
+Date: Mon, 30 May 2016 04:39:21 GMT
+Content-Length: 987
+Connection: keep-alive
+
+
+$$$$$$ Response Header For Transaction With Id 93 Ended $$$$$$
+
+****** Response Body For Transaction With Id 93 ******
+{"groups":[{"id":"d94ad58d-b762-481c-b0a7-3c4d3738b380","name":"Food","type":"expenseCategory","foodType":"food","opCo":"067","customerId":"431262","deleted":false,"sequence":1},{"id":"df8eaa86-c00a-4f75-aca5-edc20541a4bf","name":"Cooler","storage":"C","type":"location","opCo":"067","customerId":"431262","deleted":false,"sequence":1},{"id":"08c01050-e0e8-42c9-9df0-3f9f200bb390","name":"Non-Food","type":"expenseCategory","foodType":"nonFood","opCo":"067","customerId":"431262","deleted":false,"sequence":2},{"id":"a049505a-7615-4367-94e6-f112bc524b3a","name":"Freezer","storage":"F","type":"location","opCo":"067","customerId":"431262","deleted":false,"sequence":2},{"id":"edca4da3-00e4-48cd-9214-292ddb483eca","name":"Dry","storage":"D","type":"location","opCo":"067","customerId":"431262","deleted":false,"sequence":3},{"id":"abc546af-9c59-4319-9ca1-78d290731783","name":"no location","storage":"","type":"location","opCo":"067","customerId":"431262","deleted":false,"sequence":6}]}
+$$$$$$ Response Body For Transaction With Id 93 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+/inventories/8dc1e573-397f-40b8-bd3e-ba22a2c9e609
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Add Event For Transaction With Id 1000077 ****** (Location Flag : tFlagInsertBefore, Location ID : 85)
+	web_concurrent_start(NULL);
+
+
+$$$$$$ Add Event For Transaction With Id 1000077 Ended $$$$$$
+
+****** Add Event For Transaction With Id 0 ****** (Location Flag : tFlagInsertAfter, Location ID : 85)
+	web_concurrent_end(NULL);
+
+
+$$$$$$ Add Event For Transaction With Id 0 Ended $$$$$$
+
+****** Add Event For Transaction With Id 93 ****** (Location Flag : tFlagInsertAfter, Location ID : 85)
+	web_url("groups_4",
+		"URL=https://onlineapi-qa.cloud.sysco.com/groups",
+		"Resource=1",
+		"RecContentType=application/json",
+		"Referer=",
+		"Snapshot=t11.inf",
+		LAST);
+
+
+$$$$$$ Add Event For Transaction With Id 93 Ended $$$$$$
+
+****** Request Header For Transaction With Id 101 ******
+GET https://onlineapi-qa.cloud.sysco.com/groups?type=location HTTP/1.1
+Host: onlineapi-qa.cloud.sysco.com
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-N920T Build/MMB29K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/50.0.2661.86 Mobile Safari/537.36
+JSESSIONID: 0000TyfmSAKniQyerkIoMLOzipA:-1
+Authorization: Bearer 067|431262|PTNormal41
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US
+Cookie: JSESSIONID=0000vuUvAYMh7FI5XmJ33JAZp4S:-1; system=sus; Path=/; homePath=OMAPX_r20.0.0.2; BNES_JSESSIONID=xPXvA5X+Aw5V4CP9YvdThUaZp+GRu7XOiQRy5gmVjOleVrnwDf9bIjoSChcYZPPBrS8k3LI8qXwRmMH44u32kO4oVy03kKu3PdLX/5jKIPVRO++B80qOgg==; BNES_system=29kP3kpLbi1wEdj4kOIbqrO7Pd/CB2oOU7ibPdgFMAN8IKrX7W0ci8gIr84h7rjRY+RjObaMqds=; BNES_homePath=omg3yBmQZ5oNznlwFvi/bCvGSzJJPiEa7eFRpm4tAJGtZgjdtNUVMs1LbPiT+rRBU5WXLLGm/HwwXHwibb3v1xAPiRvnW2Zc
+X-Requested-With: com.syscocorp.uomqa
+
+
+$$$$$$ Request Header For Transaction With Id 101 Ended $$$$$$
+
+****** Response Header For Transaction With Id 101 ******
+HTTP/1.1 200 OK
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: sus-session
+Content-Type: application/json; charset=utf-8
+Date: Mon, 30 May 2016 04:39:23 GMT
+Content-Length: 646
+Connection: keep-alive
+
+
+$$$$$$ Response Header For Transaction With Id 101 Ended $$$$$$
+
+****** Response Body For Transaction With Id 101 ******
+{"groups":[{"id":"df8eaa86-c00a-4f75-aca5-edc20541a4bf","name":"Cooler","storage":"C","type":"location","opCo":"067","customerId":"431262","deleted":false,"sequence":1},{"id":"a049505a-7615-4367-94e6-f112bc524b3a","name":"Freezer","storage":"F","type":"location","opCo":"067","customerId":"431262","deleted":false,"sequence":2},{"id":"edca4da3-00e4-48cd-9214-292ddb483eca","name":"Dry","storage":"D","type":"location","opCo":"067","customerId":"431262","deleted":false,"sequence":3},{"id":"abc546af-9c59-4319-9ca1-78d290731783","name":"no location","storage":"","type":"location","opCo":"067","customerId":"431262","deleted":false,"sequence":4}]}
+$$$$$$ Response Body For Transaction With Id 101 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+/inventories/8dc1e573-397f-40b8-bd3e-ba22a2c9e609
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Add Event For Transaction With Id 101 ****** (Location Flag : tFlagInsertAfter, Location ID : 93)
+	web_url("groups_5",
+		"URL=https://onlineapi-qa.cloud.sysco.com/groups?type=location",
+		"Resource=1",
+		"RecContentType=application/json",
+		"Referer=",
+		"Snapshot=t12.inf",
+		LAST);
+
+
+$$$$$$ Add Event For Transaction With Id 101 Ended $$$$$$
+
+****** Request Header For Transaction With Id 109 ******
+POST https://onlineapi-qa.cloud.sysco.com/app/logout HTTP/1.1
+Host: onlineapi-qa.cloud.sysco.com
+Connection: keep-alive
+Content-Length: 0
+User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-N920T Build/MMB29K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/50.0.2661.86 Mobile Safari/537.36
+Origin: file://
+JSESSIONID: 0000TyfmSAKniQyerkIoMLOzipA:-1
+Authorization: Bearer 067|431262|PTNormal41
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US
+Cookie: BNES_homePath=CbhVSMPeZNpfma6mGx2/iIdPDUZaHn8eqBj4bVByY4anr0kV+wQ3EyosLLze8hxvKULDHAjCGyUI+e26omUP2iBvkt+C1wqz; JSESSIONID=0000vuUvAYMh7FI5XmJ33JAZp4S:-1; system=sus; Path=/; homePath=OMAPX_r20.0.0.2; BNES_JSESSIONID=xPXvA5X+Aw5V4CP9YvdThUaZp+GRu7XOiQRy5gmVjOleVrnwDf9bIjoSChcYZPPBrS8k3LI8qXwRmMH44u32kO4oVy03kKu3PdLX/5jKIPVRO++B80qOgg==; BNES_system=29kP3kpLbi1wEdj4kOIbqrO7Pd/CB2oOU7ibPdgFMAN8IKrX7W0ci8gIr84h7rjRY+RjObaMqds=; BNES_homePath=omg3yBmQZ5oNznlwFvi/bCvGSzJJPiEa7eFRpm4tAJGtZgjdtNUVMs1LbPiT+rRBU5WXLLGm/HwwXHwibb3v1xAPiRvnW2Zc
+X-Requested-With: com.syscocorp.uomqa
+
+
+$$$$$$ Request Header For Transaction With Id 109 Ended $$$$$$
+
+****** Response Header For Transaction With Id 109 ******
+HTTP/1.1 204 No Content
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE
+Access-Control-Allow-Origin: file://
+Access-Control-Expose-Headers: sus-session
+Date: Mon, 30 May 2016 04:39:28 GMT
+Set-Cookie: homePath=; path=/; expires=Wed, 31 Dec 1969 23:59:59 GMT; httponly
+Set-Cookie: JSESSIONID=; path=/; expires=Wed, 31 Dec 1969 23:59:59 GMT; httponly
+Set-Cookie: system=; path=/; expires=Wed, 31 Dec 1969 23:59:59 GMT; httponly
+Set-Cookie: Path=; path=/; expires=Wed, 31 Dec 1969 23:59:59 GMT; httponly
+Set-Cookie: BNES_homePath=Rv1kdAcF3rfI9JcmKwtNckKA9u7glsePA2pB/kYuiveWgRFvixzXyFuCxjIum11eeagzouB7864=; path=/; expires=Wed, 31 Dec 1969 23:59:59 GMT; httponly
+Set-Cookie: BNES_JSESSIONID=lhBe4bgpVKIEeCq/QiAxqI9+tjUMwtxZQff8fC2Nf8kY24/uab0RuntCpqKCotsASny74aCD4A0=; path=/; expires=Wed, 31 Dec 1969 23:59:59 GMT; httponly
+Set-Cookie: BNES_system=qWkUKrpu8Us6gxfWocSZt0i/b8xrESleJt/y5eFJBJD0ZBmyQChryWw8a6kBftoeebFeYqXn5Bo=; path=/; expires=Wed, 31 Dec 1969 23:59:59 GMT; httponly
+Connection: keep-alive
+
+
+$$$$$$ Response Header For Transaction With Id 109 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+/inventories/8dc1e573-397f-40b8-bd3e-ba22a2c9e609
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Add Event For Transaction With Id 109 ****** (Location Flag : tFlagInsertEnd, Location ID : 109)
+	web_custom_request("logout",
+		"URL=https://onlineapi-qa.cloud.sysco.com/app/logout",
+		"Method=POST",
+		"Resource=0",
+		"Referer=",
+		"Snapshot=t13.inf",
+		"Mode=HTTP",
+		"EncType=",
+		LAST);
+
+
+$$$$$$ Add Event For Transaction With Id 109 Ended $$$$$$
+

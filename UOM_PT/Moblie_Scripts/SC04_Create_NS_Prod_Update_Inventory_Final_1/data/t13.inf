@@ -1,0 +1,13 @@
+[t13]
+FileName1=t13.html
+URL1=https://onlineapi-qa.cloud.sysco.com/inventories/2e073a31-ccf4-4519-a499-fb4e6ccdaac6
+Total=2
+RequestHeaderFile=t13_RequestHeader.txt
+RequestBodyFile=t13_RequestBody.txt
+ResponseHeaderFile=t13_ResponseHeader.txt
+ContentType=application/json
+SnapshotXmlFile=snapshot_13.xml
+FileName2=t13_groups.html
+URL2=https://onlineapi-qa.cloud.sysco.com/groups?type=location
+[ProtocolInfo]
+ProtocolId=QTWeb

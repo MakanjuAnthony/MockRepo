@@ -1,0 +1,592 @@
+Virtual User Script started at : 5/23/2016 10:30:10 PM
+Starting action vuser_init.
+Ending action vuser_init.
+Running Vuser...
+Starting iteration 1.
+Maximum number of concurrent connections per server: 6  	[MsgId: MMSG-26989]
+Starting action Action.
+Action.c(4): web_cleanup_cookies started  	[MsgId: MMSG-26355]
+Action.c(4): web_cleanup_cookies was successful  	[MsgId: MMSG-26392]
+Action.c(6): web_cache_cleanup started  	[MsgId: MMSG-26355]
+Action.c(6): web_cache_cleanup was successful  	[MsgId: MMSG-26392]
+Action.c(8): web_set_sockets_option started  	[MsgId: MMSG-26355]
+Action.c(8): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
+Action.c(47): Think time - Waiting 1.00 seconds (according to limit).
+Action.c(47): lr_think_time: 1.00 seconds (recorded think time was 5.00 seconds).
+Action.c(49): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(49): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(49): Notify: Parameter Substitution: parameter "P_CustomerID" =  "319509"
+Action.c(49): Notify: Parameter Substitution: parameter "P_UserID" =  "PTNormal01"
+Action.c(49): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(49): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(51): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(51): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(53): web_url("GetAccountByCustomerAccount") started  	[MsgId: MMSG-26355]
+Action.c(53): Notify: Parameter Substitution: parameter "P_WSURL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(53): t=1715ms: 132-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/accounts/mine" (RelFrameId=1, Internal ID=1)
+Action.c(53):     HTTP/1.1 200 OK\r\n
+Action.c(53):     Content-Type: application/json\r\n
+Action.c(53):     Date: Mon, 23 May 2016 22:30:12 GMT\r\n
+Action.c(53):     Content-Length: 50\r\n
+Action.c(53):     Connection: keep-alive\r\n
+Action.c(53):     \r\n
+Action.c(53): t=1726ms: 50-byte response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/accounts/mine" (RelFrameId=1, Internal ID=1)
+Action.c(53):     {"opCo":"067","customerId":"319509","isCogs":true}
+Action.c(53): Notify: Saving Parameter "Corr_CustomerID1 = 319509".
+Action.c(53): HTML parsing not performed for Content-Type "application/json" ("ParseHtmlContentType" Run-Time Setting is "TEXT"). URL="http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/accounts/mine"  	[MsgId: MMSG-26548]
+Action.c(53): web_url("GetAccountByCustomerAccount") was successful, 50 body bytes, 132 header bytes  	[MsgId: MMSG-26386]
+Action.c(61): Notify: Parameter Substitution: parameter "Corr_CustomerID1" =  "319509"
+Action.c(86): Think time - Waiting 1.00 seconds (according to limit).
+Action.c(86): lr_think_time: 1.00 seconds (recorded think time was 5.00 seconds).
+Action.c(88): Notify: Transaction "SC02_02_Supplier_Click_on_Suppliers" started.
+Action.c(91): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(91): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(91): Notify: Parameter Substitution: parameter "P_CustomerID" =  "319509"
+Action.c(91): Notify: Parameter Substitution: parameter "P_UserID" =  "PTNormal01"
+Action.c(91): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(91): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(93): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(93): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(94): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(94): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(96): web_reg_find started  	[MsgId: MMSG-26355]
+Action.c(96): Registering web_reg_find was successful  	[MsgId: MMSG-26390]
+Action.c(98): web_custom_request("suppliers") started  	[MsgId: MMSG-26355]
+Action.c(98): Notify: Parameter Substitution: parameter "P_URL" =  "https://onlineapi-qa.cloud.sysco.com"
+Action.c(98): t=4301ms: 277-byte response headers for "https://onlineapi-qa.cloud.sysco.com/suppliers" (RelFrameId=1, Internal ID=2)
+Action.c(98):     HTTP/1.1 200 OK\r\n
+Action.c(98):     Access-Control-Allow-Credentials: true\r\n
+Action.c(98):     Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE\r\n
+Action.c(98):     Access-Control-Allow-Origin: *\r\n
+Action.c(98):     Content-Type: application/json; charset=utf-8\r\n
+Action.c(98):     Date: Mon, 23 May 2016 22:30:14 GMT\r\n
+Action.c(98):     Content-Length: 1348\r\n
+Action.c(98):     Connection: keep-alive\r\n
+Action.c(98):     \r\n
+Action.c(98): t=4303ms: 1348-byte response body for "https://onlineapi-qa.cloud.sysco.com/suppliers" (RelFrameId=1, Internal ID=2)
+Action.c(98):     {"suppliers":[{"id":"474acfea-5fac-444e-a38e-cf9a6dee215b","name":"PTF_Supplier_PTF_Suppli
+Action.c(98):     er_0523222942","contactInformation":{"address":"341 Laffayett St","contactName":"Jr. Marke
+Action.c(98):     ting Asscoiate","emailAddress":"test@123.com","phoneNumber":"27042704"},"associatedAccount
+Action.c(98):     ":{"opCo":"067","customerId":"319509"},"notes":"This is sample Noet to test the performanc
+Action.c(98):     e of the application... I hope this will help in adding and updating the supplier","delete
+Action.c(98):     d":false},{"id":"aa31bc7c-56a3-4007-abf5-1bdc83d6e298","name":"PTF_Supplier_PTF_Supplier_0
+Action.c(98):     523222944","contactInformation":{"address":"341 Laffayett St","contactName":"Jr. Marketing
+Action.c(98):      Asscoiate","emailAddress":"test@123.com","phoneNumber":"27042704"},"associatedAccount":{"
+Action.c(98):     opCo":"067","customerId":"319509"},"notes":"This is sample Noet to test the performance of
+Action.c(98):      the application... I hope this will help in adding and updating the supplier","deleted":f
+Action.c(98):     alse},{"id":"3c69aaf3-7ac2-477d-bc21-f8d182e32551","name":"PTF_Supplier_PTF_Supplier_PTF_S
+Action.c(98):     upplier_0523222940","contactInformation":{"address":"Updated Addres","contactName":"Sr. Ma
+Action.c(98):     rketing Asscoiate","emailAddress":"ds_wera@gmail123.com","phoneNumber":"2147483647"},"asso
+Action.c(98):     ciatedAccount":{"opCo":"067","customerId":"319509"},"notes":"This Sample Updated Supplier 
+Action.c(98):     details... I hope this will help in adding and updating the supplier","deleted":false}]}
+Action.c(98): Notify: Saving Parameter "Corr_Supplier_1 = 474acfea-5fac-444e-a38e-cf9a6dee215b".
+Action.c(98): Notify: Saving Parameter "Corr_SupplierName_1 = PTF_Supplier_PTF_Supplier_0523222942".
+Action.c(98): Notify: Saving Parameter "Corr_Supplier_2 = aa31bc7c-56a3-4007-abf5-1bdc83d6e298".
+Action.c(98): Notify: Saving Parameter "Corr_SupplierName_2 = PTF_Supplier_PTF_Supplier_0523222944".
+Action.c(98): Notify: Saving Parameter "Corr_Supplier_3 = 3c69aaf3-7ac2-477d-bc21-f8d182e32551".
+Action.c(98): Notify: Saving Parameter "Corr_SupplierName_3 = PTF_Supplier_PTF_Supplier_PTF_Supplier_0523222940".
+Action.c(98): Notify: Saving Parameter "Corr_Supplier_count = 3".
+Action.c(98): Notify: Saving Parameter "Corr_SupplierName_count = 3".
+Action.c(98): Registered web_reg_find successful for "Text=suppliers" (count=1)  	[MsgId: MMSG-26364]
+Action.c(98): web_custom_request("suppliers") was successful, 1348 body bytes, 277 header bytes  	[MsgId: MMSG-26386]
+Action.c(109): Notify: Parameter Substitution: parameter "Corr_Supplier_count" =  "3"
+Action.c(111): web_get_int_property started  	[MsgId: MMSG-26355]
+Action.c(111): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Action.c(115): Notify: Transaction "SC02_02_Supplier_Click_on_Suppliers" ended with "Pass" status (Duration: 1.5318 Wasted Time: 1.0329).
+Action.c(122): Think time - Waiting 1.00 seconds (according to limit).
+Action.c(122): lr_think_time: 1.00 seconds (recorded think time was 5.00 seconds).
+Action.c(128): Notify: Transaction "SC02_03_Supplier_Add_Supplier" started.
+Action.c(130): web_add_header("Origin") started  	[MsgId: MMSG-26355]
+Action.c(130): web_add_header("Origin") was successful  	[MsgId: MMSG-26392]
+Action.c(132): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(132): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(132): Notify: Parameter Substitution: parameter "P_CustomerID" =  "319509"
+Action.c(132): Notify: Parameter Substitution: parameter "P_UserID" =  "PTNormal01"
+Action.c(132): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(132): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(134): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(134): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(135): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(135): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(137): web_custom_request("suppliers") started  	[MsgId: MMSG-26355]
+Action.c(137): Notify: Parameter Substitution: parameter "P_URL" =  "https://onlineapi-qa.cloud.sysco.com"
+Action.c(137): Notify: Parameter Substitution: parameter "P_SupplierName" =  "PTF_Supplier_0523223015"
+Action.c(137): Warning: The string '"phoneNumber":"27042704","address":"341 Laffayett St","contactName":"Jr. Marketing Asscoiate","emailAddress":"test@123.com"' with parameter delimiters is not a parameter.
+Action.c(137): t=5502ms: 285-byte response headers for "https://onlineapi-qa.cloud.sysco.com/suppliers" (RelFrameId=1, Internal ID=3)
+Action.c(137):     HTTP/1.1 201 Created\r\n
+Action.c(137):     Access-Control-Allow-Credentials: true\r\n
+Action.c(137):     Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE\r\n
+Action.c(137):     Access-Control-Allow-Origin: file:\r\n
+Action.c(137):     Content-Type: application/json; charset=utf-8\r\n
+Action.c(137):     Date: Mon, 23 May 2016 22:30:15 GMT\r\n
+Action.c(137):     Content-Length: 445\r\n
+Action.c(137):     Connection: keep-alive\r\n
+Action.c(137):     \r\n
+Action.c(137): t=5504ms: 445-byte response body for "https://onlineapi-qa.cloud.sysco.com/suppliers" (RelFrameId=1, Internal ID=3)
+Action.c(137):     {"id":"15a85603-4817-4997-b8c5-f65bdfab0124","name":"PTF_Supplier_PTF_Supplier_0523223015"
+Action.c(137):     ,"contactInformation":{"address":"341 Laffayett St","contactName":"Jr. Marketing Asscoiate
+Action.c(137):     ","emailAddress":"test@123.com","phoneNumber":"27042704"},"associatedAccount":{"opCo":"067
+Action.c(137):     ","customerId":"319509"},"notes":"This is sample Noet to test the performance of the appli
+Action.c(137):     cation... I hope this will help in adding and updating the supplier","deleted":false}
+Action.c(137): Notify: Saving Parameter "Corr_SupplierID = 15a85603-4817-4997-b8c5-f65bdfab0124".
+Action.c(137): Notify: Saving Parameter "Corr_SupplierName = PTF_Supplier_PTF_Supplier_0523223015".
+Action.c(137): web_custom_request("suppliers") was successful, 445 body bytes, 285 header bytes  	[MsgId: MMSG-26386]
+Action.c(149): Warning: The string 'Corr_SupplierGetID' with parameter delimiters is not a parameter.
+Action.c(153): Notify: Transaction "SC02_03_Supplier_Add_Supplier" ended with "Pass" status (Duration: 0.1654 Wasted Time: 0.0085).
+Action.c(155): Think time - Waiting 1.00 seconds (according to limit).
+Action.c(155): lr_think_time: 1.00 seconds (recorded think time was 5.00 seconds).
+Action.c(157): Notify: Transaction "SC02_04_Supplier_Get_Suppliers_Details" started.
+Action.c(160): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(160): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(160): Notify: Parameter Substitution: parameter "P_CustomerID" =  "319509"
+Action.c(160): Notify: Parameter Substitution: parameter "P_UserID" =  "PTNormal01"
+Action.c(160): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(160): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(162): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(162): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(163): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(163): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(167): web_custom_request("SupplierDetails") started  	[MsgId: MMSG-26355]
+Action.c(167): Notify: Parameter Substitution: parameter "P_URL" =  "https://onlineapi-qa.cloud.sysco.com"
+Action.c(167): Notify: Parameter Substitution: parameter "Corr_SupplierID" =  "15a85603-4817-4997-b8c5-f65bdfab0124"
+Action.c(167): t=6658ms: 276-byte response headers for "https://onlineapi-qa.cloud.sysco.com/suppliers/15a85603-4817-4997-b8c5-f65bdfab0124" (RelFrameId=1, Internal ID=4)
+Action.c(167):     HTTP/1.1 200 OK\r\n
+Action.c(167):     Access-Control-Allow-Credentials: true\r\n
+Action.c(167):     Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE\r\n
+Action.c(167):     Access-Control-Allow-Origin: *\r\n
+Action.c(167):     Content-Type: application/json; charset=utf-8\r\n
+Action.c(167):     Date: Mon, 23 May 2016 22:30:17 GMT\r\n
+Action.c(167):     Content-Length: 445\r\n
+Action.c(167):     Connection: keep-alive\r\n
+Action.c(167):     \r\n
+Action.c(167): t=6660ms: 445-byte response body for "https://onlineapi-qa.cloud.sysco.com/suppliers/15a85603-4817-4997-b8c5-f65bdfab0124" (RelFrameId=1, Internal ID=4)
+Action.c(167):     {"id":"15a85603-4817-4997-b8c5-f65bdfab0124","name":"PTF_Supplier_PTF_Supplier_0523223015"
+Action.c(167):     ,"contactInformation":{"address":"341 Laffayett St","contactName":"Jr. Marketing Asscoiate
+Action.c(167):     ","emailAddress":"test@123.com","phoneNumber":"27042704"},"associatedAccount":{"opCo":"067
+Action.c(167):     ","customerId":"319509"},"notes":"This is sample Noet to test the performance of the appli
+Action.c(167):     cation... I hope this will help in adding and updating the supplier","deleted":false}
+Action.c(167): Notify: Saving Parameter "Corr_SupplierGetID = 15a85603-4817-4997-b8c5-f65bdfab0124".
+Action.c(167): Notify: Saving Parameter "Corr_SupplierName = PTF_Supplier_PTF_Supplier_0523223015".
+Action.c(167): web_custom_request("SupplierDetails") was successful, 445 body bytes, 276 header bytes  	[MsgId: MMSG-26386]
+Action.c(178): Notify: Parameter Substitution: parameter "Corr_SupplierGetID" =  "15a85603-4817-4997-b8c5-f65bdfab0124"
+Action.c(181): Notify: Transaction "SC02_04_Supplier_Get_Suppliers_Details" ended with "Pass" status (Duration: 0.1570 Wasted Time: 0.0056).
+Action.c(128): Notify: Transaction "SC02_03_Supplier_Add_Supplier" started.
+Action.c(130): web_add_header("Origin") started  	[MsgId: MMSG-26355]
+Action.c(130): web_add_header("Origin") was successful  	[MsgId: MMSG-26392]
+Action.c(132): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(132): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(132): Notify: Parameter Substitution: parameter "P_CustomerID" =  "319509"
+Action.c(132): Notify: Parameter Substitution: parameter "P_UserID" =  "PTNormal01"
+Action.c(132): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(132): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(134): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(134): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(135): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(135): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(137): web_custom_request("suppliers") started  	[MsgId: MMSG-26355]
+Action.c(137): Notify: Parameter Substitution: parameter "P_URL" =  "https://onlineapi-qa.cloud.sysco.com"
+Action.c(137): Notify: Parameter Substitution: parameter "P_SupplierName" =  "PTF_Supplier_0523223016"
+Action.c(137): Warning: The string '"phoneNumber":"27042704","address":"341 Laffayett St","contactName":"Jr. Marketing Asscoiate","emailAddress":"test@123.com"' with parameter delimiters is not a parameter.
+Action.c(137): t=6823ms: 285-byte response headers for "https://onlineapi-qa.cloud.sysco.com/suppliers" (RelFrameId=1, Internal ID=5)
+Action.c(137):     HTTP/1.1 201 Created\r\n
+Action.c(137):     Access-Control-Allow-Credentials: true\r\n
+Action.c(137):     Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE\r\n
+Action.c(137):     Access-Control-Allow-Origin: file:\r\n
+Action.c(137):     Content-Type: application/json; charset=utf-8\r\n
+Action.c(137):     Date: Mon, 23 May 2016 22:30:17 GMT\r\n
+Action.c(137):     Content-Length: 445\r\n
+Action.c(137):     Connection: keep-alive\r\n
+Action.c(137):     \r\n
+Action.c(137): t=6825ms: 445-byte response body for "https://onlineapi-qa.cloud.sysco.com/suppliers" (RelFrameId=1, Internal ID=5)
+Action.c(137):     {"id":"5716c40f-464e-4193-8505-98d3c620e00f","name":"PTF_Supplier_PTF_Supplier_0523223016"
+Action.c(137):     ,"contactInformation":{"address":"341 Laffayett St","contactName":"Jr. Marketing Asscoiate
+Action.c(137):     ","emailAddress":"test@123.com","phoneNumber":"27042704"},"associatedAccount":{"opCo":"067
+Action.c(137):     ","customerId":"319509"},"notes":"This is sample Noet to test the performance of the appli
+Action.c(137):     cation... I hope this will help in adding and updating the supplier","deleted":false}
+Action.c(137): Notify: Saving Parameter "Corr_SupplierID = 5716c40f-464e-4193-8505-98d3c620e00f".
+Action.c(137): Notify: Saving Parameter "Corr_SupplierName = PTF_Supplier_PTF_Supplier_0523223016".
+Action.c(137): web_custom_request("suppliers") was successful, 445 body bytes, 285 header bytes  	[MsgId: MMSG-26386]
+Action.c(149): Notify: Parameter Substitution: parameter "Corr_SupplierGetID" =  "15a85603-4817-4997-b8c5-f65bdfab0124"
+Action.c(153): Notify: Transaction "SC02_03_Supplier_Add_Supplier" ended with "Pass" status (Duration: 0.1660 Wasted Time: 0.0060).
+Action.c(155): Think time - Waiting 1.00 seconds (according to limit).
+Action.c(155): lr_think_time: 1.00 seconds (recorded think time was 5.00 seconds).
+Action.c(157): Notify: Transaction "SC02_04_Supplier_Get_Suppliers_Details" started.
+Action.c(160): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(160): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(160): Notify: Parameter Substitution: parameter "P_CustomerID" =  "319509"
+Action.c(160): Notify: Parameter Substitution: parameter "P_UserID" =  "PTNormal01"
+Action.c(160): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(160): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(162): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(162): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(163): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(163): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(167): web_custom_request("SupplierDetails") started  	[MsgId: MMSG-26355]
+Action.c(167): Notify: Parameter Substitution: parameter "P_URL" =  "https://onlineapi-qa.cloud.sysco.com"
+Action.c(167): Notify: Parameter Substitution: parameter "Corr_SupplierID" =  "5716c40f-464e-4193-8505-98d3c620e00f"
+Action.c(167): t=7975ms: 276-byte response headers for "https://onlineapi-qa.cloud.sysco.com/suppliers/5716c40f-464e-4193-8505-98d3c620e00f" (RelFrameId=1, Internal ID=6)
+Action.c(167):     HTTP/1.1 200 OK\r\n
+Action.c(167):     Access-Control-Allow-Credentials: true\r\n
+Action.c(167):     Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE\r\n
+Action.c(167):     Access-Control-Allow-Origin: *\r\n
+Action.c(167):     Content-Type: application/json; charset=utf-8\r\n
+Action.c(167):     Date: Mon, 23 May 2016 22:30:18 GMT\r\n
+Action.c(167):     Content-Length: 445\r\n
+Action.c(167):     Connection: keep-alive\r\n
+Action.c(167):     \r\n
+Action.c(167): t=7976ms: 445-byte response body for "https://onlineapi-qa.cloud.sysco.com/suppliers/5716c40f-464e-4193-8505-98d3c620e00f" (RelFrameId=1, Internal ID=6)
+Action.c(167):     {"id":"5716c40f-464e-4193-8505-98d3c620e00f","name":"PTF_Supplier_PTF_Supplier_0523223016"
+Action.c(167):     ,"contactInformation":{"address":"341 Laffayett St","contactName":"Jr. Marketing Asscoiate
+Action.c(167):     ","emailAddress":"test@123.com","phoneNumber":"27042704"},"associatedAccount":{"opCo":"067
+Action.c(167):     ","customerId":"319509"},"notes":"This is sample Noet to test the performance of the appli
+Action.c(167):     cation... I hope this will help in adding and updating the supplier","deleted":false}
+Action.c(167): Notify: Saving Parameter "Corr_SupplierGetID = 5716c40f-464e-4193-8505-98d3c620e00f".
+Action.c(167): Notify: Saving Parameter "Corr_SupplierName = PTF_Supplier_PTF_Supplier_0523223016".
+Action.c(167): web_custom_request("SupplierDetails") was successful, 445 body bytes, 276 header bytes  	[MsgId: MMSG-26386]
+Action.c(178): Notify: Parameter Substitution: parameter "Corr_SupplierGetID" =  "5716c40f-464e-4193-8505-98d3c620e00f"
+Action.c(181): Notify: Transaction "SC02_04_Supplier_Get_Suppliers_Details" ended with "Pass" status (Duration: 0.1585 Wasted Time: 0.0059).
+Action.c(128): Notify: Transaction "SC02_03_Supplier_Add_Supplier" started.
+Action.c(130): web_add_header("Origin") started  	[MsgId: MMSG-26355]
+Action.c(130): web_add_header("Origin") was successful  	[MsgId: MMSG-26392]
+Action.c(132): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(132): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(132): Notify: Parameter Substitution: parameter "P_CustomerID" =  "319509"
+Action.c(132): Notify: Parameter Substitution: parameter "P_UserID" =  "PTNormal01"
+Action.c(132): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(132): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(134): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(134): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(135): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(135): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(137): web_custom_request("suppliers") started  	[MsgId: MMSG-26355]
+Action.c(137): Notify: Parameter Substitution: parameter "P_URL" =  "https://onlineapi-qa.cloud.sysco.com"
+Action.c(137): Notify: Parameter Substitution: parameter "P_SupplierName" =  "PTF_Supplier_0523223018"
+Action.c(137): Warning: The string '"phoneNumber":"27042704","address":"341 Laffayett St","contactName":"Jr. Marketing Asscoiate","emailAddress":"test@123.com"' with parameter delimiters is not a parameter.
+Action.c(137): t=8148ms: 285-byte response headers for "https://onlineapi-qa.cloud.sysco.com/suppliers" (RelFrameId=1, Internal ID=7)
+Action.c(137):     HTTP/1.1 201 Created\r\n
+Action.c(137):     Access-Control-Allow-Credentials: true\r\n
+Action.c(137):     Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE\r\n
+Action.c(137):     Access-Control-Allow-Origin: file:\r\n
+Action.c(137):     Content-Type: application/json; charset=utf-8\r\n
+Action.c(137):     Date: Mon, 23 May 2016 22:30:18 GMT\r\n
+Action.c(137):     Content-Length: 445\r\n
+Action.c(137):     Connection: keep-alive\r\n
+Action.c(137):     \r\n
+Action.c(137): t=8153ms: 445-byte response body for "https://onlineapi-qa.cloud.sysco.com/suppliers" (RelFrameId=1, Internal ID=7)
+Action.c(137):     {"id":"659a2253-2d0f-4a51-be07-7f33c8bbfb8b","name":"PTF_Supplier_PTF_Supplier_0523223018"
+Action.c(137):     ,"contactInformation":{"address":"341 Laffayett St","contactName":"Jr. Marketing Asscoiate
+Action.c(137):     ","emailAddress":"test@123.com","phoneNumber":"27042704"},"associatedAccount":{"opCo":"067
+Action.c(137):     ","customerId":"319509"},"notes":"This is sample Noet to test the performance of the appli
+Action.c(137):     cation... I hope this will help in adding and updating the supplier","deleted":false}
+Action.c(137): Notify: Saving Parameter "Corr_SupplierID = 659a2253-2d0f-4a51-be07-7f33c8bbfb8b".
+Action.c(137): Notify: Saving Parameter "Corr_SupplierName = PTF_Supplier_PTF_Supplier_0523223018".
+Action.c(137): web_custom_request("suppliers") was successful, 445 body bytes, 285 header bytes  	[MsgId: MMSG-26386]
+Action.c(149): Notify: Parameter Substitution: parameter "Corr_SupplierGetID" =  "5716c40f-464e-4193-8505-98d3c620e00f"
+Action.c(153): Notify: Transaction "SC02_03_Supplier_Add_Supplier" ended with "Pass" status (Duration: 0.1758 Wasted Time: 0.0058).
+Action.c(155): Think time - Waiting 1.00 seconds (according to limit).
+Action.c(155): lr_think_time: 1.00 seconds (recorded think time was 5.00 seconds).
+Action.c(157): Notify: Transaction "SC02_04_Supplier_Get_Suppliers_Details" started.
+Action.c(160): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(160): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(160): Notify: Parameter Substitution: parameter "P_CustomerID" =  "319509"
+Action.c(160): Notify: Parameter Substitution: parameter "P_UserID" =  "PTNormal01"
+Action.c(160): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(160): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(162): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(162): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(163): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(163): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(167): web_custom_request("SupplierDetails") started  	[MsgId: MMSG-26355]
+Action.c(167): Notify: Parameter Substitution: parameter "P_URL" =  "https://onlineapi-qa.cloud.sysco.com"
+Action.c(167): Notify: Parameter Substitution: parameter "Corr_SupplierID" =  "659a2253-2d0f-4a51-be07-7f33c8bbfb8b"
+Action.c(167): t=9338ms: 276-byte response headers for "https://onlineapi-qa.cloud.sysco.com/suppliers/659a2253-2d0f-4a51-be07-7f33c8bbfb8b" (RelFrameId=1, Internal ID=8)
+Action.c(167):     HTTP/1.1 200 OK\r\n
+Action.c(167):     Access-Control-Allow-Credentials: true\r\n
+Action.c(167):     Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE\r\n
+Action.c(167):     Access-Control-Allow-Origin: *\r\n
+Action.c(167):     Content-Type: application/json; charset=utf-8\r\n
+Action.c(167):     Date: Mon, 23 May 2016 22:30:19 GMT\r\n
+Action.c(167):     Content-Length: 445\r\n
+Action.c(167):     Connection: keep-alive\r\n
+Action.c(167):     \r\n
+Action.c(167): t=9341ms: 445-byte response body for "https://onlineapi-qa.cloud.sysco.com/suppliers/659a2253-2d0f-4a51-be07-7f33c8bbfb8b" (RelFrameId=1, Internal ID=8)
+Action.c(167):     {"id":"659a2253-2d0f-4a51-be07-7f33c8bbfb8b","name":"PTF_Supplier_PTF_Supplier_0523223018"
+Action.c(167):     ,"contactInformation":{"address":"341 Laffayett St","contactName":"Jr. Marketing Asscoiate
+Action.c(167):     ","emailAddress":"test@123.com","phoneNumber":"27042704"},"associatedAccount":{"opCo":"067
+Action.c(167):     ","customerId":"319509"},"notes":"This is sample Noet to test the performance of the appli
+Action.c(167):     cation... I hope this will help in adding and updating the supplier","deleted":false}
+Action.c(167): Notify: Saving Parameter "Corr_SupplierGetID = 659a2253-2d0f-4a51-be07-7f33c8bbfb8b".
+Action.c(167): Notify: Saving Parameter "Corr_SupplierName = PTF_Supplier_PTF_Supplier_0523223018".
+Action.c(167): web_custom_request("SupplierDetails") was successful, 445 body bytes, 276 header bytes  	[MsgId: MMSG-26386]
+Action.c(178): Notify: Parameter Substitution: parameter "Corr_SupplierGetID" =  "659a2253-2d0f-4a51-be07-7f33c8bbfb8b"
+Action.c(181): Notify: Transaction "SC02_04_Supplier_Get_Suppliers_Details" ended with "Pass" status (Duration: 0.1853 Wasted Time: 0.0055).
+Action.c(128): Notify: Transaction "SC02_03_Supplier_Add_Supplier" started.
+Action.c(130): web_add_header("Origin") started  	[MsgId: MMSG-26355]
+Action.c(130): web_add_header("Origin") was successful  	[MsgId: MMSG-26392]
+Action.c(132): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(132): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(132): Notify: Parameter Substitution: parameter "P_CustomerID" =  "319509"
+Action.c(132): Notify: Parameter Substitution: parameter "P_UserID" =  "PTNormal01"
+Action.c(132): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(132): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(134): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(134): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(135): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(135): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(137): web_custom_request("suppliers") started  	[MsgId: MMSG-26355]
+Action.c(137): Notify: Parameter Substitution: parameter "P_URL" =  "https://onlineapi-qa.cloud.sysco.com"
+Action.c(137): Notify: Parameter Substitution: parameter "P_SupplierName" =  "PTF_Supplier_0523223019"
+Action.c(137): Warning: The string '"phoneNumber":"27042704","address":"341 Laffayett St","contactName":"Jr. Marketing Asscoiate","emailAddress":"test@123.com"' with parameter delimiters is not a parameter.
+Action.c(137): t=9501ms: 285-byte response headers for "https://onlineapi-qa.cloud.sysco.com/suppliers" (RelFrameId=1, Internal ID=9)
+Action.c(137):     HTTP/1.1 201 Created\r\n
+Action.c(137):     Access-Control-Allow-Credentials: true\r\n
+Action.c(137):     Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE\r\n
+Action.c(137):     Access-Control-Allow-Origin: file:\r\n
+Action.c(137):     Content-Type: application/json; charset=utf-8\r\n
+Action.c(137):     Date: Mon, 23 May 2016 22:30:19 GMT\r\n
+Action.c(137):     Content-Length: 445\r\n
+Action.c(137):     Connection: keep-alive\r\n
+Action.c(137):     \r\n
+Action.c(137): t=9506ms: 445-byte response body for "https://onlineapi-qa.cloud.sysco.com/suppliers" (RelFrameId=1, Internal ID=9)
+Action.c(137):     {"id":"40223d25-2147-43b6-bd7a-32ccc282d8e9","name":"PTF_Supplier_PTF_Supplier_0523223019"
+Action.c(137):     ,"contactInformation":{"address":"341 Laffayett St","contactName":"Jr. Marketing Asscoiate
+Action.c(137):     ","emailAddress":"test@123.com","phoneNumber":"27042704"},"associatedAccount":{"opCo":"067
+Action.c(137):     ","customerId":"319509"},"notes":"This is sample Noet to test the performance of the appli
+Action.c(137):     cation... I hope this will help in adding and updating the supplier","deleted":false}
+Action.c(137): Notify: Saving Parameter "Corr_SupplierID = 40223d25-2147-43b6-bd7a-32ccc282d8e9".
+Action.c(137): Notify: Saving Parameter "Corr_SupplierName = PTF_Supplier_PTF_Supplier_0523223019".
+Action.c(137): web_custom_request("suppliers") was successful, 445 body bytes, 285 header bytes  	[MsgId: MMSG-26386]
+Action.c(149): Notify: Parameter Substitution: parameter "Corr_SupplierGetID" =  "659a2253-2d0f-4a51-be07-7f33c8bbfb8b"
+Action.c(153): Notify: Transaction "SC02_03_Supplier_Add_Supplier" ended with "Pass" status (Duration: 0.1590 Wasted Time: 0.0059).
+Action.c(155): Think time - Waiting 1.00 seconds (according to limit).
+Action.c(155): lr_think_time: 1.00 seconds (recorded think time was 5.00 seconds).
+Action.c(157): Notify: Transaction "SC02_04_Supplier_Get_Suppliers_Details" started.
+Action.c(160): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(160): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(160): Notify: Parameter Substitution: parameter "P_CustomerID" =  "319509"
+Action.c(160): Notify: Parameter Substitution: parameter "P_UserID" =  "PTNormal01"
+Action.c(160): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(160): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(162): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(162): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(163): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(163): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(167): web_custom_request("SupplierDetails") started  	[MsgId: MMSG-26355]
+Action.c(167): Notify: Parameter Substitution: parameter "P_URL" =  "https://onlineapi-qa.cloud.sysco.com"
+Action.c(167): Notify: Parameter Substitution: parameter "Corr_SupplierID" =  "40223d25-2147-43b6-bd7a-32ccc282d8e9"
+Action.c(167): t=10654ms: 276-byte response headers for "https://onlineapi-qa.cloud.sysco.com/suppliers/40223d25-2147-43b6-bd7a-32ccc282d8e9" (RelFrameId=1, Internal ID=10)
+Action.c(167):     HTTP/1.1 200 OK\r\n
+Action.c(167):     Access-Control-Allow-Credentials: true\r\n
+Action.c(167):     Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE\r\n
+Action.c(167):     Access-Control-Allow-Origin: *\r\n
+Action.c(167):     Content-Type: application/json; charset=utf-8\r\n
+Action.c(167):     Date: Mon, 23 May 2016 22:30:21 GMT\r\n
+Action.c(167):     Content-Length: 445\r\n
+Action.c(167):     Connection: keep-alive\r\n
+Action.c(167):     \r\n
+Action.c(167): t=10656ms: 445-byte response body for "https://onlineapi-qa.cloud.sysco.com/suppliers/40223d25-2147-43b6-bd7a-32ccc282d8e9" (RelFrameId=1, Internal ID=10)
+Action.c(167):     {"id":"40223d25-2147-43b6-bd7a-32ccc282d8e9","name":"PTF_Supplier_PTF_Supplier_0523223019"
+Action.c(167):     ,"contactInformation":{"address":"341 Laffayett St","contactName":"Jr. Marketing Asscoiate
+Action.c(167):     ","emailAddress":"test@123.com","phoneNumber":"27042704"},"associatedAccount":{"opCo":"067
+Action.c(167):     ","customerId":"319509"},"notes":"This is sample Noet to test the performance of the appli
+Action.c(167):     cation... I hope this will help in adding and updating the supplier","deleted":false}
+Action.c(167): Notify: Saving Parameter "Corr_SupplierGetID = 40223d25-2147-43b6-bd7a-32ccc282d8e9".
+Action.c(167): Notify: Saving Parameter "Corr_SupplierName = PTF_Supplier_PTF_Supplier_0523223019".
+Action.c(167): web_custom_request("SupplierDetails") was successful, 445 body bytes, 276 header bytes  	[MsgId: MMSG-26386]
+Action.c(178): Notify: Parameter Substitution: parameter "Corr_SupplierGetID" =  "40223d25-2147-43b6-bd7a-32ccc282d8e9"
+Action.c(181): Notify: Transaction "SC02_04_Supplier_Get_Suppliers_Details" ended with "Pass" status (Duration: 0.1651 Wasted Time: 0.0190).
+Action.c(185): Think time - Waiting 1.00 seconds (according to limit).
+Action.c(185): lr_think_time: 1.00 seconds (recorded think time was 5.00 seconds).
+Action.c(187): Notify: Transaction "SC02_02_Supplier_Click_on_Suppliers" started.
+Action.c(190): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(190): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(190): Notify: Parameter Substitution: parameter "P_CustomerID" =  "319509"
+Action.c(190): Notify: Parameter Substitution: parameter "P_UserID" =  "PTNormal01"
+Action.c(190): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(190): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(192): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(192): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(193): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(193): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(197): web_custom_request("suppliers") started  	[MsgId: MMSG-26355]
+Action.c(197): Notify: Parameter Substitution: parameter "P_URL" =  "https://onlineapi-qa.cloud.sysco.com"
+Action.c(197): t=11873ms: 277-byte response headers for "https://onlineapi-qa.cloud.sysco.com/suppliers" (RelFrameId=1, Internal ID=11)
+Action.c(197):     HTTP/1.1 200 OK\r\n
+Action.c(197):     Access-Control-Allow-Credentials: true\r\n
+Action.c(197):     Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE\r\n
+Action.c(197):     Access-Control-Allow-Origin: *\r\n
+Action.c(197):     Content-Type: application/json; charset=utf-8\r\n
+Action.c(197):     Date: Mon, 23 May 2016 22:30:22 GMT\r\n
+Action.c(197):     Content-Length: 3132\r\n
+Action.c(197):     Connection: keep-alive\r\n
+Action.c(197):     \r\n
+Action.c(197): t=11874ms: 3132-byte response body for "https://onlineapi-qa.cloud.sysco.com/suppliers" (RelFrameId=1, Internal ID=11)
+Action.c(197):     {"suppliers":[{"id":"474acfea-5fac-444e-a38e-cf9a6dee215b","name":"PTF_Supplier_PTF_Suppli
+Action.c(197):     er_0523222942","contactInformation":{"address":"341 Laffayett St","contactName":"Jr. Marke
+Action.c(197):     ting Asscoiate","emailAddress":"test@123.com","phoneNumber":"27042704"},"associatedAccount
+Action.c(197):     ":{"opCo":"067","customerId":"319509"},"notes":"This is sample Noet to test the performanc
+Action.c(197):     e of the application... I hope this will help in adding and updating the supplier","delete
+Action.c(197):     d":false},{"id":"aa31bc7c-56a3-4007-abf5-1bdc83d6e298","name":"PTF_Supplier_PTF_Supplier_0
+Action.c(197):     523222944","contactInformation":{"address":"341 Laffayett St","contactName":"Jr. Marketing
+Action.c(197):      Asscoiate","emailAddress":"test@123.com","phoneNumber":"27042704"},"associatedAccount":{"
+Action.c(197):     opCo":"067","customerId":"319509"},"notes":"This is sample Noet to test the performance of
+Action.c(197):      the application... I hope this will help in adding and updating the supplier","deleted":f
+Action.c(197):     alse},{"id":"15a85603-4817-4997-b8c5-f65bdfab0124","name":"PTF_Supplier_PTF_Supplier_05232
+Action.c(197):     23015","contactInformation":{"address":"341 Laffayett St","contactName":"Jr. Marketing Ass
+Action.c(197):     coiate","emailAddress":"test@123.com","phoneNumber":"27042704"},"associatedAccount":{"opCo
+Action.c(197):     ":"067","customerId":"319509"},"notes":"This is sample Noet to test the performance of the
+Action.c(197):      application... I hope this will help in adding and updating the supplier","deleted":false
+Action.c(197):     },{"id":"5716c40f-464e-4193-8505-98d3c620e00f","name":"PTF_Supplier_PTF_Supplier_052322301
+Action.c(197):     6","contactInformation":{"address":"341 Laffayett St","contactName":"Jr. Marketing Asscoia
+Action.c(197):     te","emailAddress":"test@123.com","phoneNumber":"27042704"},"associatedAccount":{"opCo":"0
+Action.c(197):     67","customerId":"319509"},"notes":"This is sample Noet to test the performance of the app
+Action.c(197):     lication... I hope this will help in adding and updating the supplier","deleted":false},{"
+Action.c(197):     id":"659a2253-2d0f-4a51-be07-7f33c8bbfb8b","name":"PTF_Supplier_PTF_Supplier_0523223018","
+Action.c(197):     contactInformation":{"address":"341 Laffayett St","contactName":"Jr. Marketing Asscoiate",
+Action.c(197):     "emailAddress":"test@123.com","phoneNumber":"27042704"},"associatedAccount":{"opCo":"067",
+Action.c(197):     "customerId":"319509"},"notes":"This is sample Noet to test the performance of the applica
+Action.c(197):     tion... I hope this will help in adding and updating the supplier","deleted":false},{"id":
+Action.c(197):     "40223d25-2147-43b6-bd7a-32ccc282d8e9","name":"PTF_Supplier_PTF_Supplier_0523223019","cont
+Action.c(197):     actInformation":{"address":"341 Laffayett St","contactName":"Jr. Marketing Asscoiate","ema
+Action.c(197):     ilAddress":"test@123.com","phoneNumber":"27042704"},"associatedAccount":{"opCo":"067","cus
+Action.c(197):     tomerId":"319509"},"notes":"This is sample Noet to test the performance of the application
+Action.c(197):     ... I hope this will help in adding and updating the supplier","deleted":false},{"id":"3c6
+Action.c(197):     9aaf3-7ac2-477d-bc21-f8d182e32551","name":"PTF_Supplier_PTF_Supplier_PTF_Supplier_05232229
+Action.c(197):     40","contactInformation":{"address":"Updated Addres","contactName":"Sr. Marketing Asscoiat
+Action.c(197):     e","emailAddress":"ds_wera@gmail123.com","phoneNumber":"2147483647"},"associatedAccount":{
+Action.c(197):     "opCo":"067","customerId":"319509"},"notes":"This Sample Updated Supplier details... I hop
+Action.c(197):     e this will help in adding and updating the supplier","deleted":false}]}
+Action.c(197): Notify: Saving Parameter "Corr_SupplierU_1 = 474acfea-5fac-444e-a38e-cf9a6dee215b".
+Action.c(197): Notify: Saving Parameter "Corr_SupplierNameU_1 = PTF_Supplier_PTF_Supplier_0523222942".
+Action.c(197): Notify: Saving Parameter "Corr_SupplierU_2 = aa31bc7c-56a3-4007-abf5-1bdc83d6e298".
+Action.c(197): Notify: Saving Parameter "Corr_SupplierNameU_2 = PTF_Supplier_PTF_Supplier_0523222944".
+Action.c(197): Notify: Saving Parameter "Corr_SupplierU_3 = 15a85603-4817-4997-b8c5-f65bdfab0124".
+Action.c(197): Notify: Saving Parameter "Corr_SupplierNameU_3 = PTF_Supplier_PTF_Supplier_0523223015".
+Action.c(197): Notify: Saving Parameter "Corr_SupplierU_4 = 5716c40f-464e-4193-8505-98d3c620e00f".
+Action.c(197): Notify: Saving Parameter "Corr_SupplierNameU_4 = PTF_Supplier_PTF_Supplier_0523223016".
+Action.c(197): Notify: Saving Parameter "Corr_SupplierU_5 = 659a2253-2d0f-4a51-be07-7f33c8bbfb8b".
+Action.c(197): Notify: Saving Parameter "Corr_SupplierNameU_5 = PTF_Supplier_PTF_Supplier_0523223018".
+Action.c(197): Notify: Saving Parameter "Corr_SupplierU_6 = 40223d25-2147-43b6-bd7a-32ccc282d8e9".
+Action.c(197): Notify: Saving Parameter "Corr_SupplierNameU_6 = PTF_Supplier_PTF_Supplier_0523223019".
+Action.c(197): Notify: Saving Parameter "Corr_SupplierU_7 = 3c69aaf3-7ac2-477d-bc21-f8d182e32551".
+Action.c(197): Notify: Saving Parameter "Corr_SupplierNameU_7 = PTF_Supplier_PTF_Supplier_PTF_Supplier_0523222940".
+Action.c(197): Notify: Saving Parameter "Corr_SupplierU_count = 7".
+Action.c(197): Notify: Saving Parameter "Corr_SupplierNameU_count = 7".
+Action.c(197): web_custom_request("suppliers") was successful, 3132 body bytes, 277 header bytes  	[MsgId: MMSG-26386]
+Action.c(208): Notify: Parameter Substitution: parameter "Corr_SupplierU_count" =  "7"
+Action.c(210): Notify: Transaction "SC02_02_Supplier_Click_on_Suppliers" ended with "Pass" status (Duration: 0.2130 Wasted Time: 0.0054).
+Action.c(212): Think time - Waiting 1.00 seconds (according to limit).
+Action.c(212): lr_think_time: 1.00 seconds (recorded think time was 5.00 seconds).
+Action.c(214): Notify: Transaction "SC02_05_Supplier_Edit_Supplier" started.
+Action.c(216): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(216): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(216): Notify: Parameter Substitution: parameter "P_CustomerID" =  "319509"
+Action.c(216): Notify: Parameter Substitution: parameter "P_UserID" =  "PTNormal01"
+Action.c(216): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(216): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(218): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(218): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(219): web_add_header("Origin") started  	[MsgId: MMSG-26355]
+Action.c(219): web_add_header("Origin") was successful  	[MsgId: MMSG-26392]
+Action.c(221): web_custom_request("SupplierEdit") started  	[MsgId: MMSG-26355]
+Action.c(221): Notify: Parameter Substitution: parameter "P_URL" =  "https://onlineapi-qa.cloud.sysco.com"
+Action.c(221): Notify: Parameter Substitution: parameter "Corr_SupplierU_1" =  "474acfea-5fac-444e-a38e-cf9a6dee215b"
+Action.c(221): Notify: Parameter Substitution: parameter "Corr_SupplierNameU_1" =  "PTF_Supplier_PTF_Supplier_0523222942"
+Action.c(221): Notify: Parameter Substitution: parameter "P_PhoneNumber" =  "2147483647"
+Action.c(221): t=13018ms: 282-byte response headers for "https://onlineapi-qa.cloud.sysco.com/suppliers/474acfea-5fac-444e-a38e-cf9a6dee215b" (RelFrameId=1, Internal ID=12)
+Action.c(221):     HTTP/1.1 200 OK\r\n
+Action.c(221):     Access-Control-Allow-Credentials: true\r\n
+Action.c(221):     Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE\r\n
+Action.c(221):     Access-Control-Allow-Origin: file://\r\n
+Action.c(221):     Content-Type: application/json; charset=utf-8\r\n
+Action.c(221):     Date: Mon, 23 May 2016 22:30:23 GMT\r\n
+Action.c(221):     Content-Length: 440\r\n
+Action.c(221):     Connection: keep-alive\r\n
+Action.c(221):     \r\n
+Action.c(221): t=13020ms: 440-byte response body for "https://onlineapi-qa.cloud.sysco.com/suppliers/474acfea-5fac-444e-a38e-cf9a6dee215b" (RelFrameId=1, Internal ID=12)
+Action.c(221):     {"id":"474acfea-5fac-444e-a38e-cf9a6dee215b","name":"PTF_Supplier_PTF_Supplier_PTF_Supplie
+Action.c(221):     r_0523222942","contactInformation":{"address":"Updated Addres","contactName":"Sr. Marketin
+Action.c(221):     g Asscoiate","emailAddress":"ds_wera@gmail123.com","phoneNumber":"2147483647"},"associated
+Action.c(221):     Account":{"opCo":"067","customerId":"319509"},"notes":"This Sample Updated Supplier detail
+Action.c(221):     s... I hope this will help in adding and updating the supplier","deleted":false}
+Action.c(221): Notify: Saving Parameter "Corr_SupplierGetID_U = 474acfea-5fac-444e-a38e-cf9a6dee215b".
+Action.c(221): web_custom_request("SupplierEdit") was successful, 440 body bytes, 282 header bytes  	[MsgId: MMSG-26386]
+Action.c(233): web_get_int_property started  	[MsgId: MMSG-26355]
+Action.c(233): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Action.c(237): Notify: Parameter Substitution: parameter "Corr_Supplier_1" =  "474acfea-5fac-444e-a38e-cf9a6dee215b"
+The script successfully edited First Supplier 474acfea-5fac-444e-a38e-cf9a6dee215b
+Action.c(239): Notify: Transaction "SC02_05_Supplier_Edit_Supplier" ended with "Pass" status (Duration: 0.1556 Wasted Time: 0.0058).
+Action.c(241): Think time - Waiting 1.00 seconds (according to limit).
+Action.c(241): lr_think_time: 1.00 seconds (recorded think time was 5.00 seconds).
+Action.c(243): Notify: Transaction "SC02_04_Supplier_Get_Suppliers_Details" started.
+Action.c(246): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(246): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(246): Notify: Parameter Substitution: parameter "P_CustomerID" =  "319509"
+Action.c(246): Notify: Parameter Substitution: parameter "P_UserID" =  "PTNormal01"
+Action.c(246): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(246): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(248): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(248): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(249): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(249): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(253): web_custom_request("SupplierDetails2") started  	[MsgId: MMSG-26355]
+Action.c(253): Notify: Parameter Substitution: parameter "P_URL" =  "https://onlineapi-qa.cloud.sysco.com"
+Action.c(253): Notify: Parameter Substitution: parameter "Corr_SupplierGetID_U" =  "474acfea-5fac-444e-a38e-cf9a6dee215b"
+Action.c(253): t=14173ms: 276-byte response headers for "https://onlineapi-qa.cloud.sysco.com/suppliers/474acfea-5fac-444e-a38e-cf9a6dee215b" (RelFrameId=1, Internal ID=13)
+Action.c(253):     HTTP/1.1 200 OK\r\n
+Action.c(253):     Access-Control-Allow-Credentials: true\r\n
+Action.c(253):     Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE\r\n
+Action.c(253):     Access-Control-Allow-Origin: *\r\n
+Action.c(253):     Content-Type: application/json; charset=utf-8\r\n
+Action.c(253):     Date: Mon, 23 May 2016 22:30:24 GMT\r\n
+Action.c(253):     Content-Length: 440\r\n
+Action.c(253):     Connection: keep-alive\r\n
+Action.c(253):     \r\n
+Action.c(253): t=14175ms: 440-byte response body for "https://onlineapi-qa.cloud.sysco.com/suppliers/474acfea-5fac-444e-a38e-cf9a6dee215b" (RelFrameId=1, Internal ID=13)
+Action.c(253):     {"id":"474acfea-5fac-444e-a38e-cf9a6dee215b","name":"PTF_Supplier_PTF_Supplier_PTF_Supplie
+Action.c(253):     r_0523222942","contactInformation":{"address":"Updated Addres","contactName":"Sr. Marketin
+Action.c(253):     g Asscoiate","emailAddress":"ds_wera@gmail123.com","phoneNumber":"2147483647"},"associated
+Action.c(253):     Account":{"opCo":"067","customerId":"319509"},"notes":"This Sample Updated Supplier detail
+Action.c(253):     s... I hope this will help in adding and updating the supplier","deleted":false}
+Action.c(253): Notify: Saving Parameter "Corr_SupplierGetID = 474acfea-5fac-444e-a38e-cf9a6dee215b".
+Action.c(253): Notify: Saving Parameter "Corr_SupplierName = PTF_Supplier_PTF_Supplier_PTF_Supplier_0523222942".
+Action.c(253): web_custom_request("SupplierDetails2") was successful, 440 body bytes, 276 header bytes  	[MsgId: MMSG-26386]
+Action.c(264): Notify: Parameter Substitution: parameter "Corr_SupplierGetID" =  "474acfea-5fac-444e-a38e-cf9a6dee215b"
+Action.c(267): Notify: Transaction "SC02_04_Supplier_Get_Suppliers_Details" ended with "Pass" status (Duration: 0.1548 Wasted Time: 0.0060).
+Action.c(275): Think time - Waiting 1.00 seconds (according to limit).
+Action.c(275): lr_think_time: 1.00 seconds (recorded think time was 5.00 seconds).
+Action.c(277): Notify: Transaction "SC02_06_Supplier_Delete_Supplier" started.
+Action.c(279): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(279): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(279): Notify: Parameter Substitution: parameter "P_CustomerID" =  "319509"
+Action.c(279): Notify: Parameter Substitution: parameter "P_UserID" =  "PTNormal01"
+Action.c(279): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(279): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(281): web_add_header("Origin") started  	[MsgId: MMSG-26355]
+Action.c(281): web_add_header("Origin") was successful  	[MsgId: MMSG-26392]
+Action.c(283): web_custom_request("DeleteFirstSupplier") started  	[MsgId: MMSG-26355]
+Action.c(283): Notify: Parameter Substitution: parameter "P_URL" =  "https://onlineapi-qa.cloud.sysco.com"
+Action.c(283): Notify: Parameter Substitution: parameter "Corr_SupplierU_2" =  "aa31bc7c-56a3-4007-abf5-1bdc83d6e298"
+Action.c(283): t=15324ms: 222-byte response headers for "https://onlineapi-qa.cloud.sysco.com/suppliers/aa31bc7c-56a3-4007-abf5-1bdc83d6e298" (RelFrameId=1, Internal ID=14)
+Action.c(283):     HTTP/1.1 204 No Content\r\n
+Action.c(283):     Access-Control-Allow-Credentials: true\r\n
+Action.c(283):     Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE\r\n
+Action.c(283):     Access-Control-Allow-Origin: file://\r\n
+Action.c(283):     Date: Mon, 23 May 2016 22:30:25 GMT\r\n
+Action.c(283):     Connection: keep-alive\r\n
+Action.c(283):     \r\n
+Action.c(283): web_custom_request("DeleteFirstSupplier") was successful, 0 body bytes, 222 header bytes  	[MsgId: MMSG-26386]
+Action.c(292): web_get_int_property started  	[MsgId: MMSG-26355]
+Action.c(292): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Action.c(296): Notify: Parameter Substitution: parameter "Corr_SupplierU_2" =  "aa31bc7c-56a3-4007-abf5-1bdc83d6e298"
+The script successfully deleted First Supplier aa31bc7c-56a3-4007-abf5-1bdc83d6e298
+Action.c(304):  Deleted 
+Action.c(306): Notify: Transaction "SC02_06_Supplier_Delete_Supplier" ended with "Pass" status (Duration: 0.1617 Wasted Time: 0.0064).
+Action.c(312): Think time - Waiting 1.00 seconds (according to limit).
+Action.c(312): lr_think_time: 1.00 seconds (recorded think time was 5.00 seconds).
+Ending action Action.
+Ending iteration 1.
+Ending Vuser...
+Starting action vuser_end.
+Ending action vuser_end.
+Vuser Terminated.

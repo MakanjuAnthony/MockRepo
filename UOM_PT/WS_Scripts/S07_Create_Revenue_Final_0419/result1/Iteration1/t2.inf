@@ -1,0 +1,10 @@
+[t2]
+SnapshotXmlFile=snapshot_2.xml
+ContentType=DummyContentType
+StepName=Custom Request: CreateRevenue
+Total=1
+FileName1=t2.UNK
+RequestHeaderFile=t2_RequestHeader.txt
+ResponseHeaderFile=t2_ResponseHeader.txt
+RequestBodyFile=t2_RequestBody.txt
+URL1=http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/revenues

@@ -1,0 +1,9 @@
+-+
+-DCCI
+-D_IDA_XL
+-DWINNT
+-IE:\UOM\Mobility Scripts\Final\SC02_Manage_Supplier
+-IC:\Program Files (x86)\HP\LoadRunner\include
+-ee:\uom\mobility scripts\final\sc02_manage_supplier\\logfile.log
+e:\uom\mobility scripts\final\sc02_manage_supplier\\combined_SC02_Manage_Supplier.c
+e:\uom\mobility scripts\final\sc02_manage_supplier\\pre_cci.c

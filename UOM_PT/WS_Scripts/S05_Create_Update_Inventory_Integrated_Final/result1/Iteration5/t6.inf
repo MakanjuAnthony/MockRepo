@@ -1,0 +1,10 @@
+[t6]
+SnapshotXmlFile=snapshot_6.xml
+ContentType=DummyContentType
+StepName=Custom Request: updateInventory
+Total=1
+FileName1=t6.UNK
+RequestHeaderFile=t6_RequestHeader.txt
+ResponseHeaderFile=t6_ResponseHeader.txt
+RequestBodyFile=t6_RequestBody.txt
+URL1=http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com/inventories/d3102723-5c7c-4cb7-aa0e-51a17fc2d947

@@ -1,0 +1,12 @@
+POST /inventories/35f7db2d-b408-49ad-ace8-d1ff7e5f213d HTTP/1.1
+Authorization: Bearer 067|116079|116079
+Content-Type: application/json
+Referer: http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com/swagger
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.97 Safari/537.36
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: en-US,en;q=0.8
+Accept: */*
+Connection: Keep-Alive
+Host: internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com
+Content-Length: 5805
+

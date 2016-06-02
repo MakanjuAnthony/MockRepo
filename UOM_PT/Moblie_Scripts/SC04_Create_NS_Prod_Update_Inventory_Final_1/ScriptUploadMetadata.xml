@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VugenScriptMetadata>
+  <ScriptName>SC04_Create_NS_Prod_Update_Inventory_Final_1</ScriptName>
+  <Protocol>Mobile Application - HTTP/HTML</Protocol>
+  <ActionFiles>
+    <FileEntry Name="vuser_init.c" Filter="2" />
+    <FileEntry Name="Action.c" Filter="2" />
+    <FileEntry Name="vuser_end.c" Filter="2" />
+  </ActionFiles>
+  <GeneralFiles>
+    <FileEntry Name="SC04_Create_NS_Prod_Update_Inventory_Final_1.usr" Filter="4" />
+    <FileEntry Name="default.cfg" Filter="4" />
+    <FileEntry Name="default.usp" Filter="4" />
+    <FileEntry Name="SC04_Create_NS_Prod_Update_Inventory_Final_1.prm" Filter="2" />
+    <FileEntry Name="globals.h" Filter="2" />
+    <FileEntry Name="P_LocationName.dat" Filter="2" />
+    <FileEntry Name="P_Password.dat" Filter="2" />
+    <FileEntry Name="P_URL.dat" Filter="2" />
+    <FileEntry Name="P_QAURL.dat" Filter="2" />
+    <FileEntry Name="P_CustomerID.dat" Filter="2" />
+    <FileEntry Name="P_OpCo.dat" Filter="2" />
+    <FileEntry Name="P_UserID.dat" Filter="2" />
+    <FileEntry Name="ScriptUploadMetadata.xml" Filter="2" />
+    <FileEntry Name="Bookmarks.xml" Filter="2" />
+    <FileEntry Name="Breakpoints.xml" Filter="2" />
+    <FileEntry Name="CompilerLogMetadata.xml" Filter="2" />
+    <FileEntry Name="ReplaySummaryReport.xml" Filter="2" />
+    <FileEntry Name="UserTasks.xml" Filter="2" />
+    <FileEntry Name="Create_NS_Prod_Update_Inventory_HTML_05_24.prm.bak" Filter="1" />
+    <FileEntry Name="logfile.log" Filter="1" />
+    <FileEntry Name="mdrv.log" Filter="1" />
+    <FileEntry Name="mdrv3z4.389.log" Filter="1" />
+    <FileEntry Name="mdrvsmp.345.log" Filter="1" />
+    <FileEntry Name="mdrvwYC.99.log" Filter="1" />
+    <FileEntry Name="mdrvYQI.621.log" Filter="1" />
+    <FileEntry Name="mdrv_cmd.txt" Filter="1" />
+    <FileEntry Name="options.txt" Filter="1" />
+    <FileEntry Name="output.bak" Filter="1" />
+    <FileEntry Name="output.txt" Filter="1" />
+    <FileEntry Name="SC03B_Create_NS_Prod_Update_Inventory_05_24.prm.bak" Filter="1" />
+    <FileEntry Name="SC03B_Create_NS_Prod_Update_Inventory_HTML_05_24.prm.bak" Filter="1" />
+    <FileEntry Name="SC04_Create_NS_Prod_Update_Inventory_Final.prm.bak" Filter="1" />
+    <FileEntry Name="SC04_Create_NS_Prod_Update_Inventory_Final_1.prm.bak" Filter="1" />
+    <FileEntry Name="SC04_Create_NS_Prod_Update_Inventory_Final_1.sdf" Filter="1" />
+    <FileEntry Name="ssr_config.ini" Filter="1" />
+    <FileEntry Name="ThumbnailsCache.tmp" Filter="1" />
+    <FileEntry Name="TransactionsData.db" Filter="1" />
+    <FileEntry Name="data\" Filter="1" />
+    <FileEntry Name="result1\" Filter="1" />
+  </GeneralFiles>
+</VugenScriptMetadata>

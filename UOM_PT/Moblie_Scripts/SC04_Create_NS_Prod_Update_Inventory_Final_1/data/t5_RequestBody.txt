@@ -1,0 +1,2 @@
+"{\"groups\":[{\"name\":\"PT_loc_C\",\"foodType\":\"cooler\",\"items\":[\"cec00f98-a43d-423d-a1"
+"b6-4632e061e056\"]}]}"

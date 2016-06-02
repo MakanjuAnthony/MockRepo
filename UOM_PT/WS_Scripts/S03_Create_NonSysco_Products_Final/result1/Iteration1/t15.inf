@@ -1,0 +1,10 @@
+[t15]
+SnapshotXmlFile=snapshot_15.xml
+ContentType=DummyContentType
+StepName=Custom Request: UpdateProduct
+Total=1
+FileName1=t15.UNK
+RequestHeaderFile=t15_RequestHeader.txt
+ResponseHeaderFile=t15_ResponseHeader.txt
+RequestBodyFile=t15_RequestBody.txt
+URL1=http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/02affb53-25b1-42bd-acc7-c8c43019d5db

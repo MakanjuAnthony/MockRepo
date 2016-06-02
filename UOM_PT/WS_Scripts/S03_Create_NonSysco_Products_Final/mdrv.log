@@ -1,0 +1,1149 @@
+Virtual User Script started at : 5/10/2016 6:52:57 AM
+Starting action vuser_init.
+Web Turbo Replay of LoadRunner 12.0.0 for Windows 2008 R2; build 2739 (Nov 30 2014 23:13:05)  	[MsgId: MMSG-27143]
+Run mode: HTML  	[MsgId: MMSG-26993]
+Run-Time Settings file: "G:\11_UOM\Scripts\QA\Sprint5\S03_Create_NonSysco_Products_Final\\default.cfg"  	[MsgId: MMSG-27141]
+Ending action vuser_init.
+Running Vuser...
+Starting iteration 1.
+Maximum number of concurrent connections per server: 6  	[MsgId: MMSG-26989]
+Starting action Action.
+Action.c(7): Notify: Transaction "WS03_00_Get_AccountByCustomerID" started.
+Action.c(9): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(9): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(9): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(9): Notify: Parameter Substitution: parameter "P_CustomerID" =  "148759"
+Action.c(9): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(9): Notify: Parameter Substitution: parameter "P_UserID" =  "148759"
+Action.c(9): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(9): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(11): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(11): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(12): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(12): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(14): web_url("GetAccount") started  	[MsgId: MMSG-26355]
+Action.c(14): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(14): t=1170ms: 132-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/accounts/mine" (RelFrameId=1, Internal ID=1)
+Action.c(14):     HTTP/1.1 200 OK\r\n
+Action.c(14):     Content-Type: application/json\r\n
+Action.c(14):     Date: Tue, 10 May 2016 06:52:58 GMT\r\n
+Action.c(14):     Content-Length: 50\r\n
+Action.c(14):     Connection: keep-alive\r\n
+Action.c(14):     \r\n
+Action.c(14): t=1212ms: 50-byte response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/accounts/mine" (RelFrameId=1, Internal ID=1)
+Action.c(14):     {"opCo":"067","customerId":"148759","isCogs":true}
+Action.c(14): Notify: Saving Parameter "Corr_CustomerID = 148759".
+Action.c(14): Notify: Saving Parameter "Corr_isCogs = true".
+Action.c(14): HTML parsing not performed for Content-Type "application/json" ("ParseHtmlContentType" Run-Time Setting is "TEXT"). URL="http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/accounts/mine"  	[MsgId: MMSG-26548]
+Action.c(14): web_url("GetAccount") was successful, 50 body bytes, 132 header bytes  	[MsgId: MMSG-26386]
+Action.c(22): Notify: Transaction "WS03_00_Get_AccountByCustomerID" ended with a "Pass" status (Duration: 0.4568 Wasted Time: 0.1602).
+Action.c(26): Notify: Parameter Substitution: parameter "Corr_CustomerID" =  "148759"
+Action.c(62): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(62): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(62): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(62): Notify: Parameter Substitution: parameter "P_CustomerID" =  "148759"
+Action.c(62): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(62): Notify: Parameter Substitution: parameter "P_UserID" =  "148759"
+Action.c(62): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(62): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(64): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(64): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(65): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(65): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(66): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(66): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(67): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(67): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(69): web_url("SuppliersList") started  	[MsgId: MMSG-26355]
+Action.c(69): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(69): t=1512ms: 180-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/suppliers" (RelFrameId=1, Internal ID=2)
+Action.c(69):     HTTP/1.1 200 OK\r\n
+Action.c(69):     Content-Encoding: gzip\r\n
+Action.c(69):     Content-Type: application/json\r\n
+Action.c(69):     Date: Tue, 10 May 2016 06:52:58 GMT\r\n
+Action.c(69):     Vary: Accept-Encoding\r\n
+Action.c(69):     Content-Length: 466\r\n
+Action.c(69):     Connection: keep-alive\r\n
+Action.c(69):     \r\n
+Action.c(69): t=1544ms: 466-byte ENCODED response body received for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/suppliers" (RelFrameId=1, Internal ID=2)
+Action.c(69): t=1548ms: 1905-byte DECODED response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/suppliers" (RelFrameId=1, Internal ID=2)
+Action.c(69):     {"suppliers":[{"id":"b63ac5e4-d80a-4253-94a9-56bd23a80e28","name":"PT_Sup4418","contactInf
+Action.c(69):     ormation":{"address":"PT_Add4418","contactName":"PT_ContactName4418","emailAddress":"PT_EM
+Action.c(69):     AIL02@test.com","phoneNumber":"PT_Phone4418"},"associatedAccount":{"opCo":"067","customerI
+Action.c(69):     d":"148759"},"notes":"PT_SampleNotes4418","deleted":false},{"id":"5442fbc1-d33c-41a0-9e78-
+Action.c(69):     c4dba1b99e72","name":"PT_Sup4419","contactInformation":{"address":"PT_Add4419","contactNam
+Action.c(69):     e":"PT_ContactName4419","emailAddress":"PT_EMAIL01@test.com","phoneNumber":"PT_Phone4419"}
+Action.c(69):     ,"associatedAccount":{"opCo":"067","customerId":"148759"},"notes":"PT_SampleNotes4419","de
+Action.c(69):     leted":false},{"id":"b8fe933f-00c9-43aa-803a-ecff1cb612ce","name":"PT_Sup4420","contactInf
+Action.c(69):     ormation":{"address":"PT_Add4420","contactName":"PT_ContactName4420","emailAddress":"PT_EM
+Action.c(69):     AIL02@test.com","phoneNumber":"PT_Phone4420"},"associatedAccount":{"opCo":"067","customerI
+Action.c(69):     d":"148759"},"notes":"PT_SampleNotes4420","deleted":false},{"id":"bc78a026-c5ce-4a05-8d3e-
+Action.c(69):     6d658c47fdf7","name":"PT_Sup4421","contactInformation":{"address":"PT_Add4421","contactNam
+Action.c(69):     e":"PT_ContactName4421","emailAddress":"PT_EMAIL01@test.com","phoneNumber":"PT_Phone4421"}
+Action.c(69):     ,"associatedAccount":{"opCo":"067","customerId":"148759"},"notes":"PT_SampleNotes4421","de
+Action.c(69):     leted":false},{"id":"ed23ac70-eb71-43f3-a7a6-3e70ef6b91a8","name":"PT_Sup4422","contactInf
+Action.c(69):     ormation":{"address":"PT_Add4422","contactName":"PT_ContactName4422","emailAddress":"PT_EM
+Action.c(69):     AIL02@test.com","phoneNumber":"PT_Phone4422"},"associatedAccount":{"opCo":"067","customerI
+Action.c(69):     d":"148759"},"notes":"PT_SampleNotes4422","deleted":false},{"id":"18ecde0c-d091-411d-a07d-
+Action.c(69):     1a6bbf14963c","name":"PT_Sup4423","contactInformation":{"address":"PT_Add4423","contactNam
+Action.c(69):     e":"PT_ContactName4423","emailAddress":"PT_EMAIL01@test.com","phoneNumber":"PT_Phone4423"}
+Action.c(69):     ,"associatedAccount":{"opCo":"067","customerId":"148759"},"notes":"PT_SampleNotes4423","de
+Action.c(69):     leted":false}]}
+Action.c(69): Notify: Saving Parameter "Corr_SupplierID_1 = b63ac5e4-d80a-4253-94a9-56bd23a80e28".
+Action.c(69): Notify: Saving Parameter "Corr_SupplierName_1 = PT_Sup4418".
+Action.c(69): Notify: Saving Parameter "Corr_SupplierName_2 = PT_Sup4418".
+Action.c(69): Notify: Saving Parameter "Corr_SupplierID_2 = 5442fbc1-d33c-41a0-9e78-c4dba1b99e72".
+Action.c(69): HTML parsing not performed for Content-Type "application/json" ("ParseHtmlContentType" Run-Time Setting is "TEXT"). URL="http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/suppliers"  	[MsgId: MMSG-26548]
+Action.c(69): web_url("SuppliersList") was successful, 466 body bytes, 180 header bytes  	[MsgId: MMSG-26386]
+Action.c(79): Notify: Parameter Substitution: parameter "Corr_SupplierID_1" =  "b63ac5e4-d80a-4253-94a9-56bd23a80e28"
+Action.c(140): Notify: Transaction "WS03_02_Insert_NonSysco_Product" started.
+Action.c(142): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(142): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(142): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(142): Notify: Parameter Substitution: parameter "P_CustomerID" =  "148759"
+Action.c(142): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(142): Notify: Parameter Substitution: parameter "P_UserID" =  "148759"
+Action.c(142): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(142): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(144): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(144): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(145): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(145): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(146): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(146): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(148): web_custom_request("InsertNSproducts") started  	[MsgId: MMSG-26355]
+Action.c(148): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(148): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(148): Notify: Getting new value for parameter 'P_ProductName': table = 'P_OpCo.dat' column = '13' row = '1'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_ProductName" =  "NSPT10761"
+Action.c(148): Notify: Next row for parameter P_MaterialID = 1 [table  = P_MaterialID].
+Action.c(148): Notify: Parameter Substitution: parameter "P_MaterialID" =  "PT11960"
+Action.c(148): Notify: Parameter Substitution: parameter "Corr_SupplierID_2" =  "5442fbc1-d33c-41a0-9e78-c4dba1b99e72"
+Action.c(148): Notify: Next row for parameter P_Brand = 1 [table  = P_Brand].
+Action.c(148): Notify: Parameter Substitution: parameter "P_Brand" =  "PT_Prod10761"
+Action.c(148): Notify: Next row for parameter P_AvgWtPerCase = 1 [table  = P_AvgWtPerCase].
+Action.c(148): Notify: Parameter Substitution: parameter "P_AvgWtPerCase" =  "15"
+Action.c(148): Notify: Next row for parameter P_UOM = 1 [table  = P_UOM].
+Action.c(148): Notify: Parameter Substitution: parameter "P_UOM" =  "CS"
+Action.c(148): t=1831ms: 277-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products" (RelFrameId=1, Internal ID=3)
+Action.c(148):     HTTP/1.1 201 Created\r\n
+Action.c(148):     Content-Type: application/json\r\n
+Action.c(148):     Date: Tue, 10 May 2016 06:52:58 GMT\r\n
+Action.c(148):     Location: http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.co
+Action.c(148):     m/products/9f139052-cfc2-4c26-a7af-b2211be1a1e0\r\n
+Action.c(148):     Content-Length: 277\r\n
+Action.c(148):     Connection: keep-alive\r\n
+Action.c(148):     \r\n
+Action.c(148): t=1870ms: 277-byte response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products" (RelFrameId=1, Internal ID=3)
+Action.c(148):     {"opCo":"067","customerId":"148759","id":"9f139052-cfc2-4c26-a7af-b2211be1a1e0","name":"NS
+Action.c(148):     PT10761","materialId":"PT11960","type":"prepared","description":"Test1","nickName":"ABC","
+Action.c(148):     averageWeightPerCase":15,"packSize":{"pack":"string","size":"string","uom":"cs"},"deleted"
+Action.c(148):     :false}
+Action.c(148): Notify: Saving Parameter "Corr_ProductID = 9f139052-cfc2-4c26-a7af-b2211be1a1e0".
+Action.c(148): Notify: Saving Parameter "Corr_ProductName = NSPT10761".
+Action.c(148): Notify: Saving Parameter "Corr_MaterialID = PT11960".
+Action.c(148): web_custom_request("InsertNSproducts") was successful, 277 body bytes, 277 header bytes  	[MsgId: MMSG-26386]
+Action.c(161): Notify: Transaction "WS03_02_Insert_NonSysco_Product" ended with a "Pass" status (Duration: 0.2685 Wasted Time: 0.0151).
+Action.c(166): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(166): Notify: Parameter Substitution: parameter "P_CustomerID" =  "148759"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_ProductID" =  "9f139052-cfc2-4c26-a7af-b2211be1a1e0"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_ProductName" =  "NSPT10761"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_SupplierID_2" =  "5442fbc1-d33c-41a0-9e78-c4dba1b99e72"
+Action.c(140): Notify: Transaction "WS03_02_Insert_NonSysco_Product" started.
+Action.c(142): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(142): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(142): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(142): Notify: Parameter Substitution: parameter "P_CustomerID" =  "148759"
+Action.c(142): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(142): Notify: Parameter Substitution: parameter "P_UserID" =  "148759"
+Action.c(142): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(142): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(144): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(144): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(145): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(145): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(146): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(146): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(148): web_custom_request("InsertNSproducts") started  	[MsgId: MMSG-26355]
+Action.c(148): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(148): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(148): Notify: Next row for parameter P_ProductName = 2 [table  = P_ProductName].
+Action.c(148): Notify: Getting new value for parameter 'P_ProductName': table = 'P_OpCo.dat' column = '13' row = '2'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_ProductName" =  "NSPT10762"
+Action.c(148): Notify: Next row for parameter P_MaterialID = 2 [table  = P_MaterialID].
+Action.c(148): Notify: Getting new value for parameter 'P_MaterialID': table = 'P_OpCo.dat' column = '14' row = '2'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_MaterialID" =  "PT11961"
+Action.c(148): Notify: Parameter Substitution: parameter "Corr_SupplierID_2" =  "5442fbc1-d33c-41a0-9e78-c4dba1b99e72"
+Action.c(148): Notify: Next row for parameter P_Brand = 2 [table  = P_Brand].
+Action.c(148): Notify: Getting new value for parameter 'P_Brand': table = 'P_OpCo.dat' column = '15' row = '2'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_Brand" =  "PT_Prod10762"
+Action.c(148): Notify: Next row for parameter P_AvgWtPerCase = 2 [table  = P_AvgWtPerCase].
+Action.c(148): Notify: Getting new value for parameter 'P_AvgWtPerCase': table = 'P_OpCo.dat' column = '16' row = '2'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_AvgWtPerCase" =  "20"
+Action.c(148): Notify: Next row for parameter P_UOM = 2 [table  = P_UOM].
+Action.c(148): Notify: Getting new value for parameter 'P_UOM': table = 'P_OpCo.dat' column = '18' row = '2'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_UOM" =  "EA"
+Action.c(148): t=2227ms: 277-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products" (RelFrameId=1, Internal ID=4)
+Action.c(148):     HTTP/1.1 201 Created\r\n
+Action.c(148):     Content-Type: application/json\r\n
+Action.c(148):     Date: Tue, 10 May 2016 06:52:59 GMT\r\n
+Action.c(148):     Location: http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.co
+Action.c(148):     m/products/2b448316-45a2-4763-a0ad-cb1b63ce88e8\r\n
+Action.c(148):     Content-Length: 277\r\n
+Action.c(148):     Connection: keep-alive\r\n
+Action.c(148):     \r\n
+Action.c(148): t=2288ms: 277-byte response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products" (RelFrameId=1, Internal ID=4)
+Action.c(148):     {"opCo":"067","customerId":"148759","id":"2b448316-45a2-4763-a0ad-cb1b63ce88e8","name":"NS
+Action.c(148):     PT10762","materialId":"PT11961","type":"prepared","description":"Test1","nickName":"ABC","
+Action.c(148):     averageWeightPerCase":20,"packSize":{"pack":"string","size":"string","uom":"ea"},"deleted"
+Action.c(148):     :false}
+Action.c(148): Notify: Saving Parameter "Corr_ProductID = 2b448316-45a2-4763-a0ad-cb1b63ce88e8".
+Action.c(148): Notify: Saving Parameter "Corr_ProductName = NSPT10762".
+Action.c(148): Notify: Saving Parameter "Corr_MaterialID = PT11961".
+Action.c(148): web_custom_request("InsertNSproducts") was successful, 277 body bytes, 277 header bytes  	[MsgId: MMSG-26386]
+Action.c(161): Notify: Transaction "WS03_02_Insert_NonSysco_Product" ended with a "Pass" status (Duration: 0.2956 Wasted Time: 0.0134).
+Action.c(166): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(166): Notify: Parameter Substitution: parameter "P_CustomerID" =  "148759"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_ProductID" =  "2b448316-45a2-4763-a0ad-cb1b63ce88e8"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_ProductName" =  "NSPT10762"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_SupplierID_2" =  "5442fbc1-d33c-41a0-9e78-c4dba1b99e72"
+Action.c(140): Notify: Transaction "WS03_02_Insert_NonSysco_Product" started.
+Action.c(142): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(142): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(142): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(142): Notify: Parameter Substitution: parameter "P_CustomerID" =  "148759"
+Action.c(142): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(142): Notify: Parameter Substitution: parameter "P_UserID" =  "148759"
+Action.c(142): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(142): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(144): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(144): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(145): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(145): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(146): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(146): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(148): web_custom_request("InsertNSproducts") started  	[MsgId: MMSG-26355]
+Action.c(148): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(148): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(148): Notify: Next row for parameter P_ProductName = 3 [table  = P_ProductName].
+Action.c(148): Notify: Getting new value for parameter 'P_ProductName': table = 'P_OpCo.dat' column = '13' row = '3'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_ProductName" =  "NSPT10763"
+Action.c(148): Notify: Next row for parameter P_MaterialID = 3 [table  = P_MaterialID].
+Action.c(148): Notify: Getting new value for parameter 'P_MaterialID': table = 'P_OpCo.dat' column = '14' row = '3'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_MaterialID" =  "PT11962"
+Action.c(148): Notify: Parameter Substitution: parameter "Corr_SupplierID_2" =  "5442fbc1-d33c-41a0-9e78-c4dba1b99e72"
+Action.c(148): Notify: Next row for parameter P_Brand = 3 [table  = P_Brand].
+Action.c(148): Notify: Getting new value for parameter 'P_Brand': table = 'P_OpCo.dat' column = '15' row = '3'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_Brand" =  "PT_Prod10763"
+Action.c(148): Notify: Next row for parameter P_AvgWtPerCase = 3 [table  = P_AvgWtPerCase].
+Action.c(148): Notify: Getting new value for parameter 'P_AvgWtPerCase': table = 'P_OpCo.dat' column = '16' row = '3'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_AvgWtPerCase" =  "12"
+Action.c(148): Notify: Next row for parameter P_UOM = 3 [table  = P_UOM].
+Action.c(148): Notify: Getting new value for parameter 'P_UOM': table = 'P_OpCo.dat' column = '18' row = '3'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_UOM" =  "CS"
+Action.c(148): t=2561ms: 277-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products" (RelFrameId=1, Internal ID=5)
+Action.c(148):     HTTP/1.1 201 Created\r\n
+Action.c(148):     Content-Type: application/json\r\n
+Action.c(148):     Date: Tue, 10 May 2016 06:52:59 GMT\r\n
+Action.c(148):     Location: http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.co
+Action.c(148):     m/products/82caa8e5-bf16-4a6a-ab12-1ca9a671e8e6\r\n
+Action.c(148):     Content-Length: 277\r\n
+Action.c(148):     Connection: keep-alive\r\n
+Action.c(148):     \r\n
+Action.c(148): t=2604ms: 277-byte response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products" (RelFrameId=1, Internal ID=5)
+Action.c(148):     {"opCo":"067","customerId":"148759","id":"82caa8e5-bf16-4a6a-ab12-1ca9a671e8e6","name":"NS
+Action.c(148):     PT10763","materialId":"PT11962","type":"prepared","description":"Test1","nickName":"ABC","
+Action.c(148):     averageWeightPerCase":12,"packSize":{"pack":"string","size":"string","uom":"cs"},"deleted"
+Action.c(148):     :false}
+Action.c(148): Notify: Saving Parameter "Corr_ProductID = 82caa8e5-bf16-4a6a-ab12-1ca9a671e8e6".
+Action.c(148): Notify: Saving Parameter "Corr_ProductName = NSPT10763".
+Action.c(148): Notify: Saving Parameter "Corr_MaterialID = PT11962".
+Action.c(148): web_custom_request("InsertNSproducts") was successful, 277 body bytes, 277 header bytes  	[MsgId: MMSG-26386]
+Action.c(161): Notify: Transaction "WS03_02_Insert_NonSysco_Product" ended with a "Pass" status (Duration: 0.3343 Wasted Time: 0.0150).
+Action.c(166): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(166): Notify: Parameter Substitution: parameter "P_CustomerID" =  "148759"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_ProductID" =  "82caa8e5-bf16-4a6a-ab12-1ca9a671e8e6"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_ProductName" =  "NSPT10763"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_SupplierID_2" =  "5442fbc1-d33c-41a0-9e78-c4dba1b99e72"
+Action.c(140): Notify: Transaction "WS03_02_Insert_NonSysco_Product" started.
+Action.c(142): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(142): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(142): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(142): Notify: Parameter Substitution: parameter "P_CustomerID" =  "148759"
+Action.c(142): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(142): Notify: Parameter Substitution: parameter "P_UserID" =  "148759"
+Action.c(142): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(142): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(144): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(144): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(145): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(145): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(146): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(146): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(148): web_custom_request("InsertNSproducts") started  	[MsgId: MMSG-26355]
+Action.c(148): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(148): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(148): Notify: Next row for parameter P_ProductName = 4 [table  = P_ProductName].
+Action.c(148): Notify: Getting new value for parameter 'P_ProductName': table = 'P_OpCo.dat' column = '13' row = '4'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_ProductName" =  "NSPT10764"
+Action.c(148): Notify: Next row for parameter P_MaterialID = 4 [table  = P_MaterialID].
+Action.c(148): Notify: Getting new value for parameter 'P_MaterialID': table = 'P_OpCo.dat' column = '14' row = '4'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_MaterialID" =  "PT11963"
+Action.c(148): Notify: Parameter Substitution: parameter "Corr_SupplierID_2" =  "5442fbc1-d33c-41a0-9e78-c4dba1b99e72"
+Action.c(148): Notify: Next row for parameter P_Brand = 4 [table  = P_Brand].
+Action.c(148): Notify: Getting new value for parameter 'P_Brand': table = 'P_OpCo.dat' column = '15' row = '4'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_Brand" =  "PT_Prod10764"
+Action.c(148): Notify: Next row for parameter P_AvgWtPerCase = 4 [table  = P_AvgWtPerCase].
+Action.c(148): Notify: Getting new value for parameter 'P_AvgWtPerCase': table = 'P_OpCo.dat' column = '16' row = '4'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_AvgWtPerCase" =  "15"
+Action.c(148): Notify: Next row for parameter P_UOM = 4 [table  = P_UOM].
+Action.c(148): Notify: Getting new value for parameter 'P_UOM': table = 'P_OpCo.dat' column = '18' row = '4'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_UOM" =  "EA"
+Action.c(148): t=2920ms: 277-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products" (RelFrameId=1, Internal ID=6)
+Action.c(148):     HTTP/1.1 201 Created\r\n
+Action.c(148):     Content-Type: application/json\r\n
+Action.c(148):     Date: Tue, 10 May 2016 06:53:00 GMT\r\n
+Action.c(148):     Location: http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.co
+Action.c(148):     m/products/fbb5564a-3670-414e-b0b8-be00f2d4e427\r\n
+Action.c(148):     Content-Length: 277\r\n
+Action.c(148):     Connection: keep-alive\r\n
+Action.c(148):     \r\n
+Action.c(148): t=2971ms: 277-byte response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products" (RelFrameId=1, Internal ID=6)
+Action.c(148):     {"opCo":"067","customerId":"148759","id":"fbb5564a-3670-414e-b0b8-be00f2d4e427","name":"NS
+Action.c(148):     PT10764","materialId":"PT11963","type":"prepared","description":"Test1","nickName":"ABC","
+Action.c(148):     averageWeightPerCase":15,"packSize":{"pack":"string","size":"string","uom":"ea"},"deleted"
+Action.c(148):     :false}
+Action.c(148): Notify: Saving Parameter "Corr_ProductID = fbb5564a-3670-414e-b0b8-be00f2d4e427".
+Action.c(148): Notify: Saving Parameter "Corr_ProductName = NSPT10764".
+Action.c(148): Notify: Saving Parameter "Corr_MaterialID = PT11963".
+Action.c(148): web_custom_request("InsertNSproducts") was successful, 277 body bytes, 277 header bytes  	[MsgId: MMSG-26386]
+Action.c(161): Notify: Transaction "WS03_02_Insert_NonSysco_Product" ended with a "Pass" status (Duration: 0.3029 Wasted Time: 0.0185).
+Action.c(166): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(166): Notify: Parameter Substitution: parameter "P_CustomerID" =  "148759"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_ProductID" =  "fbb5564a-3670-414e-b0b8-be00f2d4e427"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_ProductName" =  "NSPT10764"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_SupplierID_2" =  "5442fbc1-d33c-41a0-9e78-c4dba1b99e72"
+Action.c(140): Notify: Transaction "WS03_02_Insert_NonSysco_Product" started.
+Action.c(142): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(142): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(142): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(142): Notify: Parameter Substitution: parameter "P_CustomerID" =  "148759"
+Action.c(142): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(142): Notify: Parameter Substitution: parameter "P_UserID" =  "148759"
+Action.c(142): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(142): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(144): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(144): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(145): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(145): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(146): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(146): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(148): web_custom_request("InsertNSproducts") started  	[MsgId: MMSG-26355]
+Action.c(148): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(148): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(148): Notify: Next row for parameter P_ProductName = 5 [table  = P_ProductName].
+Action.c(148): Notify: Getting new value for parameter 'P_ProductName': table = 'P_OpCo.dat' column = '13' row = '5'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_ProductName" =  "NSPT10765"
+Action.c(148): Notify: Next row for parameter P_MaterialID = 5 [table  = P_MaterialID].
+Action.c(148): Notify: Getting new value for parameter 'P_MaterialID': table = 'P_OpCo.dat' column = '14' row = '5'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_MaterialID" =  "PT11964"
+Action.c(148): Notify: Parameter Substitution: parameter "Corr_SupplierID_2" =  "5442fbc1-d33c-41a0-9e78-c4dba1b99e72"
+Action.c(148): Notify: Next row for parameter P_Brand = 5 [table  = P_Brand].
+Action.c(148): Notify: Getting new value for parameter 'P_Brand': table = 'P_OpCo.dat' column = '15' row = '5'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_Brand" =  "PT_Prod10765"
+Action.c(148): Notify: Next row for parameter P_AvgWtPerCase = 5 [table  = P_AvgWtPerCase].
+Action.c(148): Notify: Getting new value for parameter 'P_AvgWtPerCase': table = 'P_OpCo.dat' column = '16' row = '5'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_AvgWtPerCase" =  "16"
+Action.c(148): Notify: Next row for parameter P_UOM = 5 [table  = P_UOM].
+Action.c(148): Notify: Getting new value for parameter 'P_UOM': table = 'P_OpCo.dat' column = '18' row = '5'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_UOM" =  "CS"
+Action.c(148): t=3228ms: 277-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products" (RelFrameId=1, Internal ID=7)
+Action.c(148):     HTTP/1.1 201 Created\r\n
+Action.c(148):     Content-Type: application/json\r\n
+Action.c(148):     Date: Tue, 10 May 2016 06:53:00 GMT\r\n
+Action.c(148):     Location: http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.co
+Action.c(148):     m/products/f34900c9-af51-45d4-afd0-993a1dcd9727\r\n
+Action.c(148):     Content-Length: 277\r\n
+Action.c(148):     Connection: keep-alive\r\n
+Action.c(148):     \r\n
+Action.c(148): t=3266ms: 277-byte response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products" (RelFrameId=1, Internal ID=7)
+Action.c(148):     {"opCo":"067","customerId":"148759","id":"f34900c9-af51-45d4-afd0-993a1dcd9727","name":"NS
+Action.c(148):     PT10765","materialId":"PT11964","type":"prepared","description":"Test1","nickName":"ABC","
+Action.c(148):     averageWeightPerCase":16,"packSize":{"pack":"string","size":"string","uom":"cs"},"deleted"
+Action.c(148):     :false}
+Action.c(148): Notify: Saving Parameter "Corr_ProductID = f34900c9-af51-45d4-afd0-993a1dcd9727".
+Action.c(148): Notify: Saving Parameter "Corr_ProductName = NSPT10765".
+Action.c(148): Notify: Saving Parameter "Corr_MaterialID = PT11964".
+Action.c(148): web_custom_request("InsertNSproducts") was successful, 277 body bytes, 277 header bytes  	[MsgId: MMSG-26386]
+Action.c(161): Notify: Transaction "WS03_02_Insert_NonSysco_Product" ended with a "Pass" status (Duration: 0.2720 Wasted Time: 0.0148).
+Action.c(166): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(166): Notify: Parameter Substitution: parameter "P_CustomerID" =  "148759"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_ProductID" =  "f34900c9-af51-45d4-afd0-993a1dcd9727"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_ProductName" =  "NSPT10765"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_SupplierID_2" =  "5442fbc1-d33c-41a0-9e78-c4dba1b99e72"
+Action.c(140): Notify: Transaction "WS03_02_Insert_NonSysco_Product" started.
+Action.c(142): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(142): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(142): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(142): Notify: Parameter Substitution: parameter "P_CustomerID" =  "148759"
+Action.c(142): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(142): Notify: Parameter Substitution: parameter "P_UserID" =  "148759"
+Action.c(142): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(142): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(144): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(144): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(145): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(145): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(146): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(146): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(148): web_custom_request("InsertNSproducts") started  	[MsgId: MMSG-26355]
+Action.c(148): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(148): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(148): Notify: Next row for parameter P_ProductName = 6 [table  = P_ProductName].
+Action.c(148): Notify: Getting new value for parameter 'P_ProductName': table = 'P_OpCo.dat' column = '13' row = '6'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_ProductName" =  "NSPT10766"
+Action.c(148): Notify: Next row for parameter P_MaterialID = 6 [table  = P_MaterialID].
+Action.c(148): Notify: Getting new value for parameter 'P_MaterialID': table = 'P_OpCo.dat' column = '14' row = '6'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_MaterialID" =  "PT11965"
+Action.c(148): Notify: Parameter Substitution: parameter "Corr_SupplierID_2" =  "5442fbc1-d33c-41a0-9e78-c4dba1b99e72"
+Action.c(148): Notify: Next row for parameter P_Brand = 6 [table  = P_Brand].
+Action.c(148): Notify: Getting new value for parameter 'P_Brand': table = 'P_OpCo.dat' column = '15' row = '6'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_Brand" =  "PT_Prod10766"
+Action.c(148): Notify: Next row for parameter P_AvgWtPerCase = 6 [table  = P_AvgWtPerCase].
+Action.c(148): Notify: Getting new value for parameter 'P_AvgWtPerCase': table = 'P_OpCo.dat' column = '16' row = '6'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_AvgWtPerCase" =  "20"
+Action.c(148): Notify: Next row for parameter P_UOM = 6 [table  = P_UOM].
+Action.c(148): Notify: Getting new value for parameter 'P_UOM': table = 'P_OpCo.dat' column = '18' row = '6'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_UOM" =  "EA"
+Action.c(148): t=3526ms: 277-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products" (RelFrameId=1, Internal ID=8)
+Action.c(148):     HTTP/1.1 201 Created\r\n
+Action.c(148):     Content-Type: application/json\r\n
+Action.c(148):     Date: Tue, 10 May 2016 06:53:00 GMT\r\n
+Action.c(148):     Location: http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.co
+Action.c(148):     m/products/0baf9f6d-1a9e-4f67-8f04-1931660f0966\r\n
+Action.c(148):     Content-Length: 277\r\n
+Action.c(148):     Connection: keep-alive\r\n
+Action.c(148):     \r\n
+Action.c(148): t=3579ms: 277-byte response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products" (RelFrameId=1, Internal ID=8)
+Action.c(148):     {"opCo":"067","customerId":"148759","id":"0baf9f6d-1a9e-4f67-8f04-1931660f0966","name":"NS
+Action.c(148):     PT10766","materialId":"PT11965","type":"prepared","description":"Test1","nickName":"ABC","
+Action.c(148):     averageWeightPerCase":20,"packSize":{"pack":"string","size":"string","uom":"ea"},"deleted"
+Action.c(148):     :false}
+Action.c(148): Notify: Saving Parameter "Corr_ProductID = 0baf9f6d-1a9e-4f67-8f04-1931660f0966".
+Action.c(148): Notify: Saving Parameter "Corr_ProductName = NSPT10766".
+Action.c(148): Notify: Saving Parameter "Corr_MaterialID = PT11965".
+Action.c(148): web_custom_request("InsertNSproducts") was successful, 277 body bytes, 277 header bytes  	[MsgId: MMSG-26386]
+Action.c(161): Notify: Transaction "WS03_02_Insert_NonSysco_Product" ended with a "Pass" status (Duration: 0.2842 Wasted Time: 0.0148).
+Action.c(166): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(166): Notify: Parameter Substitution: parameter "P_CustomerID" =  "148759"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_ProductID" =  "0baf9f6d-1a9e-4f67-8f04-1931660f0966"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_ProductName" =  "NSPT10766"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_SupplierID_2" =  "5442fbc1-d33c-41a0-9e78-c4dba1b99e72"
+Action.c(140): Notify: Transaction "WS03_02_Insert_NonSysco_Product" started.
+Action.c(142): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(142): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(142): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(142): Notify: Parameter Substitution: parameter "P_CustomerID" =  "148759"
+Action.c(142): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(142): Notify: Parameter Substitution: parameter "P_UserID" =  "148759"
+Action.c(142): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(142): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(144): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(144): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(145): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(145): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(146): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(146): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(148): web_custom_request("InsertNSproducts") started  	[MsgId: MMSG-26355]
+Action.c(148): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(148): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(148): Notify: Next row for parameter P_ProductName = 7 [table  = P_ProductName].
+Action.c(148): Notify: Getting new value for parameter 'P_ProductName': table = 'P_OpCo.dat' column = '13' row = '7'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_ProductName" =  "NSPT10767"
+Action.c(148): Notify: Next row for parameter P_MaterialID = 7 [table  = P_MaterialID].
+Action.c(148): Notify: Getting new value for parameter 'P_MaterialID': table = 'P_OpCo.dat' column = '14' row = '7'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_MaterialID" =  "PT11966"
+Action.c(148): Notify: Parameter Substitution: parameter "Corr_SupplierID_2" =  "5442fbc1-d33c-41a0-9e78-c4dba1b99e72"
+Action.c(148): Notify: Next row for parameter P_Brand = 7 [table  = P_Brand].
+Action.c(148): Notify: Getting new value for parameter 'P_Brand': table = 'P_OpCo.dat' column = '15' row = '7'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_Brand" =  "PT_Prod10767"
+Action.c(148): Notify: Next row for parameter P_AvgWtPerCase = 7 [table  = P_AvgWtPerCase].
+Action.c(148): Notify: Getting new value for parameter 'P_AvgWtPerCase': table = 'P_OpCo.dat' column = '16' row = '7'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_AvgWtPerCase" =  "25"
+Action.c(148): Notify: Next row for parameter P_UOM = 7 [table  = P_UOM].
+Action.c(148): Notify: Getting new value for parameter 'P_UOM': table = 'P_OpCo.dat' column = '18' row = '7'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_UOM" =  "CS"
+Action.c(148): t=3837ms: 277-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products" (RelFrameId=1, Internal ID=9)
+Action.c(148):     HTTP/1.1 201 Created\r\n
+Action.c(148):     Content-Type: application/json\r\n
+Action.c(148):     Date: Tue, 10 May 2016 06:53:00 GMT\r\n
+Action.c(148):     Location: http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.co
+Action.c(148):     m/products/4debf1e6-ff60-40de-96e2-c55c4ca449cf\r\n
+Action.c(148):     Content-Length: 277\r\n
+Action.c(148):     Connection: keep-alive\r\n
+Action.c(148):     \r\n
+Action.c(148): t=3878ms: 277-byte response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products" (RelFrameId=1, Internal ID=9)
+Action.c(148):     {"opCo":"067","customerId":"148759","id":"4debf1e6-ff60-40de-96e2-c55c4ca449cf","name":"NS
+Action.c(148):     PT10767","materialId":"PT11966","type":"prepared","description":"Test1","nickName":"ABC","
+Action.c(148):     averageWeightPerCase":25,"packSize":{"pack":"string","size":"string","uom":"cs"},"deleted"
+Action.c(148):     :false}
+Action.c(148): Notify: Saving Parameter "Corr_ProductID = 4debf1e6-ff60-40de-96e2-c55c4ca449cf".
+Action.c(148): Notify: Saving Parameter "Corr_ProductName = NSPT10767".
+Action.c(148): Notify: Saving Parameter "Corr_MaterialID = PT11966".
+Action.c(148): web_custom_request("InsertNSproducts") was successful, 277 body bytes, 277 header bytes  	[MsgId: MMSG-26386]
+Action.c(161): Notify: Transaction "WS03_02_Insert_NonSysco_Product" ended with a "Pass" status (Duration: 0.2765 Wasted Time: 0.0185).
+Action.c(166): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(166): Notify: Parameter Substitution: parameter "P_CustomerID" =  "148759"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_ProductID" =  "4debf1e6-ff60-40de-96e2-c55c4ca449cf"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_ProductName" =  "NSPT10767"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_SupplierID_2" =  "5442fbc1-d33c-41a0-9e78-c4dba1b99e72"
+Action.c(140): Notify: Transaction "WS03_02_Insert_NonSysco_Product" started.
+Action.c(142): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(142): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(142): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(142): Notify: Parameter Substitution: parameter "P_CustomerID" =  "148759"
+Action.c(142): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(142): Notify: Parameter Substitution: parameter "P_UserID" =  "148759"
+Action.c(142): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(142): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(144): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(144): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(145): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(145): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(146): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(146): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(148): web_custom_request("InsertNSproducts") started  	[MsgId: MMSG-26355]
+Action.c(148): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(148): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(148): Notify: Next row for parameter P_ProductName = 8 [table  = P_ProductName].
+Action.c(148): Notify: Getting new value for parameter 'P_ProductName': table = 'P_OpCo.dat' column = '13' row = '8'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_ProductName" =  "NSPT10768"
+Action.c(148): Notify: Next row for parameter P_MaterialID = 8 [table  = P_MaterialID].
+Action.c(148): Notify: Getting new value for parameter 'P_MaterialID': table = 'P_OpCo.dat' column = '14' row = '8'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_MaterialID" =  "PT11967"
+Action.c(148): Notify: Parameter Substitution: parameter "Corr_SupplierID_2" =  "5442fbc1-d33c-41a0-9e78-c4dba1b99e72"
+Action.c(148): Notify: Next row for parameter P_Brand = 8 [table  = P_Brand].
+Action.c(148): Notify: Getting new value for parameter 'P_Brand': table = 'P_OpCo.dat' column = '15' row = '8'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_Brand" =  "PT_Prod10768"
+Action.c(148): Notify: Next row for parameter P_AvgWtPerCase = 8 [table  = P_AvgWtPerCase].
+Action.c(148): Notify: Getting new value for parameter 'P_AvgWtPerCase': table = 'P_OpCo.dat' column = '16' row = '8'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_AvgWtPerCase" =  "10"
+Action.c(148): Notify: Next row for parameter P_UOM = 8 [table  = P_UOM].
+Action.c(148): Notify: Getting new value for parameter 'P_UOM': table = 'P_OpCo.dat' column = '18' row = '8'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_UOM" =  "EA"
+Action.c(148): t=4141ms: 277-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products" (RelFrameId=1, Internal ID=10)
+Action.c(148):     HTTP/1.1 201 Created\r\n
+Action.c(148):     Content-Type: application/json\r\n
+Action.c(148):     Date: Tue, 10 May 2016 06:53:01 GMT\r\n
+Action.c(148):     Location: http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.co
+Action.c(148):     m/products/07972de2-b49a-48a2-a44a-e091aa456132\r\n
+Action.c(148):     Content-Length: 277\r\n
+Action.c(148):     Connection: keep-alive\r\n
+Action.c(148):     \r\n
+Action.c(148): t=4202ms: 277-byte response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products" (RelFrameId=1, Internal ID=10)
+Action.c(148):     {"opCo":"067","customerId":"148759","id":"07972de2-b49a-48a2-a44a-e091aa456132","name":"NS
+Action.c(148):     PT10768","materialId":"PT11967","type":"prepared","description":"Test1","nickName":"ABC","
+Action.c(148):     averageWeightPerCase":10,"packSize":{"pack":"string","size":"string","uom":"ea"},"deleted"
+Action.c(148):     :false}
+Action.c(148): Notify: Saving Parameter "Corr_ProductID = 07972de2-b49a-48a2-a44a-e091aa456132".
+Action.c(148): Notify: Saving Parameter "Corr_ProductName = NSPT10768".
+Action.c(148): Notify: Saving Parameter "Corr_MaterialID = PT11967".
+Action.c(148): web_custom_request("InsertNSproducts") was successful, 277 body bytes, 277 header bytes  	[MsgId: MMSG-26386]
+Action.c(161): Notify: Transaction "WS03_02_Insert_NonSysco_Product" ended with a "Pass" status (Duration: 0.3009 Wasted Time: 0.0161).
+Action.c(166): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(166): Notify: Parameter Substitution: parameter "P_CustomerID" =  "148759"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_ProductID" =  "07972de2-b49a-48a2-a44a-e091aa456132"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_ProductName" =  "NSPT10768"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_SupplierID_2" =  "5442fbc1-d33c-41a0-9e78-c4dba1b99e72"
+Action.c(140): Notify: Transaction "WS03_02_Insert_NonSysco_Product" started.
+Action.c(142): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(142): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(142): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(142): Notify: Parameter Substitution: parameter "P_CustomerID" =  "148759"
+Action.c(142): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(142): Notify: Parameter Substitution: parameter "P_UserID" =  "148759"
+Action.c(142): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(142): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(144): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(144): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(145): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(145): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(146): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(146): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(148): web_custom_request("InsertNSproducts") started  	[MsgId: MMSG-26355]
+Action.c(148): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(148): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(148): Notify: Next row for parameter P_ProductName = 9 [table  = P_ProductName].
+Action.c(148): Notify: Getting new value for parameter 'P_ProductName': table = 'P_OpCo.dat' column = '13' row = '9'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_ProductName" =  "NSPT10769"
+Action.c(148): Notify: Next row for parameter P_MaterialID = 9 [table  = P_MaterialID].
+Action.c(148): Notify: Getting new value for parameter 'P_MaterialID': table = 'P_OpCo.dat' column = '14' row = '9'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_MaterialID" =  "PT11968"
+Action.c(148): Notify: Parameter Substitution: parameter "Corr_SupplierID_2" =  "5442fbc1-d33c-41a0-9e78-c4dba1b99e72"
+Action.c(148): Notify: Next row for parameter P_Brand = 9 [table  = P_Brand].
+Action.c(148): Notify: Getting new value for parameter 'P_Brand': table = 'P_OpCo.dat' column = '15' row = '9'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_Brand" =  "PT_Prod10769"
+Action.c(148): Notify: Next row for parameter P_AvgWtPerCase = 9 [table  = P_AvgWtPerCase].
+Action.c(148): Notify: Getting new value for parameter 'P_AvgWtPerCase': table = 'P_OpCo.dat' column = '16' row = '9'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_AvgWtPerCase" =  "12"
+Action.c(148): Notify: Next row for parameter P_UOM = 9 [table  = P_UOM].
+Action.c(148): Notify: Getting new value for parameter 'P_UOM': table = 'P_OpCo.dat' column = '18' row = '9'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_UOM" =  "CS"
+Action.c(148): t=4467ms: 277-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products" (RelFrameId=1, Internal ID=11)
+Action.c(148):     HTTP/1.1 201 Created\r\n
+Action.c(148):     Content-Type: application/json\r\n
+Action.c(148):     Date: Tue, 10 May 2016 06:53:01 GMT\r\n
+Action.c(148):     Location: http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.co
+Action.c(148):     m/products/02affb53-25b1-42bd-acc7-c8c43019d5db\r\n
+Action.c(148):     Content-Length: 277\r\n
+Action.c(148):     Connection: keep-alive\r\n
+Action.c(148):     \r\n
+Action.c(148): t=4513ms: 277-byte response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products" (RelFrameId=1, Internal ID=11)
+Action.c(148):     {"opCo":"067","customerId":"148759","id":"02affb53-25b1-42bd-acc7-c8c43019d5db","name":"NS
+Action.c(148):     PT10769","materialId":"PT11968","type":"prepared","description":"Test1","nickName":"ABC","
+Action.c(148):     averageWeightPerCase":12,"packSize":{"pack":"string","size":"string","uom":"cs"},"deleted"
+Action.c(148):     :false}
+Action.c(148): Notify: Saving Parameter "Corr_ProductID = 02affb53-25b1-42bd-acc7-c8c43019d5db".
+Action.c(148): Notify: Saving Parameter "Corr_ProductName = NSPT10769".
+Action.c(148): Notify: Saving Parameter "Corr_MaterialID = PT11968".
+Action.c(148): web_custom_request("InsertNSproducts") was successful, 277 body bytes, 277 header bytes  	[MsgId: MMSG-26386]
+Action.c(161): Notify: Transaction "WS03_02_Insert_NonSysco_Product" ended with a "Pass" status (Duration: 0.2904 Wasted Time: 0.0146).
+Action.c(166): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(166): Notify: Parameter Substitution: parameter "P_CustomerID" =  "148759"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_ProductID" =  "02affb53-25b1-42bd-acc7-c8c43019d5db"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_ProductName" =  "NSPT10769"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_SupplierID_2" =  "5442fbc1-d33c-41a0-9e78-c4dba1b99e72"
+Action.c(140): Notify: Transaction "WS03_02_Insert_NonSysco_Product" started.
+Action.c(142): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(142): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(142): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(142): Notify: Parameter Substitution: parameter "P_CustomerID" =  "148759"
+Action.c(142): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(142): Notify: Parameter Substitution: parameter "P_UserID" =  "148759"
+Action.c(142): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(142): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(144): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(144): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(145): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(145): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(146): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(146): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(148): web_custom_request("InsertNSproducts") started  	[MsgId: MMSG-26355]
+Action.c(148): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(148): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(148): Notify: Next row for parameter P_ProductName = 10 [table  = P_ProductName].
+Action.c(148): Notify: Getting new value for parameter 'P_ProductName': table = 'P_OpCo.dat' column = '13' row = '10'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_ProductName" =  "NSPT10770"
+Action.c(148): Notify: Next row for parameter P_MaterialID = 10 [table  = P_MaterialID].
+Action.c(148): Notify: Getting new value for parameter 'P_MaterialID': table = 'P_OpCo.dat' column = '14' row = '10'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_MaterialID" =  "PT11969"
+Action.c(148): Notify: Parameter Substitution: parameter "Corr_SupplierID_2" =  "5442fbc1-d33c-41a0-9e78-c4dba1b99e72"
+Action.c(148): Notify: Next row for parameter P_Brand = 10 [table  = P_Brand].
+Action.c(148): Notify: Getting new value for parameter 'P_Brand': table = 'P_OpCo.dat' column = '15' row = '10'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_Brand" =  "PT_Prod10770"
+Action.c(148): Notify: Next row for parameter P_AvgWtPerCase = 10 [table  = P_AvgWtPerCase].
+Action.c(148): Notify: Getting new value for parameter 'P_AvgWtPerCase': table = 'P_OpCo.dat' column = '16' row = '10'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_AvgWtPerCase" =  "15"
+Action.c(148): Notify: Next row for parameter P_UOM = 10 [table  = P_UOM].
+Action.c(148): Notify: Getting new value for parameter 'P_UOM': table = 'P_OpCo.dat' column = '18' row = '10'.
+Action.c(148): Notify: Parameter Substitution: parameter "P_UOM" =  "EA"
+Action.c(148): t=4784ms: 277-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products" (RelFrameId=1, Internal ID=12)
+Action.c(148):     HTTP/1.1 201 Created\r\n
+Action.c(148):     Content-Type: application/json\r\n
+Action.c(148):     Date: Tue, 10 May 2016 06:53:01 GMT\r\n
+Action.c(148):     Location: http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.co
+Action.c(148):     m/products/68571599-a34f-44b9-8a54-e9f8048ccf3d\r\n
+Action.c(148):     Content-Length: 277\r\n
+Action.c(148):     Connection: keep-alive\r\n
+Action.c(148):     \r\n
+Action.c(148): t=4850ms: 277-byte response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products" (RelFrameId=1, Internal ID=12)
+Action.c(148):     {"opCo":"067","customerId":"148759","id":"68571599-a34f-44b9-8a54-e9f8048ccf3d","name":"NS
+Action.c(148):     PT10770","materialId":"PT11969","type":"prepared","description":"Test1","nickName":"ABC","
+Action.c(148):     averageWeightPerCase":15,"packSize":{"pack":"string","size":"string","uom":"ea"},"deleted"
+Action.c(148):     :false}
+Action.c(148): Notify: Saving Parameter "Corr_ProductID = 68571599-a34f-44b9-8a54-e9f8048ccf3d".
+Action.c(148): Notify: Saving Parameter "Corr_ProductName = NSPT10770".
+Action.c(148): Notify: Saving Parameter "Corr_MaterialID = PT11969".
+Action.c(148): web_custom_request("InsertNSproducts") was successful, 277 body bytes, 277 header bytes  	[MsgId: MMSG-26386]
+Action.c(161): Notify: Transaction "WS03_02_Insert_NonSysco_Product" ended with a "Pass" status (Duration: 0.3381 Wasted Time: 0.0347).
+Action.c(166): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(166): Notify: Parameter Substitution: parameter "P_CustomerID" =  "148759"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_ProductID" =  "68571599-a34f-44b9-8a54-e9f8048ccf3d"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_ProductName" =  "NSPT10770"
+Action.c(166): Notify: Parameter Substitution: parameter "Corr_SupplierID_2" =  "5442fbc1-d33c-41a0-9e78-c4dba1b99e72"
+Action.c(172): Notify: Transaction "WS03_03_Get_Product_By_Product_ID" started.
+Action.c(174): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(174): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(174): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(174): Notify: Parameter Substitution: parameter "P_CustomerID" =  "148759"
+Action.c(174): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(174): Notify: Parameter Substitution: parameter "P_UserID" =  "148759"
+Action.c(174): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(174): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(176): web_url("GetProductByProductID") started  	[MsgId: MMSG-26355]
+Action.c(176): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(176): Notify: Parameter Substitution: parameter "Corr_ProductID" =  "68571599-a34f-44b9-8a54-e9f8048ccf3d"
+Action.c(176): t=5095ms: 180-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/68571599-a34f-44b9-8a54-e9f8048ccf3d" (RelFrameId=1, Internal ID=13)
+Action.c(176):     HTTP/1.1 200 OK\r\n
+Action.c(176):     Content-Encoding: gzip\r\n
+Action.c(176):     Content-Type: application/json\r\n
+Action.c(176):     Date: Tue, 10 May 2016 06:53:02 GMT\r\n
+Action.c(176):     Vary: Accept-Encoding\r\n
+Action.c(176):     Content-Length: 221\r\n
+Action.c(176):     Connection: keep-alive\r\n
+Action.c(176):     \r\n
+Action.c(176): t=5123ms: 221-byte ENCODED response body received for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/68571599-a34f-44b9-8a54-e9f8048ccf3d" (RelFrameId=1, Internal ID=13)
+Action.c(176): t=5127ms: 277-byte DECODED response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/68571599-a34f-44b9-8a54-e9f8048ccf3d" (RelFrameId=1, Internal ID=13)
+Action.c(176):     {"opCo":"067","customerId":"148759","id":"68571599-a34f-44b9-8a54-e9f8048ccf3d","name":"NS
+Action.c(176):     PT10770","materialId":"PT11969","type":"prepared","description":"Test1","nickName":"ABC","
+Action.c(176):     averageWeightPerCase":15,"packSize":{"pack":"string","size":"string","uom":"ea"},"deleted"
+Action.c(176):     :false}
+Action.c(176): HTML parsing not performed for Content-Type "application/json" ("ParseHtmlContentType" Run-Time Setting is "TEXT"). URL="http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/68571599-a34f-44b9-8a54-e9f8048ccf3d"  	[MsgId: MMSG-26548]
+Action.c(176): web_url("GetProductByProductID") was successful, 221 body bytes, 180 header bytes  	[MsgId: MMSG-26386]
+Action.c(184): Notify: Transaction "WS03_03_Get_Product_By_Product_ID" ended with a "Pass" status (Duration: 0.1840 Wasted Time: 0.0051).
+Action.c(188): Notify: Transaction "WS03_04_Get_NonSysco_ListOfProducts" started.
+Action.c(190): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(190): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(190): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(190): Notify: Parameter Substitution: parameter "P_CustomerID" =  "148759"
+Action.c(190): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(190): Notify: Parameter Substitution: parameter "P_UserID" =  "148759"
+Action.c(190): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(190): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(192): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(192): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(193): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(193): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(194): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(194): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(196): web_url("ProductsList") started  	[MsgId: MMSG-26355]
+Action.c(196): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(196): t=5288ms: 180-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products" (RelFrameId=1, Internal ID=14)
+Action.c(196):     HTTP/1.1 200 OK\r\n
+Action.c(196):     Content-Encoding: gzip\r\n
+Action.c(196):     Content-Type: application/json\r\n
+Action.c(196):     Date: Tue, 10 May 2016 06:53:02 GMT\r\n
+Action.c(196):     Vary: Accept-Encoding\r\n
+Action.c(196):     Content-Length: 635\r\n
+Action.c(196):     Connection: keep-alive\r\n
+Action.c(196):     \r\n
+Action.c(196): t=5329ms: 635-byte ENCODED response body received for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products" (RelFrameId=1, Internal ID=14)
+Action.c(196): t=5332ms: 2134-byte DECODED response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products" (RelFrameId=1, Internal ID=14)
+Action.c(196):     {"products":[{"id":"02affb53-25b1-42bd-acc7-c8c43019d5db","materialId":"PT11968","name":"N
+Action.c(196):     SPT10769","type":"prepared"},{"id":"07972de2-b49a-48a2-a44a-e091aa456132","materialId":"PT
+Action.c(196):     11967","name":"NSPT10768","type":"prepared"},{"id":"0baf9f6d-1a9e-4f67-8f04-1931660f0966",
+Action.c(196):     "materialId":"PT11965","name":"NSPT10766","type":"prepared"},{"id":"21ed0e27-9cbf-448f-b27
+Action.c(196):     f-5414b59016f2","materialId":"PT11969","name":"NSPT10770","type":"prepared"},{"id":"2b4483
+Action.c(196):     16-45a2-4763-a0ad-cb1b63ce88e8","materialId":"PT11961","name":"NSPT10762","type":"prepared
+Action.c(196):     "},{"id":"2bc4a707-614a-4921-8eda-27e23a833668","materialId":"PT11967","name":"NSPT10768",
+Action.c(196):     "type":"prepared"},{"id":"30ba42b2-6e74-45bb-9bc7-46c67e0ca364","materialId":"PT11968","na
+Action.c(196):     me":"NSPT10769","type":"prepared"},{"id":"31e9aded-ba96-479b-af77-b1a7fed0836c","materialI
+Action.c(196):     d":"PT11960","name":"NSPT10761","type":"prepared"},{"id":"354faf7b-6296-4955-87a2-ec16c35d
+Action.c(196):     ca9b","materialId":"PT11963","name":"NSPT10764","type":"prepared"},{"id":"3ee82906-928d-48
+Action.c(196):     0c-8db8-f848c283f64b","materialId":"PT11965","name":"NSPT10766","type":"prepared"},{"id":"
+Action.c(196):     41befaa2-cbeb-416e-92d1-a2a13ddae027","materialId":"PT11969","name":"NSPT10770","type":"pr
+Action.c(196):     epared"},{"id":"43e5f552-11ff-40cb-bef7-a5a74af43993","materialId":"PT11962","name":"NSPT1
+Action.c(196):     0763","type":"prepared"},{"id":"4debf1e6-ff60-40de-96e2-c55c4ca449cf","materialId":"PT1196
+Action.c(196):     6","name":"NSPT10767","type":"prepared"},{"id":"68571599-a34f-44b9-8a54-e9f8048ccf3d","mat
+Action.c(196):     erialId":"PT11969","name":"NSPT10770","type":"prepared"},{"id":"6e1ced99-ad08-4ec8-89ec-a5
+Action.c(196):     7a4e467b43","materialId":"PT11961","name":"NSPT10762","type":"prepared"},{"id":"709df188-2
+Action.c(196):     d1a-4b9a-b54c-67f5af8d8405","materialId":"PT11966","name":"NSPT10767","type":"prepared"},{
+Action.c(196):     "id":"76551ee5-c2a8-4413-9079-22fe9532d35f","materialId":"PT11960","name":"NSPT10761","typ
+Action.c(196):     e":"prepared"},{"id":"7dd2bdb1-5277-46e3-b366-3ee6522e77f6","materialId":"PT11965","name":
+Action.c(196):     "NSPT10766","type":"prepared"},{"id":"82caa8e5-bf16-4a6a-ab12-1ca9a671e8e6","materialId":"
+Action.c(196):     PT11962","name":"NSPT10763","type":"prepared"},{"id":"89c1d039-4a2f-4a30-ad07-bcd93bab618c
+Action.c(196):     ","materialId":"PT11964","name":"NSPT10765","type":"prepared"}]}
+Action.c(196): Notify: Saving Parameter "Corr_ProductID_1 = 02affb53-25b1-42bd-acc7-c8c43019d5db".
+Action.c(196): Notify: Saving Parameter "Corr_MaterialID_1 = PT11968".
+Action.c(196): Notify: Saving Parameter "Corr_ProductName_1 = NSPT10769".
+Action.c(196): Notify: Saving Parameter "Corr_ProductID_2 = 07972de2-b49a-48a2-a44a-e091aa456132".
+Action.c(196): Notify: Saving Parameter "Corr_MaterialID_2 = PT11967".
+Action.c(196): Notify: Saving Parameter "Corr_ProductName_2 = NSPT10768".
+Action.c(196): Notify: Saving Parameter "Corr_ProductID_3 = 0baf9f6d-1a9e-4f67-8f04-1931660f0966".
+Action.c(196): Notify: Saving Parameter "Corr_MaterialID_3 = PT11965".
+Action.c(196): Notify: Saving Parameter "Corr_ProductName_3 = NSPT10766".
+Action.c(196): Notify: Saving Parameter "Corr_ProductID_4 = 21ed0e27-9cbf-448f-b27f-5414b59016f2".
+Action.c(196): Notify: Saving Parameter "Corr_MaterialID_4 = PT11969".
+Action.c(196): Notify: Saving Parameter "Corr_ProductName_4 = NSPT10770".
+Action.c(196): Notify: Saving Parameter "Corr_ProductID_5 = 2b448316-45a2-4763-a0ad-cb1b63ce88e8".
+Action.c(196): Notify: Saving Parameter "Corr_MaterialID_5 = PT11961".
+Action.c(196): Notify: Saving Parameter "Corr_ProductName_5 = NSPT10762".
+Action.c(196): Notify: Saving Parameter "Corr_ProductID_6 = 2bc4a707-614a-4921-8eda-27e23a833668".
+Action.c(196): Notify: Saving Parameter "Corr_MaterialID_6 = PT11967".
+Action.c(196): Notify: Saving Parameter "Corr_ProductName_6 = NSPT10768".
+Action.c(196): Notify: Saving Parameter "Corr_ProductID_7 = 30ba42b2-6e74-45bb-9bc7-46c67e0ca364".
+Action.c(196): Notify: Saving Parameter "Corr_MaterialID_7 = PT11968".
+Action.c(196): Notify: Saving Parameter "Corr_ProductName_7 = NSPT10769".
+Action.c(196): Notify: Saving Parameter "Corr_ProductID_8 = 31e9aded-ba96-479b-af77-b1a7fed0836c".
+Action.c(196): Notify: Saving Parameter "Corr_MaterialID_8 = PT11960".
+Action.c(196): Notify: Saving Parameter "Corr_ProductName_8 = NSPT10761".
+Action.c(196): Notify: Saving Parameter "Corr_ProductID_9 = 354faf7b-6296-4955-87a2-ec16c35dca9b".
+Action.c(196): Notify: Saving Parameter "Corr_MaterialID_9 = PT11963".
+Action.c(196): Notify: Saving Parameter "Corr_ProductName_9 = NSPT10764".
+Action.c(196): Notify: Saving Parameter "Corr_ProductID_10 = 3ee82906-928d-480c-8db8-f848c283f64b".
+Action.c(196): Notify: Saving Parameter "Corr_MaterialID_10 = PT11965".
+Action.c(196): Notify: Saving Parameter "Corr_ProductName_10 = NSPT10766".
+Action.c(196): Notify: Saving Parameter "Corr_ProductID_11 = 41befaa2-cbeb-416e-92d1-a2a13ddae027".
+Action.c(196): Notify: Saving Parameter "Corr_MaterialID_11 = PT11969".
+Action.c(196): Notify: Saving Parameter "Corr_ProductName_11 = NSPT10770".
+Action.c(196): Notify: Saving Parameter "Corr_ProductID_12 = 43e5f552-11ff-40cb-bef7-a5a74af43993".
+Action.c(196): Notify: Saving Parameter "Corr_MaterialID_12 = PT11962".
+Action.c(196): Notify: Saving Parameter "Corr_ProductName_12 = NSPT10763".
+Action.c(196): Notify: Saving Parameter "Corr_ProductID_13 = 4debf1e6-ff60-40de-96e2-c55c4ca449cf".
+Action.c(196): Notify: Saving Parameter "Corr_MaterialID_13 = PT11966".
+Action.c(196): Notify: Saving Parameter "Corr_ProductName_13 = NSPT10767".
+Action.c(196): Notify: Saving Parameter "Corr_ProductID_14 = 68571599-a34f-44b9-8a54-e9f8048ccf3d".
+Action.c(196): Notify: Saving Parameter "Corr_MaterialID_14 = PT11969".
+Action.c(196): Notify: Saving Parameter "Corr_ProductName_14 = NSPT10770".
+Action.c(196): Notify: Saving Parameter "Corr_ProductID_15 = 6e1ced99-ad08-4ec8-89ec-a57a4e467b43".
+Action.c(196): Notify: Saving Parameter "Corr_MaterialID_15 = PT11961".
+Action.c(196): Notify: Saving Parameter "Corr_ProductName_15 = NSPT10762".
+Action.c(196): Notify: Saving Parameter "Corr_ProductID_16 = 709df188-2d1a-4b9a-b54c-67f5af8d8405".
+Action.c(196): Notify: Saving Parameter "Corr_MaterialID_16 = PT11966".
+Action.c(196): Notify: Saving Parameter "Corr_ProductName_16 = NSPT10767".
+Action.c(196): Notify: Saving Parameter "Corr_ProductID_17 = 76551ee5-c2a8-4413-9079-22fe9532d35f".
+Action.c(196): Notify: Saving Parameter "Corr_MaterialID_17 = PT11960".
+Action.c(196): Notify: Saving Parameter "Corr_ProductName_17 = NSPT10761".
+Action.c(196): Notify: Saving Parameter "Corr_ProductID_18 = 7dd2bdb1-5277-46e3-b366-3ee6522e77f6".
+Action.c(196): Notify: Saving Parameter "Corr_MaterialID_18 = PT11965".
+Action.c(196): Notify: Saving Parameter "Corr_ProductName_18 = NSPT10766".
+Action.c(196): Notify: Saving Parameter "Corr_ProductID_19 = 82caa8e5-bf16-4a6a-ab12-1ca9a671e8e6".
+Action.c(196): Notify: Saving Parameter "Corr_MaterialID_19 = PT11962".
+Action.c(196): Notify: Saving Parameter "Corr_ProductName_19 = NSPT10763".
+Action.c(196): Notify: Saving Parameter "Corr_ProductID_20 = 89c1d039-4a2f-4a30-ad07-bcd93bab618c".
+Action.c(196): Notify: Saving Parameter "Corr_MaterialID_20 = PT11964".
+Action.c(196): Notify: Saving Parameter "Corr_ProductName_20 = NSPT10765".
+Action.c(196): HTML parsing not performed for Content-Type "application/json" ("ParseHtmlContentType" Run-Time Setting is "TEXT"). URL="http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products"  	[MsgId: MMSG-26548]
+Action.c(196): Notify: Saving Parameter "Corr_ProductID_count = 20".
+Action.c(196): Notify: Saving Parameter "Corr_MaterialID_count = 20".
+Action.c(196): Notify: Saving Parameter "Corr_ProductName_count = 20".
+Action.c(196): web_url("ProductsList") was successful, 635 body bytes, 180 header bytes  	[MsgId: MMSG-26386]
+Action.c(204): Notify: Transaction "WS03_04_Get_NonSysco_ListOfProducts" ended with a "Pass" status (Duration: 0.3468 Wasted Time: 0.1107).
+Action.c(208): Notify: Transaction "WS03_05_Update_NonSysco_Product" started.
+Action.c(210): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(210): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(210): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(210): Notify: Parameter Substitution: parameter "P_CustomerID" =  "148759"
+Action.c(210): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(210): Notify: Parameter Substitution: parameter "P_UserID" =  "148759"
+Action.c(210): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(210): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(212): web_custom_request("UpdateProduct") started  	[MsgId: MMSG-26355]
+Action.c(212): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(212): Notify: Parameter Substitution: parameter "Corr_ProductID_1" =  "02affb53-25b1-42bd-acc7-c8c43019d5db"
+Action.c(212): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(212): Notify: Parameter Substitution: parameter "Corr_MaterialID_1" =  "PT11968"
+Action.c(212): Notify: Next row for parameter P_ProductName = 11 [table  = P_ProductName].
+Action.c(212): Notify: Getting new value for parameter 'P_ProductName': table = 'P_OpCo.dat' column = '13' row = '11'.
+Action.c(212): Notify: Parameter Substitution: parameter "P_ProductName" =  "NSPT10771"
+Action.c(212): Notify: Next row for parameter P_Brand = 11 [table  = P_Brand].
+Action.c(212): Notify: Getting new value for parameter 'P_Brand': table = 'P_OpCo.dat' column = '15' row = '11'.
+Action.c(212): Notify: Parameter Substitution: parameter "P_Brand" =  "PT_Prod10771"
+Action.c(212): Notify: Parameter Substitution: parameter "Corr_SupplierID_2" =  "5442fbc1-d33c-41a0-9e78-c4dba1b99e72"
+Action.c(212): Notify: Next row for parameter P_AvgWtPerCase = 11 [table  = P_AvgWtPerCase].
+Action.c(212): Notify: Getting new value for parameter 'P_AvgWtPerCase': table = 'P_OpCo.dat' column = '16' row = '11'.
+Action.c(212): Notify: Parameter Substitution: parameter "P_AvgWtPerCase" =  "18"
+Action.c(212): Warning: The string '
+  "pack": "String",
+  "size": "String",
+  "uom": "CS"
+ ' with parameter delimiters is not a parameter.
+Action.c(212): t=5720ms: 133-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/02affb53-25b1-42bd-acc7-c8c43019d5db" (RelFrameId=1, Internal ID=15)
+Action.c(212):     HTTP/1.1 200 OK\r\n
+Action.c(212):     Content-Type: application/json\r\n
+Action.c(212):     Date: Tue, 10 May 2016 06:53:02 GMT\r\n
+Action.c(212):     Content-Length: 277\r\n
+Action.c(212):     Connection: keep-alive\r\n
+Action.c(212):     \r\n
+Action.c(212): t=5757ms: 277-byte response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/02affb53-25b1-42bd-acc7-c8c43019d5db" (RelFrameId=1, Internal ID=15)
+Action.c(212):     {"opCo":"067","customerId":"148759","id":"02affb53-25b1-42bd-acc7-c8c43019d5db","name":"NS
+Action.c(212):     PT10771","materialId":"PT11968","type":"prepared","description":"Test1","nickName":"ABC","
+Action.c(212):     averageWeightPerCase":18,"packSize":{"pack":"String","size":"String","uom":"cs"},"deleted"
+Action.c(212):     :false}
+Action.c(212): web_custom_request("UpdateProduct") was successful, 277 body bytes, 133 header bytes  	[MsgId: MMSG-26386]
+Action.c(225): Notify: Transaction "WS03_05_Update_NonSysco_Product" ended with a "Pass" status (Duration: 0.2775 Wasted Time: 0.0055).
+Action.c(229): Notify: Transaction "WS03_06_Delete_NonSysco_Product" started.
+Action.c(231): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(231): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(231): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(231): Notify: Parameter Substitution: parameter "P_CustomerID" =  "148759"
+Action.c(231): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(231): Notify: Parameter Substitution: parameter "P_UserID" =  "148759"
+Action.c(231): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(231): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(233): web_custom_request("DeleteNonSyscoProduct") started  	[MsgId: MMSG-26355]
+Action.c(233): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(233): Notify: Parameter Substitution: parameter "Corr_ProductID_1" =  "02affb53-25b1-42bd-acc7-c8c43019d5db"
+Action.c(233): t=5901ms: 133-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/02affb53-25b1-42bd-acc7-c8c43019d5db" (RelFrameId=1, Internal ID=16)
+Action.c(233):     HTTP/1.1 200 OK\r\n
+Action.c(233):     Content-Type: application/json\r\n
+Action.c(233):     Date: Tue, 10 May 2016 06:53:02 GMT\r\n
+Action.c(233):     Content-Length: 276\r\n
+Action.c(233):     Connection: keep-alive\r\n
+Action.c(233):     \r\n
+Action.c(233): t=5922ms: 276-byte response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/02affb53-25b1-42bd-acc7-c8c43019d5db" (RelFrameId=1, Internal ID=16)
+Action.c(233):     {"opCo":"067","customerId":"148759","id":"02affb53-25b1-42bd-acc7-c8c43019d5db","name":"NS
+Action.c(233):     PT10771","materialId":"PT11968","type":"prepared","description":"Test1","nickName":"ABC","
+Action.c(233):     averageWeightPerCase":18,"packSize":{"pack":"String","size":"String","uom":"cs"},"deleted"
+Action.c(233):     :true}
+Action.c(233): HTML parsing not performed for Content-Type "application/json" ("ParseHtmlContentType" Run-Time Setting is "TEXT"). URL="http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/02affb53-25b1-42bd-acc7-c8c43019d5db"  	[MsgId: MMSG-26548]
+Action.c(233): web_custom_request("DeleteNonSyscoProduct") was successful, 276 body bytes, 133 header bytes  	[MsgId: MMSG-26386]
+Action.c(242): Notify: Transaction "WS03_06_Delete_NonSysco_Product" ended with a "Pass" status (Duration: 0.1615 Wasted Time: 0.0048).
+Action.c(248): Notify: Transaction "WS03_07_Get_SyscoProducts" started.
+Action.c(250): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(250): Notify: Next row for parameter P_Sys_Opco = 3568 [table  = P_Sys_Opco].
+Action.c(250): Notify: Parameter Substitution: parameter "P_Sys_Opco" =  "067"
+Action.c(250): Notify: Getting new value for parameter 'P_SyscoID': table = 'P_SyscoID.dat' column = '1' row = '3568'.
+Action.c(250): Notify: Parameter Substitution: parameter "P_SyscoID" =  "000349"
+Action.c(250): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(250): Notify: Parameter Substitution: parameter "P_UserID" =  "148759"
+Action.c(250): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(250): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(252): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(252): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(253): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(253): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(254): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(254): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(256): web_url("SyscoProductsList") started  	[MsgId: MMSG-26355]
+Action.c(256): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(256): Notify: Next row for parameter P_SyscoProdID = 3568 [table  = P_SyscoProdID].
+Action.c(256): Notify: Parameter Substitution: parameter "P_SyscoProdID" =  "3038692"
+Action.c(256): t=18673ms: 180-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/3038692" (RelFrameId=1, Internal ID=17)
+Action.c(256):     HTTP/1.1 200 OK\r\n
+Action.c(256):     Content-Encoding: gzip\r\n
+Action.c(256):     Content-Type: application/json\r\n
+Action.c(256):     Date: Tue, 10 May 2016 06:53:15 GMT\r\n
+Action.c(256):     Vary: Accept-Encoding\r\n
+Action.c(256):     Content-Length: 411\r\n
+Action.c(256):     Connection: keep-alive\r\n
+Action.c(256):     \r\n
+Action.c(256): t=18702ms: 411-byte ENCODED response body received for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/3038692" (RelFrameId=1, Internal ID=17)
+Action.c(256): t=18706ms: 641-byte DECODED response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/3038692" (RelFrameId=1, Internal ID=17)
+Action.c(256):     {"opCo":"067","customerId":"000349","name":"PASTA MACARONI ELBOW","materialId":"3038692","
+Action.c(256):     brand":"AREZZIO","type":"sysco","averageWeightPerCase":30.0000,"packSize":{"pack":"3","siz
+Action.c(256):     e":"10 LB","uom":"cs"},"isSoldAs":{"case":true,"split":false},"split":{"min":0,"max":0},"i
+Action.c(256):     sCatchWeight":false,"storageFlag":"D","isAvailable":true,"replacementMaterialId":"3038692"
+Action.c(256):     ,"hasReplacement":false,"category":{"completeCategoryId":"07026004099","mainCategoryId":7,
+Action.c(256):     "label":"MISC"},"messages":[{"type":"info","message":"Stocked item"}],"flags":["syscoBrand
+Action.c(256):     ed"],"images":["null"],"canBuy":true,"isOrderable":true,"lastOrderedDate":"2016-05-10T06:5
+Action.c(256):     3:15.765Z"}
+Action.c(256): Notify: Saving Parameter "Corr_ProductName_1 = PASTA MACARONI ELBOW".
+Action.c(256): Notify: Saving Parameter "Corr_MaterialID_1 = 3038692".
+Action.c(256): HTML parsing not performed for Content-Type "application/json" ("ParseHtmlContentType" Run-Time Setting is "TEXT"). URL="http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/3038692"  	[MsgId: MMSG-26548]
+Action.c(256): Warning -26377: No match found for the requested parameter "Corr_ProductID". Check whether the requested boundaries exist in the response data. Also, if the data you want to save exceeds 256 bytes, use web_set_max_html_param_len to increase the parameter size  	[MsgId: MWAR-26377]
+Action.c(256): Notify: Saving Parameter "Corr_ProductID_count = 0".
+Action.c(256): Notify: Saving Parameter "Corr_MaterialID_count = 1".
+Action.c(256): Notify: Saving Parameter "Corr_ProductName_count = 1".
+Action.c(256): web_url("SyscoProductsList") highest severity level was "warning", 411 body bytes, 180 header bytes  	[MsgId: MMSG-26388]
+Action.c(264): Notify: Transaction "WS03_07_Get_SyscoProducts" ended with a "Pass" status (Duration: 22.6242 Wasted Time: 0.0109).
+Action.c(248): Notify: Transaction "WS03_07_Get_SyscoProducts" started.
+Action.c(250): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(250): Notify: Next row for parameter P_Sys_Opco = 3568 [table  = P_Sys_Opco].
+Action.c(250): Notify: Parameter Substitution: parameter "P_Sys_Opco" =  "067"
+Action.c(250): Notify: Next row for parameter P_SyscoID = 10812 [table  = P_SyscoID].
+Action.c(250): Notify: Getting new value for parameter 'P_SyscoID': table = 'P_SyscoID.dat' column = '1' row = '10812'.
+Action.c(250): Notify: Parameter Substitution: parameter "P_SyscoID" =  "000349"
+Action.c(250): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(250): Notify: Parameter Substitution: parameter "P_UserID" =  "148759"
+Action.c(250): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(250): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(252): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(252): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(253): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(253): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(254): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(254): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(256): web_url("SyscoProductsList") started  	[MsgId: MMSG-26355]
+Action.c(256): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(256): Notify: Next row for parameter P_SyscoProdID = 10812 [table  = P_SyscoProdID].
+Action.c(256): Notify: Getting new value for parameter 'P_SyscoProdID': table = 'P_SyscoID.dat' column = '2' row = '10812'.
+Action.c(256): Notify: Parameter Substitution: parameter "P_SyscoProdID" =  "6754022"
+Action.c(256): t=33462ms: 180-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/6754022" (RelFrameId=1, Internal ID=18)
+Action.c(256):     HTTP/1.1 200 OK\r\n
+Action.c(256):     Content-Encoding: gzip\r\n
+Action.c(256):     Content-Type: application/json\r\n
+Action.c(256):     Date: Tue, 10 May 2016 06:53:30 GMT\r\n
+Action.c(256):     Vary: Accept-Encoding\r\n
+Action.c(256):     Content-Length: 432\r\n
+Action.c(256):     Connection: keep-alive\r\n
+Action.c(256):     \r\n
+Action.c(256): t=33491ms: 432-byte ENCODED response body received for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/6754022" (RelFrameId=1, Internal ID=18)
+Action.c(256): t=33512ms: 659-byte DECODED response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/6754022" (RelFrameId=1, Internal ID=18)
+Action.c(256):     {"opCo":"067","customerId":"000349","name":"SEABASS FILET FRSH HAWAIIAN","materialId":"675
+Action.c(256):     4022","brand":"HONFISH","type":"sysco","averageWeightPerCase":15.0000,"packSize":{"pack":"
+Action.c(256):     1","size":"15#AVG","uom":"cs"},"isSoldAs":{"case":true,"split":false},"split":{"min":0,"ma
+Action.c(256):     x":0},"isCatchWeight":true,"storageFlag":"D","isAvailable":true,"replacementMaterialId":"6
+Action.c(256):     754022","hasReplacement":false,"category":{"completeCategoryId":"04001099099","mainCategor
+Action.c(256):     yId":4,"label":"MISC."},"messages":[{"type":"info","message":"Remote stock / Drop ship"}],
+Action.c(256):     "flags":["newProduct"],"images":["null"],"canBuy":true,"isOrderable":true,"lastOrderedDate
+Action.c(256):     ":"2016-05-10T06:53:30.555Z"}
+Action.c(256): Notify: Saving Parameter "Corr_ProductName_1 = SEABASS FILET FRSH HAWAIIAN".
+Action.c(256): Notify: Saving Parameter "Corr_MaterialID_1 = 6754022".
+Action.c(256): HTML parsing not performed for Content-Type "application/json" ("ParseHtmlContentType" Run-Time Setting is "TEXT"). URL="http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/6754022"  	[MsgId: MMSG-26548]
+Action.c(256): Warning -26377: No match found for the requested parameter "Corr_ProductID". Check whether the requested boundaries exist in the response data. Also, if the data you want to save exceeds 256 bytes, use web_set_max_html_param_len to increase the parameter size  	[MsgId: MWAR-26377]
+Action.c(256): Notify: Saving Parameter "Corr_ProductID_count = 0".
+Action.c(256): Notify: Saving Parameter "Corr_MaterialID_count = 1".
+Action.c(256): Notify: Saving Parameter "Corr_ProductName_count = 1".
+Action.c(256): web_url("SyscoProductsList") highest severity level was "warning", 432 body bytes, 180 header bytes  	[MsgId: MMSG-26388]
+Action.c(264): Notify: Transaction "WS03_07_Get_SyscoProducts" ended with a "Pass" status (Duration: 11.7280 Wasted Time: 0.0121).
+Action.c(248): Notify: Transaction "WS03_07_Get_SyscoProducts" started.
+Action.c(250): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(250): Notify: Next row for parameter P_Sys_Opco = 10812 [table  = P_Sys_Opco].
+Action.c(250): Notify: Getting new value for parameter 'P_Sys_Opco': table = 'P_SyscoID.dat' column = '0' row = '10812'.
+Action.c(250): Notify: Parameter Substitution: parameter "P_Sys_Opco" =  "067"
+Action.c(250): Notify: Next row for parameter P_SyscoID = 13255 [table  = P_SyscoID].
+Action.c(250): Notify: Getting new value for parameter 'P_SyscoID': table = 'P_SyscoID.dat' column = '1' row = '13255'.
+Action.c(250): Notify: Parameter Substitution: parameter "P_SyscoID" =  "000349"
+Action.c(250): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(250): Notify: Parameter Substitution: parameter "P_UserID" =  "148759"
+Action.c(250): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(250): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(252): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(252): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(253): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(253): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(254): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(254): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(256): web_url("SyscoProductsList") started  	[MsgId: MMSG-26355]
+Action.c(256): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(256): Notify: Next row for parameter P_SyscoProdID = 13255 [table  = P_SyscoProdID].
+Action.c(256): Notify: Getting new value for parameter 'P_SyscoProdID': table = 'P_SyscoID.dat' column = '2' row = '13255'.
+Action.c(256): Notify: Parameter Substitution: parameter "P_SyscoProdID" =  "9359928"
+Action.c(256): t=40476ms: 180-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/9359928" (RelFrameId=1, Internal ID=19)
+Action.c(256):     HTTP/1.1 200 OK\r\n
+Action.c(256):     Content-Encoding: gzip\r\n
+Action.c(256):     Content-Type: application/json\r\n
+Action.c(256):     Date: Tue, 10 May 2016 06:53:37 GMT\r\n
+Action.c(256):     Vary: Accept-Encoding\r\n
+Action.c(256):     Content-Length: 413\r\n
+Action.c(256):     Connection: keep-alive\r\n
+Action.c(256):     \r\n
+Action.c(256): t=40510ms: 413-byte ENCODED response body received for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/9359928" (RelFrameId=1, Internal ID=19)
+Action.c(256): t=40515ms: 638-byte DECODED response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/9359928" (RelFrameId=1, Internal ID=19)
+Action.c(256):     {"opCo":"067","customerId":"000349","name":"VEGETABLE BLEND CALIFORNIA","materialId":"9359
+Action.c(256):     928","brand":"SYS IMP","type":"sysco","averageWeightPerCase":20.0000,"packSize":{"pack":"4
+Action.c(256):     ","size":"5 LB"},"isSoldAs":{"case":false,"split":false},"split":{"min":1,"max":4},"isCatc
+Action.c(256):     hWeight":false,"storageFlag":"C","isAvailable":true,"replacementMaterialId":"9359928","has
+Action.c(256):     Replacement":false,"category":{"completeCategoryId":"11003002099","mainCategoryId":11,"lab
+Action.c(256):     el":"MISC."},"messages":[{"type":"info","message":"Stocked item"}],"flags":["syscoBranded"
+Action.c(256):     ],"images":["null"],"canBuy":true,"isOrderable":true,"lastOrderedDate":"2016-05-10T06:53:3
+Action.c(256):     7.569Z"}
+Action.c(256): Notify: Saving Parameter "Corr_ProductName_1 = VEGETABLE BLEND CALIFORNIA".
+Action.c(256): Notify: Saving Parameter "Corr_MaterialID_1 = 9359928".
+Action.c(256): HTML parsing not performed for Content-Type "application/json" ("ParseHtmlContentType" Run-Time Setting is "TEXT"). URL="http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/9359928"  	[MsgId: MMSG-26548]
+Action.c(256): Warning -26377: No match found for the requested parameter "Corr_ProductID". Check whether the requested boundaries exist in the response data. Also, if the data you want to save exceeds 256 bytes, use web_set_max_html_param_len to increase the parameter size  	[MsgId: MWAR-26377]
+Action.c(256): Notify: Saving Parameter "Corr_ProductID_count = 0".
+Action.c(256): Notify: Saving Parameter "Corr_MaterialID_count = 1".
+Action.c(256): Notify: Saving Parameter "Corr_ProductName_count = 1".
+Action.c(256): web_url("SyscoProductsList") highest severity level was "warning", 413 body bytes, 180 header bytes  	[MsgId: MMSG-26388]
+Action.c(264): Notify: Transaction "WS03_07_Get_SyscoProducts" ended with a "Pass" status (Duration: 0.2665 Wasted Time: 0.0113).
+Action.c(248): Notify: Transaction "WS03_07_Get_SyscoProducts" started.
+Action.c(250): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(250): Notify: Next row for parameter P_Sys_Opco = 13255 [table  = P_Sys_Opco].
+Action.c(250): Notify: Getting new value for parameter 'P_Sys_Opco': table = 'P_SyscoID.dat' column = '0' row = '13255'.
+Action.c(250): Notify: Parameter Substitution: parameter "P_Sys_Opco" =  "067"
+Action.c(250): Notify: Next row for parameter P_SyscoID = 5184 [table  = P_SyscoID].
+Action.c(250): Notify: Getting new value for parameter 'P_SyscoID': table = 'P_SyscoID.dat' column = '1' row = '5184'.
+Action.c(250): Notify: Parameter Substitution: parameter "P_SyscoID" =  "000349"
+Action.c(250): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(250): Notify: Parameter Substitution: parameter "P_UserID" =  "148759"
+Action.c(250): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(250): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(252): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(252): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(253): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(253): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(254): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(254): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(256): web_url("SyscoProductsList") started  	[MsgId: MMSG-26355]
+Action.c(256): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(256): Notify: Next row for parameter P_SyscoProdID = 5184 [table  = P_SyscoProdID].
+Action.c(256): Notify: Getting new value for parameter 'P_SyscoProdID': table = 'P_SyscoID.dat' column = '2' row = '5184'.
+Action.c(256): Notify: Parameter Substitution: parameter "P_SyscoProdID" =  "4060521"
+Action.c(256): t=40740ms: 180-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/4060521" (RelFrameId=1, Internal ID=20)
+Action.c(256):     HTTP/1.1 200 OK\r\n
+Action.c(256):     Content-Encoding: gzip\r\n
+Action.c(256):     Content-Type: application/json\r\n
+Action.c(256):     Date: Tue, 10 May 2016 06:53:37 GMT\r\n
+Action.c(256):     Vary: Accept-Encoding\r\n
+Action.c(256):     Content-Length: 439\r\n
+Action.c(256):     Connection: keep-alive\r\n
+Action.c(256):     \r\n
+Action.c(256): t=40774ms: 439-byte ENCODED response body received for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/4060521" (RelFrameId=1, Internal ID=20)
+Action.c(256): t=40779ms: 683-byte DECODED response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/4060521" (RelFrameId=1, Internal ID=20)
+Action.c(256):     {"opCo":"067","customerId":"000349","name":"DRINK MIX FRUIT PUNCH DIET","materialId":"4060
+Action.c(256):     521","brand":"CRYS LT","type":"sysco","description":"Drink Mix Fruit Punch Diet","averageW
+Action.c(256):     eightPerCase":1.2000,"packSize":{"pack":"12","size":"2 GAL","uom":"cs"},"isSoldAs":{"case"
+Action.c(256):     :true,"split":false},"split":{"min":0,"max":0},"isCatchWeight":false,"storageFlag":"D","is
+Action.c(256):     Available":true,"replacementMaterialId":"4060521","hasReplacement":false,"category":{"comp
+Action.c(256):     leteCategoryId":"07016004099","mainCategoryId":7,"label":"MISC."},"messages":[{"type":"inf
+Action.c(256):     o","message":"Stocked item"}],"flags":["null"],"images":["null"],"canBuy":true,"isOrderabl
+Action.c(256):     e":true,"lastOrderedDate":"2016-05-10T06:53:37.834Z"}
+Action.c(256): Notify: Saving Parameter "Corr_ProductName_1 = DRINK MIX FRUIT PUNCH DIET".
+Action.c(256): Notify: Saving Parameter "Corr_MaterialID_1 = 4060521".
+Action.c(256): HTML parsing not performed for Content-Type "application/json" ("ParseHtmlContentType" Run-Time Setting is "TEXT"). URL="http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/4060521"  	[MsgId: MMSG-26548]
+Action.c(256): Warning -26377: No match found for the requested parameter "Corr_ProductID". Check whether the requested boundaries exist in the response data. Also, if the data you want to save exceeds 256 bytes, use web_set_max_html_param_len to increase the parameter size  	[MsgId: MWAR-26377]
+Action.c(256): Notify: Saving Parameter "Corr_ProductID_count = 0".
+Action.c(256): Notify: Saving Parameter "Corr_MaterialID_count = 1".
+Action.c(256): Notify: Saving Parameter "Corr_ProductName_count = 1".
+Action.c(256): web_url("SyscoProductsList") highest severity level was "warning", 439 body bytes, 180 header bytes  	[MsgId: MMSG-26388]
+Action.c(264): Notify: Transaction "WS03_07_Get_SyscoProducts" ended with a "Pass" status (Duration: 0.2644 Wasted Time: 0.0110).
+Action.c(248): Notify: Transaction "WS03_07_Get_SyscoProducts" started.
+Action.c(250): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(250): Notify: Next row for parameter P_Sys_Opco = 5184 [table  = P_Sys_Opco].
+Action.c(250): Notify: Getting new value for parameter 'P_Sys_Opco': table = 'P_SyscoID.dat' column = '0' row = '5184'.
+Action.c(250): Notify: Parameter Substitution: parameter "P_Sys_Opco" =  "067"
+Action.c(250): Notify: Next row for parameter P_SyscoID = 1060 [table  = P_SyscoID].
+Action.c(250): Notify: Getting new value for parameter 'P_SyscoID': table = 'P_SyscoID.dat' column = '1' row = '1060'.
+Action.c(250): Notify: Parameter Substitution: parameter "P_SyscoID" =  "000349"
+Action.c(250): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(250): Notify: Parameter Substitution: parameter "P_UserID" =  "148759"
+Action.c(250): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(250): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(252): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(252): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(253): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(253): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(254): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(254): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(256): web_url("SyscoProductsList") started  	[MsgId: MMSG-26355]
+Action.c(256): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(256): Notify: Next row for parameter P_SyscoProdID = 1060 [table  = P_SyscoProdID].
+Action.c(256): Notify: Getting new value for parameter 'P_SyscoProdID': table = 'P_SyscoID.dat' column = '2' row = '1060'.
+Action.c(256): Notify: Parameter Substitution: parameter "P_SyscoProdID" =  "1137389"
+Action.c(256): t=41018ms: 180-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/1137389" (RelFrameId=1, Internal ID=21)
+Action.c(256):     HTTP/1.1 200 OK\r\n
+Action.c(256):     Content-Encoding: gzip\r\n
+Action.c(256):     Content-Type: application/json\r\n
+Action.c(256):     Date: Tue, 10 May 2016 06:53:38 GMT\r\n
+Action.c(256):     Vary: Accept-Encoding\r\n
+Action.c(256):     Content-Length: 415\r\n
+Action.c(256):     Connection: keep-alive\r\n
+Action.c(256):     \r\n
+Action.c(256): t=41066ms: 415-byte ENCODED response body received for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/1137389" (RelFrameId=1, Internal ID=21)
+Action.c(256): t=41071ms: 647-byte DECODED response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/1137389" (RelFrameId=1, Internal ID=21)
+Action.c(256):     {"opCo":"067","customerId":"000349","name":"BEEF PATTY CHARBROILED","materialId":"1137389"
+Action.c(256):     ,"brand":"SYS REL","type":"sysco","averageWeightPerCase":12.2500,"packSize":{"pack":"70","
+Action.c(256):     size":"2.8OZ","uom":"cs"},"isSoldAs":{"case":true,"split":false},"split":{"min":0,"max":0}
+Action.c(256):     ,"isCatchWeight":false,"storageFlag":"F","isAvailable":true,"replacementMaterialId":"11373
+Action.c(256):     89","hasReplacement":false,"category":{"completeCategoryId":"03002004003","mainCategoryId"
+Action.c(256):     :3,"label":"PATTIES"},"messages":[{"type":"info","message":"Stocked item"}],"flags":["sysc
+Action.c(256):     oBranded"],"images":["null"],"canBuy":true,"isOrderable":true,"lastOrderedDate":"2016-05-1
+Action.c(256):     0T06:53:38.111Z"}
+Action.c(256): Notify: Saving Parameter "Corr_ProductName_1 = BEEF PATTY CHARBROILED".
+Action.c(256): Notify: Saving Parameter "Corr_MaterialID_1 = 1137389".
+Action.c(256): HTML parsing not performed for Content-Type "application/json" ("ParseHtmlContentType" Run-Time Setting is "TEXT"). URL="http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/products/1137389"  	[MsgId: MMSG-26548]
+Action.c(256): Warning -26377: No match found for the requested parameter "Corr_ProductID". Check whether the requested boundaries exist in the response data. Also, if the data you want to save exceeds 256 bytes, use web_set_max_html_param_len to increase the parameter size  	[MsgId: MWAR-26377]
+Action.c(256): Notify: Saving Parameter "Corr_ProductID_count = 0".
+Action.c(256): Notify: Saving Parameter "Corr_MaterialID_count = 1".
+Action.c(256): Notify: Saving Parameter "Corr_ProductName_count = 1".
+Action.c(256): web_url("SyscoProductsList") highest severity level was "warning", 415 body bytes, 180 header bytes  	[MsgId: MMSG-26388]
+Action.c(264): Notify: Transaction "WS03_07_Get_SyscoProducts" ended with a "Pass" status (Duration: 0.2901 Wasted Time: 0.0159).
+Ending action Action.
+Ending iteration 1.
+Ending Vuser...
+Starting action vuser_end.
+Ending action vuser_end.
+Vuser Terminated.
+Vuser 0 (thread 9524), ended OK."

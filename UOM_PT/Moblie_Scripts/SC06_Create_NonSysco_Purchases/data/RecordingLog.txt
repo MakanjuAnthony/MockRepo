@@ -1,0 +1,67 @@
+[API Trapper      (1bf0:181c)] Recording in 32-bit mode: C:\Program Files (x86)\HP\Virtual User Generator\bin\HP.LR.SazParser.exe
+[Network Analyzer (1bf0:181c)] ------------------------------------------------------------------------------------------
+[Network Analyzer (1bf0:181c)] Load Network Traffic Analyzers:
+[Network Analyzer (1bf0:181c)]     Analyzer Module: WPLUS (value=)
+[Network Analyzer (1bf0:181c)]     Analyzer Module: WebBase (value=GetHttpProtocolAnalyzer:api_http_filter.dll)
+[Network Analyzer (1bf0:181c)]     + Network Analyzer: api_http_filter.dll @ GetHttpProtocolAnalyzer Loaded!
+[Network Analyzer (1bf0:181c)]     + Interception Auditors: WinInetWplusInterceptionAudit:api_http_filter.dll
+[Network Analyzer (1bf0:181c)]     Analyzer Module: Mobile (value=)
+[Network Analyzer (1bf0:181c)]     Analyzer Module: local_server (value=)
+[Network Analyzer (1bf0:181c)] ------------------------------------------------------------------------------------------
+[Network Analyzer (1bf0:181c)]   (Sid:  1) Client -> Server @ : 628 bytes (SSL)(Service=HTTP)
+[Web Request      (1bf0:181c)] "POST https://onlineapi-qa.cloud.sysco.com/app/login"   
+[Network Analyzer (1bf0:181c)]   (Sid:  1) Client -> Server @ : 46 bytes (SSL)(Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid:  1) Server -> Client : 1194 bytes (SSL) (Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid:  1) Server -> Client : 454 bytes (SSL) (Service=HTTP)
+[Web Request      (1bf0:181c)] "GET https://onlineapi-qa.cloud.sysco.com/app/user"   
+[Network Analyzer (1bf0:181c)]   (Sid:  2) Client -> Server @ : 994 bytes (SSL)(Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid:  2) Server -> Client : 1380 bytes (SSL) (Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid:  2) Server -> Client : 454 bytes (SSL) (Service=HTTP)
+[Web Request      (1bf0:181c)] "GET https://onlineapi-qa.cloud.sysco.com/inventories/current?withAllProductAttributes=true"   
+[Network Analyzer (1bf0:181c)]   (Sid:  3) Client -> Server @ : 932 bytes (SSL)(Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid:  3) Server -> Client : 277 bytes (SSL) (Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid:  3) Server -> Client : 3394 bytes (SSL) (Service=HTTP)
+[Web Request      (1bf0:181c)] "GET https://onlineapi-qa.cloud.sysco.com/suppliers"   
+[Network Analyzer (1bf0:181c)]   (Sid:  4) Client -> Server @ : 1030 bytes (SSL)(Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid:  4) Server -> Client : 276 bytes (SSL) (Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid:  4) Server -> Client : 270 bytes (SSL) (Service=HTTP)
+[Web Request      (1bf0:181c)] "GET https://onlineapi-qa.cloud.sysco.com/inventories/timePeriods"   
+[Network Analyzer (1bf0:181c)]   (Sid:  5) Client -> Server @ : 1044 bytes (SSL)(Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid:  5) Server -> Client : 276 bytes (SSL) (Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid:  5) Server -> Client : 167 bytes (SSL) (Service=HTTP)
+[Web Request      (1bf0:181c)] "GET https://onlineapi-qa.cloud.sysco.com/purchases?fromDate=2016-05-12T10%3A53%3A47.847Z&toDate=2016-05-23T15%3A03%3A11.681Z"   
+[Network Analyzer (1bf0:181c)]   (Sid:  6) Client -> Server @ : 1104 bytes (SSL)(Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid:  6) Server -> Client : 275 bytes (SSL) (Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid:  6) Server -> Client : 40 bytes (SSL) (Service=HTTP)
+[Web Request      (1bf0:181c)] "GET https://onlineapi-qa.cloud.sysco.com/suppliers"   
+[Network Analyzer (1bf0:181c)]   (Sid:  7) Client -> Server @ : 1030 bytes (SSL)(Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid:  7) Server -> Client : 276 bytes (SSL) (Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid:  7) Server -> Client : 270 bytes (SSL) (Service=HTTP)
+[Web Request      (1bf0:181c)] "GET https://onlineapi-qa.cloud.sysco.com/suppliers"   
+[Network Analyzer (1bf0:181c)]   (Sid:  8) Client -> Server @ : 1030 bytes (SSL)(Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid:  8) Server -> Client : 276 bytes (SSL) (Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid:  8) Server -> Client : 270 bytes (SSL) (Service=HTTP)
+[Web Request      (1bf0:181c)] "GET https://onlineapi-qa.cloud.sysco.com/groups?type=expensecategory"   
+[Network Analyzer (1bf0:181c)]   (Sid:  9) Client -> Server @ : 1048 bytes (SSL)(Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid:  9) Server -> Client : 276 bytes (SSL) (Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid:  9) Server -> Client : 353 bytes (SSL) (Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid: 10) Client -> Server @ : 1101 bytes (SSL)(Service=HTTP)
+[Web Request      (1bf0:181c)] "POST https://onlineapi-qa.cloud.sysco.com/purchases"   
+[Network Analyzer (1bf0:181c)]   (Sid: 10) Client -> Server @ : 203 bytes (SSL)(Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid: 10) Server -> Client : 287 bytes (SSL) (Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid: 10) Server -> Client : 233 bytes (SSL) (Service=HTTP)
+[Web Request      (1bf0:181c)] "GET https://onlineapi-qa.cloud.sysco.com/inventories/timePeriods"   
+[Network Analyzer (1bf0:181c)]   (Sid: 11) Client -> Server @ : 1044 bytes (SSL)(Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid: 11) Server -> Client : 276 bytes (SSL) (Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid: 11) Server -> Client : 167 bytes (SSL) (Service=HTTP)
+[Web Request      (1bf0:181c)] "GET https://onlineapi-qa.cloud.sysco.com/purchases?fromDate=2016-05-12T10%3A53%3A47.847Z&toDate=2016-05-23T15%3A03%3A50.498Z"   
+[Network Analyzer (1bf0:181c)]   (Sid: 12) Client -> Server @ : 1104 bytes (SSL)(Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid: 12) Server -> Client : 276 bytes (SSL) (Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid: 12) Server -> Client : 275 bytes (SSL) (Service=HTTP)
+[Web Request      (1bf0:181c)] "GET https://onlineapi-qa.cloud.sysco.com/suppliers"   
+[Network Analyzer (1bf0:181c)]   (Sid: 13) Client -> Server @ : 1030 bytes (SSL)(Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid: 13) Server -> Client : 276 bytes (SSL) (Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid: 13) Server -> Client : 270 bytes (SSL) (Service=HTTP)
+[Web Request      (1bf0:181c)] "POST https://onlineapi-qa.cloud.sysco.com/app/logout"   
+[Network Analyzer (1bf0:181c)]   (Sid: 14) Client -> Server @ : 1180 bytes (SSL)(Service=HTTP)
+[Network Analyzer (1bf0:181c)]   (Sid: 14) Server -> Client : 1266 bytes (SSL) (Service=HTTP)

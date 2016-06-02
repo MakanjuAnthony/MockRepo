@@ -1,0 +1,160 @@
+Virtual User Script started at : 5/10/2016 6:55:35 AM
+Starting action vuser_init.
+Web Turbo Replay of LoadRunner 12.0.0 for Windows 2008 R2; build 2739 (Nov 30 2014 23:13:05)  	[MsgId: MMSG-27143]
+Run mode: HTML  	[MsgId: MMSG-26993]
+Run-Time Settings file: "G:\11_UOM\Scripts\QA\Sprint5\S04_Create_Inventory_Integrated_Final_Exp_Category\\default.cfg"  	[MsgId: MMSG-27141]
+Vuser directory: "G:\11_UOM\Scripts\QA\Sprint5\S04_Create_Inventory_Integrated_Final_Exp_Category"  	[MsgId: MMSG-27052]
+Vuser output directory: "G:\11_UOM\Scripts\QA\Sprint5\S04_Create_Inventory_Integrated_Final_Exp_Category"  	[MsgId: MMSG-27050]
+Operating system's current working directory: "g:\11_uom\scripts\qa\sprint5\s04_create_inventory_integrated_final_exp_category"  	[MsgId: MMSG-27048]
+UTC (GMT) start date/time   : 2016-05-10 06:55:35  	[MsgId: MMSG-26992]
+LOCAL start date/time       : 2016-05-10 06:55:35  	[MsgId: MMSG-26991]
+Local daylight-Savings-Time : No  	[MsgId: MMSG-26990]
+Some of the Run-Time Settings:  	[MsgId: MMSG-27142]
+    Download non-HTML resources: Yes  	[MsgId: MMSG-27018]
+    Verification checks: No  	[MsgId: MMSG-27017]
+    Convert from/to UTF-8: No  	[MsgId: MMSG-27016]
+    Simulate a new user each iteration: Yes  	[MsgId: MMSG-27009]
+    Non-critical item errors as warnings: Yes  	[MsgId: MMSG-27008]
+    HTTP errors as warnings: No  	[MsgId: MMSG-27007]
+    WinInet replay instead of Sockets: No  	[MsgId: MMSG-27006]
+    HTTP version: 1.1  	[MsgId: MMSG-27005]
+    Keep-Alive HTTP connections: Yes  	[MsgId: MMSG-27004]
+    Max self Meta refresh updates: 2  	[MsgId: MMSG-27003]
+    No proxy is used (direct connection to the Internet)  	[MsgId: MMSG-27171]
+    DNS caching: Yes  	[MsgId: MMSG-27035]
+    Simulate browser cache: Yes  	[MsgId: MMSG-27034]
+        Cache URLs requiring content (e.g., HTMLs): Yes  	[MsgId: MMSG-27033]
+            Additional URLs requiring content: text/xml;text/plain  	[MsgId: MMSG-27032]
+        Check for newer versions every visit to the page: No  	[MsgId: MMSG-27031]
+    Page download timeout (sec): 1200  	[MsgId: MMSG-27030]
+    Resource Page Timeout is a Warning: No  	[MsgId: MMSG-27029]
+    ContentCheck enabled: Yes  	[MsgId: MMSG-27028]
+    ContentCheck script-level file: "G:\11_UOM\Scripts\QA\Sprint5\S04_Create_Inventory_Integrated_Final_Exp_Category\LrwiAedScript.xml"  	[MsgId: MMSG-27027]
+    Enable Web Page Breakdown: Yes  	[MsgId: MMSG-27026]
+    Enable connection data points: Yes  	[MsgId: MMSG-27023]
+    Process socket after reschedule: Yes  	[MsgId: MMSG-27022]
+    Snapshot on error: No  	[MsgId: MMSG-27021]
+    Define each step as a transaction: No  	[MsgId: MMSG-27020]
+    Read beyond Content-Length: No  	[MsgId: MMSG-26994]
+    Parse HTML Content-Type: TEXT  	[MsgId: MMSG-26999]
+    Graph hits per second and HTTP status codes: Yes  	[MsgId: MMSG-26998]
+    Graph response bytes per second: Yes  	[MsgId: MMSG-26997]
+    Graph pages per second: No  	[MsgId: MMSG-26996]
+    Web recorder version ID: 10  	[MsgId: MMSG-26995]
+Ending action vuser_init.
+Running Vuser...
+Starting iteration 1.
+Maximum number of concurrent connections per server: 6  	[MsgId: MMSG-26989]
+Starting action Action.
+Action.c(11): Notify: Transaction "WS04_00_Get_AccountByCustomerID" started.
+Action.c(13): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(13): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(13): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(13): Notify: Parameter Substitution: parameter "P_CustomerID" =  "130781"
+Action.c(13): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(13): Notify: Parameter Substitution: parameter "P_UserID" =  "130781"
+Action.c(13): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(13): "Authorization: Bearer 067|130781|130781" header registered for adding to requests from the immediately following Action function  	[MsgId: MMSG-26506]
+Action.c(13): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(15): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(15): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(16): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(16): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(18): web_url("GetAccount") started  	[MsgId: MMSG-26355]
+Action.c(18): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(18): t=1146ms: Connecting [0] to host 10.168.141.205:80  	[MsgId: MMSG-26000]
+Action.c(18): t=1195ms: Connected socket [0] from 10.240.205.165:41649 to 10.168.141.205:80 in 47 ms  	[MsgId: MMSG-26000]
+Action.c(18): t=1197ms: 384-byte request headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/accounts/mine" (RelFrameId=1, Internal ID=1)
+Action.c(18):     GET /accounts/mine HTTP/1.1\r\n
+Action.c(18):     Authorization: Bearer 067|130781|130781\r\n
+Action.c(18):     User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chr
+Action.c(18):     ome/48.0.2564.97 Safari/537.36\r\n
+Action.c(18):     Accept-Encoding: gzip, deflate, sdch\r\n
+Action.c(18):     Accept-Language: en-US,en;q=0.8\r\n
+Action.c(18):     Accept: */*\r\n
+Action.c(18):     Connection: Keep-Alive\r\n
+Action.c(18):     Host: internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com\r\n
+Action.c(18):     \r\n
+Action.c(18): t=1281ms: 132-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/accounts/mine" (RelFrameId=1, Internal ID=1)
+Action.c(18):     HTTP/1.1 200 OK\r\n
+Action.c(18):     Content-Type: application/json\r\n
+Action.c(18):     Date: Tue, 10 May 2016 06:55:36 GMT\r\n
+Action.c(18):     Content-Length: 50\r\n
+Action.c(18):     Connection: keep-alive\r\n
+Action.c(18):     \r\n
+Action.c(18): t=1329ms: 50-byte response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/accounts/mine" (RelFrameId=1, Internal ID=1)
+Action.c(18):     {"opCo":"067","customerId":"130781","isCogs":true}
+Action.c(18): Notify: Saving Parameter "Corr_CustomerID = 130781".
+Action.c(18): Notify: Saving Parameter "Corr_isCogs = true".
+Action.c(18): HTML parsing not performed for Content-Type "application/json" ("ParseHtmlContentType" Run-Time Setting is "TEXT"). URL="http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/accounts/mine"  	[MsgId: MMSG-26548]
+Action.c(18): t=1344ms: Request done "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/accounts/mine"  	[MsgId: MMSG-26000]
+Action.c(18): web_url("GetAccount") was successful, 50 body bytes, 132 header bytes  	[MsgId: MMSG-26386]
+Action.c(26): Notify: Transaction "WS04_00_Get_AccountByCustomerID" ended with a "Pass" status (Duration: 0.5191 Wasted Time: 0.2032).
+Action.c(30): Notify: Parameter Substitution: parameter "Corr_CustomerID" =  "130781"
+Action.c(62): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(62): Notify: Parameter Substitution: parameter "P_OpCo" =  "067"
+Action.c(62): Notify: Next row for parameter P_CustomerID = 1 [table  = P_CustomerID].
+Action.c(62): Notify: Parameter Substitution: parameter "P_CustomerID" =  "130781"
+Action.c(62): Notify: Next row for parameter P_UserID = 1 [table  = P_UserID].
+Action.c(62): Notify: Parameter Substitution: parameter "P_UserID" =  "130781"
+Action.c(62): Warning -26593: The header being added may cause unpredictable results when applied to all ensuing URLs. It is added anyway  	[MsgId: MWAR-26593]
+Action.c(62): "Authorization: Bearer 067|130781|130781" header registered for adding to requests from the immediately following Action function  	[MsgId: MMSG-26506]
+Action.c(62): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(64): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(64): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(65): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(65): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(66): web_reg_save_param started  	[MsgId: MMSG-26355]
+Action.c(66): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+Action.c(68): web_url("InventoriesListforanAccount") started  	[MsgId: MMSG-26355]
+Action.c(68): Notify: Parameter Substitution: parameter "P_URL" =  "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80"
+Action.c(68): t=1562ms: Already connected [0] to internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80  	[MsgId: MMSG-26000]
+Action.c(68): t=1564ms: 382-byte request headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/inventories" (RelFrameId=1, Internal ID=2)
+Action.c(68):     GET /inventories HTTP/1.1\r\n
+Action.c(68):     Authorization: Bearer 067|130781|130781\r\n
+Action.c(68):     User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chr
+Action.c(68):     ome/48.0.2564.97 Safari/537.36\r\n
+Action.c(68):     Accept-Encoding: gzip, deflate, sdch\r\n
+Action.c(68):     Accept-Language: en-US,en;q=0.8\r\n
+Action.c(68):     Accept: */*\r\n
+Action.c(68):     Connection: Keep-Alive\r\n
+Action.c(68):     Host: internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com\r\n
+Action.c(68):     \r\n
+Action.c(68): t=1647ms: 180-byte response headers for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/inventories" (RelFrameId=1, Internal ID=2)
+Action.c(68):     HTTP/1.1 200 OK\r\n
+Action.c(68):     Content-Encoding: gzip\r\n
+Action.c(68):     Content-Type: application/json\r\n
+Action.c(68):     Date: Tue, 10 May 2016 06:55:36 GMT\r\n
+Action.c(68):     Vary: Accept-Encoding\r\n
+Action.c(68):     Content-Length: 199\r\n
+Action.c(68):     Connection: keep-alive\r\n
+Action.c(68):     \r\n
+Action.c(68): t=1677ms: 199-byte ENCODED response body received for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/inventories" (RelFrameId=1, Internal ID=2)
+Action.c(68): t=1682ms: 319-byte DECODED response body for "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/inventories" (RelFrameId=1, Internal ID=2)
+Action.c(68):     {"inventories":[{"id":"e1b29cf8-4b0b-4d93-9291-76e1d27ebdcf","name":"inventory","numberOfI
+Action.c(68):     tems":20},{"id":"a0640947-c000-4b27-837a-11412aa02737","name":"inventory 2016-05-03T20:25:
+Action.c(68):     52.298Z","numberOfItems":20},{"id":"8f233ae8-19ca-42f9-8bb3-1446f4995e52","name":"inventor
+Action.c(68):     y 2016-05-03T04:05:10.510Z","numberOfItems":20}]}
+Action.c(68): Notify: Saving Parameter "Corr_InventoryID = e1b29cf8-4b0b-4d93-9291-76e1d27ebdcf".
+Action.c(68): Notify: Saving Parameter "Corr_InventoryName_1 = inventory".
+Action.c(68): Notify: Saving Parameter "Corr_NumberofItems_1 = 20".
+Action.c(68): Notify: Saving Parameter "Corr_InventoryName_2 = inventory 2016-05-03T20:25:52.298Z".
+Action.c(68): Notify: Saving Parameter "Corr_NumberofItems_2 = 20".
+Action.c(68): Notify: Saving Parameter "Corr_InventoryName_3 = inventory 2016-05-03T04:05:10.510Z".
+Action.c(68): Notify: Saving Parameter "Corr_NumberofItems_3 = 20".
+Action.c(68): HTML parsing not performed for Content-Type "application/json" ("ParseHtmlContentType" Run-Time Setting is "TEXT"). URL="http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/inventories"  	[MsgId: MMSG-26548]
+Action.c(68): t=1719ms: Request done "http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80/inventories"  	[MsgId: MMSG-26000]
+Action.c(68): Notify: Saving Parameter "Corr_InventoryName_count = 3".
+Action.c(68): Notify: Saving Parameter "Corr_NumberofItems_count = 3".
+Action.c(68): web_url("InventoriesListforanAccount") was successful, 199 body bytes, 180 header bytes  	[MsgId: MMSG-26386]
+Action.c(76): Notify: Parameter Substitution: parameter "Corr_InventoryID" =  "e1b29cf8-4b0b-4d93-9291-76e1d27ebdcf"
+Action.c(83): Not Looped into Create Invetory
+Ending action Action.
+Ending iteration 1.
+Ending Vuser...
+Starting action vuser_end.
+Ending action vuser_end.
+Vuser Terminated.
+t=1891ms: Closed connection [0] to internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com:80 after completing 2 requests  	[MsgId: MMSG-26000]
+HTML-Mode memory management statistics: Reusable=0, NonReusable=0, CsMemBlockSize=4096, checks disabled  	[MsgId: MMSG-26000]
+Vuser 0 (thread 7776), ended OK."

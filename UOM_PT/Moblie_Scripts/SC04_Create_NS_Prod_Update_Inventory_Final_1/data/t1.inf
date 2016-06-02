@@ -1,0 +1,15 @@
+[t1]
+FileName1=t1.html
+URL1=https://onlineapi-qa.cloud.sysco.com/app/login
+Total=3
+RequestHeaderFile=t1_RequestHeader.txt
+RequestBodyFile=t1_RequestBody.txt
+ResponseHeaderFile=t1_ResponseHeader.txt
+ContentType=application/json
+SnapshotXmlFile=snapshot_1.xml
+FileName2=t1_user.html
+URL2=https://onlineapi-qa.cloud.sysco.com/app/user
+FileName3=t1_suppliers.html
+URL3=https://onlineapi-qa.cloud.sysco.com/suppliers
+[ProtocolInfo]
+ProtocolId=QTWeb

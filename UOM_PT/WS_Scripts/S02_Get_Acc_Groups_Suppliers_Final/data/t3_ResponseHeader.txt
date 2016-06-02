@@ -1,0 +1,11 @@
+HTTP/1.1 200 OK
+Date: Mon, 01 Feb 2016 16:16:21 GMT
+Access-Control-Allow-Origin: http://10.239.251.82:8080
+Access-Control-Expose-Headers: 
+Last-Modified: Mon, 01 Feb 2016 14:40:24 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Encoding: gzip
+Vary: Accept-Encoding
+ETag: "923842ddf90580ac978420e070092142--gzip"
+Content-Length: 11327
+

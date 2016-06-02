@@ -1,0 +1,3 @@
+"{\"name\":\"PT_Prod06\",\"supplier\":\"1c6caa9c-2f6d-48b5-9f37-5c0c771cc26c\",\"materialId\":\""
+"Nsp06\",\"brand\":\"Pbrand6\",\"nickName\":\"\",\"averageWeightPerCase\":6,\"packSize\":{\"pac"
+"k\":\"6\",\"size\":\"6\",\"uom\":\"\"},\"type\":\"nonsysco\"}"

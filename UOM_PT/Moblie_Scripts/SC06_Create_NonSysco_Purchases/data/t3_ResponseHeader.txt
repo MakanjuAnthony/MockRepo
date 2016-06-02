@@ -1,0 +1,16 @@
+HTTP/1.1 204 No Content
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE
+Access-Control-Allow-Origin: file://
+Date: Mon, 23 May 2016 15:03:59 GMT
+Set-Cookie: homePath=; path=/; expires=Wed, 31 Dec 1969 23:59:59 GMT; httponly
+Set-Cookie: jsessionid=; path=/; expires=Wed, 31 Dec 1969 23:59:59 GMT; httponly
+Set-Cookie: JSESSIONID=; path=/; expires=Wed, 31 Dec 1969 23:59:59 GMT; httponly
+Set-Cookie: system=; path=/; expires=Wed, 31 Dec 1969 23:59:59 GMT; httponly
+Set-Cookie: Path=; path=/; expires=Wed, 31 Dec 1969 23:59:59 GMT; httponly
+Set-Cookie: BNES_homePath=pZzplXyu13nYmDUm8nqFZOpawU8ucOrTeH6tdjeIcx+6v457Q57iRnm54g8wphrmYj65A/IAhIU=; path=/; expires=Wed, 31 Dec 1969 23:59:59 GMT; httponly
+Set-Cookie: BNES_jsessionid=jivVUhQkoLxRU3VVigJPyfHw+TuZuvSIpmQJx177Of7RwsJc41PWOGUPA9zdc071SISY2wQhXFk=; path=/; expires=Wed, 31 Dec 1969 23:59:59 GMT; httponly
+Set-Cookie: BNES_JSESSIONID=R4QLrVmI+7LW11aC0EcqQaAKTY1l3cgNlPZhVEAOssTmpyg3VSVebmaU3wDPmZPJAwupV9vDfUQ=; path=/; expires=Wed, 31 Dec 1969 23:59:59 GMT; httponly
+Set-Cookie: BNES_system=qJtj67n053ekvV1NVr7OjJcbKtdOgjNTjj1VYEqUsvpFDiw4GZpn5/oZ1YXkANeFS/zD6q5vvD8=; path=/; expires=Wed, 31 Dec 1969 23:59:59 GMT; httponly
+Connection: keep-alive
+

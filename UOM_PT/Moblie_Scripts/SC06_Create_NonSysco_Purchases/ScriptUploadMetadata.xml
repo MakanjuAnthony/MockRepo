@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VugenScriptMetadata>
+  <ScriptName>SC06_Create_Purchases_HTML_05_25</ScriptName>
+  <Protocol>Mobile Application - HTTP/HTML</Protocol>
+  <ActionFiles>
+    <FileEntry Name="vuser_init.c" Filter="2" />
+    <FileEntry Name="Action.c" Filter="2" />
+    <FileEntry Name="vuser_end.c" Filter="2" />
+  </ActionFiles>
+  <GeneralFiles>
+    <FileEntry Name="SC06_Create_Purchases_HTML_05_25.usr" Filter="4" />
+    <FileEntry Name="default.cfg" Filter="4" />
+    <FileEntry Name="default.usp" Filter="4" />
+    <FileEntry Name="SC06_Create_Purchases_HTML_05_25.prm" Filter="2" />
+    <FileEntry Name="globals.h" Filter="2" />
+    <FileEntry Name="P_Password.dat" Filter="2" />
+    <FileEntry Name="P_URL.dat" Filter="2" />
+    <FileEntry Name="P_QAURL.dat" Filter="2" />
+    <FileEntry Name="P_CustomerID.dat" Filter="2" />
+    <FileEntry Name="P_OpCo.dat" Filter="2" />
+    <FileEntry Name="P_UserID.dat" Filter="2" />
+    <FileEntry Name="ScriptUploadMetadata.xml" Filter="2" />
+    <FileEntry Name="Bookmarks.xml" Filter="2" />
+    <FileEntry Name="Breakpoints.xml" Filter="2" />
+    <FileEntry Name="CompilerLogMetadata.xml" Filter="2" />
+    <FileEntry Name="ReplaySummaryReport.xml" Filter="2" />
+    <FileEntry Name="UserTasks.xml" Filter="2" />
+    <FileEntry Name="combined_SC06_Create_Purchases_HTML_05_25.c" Filter="2" />
+    <FileEntry Name="pre_cci.c" Filter="2" />
+    <FileEntry Name="1125409544.idx" Filter="1" />
+    <FileEntry Name="12741842344.idx" Filter="1" />
+    <FileEntry Name="13785515644.idx" Filter="1" />
+    <FileEntry Name="14778250044.idx" Filter="1" />
+    <FileEntry Name="14928939644.idx" Filter="1" />
+    <FileEntry Name="16911172144.idx" Filter="1" />
+    <FileEntry Name="18853702644.idx" Filter="1" />
+    <FileEntry Name="22452868144.idx" Filter="1" />
+    <FileEntry Name="24074878644.idx" Filter="1" />
+    <FileEntry Name="24244410844.idx" Filter="1" />
+    <FileEntry Name="24467516544.idx" Filter="1" />
+    <FileEntry Name="4723054044.idx" Filter="1" />
+    <FileEntry Name="Create_Purchases_HTML.prm.bak" Filter="1" />
+    <FileEntry Name="logfile.log" Filter="1" />
+    <FileEntry Name="mdrv.log" Filter="1" />
+    <FileEntry Name="mdrv_cmd.txt" Filter="1" />
+    <FileEntry Name="options.txt" Filter="1" />
+    <FileEntry Name="output.bak" Filter="1" />
+    <FileEntry Name="output.txt" Filter="1" />
+    <FileEntry Name="SC06_Create_Purchases_HTML_05_25.c.pickle" Filter="1" />
+    <FileEntry Name="SC06_Create_Purchases_HTML_05_25.ci" Filter="1" />
+    <FileEntry Name="SC06_Create_Purchases_HTML_05_25.prm.bak" Filter="1" />
+    <FileEntry Name="SC06_Create_Purchases_HTML_05_25.sdf" Filter="1" />
+    <FileEntry Name="ssr_config.ini" Filter="1" />
+    <FileEntry Name="ThumbnailsCache.tmp" Filter="1" />
+    <FileEntry Name="TransactionsData.db" Filter="1" />
+    <FileEntry Name="data\" Filter="1" />
+    <FileEntry Name="result1\" Filter="1" />
+  </GeneralFiles>
+</VugenScriptMetadata>

@@ -1,0 +1,13 @@
+[t3]
+FileName1=t3.html
+URL1=https://onlineapi-qa.cloud.sysco.com/products/nonsysco
+Total=2
+RequestHeaderFile=t3_RequestHeader.txt
+RequestBodyFile=t3_RequestBody.txt
+ResponseHeaderFile=t3_ResponseHeader.txt
+ContentType=application/json
+SnapshotXmlFile=snapshot_3.xml
+FileName2=t3_groups.html
+URL2=https://onlineapi-qa.cloud.sysco.com/groups
+[ProtocolInfo]
+ProtocolId=QTWeb
