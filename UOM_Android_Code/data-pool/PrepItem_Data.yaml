@@ -1,0 +1,10 @@
+PrepItemData    : !!com.components.yaml.PrepItemData {
+ ProductName    : Nam2,
+ UPC            : 1234561,
+ Pack		    : 10,
+ Size		    : 1,
+ Weight		    : 12,
+ Price		    : 30,
+ ProductBrand	: Country,
+ }
+ 

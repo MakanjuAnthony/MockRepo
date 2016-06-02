@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.tests.SampleTest">
+        <methods>
+          <include name="AddVendorMA_Home"/>
+          <include name="VendorDetailsMA_Home"/>
+          <include name="DeleteVendorNU_Home"/>
+          <include name="VendorDetailsNU_Home"/>
+          <include name="setUp"/>
+          <include name="AddVendorNU_Home"/>
+          <include name="DisplayVendorListMA_Home"/>
+          <include name="DeleteVendorMA_Home"/>
+          <include name="DisplayVendorListNU_Home"/>
+        </methods>
+      </class> <!-- com.tests.SampleTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

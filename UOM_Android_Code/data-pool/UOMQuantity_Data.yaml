@@ -1,0 +1,4 @@
+UOMQuantityData : !!com.components.yaml.UOMQuantityData {
+ Quantity       : 5,
+ UOM            : EA,
+ }

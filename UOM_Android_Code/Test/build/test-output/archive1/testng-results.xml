@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" total="1" passed="0">
+  <reporter-output>
+    <line>
+      <![CDATA[[09:11:18] : <b><FONT SIZE="2">Launched Sysco UOM</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[09:11:18] : <b><FONT SIZE="2">Verify the Login Page</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[09:11:20] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Login page is displayed :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[09:11:20] : <b><FONT SIZE="2">Logging In</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[09:11:21] : <b><FONT SIZE="2">Entering User Name</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[09:11:39] : <b><FONT SIZE="2">Entering Password</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[09:11:47] : <b><FONT SIZE="2">Clicking on Login Button</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[09:12:06] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Logged into UOM app successfully :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[09:12:06] : <b><FONT SIZE="2">Verifying UI elements of TakeInventory page </FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[09:13:22] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Verifying UI elements of TakeInventory page:Fail</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[<b><font color='RED'>ERROR	:- expected [true] but found [false]</font></b>]]>
+    </line>
+  </reporter-output>
+  <suite name="Test" duration-ms="150732" started-at="2016-04-14T03:40:54Z" finished-at="2016-04-14T03:43:25Z">
+    <groups>
+      <group name="Script12">
+        <method signature="SampleTest.TakeInventoryUI_Normal()[pri:0, instance:com.tests.SampleTest@c0663d]" name="TakeInventoryUI_Normal" class="com.tests.SampleTest"/>
+      </group> <!-- Script12 -->
+    </groups>
+    <test name="Tests for Test" duration-ms="150732" started-at="2016-04-14T03:40:54Z" finished-at="2016-04-14T03:43:25Z">
+      <class name="com.tests.SampleTest">
+        <test-method status="PASS" signature="setUp(java.lang.reflect.Method)[pri:0, instance:com.tests.SampleTest@c0663d]" name="setUp" is-config="true" duration-ms="6" started-at="2016-04-14T09:10:54Z" finished-at="2016-04-14T09:10:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.tests.SampleTest.TakeInventoryUI_Normal()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="TakeInventoryUI_Normal()[pri:0, instance:com.tests.SampleTest@c0663d]" name="TakeInventoryUI_Normal" duration-ms="147426" started-at="2016-04-14T09:10:54Z" description="Sprint3-Close Inventry" finished-at="2016-04-14T09:13:22Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:496)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at com.components.pages.InventoryToolPage.TakeInventoryUI(Unknown Source)
+	at com.tests.SampleTest.TakeInventoryUI_Normal(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at zRfghY.y.a(TriggerTestNG.java:233)
+	at zRfghY.y.g(TriggerTestNG.java:114)
+	at com.testng.TestNGInitiator.main(TestNGInitiator.java:31)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[[09:11:18] : <b><FONT SIZE="2">Launched Sysco UOM</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[09:11:18] : <b><FONT SIZE="2">Verify the Login Page</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[09:11:20] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Login page is displayed :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[09:11:20] : <b><FONT SIZE="2">Logging In</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[09:11:21] : <b><FONT SIZE="2">Entering User Name</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[09:11:39] : <b><FONT SIZE="2">Entering Password</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[09:11:47] : <b><FONT SIZE="2">Clicking on Login Button</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[09:12:06] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Logged into UOM app successfully :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[09:12:06] : <b><FONT SIZE="2">Verifying UI elements of TakeInventory page </FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[09:13:22] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Verifying UI elements of TakeInventory page:Fail</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[<b><font color='RED'>ERROR	:- expected [true] but found [false]</font></b>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- TakeInventoryUI_Normal -->
+      </class> <!-- com.tests.SampleTest -->
+    </test> <!-- Tests for Test -->
+  </suite> <!-- Test -->
+</testng-results>
