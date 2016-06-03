@@ -1,0 +1,16 @@
+LoginData1  : !!com.components.yaml.LoginData {
+ UserName   : uomsa001,
+ Password   : welcome1,
+ }
+LoginData2  : !!com.components.yaml.LoginData {
+ UserName   : uomsa002,
+ Password   : welcome1,
+ }
+LoginData3  : !!com.components.yaml.LoginData {
+ UserName   : uomsc003,
+ Password   : welcome1,
+ } 
+LoginData4  : !!com.components.yaml.LoginData {
+ UserName   : uomsc002,
+ Password   : welcome1,
+ }

@@ -1,5 +1,5 @@
 VendorDetailData1 : !!com.components.yaml.VendorDetailsData {
- VendorName       : Ven1,
+ VendorName       : Verka4,
  PhoneNum         : 9743210000,
  Address          : Test address,
  ContactInfo      : Tester,
@@ -7,7 +7,7 @@ VendorDetailData1 : !!com.components.yaml.VendorDetailsData {
  Note             : NA,
  }
 VendorDetailData2 : !!com.components.yaml.VendorDetailsData {
- VendorName       : Ven2,
+ VendorName       : Verka3,
  PhoneNum         : 9743210000,
  Address          : Test address,
  ContactInfo      : Tester,
@@ -15,7 +15,7 @@ VendorDetailData2 : !!com.components.yaml.VendorDetailsData {
  Note             : NA,
  }
 VendorDetailData3 : !!com.components.yaml.VendorDetailsData {
- VendorName       : Ven3,
+ VendorName       : Verka2,
  PhoneNum         : 9743210000,
  Address          : Test address,
  ContactInfo      : Tester,
@@ -23,7 +23,7 @@ VendorDetailData3 : !!com.components.yaml.VendorDetailsData {
  Note             : NA,
  }
 VendorDetailData4 : !!com.components.yaml.VendorDetailsData {
- VendorName       : Vow,
+ VendorName       : Verka1,
  PhoneNum         : 9743210000,
  Address          : Test address,
  ContactInfo      : Tester,
@@ -31,7 +31,7 @@ VendorDetailData4 : !!com.components.yaml.VendorDetailsData {
  Note             : NA,
  } 
 VDNonsysco       : !!com.components.yaml.VendorDetailsData {
- VendorName       : Ven5,
+ VendorName       : Verka11,
  PhoneNum         : 9743210000,
  Address          : Test address,
  ContactInfo      : Tester,

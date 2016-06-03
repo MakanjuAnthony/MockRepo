@@ -1,6 +1,6 @@
 NonSyscoItmData : !!com.components.yaml.NonSyscoItemData {
- ProductName    : BIS2,
- UPC            : 1234561,
+ ProductName    : MilkVerka,
+ UPC            : 123456,
  Pack		 	: 10,
  Size		 	: 1,
  Weight		 	: 12,

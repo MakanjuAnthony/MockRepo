@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[[15:41:58] : <b><FONT SIZE="2">Launched Sysco UOM</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:41:58] : <b><FONT SIZE="2">Verify the Login Page</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:42:02] : <b><FONT SIZE="2">Login page verification :Pass</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:42:02] : <b><FONT SIZE="2">Sign In</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:42:19] : <b><FONT SIZE="2">Sign in :Pass</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:42:19] : <b><FONT SIZE="2">Selecting 5 account from Accounts page</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:42:33] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Navigating to Setup inventory page :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:42:48] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Ready to track :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:43:02] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Ready to track :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:43:02] : <b><FONT SIZE="2">Selecting custom list  </FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:43:02] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Selected  custom list  from SetupInventoryImportItems:Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:43:06] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Continue :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:43:06] : <b><FONT SIZE="2">Selecting list</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:43:10] : <b><FONT COLOR="GREEN"><FONT SIZE="2">List is selected :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:43:10] : <b><FONT SIZE="2">Selecting list</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:43:15] : <b><FONT COLOR="GREEN"><FONT SIZE="2">List is selected :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:43:15] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Next : Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:43:17] : <b><FONT SIZE="2">Setup inventory page</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:43:21] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on skip :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:43:21] : <b><FONT SIZE="2">Selecting custom category from Locations page</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:43:23] : <b><FONT COLOR="GREEN"><FONT SIZE="2">List Names selected from locations page :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:43:25] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Continue :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:43:25] : <b><FONT SIZE="2">Setup inventory page</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:43:31] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on skip :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:43:31] : <b><FONT SIZE="2">Selecting default category from Food cost page</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:43:33] : <b><FONT COLOR="GREEN"><FONT SIZE="2">default Category selected :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:43:47] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Complete :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:43:50] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Continue :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:43:50] : <b><FONT SIZE="2">Selecting TrackInventory from inventory tools page </FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:43:52] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped  TrackInventory from inventory tools page:Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:43:52] : <b><FONT SIZE="2">Selecting location</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:43:56] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Location is selected for item :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:43:56] : <b><FONT SIZE="2">locationItem verify </FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:44:01] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Item verification done :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:44:09] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on done:Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:44:12] : <b><FONT SIZE="2">Selecting location</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:44:16] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Location is selected for item :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:44:16] : <b><FONT SIZE="2">locationItem verify </FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:44:18] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Item verification done :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:44:27] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on done:Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[Test completed : SI_WF27_CustomList_MultipleList_ListNames_DefaultCat_NU]]>
+    </line>
+  </reporter-output>
+  <suite name="somename" duration-ms="168550" started-at="2016-06-03T10:11:44Z" finished-at="2016-06-03T10:14:33Z">
+    <groups>
+      <group name="SI - WF 27 NU">
+        <method signature="WorkFlow.SI_WF27_CustomList_MultipleList_ListNames_DefaultCat_NU()[pri:0, instance:com.tests.WorkFlow@1495c8c2]" name="SI_WF27_CustomList_MultipleList_ListNames_DefaultCat_NU" class="com.tests.WorkFlow"/>
+      </group> <!-- SI - WF 27 NU -->
+    </groups>
+    <test name="GRP-SI - WF 27 NU" duration-ms="168550" started-at="2016-06-03T10:11:44Z" finished-at="2016-06-03T10:14:33Z">
+      <class name="com.tests.WorkFlow">
+        <test-method status="PASS" signature="setUp(java.lang.reflect.Method)[pri:0, instance:com.tests.WorkFlow@1495c8c2]" name="setUp" is-config="true" duration-ms="10" started-at="2016-06-03T15:41:44Z" finished-at="2016-06-03T15:41:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.tests.WorkFlow.SI_WF27_CustomList_MultipleList_ListNames_DefaultCat_NU()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="SI_WF27_CustomList_MultipleList_ListNames_DefaultCat_NU()[pri:0, instance:com.tests.WorkFlow@1495c8c2]" name="SI_WF27_CustomList_MultipleList_ListNames_DefaultCat_NU" duration-ms="164958" started-at="2016-06-03T15:41:44Z" description="SI - WF 27-TC1-Custom List + Select Multiple List +List Names+Default Cat for Normal user" finished-at="2016-06-03T15:44:29Z">
+          <reporter-output>
+            <line>
+              <![CDATA[[15:41:58] : <b><FONT SIZE="2">Launched Sysco UOM</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:41:58] : <b><FONT SIZE="2">Verify the Login Page</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:42:02] : <b><FONT SIZE="2">Login page verification :Pass</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:42:02] : <b><FONT SIZE="2">Sign In</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:42:19] : <b><FONT SIZE="2">Sign in :Pass</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:42:19] : <b><FONT SIZE="2">Selecting 5 account from Accounts page</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:42:33] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Navigating to Setup inventory page :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:42:48] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Ready to track :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:43:02] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Ready to track :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:43:02] : <b><FONT SIZE="2">Selecting custom list  </FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:43:02] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Selected  custom list  from SetupInventoryImportItems:Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:43:06] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Continue :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:43:06] : <b><FONT SIZE="2">Selecting list</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:43:10] : <b><FONT COLOR="GREEN"><FONT SIZE="2">List is selected :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:43:10] : <b><FONT SIZE="2">Selecting list</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:43:15] : <b><FONT COLOR="GREEN"><FONT SIZE="2">List is selected :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:43:15] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Next : Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:43:17] : <b><FONT SIZE="2">Setup inventory page</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:43:21] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on skip :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:43:21] : <b><FONT SIZE="2">Selecting custom category from Locations page</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:43:23] : <b><FONT COLOR="GREEN"><FONT SIZE="2">List Names selected from locations page :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:43:25] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Continue :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:43:25] : <b><FONT SIZE="2">Setup inventory page</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:43:31] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on skip :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:43:31] : <b><FONT SIZE="2">Selecting default category from Food cost page</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:43:33] : <b><FONT COLOR="GREEN"><FONT SIZE="2">default Category selected :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:43:47] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Complete :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:43:50] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Continue :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:43:50] : <b><FONT SIZE="2">Selecting TrackInventory from inventory tools page </FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:43:52] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped  TrackInventory from inventory tools page:Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:43:52] : <b><FONT SIZE="2">Selecting location</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:43:56] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Location is selected for item :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:43:56] : <b><FONT SIZE="2">locationItem verify </FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:44:01] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Item verification done :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:44:09] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on done:Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:44:12] : <b><FONT SIZE="2">Selecting location</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:44:16] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Location is selected for item :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:44:16] : <b><FONT SIZE="2">locationItem verify </FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:44:18] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Item verification done :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:44:27] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on done:Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[Test completed : SI_WF27_CustomList_MultipleList_ListNames_DefaultCat_NU]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- SI_WF27_CustomList_MultipleList_ListNames_DefaultCat_NU -->
+      </class> <!-- com.tests.WorkFlow -->
+    </test> <!-- GRP-SI - WF 27 NU -->
+  </suite> <!-- somename -->
+</testng-results>

@@ -1,0 +1,10 @@
+NonSyscoItmData : !!com.components.yaml.NonSyscoItemData {
+ ProductName    : Milk,
+ UPC            : 1234561,
+ Pack		 	: 10,
+ Size		 	: 1,
+ Weight		 	: 12,
+ Price		 	: 30,
+ ProductBrand	: Milma1,
+ }
+ 

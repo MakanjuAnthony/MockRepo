@@ -1,17 +1,17 @@
 LocationsData : !!com.components.yaml.LocationsData {
- LocationName : Ram1,
+ LocationName : Ram033,
  EditLocation : EditedLocationApr1,
  }
 LocatiosData1 : !!com.components.yaml.LocationsData {
- LocationName : Ram2,
+ LocationName : Ram031,
  EditLocation : EditedLocation2,
  }
 LocatiosData2 : !!com.components.yaml.LocationsData {
- LocationName : Ram01,
+ LocationName : Ram030,
  EditLocation : EditedLocation3,
  }
 LocatiosData3 : !!com.components.yaml.LocationsData {
- LocationName : Rahul11,
+ LocationName : Cooler,
  EditLocation : EditedLocation4,
  }
 LocatiosData4 : !!com.components.yaml.LocationsData {

@@ -43,12 +43,12 @@ public class LocationsPage extends SitePage{
  	public static final Target AddLocation_LocName= new Target("ADDLocation_LocName","//*[@id='name']",Target.XPATH);
  	public static final Target AddLocation_LocTypeCoolerWeb= new Target("ADDLocation_LocTypeCooler","(//*[@class='mm-c-location__details-radio']//*[@class='radio'])[1]",Target.XPATH);
     
- 	public static final Target AddWeb= new Target("ADD_Vendor","//*[@id='add-nav']/a/i",Target.XPATH);
+ 	public static final Target AddWeb= new Target("AddWeb","//*[@id='add-nav']/a/i",Target.XPATH);
 	  public static final Target EditWeb = new Target("Edit","//*[@id='edit-nav']/a/i",Target.XPATH);
 	//  public static final Target AddLocation_LocTypeCooler= new Target("LocationDry","//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIAElement[1]",Target.XPATH);
 	  public static final Target AddLocation_LocTypeCooler= new Target("LocationCooler","(//*[@id='storage'])[1]",Target.XPATH);
 
-	  public static final Target Back = new Target("Back","//*[@id='back-nav']/a/i",Target.XPATH);
+	  public static final Target Back = new Target("Back","//*[@id='back-nav']/a",Target.XPATH);
  	
 	//public static final Target LocationName = new Target("LocationName","//UIAStaticText[@label='LOCATION NAME']",Target.XPATH);
 	/*public static final Target NewLocation = new Target("LocationName","//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIATextField[1]",Target.XPATH);
@@ -450,7 +450,7 @@ public static final Target AddProductPage_AddCategory= new Target("AddProductPag
          		if (getCommand().isTargetPresent(Done))
          		{
          			
-         			getCommand().click(Done);
+         			getCommand().doubleClick(Done);
          			log("Tapped on done:Pass",LogType.VERIFICATION_STEP);
          			
          			// //((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
@@ -1326,7 +1326,7 @@ public static final Target AddProductPage_AddCategory= new Target("AddProductPag
     	  			if (getCommand().isTargetPresent(Back))
     	  			{
     	  				
-    	  				getCommand().click(Back);
+    	  				getCommand().clickWithJavascript(Back);
     	  				
     	  				//((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
     	  				//getCommand().captureScreenshot(finalPath);
