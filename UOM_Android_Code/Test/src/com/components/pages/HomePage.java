@@ -11,7 +11,7 @@ import org.testng.Assert;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
-//import io.appium.java_client.ios.IOSDriver;
+
 
 import com.components.repository.SiteRepository;
 import com.iwaf.framework.components.IReporter.LogType;
@@ -19,24 +19,13 @@ import com.iwaf.framework.components.Target;
 
 
 public class HomePage extends SitePage{
-	//String LoginPage.drivePath="/Users/sujina_s/Desktop/Sysco/iOSScreenshot/";
-	String pathExtension=".png";
+	
+	
 	/* Defining the locators on the Page */ 
-	public static final Target HamMenuNormaluser = new Target("HamMenuNormaluser","//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIALink[5]",Target.XPATH);
-	//public static final Target HamMenuMA = new Target("HamburgerMenu","//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIALink[6]",Target.XPATH);
-	
-	public static final Target HamMenu = new Target("HamburgerMenu","//*[@id='hamburger-nav']//*[@class='mm-o-icon icon-menu']",Target.XPATH);
-	public static final Target Menu_InvTools = new Target("Menu_InvTools","//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIALink[4]",Target.XPATH);
-	public static final Target Menu_Home= new Target("Menu_Home","//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIALink[2]",Target.XPATH);
-	public static final Target Menu_Vendors= new Target("Menu_Vendors","//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIALink[3]",Target.XPATH);
-	
-	//public static final Target Menu_app = new Target("Menu_app","YOUR SYSCO APPS",Target.NAME);
-	public static final Target InvToolsPage = new Target("InvToolsPage","//UIAStaticText[@label='Inventory Tools']",Target.XPATH);
-	public static final Target HamLogout = new Target("HamLogout","//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIALink[1]",Target.XPATH);
-	
-	public static final Target VendorsPage = new Target("VendorsPage","//UIAStaticText[@label='Vendors']",Target.XPATH);
 	public static final Target selectAcc = new Target("selectAcc","//*[@class='navbar-brand']//*[contains(text(),'Please select an account')]",Target.XPATH);
-	 
+	public static final Target HamMenu = new Target("HamburgerMenu","//*[@id='hamburger-nav']//*[@class='mm-o-icon icon-menu']",Target.XPATH);
+	public static final Target HamLogout = new Target("HamLogout","//*[@class='mm-c-menu__logout']",Target.XPATH);
+
 
    
 	public HomePage(SiteRepository repository)
@@ -66,17 +55,9 @@ public class HomePage extends SitePage{
 		 String string1="Success";
 		  String string2="Issue";
         
-         String finalPath=LoginPage.drivePath+string+string1+pathExtension;
-		  String finalPath1=LoginPage.drivePath+string+string2+pathExtension;
+         String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
+		  String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 		try{
-			/*Set<String> contextNames = ((IOSDriver)getCommand().driver).getContextHandles();
-			System.out.println("contxtname is "+contextNames);
-			
-			 for (String contextName : contextNames){
-				 System.out.println("inside loop "+contextNames);
-			 }
-		System.out.println(((IOSDriver)getCommand().driver).context((String) contextNames.toArray()[1]));
-	*/
 				 
 			getCommand().waitForTargetPresent(HamMenu);
 			
@@ -86,13 +67,12 @@ public class HomePage extends SitePage{
 				getCommand().click(HamMenu);
 				getCommand().waitFor(5);
 			}
-			//((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
-			//getCommand().captureScreenshot(finalPath);	
 			log("Navigating to menu page :Pass",LogType.VERIFICATION_STEP);
 		}
 	
 		catch(Exception e)
 		{
+			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
 			getCommand().captureScreenshot(finalPath1);
 			log("Navigating to menu page :Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -101,48 +81,13 @@ public class HomePage extends SitePage{
 		
 	
 	}
-	public HomePage HamMenu_Vendors()
-	{
-		
-		log("Tapping on Inventory Tool from Hamburger menu",LogType.STEP);
-		
-		try{
-			
-			
-			getCommand().waitForTargetPresent(Menu_Vendors);
-		
-			
-				log("Tap on Vendor from Hamburger menu",LogType.STEP);	
-				getCommand().click(Menu_Vendors);
-				System.out.println("vendrs pge");
-			
-			getCommand().waitForTargetPresent(VendorsPage);
-			
-			if (getCommand().isTargetPresent(VendorsPage))
-			{
-				System.out.println("in vendors page");
-				log("Navigating to Vendors page :Pass",LogType.VERIFICATION_STEP);	
-										
-			}
-			
-			
-		}
-		
 	
-		catch(Exception e)
-		{
-			log("Navigating to Vendors  page :Fail",LogType.VERIFICATION_STEP);
-			Assert.assertTrue(false);
-		}
-		return this;
-		
-	
-	}
-	
-	public HomePage HamMenu_Logout()
+	public HomePage HamMenu_Logout(String string)
 	{
 		log("Tapping on Logout from Hamburger menu",LogType.STEP);
-		
+		  String finalPath=GlobalVariable.drivePath+string+GlobalVariable.string1+GlobalVariable.pathExtension;
+	      String finalPath1=GlobalVariable.drivePath+string+GlobalVariable.string2+GlobalVariable.pathExtension;
+			
 		try{
 	       getCommand().waitForTargetPresent(HamLogout);
 			
@@ -159,6 +104,8 @@ public class HomePage extends SitePage{
 	
 		catch(Exception e)
 		{
+			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
+		   getCommand().captureScreenshot(finalPath1);
 			log("Logout :Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
@@ -170,23 +117,16 @@ public class HomePage extends SitePage{
 	
 	public HomePage ClickAccount(String str1,String string)
 	{
-		String string1="FirstAccountInfo";
-		  String string2="Issue";
-		  String finalPath=LoginPage.drivePath+string+string1+pathExtension;
-	      String finalPath1=LoginPage.drivePath+string+string2+pathExtension;
+	
+		  String finalPath=GlobalVariable.drivePath+string+GlobalVariable.string1+GlobalVariable.pathExtension;
+	      String finalPath1=GlobalVariable.drivePath+string+GlobalVariable.string2+GlobalVariable.pathExtension;
 			
 		
 		try{	
 			
 			if ((str1.equalsIgnoreCase("uomsa001")) || (str1.equalsIgnoreCase("uomsa002")) ){
-		/*	Set<String> contextNames1 = ((IOSDriver)getCommand().driver).getContextHandles();
-	  		System.out.println("contxtname is "+contextNames1);
-	  		
-	  		 for (String contextName : contextNames1){
-	  			 System.out.println("inside loop "+contextNames1);
-	  		 }
-	  	System.out.println(((IOSDriver)getCommand().driver).context((String) contextNames1.toArray()[1]));
-*/	  	if (getCommand().isTargetPresent(selectAcc))
+	
+	  	if (getCommand().isTargetPresent(selectAcc))
 			{
 			getCommand().click(selectAcc);
 			System.out.println("clicked accnt");
@@ -196,7 +136,8 @@ public class HomePage extends SitePage{
 		}
 		catch(Exception e)
 		{
-			  getCommand().captureScreenshot(finalPath1);
+			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
+			getCommand().captureScreenshot(finalPath1);
 			log("Clicked  account :Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
@@ -207,8 +148,4 @@ public class HomePage extends SitePage{
 	
 
 
-	
-
-	
-	
 }

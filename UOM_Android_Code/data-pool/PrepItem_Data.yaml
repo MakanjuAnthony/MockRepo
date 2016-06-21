@@ -1,5 +1,5 @@
 PrepItemData    : !!com.components.yaml.PrepItemData {
- ProductName    : prepVerka,
+ ProductName    : bholaprep7,
  UPC            : 12345613,
  Pack		    : 10,
  Size		    : 1,

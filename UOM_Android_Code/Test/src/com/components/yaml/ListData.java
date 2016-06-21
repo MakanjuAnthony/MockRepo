@@ -7,8 +7,8 @@ import com.iwaf.framework.BasePage
 public class ListData {
 	
 	public String ListName;
-	
-
+	public int Pdt1;
+	public int Pdt2;
 	
 	public static ListData fetch(String key){
 		BasePage pageObj = new BasePage();

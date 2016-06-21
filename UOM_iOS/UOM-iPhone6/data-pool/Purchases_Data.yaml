@@ -1,7 +1,0 @@
-PurchasesData   : !!com.components.yaml.PurchasesData {
- InvoiceNumber  : 12,
- InvoiceTotal   : 123,
- ExpenseAmount	: 10,
- 
- }
- 

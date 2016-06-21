@@ -1,0 +1,5 @@
+ProductNickNameData    : !!com.components.yaml.ProductNickNameData  {
+ NickName              : Nick,
+ 
+ }
+ 

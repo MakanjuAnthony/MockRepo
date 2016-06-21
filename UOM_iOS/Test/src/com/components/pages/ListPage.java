@@ -1,17 +1,15 @@
 package com.components.pages;
 
-
+import io.appium.java_client.ios.IOSDriver;
 
 import java.util.Set;
 
 import org.testng.Assert;
 
+
 import com.components.repository.SiteRepository;
 import com.iwaf.framework.components.Target;
 import com.iwaf.framework.components.IReporter.LogType;
-
-import io.appium.java_client.android.AndroidDriver;
-
 import com.components.pages.HomePage;
 
 public class ListPage extends SitePage{
@@ -51,17 +49,26 @@ public class ListPage extends SitePage{
    		log("Selecting custom list  ",LogType.STEP);
    	
    		try{
-   			getCommand().waitFor(5);
+   			/*Set<String> contextNames1 = ((IOSDriver)getCommand().driver).getContextHandles();
+   	  		System.out.println("contxtname is "+contextNames1);
+   	  		
+   	  		 for (String contextName : contextNames1){
+   	  			 System.out.println("inside loop "+contextNames1);
+   	  		 }
+   	  	System.out.println(((IOSDriver)getCommand().driver).context((String) contextNames1.toArray()[1]));
+   	  	*/
    			getCommand().waitForTargetPresent(SetUp_Pg1Title);
    			getCommand().waitForTargetPresent(CustomList);
-   			getCommand().clickWithJavascript(CustomList);
+   			getCommand().click(CustomList);
    			
    				log("Selected  custom list  from SetupInventoryImportItems:Pass",LogType.VERIFICATION_STEP);	
    		
-   		}
+   			/*((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+   		getCommand().captureScreenshot(finalPath);
+   	*/	}
    		catch(Exception e){
-   			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-			getCommand().captureScreenshot(finalPath1);
+   			((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+   			getCommand().captureScreenshot(finalPath1);
    			log("Selected  custom list  from SetupInventoryImportItems :Fail",LogType.VERIFICATION_STEP);
    			Assert.assertTrue(false);
    		}
@@ -75,17 +82,26 @@ public class ListPage extends SitePage{
 		   String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 	       String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 	     	try{
-	     		
+	     		/*Set<String> contextNames1 = ((IOSDriver)getCommand().driver).getContextHandles();
+		  		System.out.println("contxtname is "+contextNames1);
+		  		
+		  		 for (String contextName : contextNames1){
+		  			 System.out.println("inside loop "+contextNames1);
+		  		 }
+		  	System.out.println(((IOSDriver)getCommand().driver).context((String) contextNames1.toArray()[1]));
+		  	*/
 				getCommand().waitForTargetPresent(Continue);
-			    getCommand().clickWithJavascript(Continue);
-			    
-				
+			getCommand().click(Continue);
+			 /* ((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+	 	  	    
+			getCommand().captureScreenshot(finalPath);
+			*/	
+			
 			log("Tapped on Continue :Pass",LogType.VERIFICATION_STEP);
 		}
 		
 		catch(Exception e)
-		{
-			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
+		{((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
 			getCommand().captureScreenshot(finalPath1);
 			log("Tapped on Continue :Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -108,8 +124,14 @@ public class ListPage extends SitePage{
 		log("Selecting list",LogType.STEP);
 	try{
 		String listName=name;
-		
-	 getCommand().waitFor(2);
+		/* Set<String> contextNames = ((IOSDriver)getCommand().driver).getContextHandles();
+			
+		 for (String contextName : contextNames){
+			 System.out.println(contextNames);
+		 }
+	System.out.println(((IOSDriver)getCommand().driver).context((String) contextNames.toArray()[1]));
+*/
+	 getCommand().waitFor(5);
 		//final Target  Listname= new Target("Locname","//*[@class='mm-c-product-list__select-list']//*[contains(text(),'"+listName+"')]",Target.XPATH);   
 		final Target  Listname= new Target("Listname","//*[@class='mm-c-simplelist__item list-group-item']//*[contains(text(),'"+listName+"')]/ancestor::button[@class='mm-c-simplelist__item list-group-item']/child::i[@class='mm-o-icon icon-uncheck-circle']",Target.XPATH);   
 		
@@ -119,16 +141,19 @@ public class ListPage extends SitePage{
 		//  $x("//*[@class='mm-c-product-minlist mm-c-product__custom']//*[contains(text(),'Test2')]/ancestor::div[@class='mm-c-product-minlist mm-c-product__custom']/child::div//label")
 	//	$x("//*[@class='mm-c-simplelist__item list-group-item']//*[contains(text(),'Test2')]/ancestor::button[@class='mm-c-simplelist__item list-group-item']/child::i[@class='mm-o-icon icon-uncheck-circle']")
 		 
+		/*((IOSDriver)getCommand().driver).context("NATIVE_APP");
 		
 	  
+	       getCommand().captureScreenshot(finalPath);
+	  */
 			log("List is selected :Pass",LogType.VERIFICATION_STEP);						
 		}
 		
 		
 		
 		catch(Exception e){
-			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-			getCommand().captureScreenshot(finalPath1);
+			((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+			 getCommand().captureScreenshot(finalPath1); 
 			log("List is selected   :Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
@@ -144,23 +169,30 @@ public class ListPage extends SitePage{
 	       String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 
 	       	try{
-	      	
+	       		/*Set<String> contextNames1 = ((IOSDriver)getCommand().driver).getContextHandles();
+	      		System.out.println("contxtname is "+contextNames1);
+	      		
+	      		 for (String contextName : contextNames1){
+	      			 System.out.println("inside loop "+contextNames1);
+	      		 }
+	      	System.out.println(((IOSDriver)getCommand().driver).context((String) contextNames1.toArray()[1]));
+	      	*/
 	       			getCommand().waitForTargetPresent(Next);
 	       		if (getCommand().isTargetPresent(Next))
 	       		{
 	       			
 	       			getCommand().click(Next);
-	       			log("Tapped on Next : Pass",LogType.VERIFICATION_STEP);
 	       			
+	       		 /*((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+	       			log("Tapped on Next : Pass",LogType.VERIFICATION_STEP);
+	       		*/		getCommand().captureScreenshot(finalPath);
 	       		}
 	       		
 	       	}
 	       	catch(Exception e)
-	       	{
-	       		((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-				getCommand().captureScreenshot(finalPath1);
+	       	{((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
 	       		log("Tapped on Next :Fail",LogType.VERIFICATION_STEP);
-	       		
+	       		getCommand().captureScreenshot(finalPath1);
 	       		Assert.assertTrue(false);
 	       	}
 	       	

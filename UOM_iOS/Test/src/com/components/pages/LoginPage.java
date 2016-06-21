@@ -33,10 +33,13 @@ public class LoginPage extends SitePage{
 
 	/* Defining the locators on the Page */ 
 	
-			public static final Target InvToolsPage = new Target("InvToolsPage","//*[@class='navbar-brand']//*[contains(text(),'Inventory Tools')]",Target.XPATH);
+			 public static final Target InvToolsPage = new Target("InvToolsPage","//*[@class='navbar-brand']//*[contains(text(),'Inventory Tools')]",Target.XPATH);
+			
 		    public static final Target HomUserName = new Target("HomUserName","//*[@id='username-input']",Target.XPATH);
 			public static final Target HomPwd= new Target(" HomPwd","//*[@id='password-input']",Target.XPATH);
-			public static final Target HomLogin= new Target("HomLogin","//*[@id='login-button']",Target.XPATH);  
+			public static final Target HomLogin= new Target("HomLogin","//*[@id='login-button']",Target.XPATH);
+		   
+			
 			public static final Target SaveUserName=new Target("SaveUserName","//*[@id='save-username-input']",Target.XPATH);
 		
 		
@@ -54,40 +57,43 @@ public class LoginPage extends SitePage{
 	{
 		log("Launched Sysco UOM",LogType.STEP);
 		
+	         
+		System.out.println("Login pge");
 		return this;
 	}
 
 	public LoginPage verifyLoginPage(String string)
 	{
-		String string1="Success";
-		String string2="Issue";   
-//		String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-		String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;	
-
+		 
+		  
+		  String finalPath=GlobalVariable.drivePath+string+GlobalVariable.string1+GlobalVariable.pathExtension;
+			String finalPath1=GlobalVariable.drivePath+string+GlobalVariable.string2+GlobalVariable.pathExtension;	
 			try{
-			  getCommand().waitFor(5);
+			  
 			log("Verify the Login Page",LogType.STEP);
-			 Set<String> contextNames1 = ((AndroidDriver) getCommand().driver).getContextHandles();
- 	  	//	System.out.println("contxtname is "+contextNames1);
+			 Set<String> contextNames1 = ((IOSDriver)getCommand().driver).getContextHandles();
+ 	  		System.out.println("contxtname is "+contextNames1);
  	  		
  	  		 for (String contextName : contextNames1){
- 	  			// System.out.println("inside loop "+contextNames1);
+ 	  			 System.out.println("inside loop "+contextNames1);
  	  		 }
- 	  	((AndroidDriver)getCommand().driver).context((String) contextNames1.toArray()[1]);
+ 	  	System.out.println(((IOSDriver)getCommand().driver).context((String) contextNames1.toArray()[1]));
  	  	
- 	  		getCommand().waitFor(2);
+ 	  	getCommand().waitFor(2);
 	     	getCommand().waitForTargetPresent(HomUserName);
         	getCommand().waitForTargetPresent(HomPwd);
         	getCommand().waitForTargetPresent(HomLogin);
         	
-        	
+        	// ((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+	  	       
+        	//  getCommand().captureScreenshot(finalPath);
 	   
-        	log("Login page verification :Pass",LogType.STEP);
+	log("Login page verification :Pass",LogType.STEP);
 	}
 	catch(Exception e)
 	{
-		((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-	  		getCommand().captureScreenshot(finalPath1); 
+		 ((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+		 getCommand().captureScreenshot(finalPath1);
 		log("Login page verification :Fail",LogType.VERIFICATION_STEP);	
 		Assert.assertTrue(false);
 	}
@@ -100,49 +106,57 @@ public class LoginPage extends SitePage{
 	{
 		log("Sign In",LogType.STEP);
 		 
-		String string1="Success";
-		String string2="Issue";   
-//		String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-		String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;	
-
+		  String string1="Details";
+		  String string2="Success";
+		  String string3="issue";
+		  String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
+		  String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
+		  String finalPath2=GlobalVariable.drivePath+string+string3+GlobalVariable.pathExtension;
 		
 		try
 		{
-		
-			getCommand().waitForTargetPresent(HomUserName);
+			/*Set<String> contextNames1 = ((IOSDriver)getCommand().driver).getContextHandles();
+ 	  		System.out.println("contxtname is "+contextNames1);
+ 	  		
+ 	  		 for (String contextName : contextNames1){
+ 	  			 System.out.println("inside loop "+contextNames1);
+ 	  		 }
+ 	  	System.out.println(((IOSDriver)getCommand().driver).context((String) contextNames1.toArray()[1]));
+ 	  	*/
+		   getCommand().waitForTargetPresent(HomUserName);
 		  
 			getCommand().click(HomUserName);
-			getCommand().clear(HomUserName);
-			getCommand().sendKeys(HomUserName, UserName);
+			 getCommand().clear(HomUserName);
+				getCommand().sendKeys(HomUserName, UserName);
 				
-			getCommand().waitForTargetPresent(HomPwd);
-			getCommand().click(HomPwd);
+		getCommand().waitForTargetPresent(HomPwd);
+		getCommand().click(HomPwd);
 			getCommand().sendKeys(HomPwd, Password);
 			
-		
-			getCommand().waitForTargetPresent(HomLogin).clickWithJavascript(HomLogin);
-		/*if (getCommand().isTargetPresent(HomLogin))
+			getCommand().captureScreenshot(finalPath);
+		if (getCommand().isTargetPresent(HomLogin))
 		{	getCommand().click(HomLogin);
 			System.out.println("loggdin");
-		}	*/
+		}	
 		
-		//getCommand().waitFor(10);
+		getCommand().waitFor(10);
 	getCommand().waitForTargetPresent(InvToolsPage);
 		
 		if (getCommand().isTargetPresent(InvToolsPage))
 		{
 			
-			log("Sign in :Pass",LogType.STEP);
+			System.out.println("Inventory page displayed");
+		
 		}
 		
 		log("Sign in :Pass",LogType.STEP);
-		 
+		  //((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
  	       
 			}
 		catch(Exception e)
 		{
-			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-  	  		getCommand().captureScreenshot(finalPath1); 
+			((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+			getCommand().captureScreenshot(finalPath2);
 			log("Sign in :Fail",LogType.VERIFICATION_STEP);	
 			Assert.assertTrue(false);
 		}
@@ -152,23 +166,33 @@ public class LoginPage extends SitePage{
 	
 	public LoginPage saveUsernameCheckBoxClick(String string)
 	{
-		String string1="Success";
-		String string2="Issue";   
-//		String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-		String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;	
+	  String string1="Success";
+	  String string2="issue";
 
+	  String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
+	String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 	try{
+	 
+	/*Set<String> contextNames = ((IOSDriver)getCommand().driver).getContextHandles();
+	System.out.println("contxtname is "+contextNames);
+	for (String contextName : contextNames){
+	System.out.println("inside loop "+contextNames);
+	}
+	System.out.println(((IOSDriver)getCommand().driver).context((String) contextNames.toArray()[1]));
+	*/
 	        getCommand().waitForTargetPresent(SaveUserName);
-	        getCommand().clickWithJavascript(SaveUserName);
-	        getCommand().waitForTargetPresent(HomUserName).clear(HomUserName);
-	  
-	log("Login page verification :Pass",LogType.STEP);
+	        getCommand().click(SaveUserName);
+	   
+	    /*    ((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+	          getCommand().captureScreenshot(finalPath);*/
+	   
+	log("Save username verification :Pass",LogType.STEP);
 	}
 	catch(Exception e)
 	{
-		((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-	  		getCommand().captureScreenshot(finalPath1); 
-	log("Login page verification :Fail",LogType.VERIFICATION_STEP);
+		((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+	getCommand().captureScreenshot(finalPath1);
+	log("Save username verification :Fail",LogType.VERIFICATION_STEP);
 	Assert.assertTrue(false);
 	}
 	return this;
