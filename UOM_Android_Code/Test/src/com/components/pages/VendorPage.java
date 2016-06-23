@@ -76,689 +76,601 @@ public class VendorPage extends SitePage{
 		getCommand().waitForTargetPresent(VendorsPage);
 		return this;
 	}
-	public VendorPage Add_Supplier(String string)
-	{
-		  String string1="Success";
-		  String string2="Issue";
-	 
-	  String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-	  String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-	  log("Add vendor tap",LogType.STEP);
-		try{
-			
-		
-		getCommand().waitForTargetPresent(ADD_Vendor);
-		
-		if (getCommand().isTargetPresent(ADD_Vendor))
-		{
-			log("Click on ADD Vendor Button",LogType.STEP);	
-			getCommand().waitFor(5);
-			getCommand().clickWithJavascript(ADD_Vendor);
-			
-		    System.out.println("inside add supplier page");
-		    
-			    
-		}	
-		
-		  
-	    getCommand().waitForTargetPresent(ADD_VendorPage);
-	 
-		if (getCommand().isTargetPresent(ADD_VendorPage))
-		{
-		
-			log("In Add Vendor Page",LogType.STEP);	
-			log("Add vendor button click :Pass",LogType.VERIFICATION_STEP);
-			
-		}
-		
-		}
-		
-		catch(Exception e)
-		{
 
-	   		((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-		  		getCommand().captureScreenshot(finalPath1); 
-			log("Add vendor button click :Fail",LogType.VERIFICATION_STEP);	
+	public VendorPage Add_Supplier(String string) {
+		String string1 = "Success";
+		String string2 = "Issue";
+
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		log("Add vendor tap", LogType.STEP);
+		try {
+
+			getCommand().waitForTargetPresent(ADD_Vendor);
+
+			if (getCommand().isTargetPresent(ADD_Vendor)) {
+				log("Click on ADD Vendor Button", LogType.STEP);
+				getCommand().waitFor(5);
+				getCommand().clickWithJavascript(ADD_Vendor);
+
+			}
+			getCommand().waitForTargetPresent(ADD_VendorPage);
+
+			if (getCommand().isTargetPresent(ADD_VendorPage)) {
+
+				log("In Add Vendor Page", LogType.STEP);
+				log("Add vendor button click :Pass", LogType.VERIFICATION_STEP);
+
+			}
+
+		}
+
+		catch (Exception e) {
+
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Add vendor button click :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
-		
+
 		return this;
 	}
 	
-	public VendorPage AddSupplier_Details(String name,String number, String address, String contactinfo, String email, String note,String string){
-		  String string1="Success";
-		  String string2="Issue";
- 
-  String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-  String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-		log("Adding vendor details",LogType.STEP);
-		try{
-			
+	public VendorPage AddSupplier_Details(String name, String number, String address, String contactinfo, String email,
+			String note, String string) {
+		String string1 = "Success";
+		String string2 = "Issue";
+
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		log("Adding vendor details", LogType.STEP);
+		try {
+
 			getCommand().waitForTargetPresent(ADD_VendorNameLabel);
 			getCommand().waitForTargetPresent(ADD_VendorName);
 			getCommand().click(ADD_VendorName);
-			if (getCommand().isTargetPresent(ADD_VendorName))
-			{
-				log("Enter vendorname",LogType.STEP);
+			if (getCommand().isTargetPresent(ADD_VendorName)) {
+				log("Enter vendorname", LogType.STEP);
 				getCommand().clear(ADD_VendorName);
 				getCommand().sendKeys(ADD_VendorName, name);
-				
-	
+
 			}
 			getCommand().waitForTargetPresent(ADD_VendorNumberLabel);
-			if (getCommand().isTargetPresent(ADD_VendorNumber))
-			{
+			if (getCommand().isTargetPresent(ADD_VendorNumber)) {
 				getCommand().click(ADD_VendorNumber);
-				log("Enter vendornumber",LogType.STEP);	
+				log("Enter vendornumber", LogType.STEP);
 				getCommand().clear(ADD_VendorNumber);
 				getCommand().sendKeys(ADD_VendorNumber, number);
-				
+
 			}
 			getCommand().waitForTargetPresent(ADD_VendorAddressLabel);
-			if (getCommand().isTargetPresent(ADD_VendorAddress))
-			{
+			if (getCommand().isTargetPresent(ADD_VendorAddress)) {
 				getCommand().click(ADD_VendorAddress);
-				log("Enter vendor address",LogType.STEP);	
+				log("Enter vendor address", LogType.STEP);
 				getCommand().clear(ADD_VendorAddress);
 				getCommand().sendKeys(ADD_VendorAddress, address);
-				
+
 			}
 			getCommand().waitForTargetPresent(ADD_VendorContactInfoLabel);
-			if (getCommand().isTargetPresent(ADD_VendorContactInfo))
-			{
+			if (getCommand().isTargetPresent(ADD_VendorContactInfo)) {
 				getCommand().click(ADD_VendorContactInfo);
-				log("Enter vendor contact info",LogType.STEP);	
+				log("Enter vendor contact info", LogType.STEP);
 				getCommand().clear(ADD_VendorContactInfo);
 				getCommand().sendKeys(ADD_VendorContactInfo, contactinfo);
-				
+
 			}
 			getCommand().waitForTargetPresent(ADD_VendorEmailLabel);
-			if (getCommand().isTargetPresent(ADD_VendorEmail))
-			{
+			if (getCommand().isTargetPresent(ADD_VendorEmail)) {
 				getCommand().click(ADD_VendorEmail);
-				log("Enter vendor email",LogType.STEP);	
+				log("Enter vendor email", LogType.STEP);
 				getCommand().clear(ADD_VendorEmail);
 				getCommand().sendKeys(ADD_VendorEmail, email);
-				
+
 			}
 			getCommand().waitForTargetPresent(ADD_VendorNoteLabel);
-			if (getCommand().isTargetPresent(ADD_VendorNote))
-			{
+			if (getCommand().isTargetPresent(ADD_VendorNote)) {
 				getCommand().click(ADD_VendorNote);
-				log("Enter vendor note",LogType.STEP);
+				log("Enter vendor note", LogType.STEP);
 				getCommand().clear(ADD_VendorNote);
 				getCommand().sendKeys(ADD_VendorNote, note);
 				getCommand().waitFor(5);
-					
+
 			}
-			
-			
-			log("Vendor details entered  :Pass",LogType.VERIFICATION_STEP);	 
-			
-		}
-		catch(Exception e)
-		{
 
-	   		((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-		  		getCommand().captureScreenshot(finalPath1); 
-			log("Vendor details entered  :Fail",LogType.VERIFICATION_STEP);	
-			Assert.assertTrue(false);
-		}
-		
-		return this;
-		
-	}
-	
-	public VendorPage TapOnDone(String string){
-       	String string1="Success";
-       	  String string2="Issue";
+			log("Vendor details entered  :Pass", LogType.VERIFICATION_STEP);
 
-       String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-       String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
+		} catch (Exception e) {
 
-       	try{
-       	 
-       			getCommand().waitForTargetPresent(Done);
-       		if (getCommand().isTargetPresent(Done))
-       		{
-       			
-       			getCommand().clickWithJavascript(Done);
-       			System.out.println("done clicked");
-       			log("Tapped on done:Pass",LogType.VERIFICATION_STEP);
-       			
-       		}
-    
-       	}
-       	catch(Exception e)
-       	{
-
-       		((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-    	  		getCommand().captureScreenshot(finalPath1); 
-       		log("Tapped on done :Fail",LogType.VERIFICATION_STEP);
-       
-       		Assert.assertTrue(false);
-       	}
-       	
-       	return this;
-       }
-	public VendorPage TapOnBack(String string){
-		String string1="Success";
-		  String string2="Issue";
-
-	String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-	String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-
-		try{
-		
-			getCommand().waitForTargetPresent(Back);
-			if (getCommand().isTargetPresent(Back))
-			{
-				
-				getCommand().clickWithJavascript(Back);
-				System.out.println("back clicked");
-			
-				log("tap on back :Pass",LogType.VERIFICATION_STEP);
-			}
-			
-		}
-		catch(Exception e)
-		{
-	   		((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-		  		getCommand().captureScreenshot(finalPath1); 
-			log("tap on back :Fail",LogType.VERIFICATION_STEP);
-		
-			Assert.assertTrue(false);
-		}
-		
-		return this;
-	}
-	public VendorPage SupplierSelect(String name,String string)
-	{
-		
-
-		  String string1="Success";
-		  String string2="Issue";
-		  
-	    String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-	    String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-	    
-		log("Selecting vendor",LogType.STEP);
-	try{
-		
-		String vendorName=name;
-		System.out.println(vendorName);
-		
-getCommand().waitFor(2);
-	  // final Target  VD_Vendorname= new Target("VD_Vendorname","//*[@id='list-item']//span[contains(text(),'{0}')]",Target.XPATH);
-		 //getCommand().click(VD_Vendorname.format(vendorName));
-		final Target  VD_Vendorname= new Target("VD_Vendorname","//*[@id='list-item']//*[contains(text(),'"+vendorName+"')]",Target.XPATH);   
-		
-		//$x("//*[@id='list-item']//*[contains(text(),'no location')]")
-		
-		getCommand().click(VD_Vendorname); 
-	      
-	
-			log("Vendor is selected for item :Pass",LogType.VERIFICATION_STEP);						
-		}
-		
-		
-		
-		catch(Exception e){
-
-	   		((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-		  		getCommand().captureScreenshot(finalPath1); 
-			log("Vendor is selected for item   :Fail",LogType.VERIFICATION_STEP);
-			Assert.assertTrue(false);
-		}
-		return this;
-		
-	}
-	public VendorPage SuppliersList(String vendorname,String string){
-		log("Vendor List",LogType.STEP);
-		String string1="Success";
-		  String string2="Issue";
-
-String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-
-		try{
-		
-			String y=vendorname;
-	
-			System.out.println(y);
-			System.out.println("Vendors Page source ::\n" +getCommand().getDriver().getPageSource());
-			boolean c=getCommand().getDriver().getPageSource().contains(y);
-			System.out.println("Vendors Page contains"+c);
-			
-			getCommand().captureScreenshot(finalPath);
-		if(c==true){
-			
-			log("Added  vendor is listed :Pass",LogType.VERIFICATION_STEP);		
-		}
-		else{	
-			log("Added  vendor is listed :Fail",LogType.VERIFICATION_STEP);	
-			Assert.assertTrue(false);
-		}
-		}
-		catch(Exception e)
-		{
-
-	   		((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-		  		getCommand().captureScreenshot(finalPath1); 
-			Assert.assertTrue(false);
-			log("Added new vendor is listed   :Fail",LogType.VERIFICATION_STEP);
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
-		}
-		
-		return this;
-	}
-public VendorPage Supplier_List(String string){
-	String string1="Success";
-	  String string2="Issue";
-
-String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-		log("Verifying supplier list page ",LogType.STEP);
-		try{
-			System.out.println("inside vendorlist");
-			
-			
-			getCommand().waitForTargetPresent(Vendor_firstVendorname);
-			
-		
-			 
-			 log("Vendor list is displayed :Pass",LogType.VERIFICATION_STEP);	
-				
-		}
-		
-		catch(Exception e)
-		{
-	   		((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-		  		getCommand().captureScreenshot(finalPath1); 
-			log("Vendor list is displayed :Fail",LogType.VERIFICATION_STEP);	
+			log("Vendor details entered  :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
-		
+
 		return this;
+
 	}
 
-public VendorPage ViewSupplierDetails(String name,String number, String address, String contactinfo, String email, String note, String string){
-	String string1="Success";
-	  String string2="Issue";
+	public VendorPage TapOnDone(String string) {
+		String string1 = "Success";
+		String string2 = "Issue";
 
-String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-		try{
-			
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
-			
-			((AndroidDriver)getCommand().driver).context("NATIVE_APP");
-			System.out.println("checking vendor details");
-			
-			
-			
-			if (getCommand().isTargetPresent(VendorDetails_name)){
-				
-			 Name=getCommand().getText(VendorDetails_name);
-			System.out.println(getCommand().getText(VendorDetails_name));
-			
-			if(Name.equals(name)){
-				System.out.println(Name);
-				log("view vendor name :Pass",LogType.VERIFICATION_STEP);	
-			    }
+		try {
+
+			getCommand().waitForTargetPresent(Done);
+			if (getCommand().isTargetPresent(Done)) {
+
+				getCommand().clickWithJavascript(Done);
+
+				log("Tapped on done:Pass", LogType.VERIFICATION_STEP);
+
 			}
-			
-			
-			if (getCommand().isTargetPresent(VendorDetails_number)){
-				
-				String Num=getCommand().getText(VendorDetails_number);
-				if(Num.equals(number)){
-					System.out.println(Num);
-					log("view vendor no   :Pass",LogType.VERIFICATION_STEP);	
-				    }
-				}
-			
-	       if (getCommand().isTargetPresent(VendorDetails_address)){
-				
-				String Address=getCommand().getText(VendorDetails_address);
-				if(Address.equals(address)){
-					System.out.println(Address);
-					log("view vendor Address   :Pass",LogType.VERIFICATION_STEP);	
-				    }
-				}
 
-	       if (getCommand().isTargetPresent(VendorDetails_contact)){
-				
-				String Contact=getCommand().getText(VendorDetails_contact);
-				if(Contact.equals(contactinfo)){
-					System.out.println(Contact);
-					log("view vendor Contact   :Pass",LogType.VERIFICATION_STEP);	
-				    }
-				}
-	       
-	       if (getCommand().isTargetPresent(VendorDetails_email)){
-				
-				String Email=getCommand().getText(VendorDetails_email);
-				if(Email.equals(email)){
-					System.out.println(Email);
-					log("view vendor Email   :Pass",LogType.VERIFICATION_STEP);	
-				    }
-				}
-	       
-	       if (getCommand().isTargetPresent(VendorDetails_note)){
-				
-				String Note=getCommand().getText(VendorDetails_note);
-				if(Note.equals(note)){
-					System.out.println(Note);
-					log("view vendor Note  :Pass",LogType.VERIFICATION_STEP);	
-				    }
-				}
-	       
-	  
+		} catch (Exception e) {
+
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Tapped on done :Fail", LogType.VERIFICATION_STEP);
+
+			Assert.assertTrue(false);
+		}
+
+		return this;
+	}
 	
-	   	log("view vendor detail   :Pass",LogType.VERIFICATION_STEP);
-		 Set<String> contextNames = ((AndroidDriver)getCommand().driver).getContextHandles();
-			
-		 for (String contextName : contextNames){
-			 System.out.println(contextNames);
-		 }
-	System.out.println(((AndroidDriver)getCommand().driver).context((String) contextNames.toArray()[1]));
-		}
-		catch(Exception e)
-		{
+	public VendorPage TapOnBack(String string) {
+		String string1 = "Success";
+		String string2 = "Issue";
 
-	   		((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-		  		getCommand().captureScreenshot(finalPath1); 
-		
-			log("view vendor detail  :Fail",LogType.VERIFICATION_STEP);	
-		Assert.assertTrue(false);
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+
+		try {
+
+			getCommand().waitForTargetPresent(Back);
+			if (getCommand().isTargetPresent(Back)) {
+
+				getCommand().clickWithJavascript(Back);
+
+				log("tap on back :Pass", LogType.VERIFICATION_STEP);
+			}
+
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("tap on back :Fail", LogType.VERIFICATION_STEP);
+
+			Assert.assertTrue(false);
 		}
+
+		return this;
+	}
+	
+	public VendorPage SupplierSelect(String name, String string) {
+
+		String string1 = "Success";
+		String string2 = "Issue";
+
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+
+		log("Selecting vendor", LogType.STEP);
+		try {
+
+			String vendorName = name;
+			
+			getCommand().waitFor(2);
+			
+			final Target VD_Vendorname = new Target("VD_Vendorname","//*[@id='list-item']//*[contains(text(),'"+vendorName+"')]",Target.XPATH);
+
+			
+			getCommand().click(VD_Vendorname);
+
+			log("Vendor is selected for item :Pass", LogType.VERIFICATION_STEP);
+		}
+
+		catch (Exception e) {
+
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Vendor is selected for item   :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+		return this;
+
+	}
+
+	public VendorPage SuppliersList(String vendorname, String string) {
+		log("Vendor List", LogType.STEP);
+		String string1 = "Success";
+		String string2 = "Issue";
+
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+
+		try {
+
+			String y = vendorname;
+			boolean c = getCommand().getDriver().getPageSource().contains(y);
+			
+			
+			if (c == true) {
+
+				log("Added  vendor is listed :Pass", LogType.VERIFICATION_STEP);
+			} else {
+				log("Added  vendor is listed :Fail", LogType.VERIFICATION_STEP);
+				Assert.assertTrue(false);
+			}
+		} catch (Exception e) {
+
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			Assert.assertTrue(false);
+			log("Added new vendor is listed   :Fail", LogType.VERIFICATION_STEP);
 		
+		}
+
+		return this;
+	}
+	
+	public VendorPage Supplier_List(String string) {
+		String string1 = "Success";
+		String string2 = "Issue";
+
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		log("Verifying supplier list page ", LogType.STEP);
+		try {
+			
+
+			getCommand().waitForTargetPresent(Vendor_firstVendorname);
+
+			log("Vendor list is displayed :Pass", LogType.VERIFICATION_STEP);
+
+		}
+
+		catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Vendor list is displayed :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+
 		return this;
 	}
 
+	public VendorPage ViewSupplierDetails(String name, String number, String address, String contactinfo, String email,
+			String note, String string) {
+		String string1 = "Success";
+		String string2 = "Issue";
 
-public VendorPage AddedVendorDetails(String vendorname,String number, String address, String contactinfo, String email, String note,String string){
-	log("Checking vendor details",LogType.STEP);
-	 String string1="Success";
-	  String string2="Issue";
-     
-      String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-    String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-	try{
-	       String vendorName=vendorname;
-	       String vendorPhoneNum=number;
-	       String vendorAddress=address;
-	       String vendorContactInfo=contactinfo;
-	       String vendorEmail=email;
-	       String vendorNote=note;
-	 
-	       
-	       
-	       ((AndroidDriver)getCommand().driver).context("NATIVE_APP");  
-	  final Target  VD_Vendorname1= new Target("VD_Vendorname1", vendorName,Target.NAME);
-	  getCommand().waitForTargetPresent(VD_Vendorname1);
-	       
-	
-	       
-	 
-	 if (getCommand().isTargetPresent(VD_Vendorname1))
-		{
-		 
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		try {
+
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			System.out.println("checking vendor details");
+
+			if (getCommand().isTargetPresent(VendorDetails_name)) {
+
+				Name = getCommand().getText(VendorDetails_name);
+				
+				if (Name.equals(name)) {
+					
+					log("view vendor name :Pass", LogType.VERIFICATION_STEP);
+				}
+			}
+
+			if (getCommand().isTargetPresent(VendorDetails_number)) {
+
+				String Num = getCommand().getText(VendorDetails_number);
+				if (Num.equals(number)) {
+					
+					log("view vendor no   :Pass", LogType.VERIFICATION_STEP);
+				}
+			}
+
+			if (getCommand().isTargetPresent(VendorDetails_address)) {
+
+				String Address = getCommand().getText(VendorDetails_address);
+				if (Address.equals(address)) {
+					
+					log("view vendor Address   :Pass", LogType.VERIFICATION_STEP);
+				}
+			}
+
+			if (getCommand().isTargetPresent(VendorDetails_contact)) {
+
+				String Contact = getCommand().getText(VendorDetails_contact);
+				if (Contact.equals(contactinfo)) {
+				
+					log("view vendor Contact   :Pass", LogType.VERIFICATION_STEP);
+				}
+			}
+
+			if (getCommand().isTargetPresent(VendorDetails_email)) {
+
+				String Email = getCommand().getText(VendorDetails_email);
+				if (Email.equals(email)) {
+					
+					log("view vendor Email   :Pass", LogType.VERIFICATION_STEP);
+				}
+			}
+
+			if (getCommand().isTargetPresent(VendorDetails_note)) {
+
+				String Note = getCommand().getText(VendorDetails_note);
+				if (Note.equals(note)) {
+					
+					log("view vendor Note  :Pass", LogType.VERIFICATION_STEP);
+				}
+			}
+
+			log("View vendor details   :Pass", LogType.VERIFICATION_STEP);
+			Set<String> contextNames = ((AndroidDriver) getCommand().driver).getContextHandles();
+
+			for (String contextName : contextNames) {
+				System.out.println(contextNames);
+			}
+			System.out.println(((AndroidDriver) getCommand().driver).context((String) contextNames.toArray()[1]));
+		} 
+		catch (Exception e) {
+
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+
+			log("View vendor detaisl  :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+
+		return this;
+	}
+
+	public VendorPage AddedVendorDetails(String vendorname, String number, String address, String contactinfo,
+			String email, String note, String string) {
+		log("Checking vendor details", LogType.STEP);
+		String string1 = "Success";
+		String string2 = "Issue";
+
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		try {
+			String vendorName = vendorname;
+			String vendorPhoneNum = number;
+			String vendorAddress = address;
+			String vendorContactInfo = contactinfo;
+			String vendorEmail = email;
+			String vendorNote = note;
+
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			final Target VD_Vendorname1 = new Target("VD_Vendorname1", vendorName, Target.NAME);
 			getCommand().waitForTargetPresent(VD_Vendorname1);
-			System.out.println("vendor name "+VD_Vendorname1);
-			log("vendor name is displayed on Vendor details page :Pass",LogType.VERIFICATION_STEP);	
-			
-	  final Target  VD_VendorPhone= new Target("VD_VendorPhone", vendorPhoneNum,Target.NAME);
-	  getCommand().waitForTargetPresent(VD_VendorPhone); 
-	  System.out.println("vendor phone "+VD_VendorPhone);
-	  log("vendor phonenumber is displayed on Vendor details page :Pass",LogType.VERIFICATION_STEP);	
-	
-	  final Target  VD_VendorAddress= new Target("VD_VendorAddress", vendorAddress,Target.NAME);
-	  getCommand().waitForTargetPresent(VD_VendorAddress);
-	  System.out.println("vendor address "+VD_VendorAddress);
-	  log("vendor address is displayed on Vendor details page :Pass",LogType.VERIFICATION_STEP);	
-		
-	  final Target  VD_VendorContactInfo= new Target("VD_VendorContactInfo", vendorContactInfo,Target.NAME);
-	  getCommand().waitForTargetPresent(VD_VendorContactInfo);
-	  System.out.println("vendor contact info "+VD_VendorContactInfo);
-	  log("vendor contact info is displayed on Vendor details page :Pass",LogType.VERIFICATION_STEP);	
-	
-	  final Target  VD_VendorEmail= new Target("VD_VendorEmail", vendorEmail,Target.NAME);
-	  getCommand().waitForTargetPresent(VD_VendorEmail);
-	  System.out.println("vendor email "+VD_VendorEmail);
-	  log("vendor email address is displayed on Vendor details page :Pass",LogType.VERIFICATION_STEP);	
-	  
-	  final Target  VD_VendorNote= new Target("VD_VendorNote", vendorNote,Target.NAME);
-	  getCommand().waitForTargetPresent(VD_VendorNote);
-	  System.out.println("vendor note "+VD_VendorNote);
-	  log("note is displayed on Vendor details page :Pass",LogType.VERIFICATION_STEP);	
-	  
-	 
-		 Set<String> contextNames = ((AndroidDriver)getCommand().driver).getContextHandles();
-			
-		 for (String contextName : contextNames){
-			 System.out.println(contextNames);
-		 }
-	System.out.println(((AndroidDriver)getCommand().driver).context((String) contextNames.toArray()[1]));
-	
-	  log("vendor details displayed   :Pass",LogType.VERIFICATION_STEP);	
+
+			if (getCommand().isTargetPresent(VD_Vendorname1)) {
+
+				getCommand().waitForTargetPresent(VD_Vendorname1);
+				System.out.println("vendor name " + VD_Vendorname1);
+				log("vendor name is displayed on Vendor details page :Pass", LogType.VERIFICATION_STEP);
+
+				final Target VD_VendorPhone = new Target("VD_VendorPhone", vendorPhoneNum, Target.NAME);
+				getCommand().waitForTargetPresent(VD_VendorPhone);
+				System.out.println("vendor phone " + VD_VendorPhone);
+				log("vendor phonenumber is displayed on Vendor details page :Pass", LogType.VERIFICATION_STEP);
+
+				final Target VD_VendorAddress = new Target("VD_VendorAddress", vendorAddress, Target.NAME);
+				getCommand().waitForTargetPresent(VD_VendorAddress);
+				System.out.println("vendor address " + VD_VendorAddress);
+				log("vendor address is displayed on Vendor details page :Pass", LogType.VERIFICATION_STEP);
+
+				final Target VD_VendorContactInfo = new Target("VD_VendorContactInfo", vendorContactInfo, Target.NAME);
+				getCommand().waitForTargetPresent(VD_VendorContactInfo);
+				System.out.println("vendor contact info " + VD_VendorContactInfo);
+				log("vendor contact info is displayed on Vendor details page :Pass", LogType.VERIFICATION_STEP);
+
+				final Target VD_VendorEmail = new Target("VD_VendorEmail", vendorEmail, Target.NAME);
+				getCommand().waitForTargetPresent(VD_VendorEmail);
+				System.out.println("vendor email " + VD_VendorEmail);
+				log("vendor email address is displayed on Vendor details page :Pass", LogType.VERIFICATION_STEP);
+
+				final Target VD_VendorNote = new Target("VD_VendorNote", vendorNote, Target.NAME);
+				getCommand().waitForTargetPresent(VD_VendorNote);
+				System.out.println("vendor note " + VD_VendorNote);
+				log("note is displayed on Vendor details page :Pass", LogType.VERIFICATION_STEP);
+
+				Set<String> contextNames = ((AndroidDriver) getCommand().driver).getContextHandles();
+
+				for (String contextName : contextNames) {
+					System.out.println(contextNames);
+				}
+				System.out.println(((AndroidDriver) getCommand().driver).context((String) contextNames.toArray()[1]));
+
+				log("vendor details displayed   :Pass", LogType.VERIFICATION_STEP);
+			}
+
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+
+			log("vendor details displayed   :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
 		}
-	 
+
+		return this;
 	}
-	catch(Exception e)
-	{
-   		((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-	  		getCommand().captureScreenshot(finalPath1); 
-	 	
-		log("vendor details displayed   :Fail",LogType.VERIFICATION_STEP);	
-		Assert.assertTrue(false);
-	}
-	
-	return this;
-}
-public VendorPage DeleteSupplier(String string){
-	
-	log("Delete a vendor",LogType.STEP);
-	String string1="Success";
-	  String string2="Issue";
-   
-    String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-  String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-	try{
-		
-	 
-	
-		getCommand().waitForTargetPresent(ADD_VendorDelete);
-		if (getCommand().isTargetPresent(ADD_VendorDelete))
-		{
-			
-		   getCommand().click(ADD_VendorDelete);
-		  
+
+	public VendorPage DeleteSupplier(String string) {
+
+		log("Delete a vendor", LogType.STEP);
+		String string1 = "Success";
+		String string2 = "Issue";
+
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		try {
+
+			getCommand().waitForTargetPresent(ADD_VendorDelete);
+			if (getCommand().isTargetPresent(ADD_VendorDelete)) {
+
+				getCommand().click(ADD_VendorDelete);
+
+			}
+
+			getCommand().waitForTargetPresent(Delete_Yes);
+			if (getCommand().isTargetPresent(Delete_Yes)) {
+
+				getCommand().click(Delete_Yes);
+
+			}
+
+			log("Deleting vender :Pass", LogType.VERIFICATION_STEP);
+
 		}
-		
-		getCommand().waitForTargetPresent(Delete_Yes);
-		if (getCommand().isTargetPresent(Delete_Yes))
-		{
-			
-		   getCommand().click(Delete_Yes);
-			
+
+		catch (Exception e) {
+
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Deleting vender :Fail", LogType.VERIFICATION_STEP);
+
+			Assert.assertTrue(false);
+
 		}
-		
-		log("Deleting vender :Pass",LogType.VERIFICATION_STEP);
-		
+
+		return this;
+	}
+
+	public VendorPage TapOnEdit(String string) {
+		String string1 = "Success";
+		String string2 = "Issue";
+
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+
+		try {
+
+			getCommand().waitForTargetPresent(Edit);
+			if (getCommand().isTargetPresent(Edit)) {
+
+				getCommand().click(Edit);
+
+				log("Tap on Edit :Pass", LogType.VERIFICATION_STEP);
+			}
+
+		} catch (Exception e) {
+
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Tap on Edit :Fail", LogType.VERIFICATION_STEP);
+
+			Assert.assertTrue(false);
 		}
-		
-		
 
-	catch(Exception e){
-
-   		((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-	  		getCommand().captureScreenshot(finalPath1); 
-		log("Deleting vender :Fail",LogType.VERIFICATION_STEP);
-		
-		Assert.assertTrue(false);
-	
+		return this;
 	}
-	
-	return this;	
-}
-public VendorPage TapOnEdit(String string){
-	String string1="Success";
-	  String string2="Issue";
 
-String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
+	public VendorPage VerifyDeletedSupplier(String name, String string) {
 
-	try{
-	
-		getCommand().waitForTargetPresent(Edit);
-		if (getCommand().isTargetPresent(Edit))
-		{
-			
-			getCommand().click(Edit);
-			
-			
-			log("tap on Edit :Pass",LogType.VERIFICATION_STEP);
+		String string1 = "Success";
+		String string2 = "Issue";
+
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+
+		log("Selecting vendor", LogType.STEP);
+		try {
+
+			String vendorName = name;
+
+			getCommand().waitFor(2);
+
+			final Target VD_Vendorname = new Target("VD_Vendorname","//*[@id='list-item']//*[contains(text(),'"+vendorName+"')]", Target.XPATH);
+
+			Boolean flag = getCommand().isTargetPresent(VD_Vendorname);
+			if ((flag)) {
+				throw new Exception();
+			}
+
+			else
+				log("Deleted supplier is not listed on supplier page :Pass", LogType.VERIFICATION_STEP);
+
 		}
-		
+
+		catch (Exception e) {
+
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			// getCommand().captureScreenshot(finalPath1);
+			log("Deleted supplier is not listed on supplier page :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+		return this;
+
 	}
-	catch(Exception e)
-	{
 
-   		((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-	  		getCommand().captureScreenshot(finalPath1); 
-		log("tap on Edit :Fail",LogType.VERIFICATION_STEP);
-	
-		Assert.assertTrue(false);
+	public VendorPage SupplierCancelledVerify(String name, String string) {
+
+		String string1 = "Success";
+		String string2 = "Issue";
+
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+
+		log("Searching for cancelled supplier", LogType.STEP);
+		try {
+
+			String vendorName = name;
+			
+
+			final Target VD_Vendorname = new Target("VD_Vendorname","//*[@id='list-item']//*[contains(text(),'"+vendorName+"')]", Target.XPATH);
+
+			getCommand().waitFor(6);
+			if (getCommand().isTargetPresent(VD_Vendorname)) {
+				throw new Exception();
+			}
+
+			log("Supplier which was cancelleld is not present: Pass", LogType.VERIFICATION_STEP);
+		}
+
+		catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Supplier which was cancelleld is not present: Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+		return this;
+
 	}
-	
-	return this;
-}
-public VendorPage VerifyDeletedSupplier(String name,String string)
-{
-	
 
-	  String string1="Success";
-	  String string2="Issue";
-	  
-    String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-    String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-    
-	log("Selecting vendor",LogType.STEP);
-try{
-	
-	String vendorName=name;
-	System.out.println(vendorName);
-	
-getCommand().waitFor(2);
- 
-final Target  VD_Vendorname= new Target("VD_Vendorname","//*[@id='list-item']//*[contains(text(),'"+vendorName+"')]",Target.XPATH);   
-	
-	
-	
-	Boolean flag=getCommand().isTargetPresent(VD_Vendorname);
-	 if((flag)){ 
-		   throw new Exception();
-	 } 
-		
-	 else
-		 log("Deleted supplier is not listed on supplier page :Pass",LogType.VERIFICATION_STEP);	
-	
-      
-  
-  
-							
+	public VendorPage TapOnCancel(String string) {
+		String string1 = "Success";
+		String string2 = "Issue";
+
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+
+		try {
+
+			getCommand().waitForTargetPresent(Cancel);
+			if (getCommand().isTargetPresent(Cancel)) {
+
+				getCommand().click(Cancel);
+
+				log("Tapped on Cancel", LogType.VERIFICATION_STEP);
+
+			}
+
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			log("Tapped on Cancel :Fail", LogType.VERIFICATION_STEP);
+			getCommand().captureScreenshot(finalPath1);
+			Assert.assertTrue(false);
+		}
+
+		return this;
 	}
-	
-	
-	
-	catch(Exception e){
-
-   		((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-	  		getCommand().captureScreenshot(finalPath1); 
-		// getCommand().captureScreenshot(finalPath1); 
-		log("Deleted supplier is not listed on supplier page :Fail",LogType.VERIFICATION_STEP);
-		Assert.assertTrue(false);
-	}
-	return this;
-	
-}
-
-
-public VendorPage SupplierCancelledVerify(String name,String string)
-{
-	
-
-	  String string1="Success";
-	  String string2="Issue";
-	  
-    String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-    String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-    
-	log("Searching for cancelled supplier",LogType.STEP);
-try{
-	
-	String vendorName=name;
-	System.out.println(vendorName);
-	
-	final Target  VD_Vendorname= new Target("VD_Vendorname","//*[@id='list-item']//*[contains(text(),'"+vendorName+"')]",Target.XPATH);   
-	
-	
-getCommand().waitFor(6);
-if (getCommand().isTargetPresent(VD_Vendorname)) {
-	throw new Exception();
-}
-	
-      
-	
-		log("Supplier which was cancelleld is not present: Pass",LogType.VERIFICATION_STEP);						
-	}
-	
-	
-	
-	catch(Exception e){
-		((AndroidDriver)getCommand().driver).context("NATIVE_APP");
-		 getCommand().captureScreenshot(finalPath1); 
-		log("Supplier which was cancelleld is not present: Fail",LogType.VERIFICATION_STEP);
-		Assert.assertTrue(false);
-	}
-	return this;
-	
-}
-
-
-public VendorPage TapOnCancel(String string){
-       	String string1="Success";
-       	  String string2="Issue";
-
-       String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-       String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-
-       	try{
-       			
-       		getCommand().waitForTargetPresent(Cancel);
-       		if (getCommand().isTargetPresent(Cancel))
-       		{
-       			
-       			getCommand().click(Cancel);
-       			System.out.println("Cancel clicked");
-       			log("Tapped on Cancel",LogType.VERIFICATION_STEP);
-       				
-       		}
-       		
-       	}
-       	catch(Exception e)
-       	{
-       		((AndroidDriver)getCommand().driver).context("NATIVE_APP");
-       		log("Tapped on Cancel :Fail",LogType.VERIFICATION_STEP);
-       		getCommand().captureScreenshot(finalPath1);
-       		Assert.assertTrue(false);
-       	}
-       	
-       	return this;
-       }
-
 
 }
 

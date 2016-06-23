@@ -37,77 +37,71 @@ public class PurchasesPage extends SitePage {
 		return this;
 	}
 
-	
-public  PurchasesPage AddPurchases(String string){
-		
-		log("Creating purchases  ",LogType.STEP);
-		  String string1="Success";
-		  String string2="Issue";
-		 
-	    String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-	    String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-	    
-	    try{
-	    		getCommand().waitForTargetPresent(PurchasesPage);
-		
-		if (getCommand().isTargetPresent(PurchasesPage))
-		{
-			getCommand().click(Purchases_Add);
-		System.out.println("add button click");
-			getCommand().waitForTargetPresent(PurchasesDetails_Done);
-			
-			log("Tapped  Add purchases :Pass",LogType.VERIFICATION_STEP);						
-		}
-		
-	}
-		catch(Exception e){
-			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-  	  		getCommand().captureScreenshot(finalPath1); 
-			log("Tapped  Add purchases :Fail",LogType.VERIFICATION_STEP);
+	public PurchasesPage AddPurchases(String string) {
+
+		log("Creating purchases  ", LogType.STEP);
+		String string1 = "Success";
+		String string2 = "Issue";
+
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+
+		try {
+			getCommand().waitForTargetPresent(PurchasesPage);
+
+			if (getCommand().isTargetPresent(PurchasesPage)) {
+				getCommand().click(Purchases_Add);
+				
+				getCommand().waitForTargetPresent(PurchasesDetails_Done);
+
+				log("Tapped  Add purchases :Pass", LogType.VERIFICATION_STEP);
+			}
+
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Tapped  Add purchases :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
-			
+
 		}
-		
+
 		return this;
-		
+
 	}
 
-public  PurchasesPage SupplierSelect(String string){
-	
-	log("Creating purchases  ",LogType.STEP);
-	  String string1="Success";
-	  String string2="Issue";
-	 
-    String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-    String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-    
-    try{
-    	
-	getCommand().waitForTargetPresent(PurchasesDetails_Supplier);
-	
-	if (getCommand().isTargetPresent(PurchasesDetails_Supplier))
-	{
-		//getCommand().click(PurchasesDetails_Supplier);
-		getCommand().selectDropDown(PurchasesDetails_Supplier, 1);
-		
-		 getCommand().waitFor(5);
-	//	getCommand().waitForTargetPresent(PurchasesDetails_Done);
-	
-		
-		log("Selected  vendor:Pass",LogType.VERIFICATION_STEP);						
+	public PurchasesPage SupplierSelect(String string) {
+
+		log("Creating purchases  ", LogType.STEP);
+		String string1 = "Success";
+		String string2 = "Issue";
+
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+
+		try {
+
+			getCommand().waitForTargetPresent(PurchasesDetails_Supplier);
+
+			if (getCommand().isTargetPresent(PurchasesDetails_Supplier)) {
+			
+				getCommand().selectDropDown(PurchasesDetails_Supplier, 1);
+
+				getCommand().waitFor(5);
+				
+
+				log("Selected  vendor:Pass", LogType.VERIFICATION_STEP);
+			}
+
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Selected  vendor:Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+
+		}
+
+		return this;
+
 	}
-	
-}
-	catch(Exception e){
-		((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-	  		getCommand().captureScreenshot(finalPath1); 
-		log("Selected  vendor:Fail",LogType.VERIFICATION_STEP);
-		Assert.assertTrue(false);
-		
-	}
-	
-	return this;
-	
-}
 
 }

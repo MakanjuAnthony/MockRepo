@@ -57,121 +57,106 @@ public class LoginPage extends SitePage{
 		return this;
 	}
 
-	public LoginPage verifyLoginPage(String string)
-	{
-		String string1="Success";
-		String string2="Issue";   
-//		String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-		String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;	
+	public LoginPage verifyLoginPage(String string) {
+		String string1 = "Success";
+		String string2 = "Issue";
+		// String
+		// finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
-			try{
-			  getCommand().waitFor(5);
-			log("Verify the Login Page",LogType.STEP);
-			 Set<String> contextNames1 = ((AndroidDriver) getCommand().driver).getContextHandles();
- 	  	//	System.out.println("contxtname is "+contextNames1);
- 	  		
- 	  		 for (String contextName : contextNames1){
- 	  			// System.out.println("inside loop "+contextNames1);
- 	  		 }
- 	  	((AndroidDriver)getCommand().driver).context((String) contextNames1.toArray()[1]);
- 	  	
- 	  		getCommand().waitFor(2);
-	     	getCommand().waitForTargetPresent(HomUserName);
-        	getCommand().waitForTargetPresent(HomPwd);
-        	getCommand().waitForTargetPresent(HomLogin);
-        	
-        	
-	   
-        	log("Login page verification :Pass",LogType.STEP);
-	}
-	catch(Exception e)
-	{
-		((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-	  		getCommand().captureScreenshot(finalPath1); 
-		log("Login page verification :Fail",LogType.VERIFICATION_STEP);	
-		Assert.assertTrue(false);
-	}
-		return this;
-	}
-	
-	
-	
-	public LoginPage signIn(String UserName,String Password,String string)
-	{
-		log("Sign In",LogType.STEP);
-		 
-		String string1="Success";
-		String string2="Issue";   
-//		String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-		String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;	
+		try {
+			getCommand().waitFor(5);
+			log("Verify the Login Page", LogType.STEP);
+			Set<String> contextNames1 = ((AndroidDriver) getCommand().driver).getContextHandles();
+			// System.out.println("contxtname is "+contextNames1);
 
-		
-		try
-		{
-		
-			getCommand().waitForTargetPresent(HomUserName);
-		  
-			getCommand().click(HomUserName);
-			getCommand().clear(HomUserName);
-			getCommand().sendKeys(HomUserName, UserName);
-				
-			getCommand().waitForTargetPresent(HomPwd);
-			getCommand().click(HomPwd);
-			getCommand().sendKeys(HomPwd, Password);
-			
-		
-			getCommand().waitForTargetPresent(HomLogin).clickWithJavascript(HomLogin);
-		/*if (getCommand().isTargetPresent(HomLogin))
-		{	getCommand().click(HomLogin);
-			System.out.println("loggdin");
-		}	*/
-		
-		//getCommand().waitFor(10);
-	getCommand().waitForTargetPresent(InvToolsPage);
-		
-		if (getCommand().isTargetPresent(InvToolsPage))
-		{
-			
-			log("Sign in :Pass",LogType.STEP);
-		}
-		
-		log("Sign in :Pass",LogType.STEP);
-		 
- 	       
+			for (String contextName : contextNames1) {
+				// System.out.println("inside loop "+contextNames1);
 			}
-		catch(Exception e)
-		{
-			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-  	  		getCommand().captureScreenshot(finalPath1); 
-			log("Sign in :Fail",LogType.VERIFICATION_STEP);	
+			((AndroidDriver) getCommand().driver).context((String) contextNames1.toArray()[1]);
+
+			getCommand().waitFor(2);
+			getCommand().waitForTargetPresent(HomUserName);
+			getCommand().waitForTargetPresent(HomPwd);
+			getCommand().waitForTargetPresent(HomLogin);
+
+			log("Login page verification :Pass", LogType.STEP);
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Login page verification :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
 		return this;
 	}
 	
 	
-	public LoginPage saveUsernameCheckBoxClick(String string)
-	{
-		String string1="Success";
-		String string2="Issue";   
-//		String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-		String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;	
-
-	try{
-	        getCommand().waitForTargetPresent(SaveUserName);
-	        getCommand().clickWithJavascript(SaveUserName);
-	        getCommand().waitForTargetPresent(HomUserName).clear(HomUserName);
-	  
-	log("Login page verification :Pass",LogType.STEP);
-	}
-	catch(Exception e)
-	{
-		((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-	  		getCommand().captureScreenshot(finalPath1); 
-	log("Login page verification :Fail",LogType.VERIFICATION_STEP);
-	Assert.assertTrue(false);
-	}
-	return this;
-	}
 	
+	public LoginPage signIn(String UserName, String Password, String string) {
+		log("Sign In", LogType.STEP);
+
+		String string1 = "Success";
+		String string2 = "Issue";
+		// String
+		// finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+
+		try {
+
+			getCommand().waitForTargetPresent(HomUserName);
+
+			getCommand().click(HomUserName);
+			getCommand().clear(HomUserName);
+			getCommand().sendKeys(HomUserName, UserName);
+
+			getCommand().waitForTargetPresent(HomPwd);
+			getCommand().click(HomPwd);
+			getCommand().sendKeys(HomPwd, Password);
+
+			getCommand().waitForTargetPresent(HomLogin).clickWithJavascript(HomLogin);
+			/*
+			 * if (getCommand().isTargetPresent(HomLogin)) {
+			 * getCommand().click(HomLogin); System.out.println("loggdin"); }
+			 */
+
+			// getCommand().waitFor(10);
+			getCommand().waitForTargetPresent(InvToolsPage);
+
+			if (getCommand().isTargetPresent(InvToolsPage)) {
+
+				log("Sign in :Pass", LogType.STEP);
+			}
+
+			log("Sign in :Pass", LogType.STEP);
+
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Sign in :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+		return this;
+	}
+
+	public LoginPage saveUsernameCheckBoxClick(String string) {
+		String string1 = "Success";
+		String string2 = "Issue";
+	
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+
+		try {
+			getCommand().waitForTargetPresent(SaveUserName);
+			getCommand().clickWithJavascript(SaveUserName);
+			getCommand().waitForTargetPresent(HomUserName).clear(HomUserName);
+
+			log("Login page verification :Pass", LogType.STEP);
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Login page verification :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+		return this;
+	}
+
 }

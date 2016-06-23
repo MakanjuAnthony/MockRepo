@@ -64,15 +64,12 @@ public class AccountsPage extends SitePage{
 	{
 		  String finalPath=GlobalVariable.drivePath+string+GlobalVariable.string1+GlobalVariable.pathExtension;
 		  String finalPath1=GlobalVariable.drivePath+string+GlobalVariable.string2+GlobalVariable.pathExtension;
-		log("Tapping on Accounts from Hamburger menu",LogType.STEP);
 		
 		try{
 			
 			getCommand().waitForTargetPresent(Menu_Account);
 		    getCommand().click(Menu_Account);
-		    System.out.println("Tapped accnt");
-		
-			
+		    
 			getCommand().waitForTargetPresent(Accounts_Page);
 		
 		log("Account page displayed :Pass",LogType.STEP);	
@@ -202,11 +199,7 @@ public class AccountsPage extends SitePage{
 	
 	public AccountsPage Third_AccountSelection(String str1,String string)
 	{
-		log("Selecting 3 account from Accounts page",LogType.STEP);
 		
-		 
-		  
-       
         String finalPath=GlobalVariable.drivePath+string+GlobalVariable.string1+GlobalVariable.pathExtension;
         String finalPath1=GlobalVariable.drivePath+string+GlobalVariable.string2+GlobalVariable.pathExtension;
 		try
@@ -223,7 +216,7 @@ public class AccountsPage extends SitePage{
        catch(Exception e){
     	   ((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
     	     getCommand().captureScreenshot(finalPath1);
-			log("Got 3 account information :Fail",LogType.VERIFICATION_STEP);
+			log("Got 3rd account information :Fail",LogType.VERIFICATION_STEP);
 			
 			Assert.assertTrue(false);
 			
@@ -233,10 +226,7 @@ public class AccountsPage extends SitePage{
 	}
 	public AccountsPage Fourth_AccountSelection(String str1,String string)
 	{
-		log("Selecting 4 account from Accounts page",LogType.STEP);
 		 
-		  
-       
         String finalPath=GlobalVariable.drivePath+string+GlobalVariable.string1+GlobalVariable.pathExtension;
         String finalPath1=GlobalVariable.drivePath+string+GlobalVariable.string2+GlobalVariable.pathExtension;
 		try
@@ -244,8 +234,7 @@ public class AccountsPage extends SitePage{
 			if ((str1.equalsIgnoreCase("uomsa001")) || (str1.equalsIgnoreCase("uomsa002")) ){
 		 getCommand().waitForTargetPresent(Accounts_4Account);
 		  getCommand().click(Accounts_4Account);
-		  System.out.println("cliked 4 acount");
-		
+		 
 		  getCommand().waitFor(5);
 		
          if(getCommand().isTargetPresentAfterWait(InventoryToolsPage_Accountinfo, 20))
@@ -255,13 +244,13 @@ public class AccountsPage extends SitePage{
          }
       
 		 
-         log("Got 4 account information :Pass",LogType.VERIFICATION_STEP);
+         log("Got 4th account information :Pass",LogType.VERIFICATION_STEP);
 		}
 		}
        catch(Exception e){
     	   ((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
     	     getCommand().captureScreenshot(finalPath1);
-			log("Got 4 account information :Fail",LogType.VERIFICATION_STEP);
+			log("Got 4th account information :Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 			
 		}
@@ -270,7 +259,6 @@ public class AccountsPage extends SitePage{
 	}
 	public AccountsPage Fifth_AccountSelection(String str1,String string)
 	{
-		log("Selecting 5 account from Accounts page",LogType.STEP);
 		 
         String finalPath=GlobalVariable.drivePath+string+GlobalVariable.string1+GlobalVariable.pathExtension;
         String finalPath1=GlobalVariable.drivePath+string+GlobalVariable.string2+GlobalVariable.pathExtension;
@@ -281,8 +269,7 @@ public class AccountsPage extends SitePage{
 		  
 		 
 		  getCommand().click(Accounts_5Account);
-		  System.out.println("cliked 5 acount");
-		
+		 
 		  getCommand().waitFor(5);
 		
          if(getCommand().isTargetPresentAfterWait(InventoryToolsPage_Accountinfo, 20))
@@ -290,13 +277,13 @@ public class AccountsPage extends SitePage{
 		  FfAccountInfo =getCommand().getText(InventoryToolsPage_Accountinfo);
 		  System.out.println("5 acount:"+FfAccountInfo);
          }
-         log("Got 5 account information :Pass",LogType.VERIFICATION_STEP);
+         log("Got 5th account information :Pass",LogType.VERIFICATION_STEP);
 		}
 		}
        catch(Exception e){
     	   ((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
     	     getCommand().captureScreenshot(finalPath1);
-			log("Got 5 account information :Fail",LogType.VERIFICATION_STEP);
+			log("Got 5th account information :Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 			
 		}
@@ -306,9 +293,7 @@ public class AccountsPage extends SitePage{
 	
 	public AccountsPage Sixth_AccountSelection(String str1,String string)
 	{
-		log("Selecting 6 account from Accounts page",LogType.STEP);
-		 
-       
+		
         String finalPath=GlobalVariable.drivePath+string+GlobalVariable.string1+GlobalVariable.pathExtension;
         String finalPath1=GlobalVariable.drivePath+string+GlobalVariable.string2+GlobalVariable.pathExtension;
 		try
@@ -316,20 +301,19 @@ public class AccountsPage extends SitePage{
 			if ((str1.equalsIgnoreCase("uomsa001")) || (str1.equalsIgnoreCase("uomsa002")) ){
 			
 		  getCommand().click(Accounts_6Account);
-		  System.out.println("cliked 6 acount");
-		  getCommand().waitFor(5);
+		   getCommand().waitFor(5);
 		   if(getCommand().isTargetPresentAfterWait(InventoryToolsPage_Accountinfo, 20))
          {
 		  SxAccountInfo =getCommand().getText(InventoryToolsPage_Accountinfo);
 		  System.out.println("6 acount:"+SxAccountInfo);
          }
-         log("Got 6 account information :Pass",LogType.VERIFICATION_STEP);
+         log("Got 6th account information :Pass",LogType.VERIFICATION_STEP);
 		}
 		}
        catch(Exception e){
     	   ((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
     	     getCommand().captureScreenshot(finalPath1);
-			log("Got 6 account information :Fail",LogType.VERIFICATION_STEP);
+			log("Got 6th account information :Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 			
 		}
@@ -347,8 +331,7 @@ public class AccountsPage extends SitePage{
 				if (getCommand().isTargetPresent(selectAcc))
 			{
 			getCommand().click(selectAcc);
-			System.out.println("clicked accnt");
-			log("Clicked select account :Pass",LogType.VERIFICATION_STEP);
+				log("Clicked select account :Pass",LogType.VERIFICATION_STEP);
 			}		
 }
 		catch(Exception e)
@@ -364,8 +347,6 @@ public class AccountsPage extends SitePage{
 	}
 	public AccountsPage First_AccountSelection(String str1,String string)
 	{
-		log("Selecting 1st account from Accounts page",LogType.STEP);
-		
 		 
 		 String finalPath=GlobalVariable.drivePath+string+GlobalVariable.string1+GlobalVariable.pathExtension;
 	      String finalPath1=GlobalVariable.drivePath+string+GlobalVariable.string2+GlobalVariable.pathExtension;
@@ -398,8 +379,6 @@ public class AccountsPage extends SitePage{
 	}
 	public AccountsPage Second_AccountSelection(String str1,String string)
 	{
-		log("Selecting 1st account from Accounts page",LogType.STEP);
-		
 		 String finalPath=GlobalVariable.drivePath+string+GlobalVariable.string1+GlobalVariable.pathExtension;
 	      String finalPath1=GlobalVariable.drivePath+string+GlobalVariable.string2+GlobalVariable.pathExtension;
 		 

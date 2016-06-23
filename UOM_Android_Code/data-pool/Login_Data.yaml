@@ -19,14 +19,14 @@ LoginData5  : !!com.components.yaml.LoginData {
  Password   : welcome1,
  }
 LoginData6  : !!com.components.yaml.LoginData {
- UserName   : mmuomapp506,
+ UserName   : mmuomapp503,
  Password   : welcome1,
  }
 LoginData7  : !!com.components.yaml.LoginData {
- UserName   : mmuomapp507,
+ UserName   : mmuomapp504,
  Password   : welcome1,
  }
 LoginData8  : !!com.components.yaml.LoginData {
- UserName   : mmuomapp508,
+ UserName   : mmuomapp502,
  Password   : welcome1,
  }

@@ -57,9 +57,7 @@ public class LoginPage extends SitePage{
 	{
 		log("Launched Sysco UOM",LogType.STEP);
 		
-	         
-		System.out.println("Login pge");
-		return this;
+	    	return this;
 	}
 
 	public LoginPage verifyLoginPage(String string)
@@ -70,7 +68,6 @@ public class LoginPage extends SitePage{
 			String finalPath1=GlobalVariable.drivePath+string+GlobalVariable.string2+GlobalVariable.pathExtension;	
 			try{
 			  
-			log("Verify the Login Page",LogType.STEP);
 			 Set<String> contextNames1 = ((IOSDriver)getCommand().driver).getContextHandles();
  	  		System.out.println("contxtname is "+contextNames1);
  	  		
@@ -79,15 +76,12 @@ public class LoginPage extends SitePage{
  	  		 }
  	  	System.out.println(((IOSDriver)getCommand().driver).context((String) contextNames1.toArray()[1]));
  	  	
- 	  	getCommand().waitFor(2);
+ 	  	getCommand().waitFor(5);
 	     	getCommand().waitForTargetPresent(HomUserName);
         	getCommand().waitForTargetPresent(HomPwd);
         	getCommand().waitForTargetPresent(HomLogin);
         	
-        	// ((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
-	  	       
-        	//  getCommand().captureScreenshot(finalPath);
-	   
+        	   
 	log("Login page verification :Pass",LogType.STEP);
 	}
 	catch(Exception e)
@@ -115,14 +109,7 @@ public class LoginPage extends SitePage{
 		
 		try
 		{
-			/*Set<String> contextNames1 = ((IOSDriver)getCommand().driver).getContextHandles();
- 	  		System.out.println("contxtname is "+contextNames1);
- 	  		
- 	  		 for (String contextName : contextNames1){
- 	  			 System.out.println("inside loop "+contextNames1);
- 	  		 }
- 	  	System.out.println(((IOSDriver)getCommand().driver).context((String) contextNames1.toArray()[1]));
- 	  	*/
+			
 		   getCommand().waitForTargetPresent(HomUserName);
 		  
 			getCommand().click(HomUserName);
@@ -139,7 +126,7 @@ public class LoginPage extends SitePage{
 			System.out.println("loggdin");
 		}	
 		
-		getCommand().waitFor(10);
+		getCommand().waitFor(20);
 	getCommand().waitForTargetPresent(InvToolsPage);
 		
 		if (getCommand().isTargetPresent(InvToolsPage))
@@ -150,8 +137,7 @@ public class LoginPage extends SitePage{
 		}
 		
 		log("Sign in :Pass",LogType.STEP);
-		  //((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
- 	       
+		   
 			}
 		catch(Exception e)
 		{
@@ -173,19 +159,11 @@ public class LoginPage extends SitePage{
 	String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 	try{
 	 
-	/*Set<String> contextNames = ((IOSDriver)getCommand().driver).getContextHandles();
-	System.out.println("contxtname is "+contextNames);
-	for (String contextName : contextNames){
-	System.out.println("inside loop "+contextNames);
-	}
-	System.out.println(((IOSDriver)getCommand().driver).context((String) contextNames.toArray()[1]));
-	*/
+	
 	        getCommand().waitForTargetPresent(SaveUserName);
 	        getCommand().click(SaveUserName);
 	   
-	    /*    ((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
-	          getCommand().captureScreenshot(finalPath);*/
-	   
+	    
 	log("Save username verification :Pass",LogType.STEP);
 	}
 	catch(Exception e)

@@ -47,9 +47,7 @@ public class HomePage extends SitePage{
 	
 	public HomePage atHomePage()
 	{
-		log("Launched Sysco UOM homepage",LogType.STEP);
-		
-		System.out.println("home pge");
+		log("Homepage displayed",LogType.STEP);
 		return this;
 		
 	}
@@ -58,33 +56,20 @@ public class HomePage extends SitePage{
 	
 	public HomePage HamburgerMenu(String string)
 	{
-		log("Tapping on Hamburger menu",LogType.STEP);
 		 String string1="Success";
 		  String string2="Issue";
         
          String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 		  String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 		try{
-			/*Set<String> contextNames = ((IOSDriver)getCommand().driver).getContextHandles();
-			System.out.println("contxtname is "+contextNames);
-			
-			 for (String contextName : contextNames){
-				 System.out.println("inside loop "+contextNames);
-			 }
-		System.out.println(((IOSDriver)getCommand().driver).context((String) contextNames.toArray()[1]));
-	*/
 				 
 			getCommand().waitForTargetPresent(HamMenu);
 			
 			if (getCommand().isTargetPresent(HamMenu))
-			{
-				System.out.println("got menu");
-				getCommand().click(HamMenu);
+			{getCommand().click(HamMenu);
 				getCommand().waitFor(5);
 			}
-			/*((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
-			getCommand().captureScreenshot(finalPath);	
-			*/log("Navigating to menu page :Pass",LogType.VERIFICATION_STEP);
+			log("Navigating to menu page :Pass",LogType.VERIFICATION_STEP);
 		}
 	
 		catch(Exception e)
@@ -101,7 +86,6 @@ public class HomePage extends SitePage{
 	public HomePage HamMenu_Vendors()
 	{
 		
-		log("Tapping on Inventory Tool from Hamburger menu",LogType.STEP);
 		
 		try{
 			
@@ -144,9 +128,8 @@ public class HomePage extends SitePage{
 			
 			if (getCommand().isTargetPresent(HamLogout))
 			{
-				log("Tap on Inventory Tool from Hamburger menu",LogType.STEP);	
 				getCommand().click(HamLogout);
-				log("Tapping on Logout from Hamburger menu :Pass",LogType.VERIFICATION_STEP);					
+				log("Tapped on Logout from Hamburger menu :Pass",LogType.VERIFICATION_STEP);					
 			}
 	
 		}
@@ -154,7 +137,7 @@ public class HomePage extends SitePage{
 	
 		catch(Exception e)
 		{
-			log("Tapping on Logout from Hamburger menu :Fail",LogType.VERIFICATION_STEP);
+			log("Tapped on Logout from Hamburger menu :Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
 		return this;
@@ -173,17 +156,9 @@ public class HomePage extends SitePage{
 		try{	
 			
 			if ((str1.equalsIgnoreCase("uomsa001")) || (str1.equalsIgnoreCase("uomsa002")) ){
-			/*Set<String> contextNames1 = ((IOSDriver)getCommand().driver).getContextHandles();
-	  		System.out.println("contxtname is "+contextNames1);
-	  		
-	  		 for (String contextName : contextNames1){
-	  			 System.out.println("inside loop "+contextNames1);
-	  		 }
-	  	System.out.println(((IOSDriver)getCommand().driver).context((String) contextNames1.toArray()[1]));
-	  */	if (getCommand().isTargetPresent(selectAcc))
+				if (getCommand().isTargetPresent(selectAcc))
 			{
 			getCommand().click(selectAcc);
-			System.out.println("clicked accnt");
 			log("Clicked  account :Pass",LogType.VERIFICATION_STEP);
 			}	
 }

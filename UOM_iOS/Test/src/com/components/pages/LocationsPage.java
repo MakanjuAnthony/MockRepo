@@ -198,8 +198,12 @@ public static final Target FourthLocation= new Target("FourthLocation","(//*[@cl
 
 public static String AddedItemId;
  public static String[] AddedItemId1;
-
-
+ 
+ public static final Target ViewItemsOnLocation = new Target("ViewItemsOnLocation","//*[contains(text(),'View items in this location')]",Target.XPATH);
+ public static String DeletedCategory1;
+	public static String DeletedCategory2;
+	public static String DeletedCategory3;
+	public static Integer count=0;
 	public LocationsPage(SiteRepository repository)
 	{
 		super(repository);
@@ -1576,6 +1580,7 @@ System.out.println("done");
 			}
 			System.out.println(((IOSDriver)getCommand().driver).context((String) contextNames.toArray()[1]));
 */
+			getCommand().waitFor(2);
 			getCommand().waitForTargetPresent(Delete);
 			if (getCommand().isTargetPresent(Delete))
 			{
@@ -1614,6 +1619,7 @@ System.out.println("done");
 			}
 			System.out.println(((IOSDriver)getCommand().driver).context((String) contextNames.toArray()[1]));
 */
+			getCommand().waitFor(2);
 			getCommand().waitForTargetPresent(YesDelete);
 			if (getCommand().isTargetPresent(YesDelete))
 			{
@@ -1644,7 +1650,7 @@ System.out.println("done");
 		String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 		log("Checking addeded Location in location list",LogType.STEP);
 		try{	
-
+			getCommand().waitFor(2);
 			String AddedLocation=locationAdded;
 			System.out.println("inside loc");
 			/*Set<String> contextNames1 = ((IOSDriver)getCommand().driver).getContextHandles();
@@ -2265,7 +2271,11 @@ System.out.println("done");
 			System.out.println(((IOSDriver)getCommand().driver).context((String) contextNames.toArray()[1]));
 */getCommand().waitFor(5);
 			getCommand().waitForTargetPresent(Locations_1stItemHeading);
-
+			getCommand().waitForTargetPresent(Locations_1stItemSelect);
+			getCommand().waitForTargetPresent(Locations_2ndItemSelect);
+			getCommand().waitForTargetPresent(Locations_NonSyscoItem1Select);
+			getCommand().waitForTargetPresent(Locations_NonSyscoItem2Select);
+			
 			if(getCommand().isTargetPresent(Locations_1stItemSelect))
 			{
 				locationsNoOfElements1++;
@@ -2959,21 +2969,13 @@ public  LocationsPage VerifyItemsOnDefaultLocation(String location, String strin
 		String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 		String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 
-		log("locationItem verify ",LogType.STEP);
-		try{
+			try{
 
-
-			/*Set<String> contextNames1 = ((IOSDriver)getCommand().driver).getContextHandles();
-			System.out.println("contxtname is "+contextNames1);
-
-			for (String contextName : contextNames1){
-				System.out.println("inside loop "+contextNames1);
-			}
-			System.out.println(((IOSDriver)getCommand().driver).context((String) contextNames1.toArray()[1]));
-*/
-			
+	
 			if(getCommand().isTargetPresent(ItemVerify))
 			{
+				count=getCommand().getTargetCount(ItemVerify);
+				System.out.println("count="+ count);
 				System.out.println("inside if");
 				getCommand().waitFor(5);
 				final Target Locations_check= new Target("Locations_check","//*[@class='mm-c-product-list__details-wrapper']//*[@class='mm-c-product-list__details']//*[@class='mm-c-product-list__location']//*[contains(text(),'"+location+"')]",Target.XPATH);
@@ -3302,6 +3304,223 @@ public  LocationsPage VerifyItemsOnDefaultLocation(String location, String strin
 			return this;
 
 		}
+		public LocationsPage ViewItemsOnLocation(String string){
+			String string1="Success";
+			String string2="Issue";
+
+			String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
+			String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
+				try{
+				
+				getCommand().waitForTargetPresent(ViewItemsOnLocation);
+				
+					getCommand().click(ViewItemsOnLocation);
+					log("tap on view items on location  :Pass",LogType.VERIFICATION_STEP);
+				
+
+			}
+			catch(Exception e)
+			{
+				((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+				log("tap on view items on location  :Fail",LogType.VERIFICATION_STEP);
+				getCommand().captureScreenshot(finalPath1);
+				Assert.assertTrue(false);
+			}
+
+			return this;
+		}
+		
+	public LocationsPage VerifyCustomListItemsCustomLocation(String location, String string) {
+
+			String string1 = "Success";
+			String string2 = "Issue";
+			String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+			String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+
+			log("Verifying location of items ", LogType.STEP);
+			try {
+
+				getCommand().waitFor(5);
+				final Target Locations_check1 = new Target("Locations_check1",
+						"(//*[@class='mm-c-product-list__details-wrapper']//*[@class='mm-c-product-list__details']//*[@class='mm-c-product-list__location']//*[contains(text(),'"
+								+ location + "')])[1]",
+						Target.XPATH);
+				final Target Locations_check2 = new Target("Locations_check2",
+						"(//*[@class='mm-c-product-list__details-wrapper']//*[@class='mm-c-product-list__details']//*[@class='mm-c-product-list__location']//*[contains(text(),'"
+								+ location + "')])[2]",
+						Target.XPATH);
+				final Target Locations_check3 = new Target("Locations_check3",
+						"(//*[@class='mm-c-product-list__details-wrapper']//*[@class='mm-c-product-list__details']//*[@class='mm-c-product-list__location']//*[contains(text(),'"
+								+ location + "')])[3]",
+						Target.XPATH);
+
+				boolean flag1 = getCommand().isTargetPresentAfterWait(Locations_check1, 3);
+				boolean flag2 = getCommand().isTargetPresentAfterWait(Locations_check2, 3);
+				boolean flag3 = getCommand().isTargetPresentAfterWait(Locations_check3, 3);
+
+				System.out.println("Flag: " + flag1 + flag2 + flag3);
+
+				if (!(flag1 && flag2 && flag3)) {
+					throw new Exception();
+				}
+
+				log("Verifying location of items  :Pass", LogType.VERIFICATION_STEP);
+			} catch (Exception e) {
+				((IOSDriver) getCommand().driver).context("NATIVE_APP");
+				getCommand().captureScreenshot(finalPath1);
+				log("Verifying location of items   :Fail", LogType.VERIFICATION_STEP);
+				Assert.assertTrue(false);
+			}
+
+			return this;
+
+		}
+
+		
+		public LocationsPage VerifyDeletedItemsCategory(String location,String string) {
+
+			String string1 = "Success";
+			String string2 = "Issue";
+			String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+			String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+
+			Boolean flag1=false,flag2=false,flag3=false;
+			
+			log("Verifying category of items ", LogType.STEP);
+			try {
+
+				getCommand().waitFor(5);
+				final Target Locations_check1 = new Target("Locations_check1",
+						"(//*[@class='mm-c-product-list__details-wrapper']//*[@class='mm-c-product-list__details']//*[@class='mm-c-product-list__location'])[1]",
+						Target.XPATH);
+				final Target Locations_check2 = new Target("Locations_check2",
+						"(//*[@class='mm-c-product-list__details-wrapper']//*[@class='mm-c-product-list__details']//*[@class='mm-c-product-list__location'])[2]",
+						Target.XPATH);
+				final Target Locations_check3 = new Target("Locations_check3",
+						"(//*[@class='mm-c-product-list__details-wrapper']//*[@class='mm-c-product-list__details']//*[@class='mm-c-product-list__location'])[3]",
+						Target.XPATH);
+	    
+				DeletedCategory1=getCommand().getText(Locations_check1);
+				DeletedCategory2=getCommand().getText(Locations_check2);
+				DeletedCategory3=getCommand().getText(Locations_check3);
+				
+				System.out.println("category1"+DeletedCategory1);
+				System.out.println("category1"+DeletedCategory2);
+				System.out.println("category1"+DeletedCategory3);
+				
+				 if((DeletedCategory1.equalsIgnoreCase(location))){
+					  flag1=true;
+					  
+				 }
+				 if((DeletedCategory1.equalsIgnoreCase(location))){
+					  flag2=true;
+					  
+				}
+				 if((DeletedCategory1.equalsIgnoreCase(location))){
+					  flag3=true;
+					  
+				}
+				 
+				 System.out.println("Flag1: "+flag1+flag2+flag3);
+				 if(!(flag2&&flag1&&flag3)){ 
+					   throw new Exception();
+				 } 
+				   
+				
+				
+
+				log("Verifying category of items  :Pass", LogType.VERIFICATION_STEP);
+			} catch (Exception e) {
+				((IOSDriver) getCommand().driver).context("NATIVE_APP");
+				getCommand().captureScreenshot(finalPath1);
+				log("Verifying category of items    :Fail", LogType.VERIFICATION_STEP);
+				Assert.assertTrue(false);
+			}
+
+			return this;
+
+		}
+
+	public LocationsPage VerifyMultipleOGItemsCount(String locationName, String string) {
+
+			String string1 = "Success";
+			String string2 = "Issue";
+			String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+			String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+
+			log("Verifying item count", LogType.STEP);
+
+			try {
+
+				final Target LocationnameNumberVerification = new Target("LocationnameNumberVerification",
+						"//*[contains(text(),'" + locationName + "')]", Target.XPATH);
+
+				getCommand().waitForTargetPresent(LocationnameNumberVerification);
+
+				String locationNameToBeVerified = getCommand().getText(LocationnameNumberVerification);
+				System.out.println(locationNameToBeVerified);
+
+				if (!(locationNameToBeVerified.contains("SetupInventoryPage.noOfElements"))) {
+
+					throw new Exception();
+
+				}
+
+				log("Item count verified :Pass", LogType.VERIFICATION_STEP);
+
+			}
+
+			catch (Exception e) {
+
+				((IOSDriver) getCommand().driver).context("NATIVE_APP");
+				getCommand().captureScreenshot(finalPath1);
+				log("Item count verified,LocationName(x) :Fail", LogType.VERIFICATION_STEP);
+				Assert.assertTrue(false);
+
+			}
+			return this;
+
+		}
+	public LocationsPage VerifyCountOfItemsInLocation(String locationName, String string) {
+
+		String string1 = "Success";
+		String string2 = "Issue";
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+
+		log("Verifying item count", LogType.STEP);
+
+		try {
+
+			final Target LocationnameNumberVerification = new Target("LocationnameNumberVerification",
+					"//*[contains(text(),'" + locationName + "')]", Target.XPATH);
+
+			getCommand().waitForTargetPresent(LocationnameNumberVerification);
+
+			String locationNameToBeVerified = getCommand().getText(LocationnameNumberVerification);
+			System.out.println(locationNameToBeVerified);
+
+			if (!(locationNameToBeVerified.contains("("+count.toString()+")"))) {
+
+				throw new Exception();
+
+			}
+
+			log("Item count verified :Pass", LogType.VERIFICATION_STEP);
+
+		}
+
+		catch (Exception e) {
+
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Item count verified,LocationName(x) :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+
+		}
+		return this;
+
+	}
 }
 
 

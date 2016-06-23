@@ -45,299 +45,271 @@ public class InventoryToolPage extends SitePage{
 	}
 	
 	public InventoryToolPage InvTools_SetUpInventory(String string) {
-		
-		 	String string1="Success";
-		 	String string2="Issue";
-		  
-		 	String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-	        String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-	        try{
-			
-	        	getCommand().waitForTargetPresent(InvTool_SetUpInv);
 
-	        	getCommand().click(InvTool_SetUpInv);
-		
-				log("Navigating to Setup inventory page :Pass",LogType.VERIFICATION_STEP);						
-		
-	        }
-	        catch(Exception e)
-	        {
-		((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-		getCommand().captureScreenshot(finalPath1);
-		log("Navigating to Setup inventory page :Fail",LogType.VERIFICATION_STEP);
-		Assert.assertTrue(false);
-	        }
-	
-	return this;
-	
-}
-	public  InventoryToolPage InvTools_TrackInventory(String string){
-		
-		log("Selecting TrackInventory from inventory tools page ",LogType.STEP);
-		  String string1="Success";
-		  String string2="Issue";
-		 
-	    String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-	    String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-	    
-	    try{
-	    	
-	    	if(getCommand().isTargetVisibleAfterWait(TrackInventory))
-	    	{
-	    		getCommand().clickWithJavascript(TrackInventory);
-	    		getCommand().waitForTargetPresent(LocationsPage);
-				log("Tapped  TrackInventory from inventory tools page:Pass",LogType.VERIFICATION_STEP);						
+		String string1 = "Success";
+		String string2 = "Issue";
 
-	    	}
-	    	
-	    	else {
-				log("Tapped  TrackInventory from inventory tools page not available",LogType.VERIFICATION_STEP);						
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		try {
 
-	    	}
-	    		
-			}
-		catch(Exception e){
-			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
+			getCommand().waitForTargetPresent(InvTool_SetUpInv);
+
+			getCommand().click(InvTool_SetUpInv);
+
+			log("Navigating to Setup inventory page :Pass", LogType.VERIFICATION_STEP);
+
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
-			log("Tapped  TrackInventory from inventory tools page:Fail",LogType.VERIFICATION_STEP);
+			log("Navigating to Setup inventory page :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
-			
 		}
-		
+
 		return this;
-		
+
 	}
 
+	public InventoryToolPage InvTools_TrackInventory(String string) {
 
-public InventoryToolPage InvTools_Suppliers(String string)
-{
-	log("Tapping on Suppliers from Inventory tools page",LogType.STEP);
-	 String string1="Success";
-	  String string2="Issue";
-	 
-      String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-      String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-     
-	try{
-		
-		getCommand().waitFor(5);
-		getCommand().waitForTargetPresent(InvTool_Vendors);
-		
-		if (getCommand().isTargetPresent(InvTool_Vendors))
-		{
-			
-			log("Tap on Suppliers from Inventory tools page",LogType.STEP);	
-			getCommand().click(InvTool_Vendors);
-									
+		log("Selecting TrackInventory from inventory tools page ", LogType.STEP);
+		String string1 = "Success";
+		String string2 = "Issue";
+
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+
+		try {
+
+			if (getCommand().isTargetVisibleAfterWait(TrackInventory)) {
+				getCommand().clickWithJavascript(TrackInventory);
+				getCommand().waitForTargetPresent(LocationsPage);
+				log("Tapped  TrackInventory from inventory tools page:Pass", LogType.VERIFICATION_STEP);
+
+			}
+
+			else {
+				log("Tapped  TrackInventory from inventory tools page not available", LogType.VERIFICATION_STEP);
+
+			}
+
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Tapped  TrackInventory from inventory tools page:Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+
 		}
-		getCommand().waitForTargetPresent(VendorsPage);
-		
-		if (getCommand().isTargetPresent(VendorsPage))
-		{
-			
-			log("In Vendors Page",LogType.STEP);	
-			log("Navigating to Vendors page :Pass",LogType.VERIFICATION_STEP);		
-		
+
+		return this;
+
+	}
+
+	public InventoryToolPage InvTools_Suppliers(String string) {
+		log("Tapping on Suppliers from Inventory tools page", LogType.STEP);
+		String string1 = "Success";
+		String string2 = "Issue";
+
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+
+		try {
+
+			getCommand().waitFor(5);
+			getCommand().waitForTargetPresent(InvTool_Vendors);
+
+			if (getCommand().isTargetPresent(InvTool_Vendors)) {
+
+				log("Tap on Suppliers from Inventory tools page", LogType.STEP);
+				getCommand().click(InvTool_Vendors);
+
+			}
+			getCommand().waitForTargetPresent(VendorsPage);
+
+			if (getCommand().isTargetPresent(VendorsPage)) {
+
+				log("In Vendors Page", LogType.STEP);
+				log("Navigating to Vendors page :Pass", LogType.VERIFICATION_STEP);
+
+			}
+
 		}
-		
-	}
-	
 
-	catch(Exception e)
-	{
-		((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-		getCommand().captureScreenshot(finalPath1);
-		log("Navigating to Vendors  page :Fail",LogType.VERIFICATION_STEP);
-		Assert.assertTrue(false);
-	}
-	
-	return this;
-	
-
-}
-public  InventoryToolPage InvTools_Purchases(String string){
-	
-	log("Selecting purchases from inventory tools page ",LogType.STEP);
-	  String string1="Success";
-	  String string2="Issue";
-	 
-    String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-    String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-    
-    try{
-    	 		
-    	getCommand().waitForTargetPresent(InvTool_Purchases);
-	
-	if (getCommand().isTargetPresent(InvTool_Purchases))
-	{
-		getCommand().click(InvTool_Purchases);
-		
-		log("Tapped  purchases from inventory tools page:Pass",LogType.VERIFICATION_STEP);						
-	}
-	
-}
-	catch(Exception e){
-		((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-		getCommand().captureScreenshot(finalPath1);
-		log("Tapped  purchases from inventory tools page:Fail",LogType.VERIFICATION_STEP);
-		Assert.assertTrue(false);
-		
-	}
-	
-	return this;
-	
-}
-public InventoryToolPage InvTools_Locations(String string){
-	
-	String string1="Success";
-	  String string2="Issue";
-	  
-	  String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-        String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-	
-	try{
-		getCommand().waitForTargetPresent(InvTool_Locations);
-		if(getCommand().isTargetPresent(InvTool_Locations)){
-			
-			getCommand().click(InvTool_Locations);
-			
+		catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Navigating to Vendors  page :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
 		}
-		
-        getCommand().waitForTargetPresent(LocationsPage);
-		
-		if (getCommand().isTargetPresent(LocationsPage))
-		{
-			
-		
-			log("In locations Page",LogType.STEP);	
-			log("Navigating to Locations page :Pass",LogType.VERIFICATION_STEP);						
+
+		return this;
+
+	}
+
+	public InventoryToolPage InvTools_Purchases(String string) {
+
+		log("Selecting purchases from inventory tools page ", LogType.STEP);
+		String string1 = "Success";
+		String string2 = "Issue";
+
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+
+		try {
+
+			getCommand().waitForTargetPresent(InvTool_Purchases);
+
+			if (getCommand().isTargetPresent(InvTool_Purchases)) {
+				getCommand().click(InvTool_Purchases);
+
+				log("Tapped  purchases from inventory tools page:Pass", LogType.VERIFICATION_STEP);
+			}
+
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Tapped  purchases from inventory tools page:Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+
 		}
-	}
-	catch(Exception e)
-	{
-		((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-		getCommand().captureScreenshot(finalPath1);
-		log("Navigating to Locations page :Fail",LogType.VERIFICATION_STEP);
-		Assert.assertTrue(false);
+
+		return this;
+
 	}
 	
-	return this;
-	
-}
+	public InventoryToolPage InvTools_Locations(String string) {
 
+		String string1 = "Success";
+		String string2 = "Issue";
 
-public InventoryToolPage InvTools_Category(String string){
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
-String string1="Success";
-String string2="Issue";
+		try {
+			getCommand().waitForTargetPresent(InvTool_Locations);
+			if (getCommand().isTargetPresent(InvTool_Locations)) {
 
-String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
+				getCommand().click(InvTool_Locations);
 
-try{
+			}
 
-	getCommand().waitForTargetPresent(InvTool_Category);
-if(getCommand().isTargetPresent(InvTool_Category)){
-	
-	getCommand().click(InvTool_Category);
-	
-}
+			getCommand().waitForTargetPresent(LocationsPage);
 
-getCommand().waitForTargetPresent(CategoriesPage);
+			if (getCommand().isTargetPresent(LocationsPage)) {
 
-if (getCommand().isTargetPresent(CategoriesPage))
-{
-	
-	log("In categories Page",LogType.STEP);	
-	log("Navigating to categories page :Pass",LogType.VERIFICATION_STEP);						
-}
-}
-catch(Exception e)
-{
-	((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-	getCommand().captureScreenshot(finalPath1);
-log("Navigating to categories page :Fail",LogType.VERIFICATION_STEP);
-Assert.assertTrue(false);
-}
+				log("In locations Page", LogType.STEP);
+				log("Navigating to Locations page :Pass", LogType.VERIFICATION_STEP);
+			}
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Navigating to Locations page :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
 
-return this;
+		return this;
 
-}
+	}
 
+	public InventoryToolPage InvTools_Category(String string) {
 
+		String string1 = "Success";
+		String string2 = "Issue";
 
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
-public  InventoryToolPage InvTools_CreatePrep(String string){
+		try {
 
-log("Selecting Create Nonsysco item from inventory tools page ",LogType.STEP);
-  String string1="Success";
-  String string2="Issue";
- 
-String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
+			getCommand().waitForTargetPresent(InvTool_Category);
+			if (getCommand().isTargetPresent(InvTool_Category)) {
 
-try{
+				getCommand().click(InvTool_Category);
+
+			}
+
+			getCommand().waitForTargetPresent(CategoriesPage);
+
+			if (getCommand().isTargetPresent(CategoriesPage)) {
+
+				log("In categories Page", LogType.STEP);
+				log("Navigating to categories page :Pass", LogType.VERIFICATION_STEP);
+			}
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Navigating to categories page :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+
+		return this;
+
+	}
+
+	public InventoryToolPage InvTools_CreatePrep(String string) {
+
+		log("Selecting Create Nonsysco item from inventory tools page ", LogType.STEP);
+		String string1 = "Success";
+		String string2 = "Issue";
+
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+
+		try {
 			getCommand().waitForTargetPresent(InvTool_CreatePrepItem);
 
-if (getCommand().isTargetPresent(InvTool_CreatePrepItem))
-{
-	getCommand().click(InvTool_CreatePrepItem);
-	
-	getCommand().waitForTargetPresent(AddProduct_Page);
-	
-	log("Tapped Create Prep Item from inventory tools page:Pass",LogType.VERIFICATION_STEP);						
-}
+			if (getCommand().isTargetPresent(InvTool_CreatePrepItem)) {
+				getCommand().click(InvTool_CreatePrepItem);
 
-}
-catch(Exception e){
-	((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-	getCommand().captureScreenshot(finalPath1);
-	log("Tapped Create Prep Item from inventory tools page:Fail",LogType.VERIFICATION_STEP);
-	Assert.assertTrue(false);
-	
-}
+				getCommand().waitForTargetPresent(AddProduct_Page);
 
-return this;
+				log("Tapped Create Prep Item from inventory tools page:Pass", LogType.VERIFICATION_STEP);
+			}
 
-}
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Tapped Create Prep Item from inventory tools page:Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
 
+		}
 
-public  InventoryToolPage InvTools_CreateNonSysco(String string){
-	
-	log("Selecting Create Nonsysco item from inventory tools page ",LogType.STEP);
-	  String string1="Success";
-	  String string2="Issue";
-	 
-    String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-    String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-    
-    try{
-    	
-    			getCommand().waitForTargetPresent(InvTool_CreateNonSyscoItem);
-	
-	if (getCommand().isTargetPresent(InvTool_CreateNonSyscoItem))
-	{
-		getCommand().click(InvTool_CreateNonSyscoItem);
-	
-		getCommand().waitForTargetPresent(AddProduct_Page);
-		
-		log("Tapped Create NonSysco Item from inventory tools page:Pass",LogType.VERIFICATION_STEP);						
+		return this;
+
 	}
-	
-}
-	catch(Exception e){
-		((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-		getCommand().captureScreenshot(finalPath1);
-		log("Tapped Create NonSysco Item from inventory tools page:Fail",LogType.VERIFICATION_STEP);
-		Assert.assertTrue(false);
-		
+
+	public InventoryToolPage InvTools_CreateNonSysco(String string) {
+
+		log("Selecting Create Nonsysco item from inventory tools page ", LogType.STEP);
+		String string1 = "Success";
+		String string2 = "Issue";
+
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+
+		try {
+
+			getCommand().waitForTargetPresent(InvTool_CreateNonSyscoItem);
+
+			if (getCommand().isTargetPresent(InvTool_CreateNonSyscoItem)) {
+				getCommand().click(InvTool_CreateNonSyscoItem);
+
+				getCommand().waitForTargetPresent(AddProduct_Page);
+
+				log("Tapped Create NonSysco Item from inventory tools page:Pass", LogType.VERIFICATION_STEP);
+			}
+
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Tapped Create NonSysco Item from inventory tools page:Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+
+		}
+
+		return this;
+
 	}
-	
-	return this;
-	
-}
-
-
 
 	
 }

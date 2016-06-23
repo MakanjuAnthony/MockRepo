@@ -53,23 +53,13 @@ public static final Target InvTool_CreateNonSyscoItem = new Target("InvTool_Crea
 		  String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 	        String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 	        try{
-				     
-	        	 /*Set<String> contextNames1 = ((IOSDriver)getCommand().driver).getContextHandles();
-					System.out.println("contxtname is "+contextNames1);
-					
-					 for (String contextName : contextNames1){
-						 System.out.println("inside loop "+contextNames1);
-					 }
-				System.out.println(((IOSDriver)getCommand().driver).context((String) contextNames1.toArray()[1]));
-				*/
+				  
 		getCommand().waitForTargetPresent(InvTool_SetUpInv);
 
 		getCommand().click(InvTool_SetUpInv);
 		
 		System.out.println("Tapped setup inventory");
-		/* ((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
-		getCommand().captureScreenshot(finalPath);
-		*/	log("Navigating to Setup inventory page :Pass",LogType.VERIFICATION_STEP);						
+			log("Navigating to Setup inventory page :Pass",LogType.VERIFICATION_STEP);						
 		
 	}
 	catch(Exception e)
@@ -84,7 +74,6 @@ public static final Target InvTool_CreateNonSyscoItem = new Target("InvTool_Crea
 }
 public  InventoryToolPage InvTools_TrackInventory(String string){
 		
-		log("Selecting TrackInventory from inventory tools page ",LogType.STEP);
 		  String string1="Success";
 		  String string2="Issue";
 		 
@@ -93,14 +82,7 @@ public  InventoryToolPage InvTools_TrackInventory(String string){
 	    
 	    try{
 	    	
-	    	/*Set<String> contextNames1 = ((IOSDriver)getCommand().driver).getContextHandles();
-	  		System.out.println("contxtname is "+contextNames1);
-	  		
-	  		 for (String contextName : contextNames1){
-	  			 System.out.println("inside loop "+contextNames1);
-	  		 }
-	  	System.out.println(((IOSDriver)getCommand().driver).context((String) contextNames1.toArray()[1]));
-	  	*/
+	    	
 	    		getCommand().waitForTargetPresent(TrackInventory);
 		
 		if (getCommand().isTargetPresent(TrackInventory))
@@ -108,9 +90,7 @@ public  InventoryToolPage InvTools_TrackInventory(String string){
 			getCommand().click(TrackInventory);
 			getCommand().waitForTargetPresent(LocationsPage);
 			getCommand().waitFor(2);
-			/* ((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
-			getCommand().captureScreenshot(finalPath);
-			*/
+			
 			log("Tapped  TrackInventory from inventory tools page:Pass",LogType.VERIFICATION_STEP);						
 		}
 		

@@ -40,132 +40,116 @@ public class ListPage extends SitePage{
 		return this;
 	}
 	
-	public ListPage TapCustomList(String string)
-   	{
-   		  String string1="Success";
-   		  String string2="Issue";
-            
-             String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-             String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-             
-   		log("Selecting custom list  ",LogType.STEP);
-   	
-   		try{
-   			getCommand().waitFor(5);
-   			getCommand().waitForTargetPresent(SetUp_Pg1Title);
-   			getCommand().waitForTargetPresent(CustomList);
-   			getCommand().clickWithJavascript(CustomList);
-   			
-   				log("Selected  custom list  from SetupInventoryImportItems:Pass",LogType.VERIFICATION_STEP);	
-   		
-   		}
-   		catch(Exception e){
-   			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
+	public ListPage TapCustomList(String string) {
+		String string1 = "Success";
+		String string2 = "Issue";
+
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+
+		log("Selecting custom list  ", LogType.STEP);
+
+		try {
+			getCommand().waitFor(5);
+			getCommand().waitForTargetPresent(SetUp_Pg1Title);
+			getCommand().waitForTargetPresent(CustomList);
+			getCommand().clickWithJavascript(CustomList);
+
+			log("Selected  custom list  from SetupInventoryImportItems:Pass", LogType.VERIFICATION_STEP);
+
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
-   			log("Selected  custom list  from SetupInventoryImportItems :Fail",LogType.VERIFICATION_STEP);
-   			Assert.assertTrue(false);
-   		}
-   		
-   		return this;
-   		
-   	} 
-	public ListPage tapContinue(String string){
-		  String string1="Success";
-		  String string2="Issue";
-		   String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-	       String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-	     	try{
-	     		
-				getCommand().waitForTargetPresent(Continue);
-			    getCommand().clickWithJavascript(Continue);
-			    
-				
-			log("Tapped on Continue :Pass",LogType.VERIFICATION_STEP);
+			log("Selected  custom list  from SetupInventoryImportItems :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
 		}
-		
-		catch(Exception e)
-		{
-			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
+
+		return this;
+
+	}
+
+	public ListPage tapContinue(String string) {
+		String string1 = "Success";
+		String string2 = "Issue";
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		try {
+
+			getCommand().waitForTargetPresent(Continue);
+			getCommand().clickWithJavascript(Continue);
+
+			log("Tapped on Continue :Pass", LogType.VERIFICATION_STEP);
+		}
+
+		catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
-			log("Tapped on Continue :Fail",LogType.VERIFICATION_STEP);
+			log("Tapped on Continue :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 
 		}
-		
+
 		return this;
-		
-	}
-	public ListPage SelectListwithItems(String name,String string)
-	{
-		
-		  
-		  String string1="Success";
-		  String string2="Issue";
-		  
-	    String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-	    String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-	    
-		log("Selecting list",LogType.STEP);
-	try{
-		String listName=name;
-		
-	 getCommand().waitFor(2);
-		//final Target  Listname= new Target("Locname","//*[@class='mm-c-product-list__select-list']//*[contains(text(),'"+listName+"')]",Target.XPATH);   
-		final Target  Listname= new Target("Listname","//*[@class='mm-c-simplelist__item list-group-item']//*[contains(text(),'"+listName+"')]/ancestor::button[@class='mm-c-simplelist__item list-group-item']/child::i[@class='mm-o-icon icon-uncheck-circle']",Target.XPATH);   
-		
-		getCommand().click(Listname); 
-		
-		
-		//  $x("//*[@class='mm-c-product-minlist mm-c-product__custom']//*[contains(text(),'Test2')]/ancestor::div[@class='mm-c-product-minlist mm-c-product__custom']/child::div//label")
-	//	$x("//*[@class='mm-c-simplelist__item list-group-item']//*[contains(text(),'Test2')]/ancestor::button[@class='mm-c-simplelist__item list-group-item']/child::i[@class='mm-o-icon icon-uncheck-circle']")
-		 
-		
-	  
-			log("List is selected :Pass",LogType.VERIFICATION_STEP);						
-		}
-		
-		
-		
-		catch(Exception e){
-			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-			getCommand().captureScreenshot(finalPath1);
-			log("List is selected   :Fail",LogType.VERIFICATION_STEP);
-			Assert.assertTrue(false);
-		}
-		return this;
-		
+
 	}
 	
-	 public ListPage TapOnNext(String string){
-	       	String string1="Success";
-	       	  String string2="Issue";
+	public ListPage SelectListwithItems(String name, String string) {
 
-	       String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-	       String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
+		String string1 = "Success";
+		String string2 = "Issue";
 
-	       	try{
-	      	
-	       			getCommand().waitForTargetPresent(Next);
-	       		if (getCommand().isTargetPresent(Next))
-	       		{
-	       			
-	       			getCommand().click(Next);
-	       			log("Tapped on Next : Pass",LogType.VERIFICATION_STEP);
-	       			
-	       		}
-	       		
-	       	}
-	       	catch(Exception e)
-	       	{
-	       		((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-				getCommand().captureScreenshot(finalPath1);
-	       		log("Tapped on Next :Fail",LogType.VERIFICATION_STEP);
-	       		
-	       		Assert.assertTrue(false);
-	       	}
-	       	
-	       	return this;
-	       }
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+
+		log("Selecting list", LogType.STEP);
+		try {
+			String listName = name;
+
+			getCommand().waitFor(2);
+			final Target Listname = new Target("Listname","//*[@class='mm-c-simplelist__item list-group-item']//*[contains(text(),'"+listName+"')]/ancestor::button[@class='mm-c-simplelist__item list-group-item']/child::i[@class='mm-o-icon icon-uncheck-circle']",Target.XPATH);
+
+			getCommand().click(Listname);
+
+			log("List is selected :Pass", LogType.VERIFICATION_STEP);
+		}
+
+		catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("List is selected   :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+		return this;
+
+	}
+
+	public ListPage TapOnNext(String string) {
+		String string1 = "Success";
+		String string2 = "Issue";
+
+		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+
+		try {
+
+			getCommand().waitForTargetPresent(Next);
+			if (getCommand().isTargetPresent(Next)) {
+
+				getCommand().click(Next);
+				log("Tapped on Next : Pass", LogType.VERIFICATION_STEP);
+
+			}
+
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Tapped on Next :Fail", LogType.VERIFICATION_STEP);
+
+			Assert.assertTrue(false);
+		}
+
+		return this;
+	}
 }
 
 

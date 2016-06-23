@@ -62,9 +62,9 @@ public class AccountsPage extends SitePage{
 	}
 	public AccountsPage HamMenu_Accounts(String string)
 	{
-		  String finalPath=GlobalVariable.drivePath+string+GlobalVariable.string1+GlobalVariable.pathExtension;
-		  String finalPath1=GlobalVariable.drivePath+string+GlobalVariable.string2+GlobalVariable.pathExtension;
 		log("Tapping on Accounts from Hamburger menu",LogType.STEP);
+		
+		String finalPath1=GlobalVariable.drivePath+string+GlobalVariable.string2+GlobalVariable.pathExtension;
 		
 		try{
 			  	
@@ -75,58 +75,51 @@ public class AccountsPage extends SitePage{
 			log("Account page displayed :Pass",LogType.STEP);	
 		
 		
-	}
-	
-
-	catch(Exception e)
-	{
-		 ((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-		getCommand().captureScreenshot(finalPath1);
-		log("Account page displayed :Fail",LogType.VERIFICATION_STEP);
-		Assert.assertTrue(false);
-	}
-	return this;
+		}
+		catch(Exception e)
+		{
+			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
+			getCommand().captureScreenshot(finalPath1);
+			log("Account page displayed :Fail",LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+		return this;
 	}
 			
 	
 	public AccountsPage AccountSwitchFirstID(String str1,String string)
 	{
-		
-		  String finalPath=GlobalVariable.drivePath+string+GlobalVariable.string1+GlobalVariable.pathExtension;
-	      String finalPath1=GlobalVariable.drivePath+string+GlobalVariable.string2+GlobalVariable.pathExtension;
+		  String finalPath1=GlobalVariable.drivePath+string+GlobalVariable.string2+GlobalVariable.pathExtension;
 			
 		
 		try{	
 			if ((str1.equalsIgnoreCase("uomsa001")) || (str1.equalsIgnoreCase("uomsa002")) ){
 
-		
-		if (getCommand().isTargetPresent(Accounts_1Account))
-			{
-			getCommand().click(Accounts_1Account);
-			System.out.println("clicked frst accnt");
+				if (getCommand().isTargetPresent(Accounts_1Account))
+				{
 			
-			getCommand().waitForTargetPresent(InvToolsPage);
+					getCommand().click(Accounts_1Account);
+					getCommand().waitForTargetPresent(InvToolsPage);
 			
-			getCommand().waitFor(5);
+					getCommand().waitFor(5);
 					if (getCommand().isTargetPresent(account_None))
 					{
-						System.out.println("No account ID displayed");
+						
 						log("Account switch  :Fail",LogType.VERIFICATION_STEP);	
 						Assert.assertTrue(false);					
 					}
 					else{
 						FirstAccountInfo=getCommand().getText(InventoryToolsPage_Accountinfo);
-						System.out.println("First Account ID "+FirstAccountInfo);
 						
-					log("First Account switched for user :Pass",LogType.VERIFICATION_STEP);
-			}
-			} 
+						log("First Account switched for user :Pass",LogType.VERIFICATION_STEP);
+						}
+				} 
 			}
 	  	}
 		catch(Exception e)
 		{
-			 ((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-				getCommand().captureScreenshot(finalPath1);
+			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
+			getCommand().captureScreenshot(finalPath1);
 			log("First Account switched for user :Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
@@ -140,29 +133,28 @@ public class AccountsPage extends SitePage{
 		
 		  String finalPath=GlobalVariable.drivePath+string+GlobalVariable.string1+GlobalVariable.pathExtension;
 	      String finalPath1=GlobalVariable.drivePath+string+GlobalVariable.string2+GlobalVariable.pathExtension;  
-		try{
+		
+	      try{
 			
 			if ((str1.equalsIgnoreCase("uomsa001")) || (str1.equalsIgnoreCase("uomsa002")) ){
-			if (getCommand().isTargetPresent(Accounts_2Account))
-			{
-			getCommand().click(Accounts_2Account);
+				if (getCommand().isTargetPresent(Accounts_2Account))
+					{
 			
-			getCommand().waitForTargetPresent(InvToolsPage);
-			getCommand().waitFor(5);
+					getCommand().click(Accounts_2Account);
+					getCommand().waitForTargetPresent(InvToolsPage);
+					getCommand().waitFor(5);
 				if (getCommand().isTargetPresent(account_None))
 				{
-					System.out.println("No account ID displayed");
+					
 					log("Account switch for user :Fail",LogType.VERIFICATION_STEP);	
 					Assert.assertTrue(false);					
 				}
 				else{
 					SecondAccountInfo=getCommand().getText(InventoryToolsPage_Accountinfo);
-					System.out.println("Second Account ID "+SecondAccountInfo);
 					
-				
+					
 					if(FirstAccountInfo!=SecondAccountInfo){
-						
-						log("Account switched for user :Pass",LogType.VERIFICATION_STEP);
+					log("Account switched for user :Pass",LogType.VERIFICATION_STEP);
 					}
 					
 					else{
@@ -182,8 +174,8 @@ public class AccountsPage extends SitePage{
 	
 		catch(Exception e)
 		{
-			 ((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-				getCommand().captureScreenshot(finalPath1);
+			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
+			getCommand().captureScreenshot(finalPath1);
 			log("Account switched for user :Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
@@ -195,31 +187,26 @@ public class AccountsPage extends SitePage{
 	public AccountsPage Third_AccountSelection(String str1,String string)
 	{
 		log("Selecting 3 account from Accounts page",LogType.STEP);
-		
-		 
-		  
-       
-        String finalPath=GlobalVariable.drivePath+string+GlobalVariable.string1+GlobalVariable.pathExtension;
+		String finalPath=GlobalVariable.drivePath+string+GlobalVariable.string1+GlobalVariable.pathExtension;
         String finalPath1=GlobalVariable.drivePath+string+GlobalVariable.string2+GlobalVariable.pathExtension;
 		try
 		{
 			if ((str1.equalsIgnoreCase("uomsa001")) || (str1.equalsIgnoreCase("uomsa002")) ){
-		  getCommand().waitForTargetPresent(Accounts_3Account,10).click(Accounts_3Account);
-		  if(getCommand().isTargetPresentAfterWait(InventoryToolsPage_Accountinfo, 20))
-	         {
-			  T_AccountInfo =getCommand().getText(InventoryToolsPage_Accountinfo);
-			  System.out.println("3rd account:"+T_AccountInfo);
-	         }
-	
+		 
+				getCommand().waitForTargetPresent(Accounts_3Account,10).click(Accounts_3Account);
+				if(getCommand().isTargetPresentAfterWait(InventoryToolsPage_Accountinfo, 20))
+				{
+					T_AccountInfo =getCommand().getText(InventoryToolsPage_Accountinfo);
+					
+				}
 		  log("Got 3 account information :Pass",LogType.VERIFICATION_STEP);
-		}
+			}
 		}
 	
        catch(Exception e){
-    	   ((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
+    	    ((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
 			getCommand().captureScreenshot(finalPath1);
 			log("Got 3 account information :Fail",LogType.VERIFICATION_STEP);
-			
 			Assert.assertTrue(false);
 			
 		}
@@ -229,37 +216,30 @@ public class AccountsPage extends SitePage{
 	public AccountsPage Fourth_AccountSelection(String str1,String string)
 	{
 		log("Selecting 4 account from Accounts page",LogType.STEP);
-		 
-		  
-       
-        String finalPath=GlobalVariable.drivePath+string+GlobalVariable.string1+GlobalVariable.pathExtension;
+		String finalPath=GlobalVariable.drivePath+string+GlobalVariable.string1+GlobalVariable.pathExtension;
         String finalPath1=GlobalVariable.drivePath+string+GlobalVariable.string2+GlobalVariable.pathExtension;
 		try
 		{
 			if ((str1.equalsIgnoreCase("uomsa001")) || (str1.equalsIgnoreCase("uomsa002")) ){
 			
-		  getCommand().waitForTargetPresent(Accounts_4Account);
-		  getCommand().click(Accounts_4Account);
-		  System.out.println("clicked 4 account");
+				getCommand().waitForTargetPresent(Accounts_4Account);
+				getCommand().click(Accounts_4Account);
+				getCommand().waitFor(5);
 		
-		  getCommand().waitFor(5);
-		
-         if(getCommand().isTargetPresentAfterWait(InventoryToolsPage_Accountinfo, 20))
-         {
-		  F_AccountInfo =getCommand().getText(InventoryToolsPage_Accountinfo);
-		  System.out.println("4 account:"+F_AccountInfo);
-         }
+				if(getCommand().isTargetPresentAfterWait(InventoryToolsPage_Accountinfo, 20))
+				{
+					F_AccountInfo =getCommand().getText(InventoryToolsPage_Accountinfo);
+					
+				}
        
-		 
-		 
          log("Got 4 account information :Pass",LogType.VERIFICATION_STEP);
-		}
+			}
 		}
        catch(Exception e){
     	   ((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-			getCommand().captureScreenshot(finalPath1);
+    	   getCommand().captureScreenshot(finalPath1);
     	   log("Got 4 account information :Fail",LogType.VERIFICATION_STEP);
-			Assert.assertTrue(false);
+    	   Assert.assertTrue(false);
 			
 		}
 		return this;
@@ -275,23 +255,17 @@ public class AccountsPage extends SitePage{
 		{
 			if ((str1.equalsIgnoreCase("uomsa001")) || (str1.equalsIgnoreCase("uomsa002")) ){
 		
-		  getCommand().waitForTargetPresent(Accounts_5Account);
-		  
-		 
-		  getCommand().click(Accounts_5Account);
-		  System.out.println("clicked 5 account");
+				getCommand().waitForTargetPresent(Accounts_5Account);
+				getCommand().click(Accounts_5Account);
+				getCommand().waitFor(5);
 		
-		  getCommand().waitFor(5);
-		
-         if(getCommand().isTargetPresentAfterWait(InventoryToolsPage_Accountinfo, 20))
-         {
-		  FfAccountInfo =getCommand().getText(InventoryToolsPage_Accountinfo);
-		  System.out.println("5 account:"+FfAccountInfo);
-         }
-      
-		
-         log("Got 5 account information :Pass",LogType.VERIFICATION_STEP);
-		}
+			if(getCommand().isTargetPresentAfterWait(InventoryToolsPage_Accountinfo, 20))
+			{
+				FfAccountInfo =getCommand().getText(InventoryToolsPage_Accountinfo);
+				
+			}
+			log("Got 5 account information :Pass",LogType.VERIFICATION_STEP);
+			}
 		}
        catch(Exception e){
     	   ((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
@@ -315,22 +289,18 @@ public class AccountsPage extends SitePage{
 		{
 			if ((str1.equalsIgnoreCase("uomsa001")) || (str1.equalsIgnoreCase("uomsa002")) ){
 			
-	  		
-	  		  getCommand().waitForTargetPresent(Accounts_6Account);
-		  
-		 
-		  getCommand().click(Accounts_6Account);
-		  System.out.println("clicked 6 account");
-			  getCommand().waitFor(5);
+				getCommand().waitForTargetPresent(Accounts_6Account);
+				getCommand().click(Accounts_6Account);
+				getCommand().waitFor(5);
 		    if(getCommand().isTargetPresentAfterWait(InventoryToolsPage_Accountinfo, 20))
-         {
-		  SxAccountInfo =getCommand().getText(InventoryToolsPage_Accountinfo);
-		  System.out.println("6 account:"+SxAccountInfo);
-         }
+		    {
+		    	SxAccountInfo =getCommand().getText(InventoryToolsPage_Accountinfo);
+		    	
+		    }
         
 		
-         log("Got 6 account information :Pass",LogType.VERIFICATION_STEP);
-		}
+		    log("Got 6 account information :Pass",LogType.VERIFICATION_STEP);
+			}
 		}
        catch(Exception e){
     	   ((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
@@ -351,16 +321,16 @@ public class AccountsPage extends SitePage{
 		
 		try{	
 		
-	  	if (getCommand().isTargetPresent(selectAcc))
+			if (getCommand().isTargetPresent(selectAcc))
 			{
 			getCommand().click(selectAcc);
-			System.out.println("clicked account");
 			log("Clicked select account :Pass",LogType.VERIFICATION_STEP);
 			}		
-}
+		}
 		catch(Exception e)
-		{ ((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-		getCommand().captureScreenshot(finalPath1);
+		{ 
+			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
+			getCommand().captureScreenshot(finalPath1);
 			log("Clicked select account :Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
@@ -379,27 +349,22 @@ public class AccountsPage extends SitePage{
 		try
 		{
 			if ((str1.equalsIgnoreCase("uomsa001")) || (str1.equalsIgnoreCase("uomsa002")) ){
-				
-			
+			  getCommand().waitForTargetPresent(Accounts_1Account,10).click(Accounts_1Account);
+			  if(getCommand().isTargetPresentAfterWait(InventoryToolsPage_Accountinfo, 20))
+			  	{
+				  T_AccountInfo =getCommand().getText(InventoryToolsPage_Accountinfo);
+				  
+			  	}
 		
-		  getCommand().waitForTargetPresent(Accounts_1Account,10).click(Accounts_1Account);
-		  if(getCommand().isTargetPresentAfterWait(InventoryToolsPage_Accountinfo, 20))
-	         {
-			  T_AccountInfo =getCommand().getText(InventoryToolsPage_Accountinfo);
-			  System.out.println("1st acount:"+T_AccountInfo);
-	         }
-		
-		  log("Got 1st account information :Pass",LogType.VERIFICATION_STEP);
-		}
+			  log("Got 1st account information :Pass",LogType.VERIFICATION_STEP);
+			}
 		}
        
        catch(Exception e){
     	   ((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-			
-    	     getCommand().captureScreenshot(finalPath1);
-			log("Got 1st account information :Fail",LogType.VERIFICATION_STEP);
-			
-			Assert.assertTrue(false);
+    	   getCommand().captureScreenshot(finalPath1);
+    	   log("Got 1st account information :Fail",LogType.VERIFICATION_STEP);
+    	   Assert.assertTrue(false);
 			
 		}
 		return this;
@@ -409,30 +374,29 @@ public class AccountsPage extends SitePage{
 	{
 		log("Selecting 1st account from Accounts page",LogType.STEP);
 		
-		 String finalPath=GlobalVariable.drivePath+string+GlobalVariable.string1+GlobalVariable.pathExtension;
-	      String finalPath1=GlobalVariable.drivePath+string+GlobalVariable.string2+GlobalVariable.pathExtension;
+		String finalPath=GlobalVariable.drivePath+string+GlobalVariable.string1+GlobalVariable.pathExtension;
+	    String finalPath1=GlobalVariable.drivePath+string+GlobalVariable.string2+GlobalVariable.pathExtension;
 		 
       
 		try
 		{
 			if ((str1.equalsIgnoreCase("uomsa001")) || (str1.equalsIgnoreCase("uomsa002")) ){
 		
-		  getCommand().waitForTargetPresent(Accounts_2Account,10).click(Accounts_2Account);
-		  if(getCommand().isTargetPresentAfterWait(InventoryToolsPage_Accountinfo, 20))
-	         {
-			  T_AccountInfo =getCommand().getText(InventoryToolsPage_Accountinfo);
-			  System.out.println("2nd account:"+T_AccountInfo);
-	         }
-		
-		  log("Got 2nd account information :Pass",LogType.VERIFICATION_STEP);
-		}
+				getCommand().waitForTargetPresent(Accounts_2Account,10).click(Accounts_2Account);
+				if(getCommand().isTargetPresentAfterWait(InventoryToolsPage_Accountinfo, 20))
+				{
+					T_AccountInfo =getCommand().getText(InventoryToolsPage_Accountinfo);
+					
+				}
+				log("Got 2nd account information :Pass",LogType.VERIFICATION_STEP);
+			}
 		}
        catch(Exception e){
+    	  
     	   ((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-			getCommand().captureScreenshot(finalPath1);
+    	   getCommand().captureScreenshot(finalPath1);
     	   log("Got 2nd account information :Fail",LogType.VERIFICATION_STEP);
-			
-			Assert.assertTrue(false);
+    	   Assert.assertTrue(false);
 			
 		}
 	

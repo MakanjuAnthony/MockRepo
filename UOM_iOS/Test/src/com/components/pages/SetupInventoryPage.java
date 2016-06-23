@@ -866,32 +866,29 @@ log("Order Guide Items not available",LogType.VERIFICATION_STEP);
              String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
              String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
              String finalPath2=GlobalVariable.drivePath+string+string3+GlobalVariable.pathExtension;
-             
-       	log("validating adding 'Nonsysco item' page ",LogType.STEP);
-       try{
+           try{
        	getCommand().waitForTargetPresent(AddProduct_Page);
-       	
-       	getCommand().captureScreenshot(finalPath2);
        	if (getCommand().isTargetPresent(AddProductPage_ProductName))
        	{
-       		
        		getCommand().waitForTargetPresent(AddProductPage_ProductName);
        		getCommand().waitForTargetPresent(AddProductPage_UPC);
        		getCommand().waitForTargetPresent(AddProductPage_Pack);
+       		
        		getCommand().waitForTargetPresent(AddProductPage_Size);
        		
-       		getCommand().scrollTo(AddProductPage_Pack);
+       		getCommand().waitForTargetPresent(AddProductPage_Pack);
+       		
        		getCommand().waitForTargetPresent(AddProductPage_Weight);
-       		getCommand().waitForTargetPresent(AddProductPage_Price);
+       		
+       		//getCommand().waitForTargetPresent(AddProductPage_Price);
        		
        		getCommand().waitForTargetPresent(AddProductPage_ProductBrand);
-
+       		
        		//	getCommand().waitForTargetPresent(AddProductPage_Option);
        		
        		getCommand().waitForTargetPresent(AddProductPage_AddSupplier);
-       	
-       		getCommand().captureScreenshot(finalPath);
-       		log("Nonsysco item details are present in page :Pass",LogType.VERIFICATION_STEP);						
+       		
+       		  		log("Nonsysco item details are present in page :Pass",LogType.VERIFICATION_STEP);						
        	}
        	
        	
@@ -1334,16 +1331,7 @@ log("Order Guide Items not available",LogType.VERIFICATION_STEP);
 				       String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 				       try{
 	    	     
-	    	   			/* Set<String> contextNames1 = ((IOSDriver)getCommand().driver).getContextHandles();
-	    	   				System.out.println("contxtname is "+contextNames1);
-	    	   				
-	    	   				 for (String contextName : contextNames1){
-	    	   					 System.out.println("inside loop "+contextNames1);
-	    	   				 }
-	    	   			System.out.println(((IOSDriver)getCommand().driver).context((String) contextNames1.toArray()[1]));
-//	    	   		  
-*/	   	   		//	getCommand().waitForTargetPresent(setupInventryFirstProduct).getText(setupInventryFirstProduct).equalsIgnoreCase(ItemName);
-	    	   		    
+	    	   			    
 	    	        	  System.out.println(AddedItemId1_1[0]);
 	    	        	  System.out.println(AddedItemId1_2[0]);
 	    	        	  System.out.println(AddedItemId1_3[0]);
@@ -1357,22 +1345,23 @@ log("Order Guide Items not available",LogType.VERIFICATION_STEP);
 	    	   			Boolean boolean1 =getCommand().isTargetPresent(SetUpInventory_1stItemHeading);
 	    	   			Boolean boolean2 =getCommand().isTargetPresent(SetUpInventory_2ndItemHeading);
 	    	   			Boolean boolean3 =getCommand().isTargetPresent(SetUpInventory_3rdItemHeading);
+	    	   			LocationsPage.count=0;
 	    	   			
 	    	   			int count=0;
 	    	   			if(boolean1){
-	    	   				count++;
-	    	   				System.out.println("inside if 1 count :"+count);
+	    	   				LocationsPage.count++;
+	    	   				System.out.println("inside if 1 count :"+LocationsPage.count);
 	    	   			}
 	    	   			if(boolean2){
-	    	   				count++;
-	    	   				System.out.println("inside if 2 count :"+count);
+	    	   				LocationsPage.count++;
+	    	   				System.out.println("inside if 2 count :"+LocationsPage.count);
 	    	   			}
 	    	   			if(boolean3){
-	    	   				count++;
-	    	   				System.out.println("inside if 3 count :"+count);
+	    	   				LocationsPage.count++;
+	    	   				System.out.println("inside if 3 count :"+LocationsPage.count);
 	    	   			}   
 	    	   		    
-	    	   			if (noOfElements==count) {
+	    	   			if (noOfElements==LocationsPage.count) {
 	    	   				System.out.println("All Three Elements Present, Pass");
 	    	   				log("All Three Items Found in Setup Inventory :Pass",LogType.VERIFICATION_STEP);
 	    	   			}else {
