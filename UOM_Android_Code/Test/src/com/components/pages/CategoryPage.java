@@ -1,25 +1,7 @@
 
-/**
- ********************************************************************************************************************************************
- ********************************************************************************************************************************************
- *																																		   	*
- * 2011-2012 Infosys Limited, Banglore, India. All Rights Reserved																			*
- * Version: 2.0																																*
- * 																																			*
- * Except for any free or open source software components embedded in this Infosys proprietary software program ("Program"),				*
- * this Program is protected by copyright laws, international treaties and other pending or existing intellectual property rights in India, *
- * the United States and other countries. Except as expressly permitted, any unautorized reproduction, storage, transmission 				*
- * in any form or by any means (including without limitation electronic, mechanical, printing, photocopying, recording or otherwise), 		*
- * or any distribution of this Program, or any portion of it, may result in severe civil and criminal penalties, 							*
- * and will be prosecuted to the maximum extent possible under the law 																		*
- *																																			*
- ********************************************************************************************************************************************
- ********************************************************************************************************************************************
- **/
 package com.components.pages;
 
 import java.util.Set;
-import java.util.UUID;
 
 import org.testng.Assert;
 
@@ -28,131 +10,175 @@ import com.iwaf.framework.components.IReporter.LogType;
 import com.iwaf.framework.components.Target;
 import io.appium.java_client.android.AndroidDriver;
 
+public class CategoryPage extends SitePage {
 
-public class CategoryPage extends SitePage{
+	public static final Target Continue = new Target("Continue",
+			"//*[@class='btn btn-default' and contains(text(),'Continue')]", Target.XPATH);
+	public static final Target Header = new Target("Category_Header", "//*[@class='navbar-brand']/h3", Target.XPATH);
+	public static final Target Category_FirstItemSelect = new Target("Category_FirstItemSelect",
+			"//*[@class='checkbox']//*[@class='mm-o-icon']//*[@class='item-input'and @data-index='0']", Target.XPATH);
+	public static final Target Category_FirstItemHeader = new Target("Category_FirstItemHeader",
+			"//*[@id='mount']/div/div/div[2]/div/div[2]/div[1]/div/div/div[1]/div/div[2]/div[2]/h4", Target.XPATH);
+	public static final Target InvToolsPg = new Target("InvToolsPg",
+			"//*[@class='navbar-brand']//*[contains(text(),'Inventory Tools')]", Target.XPATH);
+	public static final Target SecondCategory_FirstItemSelect = new Target("Category_FirstItemSelect",
+			"//*[@class='checkbox']//*[@class='mm-o-icon']//*[@class='item-input'and @data-index='1']", Target.XPATH);
 
-	
-	
-	   public static final Target Continue = new Target("Continue","//*[@class='btn btn-default' and contains(text(),'Continue')]",Target.XPATH);
-	   public static final Target Header= new Target("Category_Header","//*[@class='navbar-brand']/h3",Target.XPATH);
-	   public static final Target Category_FirstItemSelect= new Target("Category_FirstItemSelect","//*[@class='checkbox']//*[@class='mm-o-icon']//*[@class='item-input'and @data-index='0']",Target.XPATH);
-	   public static final Target Category_FirstItemHeader= new Target("Category_FirstItemHeader","//*[@id='mount']/div/div/div[2]/div/div[2]/div[1]/div/div/div[1]/div/div[2]/div[2]/h4",Target.XPATH); 
-	   public static final Target InvToolsPg = new Target("InvToolsPg","//*[@class='navbar-brand']//*[contains(text(),'Inventory Tools')]",Target.XPATH);
-	   public static final Target SecondCategory_FirstItemSelect= new Target("Category_FirstItemSelect","//*[@class='checkbox']//*[@class='mm-o-icon']//*[@class='item-input'and @data-index='1']",Target.XPATH); 
-			
-	   public String CategoryName;
-	   public String ItemNameSelected;
-	   public String ItemNameAdded;
-	   public static final Target Complete = new Target("Continue","//*[@class='btn btn-default' and contains(text(),'Complete')]",Target.XPATH);		public static final Target SetupInventoryCustomCategoryAllItemsTab = new Target("SetupInventoryCustomLoc_LocName","//*[@id='mount']//*[@class='mm-c-productList--pill-left']/a",Target.XPATH);
-	   public static final Target SetupInventoryCustomCategoryUncategorizedTab = new Target("SetupInventoryCustomLoc_LocName","//*[@id='mount']//*[@class='mm-c-productList--pill-right']/a",Target.XPATH);
-		
-	   public static String ItemAdded;
-	   public static final Target Category_Header= new Target("Category_Header","//*[@class='navbar-brand']/h3",Target.XPATH);
-					 
-	   public static final Target ExpenseCategory_Food= new Target("ExpenseCategory_Food","(//*[@class='mm-c-customexpense__details-category']//*[@class='radio'])[1]/label",Target.XPATH); 
-	   public static final Target ExpenseCategory_Page= new Target("ExpenseCategory_Page","//*[@class='mm-c-customexpense__setup-text']//*[contains(text(),'Create Custom Expense Categories')]",Target.XPATH); 		    public static final Target ExpenseCategory_Name= new Target("ExpenseCategory_Name","//*[@class='mm-c-customexpense__details-category-name form-control form-control' and @name='formFields[0].name']",Target.XPATH); 
-	   public static final Target ExpenseCategory_NonFood= new Target("ExpenseCategory_NonFood","(//*[@class='mm-c-customexpense__details-category']//*[@class='radio'])[2]/label",Target.XPATH); 
-	   public static final Target Next= new Target("Next","//*[@id='next-nav']/a",Target.XPATH); 
+	public String CategoryName;
+	public String ItemNameSelected;
+	public String ItemNameAdded;
+	public static final Target Complete = new Target("Continue",
+			"//*[@class='btn btn-default' and contains(text(),'Complete')]", Target.XPATH);
+	public static final Target SetupInventoryCustomCategoryAllItemsTab = new Target("SetupInventoryCustomLoc_LocName",
+			"//*[@id='mount']//*[@class='mm-c-productList--pill-left']/a", Target.XPATH);
+	public static final Target SetupInventoryCustomCategoryUncategorizedTab = new Target(
+			"SetupInventoryCustomLoc_LocName", "//*[@id='mount']//*[@class='mm-c-productList--pill-right']/a",
+			Target.XPATH);
 
-	   public static final Target ExpenseCategory_NameTxt= new Target("ExpenseCategory_NameTxt","//*[@class='mm-c-customexpense__details-category-name form-control form-control' and @name='formFields[0].name']",Target.XPATH); 
-	   public static final Target ExpenseCategory_AnotherCategory= new Target("ExpenseCategory_AnotherCategory","//*[@class='mm-c-customexpense__setup-cta']//*[contains(text(),'Add Another Category')]",Target.XPATH);		public static final Target ExpenseCategory_Name1= new Target("ExpenseCategory_Name1","//*[@class='mm-c-customexpense__details-category-name form-control form-control' and @name='formFields[1].name']",Target.XPATH);
-	   public static final Target ExpenseCategory_Food1= new Target("ExpenseCategory_Food1","(//*[@class='mm-c-customexpense__details-category']//*[@class='radio'])[3]/label",Target.XPATH); 
-							
+	public static String ItemAdded;
+	public static final Target Category_Header = new Target("Category_Header", "//*[@class='navbar-brand']/h3",
+			Target.XPATH);
 
-	   public static final Target Category_1stItemSelect= new Target("Category_1stItemSelect","(//*[@class='mm-c-product-minlist mm-c-product__sysco']//*[@class='mm-o-icon'])[1]",Target.XPATH);
-	   public static final Target Category_2ndItemSelect= new Target("Category_2ndItemSelect","(//*[@class='mm-c-product-minlist mm-c-product__sysco']//*[@class='mm-o-icon'])[2]",Target.XPATH);
-	   public static final Target Category_3rdItemSelect= new Target("Category_3rdItemSelect","(//*[@class='mm-c-product-minlist mm-c-product__sysco']//*[@class='mm-o-icon'])[3]",Target.XPATH);
-	   public static final Target Category_1stItemHeading= new Target("Category_1stItemHeading","(//*[@class='mm-c-product-minlist__item']/h4)[1]",Target.XPATH);
-	   public static final Target Category_2ndItemHeading= new Target("Category_2ndItemHeading","(//*[@class='mm-c-product-minlist__item']/h4)[2]",Target.XPATH);
-	   public static final Target Category_3rdItemHeading= new Target("Category_3rdItemHeading","(//*[@class='mm-c-product-minlist__item']/h4)[3]",Target.XPATH);
+	public static final Target ExpenseCategory_Food = new Target("ExpenseCategory_Food",
+			"(//*[@class='mm-c-customexpense__details-category']//*[@class='radio'])[1]/label", Target.XPATH);
+	public static final Target ExpenseCategory_Page = new Target("ExpenseCategory_Page",
+			"//*[@class='mm-c-customexpense__setup-text']//*[contains(text(),'Create Custom Expense Categories')]",
+			Target.XPATH);
+	public static final Target ExpenseCategory_Name = new Target("ExpenseCategory_Name",
+			"//*[@class='mm-c-customexpense__details-category-name form-control form-control' and @name='formFields[0].name']",
+			Target.XPATH);
+	public static final Target ExpenseCategory_NonFood = new Target("ExpenseCategory_NonFood",
+			"(//*[@class='mm-c-customexpense__details-category']//*[@class='radio'])[2]/label", Target.XPATH);
+	public static final Target Next = new Target("Next", "//*[@id='next-nav']/a", Target.XPATH);
 
-	   public static	String CategoryItemName1_1;
-	   public static	String CategoryItemName1_2;
-	   public static	String CategoryItemName1_3;
-	   public static	String CategoryItemName1_4;
-	   public static	String CategoryItemName2_1;
-	   public static	String CategoryItemName2_2;
-	   public static	String CategoryItemName2_3;
-	 
-	   public static	int CategoryNoOfElements1;
-	   public static	int CategorysNoOfElements2;
-	   
-	   public static final Target ADD_CategoryName= new Target("ADD_CategoryName","//*[@id='name']",Target.XPATH); 
-	   public static final Target AddCategory_FoodWeb= new Target("AddCategory_Food","(//*[@class='mm-c-expense__details-radio']//*[@class='radio'])[1]",Target.XPATH);
-	   public static final Target AddCategory_Food= new Target("AddCategory_Food","//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIAElement[1]",Target.XPATH); 
-								
-	   public static final Target Done= new Target("Done","//UIAStaticText[@label='Done']",Target.XPATH); 
-	   public static final Target DoneWeb= new Target("DoneWeb","//*[@id='done-nav']/a",Target.XPATH); 
+	public static final Target ExpenseCategory_NameTxt = new Target("ExpenseCategory_NameTxt",
+			"//*[@class='mm-c-customexpense__details-category-name form-control form-control' and @name='formFields[0].name']",
+			Target.XPATH);
+	public static final Target ExpenseCategory_AnotherCategory = new Target("ExpenseCategory_AnotherCategory",
+			"//*[@class='mm-c-customexpense__setup-cta']//*[contains(text(),'Add Another Category')]", Target.XPATH);
+	public static final Target ExpenseCategory_Name1 = new Target("ExpenseCategory_Name1",
+			"//*[@class='mm-c-customexpense__details-category-name form-control form-control' and @name='formFields[1].name']",
+			Target.XPATH);
+	public static final Target ExpenseCategory_Food1 = new Target("ExpenseCategory_Food1",
+			"(//*[@class='mm-c-customexpense__details-category']//*[@class='radio'])[3]/label", Target.XPATH);
 
-	   public static final Target Back = new Target("Back","//*[@id='back-nav']/a/i",Target.XPATH);
-	   public static final Target AddWeb= new Target("AddWeb","//*[@id='add-nav']/a/i",Target.XPATH);
-	   public static final Target EditWeb = new Target("Edit","//*[@id='edit-nav']/a/i",Target.XPATH);
-	   public static final Target Delete = new Target("Delete ","//*[@id='delete-button' and contains(text(),'Delete Expense Category')]",Target.XPATH);
-	   public static final Target YesDelete = new Target("YesDelete ","//*[@id='yes-button' and contains(text(),'Yes, Delete')]",Target.XPATH);
+	public static final Target Category_1stItemSelect = new Target("Category_1stItemSelect",
+			"(//*[@class='mm-c-product-minlist mm-c-product__sysco']//*[@class='mm-o-icon'])[1]", Target.XPATH);
+	public static final Target Category_2ndItemSelect = new Target("Category_2ndItemSelect",
+			"(//*[@class='mm-c-product-minlist mm-c-product__sysco']//*[@class='mm-o-icon'])[2]", Target.XPATH);
+	public static final Target Category_3rdItemSelect = new Target("Category_3rdItemSelect",
+			"(//*[@class='mm-c-product-minlist mm-c-product__sysco']//*[@class='mm-o-icon'])[3]", Target.XPATH);
+	public static final Target Category_1stItemHeading = new Target("Category_1stItemHeading",
+			"(//*[@class='mm-c-product-minlist__item']/h4)[1]", Target.XPATH);
+	public static final Target Category_2ndItemHeading = new Target("Category_2ndItemHeading",
+			"(//*[@class='mm-c-product-minlist__item']/h4)[2]", Target.XPATH);
+	public static final Target Category_3rdItemHeading = new Target("Category_3rdItemHeading",
+			"(//*[@class='mm-c-product-minlist__item']/h4)[3]", Target.XPATH);
 
-	   public static final Target Category_NonSyscoItem1Select= new Target("Category_NonSyscoItem1Select","(//*[@class='mm-c-product-minlist mm-c-product__custom']//*[@class='mm-o-icon'])[1]",Target.XPATH);
-	   public static final Target Category_NonSyscoItem2Select= new Target("Category_NonSyscoItem2Select","(//*[@class='mm-c-product-minlist mm-c-product__custom']//*[@class='mm-o-icon'])[2]",Target.XPATH);
-	   public static final Target Category_4thItemHeading= new Target("Category_4thItemHeading","(//*[@class='mm-c-product-minlist__item']/h4)[4]",Target.XPATH);
-	  
-	   public static final Target SuggestedCategory_Dairy= new Target("Category_NonSyscoItem1Select","//*[@id='list-item']//span[contains(text(),'Dairy')]",Target.XPATH);
-	   public static final Target SuggestedCategory_Meat= new Target("Category_NonSyscoItem1Select","//*[@id='list-item']//span[contains(text(),'Meat')]",Target.XPATH);
-	   public static final Target SuggestedCategory_Poultry= new Target("Category_NonSyscoItem1Select","//*[@id='list-item']//span[contains(text(),'Poultry')]",Target.XPATH);
-	   public static final Target SuggestedCategory_Seafood= new Target("Category_NonSyscoItem1Select","//*[@id='list-item']//span[contains(text(),'Seafood')]",Target.XPATH);
-	   public static final Target SuggestedCategory_Produce= new Target("Category_NonSyscoItem1Select","//*[@id='list-item']//span[contains(text(),'Produce')]",Target.XPATH);
-	   public static final Target SuggestedCategory_Groceries= new Target("Category_NonSyscoItem1Select","//*[@id='list-item']//span[contains(text(),'Groceries')]",Target.XPATH);
-	   public static final Target SuggestedCategory_Beverage= new Target("Category_NonSyscoItem1Select","//*[@id='list-item']//span[contains(text(),'Beverage')]",Target.XPATH);
-	   public static final Target SuggestedCategory_Miscellaneous= new Target("Category_NonSyscoItem1Select","//*[@id='list-item']//span[contains(text(),'Miscellaneous')]",Target.XPATH);
-	   public static final Target DefaultCategory_Food= new Target("DefaultCategory_Food","//*[@id='list-item']//span[contains(text(),'Food')]",Target.XPATH);
-	   public static final Target DefaultCategory_NonFood= new Target("DefaultCategory_NonFood","//*[@id='list-item']//span[contains(text(),'Non-Food')]",Target.XPATH);
-													  
-	
-	   public static String SyscocategoryKeyword1;
-	   public static String[] SyscoCategory1;
-	   public static String Selected_SuggCat1;
-	   
-	   public static final Target Select_SuggCat_Dairy = new Target("Select_SuggCat_Dairy","//*[@id='list-item']//*[contains(text(),'Dairy')]",Target.XPATH);
-	   public static final Target Select_SuggCat_Meat = new Target("Select_SuggCat_Meat","//*[@id='list-item']//*[contains(text(),'Meat')]",Target.XPATH);
-						
-//	   public static final Target FoodAndNonFoodDesc = new Target("FoodAndNonFoodDesc","//*[@class='mm-c-inventory-setup']//*[contains(text(),'Use these as expense categories')]",Target.XPATH);
-//	   public static final Target SuggestedCategoriesDesc = new Target("SuggestedCategoriesDesc","//*[@class='mm-c-inventory-setup']//*[contains(text(),'Meat, Poultry, Seafood, Dairy, Produce, Groceries, Beverages, & Miscellaneous')]",Target.XPATH);
-//	   public static final Target CustomCategoriesDesc = new Target("CustomCategoriesDesc","//*[@class='mm-c-inventory-setup']//*[contains(text(),'Create your own')]",Target.XPATH);
+	public static String CategoryItemName1_1;
+	public static String CategoryItemName1_2;
+	public static String CategoryItemName1_3;
+	public static String CategoryItemName1_4;
+	public static String CategoryItemName2_1;
+	public static String CategoryItemName2_2;
+	public static String CategoryItemName2_3;
 
-	   public static final Target SetUp_Pg3Title = new Target("SetUp_Pg3Title","//*[contains(text(),'Set up Food Cost')]",Target.XPATH);  
-	   public static final Target FoodAndNonFood = new Target("FoodAndNonFood","//*[contains(text(),'Food & Non-Food')]",Target.XPATH);
-	   public static final Target  SuggestedCategories = new Target("SuggestedCategories","//*[contains(text(),'Suggested Categories')]",Target.XPATH);
-	   public static final Target  CustomCategories = new Target("CustomCategories","//*[contains(text(),'Create Expense Cat.')]",Target.XPATH);
-	   public static final Target textUnderFoodAndNOnFood = new Target("textUnderFoodAndNOnFood","//*[contains(text(),'Use these as expense categories')]",Target.XPATH);
-	   public static final Target textUnderSuggestedCat = new Target("textUnderSuggestedCat","//*[contains(text(),'Meat, Poultry, Seafood, Dairy, Produce, Groceries, Beverages, & Miscellaneous')]",Target.XPATH);
-	   public static final Target textUnderCreateExpCat = new Target("textUnderCreateExpCat","//*[contains(text(),'Create your own')]",Target.XPATH);
+	public static int CategoryNoOfElements1;
+	public static int CategorysNoOfElements2;
 
-	   public static final Target FoodAndNonFoodDesc = new Target("FoodAndNonFoodDesc","//*[contains(text(),'Use these as expense categories')]",Target.XPATH);
-	   public static final Target SuggestedCategoriesDesc = new Target("SuggestedCategoriesDesc","//*[contains(text(),'Meat, Poultry, Seafood, Dairy, Produce, Groceries, Beverages, and Miscellaneous')]",Target.XPATH);
-	   public static final Target CustomCategoriesDesc = new Target("CustomCategoriesDesc","//*[contains(text(),'Create your own')]",Target.XPATH);
+	public static final Target ADD_CategoryName = new Target("ADD_CategoryName", "//*[@id='name']", Target.XPATH);
+	public static final Target AddCategory_FoodWeb = new Target("AddCategory_Food",
+			"(//*[@class='mm-c-expense__details-radio']//*[@class='radio'])[1]", Target.XPATH);
 
+	public static final Target DoneWeb = new Target("DoneWeb", "//*[@id='done-nav']/a", Target.XPATH);
 
+	public static final Target Back = new Target("Back", "//*[@id='back-nav']/a/i", Target.XPATH);
+	public static final Target AddWeb = new Target("AddWeb", "//*[@id='add-nav']/a/i", Target.XPATH);
+	public static final Target EditWeb = new Target("Edit", "//*[@id='edit-nav']/a/i", Target.XPATH);
+	public static final Target Delete = new Target("Delete ",
+			"//*[@id='delete-button' and contains(text(),'Delete Expense Category')]", Target.XPATH);
+	public static final Target YesDelete = new Target("YesDelete ",
+			"//*[@id='yes-button' and contains(text(),'Yes, Delete')]", Target.XPATH);
 
-						  
-	public CategoryPage(SiteRepository repository)
-	{
+	public static final Target Category_NonSyscoItem1Select = new Target("Category_NonSyscoItem1Select",
+			"(//*[@class='mm-c-product-minlist mm-c-product__custom']//*[@class='mm-o-icon'])[1]", Target.XPATH);
+	public static final Target Category_NonSyscoItem2Select = new Target("Category_NonSyscoItem2Select",
+			"(//*[@class='mm-c-product-minlist mm-c-product__custom']//*[@class='mm-o-icon'])[2]", Target.XPATH);
+	public static final Target Category_4thItemHeading = new Target("Category_4thItemHeading",
+			"(//*[@class='mm-c-product-minlist__item']/h4)[4]", Target.XPATH);
+
+	public static final Target SuggestedCategory_Dairy = new Target("Category_NonSyscoItem1Select",
+			"//*[@id='list-item']//span[contains(text(),'Dairy')]", Target.XPATH);
+	public static final Target SuggestedCategory_Meat = new Target("Category_NonSyscoItem1Select",
+			"//*[@id='list-item']//span[contains(text(),'Meat')]", Target.XPATH);
+	public static final Target SuggestedCategory_Poultry = new Target("Category_NonSyscoItem1Select",
+			"//*[@id='list-item']//span[contains(text(),'Poultry')]", Target.XPATH);
+	public static final Target SuggestedCategory_Seafood = new Target("Category_NonSyscoItem1Select",
+			"//*[@id='list-item']//span[contains(text(),'Seafood')]", Target.XPATH);
+	public static final Target SuggestedCategory_Produce = new Target("Category_NonSyscoItem1Select",
+			"//*[@id='list-item']//span[contains(text(),'Produce')]", Target.XPATH);
+	public static final Target SuggestedCategory_Groceries = new Target("Category_NonSyscoItem1Select",
+			"//*[@id='list-item']//span[contains(text(),'Groceries')]", Target.XPATH);
+	public static final Target SuggestedCategory_Beverage = new Target("Category_NonSyscoItem1Select",
+			"//*[@id='list-item']//span[contains(text(),'Beverage')]", Target.XPATH);
+	public static final Target SuggestedCategory_Miscellaneous = new Target("Category_NonSyscoItem1Select",
+			"//*[@id='list-item']//span[contains(text(),'Miscellaneous')]", Target.XPATH);
+	public static final Target DefaultCategory_Food = new Target("DefaultCategory_Food",
+			"//*[@id='list-item']//span[contains(text(),'Food')]", Target.XPATH);
+	public static final Target DefaultCategory_NonFood = new Target("DefaultCategory_NonFood",
+			"//*[@id='list-item']//span[contains(text(),'Non-Food')]", Target.XPATH);
+
+	public static String SyscocategoryKeyword1;
+	public static String[] SyscoCategory1;
+	public static String Selected_SuggCat1;
+
+	public static final Target Select_SuggCat_Dairy = new Target("Select_SuggCat_Dairy",
+			"//*[@id='list-item']//*[contains(text(),'Dairy')]", Target.XPATH);
+	public static final Target Select_SuggCat_Meat = new Target("Select_SuggCat_Meat",
+			"//*[@id='list-item']//*[contains(text(),'Meat')]", Target.XPATH);
+
+	public static final Target SetUp_Pg3Title = new Target("SetUp_Pg3Title", "//*[contains(text(),'Set up Food Cost')]",
+			Target.XPATH);
+	public static final Target FoodAndNonFood = new Target("FoodAndNonFood", "//*[contains(text(),'Food & Non-Food')]",
+			Target.XPATH);
+	public static final Target SuggestedCategories = new Target("SuggestedCategories",
+			"//*[contains(text(),'Suggested Categories')]", Target.XPATH);
+	public static final Target CustomCategories = new Target("CustomCategories",
+			"//*[contains(text(),'Create Expense Cat.')]", Target.XPATH);
+	public static final Target textUnderFoodAndNOnFood = new Target("textUnderFoodAndNOnFood",
+			"//*[contains(text(),'Use these as expense categories')]", Target.XPATH);
+	public static final Target textUnderSuggestedCat = new Target("textUnderSuggestedCat",
+			"//*[contains(text(),'Meat, Poultry, Seafood, Dairy, Produce, Groceries, Beverages, & Miscellaneous')]",
+			Target.XPATH);
+	public static final Target textUnderCreateExpCat = new Target("textUnderCreateExpCat",
+			"//*[contains(text(),'Create your own')]", Target.XPATH);
+
+	public static final Target FoodAndNonFoodDesc = new Target("FoodAndNonFoodDesc",
+			"//*[contains(text(),'Use these as expense categories')]", Target.XPATH);
+	public static final Target SuggestedCategoriesDesc = new Target("SuggestedCategoriesDesc",
+			"//*[contains(text(),'Meat, Poultry, Seafood, Dairy, Produce, Groceries, Beverages, and Miscellaneous')]",
+			Target.XPATH);
+	public static final Target CustomCategoriesDesc = new Target("CustomCategoriesDesc",
+			"//*[contains(text(),'Create your own')]", Target.XPATH);
+
+	public CategoryPage(SiteRepository repository) {
 		super(repository);
 	}
 
 	/* Functions on the Page are defined below */
-	
-	public CategoryPage atCategoryPage()
-	{
-		log("Launched Category Page",LogType.STEP);
-		
+
+	public CategoryPage atCategoryPage() {
+		log("Launched Category Page", LogType.STEP);
+
 		return this;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage CustomCategories(String string) {
 		log("Selecting custom category from Food cost page", LogType.STEP);
 
-		String string1 = "Success";
 		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		try {
@@ -177,11 +203,10 @@ public class CategoryPage extends SitePage{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage tapContinue(String string) {
 
-		String string1 = "Success";
 		String string2 = "Issue";
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 		try {
 			getCommand().waitForTargetPresent(Continue);
@@ -201,11 +226,11 @@ public class CategoryPage extends SitePage{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage CategoryDetails(String Name, String string) {
 		log("Creating custom category", LogType.STEP);
-		String string1 = "Success";
+
 		String string2 = "Issue";
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		String name = Name;
@@ -236,12 +261,11 @@ public class CategoryPage extends SitePage{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage TapOnNext(String string) {
 
-		String string1 = "Success";
 		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		try {
@@ -262,17 +286,16 @@ public class CategoryPage extends SitePage{
 		return this;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage SelectItemFromCategory(String name, String string) {
 
 		log("Selecting item to custom category created", LogType.STEP);
-		String string1 = "Success";
+
 		String string2 = "Issue";
 		String string3 = "Page";
-		String string4 = "Success1";
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 		String finalPath2 = GlobalVariable.drivePath + string + string3 + GlobalVariable.pathExtension;
-		String finalPath3 = GlobalVariable.drivePath + string + string4 + GlobalVariable.pathExtension;
 		try {
 
 			getCommand().captureScreenshot(finalPath2);
@@ -291,8 +314,8 @@ public class CategoryPage extends SitePage{
 				log("First item selected :Pass", LogType.VERIFICATION_STEP);
 			}
 
-			if (getCommand().isTargetPresent(Done)) {
-				getCommand().click(Done);
+			if (getCommand().isTargetPresent(DoneWeb)) {
+				getCommand().click(DoneWeb);
 
 				getCommand().waitForTargetPresent(InvToolsPg);
 
@@ -309,7 +332,7 @@ public class CategoryPage extends SitePage{
 					log("Second Category Page available :Pass", LogType.VERIFICATION_STEP);
 					getCommand().click(SecondCategory_FirstItemSelect);
 					log("First item selected in second category:Pass", LogType.VERIFICATION_STEP);
-					getCommand().click(Done);
+					getCommand().click(DoneWeb);
 
 					getCommand().waitForTargetPresent(InvToolsPg);
 					log("Item added to Second Category :Pass", LogType.VERIFICATION_STEP);
@@ -328,13 +351,12 @@ public class CategoryPage extends SitePage{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage defaultCategories(String string) {
 		log("Selecting default category from Food cost page", LogType.STEP);
 
-		String string1 = "Success";
 		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		try {
@@ -357,10 +379,10 @@ public class CategoryPage extends SitePage{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage tapComplete(String string) {
-		String string1 = "Success";
+
 		String string2 = "Issue";
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 		try {
 			getCommand().waitForTargetPresent(Complete);
@@ -381,10 +403,9 @@ public class CategoryPage extends SitePage{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage CreateTwoExpenseCategory(String Name1, String Name2, String string) {
 		log("Creating multiple custom category", LogType.STEP);
-
-		String finalPath = GlobalVariable.drivePath + string + GlobalVariable.string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + GlobalVariable.string2 + GlobalVariable.pathExtension;
 
 		try {
@@ -397,7 +418,6 @@ public class CategoryPage extends SitePage{
 				getCommand().waitForTargetPresent(ExpenseCategory_Food);
 				getCommand().click(ExpenseCategory_Food);
 
-				// getCommand().waitForTargetPresent(ExpenseCategory_AnotherCategory);
 				if (getCommand().isTargetPresent(ExpenseCategory_AnotherCategory)) {
 
 					getCommand().click(ExpenseCategory_AnotherCategory);
@@ -429,13 +449,11 @@ public class CategoryPage extends SitePage{
 		return this;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage CustomCategory_ItemSelectAndCheck(String string) {
 		log("Verifyinging added item is in  custom category - Uncategorised and All Items", LogType.STEP);
 
-		String string1 = "Success";
 		String string2 = "Issue";
-
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		try {
@@ -457,11 +475,8 @@ public class CategoryPage extends SitePage{
 			getCommand().waitForTargetPresent(SetupInventoryCustomCategoryAllItemsTab);
 			getCommand().click(SetupInventoryCustomCategoryAllItemsTab);
 			getCommand().waitFor(3);
-			final Target FirstItemSelectedFromUncatgorisedVerify = new Target("FirstItemSelectedFromUncatgorised","//*[@id='mount']//*[contains(text(),'"+ItemAdded+"')]", Target.XPATH);
-
-			// System.out.println("//*[@id='mount']//*[contains(text(),'"+ItemAdded+"')]");
-			// System.out.println("TargetPresent:
-			// "+getCommand().isTargetVisible(FirstItemSelectedFromUncatgorisedVerify));
+			final Target FirstItemSelectedFromUncatgorisedVerify = new Target("FirstItemSelectedFromUncatgorised",
+					"//*[@id='mount']//*[contains(text(),'" + ItemAdded + "')]", Target.XPATH);
 
 			if (getCommand().isTargetPresent(FirstItemSelectedFromUncatgorisedVerify)) {
 
@@ -494,12 +509,11 @@ public class CategoryPage extends SitePage{
 		return this;
 
 	}
-	  
-	  
+
+	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
 	public CategoryPage selectMultipleItemsFromCategory1(String string) {
-		String string1 = "Success";
+
 		String string2 = "Issue";
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		try {
@@ -558,10 +572,10 @@ public class CategoryPage extends SitePage{
 		return this;
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
 	public CategoryPage selectMultipleItemsFromCategory2(String string) {
-		String string1 = "Success";
+
 		String string2 = "Issue";
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		try {
@@ -618,10 +632,10 @@ public class CategoryPage extends SitePage{
 		return this;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage AddCategoryName(String categoryName, String string) {
-		String string1 = "Success";
+
 		String string2 = "Issue";
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		try {
@@ -644,10 +658,10 @@ public class CategoryPage extends SitePage{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage AddCategoryFood(String string) {
-		String string1 = "Success";
+
 		String string2 = "Issue";
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		try {
@@ -670,11 +684,10 @@ public class CategoryPage extends SitePage{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage TapOnDone(String string) {
-		String string1 = "Success";
-		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String string2 = "Issue";
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		try {
@@ -698,16 +711,17 @@ public class CategoryPage extends SitePage{
 		return this;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage SelectCategory(String name, String string) {
 
-		String finalPath = GlobalVariable.drivePath + string + GlobalVariable.string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + GlobalVariable.string2 + GlobalVariable.pathExtension;
 
 		log("Selecting Category", LogType.STEP);
 		try {
 
 			getCommand().waitFor(2);
-			final Target Locname = new Target("Locname", "//*[@id='list-item']//*[contains(text(),'"+name+"')]",Target.XPATH);
+			final Target Locname = new Target("Locname", "//*[@id='list-item']//*[contains(text(),'" + name + "')]",
+					Target.XPATH);
 			getCommand().click(Locname);
 
 			log("Category is selected for item :Pass", LogType.VERIFICATION_STEP);
@@ -724,9 +738,9 @@ public class CategoryPage extends SitePage{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage TapOnBack(String string) {
 
-		String finalPath = GlobalVariable.drivePath + string + GlobalVariable.string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + GlobalVariable.string2 + GlobalVariable.pathExtension;
 
 		try {
@@ -750,20 +764,20 @@ public class CategoryPage extends SitePage{
 		return this;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage VerifyCategory(String name, String string) {
 
-		String string1 = "Success";
 		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		log("Selected Category is there", LogType.STEP);
 		try {
 
 			getCommand().waitFor(2);
-			final Target Locname = new Target("Locname","//*[@class='mm-c-product-list__details']//*[contains(text(),'"+name+"')]", Target.XPATH);
-
+			final Target Locname = new Target("Locname",
+					"//*[@class='mm-c-product-list__details']//*[contains(text(),'" + name + "')]", Target.XPATH);
+			getCommand().waitForTargetPresent(Locname);
 			log("Category is verified for item :Pass", LogType.VERIFICATION_STEP);
 		}
 
@@ -778,10 +792,10 @@ public class CategoryPage extends SitePage{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage TapAdd(String string) {
-		String string1 = "Success";
+
 		String string2 = "Issue";
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		try {
@@ -806,16 +820,17 @@ public class CategoryPage extends SitePage{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage VerifyCategoryList(String categoryAdded, String string) {
-		String string1 = "Success";
+
 		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 		log("Checking addeded Location in location list", LogType.STEP);
 		try {
 
-			final Target CatAdded = new Target("CatAdded","//*[@id='list-item']//span[contains(text(),'"+categoryAdded+"')]", Target.XPATH);
+			final Target CatAdded = new Target("CatAdded",
+					"//*[@id='list-item']//span[contains(text(),'" + categoryAdded + "')]", Target.XPATH);
 
 			getCommand().waitForTargetPresent(CatAdded);
 
@@ -836,11 +851,10 @@ public class CategoryPage extends SitePage{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage TapOnEdit(String string) {
-		String string1 = "Success";
-		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String string2 = "Issue";
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 		log("Editing", LogType.STEP);
 		try {
@@ -863,11 +877,10 @@ public class CategoryPage extends SitePage{
 		return this;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage TapOnDeleteCategory(String string) {
-		String string1 = "Success";
-		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String string2 = "Issue";
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 		log("Delete cliking", LogType.STEP);
 		try {
@@ -891,11 +904,10 @@ public class CategoryPage extends SitePage{
 		return this;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage TapOnYesDelete(String string) {
-		String string1 = "Success";
-		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String string2 = "Issue";
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 		log("Deleted", LogType.STEP);
 		try {
@@ -917,17 +929,17 @@ public class CategoryPage extends SitePage{
 
 		return this;
 	}
-	
-	public CategoryPage VerifyDeletedCategoryList(String categoryAdded, String string) {
-		String string1 = "Success";
-		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+	@SuppressWarnings("rawtypes")
+	public CategoryPage VerifyDeletedCategoryList(String categoryAdded, String string) {
+
+		String string2 = "Issue";
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 		log("Checking addeded category in list", LogType.STEP);
 		try {
 
-			final Target CatAdded = new Target("LocAdded","//*[@id='list-item']//span[contains(text(),'"+categoryAdded+"')]", Target.XPATH);
+			final Target CatAdded = new Target("LocAdded",
+					"//*[@id='list-item']//span[contains(text(),'" + categoryAdded + "')]", Target.XPATH);
 
 			if (getCommand().isTargetPresent(CatAdded)) {
 
@@ -948,11 +960,9 @@ public class CategoryPage extends SitePage{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage AssignMultipleItemsToCategory(String string) {
-		String string1 = "Success";
 		String string2 = "Issue";
-
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 		try {
 
@@ -962,7 +972,6 @@ public class CategoryPage extends SitePage{
 			getCommand().waitForTargetPresent(Category_2ndItemSelect);
 			getCommand().waitForTargetPresent(Category_NonSyscoItem1Select);
 			getCommand().waitForTargetPresent(Category_NonSyscoItem2Select);
-
 
 			if (getCommand().isTargetPresent(Category_1stItemSelect)) {
 				CategoryNoOfElements1++;
@@ -1008,13 +1017,11 @@ public class CategoryPage extends SitePage{
 		return this;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage SuggestedCategories(String string) {
 		log("Selecting suggested category from Food cost page", LogType.STEP);
 
-		String string1 = "Success";
 		String string2 = "Issue";
-
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		try {
@@ -1034,7 +1041,7 @@ public class CategoryPage extends SitePage{
 		catch (Exception e) {
 			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
-			// getCommand().captureScreenshot(finalPath1);
+
 			log("Suggested category selected from food cost page :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
@@ -1042,14 +1049,14 @@ public class CategoryPage extends SitePage{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage VerifyMultipleListSyscoSuggestedCategory(String string) {
 
 		Boolean flag1 = false;
 		Boolean flag2 = false;
-		String string1 = "Success";
+
 		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		log("Category verification", LogType.STEP);
@@ -1057,15 +1064,29 @@ public class CategoryPage extends SitePage{
 
 			getCommand().waitFor(2);
 
-			if ((LocationsPage.Category1[0].equalsIgnoreCase("Meat"))|| (LocationsPage.Category1[0].equalsIgnoreCase("Groceries"))|| (LocationsPage.Category1[0].equalsIgnoreCase("Dairy"))|| (LocationsPage.Category1[0].equalsIgnoreCase("Poultry"))|| (LocationsPage.Category1[0].equalsIgnoreCase("Seafood"))|| (LocationsPage.Category1[0].equalsIgnoreCase("Produce"))|| (LocationsPage.Category1[0].equalsIgnoreCase("Beverage"))|| (LocationsPage.Category1[0].equalsIgnoreCase("Miscellaneous"))) {
+			if ((LocationsPage.Category1[0].equalsIgnoreCase("Meat"))
+					|| (LocationsPage.Category1[0].equalsIgnoreCase("Groceries"))
+					|| (LocationsPage.Category1[0].equalsIgnoreCase("Dairy"))
+					|| (LocationsPage.Category1[0].equalsIgnoreCase("Poultry"))
+					|| (LocationsPage.Category1[0].equalsIgnoreCase("Seafood"))
+					|| (LocationsPage.Category1[0].equalsIgnoreCase("Produce"))
+					|| (LocationsPage.Category1[0].equalsIgnoreCase("Beverage"))
+					|| (LocationsPage.Category1[0].equalsIgnoreCase("Miscellaneous"))) {
 				flag1 = true;
 
 			}
-			if ((LocationsPage.Category2[0].equalsIgnoreCase("Meat"))|| (LocationsPage.Category2[0].equalsIgnoreCase("Groceries"))|| (LocationsPage.Category2[0].equalsIgnoreCase("Dairy"))|| (LocationsPage.Category2[0].equalsIgnoreCase("Poultry"))|| (LocationsPage.Category2[0].equalsIgnoreCase("Seafood"))|| (LocationsPage.Category2[0].equalsIgnoreCase("Produce"))|| (LocationsPage.Category2[0].equalsIgnoreCase("Beverage"))|| (LocationsPage.Category2[0].equalsIgnoreCase("Miscellaneous"))) {
+			if ((LocationsPage.Category2[0].equalsIgnoreCase("Meat"))
+					|| (LocationsPage.Category2[0].equalsIgnoreCase("Groceries"))
+					|| (LocationsPage.Category2[0].equalsIgnoreCase("Dairy"))
+					|| (LocationsPage.Category2[0].equalsIgnoreCase("Poultry"))
+					|| (LocationsPage.Category2[0].equalsIgnoreCase("Seafood"))
+					|| (LocationsPage.Category2[0].equalsIgnoreCase("Produce"))
+					|| (LocationsPage.Category2[0].equalsIgnoreCase("Beverage"))
+					|| (LocationsPage.Category2[0].equalsIgnoreCase("Miscellaneous"))) {
 				flag2 = true;
 
 			}
-			
+
 			if (!(flag2 && flag1)) {
 				throw new Exception();
 			}
@@ -1084,14 +1105,12 @@ public class CategoryPage extends SitePage{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage VerifyPrepCustomCategory(String customcategory, String string) {
 
 		Boolean flag4 = false;
 
-		String string1 = "Success";
 		String string2 = "Issue";
-
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		log("Category verification for nonsysco", LogType.STEP);
@@ -1121,115 +1140,144 @@ public class CategoryPage extends SitePage{
 		return this;
 
 	}
-	public CategoryPage VerifyOGSyscoItemsSuggestedCategoryLocation1(String string)
-	{
-		Boolean flag3=false;
-		Boolean flag1=false;
-		Boolean flag2=false;
-		String string1="Success";
-		String string2="Issue";
-	  
-		String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-		String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-    
-		log("Category verification",LogType.STEP);
-		try{
+
+	@SuppressWarnings("rawtypes")
+	public CategoryPage VerifyOGSyscoItemsSuggestedCategoryLocation1(String string) {
+		Boolean flag3 = false;
+		Boolean flag1 = false;
+		Boolean flag2 = false;
+
+		String string2 = "Issue";
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+
+		log("Category verification", LogType.STEP);
+		try {
 
 			getCommand().waitFor(2);
-			if((LocationsPage.Category3[0].equalsIgnoreCase("Meat"))||(LocationsPage.Category3[0].equalsIgnoreCase("Groceries"))||(LocationsPage.Category3[0].equalsIgnoreCase("Dairy"))||(LocationsPage.Category3[0].equalsIgnoreCase("Poultry"))||(LocationsPage.Category3[0].equalsIgnoreCase("Seafood"))||(LocationsPage.Category3[0].equalsIgnoreCase("Produce"))||(LocationsPage.Category3[0].equalsIgnoreCase("Beverage"))||(LocationsPage.Category3[0].equalsIgnoreCase("Miscellaneous"))){
-				flag1=true;
-	  
+			if ((LocationsPage.Category3[0].equalsIgnoreCase("Meat"))
+					|| (LocationsPage.Category3[0].equalsIgnoreCase("Groceries"))
+					|| (LocationsPage.Category3[0].equalsIgnoreCase("Dairy"))
+					|| (LocationsPage.Category3[0].equalsIgnoreCase("Poultry"))
+					|| (LocationsPage.Category3[0].equalsIgnoreCase("Seafood"))
+					|| (LocationsPage.Category3[0].equalsIgnoreCase("Produce"))
+					|| (LocationsPage.Category3[0].equalsIgnoreCase("Beverage"))
+					|| (LocationsPage.Category3[0].equalsIgnoreCase("Miscellaneous"))) {
+				flag1 = true;
+
 			}
-			if((LocationsPage.Category4[0].equalsIgnoreCase("Meat"))||(LocationsPage.Category4[0].equalsIgnoreCase("Groceries"))||(LocationsPage.Category4[0].equalsIgnoreCase("Dairy"))||(LocationsPage.Category4[0].equalsIgnoreCase("Poultry"))||(LocationsPage.Category4[0].equalsIgnoreCase("Seafood"))||(LocationsPage.Category4[0].equalsIgnoreCase("Produce"))||(LocationsPage.Category4[0].equalsIgnoreCase("Beverage"))||(LocationsPage.Category4[0].equalsIgnoreCase("Miscellaneous"))){
-				flag2=true;
-	  
+			if ((LocationsPage.Category4[0].equalsIgnoreCase("Meat"))
+					|| (LocationsPage.Category4[0].equalsIgnoreCase("Groceries"))
+					|| (LocationsPage.Category4[0].equalsIgnoreCase("Dairy"))
+					|| (LocationsPage.Category4[0].equalsIgnoreCase("Poultry"))
+					|| (LocationsPage.Category4[0].equalsIgnoreCase("Seafood"))
+					|| (LocationsPage.Category4[0].equalsIgnoreCase("Produce"))
+					|| (LocationsPage.Category4[0].equalsIgnoreCase("Beverage"))
+					|| (LocationsPage.Category4[0].equalsIgnoreCase("Miscellaneous"))) {
+				flag2 = true;
+
 			}
-			if((LocationsPage.Category5[0].equalsIgnoreCase("Meat"))||(LocationsPage.Category5[0].equalsIgnoreCase("Groceries"))||(LocationsPage.Category5[0].equalsIgnoreCase("Dairy"))||(LocationsPage.Category5[0].equalsIgnoreCase("Poultry"))||(LocationsPage.Category5[0].equalsIgnoreCase("Seafood"))||(LocationsPage.Category5[0].equalsIgnoreCase("Produce"))||(LocationsPage.Category4[0].equalsIgnoreCase("Beverage"))||(LocationsPage.Category5[0].equalsIgnoreCase("Miscellaneous"))){
-				flag3=true;
-	  
+			if ((LocationsPage.Category5[0].equalsIgnoreCase("Meat"))
+					|| (LocationsPage.Category5[0].equalsIgnoreCase("Groceries"))
+					|| (LocationsPage.Category5[0].equalsIgnoreCase("Dairy"))
+					|| (LocationsPage.Category5[0].equalsIgnoreCase("Poultry"))
+					|| (LocationsPage.Category5[0].equalsIgnoreCase("Seafood"))
+					|| (LocationsPage.Category5[0].equalsIgnoreCase("Produce"))
+					|| (LocationsPage.Category4[0].equalsIgnoreCase("Beverage"))
+					|| (LocationsPage.Category5[0].equalsIgnoreCase("Miscellaneous"))) {
+				flag3 = true;
+
 			}
- 
-			if(!(flag2&&flag1&&flag3)){ 
+
+			if (!(flag2 && flag1 && flag3)) {
 				throw new Exception();
-			} 
-   
-		log("Category is verified for item :Pass",LogType.VERIFICATION_STEP);						
-	}
-	
-	
-	
-	catch(Exception e){
-		((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-		getCommand().captureScreenshot(finalPath1);
-	
-		log("Category is verified for item   :Fail",LogType.VERIFICATION_STEP);
-		Assert.assertTrue(false);
-	}
+			}
+
+			log("Category is verified for item :Pass", LogType.VERIFICATION_STEP);
+		}
+
+		catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+
+			log("Category is verified for item   :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
 		return this;
-	
-}
 
+	}
 
-	public CategoryPage VerifyOGSyscoItemsSuggestedCategoryLocation2(String string)
-	{
-		Boolean flag3=false;
-		Boolean flag1=false;
-		Boolean flag2=false;
-		String string1="Success";
-		String string2="Issue";
-	  
-		String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-		String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-    
-		log("Category verification",LogType.STEP);
-		try{
-	
+	@SuppressWarnings("rawtypes")
+	public CategoryPage VerifyOGSyscoItemsSuggestedCategoryLocation2(String string) {
+		Boolean flag3 = false;
+		Boolean flag1 = false;
+		Boolean flag2 = false;
+
+		String string2 = "Issue";
+		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+
+		log("Category verification", LogType.STEP);
+		try {
 
 			getCommand().waitFor(2);
-	
-			if((LocationsPage.Category6[0].equalsIgnoreCase("Meat"))||(LocationsPage.Category6[0].equalsIgnoreCase("Groceries"))||(LocationsPage.Category6[0].equalsIgnoreCase("Dairy"))||(LocationsPage.Category6[0].equalsIgnoreCase("Poultry"))||(LocationsPage.Category6[0].equalsIgnoreCase("Seafood"))||(LocationsPage.Category6[0].equalsIgnoreCase("Produce"))||(LocationsPage.Category6[0].equalsIgnoreCase("Beverage"))||(LocationsPage.Category6[0].equalsIgnoreCase("Miscellaneous"))){
-				flag1=true;
-	  
-			}
-			if((LocationsPage.Category7[0].equalsIgnoreCase("Meat"))||(LocationsPage.Category7[0].equalsIgnoreCase("Groceries"))||(LocationsPage.Category7[0].equalsIgnoreCase("Dairy"))||(LocationsPage.Category7[0].equalsIgnoreCase("Poultry"))||(LocationsPage.Category7[0].equalsIgnoreCase("Seafood"))||(LocationsPage.Category7[0].equalsIgnoreCase("Produce"))||(LocationsPage.Category7[0].equalsIgnoreCase("Beverage"))||(LocationsPage.Category7[0].equalsIgnoreCase("Miscellaneous"))){
-				flag2=true;
-	  
-			}
-			if((LocationsPage.Category8[0].equalsIgnoreCase("Meat"))||(LocationsPage.Category8[0].equalsIgnoreCase("Groceries"))||(LocationsPage.Category8[0].equalsIgnoreCase("Dairy"))||(LocationsPage.Category8[0].equalsIgnoreCase("Poultry"))||(LocationsPage.Category8[0].equalsIgnoreCase("Seafood"))||(LocationsPage.Category8[0].equalsIgnoreCase("Produce"))||(LocationsPage.Category8[0].equalsIgnoreCase("Beverage"))||(LocationsPage.Category8[0].equalsIgnoreCase("Miscellaneous"))){
-				flag3=true;
-	  
-			}
- 
-			
-			if(!(flag2&&flag1&&flag3)){ 
-				throw new Exception();
-			} 
-   
-  
-		log("Category is verified for item :Pass",LogType.VERIFICATION_STEP);						
-	}
-	
-	
-	
-	catch(Exception e){
-		((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-		
-		 getCommand().captureScreenshot(finalPath1); 
-		log("Category is verified for item   :Fail",LogType.VERIFICATION_STEP);
-		Assert.assertTrue(false);
-	}
-	return this;
-	
-}
 
+			if ((LocationsPage.Category6[0].equalsIgnoreCase("Meat"))
+					|| (LocationsPage.Category6[0].equalsIgnoreCase("Groceries"))
+					|| (LocationsPage.Category6[0].equalsIgnoreCase("Dairy"))
+					|| (LocationsPage.Category6[0].equalsIgnoreCase("Poultry"))
+					|| (LocationsPage.Category6[0].equalsIgnoreCase("Seafood"))
+					|| (LocationsPage.Category6[0].equalsIgnoreCase("Produce"))
+					|| (LocationsPage.Category6[0].equalsIgnoreCase("Beverage"))
+					|| (LocationsPage.Category6[0].equalsIgnoreCase("Miscellaneous"))) {
+				flag1 = true;
+
+			}
+			if ((LocationsPage.Category7[0].equalsIgnoreCase("Meat"))
+					|| (LocationsPage.Category7[0].equalsIgnoreCase("Groceries"))
+					|| (LocationsPage.Category7[0].equalsIgnoreCase("Dairy"))
+					|| (LocationsPage.Category7[0].equalsIgnoreCase("Poultry"))
+					|| (LocationsPage.Category7[0].equalsIgnoreCase("Seafood"))
+					|| (LocationsPage.Category7[0].equalsIgnoreCase("Produce"))
+					|| (LocationsPage.Category7[0].equalsIgnoreCase("Beverage"))
+					|| (LocationsPage.Category7[0].equalsIgnoreCase("Miscellaneous"))) {
+				flag2 = true;
+
+			}
+			if ((LocationsPage.Category8[0].equalsIgnoreCase("Meat"))
+					|| (LocationsPage.Category8[0].equalsIgnoreCase("Groceries"))
+					|| (LocationsPage.Category8[0].equalsIgnoreCase("Dairy"))
+					|| (LocationsPage.Category8[0].equalsIgnoreCase("Poultry"))
+					|| (LocationsPage.Category8[0].equalsIgnoreCase("Seafood"))
+					|| (LocationsPage.Category8[0].equalsIgnoreCase("Produce"))
+					|| (LocationsPage.Category8[0].equalsIgnoreCase("Beverage"))
+					|| (LocationsPage.Category8[0].equalsIgnoreCase("Miscellaneous"))) {
+				flag3 = true;
+
+			}
+
+			if (!(flag2 && flag1 && flag3)) {
+				throw new Exception();
+			}
+
+			log("Category is verified for item :Pass", LogType.VERIFICATION_STEP);
+		}
+
+		catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+
+			getCommand().captureScreenshot(finalPath1);
+			log("Category is verified for item   :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+		return this;
+
+	}
+
+	@SuppressWarnings("rawtypes")
 	public CategoryPage VerifyNonSycoCustomCategory(String customcategory, String string) {
 
 		Boolean flag3 = false;
 
-		String string1 = "Success";
 		String string2 = "Issue";
-
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		log("Category verification for nonsysco", LogType.STEP);
@@ -1259,12 +1307,10 @@ public class CategoryPage extends SitePage{
 
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
 	public CategoryPage VerifySuggestedCategoryList(String string) {
 
-		String string1 = "Success";
 		String string2 = "Issue";
-
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		log("Suggested Category list verification", LogType.STEP);
@@ -1307,14 +1353,13 @@ public class CategoryPage extends SitePage{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage VerifyCustomListItemsDefaultCategoryLocation1(String string) {
 		Boolean flag3 = false;
 		Boolean flag1 = false;
 		Boolean flag2 = false;
-		String string1 = "Success";
-		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String string2 = "Issue";
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		log("Default Category verification", LogType.STEP);
@@ -1322,15 +1367,18 @@ public class CategoryPage extends SitePage{
 
 			getCommand().waitFor(2);
 
-			if ((LocationsPage.Category3[0].equalsIgnoreCase("Food"))|| (LocationsPage.Category3[0].equalsIgnoreCase("Non-Food"))) {
+			if ((LocationsPage.Category3[0].equalsIgnoreCase("Food"))
+					|| (LocationsPage.Category3[0].equalsIgnoreCase("Non-Food"))) {
 				flag1 = true;
 
 			}
-			if ((LocationsPage.Category4[0].equalsIgnoreCase("Food"))|| (LocationsPage.Category4[0].equalsIgnoreCase("Non-Food"))) {
+			if ((LocationsPage.Category4[0].equalsIgnoreCase("Food"))
+					|| (LocationsPage.Category4[0].equalsIgnoreCase("Non-Food"))) {
 				flag2 = true;
 
 			}
-			if ((LocationsPage.Category5[0].equalsIgnoreCase("Food"))|| (LocationsPage.Category5[0].equalsIgnoreCase("Non-Food"))) {
+			if ((LocationsPage.Category5[0].equalsIgnoreCase("Food"))
+					|| (LocationsPage.Category5[0].equalsIgnoreCase("Non-Food"))) {
 				flag3 = true;
 
 			}
@@ -1353,14 +1401,13 @@ public class CategoryPage extends SitePage{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage VerifyCustomListItemsDefaultCategoryLocation2(String string) {
 		Boolean flag3 = false;
 		Boolean flag1 = false;
 		Boolean flag2 = false;
-		String string1 = "Success";
-		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String string2 = "Issue";
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		log("Default Category verification", LogType.STEP);
@@ -1384,7 +1431,6 @@ public class CategoryPage extends SitePage{
 
 			}
 
-			
 			if (!(flag2 && flag1 && flag3)) {
 				throw new Exception();
 			}
@@ -1403,14 +1449,10 @@ public class CategoryPage extends SitePage{
 
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
 	public CategoryPage VerifyDefaultCategoryList(String string) {
 
-		Boolean flag3 = false;
-
-		String string1 = "Success";
 		String string2 = "Issue";
-
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		log("Default Category list verification", LogType.STEP);
@@ -1447,12 +1489,10 @@ public class CategoryPage extends SitePage{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage VerifySuggestedCategory(String string) {
 
-		String string1 = "Success";
 		String string2 = "Issue";
-
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		try {
@@ -1483,12 +1523,10 @@ public class CategoryPage extends SitePage{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage TapAnySuggestedCategory(String string) {
 
-		String string1 = "Success";
 		String string2 = "Issue";
-
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		try {
@@ -1514,20 +1552,18 @@ public class CategoryPage extends SitePage{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage VerifySelectedSuggestedCategory(String string) {
 
-		String string1 = "Success";
 		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		try {
 
 			if (SyscoCategory1[0].equalsIgnoreCase(Selected_SuggCat1))
 				throw new Exception();
-			// log("Suggested Category is changed for item
-			// :Fail",LogType.VERIFICATION_STEP);
+
 			else
 				log("Suggested Category is changed for item :Pass", LogType.VERIFICATION_STEP);
 
@@ -1543,64 +1579,10 @@ public class CategoryPage extends SitePage{
 
 	}
 
-	/*public CategoryPage VerifyItemPresentUncategorizedAndAllItems(String string) {
-		log("Verifying added item is in  custom category - Uncategorised and All Items", LogType.STEP);
-
-		String string1 = "Success";
-		String string2 = "Issue";
-
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
-
-		try {
-			getCommand().waitFor(5);
-			getCommand().waitForTargetPresent(SetupInventoryCustomCategoryAllItemsTab);
-			getCommand().click(SetupInventoryCustomCategoryAllItemsTab);
-			getCommand().waitFor(3);
-			final Target FirstItemSelectedFromUncatgorisedVerify = new Target("FirstItemSelectedFromUncatgorised","//*[@id='mount']//*[contains(text(),'"+ItemAdded+"')]", Target.XPATH);
-
-			// System.out.println("//*[@id='mount']//*[contains(text(),'"+ItemAdded+"')]");
-			// System.out.println("TargetPresent:
-			// "+getCommand().isTargetVisible(FirstItemSelectedFromUncatgorisedVerify));
-
-			if (getCommand().isTargetPresent(FirstItemSelectedFromUncatgorisedVerify)) {
-
-				log(" Added item  is present in All Items Tab  :Pass", LogType.VERIFICATION_STEP);
-
-			}
-			getCommand().waitFor(5);
-			getCommand().waitForTargetPresent(SetupInventoryCustomCategoryUncategorizedTab);
-			getCommand().click(SetupInventoryCustomCategoryUncategorizedTab);
-
-			if (getCommand().isTargetPresent(FirstItemSelectedFromUncatgorisedVerify)) {
-				log(" Added item  is present in category Tab(Expected-Item should not be present) :Fail",
-						LogType.VERIFICATION_STEP);
-				throw new Exception();
-			} else if (!(getCommand().isTargetPresent(FirstItemSelectedFromUncatgorisedVerify))) {
-				log(" Added item  is not present in uncategorized Tab :Pass", LogType.VERIFICATION_STEP);
-			}
-
-			getCommand().waitFor(5);
-
-			log("Category is verified for nonsysco item :Pass", LogType.VERIFICATION_STEP);
-
-		}
-
-		catch (Exception e) {
-			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
-			getCommand().captureScreenshot(finalPath1);
-			log("Category is verified for nonsyco item   :Fail", LogType.VERIFICATION_STEP);
-			Assert.assertTrue(false);
-		}
-		return this;
-
-	}
-*/
+	@SuppressWarnings("rawtypes")
 	public CategoryPage VerifyOptionsOnSetUpFoodCost(String string) {
 
-		String string1 = "Success";
 		String string2 = "Issue";
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		log("Category page verify ", LogType.STEP);
@@ -1631,14 +1613,13 @@ public class CategoryPage extends SitePage{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage VerifyCustomListItemsCustomCategoryLocation1(String category, String string) {
 		Boolean flag3 = false;
 		Boolean flag1 = false;
 		Boolean flag2 = false;
-		String string1 = "Success";
-		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String string2 = "Issue";
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		log("Custom Category verification on location1", LogType.STEP);
@@ -1677,14 +1658,13 @@ public class CategoryPage extends SitePage{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage VerifyCustomListItemsCustomCategoryLocation2(String category, String string) {
 		Boolean flag3 = false;
 		Boolean flag1 = false;
 		Boolean flag2 = false;
-		String string1 = "Success";
-		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String string2 = "Issue";
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		log("Custom Category verification on location2", LogType.STEP);
@@ -1723,12 +1703,10 @@ public class CategoryPage extends SitePage{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoryPage VerifyItemPresentUncategorizedAndAllItems(String string) {
 
-		String string1 = "Success";
 		String string2 = "Issue";
-
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		try {
@@ -1745,12 +1723,11 @@ public class CategoryPage extends SitePage{
 			final Target ItemSelectedFromUncatgorisedVerify3 = new Target("FirstItemSelectedFromUncatgorised",
 					"//*[@id='mount']//*[contains(text(),'" + CategoryItemName1_4 + "')]", Target.XPATH);
 
-		
 			if (getCommand().isTargetPresent(ItemSelectedFromUncatgorisedVerify)) {
 				getCommand().waitForTargetPresent(ItemSelectedFromUncatgorisedVerify1);
 				getCommand().waitForTargetPresent(ItemSelectedFromUncatgorisedVerify2);
 				getCommand().waitForTargetPresent(ItemSelectedFromUncatgorisedVerify3);
-				
+
 				log(" Added item  is present in All Items Tab  :Pass", LogType.VERIFICATION_STEP);
 
 			}
@@ -1763,7 +1740,6 @@ public class CategoryPage extends SitePage{
 				getCommand().waitForTargetPresent(ItemSelectedFromUncatgorisedVerify2);
 				getCommand().waitForTargetPresent(ItemSelectedFromUncatgorisedVerify3);
 
-			
 				log(" Added item  is present in category Tab(Expected-Item should not be present) :Fail",
 						LogType.VERIFICATION_STEP);
 				throw new Exception();
@@ -1772,7 +1748,6 @@ public class CategoryPage extends SitePage{
 					&& (getCommand().isTargetPresent(ItemSelectedFromUncatgorisedVerify2))
 					&& (getCommand().isTargetPresent(ItemSelectedFromUncatgorisedVerify3)))) {
 
-				
 				log(" Added item  is not present in uncategorized Tab :Pass", LogType.VERIFICATION_STEP);
 			}
 
@@ -1792,8 +1767,5 @@ public class CategoryPage extends SitePage{
 		return this;
 
 	}
-	
-
-
 
 }

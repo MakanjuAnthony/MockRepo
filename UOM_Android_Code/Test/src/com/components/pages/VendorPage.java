@@ -1,87 +1,99 @@
 package com.components.pages;
 
 import java.util.Set;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.testng.Assert;
-
-
 import com.components.repository.SiteRepository;
 import com.iwaf.framework.components.IReporter.LogType;
 import com.iwaf.framework.components.Target;
 import io.appium.java_client.android.AndroidDriver;
 
+public class VendorPage extends SitePage {
 
-public class VendorPage extends SitePage{
-	
-	
+	public static final Target ADD_Vendor = new Target("ADD_Vendor", "//*[@id='add-nav']/a/i", Target.XPATH);
+	public static final Target ADD_VendorPage = new Target("ADD_VendorPage",
+			"//*[@class='navbar-brand']//*[contains(text(),'Add Supplier')]", Target.XPATH);
 
-	
-	  public static final Target ADD_Vendor= new Target("ADD_Vendor","//*[@id='add-nav']/a/i",Target.XPATH);	
-	  public static final Target  ADD_VendorPage= new Target("ADD_VendorPage","//*[@class='navbar-brand']//*[contains(text(),'Add Supplier')]",Target.XPATH);
-	  
-	  public static final Target  ADD_VendorName= new Target("ADD_VendorName","//*[@id='name']",Target.XPATH);
-	  public static final Target  ADD_VendorNumber= new Target("ADD_VendorNumber","//*[@id='phoneNumber']",Target.XPATH);
-      public static final Target  ADD_VendorAddress= new Target("ADD_VendorAddress","//*[@id='address']",Target.XPATH);
-      public static final Target  ADD_VendorContactInfo= new Target("ADD_VendorContactInfo","//*[@id='contactName']",Target.XPATH);
-      public static final Target  ADD_VendorEmail= new Target("ADD_VendorEmail","//*[@id='emailAddress']",Target.XPATH);
-      public static final Target  ADD_VendorNote= new Target("ADD_VendorNote","//*[@id='notes']",Target.XPATH);
-      public static final Target DoneWeb= new Target("Done","//*[@id='done-nav']/a/i",Target.XPATH);
-	  public static final Target Done= new Target("Done","//*[@id='done-nav']/a",Target.XPATH);
-	  public static final Target Back = new Target("Continue","//*[@id='back-nav']/a/i",Target.XPATH);
-	  public static final Target  Vendor_firstVendorname= new Target("Vendor_firstVendorname","//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIAButton[2]",Target.XPATH);
-	
- 
-      public static final Target  Edit= new Target("EditVendor","//*[@id='edit-nav']",Target.XPATH);
+	public static final Target ADD_VendorName = new Target("ADD_VendorName", "//*[@id='name']", Target.XPATH);
+	public static final Target ADD_VendorNumber = new Target("ADD_VendorNumber", "//*[@id='phoneNumber']",
+			Target.XPATH);
+	public static final Target ADD_VendorAddress = new Target("ADD_VendorAddress", "//*[@id='address']", Target.XPATH);
+	public static final Target ADD_VendorContactInfo = new Target("ADD_VendorContactInfo", "//*[@id='contactName']",
+			Target.XPATH);
+	public static final Target ADD_VendorEmail = new Target("ADD_VendorEmail", "//*[@id='emailAddress']", Target.XPATH);
+	public static final Target ADD_VendorNote = new Target("ADD_VendorNote", "//*[@id='notes']", Target.XPATH);
+	public static final Target DoneWeb = new Target("Done", "//*[@id='done-nav']/a/i", Target.XPATH);
+	public static final Target Done = new Target("Done", "//*[@id='done-nav']/a", Target.XPATH);
+	public static final Target Back = new Target("Continue", "//*[@id='back-nav']/a/i", Target.XPATH);
+	public static final Target Vendor_firstVendorname = new Target("Vendor_firstVendorname",
+			"(//*[@id='list-item'])[1]", Target.XPATH);
 
-	  public static String Name;
-	  public static final Target ADD_VendorDelete = new Target("Back","//*[@id='delete-button' and contains(text(),'Delete Supplier')]",Target.XPATH);
-	  public static final Target Delete_Yes= new Target("Back","//*[@id='yes-button' and contains(text(),'Yes, Delete')]",Target.XPATH);
-	  public static final Target Delete_Cancel= new Target("Back","//*[@id='yes-button' and contains(text(),'No, Cancel')]",Target.XPATH);
+	public static final Target Edit = new Target("EditVendor", "//*[@id='edit-nav']", Target.XPATH);
 
-	  public static final Target  VendorDetails_name= new Target("VendorDetails_name","//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[1]",Target.XPATH);
-	  public static final Target  VendorDetails_number= new Target("VendorDetails_number","//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[2]",Target.XPATH);
-	  public static final Target  VendorDetails_address= new Target("VendorDetails_address","//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[3]",Target.XPATH);
-	  public static final Target  VendorDetails_contact= new Target("VendorDetails_contact","//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[4]",Target.XPATH);
-	  public static final Target  VendorDetails_email= new Target("VendorDetails_email","//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[5]",Target.XPATH);
-	  public static final Target  VendorDetails_note= new Target("VendorDetails_note","//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[6]",Target.XPATH);
-	  public static final Target VendorsPage = new Target("VendorsPage","//*[@class='navbar-brand']//*[contains(text(),'Suppliers')]",Target.XPATH);
+	public static String Name;
+	public static final Target ADD_VendorDelete = new Target("Back",
+			"//*[@id='delete-button' and contains(text(),'Delete Supplier')]", Target.XPATH);
+	public static final Target Delete_Yes = new Target("Back",
+			"//*[@id='yes-button' and contains(text(),'Yes, Delete')]", Target.XPATH);
+	public static final Target Delete_Cancel = new Target("Back",
+			"//*[@id='yes-button' and contains(text(),'No, Cancel')]", Target.XPATH);
 
-	  public static final Target  ADD_VendorNameLabel= new Target("ADD_VendorNameLabel","//*[contains(text(),'SUPPLIER NAME')]",Target.XPATH);
-	  public static final Target  ADD_VendorNumberLabel= new Target("ADD_VendorNumberLabel","//*[contains(text(),'PHONE NUMBER')]",Target.XPATH);
-	  public static final Target  ADD_VendorAddressLabel= new Target("ADD_VendorAddress","//*[contains(text(),'ADDRESS')]",Target.XPATH);
-	  public static final Target  ADD_VendorContactInfoLabel= new Target("ADD_VendorContactInfoLabel","//*[contains(text(),'CONTACT INFORMATION')]",Target.XPATH);
-	  public static final Target  ADD_VendorEmailLabel= new Target("ADD_VendorEmailLabel","//*[contains(text(),'EMAIL ADDRESS')]",Target.XPATH);
-	  public static final Target  ADD_VendorNoteLabel= new Target("ADD_VendorNoteLabel","//*[contains(text(),'NOTE/COMMENTS')]",Target.XPATH);
-	  public static final Target  Cancel= new Target("EditVendor","//*[contains(text(),'Cancel')]",Target.XPATH);
+	public static final Target VendorDetails_name = new Target("VendorDetails_name",
+			"//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[1]",
+			Target.XPATH);
+	public static final Target VendorDetails_number = new Target("VendorDetails_number",
+			"//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[2]",
+			Target.XPATH);
+	public static final Target VendorDetails_address = new Target("VendorDetails_address",
+			"//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[3]",
+			Target.XPATH);
+	public static final Target VendorDetails_contact = new Target("VendorDetails_contact",
+			"//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[4]",
+			Target.XPATH);
+	public static final Target VendorDetails_email = new Target("VendorDetails_email",
+			"//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[5]",
+			Target.XPATH);
+	public static final Target VendorDetails_note = new Target("VendorDetails_note",
+			"//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[6]",
+			Target.XPATH);
+	public static final Target VendorsPage = new Target("VendorsPage",
+			"//*[@class='navbar-brand']//*[contains(text(),'Suppliers')]", Target.XPATH);
 
-		    
-    public VendorPage(SiteRepository repository)
-	{
+	public static final Target ADD_VendorNameLabel = new Target("ADD_VendorNameLabel",
+			"//*[contains(text(),'SUPPLIER NAME')]", Target.XPATH);
+	public static final Target ADD_VendorNumberLabel = new Target("ADD_VendorNumberLabel",
+			"//*[contains(text(),'PHONE NUMBER')]", Target.XPATH);
+	public static final Target ADD_VendorAddressLabel = new Target("ADD_VendorAddress",
+			"//*[contains(text(),'ADDRESS')]", Target.XPATH);
+	public static final Target ADD_VendorContactInfoLabel = new Target("ADD_VendorContactInfoLabel",
+			"//*[contains(text(),'CONTACT INFORMATION')]", Target.XPATH);
+	public static final Target ADD_VendorEmailLabel = new Target("ADD_VendorEmailLabel",
+			"//*[contains(text(),'EMAIL ADDRESS')]", Target.XPATH);
+	public static final Target ADD_VendorNoteLabel = new Target("ADD_VendorNoteLabel",
+			"//*[contains(text(),'NOTE/COMMENTS')]", Target.XPATH);
+	public static final Target Cancel = new Target("EditVendor", "//*[contains(text(),'Cancel')]", Target.XPATH);
+
+	public VendorPage(SiteRepository repository) {
 		super(repository);
 	}
 
 	/* Functions on the Page are defined below */
-	
-	public VendorPage atVendorPage()
-	{
-		log("Opened Vendor Page ",LogType.STEP);
+
+	public VendorPage atVendorPage() {
+		log("Opened Vendor Page ", LogType.STEP);
 		return this;
 	}
-	public VendorPage verifySupplierPage(String string)
-	{
-		log("Verify the Supplier Page",LogType.STEP);
-		
+
+	public VendorPage verifySupplierPage(String string) {
+		log("Verify the Supplier Page", LogType.STEP);
+
 		getCommand().waitForTargetPresent(VendorsPage);
 		return this;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public VendorPage Add_Supplier(String string) {
-		String string1 = "Success";
-		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String string2 = "Issue";
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 		log("Add vendor tap", LogType.STEP);
 		try {
@@ -115,13 +127,12 @@ public class VendorPage extends SitePage{
 
 		return this;
 	}
-	
+
+	@SuppressWarnings("rawtypes")
 	public VendorPage AddSupplier_Details(String name, String number, String address, String contactinfo, String email,
 			String note, String string) {
-		String string1 = "Success";
-		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String string2 = "Issue";
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 		log("Adding vendor details", LogType.STEP);
 		try {
@@ -191,11 +202,10 @@ public class VendorPage extends SitePage{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	public VendorPage TapOnDone(String string) {
-		String string1 = "Success";
-		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String string2 = "Issue";
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		try {
@@ -220,12 +230,11 @@ public class VendorPage extends SitePage{
 
 		return this;
 	}
-	
-	public VendorPage TapOnBack(String string) {
-		String string1 = "Success";
-		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+	@SuppressWarnings("rawtypes")
+	public VendorPage TapOnBack(String string) {
+
+		String string2 = "Issue";
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		try {
@@ -248,25 +257,23 @@ public class VendorPage extends SitePage{
 
 		return this;
 	}
-	
+
+	@SuppressWarnings("rawtypes")
 	public VendorPage SupplierSelect(String name, String string) {
 
-		String string1 = "Success";
 		String string2 = "Issue";
-
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		log("Selecting vendor", LogType.STEP);
 		try {
 
 			String vendorName = name;
-			
-			getCommand().waitFor(2);
-			
-			final Target VD_Vendorname = new Target("VD_Vendorname","//*[@id='list-item']//*[contains(text(),'"+vendorName+"')]",Target.XPATH);
 
-			
+			getCommand().waitFor(2);
+
+			final Target VD_Vendorname = new Target("VD_Vendorname",
+					"//*[@id='list-item']//*[contains(text(),'" + vendorName + "')]", Target.XPATH);
+
 			getCommand().click(VD_Vendorname);
 
 			log("Vendor is selected for item :Pass", LogType.VERIFICATION_STEP);
@@ -283,20 +290,18 @@ public class VendorPage extends SitePage{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	public VendorPage SuppliersList(String vendorname, String string) {
 		log("Vendor List", LogType.STEP);
-		String string1 = "Success";
-		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String string2 = "Issue";
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		try {
 
 			String y = vendorname;
 			boolean c = getCommand().getDriver().getPageSource().contains(y);
-			
-			
+
 			if (c == true) {
 
 				log("Added  vendor is listed :Pass", LogType.VERIFICATION_STEP);
@@ -310,21 +315,19 @@ public class VendorPage extends SitePage{
 			getCommand().captureScreenshot(finalPath1);
 			Assert.assertTrue(false);
 			log("Added new vendor is listed   :Fail", LogType.VERIFICATION_STEP);
-		
+
 		}
 
 		return this;
 	}
-	
-	public VendorPage Supplier_List(String string) {
-		String string1 = "Success";
-		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+	@SuppressWarnings("rawtypes")
+	public VendorPage Supplier_List(String string) {
+
+		String string2 = "Issue";
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 		log("Verifying supplier list page ", LogType.STEP);
 		try {
-			
 
 			getCommand().waitForTargetPresent(Vendor_firstVendorname);
 
@@ -342,12 +345,11 @@ public class VendorPage extends SitePage{
 		return this;
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
 	public VendorPage ViewSupplierDetails(String name, String number, String address, String contactinfo, String email,
 			String note, String string) {
-		String string1 = "Success";
-		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String string2 = "Issue";
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 		try {
 
@@ -357,9 +359,9 @@ public class VendorPage extends SitePage{
 			if (getCommand().isTargetPresent(VendorDetails_name)) {
 
 				Name = getCommand().getText(VendorDetails_name);
-				
+
 				if (Name.equals(name)) {
-					
+
 					log("view vendor name :Pass", LogType.VERIFICATION_STEP);
 				}
 			}
@@ -368,7 +370,7 @@ public class VendorPage extends SitePage{
 
 				String Num = getCommand().getText(VendorDetails_number);
 				if (Num.equals(number)) {
-					
+
 					log("view vendor no   :Pass", LogType.VERIFICATION_STEP);
 				}
 			}
@@ -377,7 +379,7 @@ public class VendorPage extends SitePage{
 
 				String Address = getCommand().getText(VendorDetails_address);
 				if (Address.equals(address)) {
-					
+
 					log("view vendor Address   :Pass", LogType.VERIFICATION_STEP);
 				}
 			}
@@ -386,7 +388,7 @@ public class VendorPage extends SitePage{
 
 				String Contact = getCommand().getText(VendorDetails_contact);
 				if (Contact.equals(contactinfo)) {
-				
+
 					log("view vendor Contact   :Pass", LogType.VERIFICATION_STEP);
 				}
 			}
@@ -395,7 +397,7 @@ public class VendorPage extends SitePage{
 
 				String Email = getCommand().getText(VendorDetails_email);
 				if (Email.equals(email)) {
-					
+
 					log("view vendor Email   :Pass", LogType.VERIFICATION_STEP);
 				}
 			}
@@ -404,7 +406,7 @@ public class VendorPage extends SitePage{
 
 				String Note = getCommand().getText(VendorDetails_note);
 				if (Note.equals(note)) {
-					
+
 					log("view vendor Note  :Pass", LogType.VERIFICATION_STEP);
 				}
 			}
@@ -416,8 +418,7 @@ public class VendorPage extends SitePage{
 				System.out.println(contextNames);
 			}
 			System.out.println(((AndroidDriver) getCommand().driver).context((String) contextNames.toArray()[1]));
-		} 
-		catch (Exception e) {
+		} catch (Exception e) {
 
 			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
@@ -429,13 +430,12 @@ public class VendorPage extends SitePage{
 		return this;
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
 	public VendorPage AddedVendorDetails(String vendorname, String number, String address, String contactinfo,
 			String email, String note, String string) {
 		log("Checking vendor details", LogType.STEP);
-		String string1 = "Success";
-		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String string2 = "Issue";
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 		try {
 			String vendorName = vendorname;
@@ -501,13 +501,13 @@ public class VendorPage extends SitePage{
 		return this;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public VendorPage DeleteSupplier(String string) {
 
 		log("Delete a vendor", LogType.STEP);
-		String string1 = "Success";
+
 		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 		try {
 
@@ -542,11 +542,10 @@ public class VendorPage extends SitePage{
 		return this;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public VendorPage TapOnEdit(String string) {
-		String string1 = "Success";
-		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String string2 = "Issue";
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		try {
@@ -571,12 +570,10 @@ public class VendorPage extends SitePage{
 		return this;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public VendorPage VerifyDeletedSupplier(String name, String string) {
 
-		String string1 = "Success";
 		String string2 = "Issue";
-
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		log("Selecting vendor", LogType.STEP);
@@ -586,7 +583,8 @@ public class VendorPage extends SitePage{
 
 			getCommand().waitFor(2);
 
-			final Target VD_Vendorname = new Target("VD_Vendorname","//*[@id='list-item']//*[contains(text(),'"+vendorName+"')]", Target.XPATH);
+			final Target VD_Vendorname = new Target("VD_Vendorname",
+					"//*[@id='list-item']//*[contains(text(),'" + vendorName + "')]", Target.XPATH);
 
 			Boolean flag = getCommand().isTargetPresent(VD_Vendorname);
 			if ((flag)) {
@@ -602,7 +600,6 @@ public class VendorPage extends SitePage{
 
 			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
-			// getCommand().captureScreenshot(finalPath1);
 			log("Deleted supplier is not listed on supplier page :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
@@ -610,21 +607,19 @@ public class VendorPage extends SitePage{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	public VendorPage SupplierCancelledVerify(String name, String string) {
 
-		String string1 = "Success";
 		String string2 = "Issue";
-
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		log("Searching for cancelled supplier", LogType.STEP);
 		try {
 
 			String vendorName = name;
-			
 
-			final Target VD_Vendorname = new Target("VD_Vendorname","//*[@id='list-item']//*[contains(text(),'"+vendorName+"')]", Target.XPATH);
+			final Target VD_Vendorname = new Target("VD_Vendorname",
+					"//*[@id='list-item']//*[contains(text(),'" + vendorName + "')]", Target.XPATH);
 
 			getCommand().waitFor(6);
 			if (getCommand().isTargetPresent(VD_Vendorname)) {
@@ -644,11 +639,10 @@ public class VendorPage extends SitePage{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	public VendorPage TapOnCancel(String string) {
-		String string1 = "Success";
-		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
+		String string2 = "Issue";
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		try {
@@ -673,4 +667,3 @@ public class VendorPage extends SitePage{
 	}
 
 }
-

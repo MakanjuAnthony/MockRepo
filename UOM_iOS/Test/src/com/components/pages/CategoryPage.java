@@ -3,8 +3,9 @@
 		 ********************************************************************************************************************************************
 		 ********************************************************************************************************************************************
 		 *																																		   	*
-		 * 2011-2012 Infosys Limited, Banglore, India. All Rights Reserved																			*
-		 * Version: 2.0																																*
+		 * 2016-2017 Infosys Limited, Banglore, India. All Rights Reserved																			*
+
+		 * Version: 1.0																																*
 		 * 																																			*
 		 * Except for any free or open source software components embedded in this Infosys proprietary software program ("Program"),				*
 		 * this Program is protected by copyright laws, international treaties and other pending or existing intellectual property rights in India, *
@@ -17,24 +18,14 @@
 		 ********************************************************************************************************************************************
 		 **/
 		package com.components.pages;
-		
 		import java.util.Set;
-		import java.util.UUID;
-		
 		import org.testng.Assert;
-		
 		import com.components.repository.SiteRepository;
 		import com.iwaf.framework.components.IReporter.LogType;
 		import com.iwaf.framework.components.Target;
 		import io.appium.java_client.android.AndroidDriver;
 		import io.appium.java_client.ios.IOSDriver;
-		
 		public class CategoryPage extends SitePage{
-		
-			
-			
-			
-		
 			public static final Target Continue = new Target("Continue","//*[@class='btn btn-default' and contains(text(),'Continue')]",Target.XPATH);
 			public static final Target Header= new Target("Category_Header","//*[@id='mount']/div/div/div[2]/nav/div/div/span/h3",Target.XPATH);
 			public static final Target Category_FirstItemSelect= new Target("Category_FirstItemSelect","//*[@class='checkbox']//*[@class='mm-o-icon']//*[@class='item-input'and @data-index='0']",Target.XPATH);
@@ -145,16 +136,12 @@
 				
 			  	return this;
 			}
-		
+			
+			@SuppressWarnings("rawtypes")
 			public CategoryPage CustomCategories(String string)
 			{
-				
-				  String string1="Success";
-				  String string2="Issue";
-		         
-		          String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
+				  String string2="Issue"; 
 		          String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-				
 		          try{
 		        	 	getCommand().waitForTargetPresent(FoodAndNonFood);
 						
@@ -164,13 +151,9 @@
 						{
 							getCommand().click(CustomCategories);
 							  
-							log("Custom Category selected from Food cost page :Pass",LogType.VERIFICATION_STEP);
-							
+							log("Custom Category selected from Food cost page :Pass",LogType.VERIFICATION_STEP);	
 						}
-						
 		          }
-				
-			
 				catch(Exception e){
 					((IOSDriver)getCommand().driver).context("NATIVE_APP");
 					getCommand().captureScreenshot(finalPath1); 
@@ -180,17 +163,13 @@
 				return this;
 				
 			}
+			@SuppressWarnings("rawtypes")
 			 public CategoryPage tapContinue(String string){
-				  String string1="Success";
 				  String string2="Issue";
-				   String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 			       String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 			     	try{
-			     		getCommand().waitForTargetPresent(Continue);
+			     	getCommand().waitForTargetPresent(Continue);
 					getCommand().click(Continue);
-					
-						
-					
 					log("Tapped on Continue :Pass",LogType.VERIFICATION_STEP);
 				}
 				
@@ -199,40 +178,30 @@
 					getCommand().captureScreenshot(finalPath1);
 					log("Tapped on Continue :Fail",LogType.VERIFICATION_STEP);
 					Assert.assertTrue(false);
-		
 				}
-				
 				return this;
-				
 			}
+			
+			@SuppressWarnings("rawtypes")
 			 public CategoryPage CategoryDetails(String Name, String string)
 			 {
 			 	log("Creating custom category",LogType.STEP);
-			 	  String string1="Success";
 			 	  String string2="Issue";
-			 	   String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 			       String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-			      	
 			       String name=Name;
 			       try{
 			 		getCommand().waitForTargetPresent(ExpenseCategory_Page);
-			 		
 			 		getCommand().waitForTargetPresent(ExpenseCategory_Name);
-			 		
 			 		if(getCommand().isTargetPresent(ExpenseCategory_Name))
 			 		{
 			 			getCommand().click(ExpenseCategory_Name);
 			 			getCommand().sendKeys(ExpenseCategory_Name, name);
-			 			
-			 			
-			 				getCommand().waitForTargetPresent(ExpenseCategory_Food);
-			 				getCommand().click(ExpenseCategory_Food);
+			 			getCommand().waitForTargetPresent(ExpenseCategory_Food);
+			 			getCommand().click(ExpenseCategory_Food);
 			 				
 			 		}
 			 				log("Custom category created  :Pass",LogType.VERIFICATION_STEP);	
 			 	}
-			 	
-		
 			 	catch(Exception e){
 			 		((IOSDriver)getCommand().driver).context("NATIVE_APP");
 			 		getCommand().captureScreenshot(finalPath1); 
@@ -242,25 +211,20 @@
 			 	return this;
 			 	
 			 }
+			
+			@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
 			  public CategoryPage TapOnNext(String string){
-			       	String string1="Success";
 			       	  String string2="Issue";
-		
-			       String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 			       String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-		
 			       	try{
 			       		((IOSDriver)getCommand().driver).context("NATIVE_APP");
-			       		
 			       			getCommand().waitForTargetPresent(Next);
 			       		if (getCommand().isTargetPresent(Next))
 			       		{
-			       			
 			       			getCommand().click(Next);
 			       			log("Tapped on Next : Pass",LogType.VERIFICATION_STEP);
-			       				getCommand().captureScreenshot(finalPath);
 			       		}
-			       	 Set<String> contextNames =((IOSDriver)getCommand().driver).getContextHandles();
+					Set<String> contextNames =((IOSDriver)getCommand().driver).getContextHandles();
 			    	  for (String contextName : contextNames){
 			    			System.out.println(contextNames);
 			    			}
@@ -273,48 +237,29 @@
 			       		getCommand().captureScreenshot(finalPath1);
 			       		Assert.assertTrue(false);
 			       	}
-			       	
 			       	return this;
 			       }
+			@SuppressWarnings({ "rawtypes", "unused", "unchecked" })
 			  public CategoryPage SelectItemFromCategory(String name,String string) { 
-			    	log("Selecting item to custom category created",LogType.STEP); 
-			    	String string1="Success";
+			    	log("Selecting item to custom category created",LogType.STEP); ;
 			    	String string2="Issue";
-			    	String string3="Page"; 
-			    	String string4="Success1";
-			    	String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension; 
 			    	String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-			    	String finalPath2=GlobalVariable.drivePath+string+string3+GlobalVariable.pathExtension;
-			    	String finalPath3=GlobalVariable.drivePath+string+string4+GlobalVariable.pathExtension;
 			    	try{ 
-			    	    getCommand().waitFor(5);
-			    	
+			    	getCommand().waitFor(5);
 			    	getCommand().waitForTargetPresent(Header);
-			    	 
 			    	CategoryName= getCommand().getText(Header);
-			    	System.out.println("heading:"+CategoryName); 
-			    	
-			    	 
-			    		    	getCommand().waitFor(5);
+			    	getCommand().waitFor(5);
 			    	if(getCommand().isTargetPresent(Category_FirstItemSelect)) {
 			    		getCommand().waitFor(5);
 			    		getCommand().click(Category_FirstItemSelect); 
 			    		ItemNameSelected=getCommand().getText(Category_FirstItemHeader); 
-			    		System.out.println("Item heading:"+ItemNameSelected); 
-			    		
-			    		 
+			    		System.out.println("Item heading:"+ItemNameSelected); 			    		
 			    		log("First item selected :Pass",LogType.VERIFICATION_STEP); 
 			    		} 
-			    	
-			    	
 			    	((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
-			    	 getCommand().captureScreenshot(finalPath);
-			    	
-			    	 
-			    	if(getCommand().isTargetPresent(Done)) { 
+			    	 if(getCommand().isTargetPresent(Done)) { 
 			    		getCommand().click(Done); 
-			    		
-			    		Set<String> contextNames =((IOSDriver)getCommand().driver).getContextHandles();
+						Set<String> contextNames =((IOSDriver)getCommand().driver).getContextHandles();
 				    	  for (String contextName : contextNames){
 				    			System.out.println(contextNames);
 				    			}
@@ -325,33 +270,20 @@
 			    		log("First item added to category created :Passed",LogType.VERIFICATION_STEP); 
 			    		
 			    		}
-			    	
-			    	
 			    	else { 
-			    		
-			    		System.out.println("second item");
-			    		
-			    		if(getCommand().isTargetPresent(Next)) { 
+			    			if(getCommand().isTargetPresent(Next)) { 
 			    			getCommand().click(Next);
-			    			System.out.println("clicked Next");
 			    			log("Second Category Page available :Pass",LogType.VERIFICATION_STEP);
 			    			  Set<String> contextNames2 =((IOSDriver)getCommand().driver).getContextHandles();
 			    	    	  for (String contextName : contextNames2){
 			    	    			System.out.println(contextNames2);
 			    	    			}
 			    	    	System.out.println(((IOSDriver)getCommand().driver).context((String) contextNames2.toArray()[1]));
-		
 			    	    	getCommand().waitForTargetPresent(Header).getText(Header).equalsIgnoreCase(name);
-			    			
 			    			getCommand().click(SecondCategory_FirstItemSelect); 
-			    			System.out.println("item selected for second category");
-			    			log("First item selected in second category:Pass",LogType.VERIFICATION_STEP); 
-			    			
+			    			log("First item selected in second category:Pass",LogType.VERIFICATION_STEP); 		    			
 			    			((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
-			    			 getCommand().captureScreenshot(finalPath3); 
-			    			 
 			    				getCommand().click(Done); 
-			    			System.out.println("done");
 			    			  Set<String> contextNames3 =((IOSDriver)getCommand().driver).getContextHandles();
 			    	    	  for (String contextName : contextNames3){
 			    	    			System.out.println(contextNames3);
@@ -361,9 +293,7 @@
 			    				getCommand().waitForTargetPresent(InvToolsPg);
 			    			 log("Item added to Second Category :Pass",LogType.VERIFICATION_STEP);	
 			    			} 
-			    		  
 			    		}
-			    	
 			    	} 
 			    	catch(Exception e){ 
 			    		((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
@@ -374,15 +304,11 @@
 			    	return this; 
 			    	
 			    }
-		
+			@SuppressWarnings("rawtypes")
 			  public CategoryPage defaultCategories(String string)
 				{
 					log("Selecting default category from Food cost page",LogType.STEP);
-					
-					  String string1="Success";
 					  String string2="Issue";
-			         
-			          String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 			          String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 					
 			          try{
@@ -397,9 +323,7 @@
 							}
 							
 			          }
-					
-				
-					catch(Exception e){
+			          catch(Exception e){
 						((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
 						getCommand().captureScreenshot(finalPath1); 
 						log("default category selected from food cost page :Fail",LogType.VERIFICATION_STEP);
@@ -408,21 +332,17 @@
 					return this;
 					
 				}
-			  public CategoryPage tapComplete(String string){
-				  String string1="Success";
+			  @SuppressWarnings("rawtypes")
+			public CategoryPage tapComplete(String string){
 				  String string2="Issue";
-				   String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 			       String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 			     	try{
-			     		
-			     		
-						getCommand().waitForTargetPresent(Complete);
+			     		getCommand().waitForTargetPresent(Complete);
 					getCommand().click(Complete);
 					
 					
 					log("Tapped on Complete :Pass",LogType.VERIFICATION_STEP);
 				}
-				
 				catch(Exception e)
 				{
 					((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
@@ -434,13 +354,10 @@
 				
 				return this;
 				
-			}      
-			  
-			  
-			  public CategoryPage CreateTwoExpenseCategory(String Name1,String Name2,String string) {
+			}       
+			  @SuppressWarnings("rawtypes")
+			public CategoryPage CreateTwoExpenseCategory(String Name1,String Name2,String string) {
 			       	log("Creating multiple custom category",LogType.STEP); 
-			       	
-			       	String finalPath=GlobalVariable.drivePath+string+GlobalVariable.string1+GlobalVariable.pathExtension; 
 			       	String finalPath1=GlobalVariable.drivePath+string+GlobalVariable.string2+GlobalVariable.pathExtension;
 			       	 
 			       	try{ 
@@ -456,22 +373,13 @@
 			  
 			       		getCommand().waitForTargetPresent(ExpenseCategory_Food);
 			       		getCommand().click(ExpenseCategory_Food); 
-			       		
-			       		
-		//	       		getCommand().waitForTargetPresent(ExpenseCategory_AnotherCategory);
+
 			       		if(getCommand().isTargetPresent(ExpenseCategory_AnotherCategory)) { 
 			       			
-			       			getCommand().click(ExpenseCategory_AnotherCategory); 
-			                      System.out.println("clicked second category");
-			                     
-			       			
+			       			getCommand().click(ExpenseCategory_AnotherCategory);
 			                    }
-			       	
-			   ///TODO
-			       	
-			       	System.out.println("entering second name");
+
 			       		if(getCommand().isTargetPresent(ExpenseCategory_Name1)) {
-			       			System.out.println("second category");
 			       			getCommand().click(ExpenseCategory_Name1);
 			       			getCommand().sendKeys(ExpenseCategory_Name1, Name2); 
 			       			
@@ -497,15 +405,13 @@
 			       return this;
 			       	}  
 		
-			  public CategoryPage CustomCategory_ItemSelectAndCheck(String string)
+			  @SuppressWarnings("rawtypes")
+			public CategoryPage CustomCategory_ItemSelectAndCheck(String string)
 			   	{
 			   		log("Verifying added item is in  custom category - Uncategorised and All Items",LogType.STEP);
-			   		
-			   		  String string1="Success";
+
 			   		  String string2="Issue";
-			   		 
-			             String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-			             String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
+			   		  String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 			            
 			   			
 			             try{
@@ -514,33 +420,22 @@
 			           	  getCommand().waitForTargetPresent(Category_Header);
 			            	 
 			             	CategoryName= getCommand().getText(Category_Header);
-			             	System.out.println("headeing:"+CategoryName); 
+
 			             	
 			             		    	getCommand().waitFor(5);
 			             	if(getCommand().isTargetPresent(Category_FirstItemSelect)) {
 			             		getCommand().waitFor(5);
 			             		getCommand().click(Category_FirstItemSelect); 
 			             		ItemAdded=getCommand().getText(Category_FirstItemHeader); 
-			             		System.out.println("Item heading:"+ItemAdded); 
-			             		
-			             		
 			             		log("First item selected",LogType.VERIFICATION_STEP); 
 			             		} 
 			             	
-			           	  
-			           	  
-			          
 			   		       getCommand().waitFor(5);	
 			   		       getCommand().waitForTargetPresent(SetupInventoryCustomCategoryAllItemsTab);
 			   		       getCommand().click(SetupInventoryCustomCategoryAllItemsTab);
 			   		       getCommand().waitFor(3);
 			   		       final Target  FirstItemSelectedFromUncatgorisedVerify= new Target("FirstItemSelectedFromUncatgorised","//*[@id='mount']//*[contains(text(),'"+ItemAdded+"')]",Target.XPATH);
-			   			   
-			   		      System.out.println("//*[@id='mount']//*[contains(text(),'"+ItemAdded+"')]");
-			   		       System.out.println("TargetPresent: "+getCommand().isTargetVisible(FirstItemSelectedFromUncatgorisedVerify));
-			   		       
 			   		       if (getCommand().isTargetPresent(FirstItemSelectedFromUncatgorisedVerify)) {
-			   				System.out.println("Selected item is present in All Items Tab : Pass");
 			   				log(" Added item  is present in All Items Tab  :Pass",LogType.VERIFICATION_STEP);
 			   				
 			   			}
@@ -550,12 +445,10 @@
 			   		     
 			   		      		       
 			   		       if (getCommand().isTargetPresent(FirstItemSelectedFromUncatgorisedVerify)) {
-			   					System.out.println("Added item  is present in uncategorized Tab(Expected-Item should not be present) :Fail");
 			   					log(" Added item  is present in category Tab(Expected-Item should not be present) :Fail",LogType.VERIFICATION_STEP);
 			   					throw new Exception();
 			   				}
 			   		       else if (!(getCommand().isTargetPresent(FirstItemSelectedFromUncatgorisedVerify))) {
-			   		    	   System.out.println("Added item  is not present in uncategorized Tab :Pass");
 			   					log(" Added item  is not present in uncategorized Tab :Pass",LogType.VERIFICATION_STEP);
 			   			}
 			   		       
@@ -573,15 +466,12 @@
 			   		return this;
 			   		
 			   	}	
-			  public CategoryPage selectMultipleItemsFromCategory1(String string) {
-			   	   	 String string1="Success";
+			  @SuppressWarnings("rawtypes")
+			public CategoryPage selectMultipleItemsFromCategory1(String string) {
 			   	   	  String string2="Issue";
-			   	   	  
-			   	     String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 			   	     String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 			   	      try{
-		
-			   	   
+
 			 	      	getCommand().waitForTargetPresent(Category_1stItemSelect);
 			 	      	
 			   	   		if(getCommand().isTargetPresent(Category_1stItemSelect))
@@ -589,7 +479,6 @@
 			   	   		CategoryNoOfElements1++;
 			   	   	CategoryItemName1_1=getCommand().getText(Category_1stItemHeading);
 			   	   			getCommand().click(Category_1stItemSelect);
-			   	   			System.out.println("Item heading:"+CategoryItemName1_1);
 			   	   			
 			   	   		}
 			   	   		if(getCommand().isTargetPresent(Category_2ndItemSelect)){
@@ -597,18 +486,13 @@
 			   	   		CategoryNoOfElements1++;
 			   	   	CategoryItemName1_2=getCommand().getText(Category_2ndItemHeading);
 			   	   			getCommand().click(Category_2ndItemSelect);
-			   	   			System.out.println("Item heading:"+CategoryItemName1_2);
 			   	   		}
 			   	   			
 			   	   		if(getCommand().isTargetPresent(Category_3rdItemSelect)){	
 			   	   		CategoryNoOfElements1++;
 			   	   	CategoryItemName1_3=getCommand().getText(Category_3rdItemHeading);
 			   	   			getCommand().click(Category_3rdItemSelect);
-			   	   			System.out.println("Item heading:"+CategoryItemName1_3);
 			   	   		}
-			   	   			
-			   	   			
-			   	   				System.out.println("3 items selected :Pass");
 			   	   			log("Multiple items selected :Pass",LogType.VERIFICATION_STEP); 			
 			   	   		}
 			   	   	
@@ -620,15 +504,12 @@
 			   	   	}
 			   	      return this;
 			   	   }
-			        public CategoryPage selectMultipleItemsFromCategory2(String string) {
-			      	   	 String string1="Success";
+			        @SuppressWarnings("rawtypes")
+					public CategoryPage selectMultipleItemsFromCategory2(String string) {
 			      	   	  String string2="Issue";
-			      	   	  
-			      	     String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 			      	     String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 			      	      try{
 		
-			      	   		
 			    	      	getCommand().waitForTargetPresent(Category_1stItemSelect);
 			    	      	
 			      	   		if(getCommand().isTargetPresent(Category_1stItemSelect))
@@ -636,7 +517,6 @@
 			      	   		CategoryNoOfElements1++;
 			      	   	CategoryItemName2_1=getCommand().getText(Category_1stItemHeading);
 			      	   			getCommand().click(Category_1stItemSelect);
-			      	   			System.out.println("Item heading:"+CategoryItemName2_1);
 			      	   			
 			      	   		}
 			      	   		if(getCommand().isTargetPresent(Category_2ndItemSelect)){
@@ -644,19 +524,13 @@
 			      	   		CategoryNoOfElements1++;
 			      	   	CategoryItemName2_2=getCommand().getText(Category_2ndItemHeading);
 			      	   			getCommand().click(Category_2ndItemSelect);
-			      	   			System.out.println("Item heading:"+CategoryItemName2_2);
 			      	   		}
 			      	   			
 			      	   		if(getCommand().isTargetPresent(Category_3rdItemSelect)){	
 			      	   		CategoryNoOfElements1++;
 			      	   	CategoryItemName2_3=getCommand().getText(Category_3rdItemHeading);
 			      	   			getCommand().click(Category_3rdItemSelect);
-			      	   			System.out.println("Item heading:"+CategoryItemName2_3);
 			      	   		}
-			      	   			
-			      	   			
-			      	   		
-			      	   				System.out.println("3 items selected :Pass");
 			      	   			log("Multiple items selected :Pass",LogType.VERIFICATION_STEP); 			
 			      	   		}
 			      	   	
@@ -668,14 +542,11 @@
 			      	   	}
 			      	      return this;
 			      	   }
-			    
-		
-		
+
+		@SuppressWarnings("rawtypes")
 		public CategoryPage AddCategoryName(String categoryName,String string)
 		   	{
-		   		String string1="Success";
 		   		String string2="Issue";   
-		   		String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 		   		String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;	
 		   		
 		   		try{
@@ -698,21 +569,17 @@
 		   		return this;
 		   		
 		   	}
-		   public CategoryPage AddCategoryFood(String string)
+		   @SuppressWarnings({ "rawtypes", "unchecked", "unused" })
+		public CategoryPage AddCategoryFood(String string)
 		   	{
-		   		String string1="Success";
 		   		String string2="Issue";   
-		   		String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 		   		String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;	
 		   		
 		   		try{
-		   			
-		   		
-		   			((IOSDriver)getCommand().driver).context("NATIVE_APP");
+		  			((IOSDriver)getCommand().driver).context("NATIVE_APP");
 		
-		   					getCommand().waitForTargetPresent(AddCategory_Food);
+		   			getCommand().waitForTargetPresent(AddCategory_Food);
 		   		    getCommand().click(AddCategory_Food);
-		   		    System.out.println("selected food");
 		   			 Set<String> contextNames = ((IOSDriver)getCommand().driver).getContextHandles();
 					
 				 for (String contextName : contextNames){
@@ -737,6 +604,7 @@
 		   	}
 		
 		
+		@SuppressWarnings({ "unchecked", "unused", "rawtypes" })
 		public CategoryPage TapOnDone(String string){
 		    	String string1="Success";
 		    	  String string2="Issue";
@@ -778,12 +646,9 @@
 		    }
 		
 		
+		@SuppressWarnings("rawtypes")
 		public CategoryPage SelectCategory(String name,String string)
 		{
-			
-		
-			  
-		    String finalPath=GlobalVariable.drivePath+string+GlobalVariable.string1+GlobalVariable.pathExtension;
 		    String finalPath1=GlobalVariable.drivePath+string+GlobalVariable.string2+GlobalVariable.pathExtension;
 		    
 			log("Selecting Category",LogType.STEP);
@@ -809,10 +674,8 @@
 		}
 		
 		
+		@SuppressWarnings("rawtypes")
 		public CategoryPage TapOnBack(String string){
-				
-		
-			String finalPath=GlobalVariable.drivePath+string+GlobalVariable.string1+GlobalVariable.pathExtension;
 			String finalPath1=GlobalVariable.drivePath+string+GlobalVariable.string2+GlobalVariable.pathExtension;
 		
 				try{
@@ -839,14 +702,10 @@
 		
 		
 		
+		@SuppressWarnings("rawtypes")
 		public CategoryPage VerifyCategory(String name,String string)
 		{
-			
-		
-			  String string1="Success";
-			  String string2="Issue";
-			  
-		    String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
+			String string2="Issue";
 		    String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 		    
 			log("Selected Category is there",LogType.STEP);
@@ -854,15 +713,12 @@
 			
 			
 		 getCommand().waitFor(2);
-			final Target  Locname= new Target("Locname","//*[@class='mm-c-product-list__details']//*[contains(text(),'"+name+"')]",Target.XPATH);   
-			   
-			
+			final Target  Locname= new Target("Locname","//*[@class='mm-c-product-list__details']//*[contains(text(),'"+name+"')]",Target.XPATH);    
+			getCommand().waitForTargetPresent(Locname);
 				log("Category is verified for item :Pass",LogType.VERIFICATION_STEP);						
 			}
 			
-			
-			
-			catch(Exception e){
+				catch(Exception e){
 				((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
 				 getCommand().captureScreenshot(finalPath1); 
 				log("Category is verified for item   :Fail",LogType.VERIFICATION_STEP);
@@ -871,30 +727,22 @@
 			return this;
 			
 		}
-		
-		
-		
+
+		@SuppressWarnings("rawtypes")
 		public CategoryPage TapAdd(String string)
 		{
-		String string1="Success";
 		String string2="Issue";   
-		String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 		String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;	
 		
 		try{
-		
-		
 		getCommand().waitForTargetPresent(AddWeb);
 		if(getCommand().isTargetPresent(AddWeb))
 		{
 			getCommand().click(AddWeb);
-		
-			
 			log("Navigating to Add categories page :Pass",LogType.VERIFICATION_STEP);	
 		
 		}
-		
-		
+
 		}
 		catch(Exception e)
 		{
@@ -908,11 +756,9 @@
 		
 		}
 		
+		@SuppressWarnings("rawtypes")
 		public  CategoryPage VerifyCategoryList(String categoryAdded,String string){
-		String string1="Success";
 		String string2="Issue";
-		
-		String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 		String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 		log("Checking addeded Location in location list",LogType.STEP);
 		try{	
@@ -920,9 +766,7 @@
 		final Target  CatAdded= new Target("CatAdded","//*[@id='list-item']//span[contains(text(),'"+categoryAdded+"')]",Target.XPATH);   
 		
 		getCommand().waitForTargetPresent(CatAdded);
-		System.out.println("got target");
 		if (getCommand().isTargetPresent(CatAdded)) {
-			System.out.println("category there");
 			log("Added Category is listed :Pass",LogType.VERIFICATION_STEP);
 		}
 		
@@ -940,11 +784,9 @@
 		
 		}
 		
+		@SuppressWarnings("rawtypes")
 		public CategoryPage TapOnEdit(String string){
-		String string1="Success";
 		String string2="Issue";
-		
-		String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 		String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 		
 		try{
@@ -969,11 +811,10 @@
 		return this;
 		}
 		
+		@SuppressWarnings("rawtypes")
 		public CategoryPage TapOnDeleteCategory(String string){
-		String string1="Success";
 		String string2="Issue";
-		
-		String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
+
 		String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 		
 		try{
@@ -1000,11 +841,9 @@
 		return this;
 		}
 		
+		@SuppressWarnings("rawtypes")
 		public CategoryPage TapOnYesDelete(String string){
-			String string1="Success";
 			  String string2="Issue";
-		
-		String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 		String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 		log("Deleted",LogType.STEP);
 			try{
@@ -1029,11 +868,9 @@
 			
 			return this;
 		}
+		@SuppressWarnings("rawtypes")
 		public  CategoryPage VerifyDeletedCategoryList(String categoryAdded,String string){
-		String string1="Success";
 		String string2="Issue";
-		
-		String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 		String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 		
 		try{	
@@ -1060,11 +897,9 @@
 		}  	
 		
 		
+		@SuppressWarnings("rawtypes")
 		public CategoryPage AssignMultipleItemsToCategory(String string) {
-		String string1="Success";
 		 String string2="Issue";
-		 
-		String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 		String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 		try{
 		
@@ -1079,7 +914,6 @@
 			CategoryNoOfElements1++;
 			CategoryItemName1_1=getCommand().getText(Category_1stItemHeading);
 				getCommand().click(Category_1stItemSelect);
-				System.out.println("Item heading:"+CategoryItemName1_1);
 				
 			}
 			if(getCommand().isTargetPresent(Category_2ndItemSelect)){
@@ -1087,25 +921,19 @@
 			CategoryNoOfElements1++;
 		CategoryItemName1_2=getCommand().getText(Category_2ndItemHeading);
 				getCommand().click(Category_2ndItemSelect);
-				System.out.println("Item heading:"+CategoryItemName1_2);
 			}
 				
 			if(getCommand().isTargetPresent(Category_NonSyscoItem1Select)){	
 			CategoryNoOfElements1++;
 		CategoryItemName1_3=getCommand().getText(Category_3rdItemHeading);
 				getCommand().click(Category_NonSyscoItem1Select);
-				System.out.println("Item heading:"+CategoryItemName1_3);
 			}
 				
 			if(getCommand().isTargetPresent(Category_NonSyscoItem2Select)){	
 				CategoryNoOfElements1++;
 			CategoryItemName1_4=getCommand().getText(Category_4thItemHeading);
 					getCommand().click(Category_NonSyscoItem2Select);
-					System.out.println("Item heading:"+CategoryItemName1_4);
 				}	
-				
-				
-					System.out.println("4 items selected :Pass");
 				log("Multiple items selected :Pass",LogType.VERIFICATION_STEP); 			
 			}
 		
@@ -1117,17 +945,13 @@
 		}
 		return this;
 		}
-		
-		
-		
+
+		@SuppressWarnings("rawtypes")
 		public CategoryPage SuggestedCategories(String string)
 		{
 			log("Selecting suggested category from Food cost page",LogType.STEP);
-			
-			  String string1="Success";
+
 			  String string2="Issue";
-		     
-		      String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 		      String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 			
 		      try{
@@ -1158,15 +982,13 @@
 		}
 		
 		
+		@SuppressWarnings("rawtypes")
 		public CategoryPage VerifyMultipleListSyscoSuggestedCategory(String string)
 		{
 			
 			 Boolean flag1=false;
 			 Boolean flag2=false;
-			  String string1="Success";
 			  String string2="Issue";
-			  
-		    String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 		    String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 		    
 			
@@ -1174,9 +996,6 @@
 			
 			
 		 getCommand().waitFor(2);
-			System.out.println(LocationsPage.Category1[0]);
-			System.out.println(LocationsPage.Category2[0]);
-			
 		 if((LocationsPage.Category1[0].equalsIgnoreCase("Meat"))||(LocationsPage.Category1[0].equalsIgnoreCase("Groceries"))||(LocationsPage.Category1[0].equalsIgnoreCase("Dairy"))||(LocationsPage.Category1[0].equalsIgnoreCase("Poultry"))||(LocationsPage.Category1[0].equalsIgnoreCase("Seafood"))||(LocationsPage.Category1[0].equalsIgnoreCase("Produce"))||(LocationsPage.Category1[0].equalsIgnoreCase("Beverage"))||(LocationsPage.Category1[0].equalsIgnoreCase("Miscellaneous"))){
 			  flag1=true;
 			  
@@ -1185,7 +1004,6 @@
 			  flag2=true;
 			  
 		}
-		 System.out.println("Flag1: "+flag1+flag2);
 		 if(!(flag2&&flag1)){ 
 			   throw new Exception();
 		 } 
@@ -1206,17 +1024,13 @@
 			
 		}
 		
-		
-		
+	
+		@SuppressWarnings("rawtypes")
 		public CategoryPage VerifyPrepCustomCategory(String customcategory,String string)
 		{
 			
 			 Boolean flag4=false;
-			
-			  String string1="Success";
 			  String string2="Issue";
-			  
-		    String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 		    String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 		    
 			log("Category verification for nonsysco",LogType.STEP);
@@ -1224,15 +1038,10 @@
 			
 			
 		 getCommand().waitFor(2);
-			System.out.println(LocationsPage.Prep_Category1[0]);
-			
-			
 		 if((LocationsPage.Prep_Category1[0].equalsIgnoreCase(customcategory))){
 			  flag4=true;
 			  
 		 }
-		
-		 System.out.println("Flag4: "+flag4);
 		 if(!(flag4)){ 
 			   throw new Exception();
 		 } 
@@ -1252,24 +1061,16 @@
 			return this;
 			
 		}
+		@SuppressWarnings("rawtypes")
 		public CategoryPage VerifyOGSyscoItemsSuggestedCategoryLocation1(String string)
 		{
 			Boolean flag3=false;
 			 Boolean flag1=false;
 			 Boolean flag2=false;
-			  String string1="Success";
 			  String string2="Issue";
-			  
-		    String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
-		    String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-		    
-			
+		    String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;	
 		try{
-			
 		 getCommand().waitFor(2);
-			System.out.println(LocationsPage.Category3[0]);
-			System.out.println(LocationsPage.Category4[0]);
-			System.out.println(LocationsPage.Category5[0]);
 			
 		 if((LocationsPage.Category3[0].equalsIgnoreCase("Meat"))||(LocationsPage.Category3[0].equalsIgnoreCase("Groceries"))||(LocationsPage.Category3[0].equalsIgnoreCase("Dairy"))||(LocationsPage.Category3[0].equalsIgnoreCase("Poultry"))||(LocationsPage.Category3[0].equalsIgnoreCase("Seafood"))||(LocationsPage.Category3[0].equalsIgnoreCase("Produce"))||(LocationsPage.Category3[0].equalsIgnoreCase("Beverage"))||(LocationsPage.Category3[0].equalsIgnoreCase("Miscellaneous"))){
 			  flag1=true;
@@ -1283,19 +1084,13 @@
 			  flag3=true;
 			  
 		}
-		 
-		 System.out.println("Flag1: "+flag1+flag2+flag3);
+
 		 if(!(flag2&&flag1&&flag3)){ 
 			   throw new Exception();
 		 } 
-		   
-		 
-		 
 				log("Category is verified for item :Pass",LogType.VERIFICATION_STEP);						
 			}
-			
-			
-			
+
 			catch(Exception e){
 				((IOSDriver)getCommand().driver).context("NATIVE_APP");
 				 getCommand().captureScreenshot(finalPath1); 
@@ -1305,17 +1100,14 @@
 			return this;
 			
 		}
-		
-		
+
+		@SuppressWarnings("rawtypes")
 		public CategoryPage VerifyOGSyscoItemsSuggestedCategoryLocation2(String string)
 		{
 			Boolean flag3=false;
 			 Boolean flag1=false;
 			 Boolean flag2=false;
-			  String string1="Success";
 			  String string2="Issue";
-			  
-		    String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 		    String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 		    
 			log("Ctegory verification",LogType.STEP);
@@ -1323,10 +1115,6 @@
 			
 			
 		 getCommand().waitFor(2);
-			
-			System.out.println(LocationsPage.Category6[0]);
-			System.out.println(LocationsPage.Category7[0]);
-			System.out.println(LocationsPage.Category8[0]);
 		 if((LocationsPage.Category6[0].equalsIgnoreCase("Meat"))||(LocationsPage.Category6[0].equalsIgnoreCase("Groceries"))||(LocationsPage.Category6[0].equalsIgnoreCase("Dairy"))||(LocationsPage.Category6[0].equalsIgnoreCase("Poultry"))||(LocationsPage.Category6[0].equalsIgnoreCase("Seafood"))||(LocationsPage.Category6[0].equalsIgnoreCase("Produce"))||(LocationsPage.Category6[0].equalsIgnoreCase("Beverage"))||(LocationsPage.Category6[0].equalsIgnoreCase("Miscellaneous"))){
 			  flag1=true;
 			  
@@ -1339,8 +1127,6 @@
 			  flag3=true;
 			  
 		}
-		 
-		 System.out.println("Flag1: "+flag1+flag2+flag3);
 		 if(!(flag2&&flag1&&flag3)){ 
 			   throw new Exception();
 		 } 
@@ -1361,15 +1147,12 @@
 			return this;
 			
 		}
+		@SuppressWarnings("rawtypes")
 		public CategoryPage VerifyNonSycoCustomCategory(String customcategory,String string)
 		{
 			
 			 Boolean flag3=false;
-			
-			  String string1="Success";
 			  String string2="Issue";
-			  
-		  String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 		  String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 		  
 			log("Category verification for nonsysco",LogType.STEP);
@@ -1377,15 +1160,10 @@
 			
 		
 		getCommand().waitFor(2);
-			System.out.println(LocationsPage.NonSysco_Category1[0]);
-			
-			
 		if((LocationsPage.NonSysco_Category1[0].equalsIgnoreCase(customcategory))){
 			  flag3=true;
 			  
 		}
-		
-		System.out.println("Flag3: "+flag3);
 		if(!(flag3)){ 
 			   throw new Exception();
 		} 
@@ -1393,8 +1171,6 @@
 			
 				log("Category is verified for nonsysco item :Pass",LogType.VERIFICATION_STEP);						
 			}
-			
-			
 			
 			catch(Exception e){
 				((IOSDriver)getCommand().driver).context("NATIVE_APP");
@@ -1407,30 +1183,21 @@
 		}
 		
 		
+		@SuppressWarnings("rawtypes")
 		public CategoryPage VerifySuggestedCategory(String string)
 		{
-			
-		
-			  String string1="Success";
 			  String string2="Issue";
-			  
-		    String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 		    String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 		    
 			
 		try{
 			
 		  final Target Sysco_Product_Select= new Target("Product_Select","(//*[@class='mm-c-product-list']//*[@class='mm-c-product-list__item mm-c-product__sysco ']//*[@class='mm-c-product-list__image'])[1]",Target.XPATH); 
-			
-			
-			
 				if(getCommand().isTargetPresent(Sysco_Product_Select)){
 					final Target CategoryLine1= new Target("CategoryLine1","(//*[@class='mm-c-product-list']//*[@class='mm-c-product-list__all-prods']//*[@class='mm-c-product-list__details-wrapper']//*[@class='mm-c-product-list__location'])[1]",Target.XPATH); 
-				//	$x("(//*[@class='mm-c-product-list']//*[@class='mm-c-product-list__all-prods']//*[@class='mm-c-product-list__details-wrapper']//*[@class='mm-c-product-list__location'])[1]")
 					String SyscocategoryKeyword1 = getCommand().getText(CategoryLine1);
-					System.out.println(SyscocategoryKeyword1);
 						SyscoCategory1=SyscocategoryKeyword1.split("\\s+");
-					System.out.println("Sysco Category for first item on list "+SyscoCategory1[0]);
+
 		
 					
 				}
@@ -1449,20 +1216,15 @@
 			return this;
 			
 		}
+		@SuppressWarnings("rawtypes")
 		public CategoryPage TapAnySuggestedCategory(String string)
 		{
-			
-		
-			  String string1="Success";
 			  String string2="Issue";
-			  
-		    String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 		    String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 		    
 		
 		try{
-			
-		  System.out.println("Category is "+SyscoCategory1[0]);
+
 			if(SyscoCategory1[0].equalsIgnoreCase("Dairy"))
 				{getCommand().waitForTargetPresent(Select_SuggCat_Meat).click(Select_SuggCat_Meat);
 				Selected_SuggCat1="Meat";
@@ -1471,7 +1233,6 @@
 				{getCommand().waitForTargetPresent(Select_SuggCat_Dairy).click(Select_SuggCat_Dairy);
 				Selected_SuggCat1="Dairy";
 				}
-			System.out.println("changed category to :"+Selected_SuggCat1);
 				log("Suggested Category is selected for item :Pass",LogType.VERIFICATION_STEP);						
 			}
 			
@@ -1486,23 +1247,14 @@
 			return this;
 			
 		}
+		@SuppressWarnings("rawtypes")
 		public CategoryPage VerifySelectedSuggestedCategory(String string)
 		{
-			
-		
-			  String string1="Success";
 			  String string2="Issue";
-			  
-		    String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 		    String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-		    
-			
-		try{
-			
-			
+		    try{
 			if(SyscoCategory1[0].equalsIgnoreCase(Selected_SuggCat1))
 				 throw new Exception();
-				//log("Suggested Category is changed for item :Fail",LogType.VERIFICATION_STEP);	
 			else
 				log("Suggested Category is changed for item :Pass",LogType.VERIFICATION_STEP);	
 			
@@ -1520,21 +1272,14 @@
 			return this;
 			
 		}
+		@SuppressWarnings("rawtypes")
 		public CategoryPage VerifySuggestedCategoryList(String string)
 		{
-			
-			 Boolean flag3=false;
-			
-			  String string1="Success";
 			  String string2="Issue";
-			  
-		  String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 		  String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 		  
 			
 		try{
-			
-		
 			boolean flag2_1 = getCommand().isTargetPresentAfterWait(SuggestedCategory_Dairy, 3);
 			boolean flag2_2 = getCommand().isTargetPresentAfterWait(SuggestedCategory_Meat, 3);
 			boolean flag2_3 = getCommand().isTargetPresentAfterWait(SuggestedCategory_Poultry, 3);
@@ -1543,8 +1288,6 @@
 			boolean flag2_6 = getCommand().isTargetPresentAfterWait(SuggestedCategory_Groceries, 3);
 			boolean flag2_7 = getCommand().isTargetPresentAfterWait(SuggestedCategory_Beverage, 3);
 			boolean flag2_8 = getCommand().isTargetPresentAfterWait(SuggestedCategory_Miscellaneous, 3);
-			
-			System.out.println("Flag2: "+flag2_1+flag2_2+flag2_3+flag2_4+flag2_5+flag2_6+flag2_7+flag2_8);
 			if((flag2_1 && flag2_2 && flag2_3 && flag2_4 && flag2_5 && flag2_6 && flag2_7 && flag2_8)){ 
 				log("Suggested category list verification done :Pass",LogType.VERIFICATION_STEP);
 			}    			     
@@ -1552,8 +1295,6 @@
 			else {
 				throw new Exception();
 				}
-			
-			
 				}
 			
 			catch(Exception e){
@@ -1566,24 +1307,19 @@
 			
 		}
 		
+		@SuppressWarnings("rawtypes")
 		public CategoryPage VerifyCustomListItemsDefaultCategoryLocation1(String string)
 		{
 			Boolean flag3=false;
 			 Boolean flag1=false;
 			 Boolean flag2=false;
-			  String string1="Success";
 			  String string2="Issue";
-			  
-		    String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 		    String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 		    
 		
 		try{
 			
 		 getCommand().waitFor(2);
-			System.out.println(LocationsPage.Category3[0]);
-			System.out.println(LocationsPage.Category4[0]);
-			System.out.println(LocationsPage.Category5[0]);
 			
 		 if((LocationsPage.Category3[0].equalsIgnoreCase("Food"))||(LocationsPage.Category3[0].equalsIgnoreCase("Non-Food"))){
 			  flag1=true;
@@ -1597,8 +1333,7 @@
 			  flag3=true;
 			  
 		}
-		 
-		 System.out.println("Flag1: "+flag1+flag2+flag3);
+
 		 if(!(flag2&&flag1&&flag3)){ 
 			   throw new Exception();
 		 } 
@@ -1607,9 +1342,6 @@
 		 
 				log("Default Category is verified for items :Pass",LogType.VERIFICATION_STEP);						
 			}
-			
-			
-			
 			catch(Exception e){
 				((IOSDriver)getCommand().driver).context("NATIVE_APP");
 				getCommand().captureScreenshot(finalPath1);
@@ -1620,25 +1352,20 @@
 			
 		}
 		
+		@SuppressWarnings("rawtypes")
 		public CategoryPage VerifyCustomListItemsDefaultCategoryLocation2(String string)
 		{
 			Boolean flag3=false;
 			 Boolean flag1=false;
 			 Boolean flag2=false;
-			  String string1="Success";
 			  String string2="Issue";
-			  
-		    String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 		    String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 		    
 			log("Default Category verification",LogType.STEP);
 		try{
 			
 		 getCommand().waitFor(2);
-			System.out.println(LocationsPage.Category7[0]);
-			System.out.println(LocationsPage.Category6[0]);
-			System.out.println(LocationsPage.Category8[0]);
-			
+
 		 if((LocationsPage.Category6[0].equalsIgnoreCase("Food"))||(LocationsPage.Category6[0].equalsIgnoreCase("Non-Food"))){
 			  flag1=true;
 			  
@@ -1651,8 +1378,6 @@
 			  flag3=true;
 			  
 		}
-		 
-		 System.out.println("Flag1: "+flag1+flag2+flag3);
 		 if(!(flag2&&flag1&&flag3)){ 
 			   throw new Exception();
 		 } 
@@ -1673,15 +1398,10 @@
 			
 		}
 		
+		@SuppressWarnings("rawtypes")
 		public CategoryPage VerifyDefaultCategoryList(String string)
 		{
-			
-			 Boolean flag3=false;
-			
-			  String string1="Success";
 			  String string2="Issue";
-			  
-		  String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 		  String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 		  
 		
@@ -1691,9 +1411,6 @@
 		
 			boolean flag2_1 = getCommand().isTargetPresentAfterWait(DefaultCategory_Food, 3);
 			boolean flag2_2 = getCommand().isTargetPresentAfterWait(DefaultCategory_NonFood, 3);
-			
-			
-			System.out.println("Flag2: "+flag2_1+flag2_2);
 			if((flag2_1 && flag2_2)){ 
 				log("Default category list verification done :Pass",LogType.VERIFICATION_STEP);
 			}    			     
@@ -1715,13 +1432,10 @@
 		}
 		
 		
+		@SuppressWarnings("rawtypes")
 		public CategoryPage VerifyItemPresentUncategorizedAndAllItems(String string)
 		{
-		
-		  String string1="Success";
 		  String string2="Issue";
-		 
-		String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 		String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
 		
 			
@@ -1735,14 +1449,10 @@
 		final Target  ItemSelectedFromUncatgorisedVerify2= new Target("FirstItemSelectedFromUncatgorised","//*[@id='mount']//*[contains(text(),'"+CategoryItemName1_3+"')]",Target.XPATH);
 		final Target  ItemSelectedFromUncatgorisedVerify3= new Target("FirstItemSelectedFromUncatgorised","//*[@id='mount']//*[contains(text(),'"+CategoryItemName1_4+"')]",Target.XPATH);
 		
-		System.out.println("//*[@id='mount']//*[contains(text(),'"+CategoryItemName1_1+"')]");
-		System.out.println("TargetPresent: "+getCommand().isTargetVisible(ItemSelectedFromUncatgorisedVerify));
-		
 		if (getCommand().isTargetPresent(ItemSelectedFromUncatgorisedVerify)) {
 			getCommand().waitForTargetPresent(ItemSelectedFromUncatgorisedVerify1);
 			getCommand().waitForTargetPresent(ItemSelectedFromUncatgorisedVerify2);
 			getCommand().waitForTargetPresent(ItemSelectedFromUncatgorisedVerify3);
-		System.out.println("Selected item is present in All Items Tab : Pass");
 		log(" Added item  is present in All Items Tab  :Pass",LogType.VERIFICATION_STEP);
 		
 		}
@@ -1755,15 +1465,11 @@
 			getCommand().waitForTargetPresent(ItemSelectedFromUncatgorisedVerify1);
 			getCommand().waitForTargetPresent(ItemSelectedFromUncatgorisedVerify2);
 			getCommand().waitForTargetPresent(ItemSelectedFromUncatgorisedVerify3);
-		
-			System.out.println("Added item  is present in uncategorized Tab(Expected-Item should not be present) :Fail");
 			log(" Added item  is present in category Tab(Expected-Item should not be present) :Fail",LogType.VERIFICATION_STEP);
 			throw new Exception();
 		}
 		else if ( !(  (getCommand().isTargetPresent(ItemSelectedFromUncatgorisedVerify))&& (getCommand().isTargetPresent(ItemSelectedFromUncatgorisedVerify1))&&
 				( getCommand().isTargetPresent(ItemSelectedFromUncatgorisedVerify2))&&(getCommand().isTargetPresent(ItemSelectedFromUncatgorisedVerify3) )))  {
-			
-		   System.out.println("Added item  is not present in uncategorized Tab :Pass");
 			log(" Added item  is not present in uncategorized Tab :Pass",LogType.VERIFICATION_STEP);
 		}
 		
@@ -1774,8 +1480,7 @@
 		log("Category is verified for nonsysco item :Pass",LogType.VERIFICATION_STEP);						
 		
 		}
-		
-		
+
 		catch(Exception e){
 		((IOSDriver)getCommand().driver).context("NATIVE_APP");
 		 getCommand().captureScreenshot(finalPath1); 
@@ -1785,30 +1490,19 @@
 		return this;
 		
 		}
-		
-		
+
+		@SuppressWarnings("rawtypes")
 		public CategoryPage VerifyOptionsOnSetUpFoodCost(String string){
-		
-		String string1="Success";
 		String string2="Issue";	
-		String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 		String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-		
-		
 		try{
-		
-		
-		
-		
 		getCommand().waitForTargetPresent(SetUp_Pg3Title);
 			if(getCommand().isTargetPresent(FoodAndNonFood) && getCommand().isTargetPresent(FoodAndNonFoodDesc) && getCommand().isTargetPresent(SuggestedCategories) && getCommand().isTargetPresent(SuggestedCategoriesDesc) && getCommand().isTargetPresent(CustomCategories) && getCommand().isTargetPresent(CustomCategoriesDesc))
 			{
 				log("VerifyOptionsOnSetUpFoodCost:Pass",LogType.STEP);
-				System.out.println("All present");
 			}
 			else
 			{
-				System.out.println("not present");
 				log("VerifyOptionsOnSetUpFoodCost:Fail",LogType.STEP);
 				throw new Exception();
 			}
@@ -1826,11 +1520,10 @@
 		return this;
 		
 		}
+		@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
 		public CategoryPage AddCategoryNonFood(String string)
 			{
-				String string1="Success";
 				String string2="Issue";   
-				String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 				String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;	
 				
 				try{
@@ -1839,7 +1532,6 @@
 		
 							getCommand().waitForTargetPresent(AddCategory_NonFood);
 				    getCommand().click(AddCategory_NonFood);
-				    System.out.println("selected non food");
 					 Set<String> contextNames = ((IOSDriver)getCommand().driver).getContextHandles();
 				
 			 for (String contextName : contextNames){
@@ -1848,9 +1540,6 @@
 		System.out.println(((IOSDriver)getCommand().driver).context((String) contextNames.toArray()[1]));
 					 		log("Selected Non Food :Pass",LogType.VERIFICATION_STEP);
 					}
-					
-			
-				
 				catch(Exception e)
 				{
 					((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
@@ -1858,29 +1547,21 @@
 					log("Selected Non Food :Fail",LogType.VERIFICATION_STEP);
 					Assert.assertTrue(false);
 				}
-				
 				return this;
-				
 			}
 		
+		@SuppressWarnings("rawtypes")
 		public CategoryPage VerifyCustomListItemsCustomCategoryLocation1(String category, String string) {
 			Boolean flag3 = false;
 			Boolean flag1 = false;
 			Boolean flag2 = false;
-			String string1 = "Success";
 			String string2 = "Issue";
-		
-			String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 			String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 		
 			log("Custom Category verification on location1", LogType.STEP);
 			try {
 		
 				getCommand().waitFor(2);
-				System.out.println(LocationsPage.Category3[0]);
-				System.out.println(LocationsPage.Category4[0]);
-				System.out.println(LocationsPage.Category5[0]);
-		
 				if ((LocationsPage.Category3[0].equalsIgnoreCase(category))) {
 					flag1 = true;
 		
@@ -1894,7 +1575,6 @@
 		
 				}
 		
-				System.out.println("Flag1: " + flag1 + flag2 + flag3);
 				if (!(flag2 && flag1 && flag3)) {
 					throw new Exception();
 				}
@@ -1913,23 +1593,18 @@
 		
 		}
 		
+		@SuppressWarnings("rawtypes")
 		public CategoryPage VerifyCustomListItemsCustomCategoryLocation2(String category, String string) {
 			Boolean flag3 = false;
 			Boolean flag1 = false;
 			Boolean flag2 = false;
-			String string1 = "Success";
 			String string2 = "Issue";
-		
-			String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
 			String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 		
 			log("Custom Category verification on location2", LogType.STEP);
 			try {
 		
 				getCommand().waitFor(2);
-				System.out.println(LocationsPage.Category6[0]);
-				System.out.println(LocationsPage.Category7[0]);
-				System.out.println(LocationsPage.Category8[0]);
 		
 				if ((LocationsPage.Category6[0].equalsIgnoreCase(category))) {
 					flag1 = true;
@@ -1943,8 +1618,6 @@
 					flag3 = true;
 		
 				}
-		
-				System.out.println("Flag1: " + flag1 + flag2 + flag3);
 				if (!(flag2 && flag1 && flag3)) {
 					throw new Exception();
 				}

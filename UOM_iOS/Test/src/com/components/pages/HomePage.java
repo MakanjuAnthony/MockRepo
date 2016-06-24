@@ -1,18 +1,25 @@
+		
+		/**
+		 ********************************************************************************************************************************************
+		 ********************************************************************************************************************************************
+		 *																																		   	*
+		 * 2016-2017 Infosys Limited, Banglore, India. All Rights Reserved																			*
 
+		 * Version: 1.0																																*
+		 * 																																			*
+		 * Except for any free or open source software components embedded in this Infosys proprietary software program ("Program"),				*
+		 * this Program is protected by copyright laws, international treaties and other pending or existing intellectual property rights in India, *
+		 * the United States and other countries. Except as expressly permitted, any unautorized reproduction, storage, transmission 				*
+		 * in any form or by any means (including without limitation electronic, mechanical, printing, photocopying, recording or otherwise), 		*
+		 * or any distribution of this Program, or any portion of it, may result in severe civil and criminal penalties, 							*
+		 * and will be prosecuted to the maximum extent possible under the law 																		*
+		 *																																			*
+		 ********************************************************************************************************************************************
+		 ********************************************************************************************************************************************
+		 **/
 package com.components.pages;
-
-import java.util.Set;
-
-import org.openqa.jetty.http.SSORealm;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
-
 import com.components.repository.SiteRepository;
 import com.iwaf.framework.components.IReporter.LogType;
 import com.iwaf.framework.components.Target;
@@ -29,12 +36,9 @@ public class HomePage extends SitePage{
 	public static final Target Menu_Vendors= new Target("Menu_Vendors","//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIALink[3]",Target.XPATH);
 	public static final Target InvToolsPage = new Target("InvToolsPage","//UIAStaticText[@label='Inventory Tools']",Target.XPATH);
 	public static final Target HamLogout = new Target("HamLogout","//*[@class='mm-c-menu']//*[@id='logout']",Target.XPATH);
-	
 	public static final Target VendorsPage = new Target("VendorsPage","//UIAStaticText[@label='Vendors']",Target.XPATH);
 	public static final Target selectAcc = new Target("selectAcc","//*[@class='navbar-brand']//*[contains(text(),'Please select an account')]",Target.XPATH);
-	 
 
-   
 	public HomePage(SiteRepository repository)
 	{
 		super(repository);
@@ -54,15 +58,12 @@ public class HomePage extends SitePage{
 	
 	
 	
+	@SuppressWarnings("rawtypes")
 	public HomePage HamburgerMenu(String string)
 	{
-		 String string1="Success";
 		  String string2="Issue";
-        
-         String finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 		  String finalPath1=GlobalVariable.drivePath+string+string2+GlobalVariable.pathExtension;
-		try{
-				 
+		try{ 
 			getCommand().waitForTargetPresent(HamMenu);
 			
 			if (getCommand().isTargetPresent(HamMenu))
@@ -95,13 +96,11 @@ public class HomePage extends SitePage{
 			
 				log("Tap on Vendor from Hamburger menu",LogType.STEP);	
 				getCommand().click(Menu_Vendors);
-				System.out.println("vendrs pge");
 			
 			getCommand().waitForTargetPresent(VendorsPage);
 			
 			if (getCommand().isTargetPresent(VendorsPage))
 			{
-				System.out.println("in vendors page");
 				log("Navigating to Vendors page :Pass",LogType.VERIFICATION_STEP);	
 										
 			}
@@ -146,10 +145,9 @@ public class HomePage extends SitePage{
 	}
 
 	
+	@SuppressWarnings("rawtypes")
 	public HomePage ClickAccount(String str1,String string)
 	{
-	
-		  String finalPath=GlobalVariable.drivePath+string+GlobalVariable.string1+GlobalVariable.pathExtension;
 	      String finalPath1=GlobalVariable.drivePath+string+GlobalVariable.string2+GlobalVariable.pathExtension;
 			
 		

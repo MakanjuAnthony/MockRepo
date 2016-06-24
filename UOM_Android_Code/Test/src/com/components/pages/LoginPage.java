@@ -1,25 +1,7 @@
 
-/**
- ********************************************************************************************************************************************
- ********************************************************************************************************************************************
- *																																		   	*
- * 2011-2012 Infosys Limited, Banglore, India. All Rights Reserved																			*
- * Version: 2.0																																*
- * 																																			*
- * Except for any free or open source software components embedded in this Infosys proprietary software program ("Program"),				*
- * this Program is protected by copyright laws, international treaties and other pending or existing intellectual property rights in India, *
- * the United States and other countries. Except as expressly permitted, any unautorized reproduction, storage, transmission 				*
- * in any form or by any means (including without limitation electronic, mechanical, printing, photocopying, recording or otherwise), 		*
- * or any distribution of this Program, or any portion of it, may result in severe civil and criminal penalties, 							*
- * and will be prosecuted to the maximum extent possible under the law 																		*
- *																																			*
- ********************************************************************************************************************************************
- ********************************************************************************************************************************************
- **/
 package com.components.pages;
 
 import java.util.Set;
-import java.util.UUID;
 
 import org.testng.Assert;
 
@@ -27,54 +9,49 @@ import com.components.repository.SiteRepository;
 import com.iwaf.framework.components.IReporter.LogType;
 import com.iwaf.framework.components.Target;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.ios.IOSDriver;
 
-public class LoginPage extends SitePage{
+public class LoginPage extends SitePage {
 
-	/* Defining the locators on the Page */ 
-	
-			public static final Target InvToolsPage = new Target("InvToolsPage","//*[@class='navbar-brand']//*[contains(text(),'Inventory Tools')]",Target.XPATH);
-		    public static final Target HomUserName = new Target("HomUserName","//*[@id='username-input']",Target.XPATH);
-			public static final Target HomPwd= new Target(" HomPwd","//*[@id='password-input']",Target.XPATH);
-			public static final Target HomLogin= new Target("HomLogin","//*[@id='login-button']",Target.XPATH);  
-			public static final Target SaveUserName=new Target("SaveUserName","//*[@id='save-username-input']",Target.XPATH);
-		
-		
-			
-	
-	HomePage homepage=new HomePage(repository);
-	public LoginPage(SiteRepository repository)
-	{
+	/* Defining the locators on the Page */
+
+	public static final Target InvToolsPage = new Target("InvToolsPage",
+			"//*[@class='navbar-brand']//*[contains(text(),'Inventory Tools')]", Target.XPATH);
+	public static final Target HomUserName = new Target("HomUserName", "//*[@id='username-input']", Target.XPATH);
+	public static final Target HomPwd = new Target(" HomPwd", "//*[@id='password-input']", Target.XPATH);
+	public static final Target HomLogin = new Target("HomLogin", "//*[@id='login-button']", Target.XPATH);
+	public static final Target SaveUserName = new Target("SaveUserName", "//*[@id='save-username-input']",
+			Target.XPATH);
+
+	HomePage homepage = new HomePage(repository);
+
+	public LoginPage(SiteRepository repository) {
 		super(repository);
 	}
 
 	/* Functions on the Page are defined below */
-	
-	public LoginPage atLoginPage()
-	{
-		log("Launched Sysco UOM",LogType.STEP);
-		
+
+	public LoginPage atLoginPage() {
+		log("Launched Sysco UOM", LogType.STEP);
+
 		return this;
 	}
 
+	@SuppressWarnings({ "rawtypes", "unused", "unchecked" })
 	public LoginPage verifyLoginPage(String string) {
-		String string1 = "Success";
+
 		String string2 = "Issue";
-		// String
-		// finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		try {
 			getCommand().waitFor(5);
 			log("Verify the Login Page", LogType.STEP);
 			Set<String> contextNames1 = ((AndroidDriver) getCommand().driver).getContextHandles();
-			// System.out.println("contxtname is "+contextNames1);
 
 			for (String contextName : contextNames1) {
-				// System.out.println("inside loop "+contextNames1);
+				System.out.println(contextNames1);
 			}
 			((AndroidDriver) getCommand().driver).context((String) contextNames1.toArray()[1]);
-
+			System.out.println(((AndroidDriver) getCommand().driver).context((String) contextNames1.toArray()[1]));
 			getCommand().waitFor(2);
 			getCommand().waitForTargetPresent(HomUserName);
 			getCommand().waitForTargetPresent(HomPwd);
@@ -89,16 +66,12 @@ public class LoginPage extends SitePage{
 		}
 		return this;
 	}
-	
-	
-	
+
+	@SuppressWarnings("rawtypes")
 	public LoginPage signIn(String UserName, String Password, String string) {
 		log("Sign In", LogType.STEP);
 
-		String string1 = "Success";
 		String string2 = "Issue";
-		// String
-		// finalPath=GlobalVariable.drivePath+string+string1+GlobalVariable.pathExtension;
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		try {
@@ -114,12 +87,7 @@ public class LoginPage extends SitePage{
 			getCommand().sendKeys(HomPwd, Password);
 
 			getCommand().waitForTargetPresent(HomLogin).clickWithJavascript(HomLogin);
-			/*
-			 * if (getCommand().isTargetPresent(HomLogin)) {
-			 * getCommand().click(HomLogin); System.out.println("loggdin"); }
-			 */
 
-			// getCommand().waitFor(10);
 			getCommand().waitForTargetPresent(InvToolsPage);
 
 			if (getCommand().isTargetPresent(InvToolsPage)) {
@@ -138,10 +106,10 @@ public class LoginPage extends SitePage{
 		return this;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public LoginPage saveUsernameCheckBoxClick(String string) {
-		String string1 = "Success";
+
 		String string2 = "Issue";
-	
 		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
 
 		try {

@@ -4,61 +4,52 @@ import com.components.repository.SiteRepository;
 
 import com.iwaf.framework.BasePage;
 
-
-
-public class SitePage extends BasePage
-{
+public class SitePage extends BasePage {
 	protected SiteRepository repository;
-	
-	SitePage(SiteRepository repository)
-	{
-		this.repository=repository;
-		
+
+	SitePage(SiteRepository repository) {
+		this.repository = repository;
+
 	}
 
-	public LoginPage _atLoginPage() 
-	{
+	public LoginPage _atLoginPage() {
 		return this.repository.loginPage();
 	}
-	public HomePage _atHomePage() 
-	{
+
+	public HomePage _atHomePage() {
 		return this.repository.homePage();
-		
+
 	}
 
-	
-	public VendorPage _atVendorPage() 
-	{
+	public VendorPage _atVendorPage() {
 		return this.repository.vendorPage();
 	}
-	public InventoryToolPage _atInventoryToolPage() 
-	{
+
+	public InventoryToolPage _atInventoryToolPage() {
 		return this.repository.inventoryToolPage();
 	}
-	public LocationsPage _atLocationsPage() 
-	{
+
+	public LocationsPage _atLocationsPage() {
 		return this.repository.locationsPage();
 	}
-	public SetupInventoryPage _atSetupInventoryPage()
-	{
+
+	public SetupInventoryPage _atSetupInventoryPage() {
 		return this.repository.setUpInventoryPage();
 	}
-	public PurchasesPage _atPurchasesPage()
-	{
+
+	public PurchasesPage _atPurchasesPage() {
 		return this.repository.purchasesPage();
 	}
-	public AccountsPage _atAccountsPage()
-	{
+
+	public AccountsPage _atAccountsPage() {
 		return this.repository.accountsPage();
 	}
-	public CategoryPage _atCategoryPage()
-	{
+
+	public CategoryPage _atCategoryPage() {
 		return this.repository.categoryPage();
 	}
-	public ListPage _atListPage()
-	{
+
+	public ListPage _atListPage() {
 		return this.repository.listPage();
 	}
 }
-	
-	
