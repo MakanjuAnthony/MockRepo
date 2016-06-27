@@ -1,6 +1,6 @@
 PrepItemData    : !!com.components.yaml.PrepItemData {
- ProductName    : Egg,
- UPC            : 1234561,
+ ProductName    : bholaprep7,
+ UPC            : 12345613,
  Pack		    : 10,
  Size		    : 1,
  Weight		    : 12,

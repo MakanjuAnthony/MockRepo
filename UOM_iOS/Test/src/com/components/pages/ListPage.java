@@ -1,33 +1,11 @@
-		
-		/**
-		 ********************************************************************************************************************************************
-		 ********************************************************************************************************************************************
-		 *																																		   	*
-		 * 2016-2017 Infosys Limited, Banglore, India. All Rights Reserved																			*
-
-		 * Version: 1.0																																*
-		 * 																																			*
-		 * Except for any free or open source software components embedded in this Infosys proprietary software program ("Program"),				*
-		 * this Program is protected by copyright laws, international treaties and other pending or existing intellectual property rights in India, *
-		 * the United States and other countries. Except as expressly permitted, any unautorized reproduction, storage, transmission 				*
-		 * in any form or by any means (including without limitation electronic, mechanical, printing, photocopying, recording or otherwise), 		*
-		 * or any distribution of this Program, or any portion of it, may result in severe civil and criminal penalties, 							*
-		 * and will be prosecuted to the maximum extent possible under the law 																		*
-		 *																																			*
-		 ********************************************************************************************************************************************
-		 ********************************************************************************************************************************************
-		 **/
 package com.components.pages;
 
-import io.appium.java_client.ios.IOSDriver;
-
-
-
 import org.testng.Assert;
-
 import com.components.repository.SiteRepository;
 import com.iwaf.framework.components.Target;
 import com.iwaf.framework.components.IReporter.LogType;
+
+import io.appium.java_client.android.AndroidDriver;
 
 public class ListPage extends SitePage {
 
@@ -57,21 +35,20 @@ public class ListPage extends SitePage {
 	public ListPage TapCustomList(String string) {
 
 		String string2 = "Issue";
-
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Selecting custom list  ", LogType.STEP);
 
 		try {
-
+			getCommand().waitFor(5);
 			getCommand().waitForTargetPresent(SetUp_Pg1Title);
 			getCommand().waitForTargetPresent(CustomList);
-			getCommand().click(CustomList);
+			getCommand().clickWithJavascript(CustomList);
 
 			log("Selected  custom list  from SetupInventoryImportItems:Pass", LogType.VERIFICATION_STEP);
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Selected  custom list  from SetupInventoryImportItems :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -85,18 +62,17 @@ public class ListPage extends SitePage {
 	public ListPage tapContinue(String string) {
 
 		String string2 = "Issue";
-
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 
 			getCommand().waitForTargetPresent(Continue);
-			getCommand().click(Continue);
+			getCommand().clickWithJavascript(Continue);
 
 			log("Tapped on Continue :Pass", LogType.VERIFICATION_STEP);
 		}
 
 		catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Tapped on Continue :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -111,14 +87,13 @@ public class ListPage extends SitePage {
 	public ListPage SelectListwithItems(String name, String string) {
 
 		String string2 = "Issue";
-
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Selecting list", LogType.STEP);
 		try {
 			String listName = name;
 
-			getCommand().waitFor(5);
+			getCommand().waitFor(2);
 			final Target Listname = new Target("Listname",
 					"//*[@class='mm-c-simplelist__item list-group-item']//*[contains(text(),'" + listName
 							+ "')]/ancestor::button[@class='mm-c-simplelist__item list-group-item']/child::i[@class='mm-o-icon icon-uncheck-circle']",
@@ -130,7 +105,7 @@ public class ListPage extends SitePage {
 		}
 
 		catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("List is selected   :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -141,24 +116,25 @@ public class ListPage extends SitePage {
 
 	@SuppressWarnings("rawtypes")
 	public ListPage TapOnNext(String string) {
-		String string1 = "Success";
 		String string2 = "Issue";
 
-		String finalPath = GlobalVariable.drivePath + string + string1 + GlobalVariable.pathExtension;
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
 			getCommand().waitForTargetPresent(Next);
 			if (getCommand().isTargetPresent(Next)) {
+
 				getCommand().click(Next);
-				getCommand().captureScreenshot(finalPath);
+				log("Tapped on Next : Pass", LogType.VERIFICATION_STEP);
+
 			}
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
-			log("Tapped on Next :Fail", LogType.VERIFICATION_STEP);
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
+			log("Tapped on Next :Fail", LogType.VERIFICATION_STEP);
+
 			Assert.assertTrue(false);
 		}
 

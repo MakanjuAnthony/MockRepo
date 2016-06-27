@@ -12,6 +12,7 @@ public class PurchasesData {
 	
 
 	
+	@SuppressWarnings("deprecation")
 	public static PurchasesData fetch(String key){
 		BasePage pageObj = new BasePage();
 		PurchasesData obj = pageObj.getCommand().loadYaml(key, "data-pool/Purchases_Data.yaml");

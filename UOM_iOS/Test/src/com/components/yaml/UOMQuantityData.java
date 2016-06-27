@@ -11,6 +11,7 @@ public class UOMQuantityData {
 	
 
 	
+	@SuppressWarnings("deprecation")
 	public static UOMQuantityData fetch(String key){
 		BasePage pageObj = new BasePage();
 		UOMQuantityData obj = pageObj.getCommand().loadYaml(key, "data-pool/UOMQuantity_Data.yaml");

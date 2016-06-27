@@ -12,6 +12,7 @@ public class PrepItemData {
 	public String  Price;
 	public String  ProductBrand;
 	
+	@SuppressWarnings("deprecation")
 	public static PrepItemData fetch(String key){
 		BasePage pageObj = new BasePage();
 		PrepItemData obj = pageObj.getCommand().loadYaml(key, "data-pool/PrepItem_Data.yaml");
