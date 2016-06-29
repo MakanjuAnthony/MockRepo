@@ -1,6 +1,6 @@
 NonSyscoItmData : !!com.components.yaml.NonSyscoItemData {
- ProductName    : bholaNon7,
- UPC            : 123456,
+ ProductName    : Milk,
+ UPC            : 1234561,
  Pack		 	: 10,
  Size		 	: 1,
  Weight		 	: 12,

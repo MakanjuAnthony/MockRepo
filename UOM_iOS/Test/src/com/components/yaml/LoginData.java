@@ -7,6 +7,8 @@ public class LoginData {
 	
 	public String UserName;
 	public String Password;
+	//public String MBUserName;
+	//public String MBPassword;
 	
 	@SuppressWarnings("deprecation")
 	public static LoginData fetch(String key){
