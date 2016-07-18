@@ -7,4 +7,12 @@ PrepItemData    : !!com.components.yaml.PrepItemData {
  Price		    : 30,
  ProductBrand	: Country,
  }
- 
+PrepItemData1    : !!com.components.yaml.PrepItemData {
+ ProductName    : EggEdited,
+ UPC            : 98765,
+ Pack		    : 15,
+ Size		    : 10,
+ Weight		    : 15,
+ Price		    : 35,
+ ProductBrand	: Country1,
+ } 

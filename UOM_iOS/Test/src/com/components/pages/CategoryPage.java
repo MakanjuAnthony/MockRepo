@@ -3,7 +3,8 @@
 		 ********************************************************************************************************************************************
 		 ********************************************************************************************************************************************
 		 *																																		   	*
-		 * 2016-2017 Infosys Limited, Banglore, India. All Rights Reserved																			*
+		 * 2016-2017 Infosys Limited, Banglore, India. All Rights Reserved										
+									*
 
 		 * Version: 1.0																																*
 		 * 																																			*
@@ -473,7 +474,9 @@
 			   	      try{
 
 			 	      	getCommand().waitForTargetPresent(Category_1stItemSelect);
-			 	      	
+			 	    	getCommand().waitForTargetPresent(Category_2ndItemSelect);
+			 	    	getCommand().waitForTargetPresent(Category_3rdItemSelect);
+				 	     
 			   	   		if(getCommand().isTargetPresent(Category_1stItemSelect))
 			   	   		{
 			   	   		CategoryNoOfElements1++;
@@ -511,6 +514,8 @@
 			      	      try{
 		
 			    	      	getCommand().waitForTargetPresent(Category_1stItemSelect);
+			    	      	getCommand().waitForTargetPresent(Category_2ndItemSelect);
+			    	      	getCommand().waitForTargetPresent(Category_3rdItemSelect);
 			    	      	
 			      	   		if(getCommand().isTargetPresent(Category_1stItemSelect))
 			      	   		{

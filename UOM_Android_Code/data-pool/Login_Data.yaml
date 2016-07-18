@@ -1,57 +1,57 @@
 
 LoginData1  : !!com.components.yaml.LoginData {
- UserName   : mmuomapp500,
+ UserName   : sqnorm23,
  Password   : welcome1,
  }
 LoginData2  : !!com.components.yaml.LoginData {
- UserName   : mmuomapp501,
+ UserName   : sqnorm24,
  Password   : welcome1,
  }
 LoginData3  : !!com.components.yaml.LoginData {
- UserName   : mmuomapp502,
+ UserName   : sqnorm25,
  Password   : welcome1,
  }
 LoginData4  : !!com.components.yaml.LoginData {
- UserName   : mmuomapp503,
+ UserName   : sqnorm29,
  Password   : welcome1,
  }
 LoginData5  : !!com.components.yaml.LoginData {
- UserName   : mmuomapp504,
+ UserName   : sqnorm30,
  Password   : welcome1,
  }
 LoginData6  : !!com.components.yaml.LoginData {
- UserName   : mmuomapp505,
+ UserName   : sqnorm19,
  Password   : welcome1,
  }
 LoginData7  : !!com.components.yaml.LoginData {
- UserName   : mmuomapp506,
+ UserName   : sqnorm20,
  Password   : welcome1,
  }
 LoginData8  : !!com.components.yaml.LoginData {
- UserName   : mmuomapp507,
+ UserName   : sqnorm16,
  Password   : welcome1,
  }
 LoginData9  : !!com.components.yaml.LoginData {
- UserName   : mmuomapp508,
+ UserName   : sqnorm18,
  Password   : welcome1,
  }
 LoginData10 : !!com.components.yaml.LoginData {
- UserName   : mmuomapp509,
+ UserName   : sqnorm21,
  Password   : welcome1,
  }
 LoginData11 : !!com.components.yaml.LoginData {
- UserName   : uomsc002,
+ UserName   : sqnorm11,
  Password   : welcome1,
  }
 LoginData12 : !!com.components.yaml.LoginData {
- UserName   : uomsc003,
+ UserName   : sqnorm12,
  Password   : welcome1,
  } 
 LoginData13 : !!com.components.yaml.LoginData {
- UserName   : uomsa001,
+ UserName   : sqnorm13,
  Password   : welcome1,
  }
 LoginData14 : !!com.components.yaml.LoginData {
- UserName   : uomsa002,
+ UserName   : sqnorm14,
  Password   : welcome1,
  }

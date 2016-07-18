@@ -1,7 +1,25 @@
+		/**
+		 ********************************************************************************************************************************************
+		 ********************************************************************************************************************************************
+		 *																																		   	*
+		 * 2016-2017 Infosys Limited, Banglore, India. All Rights Reserved																			*
+
+		 * Version: 1.0																																*
+		 * 																																			*
+		 * Except for any free or open source software components embedded in this Infosys proprietary software program ("Program"),				*
+		 * this Program is protected by copyright laws, international treaties and other pending or existing intellectual property rights in India, *
+		 * the United States and other countries. Except as expressly permitted, any unautorized reproduction, storage, transmission 				*
+		 * in any form or by any means (including without limitation electronic, mechanical, printing, photocopying, recording or otherwise), 		*
+		 * or any distribution of this Program, or any portion of it, may result in severe civil and criminal penalties, 							*
+		 * and will be prosecuted to the maximum extent possible under the law 																		*
+		 *																																			*
+		 ********************************************************************************************************************************************
+		 ********************************************************************************************************************************************
+		 **/
+
 package com.components.pages;
 
 import org.testng.Assert;
-
 import io.appium.java_client.android.AndroidDriver;
 import com.components.repository.SiteRepository;
 import com.iwaf.framework.components.Target;
@@ -62,7 +80,7 @@ public class AccountsPage extends SitePage {
 	public AccountsPage HamMenu_Accounts(String string) {
 		log("Tapping on Accounts from Hamburger menu", LogType.STEP);
 
-		String finalPath1 = GlobalVariable.drivePath + string + GlobalVariable.string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + SitePage.string2 + SitePage.pathExtension;
 
 		try {
 
@@ -83,7 +101,7 @@ public class AccountsPage extends SitePage {
 
 	@SuppressWarnings("rawtypes")
 	public AccountsPage AccountSwitchFirstID(String str1, String string) {
-		String finalPath1 = GlobalVariable.drivePath + string + GlobalVariable.string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + SitePage.string2 + SitePage.pathExtension;
 
 		try {
 			if ((str1.equalsIgnoreCase("uomsa001")) || (str1.equalsIgnoreCase("uomsa002"))) {
@@ -118,7 +136,7 @@ public class AccountsPage extends SitePage {
 	@SuppressWarnings("rawtypes")
 	public AccountsPage AccountSwitchSecondID(String str1, String string) {
 
-		String finalPath1 = GlobalVariable.drivePath + string + GlobalVariable.string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + SitePage.string2 + SitePage.pathExtension;
 
 		try {
 
@@ -165,7 +183,7 @@ public class AccountsPage extends SitePage {
 	@SuppressWarnings("rawtypes")
 	public AccountsPage Third_AccountSelection(String str1, String string) {
 		log("Selecting 3 account from Accounts page", LogType.STEP);
-		String finalPath1 = GlobalVariable.drivePath + string + GlobalVariable.string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + SitePage.string2 + SitePage.pathExtension;
 		try {
 			if ((str1.equalsIgnoreCase("uomsa001")) || (str1.equalsIgnoreCase("uomsa002"))) {
 
@@ -192,7 +210,7 @@ public class AccountsPage extends SitePage {
 	@SuppressWarnings("rawtypes")
 	public AccountsPage Fourth_AccountSelection(String str1, String string) {
 		log("Selecting 4 account from Accounts page", LogType.STEP);
-		String finalPath1 = GlobalVariable.drivePath + string + GlobalVariable.string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + SitePage.string2 + SitePage.pathExtension;
 		try {
 			if ((str1.equalsIgnoreCase("uomsa001")) || (str1.equalsIgnoreCase("uomsa002"))) {
 
@@ -221,7 +239,7 @@ public class AccountsPage extends SitePage {
 	@SuppressWarnings("rawtypes")
 	public AccountsPage Fifth_AccountSelection(String str1, String string) {
 		log("Selecting 5 account from Accounts page", LogType.STEP);
-		String finalPath1 = GlobalVariable.drivePath + string + GlobalVariable.string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + SitePage.string2 + SitePage.pathExtension;
 		try {
 			if ((str1.equalsIgnoreCase("uomsa001")) || (str1.equalsIgnoreCase("uomsa002"))) {
 
@@ -250,7 +268,7 @@ public class AccountsPage extends SitePage {
 	public AccountsPage Sixth_AccountSelection(String str1, String string) {
 		log("Selecting 6 account from Accounts page", LogType.STEP);
 
-		String finalPath1 = GlobalVariable.drivePath + string + GlobalVariable.string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + SitePage.string2 + SitePage.pathExtension;
 		try {
 			if ((str1.equalsIgnoreCase("uomsa001")) || (str1.equalsIgnoreCase("uomsa002"))) {
 
@@ -277,7 +295,7 @@ public class AccountsPage extends SitePage {
 
 	@SuppressWarnings("rawtypes")
 	public AccountsPage ClickAccount(String string) {
-		String finalPath1 = GlobalVariable.drivePath + string + GlobalVariable.string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + SitePage.string2 + SitePage.pathExtension;
 
 		try {
 
@@ -299,7 +317,7 @@ public class AccountsPage extends SitePage {
 	public AccountsPage First_AccountSelection(String str1, String string) {
 		log("Selecting 1st account from Accounts page", LogType.STEP);
 
-		String finalPath1 = GlobalVariable.drivePath + string + GlobalVariable.string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + SitePage.string2 + SitePage.pathExtension;
 
 		try {
 			if ((str1.equalsIgnoreCase("uomsa001")) || (str1.equalsIgnoreCase("uomsa002"))) {
@@ -327,7 +345,7 @@ public class AccountsPage extends SitePage {
 	@SuppressWarnings("rawtypes")
 	public AccountsPage Second_AccountSelection(String str1, String string) {
 		log("Selecting 1st account from Accounts page", LogType.STEP);
-		String finalPath1 = GlobalVariable.drivePath + string + GlobalVariable.string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + SitePage.string2 + SitePage.pathExtension;
 
 		try {
 			if ((str1.equalsIgnoreCase("uomsa001")) || (str1.equalsIgnoreCase("uomsa002"))) {

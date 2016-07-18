@@ -12,6 +12,7 @@ public class NonSyscoItemData {
 	public String  Price;
 	public String  ProductBrand;
 	
+	@SuppressWarnings("deprecation")
 	public static NonSyscoItemData fetch(String key){
 		BasePage pageObj = new BasePage();
 		NonSyscoItemData obj = pageObj.getCommand().loadYaml(key, "data-pool/NonSyscoItem_Data.yaml");

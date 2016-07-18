@@ -303,11 +303,14 @@ public class LocationsPage extends SitePage {
 
 	public static final Target ViewItemsOnLocation = new Target("ViewItemsOnLocation",
 			"//*[contains(text(),'View items in this location')]", Target.XPATH);
+	public static final Target Cancel = new Target("Cancel",
+			"//UIAStaticText[@label='Cancel']", Target.XPATH);
+
 	public static String DeletedCategory1;
 	public static String DeletedCategory2;
 	public static String DeletedCategory3;
 	public static Integer count = 0;
-
+	public static Integer count1 = 0;
 	public LocationsPage(SiteRepository repository) {
 		super(repository);
 	}
@@ -528,7 +531,7 @@ public class LocationsPage extends SitePage {
 					System.out.println("inside loop " + contextNames1);
 				}
 				System.out.println(((IOSDriver) getCommand().driver).context((String) contextNames1.toArray()[1]));
-				getCommand().captureScreenshot(finalPath);
+				
 			}
 
 		} catch (Exception e) {
@@ -1517,6 +1520,7 @@ public class LocationsPage extends SitePage {
 				throw new Exception();
 			}
 			log("Item verification done :Pass", LogType.VERIFICATION_STEP);
+			count1=3;
 		} catch (Exception e) {
 			((IOSDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
@@ -2280,7 +2284,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage SyscoProductSelect(String string) {
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
-		log("Selecting an item from location ", LogType.STEP);
+		log("Selecting sysco item from location ", LogType.STEP);
 		try {
 
 			final Target Product_Select = new Target("Product_Select",
@@ -2290,12 +2294,12 @@ public class LocationsPage extends SitePage {
 					Target.XPATH);
 
 			getCommand().waitForTargetPresent(Product_Select);
-			;
+			
 			getCommand().click(Product_Select);
 			getCommand().waitForTargetPresent(ProductDetailsPage);
 			log("Selecting an item from location :Pass", LogType.VERIFICATION_STEP);
 		} catch (Exception e) {
-			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Selecting an item from location :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -2323,7 +2327,7 @@ public class LocationsPage extends SitePage {
 			}
 
 		} catch (Exception e) {
-			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Assigining nickname to product: Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -2589,5 +2593,40 @@ public class LocationsPage extends SitePage {
 		}
 		return this;
 
+	}
+	
+	
+	@SuppressWarnings({ "unchecked", "rawtypes", "unused" })
+	public LocationsPage TapOnCancel(String string) {
+		String string2 = "Issue";
+
+		String finalPath1 = SitePage.drivePath + string + string2
+				+ SitePage.pathExtension;
+
+		try {
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().waitForTargetPresent(Cancel);
+			if (getCommand().isTargetPresent(Cancel)) {
+
+				getCommand().click(Cancel);
+				log("Tapped on Cancel", LogType.VERIFICATION_STEP);
+
+			}
+			Set<String> contextNames = ((IOSDriver) getCommand().driver)
+					.getContextHandles();
+
+			for (String contextName : contextNames) {
+				System.out.println(contextNames);
+			}
+			System.out.println(((IOSDriver) getCommand().driver)
+					.context((String) contextNames.toArray()[1]));
+		} catch (Exception e) {
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			log("Tapped on Cancel :Fail", LogType.VERIFICATION_STEP);
+			getCommand().captureScreenshot(finalPath1);
+			Assert.assertTrue(false);
+		}
+
+		return this;
 	}
 }

@@ -1,3 +1,22 @@
+		/**
+		 ********************************************************************************************************************************************
+		 ********************************************************************************************************************************************
+		 *																																		   	*
+		 * 2016-2017 Infosys Limited, Banglore, India. All Rights Reserved																			*
+
+		 * Version: 1.0																																*
+		 * 																																			*
+		 * Except for any free or open source software components embedded in this Infosys proprietary software program ("Program"),				*
+		 * this Program is protected by copyright laws, international treaties and other pending or existing intellectual property rights in India, *
+		 * the United States and other countries. Except as expressly permitted, any unautorized reproduction, storage, transmission 				*
+		 * in any form or by any means (including without limitation electronic, mechanical, printing, photocopying, recording or otherwise), 		*
+		 * or any distribution of this Program, or any portion of it, may result in severe civil and criminal penalties, 							*
+		 * and will be prosecuted to the maximum extent possible under the law 																		*
+		 *																																			*
+		 ********************************************************************************************************************************************
+		 ********************************************************************************************************************************************
+		 **/
+
 package com.components.pages;
 
 import java.util.Set;
@@ -116,7 +135,7 @@ public class SetupInventoryPage extends SitePage {
 	public static final Target AddItemsLink = new Target("AddItemsLink",
 			"//*[@class='mm-c-product-list__sticky-row mm-u-navbar-padding']//span[contains(text(),'Add More Items')]",
 			Target.XPATH);
-	public static final Target AddItemFromPage_PrepItemWeb = new Target("AddItemFromPage_PrepItem",
+	public static final Target AddItemFromPage_PrepItem = new Target("AddItemFromPage_PrepItem",
 			"//*[@id='list-item' and contains(text(),'Prep Item')]", Target.XPATH);
 	public static final Target Skip = new Target("Skip", "//*[@id='skip']/a", Target.XPATH);
 	public static final Target Search = new Target("Search", "//*[@placeholder='Search']", Target.XPATH);
@@ -178,7 +197,7 @@ public class SetupInventoryPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 
 			getCommand().waitForTargetPresent(SetUp_Pg1Title);
@@ -206,7 +225,7 @@ public class SetupInventoryPage extends SitePage {
 	public SetupInventoryPage tapContinue(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 
 			getCommand().waitForTargetPresent(Continue);
@@ -231,7 +250,7 @@ public class SetupInventoryPage extends SitePage {
 	public SetupInventoryPage Setup_AddItemsLink(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 
 			getCommand().waitForTargetPresent(AddItemsLink);
@@ -258,7 +277,7 @@ public class SetupInventoryPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 
 			getCommand().waitForTargetPresent(AddItems_Scratch);
@@ -284,7 +303,7 @@ public class SetupInventoryPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -317,7 +336,7 @@ public class SetupInventoryPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -348,7 +367,7 @@ public class SetupInventoryPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -378,7 +397,7 @@ public class SetupInventoryPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -394,8 +413,8 @@ public class SetupInventoryPage extends SitePage {
 								+ "')]/following-sibling::div[@class='mm-c-product-minlist__details']",
 						Target.XPATH);
 				AddedItemId = getCommand().getText(keyword1);
-
-				AddedItemId1 = AddedItemId.split("\\s+");
+				AddedItemId1 = AddedItemId.split("/");
+			//	AddedItemId1 = AddedItemId.split("\\s+");
 
 				log("First item selected from pdt catalog  :Pass", LogType.VERIFICATION_STEP);
 
@@ -431,10 +450,10 @@ public class SetupInventoryPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
-
+			getCommand().waitForTargetPresent(Category_Header);
 			if (getCommand().isTargetPresent(Category_Header)) {
 
 				final Target SetUpInventory_1stItemHeading = new Target("OrderGuide_1stItemHeading",
@@ -445,9 +464,9 @@ public class SetupInventoryPage extends SitePage {
 				getCommand().waitFor(5);
 				Boolean boolean1 = getCommand().isTargetPresent(SetUpInventory_1stItemHeading);
 
-				if (boolean1)
+				if (boolean1){
 
-					log("Catalog Item Found in Setup Inventory:Pass", LogType.VERIFICATION_STEP);
+					log("Catalog Item Found in Setup Inventory:Pass", LogType.VERIFICATION_STEP);}
 				else {
 
 					((AndroidDriver) getCommand().driver).context("NATIVE_APP");
@@ -482,14 +501,14 @@ public class SetupInventoryPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 			getCommand().waitForTargetPresent(Done);
 			if (getCommand().isTargetPresent(Done)) {
 
 				getCommand().clickWithJavascript(Done);
-				getCommand().waitFor(5);
+				getCommand().waitFor(20);
 				log("Tapped on done:Pass", LogType.VERIFICATION_STEP);
 
 			} else {
@@ -502,7 +521,6 @@ public class SetupInventoryPage extends SitePage {
 			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Tapped on done :Fail", LogType.VERIFICATION_STEP);
-			getCommand().captureScreenshot(finalPath1);
 			Assert.assertTrue(false);
 		}
 
@@ -515,7 +533,7 @@ public class SetupInventoryPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Entering details of Nonsysco item", LogType.STEP);
 		try {
 
@@ -523,6 +541,7 @@ public class SetupInventoryPage extends SitePage {
 			if (getCommand().isTargetPresent(AddProductPage_ProductName)) {
 
 				log("Entering Product name", LogType.STEP);
+				getCommand().clear(AddProductPage_ProductName);
 				getCommand().click(AddProductPage_ProductName);
 
 				getCommand().sendKeys(AddProductPage_ProductName, name);
@@ -531,18 +550,19 @@ public class SetupInventoryPage extends SitePage {
 			getCommand().waitForTargetPresent(AddProductPage_UPC);
 			if (getCommand().isTargetPresent(AddProductPage_UPC)) {
 				log("Entering Product id", LogType.STEP);
+				getCommand().clear(AddProductPage_UPC);
 				getCommand().click(AddProductPage_UPC);
-
 				getCommand().sendKeys(AddProductPage_UPC, upc);
 			}
 			if (getCommand().isTargetPresent(AddProductPage_Pack)) {
 				log("Entering Pack", LogType.STEP);
+				getCommand().clear(AddProductPage_Pack);
 				getCommand().click(AddProductPage_Pack);
-
 				getCommand().sendKeys(AddProductPage_Pack, pack);
 			}
 			if (getCommand().isTargetPresent(AddProductPage_Size)) {
 				log("Entering size", LogType.STEP);
+				getCommand().clear(AddProductPage_Size);
 				getCommand().click(AddProductPage_Size);
 
 				getCommand().sendKeys(AddProductPage_Size, size);
@@ -550,6 +570,7 @@ public class SetupInventoryPage extends SitePage {
 
 			if (getCommand().isTargetPresent(AddProductPage_Weight)) {
 				log("Entering weight", LogType.STEP);
+				getCommand().clear(AddProductPage_Weight);
 				getCommand().click(AddProductPage_Weight);
 
 				getCommand().sendKeys(AddProductPage_Weight, weight);
@@ -557,12 +578,14 @@ public class SetupInventoryPage extends SitePage {
 
 			if (getCommand().isTargetPresent(AddProductPage_Price)) {
 				log("Entering Price", LogType.STEP);
+				getCommand().clear(AddProductPage_Price);
 				getCommand().click(AddProductPage_Price);
 
 				getCommand().sendKeys(AddProductPage_Price, price);
 			}
 			if (getCommand().isTargetPresent(AddProductPage_ProductBrand)) {
 				log("Entering Product brand", LogType.STEP);
+				getCommand().clear(AddProductPage_ProductBrand);
 				getCommand().click(AddProductPage_ProductBrand);
 
 				getCommand().sendKeys(AddProductPage_ProductBrand, brand);
@@ -587,7 +610,7 @@ public class SetupInventoryPage extends SitePage {
 	public SetupInventoryPage AddSupplier_AddProductDetailsPage(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 
 			getCommand().waitForTargetPresent(AddProductPage_AddSupplier);
@@ -610,7 +633,7 @@ public class SetupInventoryPage extends SitePage {
 	public SetupInventoryPage TapOrderGuide(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Selecting Orderguide ", LogType.STEP);
 
@@ -639,7 +662,7 @@ public class SetupInventoryPage extends SitePage {
 	public SetupInventoryPage verifyNonSyscoPrepItemSetupInv(String product, String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 
 			final Target SetUpInventory_1stItemHeading = new Target("NonSyscoItem",
@@ -656,7 +679,7 @@ public class SetupInventoryPage extends SitePage {
 				log("Item Found in Setup Inventory:Fail", LogType.VERIFICATION_STEP);
 				((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 				getCommand().captureScreenshot(finalPath1);
-				log("Item Found in Setup Inventory:Fail", LogType.VERIFICATION_STEP);
+			//	log("Item Found in Setup Inventory:Fail", LogType.VERIFICATION_STEP);
 				Assert.assertTrue(false);
 				Set<String> contextNames1 = ((AndroidDriver) getCommand().driver).getContextHandles();
 				for (String contextName : contextNames1) {
@@ -681,11 +704,11 @@ public class SetupInventoryPage extends SitePage {
 	}
 
 	@SuppressWarnings("rawtypes")
-	public SetupInventoryPage NonSysco_Prompt(String string) {
+	public SetupInventoryPage NonSysco_Prompt(String str1,String string) {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Validating adding 'Nonsysco item' page ", LogType.STEP);
 		try {
@@ -699,9 +722,24 @@ public class SetupInventoryPage extends SitePage {
 				getCommand().waitForTargetPresent(AddProductPage_Size);
 
 				getCommand().waitForTargetPresent(AddProductPage_Weight);
+				
+				if ((str1.equalsIgnoreCase("uomsa001")) || (str1.equalsIgnoreCase("uomsa002"))) {
+				
+					if (getCommand().isTargetPresent(AddProductPage_Price)) {
+					
+					throw new Exception();	
+					}
+					
+				}
+				else{
+					 getCommand().waitForTargetPresent(AddProductPage_Price);
+						log("Price field is displayed for normal user:Pass", LogType.VERIFICATION_STEP);
+				}
+				
 				// getCommand().waitForTargetPresent(AddProductPage_Price);
 
 				getCommand().waitForTargetPresent(AddProductPage_ProductBrand);
+				getCommand().waitForTargetPresent(AddProductPage_AddLocations);
 				getCommand().waitForTargetPresent(AddProductPage_AddSupplier);
 
 				log("Nonsysco item details are present in page :Pass", LogType.VERIFICATION_STEP);
@@ -717,12 +755,52 @@ public class SetupInventoryPage extends SitePage {
 		return this;
 
 	}
+	
+	@SuppressWarnings("rawtypes")
+	public SetupInventoryPage Prep_Prompt(String string) {
+
+		String string2 = "Issue";
+
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
+
+		log("Validating adding 'Nonsysco item' page ", LogType.STEP);
+		try {
+			getCommand().waitForTargetPresent(AddProduct_Page);
+
+			if (getCommand().isTargetPresent(AddProductPage_ProductName)) {
+
+				getCommand().waitForTargetPresent(AddProductPage_ProductName);
+				getCommand().waitForTargetPresent(AddProductPage_UPC);
+				getCommand().waitForTargetPresent(AddProductPage_Pack);
+				getCommand().waitForTargetPresent(AddProductPage_Size);
+
+				getCommand().waitForTargetPresent(AddProductPage_Weight);
+				getCommand().waitForTargetPresent(AddProductPage_AddLocations);
+				// getCommand().waitForTargetPresent(AddProductPage_Price);
+
+			//	getCommand().waitForTargetPresent(AddProductPage_ProductBrand);
+			//	getCommand().waitForTargetPresent(AddProductPage_AddSupplier);
+
+				log("Prep item details are present in page :Pass", LogType.VERIFICATION_STEP);
+			}
+
+		} catch (Exception e) {
+
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Prep item details are present in page :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+		return this;
+
+	}
+	
 
 	@SuppressWarnings("rawtypes")
 	public SetupInventoryPage NonSyscoItem_AddSupplierSelectAlertYes(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Updating non sysco item details", LogType.STEP);
 		try {
 
@@ -747,7 +825,7 @@ public class SetupInventoryPage extends SitePage {
 	public SetupInventoryPage verifyNonSysco_AddedPdtSupplier(String name, String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Verifying Supplier", LogType.STEP);
 		try {
@@ -786,7 +864,7 @@ public class SetupInventoryPage extends SitePage {
 		log("Setup inventory page", LogType.STEP);
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -816,7 +894,7 @@ public class SetupInventoryPage extends SitePage {
 	public SetupInventoryPage SearchItem(String keyword, String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -848,7 +926,7 @@ public class SetupInventoryPage extends SitePage {
 	public SetupInventoryPage TapOnDOThisLater(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -875,7 +953,7 @@ public class SetupInventoryPage extends SitePage {
 	public SetupInventoryPage ReadytoStart(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 			getCommand().waitForTargetPresent(Next);
@@ -897,7 +975,7 @@ public class SetupInventoryPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 			getCommand().waitForTargetPresent(SuccessMsg1);
 
@@ -934,7 +1012,7 @@ public class SetupInventoryPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 
 			log(" Adding Item from Order Guide", LogType.STEP);
@@ -946,7 +1024,7 @@ public class SetupInventoryPage extends SitePage {
 			CategoryName = getCommand().getText(Category_Header);
 
 			if (getCommand().isTargetPresent(OrderGuide_1stItemSelect)) {
-				System.out.println("found");
+				
 				noOfElements++;
 				getCommand().click(OrderGuide_1stItemSelect);
 				ItemName1 = getCommand().getText(OrderGuide_1stItemHeading);
@@ -956,8 +1034,8 @@ public class SetupInventoryPage extends SitePage {
 								+ "')]/following-sibling::div[@class='mm-c-product-minlist__details']",
 						Target.XPATH);
 				AddedItemId = getCommand().getText(keyword1);
-
-				AddedItemId1_1 = AddedItemId.split("\\s+");
+				AddedItemId1_1 = AddedItemId.split("/");
+				//AddedItemId1_1 = AddedItemId.split("\\s+");
 
 			}
 			if (getCommand().isTargetPresent(OrderGuide_2ndItemSelect)) {
@@ -972,7 +1050,7 @@ public class SetupInventoryPage extends SitePage {
 						Target.XPATH);
 				AddedItemId = getCommand().getText(keyword1);
 
-				AddedItemId1_2 = AddedItemId.split("\\s+");
+				AddedItemId1_2 = AddedItemId.split("/");
 
 			}
 
@@ -987,7 +1065,7 @@ public class SetupInventoryPage extends SitePage {
 						Target.XPATH);
 				AddedItemId = getCommand().getText(keyword1);
 
-				AddedItemId1_3 = AddedItemId.split("\\s+");
+				AddedItemId1_3 = AddedItemId.split("/");
 
 			}
 
@@ -1010,9 +1088,11 @@ public class SetupInventoryPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
-
+			
+		
+			
 			final Target SetUpInventory_1stItemHeading = new Target("OrderGuide_1stItemHeading",
 					"//*[@class='mm-c-product-list']//*[@class='Grid__innerScrollContainer']//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
 							+ AddedItemId1_1[0] + "')]",
@@ -1044,7 +1124,7 @@ public class SetupInventoryPage extends SitePage {
 				LocationsPage.count++;
 
 			}
-
+		
 			if (noOfElements == LocationsPage.count) {
 
 				log("All Three Items Found in Setup Inventory :Pass", LogType.VERIFICATION_STEP);
@@ -1073,14 +1153,15 @@ public class SetupInventoryPage extends SitePage {
 	public SetupInventoryPage SearchKeyword(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
 			getCommand().waitForTargetPresent(Search);
 			getCommand().click(Search);
 
-			getCommand().sendKeys(Search, AddedItemId1_1[0]);
+			getCommand().sendKeys(Search, AddedItemId1_2[0]);
+			getCommand().waitFor(5);
 
 			log("Searching using keyword :Pass", LogType.VERIFICATION_STEP);
 		} catch (Exception e) {
@@ -1097,14 +1178,14 @@ public class SetupInventoryPage extends SitePage {
 	public SetupInventoryPage verifyKeywordSearchItems(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 
+			getCommand().waitFor(10);
 			final Target SearchCheck = new Target("SearchCheck",
-					"//*[@class='mm-c-product-list__all-prods']//*[@class='mm-c-product-list__row-wrapper']//*[@class='mm-c-product-list__description']//*[contains(text(),'"
-							+ AddedItemId1_1[0] + "')]",
+					"((//*[@class='mm-c-product-list__item mm-c-product__sysco ']//*[@class='mm-c-product-list__row-wrapper']//*[@class='mm-c-product-list__description'])[1])//*[contains(text(),'"
+							+ AddedItemId1_2[0] + "')]",
 					Target.XPATH);
-
 			Boolean boolean1 = getCommand().isTargetPresent(SearchCheck);
 
 			if (boolean1) {
@@ -1113,7 +1194,8 @@ public class SetupInventoryPage extends SitePage {
 			} else {
 
 				log("Item Found in location:Fail", LogType.VERIFICATION_STEP);
-				Assert.assertTrue(false);
+				throw new Exception();
+
 			}
 
 		}
@@ -1134,7 +1216,7 @@ public class SetupInventoryPage extends SitePage {
 	public SetupInventoryPage SelectItemFrom_OrderGuide(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -1150,8 +1232,9 @@ public class SetupInventoryPage extends SitePage {
 								+ "')]/following-sibling::div[@class='mm-c-product-minlist__details']",
 						Target.XPATH);
 				AddedItemId = getCommand().getText(keyword1);
-
-				AddedItemId1 = AddedItemId.split("\\s+");
+				AddedItemId1 = AddedItemId.split("/");
+				
+			//	AddedItemId1 = AddedItemId.split("\\s+");
 
 				log("First item selected Order Guide  :Pass", LogType.VERIFICATION_STEP);
 				TapOnDone("done");
@@ -1186,7 +1269,7 @@ public class SetupInventoryPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 
 			if (getCommand().isTargetPresent(Category_Header)) {
@@ -1197,7 +1280,8 @@ public class SetupInventoryPage extends SitePage {
 							"//*[@class='mm-c-product-list']//*[@class='Grid__innerScrollContainer']//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
 									+ SetupInventoryPage.AddedItemId1[0] + "')]",
 							Target.XPATH);
-
+					
+					
 					if (getCommand().isTargetPresent(SetUpInventory_1stItemHeading)) {
 						log("OG Item Found in Setup Inventory:Pass", LogType.VERIFICATION_STEP);
 					} else {
@@ -1233,7 +1317,7 @@ public class SetupInventoryPage extends SitePage {
 	public SetupInventoryPage VerifyOptionsOnImportItems(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Import items page verify ", LogType.STEP);
 		try {
@@ -1265,7 +1349,7 @@ public class SetupInventoryPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 
 			final Target SearchCheck = new Target("SearchCheck",
@@ -1300,7 +1384,7 @@ public class SetupInventoryPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -1309,7 +1393,7 @@ public class SetupInventoryPage extends SitePage {
 					Target.XPATH);
 			AddedItemId = getCommand().getText(keyword1);
 
-			AddedItemId1 = AddedItemId.split("\\s+");
+			AddedItemId1 = AddedItemId.split("/");
 
 			log("Product ID verified  :Pass", LogType.VERIFICATION_STEP);
 

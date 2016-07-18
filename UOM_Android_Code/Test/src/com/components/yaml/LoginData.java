@@ -7,9 +7,8 @@ public class LoginData {
 	
 	public String UserName;
 	public String Password;
-	//public String MBUserName;
-	//public String MBPassword;
 	
+	@SuppressWarnings("deprecation")
 	public static LoginData fetch(String key){
 		BasePage pageObj = new BasePage();
 		LoginData obj = pageObj.getCommand().loadYaml(key, "data-pool/Login_Data.yaml");

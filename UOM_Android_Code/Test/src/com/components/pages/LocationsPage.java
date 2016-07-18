@@ -1,3 +1,22 @@
+		/**
+		 ********************************************************************************************************************************************
+		 ********************************************************************************************************************************************
+		 *																																		   	*
+		 * 2016-2017 Infosys Limited, Banglore, India. All Rights Reserved																			*
+
+		 * Version: 1.0																																*
+		 * 																																			*
+		 * Except for any free or open source software components embedded in this Infosys proprietary software program ("Program"),				*
+		 * this Program is protected by copyright laws, international treaties and other pending or existing intellectual property rights in India, *
+		 * the United States and other countries. Except as expressly permitted, any unautorized reproduction, storage, transmission 				*
+		 * in any form or by any means (including without limitation electronic, mechanical, printing, photocopying, recording or otherwise), 		*
+		 * or any distribution of this Program, or any portion of it, may result in severe civil and criminal penalties, 							*
+		 * and will be prosecuted to the maximum extent possible under the law 																		*
+		 *																																			*
+		 ********************************************************************************************************************************************
+		 ********************************************************************************************************************************************
+		 **/
+
 package com.components.pages;
 
 import io.appium.java_client.android.AndroidDriver;
@@ -42,13 +61,11 @@ public class LocationsPage extends SitePage {
 			"//*[@id='mount']/div/div/div[2]/div/div/div[2]/div[1]/div/div/div/div/div[2]/div[2]/h4", Target.XPATH);
 
 	public static final Target AddLocation_LocName = new Target("ADDLocation_LocName", "//*[@id='name']", Target.XPATH);
-	public static final Target AddLocation_LocTypeCoolerWeb = new Target("ADDLocation_LocTypeCooler",
+	public static final Target AddLocation_LocTypeCooler = new Target("ADDLocation_LocTypeCooler",
 			"(//*[@class='mm-c-location__details-radio']//*[@class='radio'])[1]", Target.XPATH);
-	public static final Target AddLocation_LocTypeCooler = new Target("LocationCooler", "(//*[@id='storage'])[1]",
-			Target.XPATH);
 
-	public static final Target AddWeb = new Target("ADD_Vendor", "//*[@id='add-nav']/a/i", Target.XPATH);
-	public static final Target EditWeb = new Target("Edit", "//*[@id='edit-nav']/a/i", Target.XPATH);
+	public static final Target Add = new Target("Add", "//*[@id='add-nav']/a/i", Target.XPATH);
+	public static final Target Edit= new Target("Edit", "//*[@id='edit-nav']/a/i", Target.XPATH);
 
 	public static final Target Back = new Target("Back", "//*[@id='back-nav']/a/i", Target.XPATH);
 
@@ -89,9 +106,6 @@ public class LocationsPage extends SitePage {
 	public static final Target LocationItem2_InputTextBoxCheck = new Target("LocationItem1_InputTextBoxCheck",
 			locationInputTextBox2, Target.XPATH);
 	public static String Location2ItemAdded;
-	public static final Target BackWeb = new Target("Back",
-			"//*[@class='nav navbar-nav']//*[@role='presentation']//*[@class='mm-o-icon icon-chevron-left']",
-			Target.XPATH);
 
 	public static final Target Delete = new Target("Back",
 			"//*[@id='delete-button' and contains(text(),'Delete Location')]", Target.XPATH);
@@ -263,12 +277,13 @@ public class LocationsPage extends SitePage {
 			"(//*[@class='list-group']//*[@id='list-item']//*[@class='mm-c-simplelist__name'])[3]", Target.XPATH);
 	public static final Target FourthLocation = new Target("FourthLocation",
 			"(//*[@class='list-group']//*[@id='list-item']//*[@class='mm-c-simplelist__name'])[4]", Target.XPATH);
+	public static final Target Cancel = new Target("Cancel", "//*[contains(text(),'Cancel')]", Target.XPATH);
 
 	public static String DeletedCategory1;
 	public static String DeletedCategory2;
 	public static String DeletedCategory3;
 	public static Integer count = 0;
-
+	public static Integer count1 = 0;
 	public static final Target ViewItemsOnLocation = new Target("ViewItemsOnLocation",
 			"//*[contains(text(),'View items in this location')]", Target.XPATH);
 
@@ -287,7 +302,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage EnterLocationName(String locationName, String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -312,7 +327,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage SelectLocationCooler(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -337,7 +352,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage TapOnNext(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 			getCommand().waitForTargetPresent(Next);
@@ -363,7 +378,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage CustomLocation(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 
 			getCommand().waitFor(5);
@@ -390,7 +405,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage DefaultLocation(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 
 			getCommand().waitFor(5);
@@ -417,7 +432,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage tapContinue(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 			getCommand().waitFor(5);
 			getCommand().waitForTargetPresent(Continue);
@@ -445,7 +460,7 @@ public class LocationsPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 			getCommand().waitForTargetPresent(LocationsPage_Header);
 
@@ -474,7 +489,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage TapOnDone(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -502,7 +517,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage ItemVerifyOnLocation(String location, String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("location Item verify ", LogType.STEP);
 		try {
@@ -538,7 +553,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage NonSyscoItemVerifyTrackInventory(String location, String product, String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("locationItem verify ", LogType.STEP);
 		try {
@@ -608,7 +623,7 @@ public class LocationsPage extends SitePage {
 		log("Entering type Dry", LogType.STEP);
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -635,7 +650,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage AddLocations2_name(String locname) {
 
 		log("Entering Location name", LogType.STEP);
-		System.out.println("in 2ndloc");
+		
 		try {
 
 			getCommand().waitForTargetPresent(ADD_LocationName2);
@@ -666,7 +681,7 @@ public class LocationsPage extends SitePage {
 		log("Entering type Dry", LogType.STEP);
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 
 			if (getCommand().isTargetPresent(LocType_Dry2T1)) {
@@ -719,7 +734,7 @@ public class LocationsPage extends SitePage {
 		log("Selecting item", LogType.STEP);
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 			getCommand().waitForTargetPresent(LocationsPage_Header);
 
@@ -752,7 +767,7 @@ public class LocationsPage extends SitePage {
 		log("Selecting item", LogType.STEP);
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 			getCommand().waitForTargetPresent(LocationsPage_Header);
 
@@ -789,7 +804,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage locationItemClick1AndEnterValue(String location, String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("locationItemClick1AndEnterValue ", LogType.STEP);
 		try {
 			final Target Locations_random1 = new Target("Locations_random1",
@@ -834,7 +849,7 @@ public class LocationsPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("locationItemClick1AndEnterValue ", LogType.STEP);
 		try {
 
@@ -880,15 +895,15 @@ public class LocationsPage extends SitePage {
 	public LocationsPage TapAddLocation(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
-			getCommand().waitForTargetPresent(AddWeb);
+			getCommand().waitForTargetPresent(Add);
 
-			if (getCommand().isTargetPresent(AddWeb)) {
+			if (getCommand().isTargetPresent(Add)) {
 
-				getCommand().clickWithJavascript(AddWeb);
+				getCommand().clickWithJavascript(Add);
 
 				log("Navigating to Add Locations page :Pass", LogType.VERIFICATION_STEP);
 
@@ -909,7 +924,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage AddLocationDetails(String locationName, String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -939,7 +954,7 @@ public class LocationsPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Selecting location", LogType.STEP);
 		try {
@@ -967,7 +982,7 @@ public class LocationsPage extends SitePage {
 	@SuppressWarnings("rawtypes")
 	public LocationsPage AddLocationName(String locationName, String string) {
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 			getCommand().clear(AddLocation_LocName);
@@ -991,12 +1006,12 @@ public class LocationsPage extends SitePage {
 	public LocationsPage AddLocationCooler(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
-			getCommand().waitForTargetPresent(AddLocation_LocTypeCoolerWeb);
-			getCommand().click(AddLocation_LocTypeCoolerWeb);
+			getCommand().waitForTargetPresent(AddLocation_LocTypeCooler);
+			getCommand().click(AddLocation_LocTypeCooler);
 
 			log("Selected cooler :Pass", LogType.VERIFICATION_STEP);
 		}
@@ -1004,7 +1019,6 @@ public class LocationsPage extends SitePage {
 		catch (Exception e) {
 			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
-			// getCommand().captureScreenshot(finalPath1);
 			log("Selected cooler :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
@@ -1017,7 +1031,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage TapOnBack(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -1045,7 +1059,7 @@ public class LocationsPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Checking addeded Location in location list", LogType.STEP);
 		try {
 
@@ -1076,14 +1090,14 @@ public class LocationsPage extends SitePage {
 	public LocationsPage TapOnEdit(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Editing", LogType.STEP);
 		try {
 
-			getCommand().waitForTargetPresent(EditWeb);
-			if (getCommand().isTargetPresent(EditWeb)) {
+			getCommand().waitForTargetPresent(Edit);
+			if (getCommand().isTargetPresent(Edit)) {
 
-				getCommand().click(EditWeb);
+				getCommand().click(Edit);
 
 				log("Tap on edit :Pass", LogType.VERIFICATION_STEP);
 			}
@@ -1102,7 +1116,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage TapOnDeleteLocation(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Delete cliking", LogType.STEP);
 		try {
 
@@ -1129,7 +1143,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage TapOnYesDelete(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Deleted", LogType.STEP);
 		try {
 			getCommand().waitForTargetPresent(YesDelete);
@@ -1154,7 +1168,7 @@ public class LocationsPage extends SitePage {
 	@SuppressWarnings("rawtypes")
 	public LocationsPage VerifyCancelledLocationList(String locationAdded, String string) {
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Checking addeded Location in location list", LogType.STEP);
 		try {
 
@@ -1185,7 +1199,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage AddItemFrom_OrderGuide(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -1212,7 +1226,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage AddLocation_AddProductDetailsPage(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 
 			getCommand().waitForTargetPresent(AddProductPage_AddLocations);
@@ -1234,7 +1248,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage ProductSelect(String item, String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Selecting an item from location ", LogType.STEP);
 		try {
 
@@ -1265,7 +1279,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage LocationDoneSelection(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -1292,7 +1306,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage selectMultipleItemsFromLocation1(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -1341,7 +1355,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage selectMultipleItemsFromLocation2(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -1389,7 +1403,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage ItemVerifyOnLocation2(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("locationItem verify ", LogType.STEP);
 		final Target Location2_FirstItemSelectedVerify = new Target("Location2_FirstItemSelectedVerify",
@@ -1436,7 +1450,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage ItemVerifyOnLocation1(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("locationItem verify ", LogType.STEP);
 		final Target Location1_FirstItemSelectedVerify = new Target("Location1_FirstItemSelectedVerify",
@@ -1455,6 +1469,7 @@ public class LocationsPage extends SitePage {
 
 			if ((flag1_1 && flag1_2 && flag1_3)) {
 				log("Item verification done :Pass", LogType.VERIFICATION_STEP);
+				count1=3;
 			}
 
 			else {
@@ -1485,7 +1500,7 @@ public class LocationsPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 
 			getCommand().waitForTargetPresent(AddProductPage_AddCategory);
@@ -1507,7 +1522,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage ProductQtyEnter(String qty, String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Quantity entering  ", LogType.STEP);
 		try {
 
@@ -1532,7 +1547,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage UomEnterOZ(String uom, String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Quantity entering  ", LogType.STEP);
 		try {
 
@@ -1556,7 +1571,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage QuantityVerify(String qty, String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Quantity verification ", LogType.STEP);
 		try {
 
@@ -1586,7 +1601,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage AssignMultipleListItemsToLocation(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 
 			log("Adding Items of multiplelist to location", LogType.STEP);
@@ -1644,7 +1659,7 @@ public class LocationsPage extends SitePage {
 		log("Selecting item", LogType.STEP);
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 
 			getCommand().waitForTargetPresent(LocationsPage_Header);
@@ -1671,7 +1686,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage VerifyMultipleListItemsInLocation(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		final Target Location1_FirstItemSelectedVerify = new Target("Location1_FirstItemSelectedVerify",
 				"//*[contains(text(),'" + LocationsItemName1_1 + "')]", Target.XPATH);
 		final Target Location1_SecondItemSelectedVerify = new Target("Location1_SecondItemSelectedVerify",
@@ -1721,7 +1736,7 @@ public class LocationsPage extends SitePage {
 		log("Selecting custom category from Locations page", LogType.STEP);
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -1749,7 +1764,7 @@ public class LocationsPage extends SitePage {
 		log("Selecting custom category from Locations page", LogType.STEP);
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -1776,7 +1791,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage VerifyListItemsOnLocation(int item1, int item2, String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("locationItem verify ", LogType.STEP);
 		try {
@@ -1811,7 +1826,7 @@ public class LocationsPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Category Identification ", LogType.STEP);
 		try {
 
@@ -1939,7 +1954,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage NonSyscoPrepCategoryIdentify(String nonsysco, String prep, String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("category verify ", LogType.STEP);
 		try {
 
@@ -1992,7 +2007,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage DeleteItems(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Delete cliking", LogType.STEP);
 		try {
@@ -2046,7 +2061,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage VerifyDeleteItemsList(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Checking addeded Location in location list", LogType.STEP);
 		try {
@@ -2085,7 +2100,7 @@ public class LocationsPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Tap On Product,Open ProductDetailsPage And Enter Qty", LogType.STEP);
 		try {
@@ -2113,7 +2128,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage SyscoProductSelect(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Selecting an item from location ", LogType.STEP);
 		try {
 			final Target Product_Select = new Target("Product_Select",
@@ -2121,11 +2136,16 @@ public class LocationsPage extends SitePage {
 							+ SetupInventoryPage.AddedItemId1[0]
 							+ "')]/ancestor::div[@class='mm-c-product-list__details-wrapper'])//a)[1]",
 					Target.XPATH);
-
+		
+			System.out.println("id"+SetupInventoryPage.AddedItemId1[0]);
+            System.out.println("product select"+Product_Select);
+            
 			getCommand().waitForTargetPresent(Product_Select);
 
 			getCommand().clickWithJavascript(Product_Select);
-
+			
+			System.out.println("clicked product");
+			
 			getCommand().waitForTargetPresent(ProductDetailsPage);
 			log("Selecting an item from location :Pass", LogType.VERIFICATION_STEP);
 		} catch (Exception e) {
@@ -2143,7 +2163,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage VerifyItemsOnDefaultLocation(String location, String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("locationItem verify ", LogType.STEP);
 		try {
@@ -2151,7 +2171,7 @@ public class LocationsPage extends SitePage {
 			if (getCommand().isTargetPresent(ItemVerify)) {
 
 				count = getCommand().getTargetCount(ItemVerify);
-
+              
 				getCommand().waitFor(5);
 				final Target Locations_check = new Target("Locations_check",
 						"//*[@class='mm-c-product-list__details-wrapper']//*[@class='mm-c-product-list__details']//*[@class='mm-c-product-list__location']//*[contains(text(),'"
@@ -2184,7 +2204,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage VerifyOptionsOnSetupLocations(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Set up locations page verify ", LogType.STEP);
 		try {
@@ -2215,7 +2235,7 @@ public class LocationsPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Assigining nickname to product", LogType.STEP);
 		try {
 
@@ -2243,7 +2263,7 @@ public class LocationsPage extends SitePage {
 			String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Order of locations verify", LogType.STEP);
 		try {
@@ -2278,7 +2298,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage PdtDetailPage_Location1_EnterQty(String quantity, String loc1, String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -2288,7 +2308,7 @@ public class LocationsPage extends SitePage {
 					Target.XPATH);
 
 			getCommand().click(LocationItemProdDetailsEnterQuantity);
-
+			getCommand().clear(LocationItemProdDetailsEnterQuantity);
 			getCommand().sendKeys(LocationItemProdDetailsEnterQuantity, quantity);
 
 			log("Entered qty on first location on product detail page :Pass", LogType.VERIFICATION_STEP);
@@ -2307,7 +2327,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage PdtDetailPage_Location2_EnterQty(String quantity, String loc2, String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -2317,7 +2337,7 @@ public class LocationsPage extends SitePage {
 					Target.XPATH);
 
 			getCommand().click(LocationItemProdDetailsEnterQuantity);
-
+			getCommand().clear(LocationItemProdDetailsEnterQuantity);
 			getCommand().sendKeys(LocationItemProdDetailsEnterQuantity, quantity);
 
 			log("Entered qty on second location on product detail page :Pass", LogType.VERIFICATION_STEP);
@@ -2336,7 +2356,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage VerifyCustomListItemsCustomLocation(String location, String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Verifying location of items ", LogType.STEP);
 		try {
@@ -2379,7 +2399,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage VerifyDeletedItemsCategory(String location, String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		Boolean flag1 = false, flag2 = false, flag3 = false;
 
@@ -2434,7 +2454,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage ViewItemsOnLocation(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 
 			getCommand().waitForTargetPresent(ViewItemsOnLocation);
@@ -2456,7 +2476,7 @@ public class LocationsPage extends SitePage {
 	public LocationsPage VerifyCountOfItemsInLocation(String locationName, String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Verifying item count", LogType.STEP);
 
@@ -2468,7 +2488,7 @@ public class LocationsPage extends SitePage {
 			getCommand().waitForTargetPresent(LocationnameNumberVerification);
 
 			String locationNameToBeVerified = getCommand().getText(LocationnameNumberVerification);
-
+			
 			if (!(locationNameToBeVerified.contains("(" + count.toString() + ")"))) {
 
 				throw new Exception();
@@ -2489,6 +2509,33 @@ public class LocationsPage extends SitePage {
 		}
 		return this;
 
+	}
+	
+	@SuppressWarnings("rawtypes")
+	public LocationsPage TapOnCancel(String string) {
+
+		String string2 = "Issue";
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
+
+		try {
+
+			getCommand().waitForTargetPresent(Cancel);
+			if (getCommand().isTargetPresent(Cancel)) {
+
+				getCommand().click(Cancel);
+
+				log("Tapped on Cancel", LogType.VERIFICATION_STEP);
+
+			}
+
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			log("Tapped on Cancel :Fail", LogType.VERIFICATION_STEP);
+			getCommand().captureScreenshot(finalPath1);
+			Assert.assertTrue(false);
+		}
+
+		return this;
 	}
 
 }

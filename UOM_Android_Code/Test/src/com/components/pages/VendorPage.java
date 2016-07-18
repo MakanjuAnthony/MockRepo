@@ -1,3 +1,22 @@
+		/**
+		 ********************************************************************************************************************************************
+		 ********************************************************************************************************************************************
+		 *																																		   	*
+		 * 2016-2017 Infosys Limited, Banglore, India. All Rights Reserved																			*
+
+		 * Version: 1.0																																*
+		 * 																																			*
+		 * Except for any free or open source software components embedded in this Infosys proprietary software program ("Program"),				*
+		 * this Program is protected by copyright laws, international treaties and other pending or existing intellectual property rights in India, *
+		 * the United States and other countries. Except as expressly permitted, any unautorized reproduction, storage, transmission 				*
+		 * in any form or by any means (including without limitation electronic, mechanical, printing, photocopying, recording or otherwise), 		*
+		 * or any distribution of this Program, or any portion of it, may result in severe civil and criminal penalties, 							*
+		 * and will be prosecuted to the maximum extent possible under the law 																		*
+		 *																																			*
+		 ********************************************************************************************************************************************
+		 ********************************************************************************************************************************************
+		 **/
+
 package com.components.pages;
 
 import java.util.Set;
@@ -21,7 +40,6 @@ public class VendorPage extends SitePage {
 			Target.XPATH);
 	public static final Target ADD_VendorEmail = new Target("ADD_VendorEmail", "//*[@id='emailAddress']", Target.XPATH);
 	public static final Target ADD_VendorNote = new Target("ADD_VendorNote", "//*[@id='notes']", Target.XPATH);
-	public static final Target DoneWeb = new Target("Done", "//*[@id='done-nav']/a/i", Target.XPATH);
 	public static final Target Done = new Target("Done", "//*[@id='done-nav']/a", Target.XPATH);
 	public static final Target Back = new Target("Continue", "//*[@id='back-nav']/a/i", Target.XPATH);
 	public static final Target Vendor_firstVendorname = new Target("Vendor_firstVendorname",
@@ -94,7 +112,7 @@ public class VendorPage extends SitePage {
 	public VendorPage Add_Supplier(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Add vendor tap", LogType.STEP);
 		try {
 
@@ -133,7 +151,7 @@ public class VendorPage extends SitePage {
 			String note, String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Adding vendor details", LogType.STEP);
 		try {
 
@@ -206,7 +224,7 @@ public class VendorPage extends SitePage {
 	public VendorPage TapOnDone(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -214,7 +232,7 @@ public class VendorPage extends SitePage {
 			if (getCommand().isTargetPresent(Done)) {
 
 				getCommand().clickWithJavascript(Done);
-
+				getCommand().waitFor(20);
 				log("Tapped on done:Pass", LogType.VERIFICATION_STEP);
 
 			}
@@ -235,7 +253,7 @@ public class VendorPage extends SitePage {
 	public VendorPage TapOnBack(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -262,7 +280,7 @@ public class VendorPage extends SitePage {
 	public VendorPage SupplierSelect(String name, String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Selecting vendor", LogType.STEP);
 		try {
@@ -275,7 +293,7 @@ public class VendorPage extends SitePage {
 					"//*[@id='list-item']//*[contains(text(),'" + vendorName + "')]", Target.XPATH);
 
 			getCommand().click(VD_Vendorname);
-
+			getCommand().waitFor(20);
 			log("Vendor is selected for item :Pass", LogType.VERIFICATION_STEP);
 		}
 
@@ -295,7 +313,7 @@ public class VendorPage extends SitePage {
 		log("Vendor List", LogType.STEP);
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -325,7 +343,7 @@ public class VendorPage extends SitePage {
 	public VendorPage Supplier_List(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Verifying supplier list page ", LogType.STEP);
 		try {
 
@@ -350,7 +368,7 @@ public class VendorPage extends SitePage {
 			String note, String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 
 			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
@@ -436,7 +454,7 @@ public class VendorPage extends SitePage {
 		log("Checking vendor details", LogType.STEP);
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 			String vendorName = vendorname;
 			String vendorPhoneNum = number;
@@ -508,7 +526,7 @@ public class VendorPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 
 			getCommand().waitForTargetPresent(ADD_VendorDelete);
@@ -546,7 +564,7 @@ public class VendorPage extends SitePage {
 	public VendorPage TapOnEdit(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -574,7 +592,7 @@ public class VendorPage extends SitePage {
 	public VendorPage VerifyDeletedSupplier(String name, String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Selecting vendor", LogType.STEP);
 		try {
@@ -611,7 +629,7 @@ public class VendorPage extends SitePage {
 	public VendorPage SupplierCancelledVerify(String name, String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Searching for cancelled supplier", LogType.STEP);
 		try {
@@ -643,7 +661,7 @@ public class VendorPage extends SitePage {
 	public VendorPage TapOnCancel(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 

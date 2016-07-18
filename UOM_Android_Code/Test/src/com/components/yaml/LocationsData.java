@@ -11,6 +11,7 @@ public class LocationsData {
 	
 
 	
+	@SuppressWarnings("deprecation")
 	public static LocationsData fetch(String key){
 		BasePage pageObj = new BasePage();
 		LocationsData obj = pageObj.getCommand().loadYaml(key, "data-pool/Locations_Data.yaml");

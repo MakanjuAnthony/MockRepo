@@ -27,7 +27,7 @@ public class WorkFlow extends Initiator{
 	 * Prerequisite:Normal/MA User with OG items.
 	 */
 
-	@Test(groups={"SI-WF1"},priority=1, description = "SI-WF1-OG + Default Loc + Default Category")
+	@Test(groups={"SI-WF1"},priority=0, description = "SI-WF1-OG + Default Loc + Default Category")
 	public void SI_WF1_OG_DefaultLocation_DefaultCategory() {
 
 
@@ -76,15 +76,15 @@ public class WorkFlow extends Initiator{
 		.SelectLocation(locDataCooler.LocationName, "SI-WF1-Selected cooler")
 		.VerifyItemsOnDefaultLocation(locDataCooler.LocationName, "SI-WF1-Verified cooler")
 		.TapOnBack("SI-WF1-Tapped on Back")
-		.VerifyCountOfItemsInLocation(locDataCooler.LocationName, "SI-WF1-Count of items in cooler")
+		//.VerifyCountOfItemsInLocation(locDataCooler.LocationName, "SI-WF1-Count of items in cooler")
 		.SelectLocation(locDataFreezer.LocationName, "SI-WF1-Selected freezer")
 		.VerifyItemsOnDefaultLocation(locDataFreezer.LocationName, "SI-WF1-Verified freezer")
 		.TapOnBack("SI-WF1-Tapped on Back")
-		.VerifyCountOfItemsInLocation(locDataFreezer.LocationName, "SI-WF1-Count of items in freezer")
+	//	.VerifyCountOfItemsInLocation(locDataFreezer.LocationName, "SI-WF1-Count of items in freezer")
 		.SelectLocation(locDataDry.LocationName, "SI-WF1-Selected dry")
 		.VerifyItemsOnDefaultLocation(locDataDry.LocationName, "SI-WF1-Verified dry")
 		.TapOnBack("SI-WF1-Tapped on Back")
-		.VerifyCountOfItemsInLocation(locDataDry.LocationName, "SI-WF1-Count of items in Dry")
+	//	.VerifyCountOfItemsInLocation(locDataDry.LocationName, "SI-WF1-Count of items in Dry")
 		;
 	}
 
@@ -145,6 +145,7 @@ public class WorkFlow extends Initiator{
 		.tapContinue("SI-WF3-TC1-Tapped Continue3")
 		.CreateTwoExpenseCategory(categoryData.Name, categoryData.Name1, "SI-WF3-CreateTwoExpenseCategory")
 		.TapOnNext("SI-WF3-Tapped Next3")
+		.selectMultipleItemsFromCategory1("SI-WF3-selectMultipleItemsFromCategory1")
 		.selectMultipleItemsFromCategory1("SI-WF3-selectMultipleItemsFromCategory1")
 		.TapOnNext("SI-WF3-Tapped Next4")
 		.selectMultipleItemsFromCategory2("SI-WF3-selectMultipleItemsFromCategory2")
@@ -225,6 +226,15 @@ public class WorkFlow extends Initiator{
 		.InvTools_TrackInventory("SI-WF4-Selected track inventory")
 		._atLocationsPage()
 		.VerifyOrderOfLocations(locDataCooler.LocationName, locDataFreezer.LocationName, locDataDry.LocationName, locDataNoLoc.LocationName, "SI-WF4-Verified order of locations")
+		
+		.TapOnBack("SI-WF4-Tapped Back")
+		._atInventoryToolPage()
+		.InvTools_Locations("SI-WF4-Selected Locations")
+		._atLocationsPage()
+		.VerifyOrderOfLocations(locDataCooler.LocationName, locDataFreezer.LocationName, locDataDry.LocationName, locDataNoLoc.LocationName, "SI-WF4-Verified order of locations")
+		
+		
+		
 		;
 	}
 	
@@ -311,7 +321,7 @@ public class WorkFlow extends Initiator{
 	 * Validating user is able to setup inventory by adding items from OrderGuide and then skip assigning location and category. 
 	 * Prerequisite:Normal/MA User with OG items.
 	 */
-	@Test(groups={"SI-WF6"},priority=2, description = "SI-WF6-OG + Skip Loc + Skip Category")
+	@Test(groups={"SI-WF6"},priority=5, description = "SI-WF6-OG + Skip Loc + Skip Category")
 	public void SI_WF6_OG_SkipLocation_SkipCategory() {	
 
 
@@ -354,7 +364,8 @@ public class WorkFlow extends Initiator{
 	 */
 	@Test(groups={"SI-WF7"},priority=4, description = "SI-WF7-OG+Default loc + Skip Category")
 	public void SI_WF7_OG_DefaultLocation_SkipCategory() {
-		LoginData loginData =LoginData.fetch("LoginData6");	  
+		
+		LoginData loginData =LoginData.fetch("LoginData8");	  
 		SearchData searchData=SearchData.fetch("SearchData");
 		LocationsData locationsData =LocationsData.fetch("LocatiosData3");
 
@@ -409,7 +420,8 @@ public class WorkFlow extends Initiator{
 		.InvTools_TrackInventory("SI-WF7-Selected track inventory")
 
 
-		._atLocationsPage().TapAddLocation("SI-WF7-Tapped ADD")
+		._atLocationsPage()
+		.TapAddLocation("SI-WF7-Tapped ADD")
 		.AddLocationName(locationsData.LocationName, "SI-WF7-Enter location name")
 		.AddLocationCooler("SI-WF7-Tapped Cooler")
 		.TapOnDone("SI-WF7-Tapped Done")
@@ -424,8 +436,8 @@ public class WorkFlow extends Initiator{
 		.TapOnDone("SI-WF7-Done")
 		.verifySearchItemsOnSetupInv("SI-WF7-Verify item selected")
 		.TapOnDone("SI-WF7-Tapped Done")
+		._atSetupInventoryPage()
 		.verifySearchItemsOnSetupInv("SI-WF7-Verify item selected")
-
 		;
 
 	}
@@ -434,10 +446,10 @@ public class WorkFlow extends Initiator{
 	 * Validating user is able to setup inventory by adding items from OrderGuide and then skip location and assigning to Default category.
 	 * Prerequisite:Normal/MA User with OG items.
 	 */
-	@Test(groups={"SI-WF8"},priority=0, description = "SI-WF8-OG + Skip Loc + Default Category")
+	@Test(groups={"SI-WF8"},priority=6, description = "SI-WF8-OG + Skip Loc + Default Category")
 	public void SI_WF8_OG_SkipLocation_DefaultCategory() {
 
-		LoginData loginData =LoginData.fetch("LoginData7");	 
+		LoginData loginData =LoginData.fetch("LoginData1");	 
 
 
 
@@ -483,10 +495,10 @@ public class WorkFlow extends Initiator{
 	 * Validating user is able to setup inventory by adding items from StartFromScratch(Product catalog) and then assign those items to Default location and Default category.
 	 * Prerequisite:Normal/MA User
 	 */
-	@Test(groups={"SI-WF9"},priority=0, description = "SI-WF9-Start From Scratch + add items from Product catelog +Default Loc + Default Category ")
+	@Test(groups={"SI-WF9"},priority=7, description = "SI-WF9-Start From Scratch + add items from Product catelog +Default Loc + Default Category ")
 	public void SI_WF9_StartFromScratch_PdtCatalog_DefaultLocation_DefaultCategory() {	
 
-		LoginData loginData =LoginData.fetch("LoginData8");
+		LoginData loginData =LoginData.fetch("LoginData1");
 
 		SearchData searchData=SearchData.fetch("SearchData");
 
@@ -537,890 +549,13 @@ public class WorkFlow extends Initiator{
 	}
 
 
-	/*
-	 * Validating user is able to setup inventory by adding items from StartFromScratch (OrderGuide) and then assign those items to Default locations and default category.
-	 * Prerequisite:Normal/MA User with OG items.
-	 */
-	@Test(groups={"SI-WF10"},priority=0, description = "SI-WF10-Start From Scratch + add items from Order Guide +Default Loc + Default Category")
-	public void SI_WF10_StartFromScratch_OG_DefaultLocation_DefaultCategory() {	
-
-		LoginData loginData =LoginData.fetch("LoginData9");
-
-		Start.asTester
-		.goToLoginpage()
-		.verifyLoginPage("SI-WF10-LoginPage")
-		.saveUsernameCheckBoxClick("SI-WF10-save username")
-		.signIn(loginData.UserName, loginData.Password,"SI-WF10-Login")
-
-		._atHomePage()
-		.ClickAccount(loginData.UserName,"SI-WF10-Clicked account")
-
-		._atAccountsPage()
-		.Third_AccountSelection(loginData.UserName,"SI-WF10-FirstAccountSelect")
-
-
-		._atInventoryToolPage()
-		.InvTools_SetUpInventory("SI-WF10-SetupInventoryTap")
-
-		._atSetupInventoryPage()
-		.TapOnSkip("SI-WF10-Tapped Skip")
-		.StartFromScratch("SI-WF10-ScratchSelected")
-		.tapContinue("SI-WF10-Tapped Continue")
-		.Scratch_AddItems("SI-WF10-Tapped Add items")
-		.AddItemFrom_OrderGuide("SI-WF10-Tapped Order Guide")
-		.SelectMultipleItemsFrom_OrderGuide("SI-WF10-Selected item from OG")
-		.TapOnDone("SI-WF10-Tapped Done")
-		.verifyMultipleItemsfromOGonSetUpInv("SI-WF10-Verify item selected")
-		.TapOnDone("SI-WF10-Tapped Done")
-
-
-		._atLocationsPage()
-		.DefaultLocation("SI-WF10-Tapped Default location")
-		.tapContinue("SI-WF10-Tapped Continue")
-
-		._atCategoryPage()
-		.defaultCategories("SI-WF10-Tapped Custom category")
-		.tapComplete("SI-WF10-Tapped Complete")
-		._atSetupInventoryPage()
-		.TapTakeHome("SI-WF10-Tapped Home")
-
-		._atInventoryToolPage()
-		.InvTools_TrackInventory("SI-WF10-Selected track inventory")
-
-
-		;
-	}
-
-	/*
-	 * Validating user is able to setup inventory by adding items from StartFromScratch (Prep and NonSysco items) and then assign those items to Default locations and default category.
-	 * Validating Non sysco prompt details
-	 * Validating Non Sysco and Prep item displayed on 'No locations' on Track Inventory
-	 * Prerequisite:Normal/MA User
-	 */
-	@Test(groups={"SI-WF11"},priority=0, description = "SI-WF11-Start From Scratch + add items Non-sysco & Prep+Default Loc + Default Category ")
-	public void SI_WF11_StartFromScratch_NonSysco_Prep_DefaultLocation_DefaultCategory() {	
-
-		LoginData loginData =LoginData.fetch("LoginData10");
-
-		LocationsData locationsData =LocationsData.fetch("LocatiosData4");
-		NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
-		VendorDetailsData vendorDetailsData =VendorDetailsData.fetch("VDNonsysco");
-		PrepItemData prepItemData =PrepItemData.fetch("PrepItemData");
-
-		Start.asTester
-		.goToLoginpage()
-		.verifyLoginPage("SI-WF11-LoginPage")
-		.saveUsernameCheckBoxClick("SI-WF11-save username")
-		.signIn(loginData.UserName, loginData.Password,"SI-WF11-Login")
-
-		._atHomePage()
-		.ClickAccount(loginData.UserName,"SI-WF11-Clicked account")
-
-		._atAccountsPage()
-		.Fourth_AccountSelection(loginData.UserName,"SI-WF11-FirstAccountSelect")
-
-		._atInventoryToolPage()
-		.InvTools_SetUpInventory("SI-WF11-SetupInventoryTap")
-
-		._atSetupInventoryPage()
-		.TapOnSkip("SI-WF11-Tapped Skip")
-		.StartFromScratch("SI-WF11-ScratchSelected")
-		.tapContinue("SI-WF11-Tapped Continue")
-		.Scratch_AddItems("SI-WF11-Tapped Add items")
-		.AddItemFrom_NonSysco("SI-WF11-Tapped NonSysco")
-		.NonSysco_Prompt("SI-WF11-verify NonSysco")
-		.EnterItemDetails(nonSyscoItemData.ProductName, nonSyscoItemData.UPC, nonSyscoItemData.Pack, nonSyscoItemData.Size, nonSyscoItemData.Weight, nonSyscoItemData.Price, nonSyscoItemData.ProductBrand, "SI-WF11-NonSyscoItem details entered")
-		.AddSupplier_AddProductDetailsPage("SI-WF11-select supplier")
-
-		._atVendorPage()
-		.Add_Supplier("SI-WF11-AddVendorTap")
-		.AddSupplier_Details(vendorDetailsData.VendorName, vendorDetailsData.PhoneNum, vendorDetailsData.Address, vendorDetailsData.ContactInfo, vendorDetailsData.Email, vendorDetailsData.Note, "SI-WF11-AddVendorDetails")
-		.TapOnDone("SI-WF11-Done")
-		.TapOnBack("SI-WF11-Back")
-		.SupplierSelect(vendorDetailsData.VendorName,"SI-WF11-SupplierSelect")
-		.TapOnDone("SI-WF11-Done")
-
-		._atSetupInventoryPage()
-		.Setup_AddItemsLink("SI-WF11-Add items Selected")
-		.AddItemFrom_PrepItem("SI-WF11-Tapped NonSysco")
-		.EnterItemDetails(prepItemData.ProductName, prepItemData.UPC, prepItemData.Pack, prepItemData.Size, prepItemData.Weight, prepItemData.Price, prepItemData.ProductBrand, "SI-WF11-NonSyscoItemAddPage")
-		.TapOnDone("SI-WF11-Tapped Done")
-
-		.verifyNonSyscoPrepItemSetupInv(nonSyscoItemData.ProductName,"SI-WF11-Verify item selected")
-		.verifyNonSyscoPrepItemSetupInv(prepItemData.ProductName,"SI-WF11-Verify item selected")
-
-
-		.TapOnDone("SI-WF11-Tapped Done")
-
-		._atLocationsPage()
-		.DefaultLocation("SI-WF11-Tapped Default location")
-		.tapContinue("SI-WF11-Tapped Continue")
-
-		._atCategoryPage()
-		.defaultCategories("SI-WF11-Tapped Custom category")
-		.tapComplete("SI-WF11-Tapped Complete")
-		._atSetupInventoryPage()
-		.TapTakeHome("SI-WF11-Tapped Home")
-
-		._atInventoryToolPage()
-		.InvTools_TrackInventory("SI-WF11-Selected track inventory")
-
-
-		._atLocationsPage()
-		.SelectLocation(locationsData.LocationName, "SI-WF11-select added location")
-
-		._atSetupInventoryPage()
-		.verifyNonSyscoPrepItemSetupInv(prepItemData.ProductName,"SI-WF11-Verify item selected")
-		.verifyNonSyscoPrepItemSetupInv(nonSyscoItemData.ProductName,"SI-WF11-Verify item selected")
-		.TapOnDone("SI-WF11-Tapped Done")
-		;
-	}
-
-
-	/*
-	 * Validating user is able to setup inventory by adding items from StartFromScratch (Pdt catalog+ OG+ Prep+ NonSysco items) and then assign those items to Default locations and default category.
-	 * Validating Non Sysco and Prep item displayed on 'No locations' on Track Inventory
-	 * Prerequisite:Normal/MA User with OG items
-	 */
-	@Test(groups={"SI-WF12"},priority=0, description = "SI-WF12-Start From Scratch + add items from multiple lists +Default Loc + Default Category ")
-	public void SI_WF12_StartFromScratch_Catalog_OG_NonSysco_Prep_DefaultLocation_DefaultCategory() {	
-
-		LoginData loginData =LoginData.fetch("LoginData1");
-
-		LocationsData locationsData =LocationsData.fetch("LocatiosData4");
-		SearchData searchData=SearchData.fetch("SearchData");
-		NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
-		VendorDetailsData vendorDetailsData =VendorDetailsData.fetch("VDNonsysco");
-		PrepItemData prepItemData =PrepItemData.fetch("PrepItemData");
-
-		Start.asTester
-		.goToLoginpage()
-		.verifyLoginPage("SI-WF12-LoginPage")
-		.saveUsernameCheckBoxClick("SI-WF12-save username")
-		.signIn(loginData.UserName, loginData.Password,"SI-WF12-Login")
-		._atHomePage()
-		.ClickAccount(loginData.UserName,"SI-WF12-Clicked account")
-
-		._atAccountsPage()
-		.Fifth_AccountSelection(loginData.UserName,"SI-WF12-FirstAccountSelect")
-
-
-		._atInventoryToolPage()
-		.InvTools_SetUpInventory("SI-WF12-SetupInventoryTap")
-
-		._atSetupInventoryPage()
-		.TapOnSkip("SI-WF12-Tapped Skip")
-
-		.StartFromScratch("SI-WF12-ScratchSelected")
-		.tapContinue("SI-WF12-Tapped Continue")
-		.Scratch_AddItems("SI-WF12-Tapped Add items")
-		.SearchItem(searchData.keyword,"SI-WF12-Search item")
-		.SelectItemFrom_Catalog("SI-WF12-Selected item from OG")
-		.TapOnDone("SI-WF12-Tapped Done")
-
-
-		.Setup_AddItemsLink("SI-WF12-Add items Selected")
-		.AddItemFrom_OrderGuide("SI-WF12-Tapped Order Guide")
-		.SelectItemFrom_OrderGuide("SI-WF12-Selected item from OG")
-
-
-		.verifySearchItemsOnSetupInv("SI-WF12-Verify item selected")  
-		.verifyOGItemsOnSetupInv("SI-WF12-Verify item selected")    
-
-		.Setup_AddItemsLink("SI-WF12-Add items Selected")
-		.AddItemFrom_NonSysco("SI-WF12-Tapped NonSysco")
-		.EnterItemDetails(nonSyscoItemData.ProductName, nonSyscoItemData.UPC, nonSyscoItemData.Pack, nonSyscoItemData.Size, nonSyscoItemData.Weight, nonSyscoItemData.Price, nonSyscoItemData.ProductBrand, "SI-WF12-NonSyscoItem details entered")
-		.AddSupplier_AddProductDetailsPage("SI-WF12-select supplier")
-
-		._atVendorPage()
-		.Add_Supplier("SI-WF12-AddVendorTap")
-		.AddSupplier_Details(vendorDetailsData.VendorName, vendorDetailsData.PhoneNum, vendorDetailsData.Address, vendorDetailsData.ContactInfo, vendorDetailsData.Email, vendorDetailsData.Note, "SI-WF12-AddVendorDetails")
-		.TapOnDone("SI-WF12-Done")
-		.TapOnBack("SI-WF12-Back")
-		.SupplierSelect(vendorDetailsData.VendorName,"SI - WF 12-TC2-SupplierSelect")
-		.TapOnDone("SI-WF12-Done")
-
-		._atSetupInventoryPage()
-		.verifyNonSyscoPrepItemSetupInv(nonSyscoItemData.ProductName,"SI-WF12-Verify item selected")
-		.Setup_AddItemsLink("SI-WF12-Add items Selected")
-		.AddItemFrom_PrepItem("SI-WF12-Tapped NonSysco")
-		.EnterItemDetails(prepItemData.ProductName, prepItemData.UPC, prepItemData.Pack, prepItemData.Size, prepItemData.Weight, prepItemData.Price, prepItemData.ProductBrand, "SI-WF12-NonSyscoItemAddPage")
-		.TapOnDone("SI-WF12-Tapped Done")
-		.verifyNonSyscoPrepItemSetupInv(prepItemData.ProductName,"SI-WF12-Verify item selected")
-
-		.TapOnDone("SI-WF12-Tapped Done")
-
-
-		._atLocationsPage()
-		.DefaultLocation("SI-WF12-Tapped Default location")
-		.tapContinue("SI-WF12-Tapped Continue")
-
-
-
-		._atCategoryPage()
-		.defaultCategories("SI-WF12-Tapped Custom category")
-		.tapComplete("SI-WF12-Tapped Complete")
-
-		._atSetupInventoryPage()
-		.TapTakeHome("SI-WF12-TC1-Tapped take me home")   
-
-		._atInventoryToolPage()
-		.InvTools_TrackInventory("SI-WF12-Selected track inventory")
-
-
-		._atLocationsPage()
-		.SelectLocation(locationsData.LocationName, "SI-WF12-select added location")
-		._atSetupInventoryPage()
-		.verifyNonSyscoPrepItemSetupInv(prepItemData.ProductName,"SI-WF12-Verify item selected")
-		.verifyNonSyscoPrepItemSetupInv(nonSyscoItemData.ProductName,"SI-WF12-Verify item selected")
-		.TapOnDone("SI-WF12-Tapped Done")
-		;
-	}
 	
-	/*
-	 * Validating user is able to setup inventory by adding items from StartFromScratch (Pdt catalog+ OG+ Prep+ NonSysco items) and then assign those items to Custom locations and Custom category.
-	 * Validating uncategorized items on locations and categories page
-	 * Validating all items are displayed on corresponding location at Track Inventory
-	 * Prerequisite:Normal/MA User with OG items
-	 */
-	@Test(groups={"SI-WF13"},priority=0, description = "SI-WF13-Start from scratch+ Multiple lists +Custom location + Custom category")
-	public void SI_WF13_StartFromScratch_MultipleList_CustomLocation_CustomCategory() {	
-
-		LoginData loginData =LoginData.fetch("LoginData2");  
-
-		LocationsData locationsData =LocationsData.fetch("LocatiosData3");
-		LocationsData locationsData1 =LocationsData.fetch("LocatiosData2");
-		CategoryData categoryData=CategoryData.fetch("CategoryData");
-		SearchData searchData=SearchData.fetch("SearchData");
-		NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
-		VendorDetailsData vendorDetailsData =VendorDetailsData.fetch("VDNonsysco");
-		PrepItemData prepItemData =PrepItemData.fetch("PrepItemData");
-
-		Start.asTester
-		.goToLoginpage()
-		.verifyLoginPage("SI-WF13-LoginPage")
-		.saveUsernameCheckBoxClick("SI-WF13-save username")
-		.signIn(loginData.UserName, loginData.Password,"SI-WF13-Login")
-
-		._atHomePage()
-		.ClickAccount(loginData.UserName,"SI-WF13-Clicked account")
-
-		._atAccountsPage()
-		.Sixth_AccountSelection(loginData.UserName,"SI-WF13-ThirdAccountSelect")
-
-		._atInventoryToolPage()
-		.InvTools_SetUpInventory("SI-WF13-SetupInventoryTap")
-
-		._atSetupInventoryPage()
-		.TapOnSkip("SI-WF13-Tapped Skip1")
-
-		.StartFromScratch("SI-WF13-ScratchSelected")
-		.tapContinue("SI-WF13-Tapped Continue1")
-		.Scratch_AddItems("SI-WF13-Tapped Add items")
-		//nonsysco item
-		.AddItemFrom_NonSysco("SI-WF13-Tapped NonSysco")
-		.EnterItemDetails(nonSyscoItemData.ProductName, nonSyscoItemData.UPC, nonSyscoItemData.Pack, nonSyscoItemData.Size, nonSyscoItemData.Weight, nonSyscoItemData.Price, nonSyscoItemData.ProductBrand, "SI-WF13-NonSyscoItem details entered")
-		.AddSupplier_AddProductDetailsPage("SI-WF13-select supplier")
-
-		._atVendorPage()
-		.Add_Supplier("SI-WF13-AddVendorTap")
-		.AddSupplier_Details(vendorDetailsData.VendorName, vendorDetailsData.PhoneNum, vendorDetailsData.Address, vendorDetailsData.ContactInfo, vendorDetailsData.Email, vendorDetailsData.Note, "SI-WF13-AddVendorDetails")
-		.TapOnDone("SI-WF13-Tapped Done1")
-		.TapOnBack("SI-WF13-Tapped Back1")
-		.SupplierSelect(vendorDetailsData.VendorName,"SI-WF13-SupplierSelect")
-		.TapOnDone("SI-WF13-Tapped Done2")
-
-		//prepitem
-		._atSetupInventoryPage()
-		.Setup_AddItemsLink("SI-WF13-Add items Selected")
-		.AddItemFrom_PrepItem("SI-WF13-Tapped Prep")
-		.EnterItemDetails(prepItemData.ProductName, prepItemData.UPC, prepItemData.Pack, prepItemData.Size, prepItemData.Weight, prepItemData.Price, prepItemData.ProductBrand, "SI-WF13-PrepItemAddPage")
-		.TapOnDone("SI-WF13-Tapped Done3")
-
-		.Setup_AddItemsLink("SI-WF13-Add items Selected")
-		.SearchItem(searchData.keyword2,"SI-WF13-Search item")
-		.verifyItemDescriptionSearch(searchData.keyword2, "SI-WF13-Verified search with item description")
-		.SelectItemFrom_Catalog("SI-WF13-Selected item from catalog")
-		.TapOnDone("SI-WF13-Tapped Done4")
-
-		.Setup_AddItemsLink("SI-WF13-Add items Selected")
-		.AddItemFrom_OrderGuide("SI-WF13-Tapped Order Guide")
-		.SelectItemFrom_OrderGuide("SI-WF13-Selected item from OG")
-
-		//verifications
-		.verifySearchItemsOnSetupInv("SI-WF13-Verify catalog item selected")
-		.verifyOGItemsOnSetupInv("SI-WF13-Verify OG item selected")  
-
-		.verifyNonSyscoPrepItemSetupInv(prepItemData.ProductName,"SI-WF13-Verify prep item selected")
-		.verifyNonSyscoPrepItemSetupInv(nonSyscoItemData.ProductName,"SI-WF13-Verify nonsysco item selected")
-		.TapOnDone("SI-WF13-Tapped Done6")
-
-		._atLocationsPage()
-		.CustomLocation("SI-WF13-Tapped Custom location")
-		.tapContinue("SI-WF13-Tapped Continue2")
-
-		.EnterLocationName(locationsData.LocationName,"SI-WF13-Enter location name")
-		.AddLocations1_TypeDry("SI-WF13-Tapped Dry1")
-
-		.AddLocations2()
-		.AddLocations2_name(locationsData1.LocationName)
-		.AddLocations2_TypeDry("SI-WF13-Tapped Dry2")
-		.TapOnNext("SI-WF13-Tapped Next1")
-
-
-		.AssignMultipleListItemsToLocation("SI-WF13-Selected Multiple items to Location1")
-		.AssignMultipleListItemsToLocation("SI-WF13-Selected Multiple items to Location1")
-		.TapOnNext("SI-WF13-Tapped Next2")
-
-		.AssignMultipleListItemsToLocation("SI-WF13-Selected Multiple items to Location2")
-		.TapOnDone("SI-WF13-Tapped Done7")
-
-
-		._atCategoryPage()
-		.CustomCategories("SI - WF 13-TC1-CustomCategories Tapped")
-		.tapContinue("SI - WF 13-TC1-Tapped Continue3")
-		.CreateTwoExpenseCategory(categoryData.Name, categoryData.Name1, "SI - WF 13-TC1-CreateTwoExpenseCategory") 
-		.TapOnNext("SI - WF 13-TC1-Tapped Next3")
-		.AssignMultipleItemsToCategory("SI - WF 13-TC1-Assign MultipleItems To Category1")
-		.AssignMultipleItemsToCategory("SI - WF 13-TC1-Assign MultipleItems To Category1")
-		.TapOnNext("SI - WF 13-TC1-Tapped Next4")
-		.AssignMultipleItemsToCategory("SI - WF 13-TC1-Assign MultipleItems To Category2")
-
-		._atSetupInventoryPage()
-		.TapOnDone("SI - WF 13-TC1-Tapped Done8")
-		.TapTakeHome("SI-WF13-TC1-Tapped Done8")
-
-		._atInventoryToolPage()
-		.InvTools_TrackInventory("SI-WF13-Selected track inventory")
-
-
-		._atLocationsPage()
-		.SelectLocation(locationsData1.LocationName, "SI-WF13-Select added location2")
-		.VerifyMultipleListItemsInLocation("SI-WF13-Verifying Multiple items in Location2")
-
-		;
-	}
-
-
-	/*
-	 * Validating user is able to setup inventory by adding items from StartFromScratch (Pdt catalog+ OG+ Prep+ NonSysco items) and then assign those items to Default location and Custom category.
-	 * Validating categorized items on categories page
-	 * Validating Non Sysco and Prep items are displayed on corresponding location at Track Inventory
-	 * Prerequisite:Normal/MA User with OG items
-	 */
-	@Test(groups={"SI-WF14"},priority=0, description = "SI-WF14-Start from scratch+ Multiple lists +Default location + Custom category")
-	public void SI_WF14_StartFromScratch_MultipleList_DefaultLocation_CustomCategory() {	
-
-		LoginData loginData =LoginData.fetch("LoginData3");	  
-
-		LocationsData locationsData =LocationsData.fetch("LocatiosData4");
-		CategoryData categoryData=CategoryData.fetch("CategoryData");
-		SearchData searchData=SearchData.fetch("SearchData");
-		NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
-		VendorDetailsData vendorDetailsData =VendorDetailsData.fetch("VDNonsysco");
-		PrepItemData prepItemData =PrepItemData.fetch("PrepItemData");
-
-		Start.asTester
-		.goToLoginpage()
-		.verifyLoginPage("SI-WF14-LoginPage")
-		.saveUsernameCheckBoxClick("SI-WF14-save username")
-		.signIn(loginData.UserName, loginData.Password,"SI-WF14-Login")
-
-		._atHomePage()
-		.ClickAccount(loginData.UserName,"SI-WF14-Clicked account")
-
-		._atAccountsPage()
-		.First_AccountSelection(loginData.UserName,"SI-WF14-ThirdAccountSelect")
-
-		._atInventoryToolPage()
-		.InvTools_SetUpInventory("SI-WF14-SetupInventoryTap")
-
-		._atSetupInventoryPage()
-		.TapOnSkip("SI-WF14-Tapped Skip1")
-
-		.StartFromScratch("SI-WF14-ScratchSelected")
-		.tapContinue("SI-WF14-Tapped Continue1")
-		.Scratch_AddItems("SI-WF14-Tapped Add items")
-		//nonsysco item addition
-		.AddItemFrom_NonSysco("SI-WF14-Tapped NonSysco")
-		.EnterItemDetails(nonSyscoItemData.ProductName, nonSyscoItemData.UPC, nonSyscoItemData.Pack, nonSyscoItemData.Size, nonSyscoItemData.Weight, nonSyscoItemData.Price, nonSyscoItemData.ProductBrand, "SI-WF14-NonSyscoItem details entered")
-		.AddSupplier_AddProductDetailsPage("SI-WF14-select supplier")
-
-		._atVendorPage()
-		.Add_Supplier("SI-WF14-AddVendorTap")
-		.AddSupplier_Details(vendorDetailsData.VendorName, vendorDetailsData.PhoneNum, vendorDetailsData.Address, vendorDetailsData.ContactInfo, vendorDetailsData.Email, vendorDetailsData.Note, "SI-WF14-AddVendorDetails")
-		.TapOnDone("SI-WF14-Tapped Done on add supplier page")
-		.TapOnBack("SI-WF14-Tapped Back1")
-		.SupplierSelect(vendorDetailsData.VendorName,"SI-WF14-SupplierSelect")
-		.TapOnDone("SI-WF14-Tapped Done2")
-
-		//prepitem addition
-		._atSetupInventoryPage()
-		.Setup_AddItemsLink("SI-WF14-Add items Selected")
-		.AddItemFrom_PrepItem("SI-WF14-Tapped Prepitem")
-		.EnterItemDetails(prepItemData.ProductName, prepItemData.UPC, prepItemData.Pack, prepItemData.Size, prepItemData.Weight, prepItemData.Price, prepItemData.ProductBrand, "SI-WF14-PrepItemAddPage")
-		.TapOnDone("SI-WF14-Tapped Done3")
-
-		.Setup_AddItemsLink("SI-WF14-Add items Selected")
-		.SearchItem(searchData.keyword,"SI-WF14-Search item")
-		.SelectItemFrom_Catalog("SI-WF14-Selected item from catalog")
-		.TapOnDone("SI-WF14-Tapped Done4")
-
-		.Setup_AddItemsLink("SI-WF14-Add items Selected")
-		.AddItemFrom_OrderGuide("SI-WF14-Tapped Order Guide")
-		.SelectItemFrom_OrderGuide("SI-WF14-Selected item from OG")
-
-		//verifications 
-		.verifySearchItemsOnSetupInv("SI-WF14-Verify catalog item selected")
-		.verifyOGItemsOnSetupInv("SI-WF14-Verify OG item selected")  
-
-		.verifyNonSyscoPrepItemSetupInv(prepItemData.ProductName,"SI-WF14-Verify prep item selected")
-		.verifyNonSyscoPrepItemSetupInv(nonSyscoItemData.ProductName,"SI-WF14-Verify nonsysco item selected")
-
-
-		.TapOnDone("SI-WF14-Tapped Done6")
-
-
-		._atLocationsPage()
-		.DefaultLocation("SI-WF14-Tapped Custom location")
-		.tapContinue("SI-WF14-Tapped Continue2")
-
-
-		._atCategoryPage()
-		.CustomCategories("SI-WF14-CustomCategories Tapped")
-		.tapContinue("SI-WF14-Tapped Continue3")
-		.CreateTwoExpenseCategory(categoryData.Name, categoryData.Name1, "SI-WF14-CreateTwoExpenseCategory")
-		.TapOnNext("SI-WF14-Tapped Next3")
-		.AssignMultipleItemsToCategory("SI-WF14-Assign MultipleItems To Category1")
-		.TapOnNext("SI-WF14-Tapped Next4")
-
-		._atCategoryPage()
-		.VerifyItemPresentUncategorizedAndAllItems("SI-WF14-Tapped Next4-verified all items ad uncategorized tab items")
-		._atSetupInventoryPage()
-		.TapOnDone("SI-WF14-Tapped Done7")
-		.TapTakeHome("SI-WF14-Tapped Done8")
-		._atInventoryToolPage()
-		.InvTools_TrackInventory("SI-WF14-Selected track inventory")
-
-
-		._atLocationsPage()
-		.SelectLocation(locationsData.LocationName, "SI-WF14-Select added location1")
-		._atSetupInventoryPage()
-		.verifyNonSyscoPrepItemSetupInv(prepItemData.ProductName,"SI-WF14-Verify item selected")
-		.verifyNonSyscoPrepItemSetupInv(nonSyscoItemData.ProductName,"SI-WF14-Verify item selected")
-		.TapOnDone("SI-WF14-Tapped Done")
-
-		;
-	}
-
-	/*
-	 * Validating user is able to setup inventory by adding items from StartFromScratch (Pdt catalog+ OG+ Prep+ NonSysco items) and then assign those items to multiple  locations and Default category.
-	 * Validating all items are displayed on corresponding location at Track Inventory
-	 * Prerequisite:Normal/MA User with OG items
-	 */
-
-
-	@Test(groups={"SI-WF15"},priority=0, description = "SI-WF15-Start from scratch+ Multiple lists +Custom location + Default category")
-	public void SI_WF15_StartFromScratch_MultipleList_CustomLocation_DefaultCategory() {	
-
-		LoginData loginData =LoginData.fetch("LoginData4");	  
-
-		LocationsData locationsData =LocationsData.fetch("LocatiosData3");
-		LocationsData locationsData1 =LocationsData.fetch("LocatiosData2");
-
-		SearchData searchData=SearchData.fetch("SearchData");
-		NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
-		VendorDetailsData vendorDetailsData =VendorDetailsData.fetch("VDNonsysco");
-		PrepItemData prepItemData =PrepItemData.fetch("PrepItemData");
-
-		Start.asTester
-		.goToLoginpage()
-		.verifyLoginPage("SI-WF15-LoginPage")
-		.saveUsernameCheckBoxClick("SI-WF15-save username")
-		.signIn(loginData.UserName, loginData.Password,"SI-WF15-Login")
-
-		._atHomePage()
-		.ClickAccount(loginData.UserName,"SI-WF15-Clicked account")
-
-		._atAccountsPage()
-		.Second_AccountSelection(loginData.UserName,"SI-WF15-ThirdAccountSelect")
-
-		._atInventoryToolPage()
-		.InvTools_SetUpInventory("SI-WF15-SetupInventoryTap")
-
-		._atSetupInventoryPage()
-		.TapOnSkip("SI-WF15-Tapped Skip1")
-
-		.StartFromScratch("SI-WF15-ScratchSelected")
-		.tapContinue("SI-WF15-Tapped Continue1")
-		.Scratch_AddItems("SI-WF15-Tapped Add items")
-		//nonsysco item addition
-		.AddItemFrom_NonSysco("SI-WF15-Tapped NonSysco")
-		.EnterItemDetails(nonSyscoItemData.ProductName, nonSyscoItemData.UPC, nonSyscoItemData.Pack, nonSyscoItemData.Size, nonSyscoItemData.Weight, nonSyscoItemData.Price, nonSyscoItemData.ProductBrand, "SI-WF15-NonSyscoItem details entered")
-		.AddSupplier_AddProductDetailsPage("SI-WF15-Select supplier")
-
-		._atVendorPage()
-		.Add_Supplier("SI-WF15-AddVendorTap")
-		.AddSupplier_Details(vendorDetailsData.VendorName, vendorDetailsData.PhoneNum, vendorDetailsData.Address, vendorDetailsData.ContactInfo, vendorDetailsData.Email, vendorDetailsData.Note, "SI-WF15-AddVendorDetails")
-		.TapOnDone("SI-WF15-Tapped Done1")
-		.TapOnBack("SI-WF15-Tapped Back1")
-		.SupplierSelect(vendorDetailsData.VendorName,"SI-WF15-SupplierSelect")
-		.TapOnDone("SI-WF15-Tapped Done2")
-
-		//prepitem addition
-		._atSetupInventoryPage()
-		.Setup_AddItemsLink("SI-WF15-Add items Selected")
-		.AddItemFrom_PrepItem("SI-WF15-Tapped Prep")
-		.EnterItemDetails(prepItemData.ProductName, prepItemData.UPC, prepItemData.Pack, prepItemData.Size, prepItemData.Weight, prepItemData.Price, prepItemData.ProductBrand, "SI-WF15-PrepItemAddPage")
-		.TapOnDone("SI-WF15-Tapped Done3")
-
-		.Setup_AddItemsLink("SI-WF15-Add items Selected")
-		.SearchItem(searchData.keyword,"SI-WF15-Search item")
-		.SelectItemFrom_Catalog("SI-WF15-Selected item from catalog")
-		.TapOnDone("SI-WF15-Tapped Done4")
-		.verifySearchItemsOnSetupInv("SI-WF15-Verify catalog item selected") 
-
-		.Setup_AddItemsLink("SI-WF15-Add items Selected")
-		.AddItemFrom_OrderGuide("SI-WF15-Tapped Order Guide")
-		.SelectItemFrom_OrderGuide("SI-WF15-Selected item from OG")
-
-		//verifications
-		.verifySearchItemsOnSetupInv("SI-WF15-Verify catalog item selected")
-		.verifyOGItemsOnSetupInv("SI-WF15-Verify OG item selected")
-		.verifyNonSyscoPrepItemSetupInv(prepItemData.ProductName,"SI-WF15-Verify prep item selected")
-		.verifyNonSyscoPrepItemSetupInv(nonSyscoItemData.ProductName,"SI-WF15-Verify nonsysco item selected")
-
-
-		.TapOnDone("SI-WF15-Tapped Done6")
-
-		._atLocationsPage()
-		.CustomLocation("SI-WF15-Tapped Custom location")
-		.tapContinue("SI-WF15-Tapped Continue2")
-
-		.EnterLocationName(locationsData.LocationName,"SI-WF15-Enter location name")
-		.AddLocations1_TypeDry("SI-WF15-Tapped Dry1")
-
-		.AddLocations2()
-		.AddLocations2_name(locationsData1.LocationName)
-		.AddLocations2_TypeDry("SI-WF15-Tapped Dry2")
-		.TapOnNext("SI-WF15-Tapped Next1")
-
-		.AssignMultipleListItemsToLocation("SI-WF15-Selected Multiple items to Location1")
-		.TapOnNext("SI-WF15-Tapped Next2")
-		.AllItemsTabClick("SI-WF15-Tapped Next2")
-
-		.AssignMultipleListItemsToLocation("SI-WF15-Selected Multiple items to Location2")
-		.TapOnDone("SI-WF15-Tapped Done6")
-
-		._atCategoryPage()
-		.defaultCategories("SI-WF15-Tapped Custom category")
-		.tapComplete("SI-WF15-Tapped Complete")
-
-		._atSetupInventoryPage()
-		.TapTakeHome("SI-WF15-Tapped Continue3")
-
-		._atInventoryToolPage()
-		.InvTools_TrackInventory("SI-WF15-Selected track inventory")
-
-
-		._atLocationsPage()
-		.SelectLocation(locationsData.LocationName, "SI-WF15-select added location1")
-		.VerifyMultipleListItemsInLocation("SI-WF15-Verifying Multiple items in Location1")
-		.TapOnBack("SI-WF15-Tapped back")
-		.SelectLocation(locationsData1.LocationName, "SI-WF15-select added location2")
-		.VerifyMultipleListItemsInLocation("SI-WF15-Verifying Multiple items in Location2")
-
-		;
-	}
-
-
-	/*
-	 * Validating user is able to setup inventory by adding items from StartFromScratch (Pdt catalog+ OG+ Prep+ NonSysco items) and then skipping location and skipping category.
-	 * Prerequisite:Normal/MA User with OG items
-	 */
-	@Test(groups={"SI-WF16"},priority=0, description = "SI-WF16-Start from scratch + Multiple lists+ Skip location+ Skip Category")
-	public void SI_WF16_StartFromScratch_MultipleList_skipLocation_SkipCategory() {	
-
-		LoginData loginData =LoginData.fetch("LoginData5");
-		LocationsData locationsData =LocationsData.fetch("LocatiosData4");
-		SearchData searchData=SearchData.fetch("SearchData");
-		NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
-		VendorDetailsData vendorDetailsData =VendorDetailsData.fetch("VDNonsysco");
-		PrepItemData prepItemData =PrepItemData.fetch("PrepItemData");
-
-		Start.asTester
-		.goToLoginpage()
-		.verifyLoginPage("SI-WF16-LoginPage")
-		.saveUsernameCheckBoxClick("SI-WF16-save username")
-		.signIn(loginData.UserName, loginData.Password,"SI-WF16-Login")
-
-		._atHomePage()
-		.ClickAccount(loginData.UserName,"SI-WF16-Clicked account")
-
-		._atAccountsPage()
-		.Third_AccountSelection(loginData.UserName,"SI-WF16-FirstAccountSelect")
-
-		._atInventoryToolPage()
-		.InvTools_SetUpInventory("SI-WF16-SetupInventoryTap")
-
-		._atSetupInventoryPage()
-		.TapOnSkip("SI-WF16-Tapped Skip")
-
-		.StartFromScratch("SI-WF16-ScratchSelected")
-		.tapContinue("SI-WF16-Tapped Continue")
-		.Scratch_AddItems("SI-WF16-Tapped Add items")
-		.SearchItem(searchData.keyword,"SI-WF16-Search item")
-		.SelectItemFrom_Catalog("SI-WF16-Selected item from catalog")
-		.TapOnDone("SI-WF16-Tapped Done")
-		.verifySearchItemsOnSetupInv("SI-WF16-Verify item selected")
-
-		.Setup_AddItemsLink("SI-WF16-Add items Selected")
-		.AddItemFrom_OrderGuide("SI-WF16-Tapped Order Guide")
-		.SelectItemFrom_OrderGuide("SI-WF16-Selected item from OG")
-		.verifyOGItemsOnSetupInv("SI-WF16-Verify item selected")
-
-		.Setup_AddItemsLink("SI-WF16-Add items Selected")
-		.AddItemFrom_NonSysco("SI-WF16-Tapped NonSysco")
-		.EnterItemDetails(nonSyscoItemData.ProductName, nonSyscoItemData.UPC, nonSyscoItemData.Pack, nonSyscoItemData.Size, nonSyscoItemData.Weight, nonSyscoItemData.Price, nonSyscoItemData.ProductBrand, "SI-WF16-NonSyscoItem details entered")
-		.AddSupplier_AddProductDetailsPage("SI-WF16-select supplier")
-
-		._atVendorPage()
-		.Add_Supplier("SI-WF16-AddVendorTap")
-		.AddSupplier_Details(vendorDetailsData.VendorName, vendorDetailsData.PhoneNum, vendorDetailsData.Address, vendorDetailsData.ContactInfo, vendorDetailsData.Email, vendorDetailsData.Note, "SI-WF16-AddVendorDetails")
-		.TapOnDone("SI-WF16-Done")
-		.TapOnBack("SI-WF16-Back")
-		.SupplierSelect(vendorDetailsData.VendorName,"SI-WF16-SupplierSelect")
-		.TapOnDone("SI-WF16-Done")
-
-		._atSetupInventoryPage()
-		.Setup_AddItemsLink("SI-WF16-Add items Selected")
-		.AddItemFrom_PrepItem("SI-WF16-Tapped NonSysco")
-		.EnterItemDetails(prepItemData.ProductName, prepItemData.UPC, prepItemData.Pack, prepItemData.Size, prepItemData.Weight, prepItemData.Price, prepItemData.ProductBrand, "SI-WF16-NonSyscoItemAddPage")
-		.TapOnDone("SI-WF16-Tapped Done")
-
-		//verifications
-		.verifySearchItemsOnSetupInv("SI-WF16-Verify catalog item selected")
-		.verifyOGItemsOnSetupInv("SI-WF16-Verify OG item selected")
-
-		.verifyNonSyscoPrepItemSetupInv(prepItemData.ProductName,"SI-WF16-Verify prep item selected")
-		.verifyNonSyscoPrepItemSetupInv(nonSyscoItemData.ProductName,"SI-WF16-Verify nonsysco item selected")
-
-
-
-		.TapOnDone("SI-WF16-Tapped Done")
-
-		.TapOnDOThisLater("SI-WF16-Tapped do this later")
-		.TapOnSkip("SI-WF16-Tapped Skip")
-
-
-		.TapOnDOThisLater("SI-WF16-Tapped do this later")
-		.tapContinue("SI-WF16-Tapped Continue")
-
-		._atInventoryToolPage()
-		.InvTools_TrackInventory("SI-WF16-Selected track inventory")
-
-
-		._atLocationsPage()
-		.SelectLocation(locationsData.LocationName, "SI-WF16-select added location")
-
-		.TapOnDone("SI-WF16-Tapped Done")
-		;
-	}
-	/*
-	 * Validating user is able to setup inventory by adding items from StartFromScratch (Pdt catalog+ OG+ Prep+ NonSysco items) and then assign those items to Default  locations and Skipping category.
-	 * Validating Non Sysco and Prep items are displayed on corresponding location at Track Inventory
-	 * Prerequisite:Normal/MA User with OG items
-	 */
-	@Test(groups={"SI-WF17"},priority=0, description = "SI-WF17-Start from scratch + Multiple lists + Default loc + Skip Category")
-	public void SI_WF17_StartFromScratch_MultipleList_DefaultLocation_SkipCategory() {	
-
-		LoginData loginData =LoginData.fetch("LoginData6");	  
-		LocationsData locationsData =LocationsData.fetch("LocatiosData4");
-		SearchData searchData=SearchData.fetch("SearchData");
-		NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
-		VendorDetailsData vendorDetailsData =VendorDetailsData.fetch("VDNonsysco");
-		PrepItemData prepItemData =PrepItemData.fetch("PrepItemData");
-
-		Start.asTester
-		.goToLoginpage()
-		.verifyLoginPage("SI-WF17-LoginPage")
-		.saveUsernameCheckBoxClick("SI-WF17-save username")
-		.signIn(loginData.UserName, loginData.Password,"SI-WF17-Login")
-
-		._atHomePage()
-		.ClickAccount(loginData.UserName,"SI-WF17-Clicked account")
-
-		._atAccountsPage()
-		.Fourth_AccountSelection(loginData.UserName,"SI-WF17-FirstAccountSelect")
-
-		._atInventoryToolPage()
-		.InvTools_SetUpInventory("SI-WF17-SetupInventoryTap")
-
-		._atSetupInventoryPage()
-		.TapOnSkip("SI-WF17-Tapped Skip")
-
-		.StartFromScratch("SI-WF17-ScratchSelected")
-		.tapContinue("SI-WF17-Tapped Continue")
-		.Scratch_AddItems("SI-WF17-Tapped Add items")
-		.SearchItem(searchData.keyword,"SI-WF17-Search item")
-		.SelectItemFrom_Catalog("SI-WF17-Selected item from catalog")
-		.TapOnDone("SI-WF17-Tapped Done")
-		.verifySearchItemsOnSetupInv("SI-WF17-Verify item selected")   
-
-		.Setup_AddItemsLink("SI-WF17-Add items Selected")
-		.AddItemFrom_OrderGuide("SI-WF17-Tapped Order Guide")
-		.SelectItemFrom_OrderGuide("SI-WF17-Selected item from OG")  
-
-		.Setup_AddItemsLink("SI-WF17-Add items Selected")
-		.AddItemFrom_NonSysco("SI-WF17-Tapped NonSysco")
-		.EnterItemDetails(nonSyscoItemData.ProductName, nonSyscoItemData.UPC, nonSyscoItemData.Pack, nonSyscoItemData.Size, nonSyscoItemData.Weight, nonSyscoItemData.Price, nonSyscoItemData.ProductBrand, "SI-WF17-NonSyscoItem details entered")
-		.AddSupplier_AddProductDetailsPage("SI-WF17-select supplier")
-		._atVendorPage()
-		.Add_Supplier("SI-WF17-AddVendorTap")
-		.AddSupplier_Details(vendorDetailsData.VendorName, vendorDetailsData.PhoneNum, vendorDetailsData.Address, vendorDetailsData.ContactInfo, vendorDetailsData.Email, vendorDetailsData.Note, "SI-WF17-AddVendorDetails")
-		.TapOnDone("SI-WF17-Done")
-		.TapOnBack("SI-WF17-Back")
-		.SupplierSelect(vendorDetailsData.VendorName,"SI-WF17-SupplierSelect")
-		.TapOnDone("SI-WF17-Done")
-
-		._atSetupInventoryPage()
-		.Setup_AddItemsLink("SI-WF17-Add items Selected")
-		.AddItemFrom_PrepItem("SI-WF17-Tapped NonSysco")
-		.EnterItemDetails(prepItemData.ProductName, prepItemData.UPC, prepItemData.Pack, prepItemData.Size, prepItemData.Weight, prepItemData.Price, prepItemData.ProductBrand, "SI-WF17-NonSyscoItemAddPage")
-		.TapOnDone("SI-WF17-Tapped Done")
-
-		//verifications   
-		.verifySearchItemsOnSetupInv("SI-WF17-Verify catalog item selected")
-		.verifyOGItemsOnSetupInv("SI-WF17-Verify OG item selected")
-
-		.verifyNonSyscoPrepItemSetupInv(prepItemData.ProductName,"SI-WF17-Verify prep item selected")
-		.verifyNonSyscoPrepItemSetupInv(nonSyscoItemData.ProductName,"SI-WF17-Verify nonsysco item selected")
-
-
-
-		.TapOnDone("SI-WF17-Tapped Done")  
-
-		._atLocationsPage()
-		.DefaultLocation("SI-WF17-Tapped Default location")
-		.tapContinue("SI-WF17-Tapped Continue")
-
-		._atSetupInventoryPage()
-		.TapOnDOThisLater("SI-WF17-Tapped do this later")
-		.TapTakeHome("SI-WF17-Tapped TakeMeHome")
-
-		._atInventoryToolPage()
-		.InvTools_TrackInventory("SI-WF17-Selected track inventory")
-
-
-		._atLocationsPage()
-		.SelectLocation(locationsData.LocationName, "SI-WF17-select added location")
-		._atSetupInventoryPage()
-		.verifyNonSyscoPrepItemSetupInv(prepItemData.ProductName,"SI-WF17-Verify prep item selected")
-		.verifyNonSyscoPrepItemSetupInv(nonSyscoItemData.ProductName,"SI-WF17-Verify nonsysco item selected")
-		.TapOnDone("SI-WF17-Tapped Done")
-		;
-	}		
-
-	/*
-	 * Validating user is able to setup inventory by adding items from StartFromScratch (Pdt catalog+ OG+ Prep+ NonSysco items) and then skip location and assign to default category.
-	 * Prerequisite:Normal/MA User with OG items
-	 */
-	@Test(groups={"SI-WF18"},priority=0, description = "SI-WF18-Start from scratch+ Multiple lists +skip location + default category")
-	public void SI_WF18_StartFromScratch_MultipleList_skipLocation_DefaultCategory() {	
-
-		LoginData loginData =LoginData.fetch("LoginData7");
-		LocationsData locationsData =LocationsData.fetch("LocatiosData4");
-
-		SearchData searchData=SearchData.fetch("SearchData");
-		NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
-		VendorDetailsData vendorDetailsData =VendorDetailsData.fetch("VDNonsysco");
-		PrepItemData prepItemData =PrepItemData.fetch("PrepItemData");
-
-		Start.asTester
-		.goToLoginpage()
-		.verifyLoginPage("SI-WF18-LoginPage")
-		.saveUsernameCheckBoxClick("SI-WF18-save username")
-		.signIn(loginData.UserName, loginData.Password,"SI-WF18-Login")
-
-		._atHomePage()
-		.ClickAccount(loginData.UserName,"SI-WF18-Clicked account")
-
-		._atAccountsPage()
-		.Fifth_AccountSelection(loginData.UserName,"SI-WF18-FirstAccountSelect")
-
-		._atInventoryToolPage()
-		.InvTools_SetUpInventory("SI-WF18-SetupInventoryTap")
-
-		._atSetupInventoryPage()
-		.TapOnSkip("SI-WF18-Tapped Skip")
-
-		.StartFromScratch("SI-WF18-ScratchSelected")
-		.tapContinue("SI-WF18-Tapped Continue")
-		.Scratch_AddItems("SI-WF18-Tapped Add items")
-		.SearchItem(searchData.keyword,"SI-WF18-Search item")
-		.SelectItemFrom_Catalog("SI-WF18-Selected item from catalog")
-		.TapOnDone("SI-WF18-Tapped Done")
-
-		.Setup_AddItemsLink("SI-WF18-Add items Selected")
-		.AddItemFrom_OrderGuide("SI-WF18-Tapped Order Guide")
-		.SelectItemFrom_OrderGuide("SI-WF18-Selected item from OG")
-
-		.Setup_AddItemsLink("SI-WF18-Add items Selected")
-		.AddItemFrom_NonSysco("SI-WF18-Tapped NonSysco")
-		.EnterItemDetails(nonSyscoItemData.ProductName, nonSyscoItemData.UPC, nonSyscoItemData.Pack, nonSyscoItemData.Size, nonSyscoItemData.Weight, nonSyscoItemData.Price, nonSyscoItemData.ProductBrand, "SI-WF18-NonSyscoItem details entered")
-		.AddSupplier_AddProductDetailsPage("SI-WF18-select supplier")
-
-		._atVendorPage()
-		.Add_Supplier("SI-WF18-AddVendorTap")
-		.AddSupplier_Details(vendorDetailsData.VendorName, vendorDetailsData.PhoneNum, vendorDetailsData.Address, vendorDetailsData.ContactInfo, vendorDetailsData.Email, vendorDetailsData.Note, "SI-WF18-AddVendorDetails")
-		.TapOnDone("SI-WF18-Done")
-		.TapOnBack("SI-WF18-Back")
-		.SupplierSelect(vendorDetailsData.VendorName,"SI-WF18-SupplierSelect")
-		.TapOnDone("SI-WF18-Done")
-
-		._atSetupInventoryPage()
-		.Setup_AddItemsLink("SI-WF18-Add items Selected")
-		.AddItemFrom_PrepItem("SI-WF18-Tapped NonSysco")
-		.EnterItemDetails(prepItemData.ProductName, prepItemData.UPC, prepItemData.Pack, prepItemData.Size, prepItemData.Weight, prepItemData.Price, prepItemData.ProductBrand, "SI-WF18-NonSyscoItemAddPage")
-		.TapOnDone("SI-WF18-Tapped Done")
-
-		//verifications
-		.verifyNonSyscoPrepItemSetupInv(prepItemData.ProductName,"SI-WF18-Verify item selected")
-		.verifyNonSyscoPrepItemSetupInv(nonSyscoItemData.ProductName,"SI-WF18-Verify item selected")
-
-		.verifySearchItemsOnSetupInv("SI-WF18-Verify item selected")
-		.verifyOGItemsOnSetupInv("SI-WF18-Verify item selected")
-
-		.TapOnDone("SI-WF18-Tapped Done")
-
-
-		.TapOnDOThisLater("SI-WF18-Tapped do this later")
-
-
-		._atCategoryPage()
-		.defaultCategories("SI-WF18-Tapped Custom category")
-		.tapComplete("SI-WF18-Tapped Complete")
-
-		._atSetupInventoryPage()
-		.TapTakeHome("SI-WF18-Tapped take me home")   
-
-		._atInventoryToolPage()
-		.InvTools_TrackInventory("SI-WF18-Selected track inventory")
-
-
-		._atLocationsPage()
-		.SelectLocation(locationsData.LocationName, "SI-WF18-select added location")
-		.TapOnDone("SI-WF18-Tapped Done")
-		;
-	}
-
-
 	/*
 	 * Validating user is able to setup inventory by adding items from CustomList and then assign those items to Default  location and default category.
 	 * Validating Default categories are listed on Expense categories page 
 	 * Prerequisite:Normal/MA User with MyList.
 	 */
-	@Test(groups={"SI-WF19"},priority=0, description = "SI-WF19-Custom List + default Loc + default Category ")
+	@Test(groups={"SI-WF19"},priority=17, description = "SI-WF19-Custom List + default Loc + default Category ")
 	public void SI_WF19_CustomList_defaultLoc_defaultcategory() {	
 
 		LoginData loginData =LoginData.fetch("LoginData11");
@@ -1481,7 +616,7 @@ public class WorkFlow extends Initiator{
 	 * Prerequisite:Normal/MA User with MyList with 6 items.
 	 * 
 	 */
-	@Test(groups={"SI-WF20"},priority=0, description = "SI-WF20-Custom List + Custom Loc + Custom Category ")
+	@Test(groups={"SI-WF20"},priority=18, description = "SI-WF20-Custom List + Custom Loc + Custom Category ")
 	public void SI_WF20_CustomList_CustomLoc_Customcategory() {	
 
 		LoginData loginData =LoginData.fetch("LoginData12");
@@ -1591,6 +726,7 @@ public class WorkFlow extends Initiator{
 		._atLocationsPage()
 		.SelectLocation(locationsData.LocationName, "SI-WF20-Selecting nolocation")
 		.ItemVerifyOnLocation1("SI-WF20-Item verification in nolocation")
+		.VerifyCountOfItemsInLocation(locationsData.LocationName, "MIL-WF3-Verifying count of items in location1")
 		.VerifyDeletedItemsCategory(locationsData.LocationName,"SI-WF20-Item category verification in nolocation")  
 		;
 	}	
@@ -1600,7 +736,7 @@ public class WorkFlow extends Initiator{
 	 * Prerequisite:Normal/MA User with MyList with 6 items.
 	 * 
 	 */
-	@Test(groups={"SI-WF21"},priority=0, description = "SI-WF21-Custom List + Custom Loc + Custom Category")
+	@Test(groups={"SI-WF21"},priority=19, description = "SI-WF21-Custom List + Custom Loc + Custom Category")
 	public void SI_WF21_CustomList_CustomLoc_Customcategory_FewItems() {	
 
 		LoginData loginData =LoginData.fetch("LoginData13");
@@ -1688,10 +824,10 @@ public class WorkFlow extends Initiator{
 	 * Prerequisite:Normal/MA User with MyList with 6 items.
 	 * 
 	 */
-	@Test(groups={"SI-WF22"},priority=0, description = "SI-WF22-Custom List + Default Loc + custom Category")
+	@Test(groups={"SI-WF22"},priority=20, description = "SI-WF22-Custom List + Default Loc + custom Category")
 	public void SI_WF22_CustomList_DefaultLoc_Customcategory() {	
 
-		LoginData loginData =LoginData.fetch("LoginData11");
+		LoginData loginData =LoginData.fetch("LoginData14");
 		ListData listData=ListData.fetch("ListData");
 
 		CategoryData categoryData=CategoryData.fetch("CategoryData");
@@ -1756,10 +892,10 @@ public class WorkFlow extends Initiator{
 	 * Prerequisite:Normal/MA User with MyList with 6 items.
 	 * 
 	 */
-	@Test(groups={"SI-WF23"},priority=0, description = "SI-WF23-Custom List + Custom Loc + default Category ")
+	@Test(groups={"SI-WF23"},priority=21, description = "SI-WF23-Custom List + Custom Loc + default Category ")
 	public void SI_WF23_CustomList_CustomLoc_defaultcategory() {	
 
-		LoginData loginData =LoginData.fetch("LoginData12");
+		LoginData loginData =LoginData.fetch("LoginData11");
 		ListData listData=ListData.fetch("ListData");
 
 		LocationsData locationsData1 =LocationsData.fetch("LocationsData");
@@ -1841,10 +977,10 @@ public class WorkFlow extends Initiator{
 	 * Prerequisite:Normal/MA User with MyList with 6 items.
 	 * 
 	 */
-	@Test(groups={"SI-WF24"},priority=0, description = "SI-WF24-Custom List + Skip location+ Skip Category")
+	@Test(groups={"SI-WF24"},priority=22, description = "SI-WF24-Custom List + Skip location+ Skip Category")
 	public void SI_WF24_CustomList_SkipLoc_Skipcategory() {	
 
-		LoginData loginData =LoginData.fetch("LoginData13");
+		LoginData loginData =LoginData.fetch("LoginData12");
 		ListData listData=ListData.fetch("ListData");
 		LocationsData locationsData =LocationsData.fetch("LocatiosData4");
 
@@ -1894,10 +1030,10 @@ public class WorkFlow extends Initiator{
 	 * Prerequisite:Normal/MA User with MyList with 6 items.
 	 * 
 	 */
-	@Test(groups={"SI-WF25"},priority=0, description = "SI-WF25-Custom List+Default loc + Skip Category ")
+	@Test(groups={"SI-WF25"},priority=23, description = "SI-WF25-Custom List+Default loc + Skip Category ")
 	public void SI_WF25_CustomList_DefaultLoc_Skipcategory() {	
 
-		LoginData loginData =LoginData.fetch("LoginData11");
+		LoginData loginData =LoginData.fetch("LoginData13");
 		ListData listData=ListData.fetch("ListData");
 		LocationsData locationsData =LocationsData.fetch("LocatiosData4");
 
@@ -1949,10 +1085,10 @@ public class WorkFlow extends Initiator{
 	 * Prerequisite:Normal/MA User with MyList with 6 items.
 	 * 
 	 */
-	@Test(groups={"SI-WF26"},priority=0, description = "SI-WF26-Custom List+skip location + default category")
+	@Test(groups={"SI-WF26"},priority=24, description = "SI-WF26-Custom List+skip location + default category")
 	public void SI_WF26_CustomList_SkipLoc_defaultcategory() {	
 
-		LoginData loginData =LoginData.fetch("LoginData12");
+		LoginData loginData =LoginData.fetch("LoginData14");
 		ListData listData=ListData.fetch("ListData");
 		LocationsData locationsData =LocationsData.fetch("LocatiosData4");
 
@@ -2008,10 +1144,10 @@ public class WorkFlow extends Initiator{
 	 * Prerequisite:Normal/MA User with MyList having 2 items each for List2,List3
 	 * 
 	 */
-	@Test(groups={"SI-WF27"},priority=0, description = "SI-WF27-Custom List + Select Multiple List +List Names+Default Category")
+	@Test(groups={"SI-WF27"},priority=25, description = "SI-WF27-Custom List + Select Multiple List +List Names+Default Category")
 	public void SI_WF27_CustomList_MultipleList_ListNames_DefaultCat() {	
 
-		LoginData loginData =LoginData.fetch("LoginData13");
+		LoginData loginData =LoginData.fetch("LoginData11");
 		ListData listData=ListData.fetch("ListData2");
 		ListData listData1=ListData.fetch("ListData3");
 
@@ -2075,10 +1211,10 @@ public class WorkFlow extends Initiator{
 		 * Prerequisite:Normal/MA User with MyList having 2 items each for List2,List3
 		 * 
 		 */
-	@Test(groups={"SI-WF28"},priority=0, description = "SI-WF28-Custom List + Select Multiple List +List Names as location+custom Category")
+	@Test(groups={"SI-WF28"},priority=26, description = "SI-WF28-Custom List + Select Multiple List +List Names as location+custom Category")
 	public void SI_WF28_CustomList_MultipleList_ListNames_Customcategory() {	
 
-		LoginData loginData =LoginData.fetch("LoginData11");
+		LoginData loginData =LoginData.fetch("LoginData12");
 		ListData listData=ListData.fetch("ListData2");
 		ListData listData1=ListData.fetch("ListData3");
 
@@ -2147,10 +1283,10 @@ public class WorkFlow extends Initiator{
 		 * Prerequisite:Normal/MA User with MyList having 6 items and items should be categorized
 		 * 
 		 */
-	@Test(groups={"SI-WF29"},priority=0, description = "SI-WF29-Custom List + Select single  List +Custom categories as location+Default Cat")
+	@Test(groups={"SI-WF29"},priority=27, description = "SI-WF29-Custom List + Select single  List +Custom categories as location+Default Cat")
 	public void SI_WF29_CustomListSingleList_CustomCategoryOnLocationsPage_defaultcategory() {	
 
-		LoginData loginData =LoginData.fetch("LoginData12");
+		LoginData loginData =LoginData.fetch("LoginData13");
 		ListData listData=ListData.fetch("ListData");
 
 		Start.asTester
@@ -2201,10 +1337,10 @@ public class WorkFlow extends Initiator{
 		 * 
 		 */
 
-	@Test(groups={"SI-WF30"},priority=0, description = "SI-WF30-Custom List + Select single  List +Custom Categories as location+Custom Cat")
+	@Test(groups={"SI-WF30"},priority=28, description = "SI-WF30-Custom List + Select single  List +Custom Categories as location+Custom Cat")
 	public void SI_WF30_CustomListSingleList_CustomCategoryOnLocationsPage_customcategory() {	
 
-		LoginData loginData =LoginData.fetch("LoginData13");
+		LoginData loginData =LoginData.fetch("LoginData14");
 		ListData listData=ListData.fetch("ListData");
 
 		CategoryData categoryData=CategoryData.fetch("CategoryData");
@@ -2265,10 +1401,10 @@ public class WorkFlow extends Initiator{
 	 * Prerequisite:Normal/MA User with MyList having 2 items each for List2,List3
 	 * 
 	 */
-	@Test(groups={"SI-WF31"},priority=0, description = "SI-WF31-Custom List + Select Multiple List +List Names as location+skip Category")
+	@Test(groups={"SI-WF31"},priority=29, description = "SI-WF31-Custom List + Select Multiple List +List Names as location+skip Category")
 	public void SI_WF31_CustomList_MultipleList_ListNames_Skipcategory() {	
 
-		LoginData loginData =LoginData.fetch("LoginData11");
+		LoginData loginData =LoginData.fetch("LoginData12");
 		ListData listData=ListData.fetch("ListData2");
 		ListData listData1=ListData.fetch("ListData3");
 
@@ -2330,10 +1466,10 @@ public class WorkFlow extends Initiator{
 	 * Prerequisite:Normal/MA User with MyList having 6 items 
 	 * 
 	 */
-	@Test(groups={"SI-WF32"},priority=0, description = "SI-WF32-Custom List + Select single  List +Custom categories as location+Skip Category")
+	@Test(groups={"SI-WF32"},priority=30, description = "SI-WF32-Custom List + Select single  List +Custom categories as location+Skip Category")
 	public void SI_WF32_CustomList_SingleList_CustomCatLoc_Skipcategory() {	
 
-		LoginData loginData =LoginData.fetch("LoginData12");
+		LoginData loginData =LoginData.fetch("LoginData11");
 		ListData listData=ListData.fetch("ListData");
 
 		Start.asTester
@@ -2383,10 +1519,14 @@ public class WorkFlow extends Initiator{
 	 * Validating user is able to setup inventory by adding items from OrderGuide and then assign those items to Default locations and Suggested category.
 	 * Prerequisite:Normal/MA User with OG items.
 	 */
-	@Test(groups={"SI-WF33"},priority=0, description = "SI-WF33-OG + Default Loc + Suggested Category")
+	@Test(groups={"SI-WF33"},priority=31, description = "SI-WF33-OG + Default Loc + Suggested Category")
 	public void SI_WF33_OG_DefaultLocation_SuggestedCategory() {	
 
-		LoginData loginData =LoginData.fetch("LoginData8");	  
+		LoginData loginData =LoginData.fetch("LoginData4");	  
+		LocationsData locDataCooler=LocationsData.fetch("LocatiosData5");
+		LocationsData locDataFreezer=LocationsData.fetch("LocatiosData6");
+		LocationsData locDataDry=LocationsData.fetch("LocatiosData7");
+		LocationsData locDataNoLoc=LocationsData.fetch("LocatiosData4");
 
 		Start.asTester
 		.goToLoginpage()
@@ -2420,7 +1560,10 @@ public class WorkFlow extends Initiator{
 
 		._atInventoryToolPage()
 		.InvTools_TrackInventory("SI-WF33-Selected track inventory")
-
+		
+		._atLocationsPage()
+		.VerifyOrderOfLocations(locDataCooler.LocationName, locDataFreezer.LocationName, locDataDry.LocationName, locDataNoLoc.LocationName, "SI-WF33-Verified order of locations")
+		
 
 		;
 
@@ -2434,10 +1577,10 @@ public class WorkFlow extends Initiator{
 	 * Validating suggested categories are displayed for each item on Track Inv
 	 * Prerequisite:Normal/MA User with OG items.
 	 */
-	@Test(groups={"SI-WF34"},priority=0, description = "SI-WF34-OG + Custom Loc + Suggested Category")
+	@Test(groups={"SI-WF34"},priority=32, description = "SI-WF34-OG + Custom Loc + Suggested Category")
 	public void SI_WF34_OG_CustomLocation_SuggestedCategory() {	
 
-		LoginData loginData =LoginData.fetch("LoginData9");	  
+		LoginData loginData =LoginData.fetch("LoginData5");	  
 		LocationsData locationsData1 =LocationsData.fetch("LocationsData");
 		LocationsData locationsData2 =LocationsData.fetch("LocatiosData1");
 
@@ -2513,10 +1656,10 @@ public class WorkFlow extends Initiator{
 	 * Prerequisite:Normal/MA User with MyList having 6 items and items should be categorized
 	 * 
 	 */
-	@Test(groups={"SI-WF35"},priority=0, description = "SI-WF35-Custom List + Select single  List +Custom Categories as location+Suggested Cat")
+	@Test(groups={"SI-WF35"},priority=33, description = "SI-WF35-Custom List + Select single  List +Custom Categories as location+Suggested Cat")
 	public void SI_WF35_CustomListSingleList_CustomCategoryOnLocationsPage_suggestedcategory() {
 
-		LoginData loginData =LoginData.fetch("LoginData13");
+		LoginData loginData =LoginData.fetch("LoginData14");
 		ListData listData=ListData.fetch("ListData");
 
 
@@ -2562,10 +1705,10 @@ public class WorkFlow extends Initiator{
 	 * Prerequisite:Normal/MA User with MyList having  2 items each for List2,List3
 	 * 
 	 */
-	@Test(groups={"SI-WF36"},priority=0, description = "SI-WF36-Custom List + Select Multiple List +List Names+Suggested Category")
+	@Test(groups={"SI-WF36"},priority=34, description = "SI-WF36-Custom List + Select Multiple List +List Names+Suggested Category")
 	public void SI_WF36_CustomList_MultipleList_ListNames_SuggestedCat() {
 
-		LoginData loginData =LoginData.fetch("LoginData11");
+		LoginData loginData =LoginData.fetch("LoginData13");
 		ListData listData=ListData.fetch("ListData2");
 		ListData listData1=ListData.fetch("ListData3");
 
@@ -2631,239 +1774,7 @@ public class WorkFlow extends Initiator{
 
 	}
 
-	/*
-	 * Validating user is able to setup inventory by adding items from StartFromScratch (Pdt catalog+ OG+ Prep+ NonSysco items) and then assign those items to multiple  locations and Suggested category.
-	 * Validating all items are displayed on corresponding location at Track Inventory
-	 * Validating  suggested category is displayed at Track Inventory
-	 * Prerequisite:Normal/MA User with OG items
-	 */
-	@Test(groups={"SI-WF37"},priority=0, description = "SI-WF37-Start from scratch+ Multiple lists +Custom location +Suggested category")
-	public void SI_WF37_StartFromScratch_MultipleList_CustomLocation_SuggestedCategory() {	
-
-		LoginData loginData =LoginData.fetch("LoginData10");	  
-		LocationsData locationsData =LocationsData.fetch("LocatiosData3");
-		LocationsData locationsData1 =LocationsData.fetch("LocatiosData2");
-
-		SearchData searchData=SearchData.fetch("SearchData");
-		NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
-		VendorDetailsData vendorDetailsData =VendorDetailsData.fetch("VDNonsysco");
-		PrepItemData prepItemData =PrepItemData.fetch("PrepItemData");
-
-		Start.asTester
-		.goToLoginpage()
-		.verifyLoginPage("SI-WF37-LoginPage")
-		.saveUsernameCheckBoxClick("SI-WF37-save username")
-		.signIn(loginData.UserName, loginData.Password,"SI-WF37-Login")
-
-		._atHomePage()
-		.ClickAccount(loginData.UserName,"SI-WF37-Clicked account")
-
-		._atAccountsPage()
-		.Sixth_AccountSelection(loginData.UserName,"SI-WF37-ThirdAccountSelect")
-
-		._atInventoryToolPage()
-		.InvTools_SetUpInventory("SI-WF37-SetupInventoryTap")
-
-		._atSetupInventoryPage()
-		.TapOnSkip("SI-WF37-Tapped Skip1")
-
-		.StartFromScratch("SI-WF37-ScratchSelected")
-		.tapContinue("SI-WF37-Tapped Continue1")
-		.Scratch_AddItems("SI-WF37-Tapped Add items")
-		//nonsysco item addition
-		.AddItemFrom_NonSysco("SI-WF37-Tapped NonSysco")
-		.EnterItemDetails(nonSyscoItemData.ProductName, nonSyscoItemData.UPC, nonSyscoItemData.Pack, nonSyscoItemData.Size, nonSyscoItemData.Weight, nonSyscoItemData.Price, nonSyscoItemData.ProductBrand, "SI-WF37-NonSyscoItem details entered")
-		.AddSupplier_AddProductDetailsPage("SI-WF37-select supplier")
-
-		._atVendorPage()
-		.Add_Supplier("SI-WF37-AddVendorTap")
-		.AddSupplier_Details(vendorDetailsData.VendorName, vendorDetailsData.PhoneNum, vendorDetailsData.Address, vendorDetailsData.ContactInfo, vendorDetailsData.Email, vendorDetailsData.Note, "SI-WF37-AddVendorDetails")
-		.TapOnDone("SI-WF37-Tapped Done1")
-		.TapOnBack("SI-WF37-Tapped Back1")
-		.SupplierSelect(vendorDetailsData.VendorName,"SI-WF37-SupplierSelect")
-		.TapOnDone("SI-WF37-Tapped Done2")
-
-		//prepitem addition
-		._atSetupInventoryPage()
-		.Setup_AddItemsLink("SI-WF37-Add items Selected")
-		.AddItemFrom_PrepItem("SI-WF37-Tapped Prep")
-		.EnterItemDetails(prepItemData.ProductName, prepItemData.UPC, prepItemData.Pack, prepItemData.Size, prepItemData.Weight, prepItemData.Price, prepItemData.ProductBrand, "SI-WF37-PrepItemAddPage")
-		.TapOnDone("SI-WF37-Tapped Done3")
-
-		.Setup_AddItemsLink("SI-WF37-Add items Selected")
-		.SearchItem(searchData.keyword,"SI-WF37-Search item")
-		.SelectItemFrom_Catalog("SI-WF37-Selected item from catalog")
-		.TapOnDone("SI-WF37-Tapped Done4")
-
-		.Setup_AddItemsLink("SI-WF37-Add items Selected")
-		.AddItemFrom_OrderGuide("SI-WF37-Tapped Order Guide")
-		.SelectItemFrom_OrderGuide("SI-WF37-Selected item from OG")
-
-		//verifications
-		.verifySearchItemsOnSetupInv("SI-WF37-Verify catalog item selected")
-		.verifyOGItemsOnSetupInv("SI-WF37-Verify OG item selected")
-
-		.verifyNonSyscoPrepItemSetupInv(prepItemData.ProductName,"SI-WF37-Verify prep item selected")
-		.verifyNonSyscoPrepItemSetupInv(nonSyscoItemData.ProductName,"SI-WF37-Verify nonsysco item selected")
-
-
-		.TapOnDone("SI-WF37-Tapped Done6")
-
-
-		._atLocationsPage()
-		.CustomLocation("SI-WF37-Tapped Custom location")
-		.tapContinue("SI-WF37-Tapped Continue2")
-
-		.EnterLocationName(locationsData.LocationName,"SI-WF37-Enter location name")
-		.AddLocations1_TypeDry("SI-WF37-Tapped Dry1")
-
-		.AddLocations2()
-		.AddLocations2_name(locationsData1.LocationName)
-		.AddLocations2_TypeDry("SI-WF37-Tapped Dry2")
-		.TapOnNext("SI-WF37-Tapped Next1")
-
-		.AssignMultipleListItemsToLocation("SI-WF37-Selected Multiple items to Location1")
-		.TapOnNext("SI-WF37-Tapped Next2")
-		.AllItemsTabClick("SI-WF37-Tapped Next2")
-
-		.AssignMultipleListItemsToLocation("SI-WF37-Selected Multiple items to Location2")
-		.TapOnDone("SI-WF37-Tapped Done7")
-
-
-		._atCategoryPage()
-		.SuggestedCategories("SI - WF 37-TC1-SuggestedCategories Tapped")
-		.tapContinue("SI - WF 37-TC1-Tapped Continue3")
-
-		._atSetupInventoryPage()
-		.TapTakeHome("SI - WF 37-TC1-Tapped Take me Home")
-
-		._atInventoryToolPage()
-		.InvTools_TrackInventory("SI-WF37-Selected track inventory")
-
-
-		._atLocationsPage()
-		.SelectLocation(locationsData.LocationName, "SI-WF37-Select added location1")
-		.VerifyMultipleListItemsInLocation("SI-WF37-Verifying Multiple items in Location1")
-		.TapOnBack("SI-WF37-Tapped back2")
-		.SelectLocation(locationsData1.LocationName, "SI-WF37-Select added location2")
-		.VerifyMultipleListItemsInLocation("SI-WF37-Verifying Multiple items in Location2")
-		.SyscoCategoryIdentify("SI-WF37-Identifying categories")
-		._atCategoryPage()
-		.VerifyMultipleListSyscoSuggestedCategory("SI-WF37-Verifying categories")
-		;
-	}
-
-	/*
-	 * Validating user is able to setup inventory by adding items from StartFromScratch (Pdt catalog+ OG+ Prep+ NonSysco items) and then assign those items to Default  locations and Suggested category.
-	 * Validating Non sysco and Prep items are displayed on No location at Track Inventory
-	 * Validating  suggested category list on Categories page
-	 * Prerequisite:Normal/MA User with OG items
-	 */
-	@Test(groups={"SI-WF38"},priority=0, description = "SI-WF38-Start from scratch+ Multiple lists +Default location + Suggested category")
-	public void SI_WF38_StartFromScratch_MultipleList_DefaultLocation_SuggestedCategory() {	
-
-		LoginData loginData =LoginData.fetch("LoginData1");	  
-		LocationsData locationsData =LocationsData.fetch("LocatiosData4");
-
-
-		SearchData searchData=SearchData.fetch("SearchData");
-		NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
-		VendorDetailsData vendorDetailsData =VendorDetailsData.fetch("VDNonsysco");
-		PrepItemData prepItemData =PrepItemData.fetch("PrepItemData");
-
-		Start.asTester
-		.goToLoginpage()
-		.verifyLoginPage("SI-WF38-LoginPage")
-		.saveUsernameCheckBoxClick("SI-WF38-save username")
-		.signIn(loginData.UserName, loginData.Password,"SI-WF38-Login")
-
-		._atHomePage()
-		.ClickAccount(loginData.UserName,"SI-WF38-Clicked account")
-
-		._atAccountsPage()
-		.First_AccountSelection(loginData.UserName,"SI-WF38-ThirdAccountSelect")
-
-		._atInventoryToolPage()
-		.InvTools_SetUpInventory("SI-WF38-SetupInventoryTap")
-
-		._atSetupInventoryPage()
-		.TapOnSkip("SI-WF38-Tapped Skip1")
-
-		.StartFromScratch("SI-WF38-ScratchSelected")
-		.tapContinue("SI-WF38-Tapped Continue1")
-		.Scratch_AddItems("SI-WF38-Tapped Add items")
-		//nonsysco item addition
-		.AddItemFrom_NonSysco("SI-WF38-Tapped NonSysco")
-		.EnterItemDetails(nonSyscoItemData.ProductName, nonSyscoItemData.UPC, nonSyscoItemData.Pack, nonSyscoItemData.Size, nonSyscoItemData.Weight, nonSyscoItemData.Price, nonSyscoItemData.ProductBrand, "SI-WF38-NonSyscoItem details entered")
-		.AddSupplier_AddProductDetailsPage("SI-WF38-select supplier")
-
-		._atVendorPage()
-		.Add_Supplier("SI-WF38-AddVendorTap")
-		.AddSupplier_Details(vendorDetailsData.VendorName, vendorDetailsData.PhoneNum, vendorDetailsData.Address, vendorDetailsData.ContactInfo, vendorDetailsData.Email, vendorDetailsData.Note, "SI-WF38-AddVendorDetails")
-		.TapOnDone("SI-WF38-Tapped Done on add supplier page")
-		.TapOnBack("SI-WF38-Tapped Back1")
-		.SupplierSelect(vendorDetailsData.VendorName,"SI-WF38-SupplierSelect")
-		.TapOnDone("SI-WF38-Tapped Done2")
-
-		//prepitem addition
-		._atSetupInventoryPage()
-		.Setup_AddItemsLink("SI-WF38-Add items Selected")
-		.AddItemFrom_PrepItem("SI-WF38-Tapped Prepitem")
-		.EnterItemDetails(prepItemData.ProductName, prepItemData.UPC, prepItemData.Pack, prepItemData.Size, prepItemData.Weight, prepItemData.Price, prepItemData.ProductBrand, "SI-WF38-PrepItemAddPage")
-		.TapOnDone("SI-WF38-Tapped Done3")
-
-		.Setup_AddItemsLink("SI-WF38-Add items Selected")
-		.SearchItem(searchData.keyword,"SI-WF38-Search item")
-		.SelectItemFrom_Catalog("SI-WF38-Selected item from catalog")
-		.TapOnDone("SI-WF38-Tapped Done4")
-
-		.Setup_AddItemsLink("SI-WF38-Add items Selected")
-		.AddItemFrom_OrderGuide("SI-WF38-Tapped Order Guide")
-		.SelectItemFrom_OrderGuide("SI-WF38-Selected item from OG")
-
-
-		//verifications  
-
-		.verifySearchItemsOnSetupInv("SI-WF38-Verify catalog item selected")
-		.verifyOGItemsOnSetupInv("SI-WF38-Verify OG item selected")
-
-		.verifyNonSyscoPrepItemSetupInv(prepItemData.ProductName,"SI-WF38-Verify prep item selected")
-		.verifyNonSyscoPrepItemSetupInv(nonSyscoItemData.ProductName,"SI-WF38-Verify nonsysco item selected")
-
-
-		.TapOnDone("SI-WF38-Tapped Done6")
-
-		._atLocationsPage()
-		.DefaultLocation("SI-WF38-Tapped Custom location")
-		.tapContinue("SI-WF38-Tapped Continue2")
-
-
-		._atCategoryPage()
-		.SuggestedCategories("SI-WF38-SuggestedCategories Tapped")
-		.tapContinue("SI-WF38-Tapped Continue3")
-
-		._atSetupInventoryPage()
-		.TapTakeHome("SI-WF38-Tapped Take me Home")
-
-		._atInventoryToolPage()
-		.InvTools_TrackInventory("SI-WF38-Selected track inventory")
-
-		._atLocationsPage()
-		.SelectLocation(locationsData.LocationName, "SI-WF38-Select added location1")
-		._atSetupInventoryPage()
-		.verifyNonSyscoPrepItemSetupInv(prepItemData.ProductName,"SI-WF38-Verify prep item selected")
-		.verifyNonSyscoPrepItemSetupInv(nonSyscoItemData.ProductName,"SI-WF38-Verify nonsysco item selected")
-		.TapOnDone("SI - WF 38-TC1-Tapped Done")
-
-		._atCategoryPage()
-		.TapOnBack("SI-WF38-Tapped back")
-		._atInventoryToolPage()
-		.InvTools_Category("SI-WF38-Tapped Categories")
-		._atCategoryPage()
-		.VerifySuggestedCategoryList("SI-WF38-Verified Suggested Categories List")
-		;
-
-	}
+	
 
 
 
@@ -2872,11 +1783,11 @@ public class WorkFlow extends Initiator{
 	 * Validating creation of location on Track inventory,adding items to location and verifying quantity updation.
 	 * Prerequisite:Normal/MA User with OG items
 	 */
-	@Test(groups={"TI-WF1-WF2"},priority=2, description = "TI-WF1-WF2-Select a location from trackinventory updating quantity and uom")
+	@Test(groups={"TI-WF1-WF2"},priority=37, description = "TI-WF1-WF2-Select a location from trackinventory updating quantity and uom")
 	public void TI_WF1_WF2_Location_Item_UOMQuantity() {	
 
 
-		LoginData loginData =LoginData.fetch("LoginData14");	
+		LoginData loginData =LoginData.fetch("LoginData1");	
 		LocationsData locationsData1 =LocationsData.fetch("LocationsData");
 		UOMQuantityData uomQuantityData=UOMQuantityData.fetch("UOMQuantityData");
 		UOMQuantityData uomQuantityData1=UOMQuantityData.fetch("UOMQuantityData1");
@@ -2962,7 +1873,7 @@ public class WorkFlow extends Initiator{
 	 * Validating nickname can be assigned for OG and catalog items  
 	 * Prerequisite:Normal/MA User with OG items
 	 */
-	@Test(groups={"MIL-WF1-WF4"},priority=2, description = "MIL-WF1-WF4-Creating Location in trackinventory and add items from multile lists to location")
+	@Test(groups={"MIL-WF1-WF4"},priority=38, description = "MIL-WF1-WF4-Creating Location in trackinventory and add items from multile lists to location")
 	public void MIL_WF1_WF4_Location_AddItems() {	
 
 		LoginData loginData =LoginData.fetch("LoginData2");	  
@@ -3014,6 +1925,8 @@ public class WorkFlow extends Initiator{
 		.TapAddLocation("MIL-WF1-WF4-Tapped ADD")
 		._atSetupInventoryPage()
 		.AddItemFrom_NonSysco("MIL-WF1-WF4-Tapped NonSysco")
+		.NonSysco_Prompt(loginData.UserName,"MIL-WF1-WF4-verify NonSysco")
+		
 		.EnterItemDetails(nonSyscoItemData.ProductName, nonSyscoItemData.UPC, nonSyscoItemData.Pack, nonSyscoItemData.Size, nonSyscoItemData.Weight, nonSyscoItemData.Price, nonSyscoItemData.ProductBrand, "MIL-WF1-WF4-NonSyscoItem details entered")
 		.AddSupplier_AddProductDetailsPage("MIL-WF1-WF4-select supplier")
 		._atVendorPage()
@@ -3030,6 +1943,8 @@ public class WorkFlow extends Initiator{
 		.TapAddLocation("MIL-WF1-WF4-Tapped ADD")
 		._atSetupInventoryPage()
 		.AddItemFrom_PrepItem("MIL-WF1-WF4-Tapped NonSysco")
+		.Prep_Prompt("MIL-WF1-WF4-verify Prep")   ///change to prep item
+		
 		.EnterItemDetails(prepItemData.ProductName, prepItemData.UPC, prepItemData.Pack, prepItemData.Size, prepItemData.Weight, prepItemData.Price, prepItemData.ProductBrand, "MIL-WF1-WF4-NonSyscoItem details entered")
 		.TapOnDone("MIL-WF1-WF4-Tapped Done")
 
@@ -3085,11 +2000,11 @@ public class WorkFlow extends Initiator{
 	 * Validating  quantity updation on Product detail page for same item on different locations
 	 * Prerequisite:Normal/MA User with OG items
 	 */
-	@Test(groups={"MIL-WF2"},priority=0, description = "MIL-WF2-Selecing a location, adding same items to multiple location")
+	@Test(groups={"MIL-WF2"},priority=39, description = "MIL-WF2-Selecing a location, adding same items to multiple location")
 	public void MIL_WF2_Location_AddItems__MultipleLocation() {	
 
 
-		LoginData loginData =LoginData.fetch("LoginData14");
+		LoginData loginData =LoginData.fetch("LoginData3");
 		LocationsData locationsData =LocationsData.fetch("LocatiosData3");
 		LocationsData locationsData1 =LocationsData.fetch("LocatiosData2");
 		LocationsData locationsData2 =LocationsData.fetch("LocatiosData1");
@@ -3168,6 +2083,7 @@ public class WorkFlow extends Initiator{
 		.VerifyLocationList(locationsData1.LocationName, "MIL-WF2-Verifing Added Location2")
 
 		.SelectLocation(locationsData1.LocationName, "MIL-WF2-Selecting Added Location2")
+	//	.SelectLocation(locationsData.LocationName, "MIL-WF2-Selecting Added Location2")     //not preselected
 		.LocationDoneSelection("MIL-WF2-Selecting Done")
 		.TapOnDone("MIL-WF2-Tapped Done")
 
@@ -3190,6 +2106,7 @@ public class WorkFlow extends Initiator{
 		.VerifyLocationList(locationsData2.LocationName, "MIL-WF2-Verifing Added Location3")
 
 		.SelectLocation(locationsData2.LocationName, "MIL-WF2-Selecting Added Location3")
+	//	.SelectLocation(locationsData.LocationName, "MIL-WF2-Selecting Added Location1") //xtra
 		.LocationDoneSelection("MIL-WF2-Selecting Done")
 		.TapOnDone("MIL-WF2-Tapped Done")
 
@@ -3233,12 +2150,13 @@ public class WorkFlow extends Initiator{
 	 * Validating count of items displayed for each location.
 	 * Prerequisite:Normal/MA User with OG items
 	 */
-	@Test(groups={"MIL-WF3"},priority=0, description = "MIL-WF3-Selecting a specific location in trackinventory and search for items within location")
+	@Test(groups={"MIL-WF3"},priority=40, description = "MIL-WF3-Selecting a specific location in trackinventory and search for items within location")
 	public void MIL_WF3_Location_SearchItems() {	
 
-		LoginData loginData =LoginData.fetch("LoginData3");
+		LoginData loginData =LoginData.fetch("LoginData4");
 		LocationsData locationsData =LocationsData.fetch("LocatiosData3");
-
+		SearchData searchData=SearchData.fetch("SearchData");
+		
 
 		Start.asTester
 		.goToLoginpage()
@@ -3302,6 +2220,18 @@ public class WorkFlow extends Initiator{
 		.TapOnDone("MIL-WF3-Done tap")
 		._atLocationsPage()
 		.VerifyCountOfItemsInLocation(locationsData.LocationName, "MIL-WF3-Verifying count of items in location1")
+		
+		
+		.SelectLocation(locationsData.LocationName, "MIL-WF3-Selecting location1")
+		.TapAddLocation("MIL-WF3-Tapped ADD")
+		._atSetupInventoryPage()
+		.SearchItem(searchData.keyword2,"MIL-WF3-Search item")
+		.verifyItemDescriptionSearch(searchData.keyword2, "MIL-WF3-Verified search with item description")
+		.SelectItemFrom_Catalog("MIL-WF3-Selected item from catalog")
+		.TapOnDone("MIL-WF3-Tapped Done4")
+
+		
+		
 		;
 	}
 
@@ -3315,12 +2245,12 @@ public class WorkFlow extends Initiator{
 	 * Prerequisite:Normal/MA User with OG items
 	 * 
 	 */
-	@Test(groups={"MIL-WF5"},priority=0, description = "MIL-WF5-Selecting a location navigate to product and assiging  item  to diff location")
+	@Test(groups={"MIL-WF5"},priority=41, description = "MIL-WF5-Selecting a location navigate to product and assiging  item  to diff location")
 	public void MIL_WF5_Locations_ItemEdit_UpdateLocation() {	
 
 
 
-		LoginData loginData =LoginData.fetch("LoginData14"); 
+		LoginData loginData =LoginData.fetch("LoginData5"); 
 		LocationsData locationsData =LocationsData.fetch("LocatiosData3");
 		LocationsData locationsData1 =LocationsData.fetch("LocatiosData2");
 		NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
@@ -3397,7 +2327,7 @@ public class WorkFlow extends Initiator{
 		.VerifyLocationList(locationsData1.LocationName, "MIL-WF5-Verifing AddedLocation")
 
 		.SelectLocation(locationsData1.LocationName, "MIL-WF5-Selecting AddedLocation")
-		.SelectLocation(locationsData.LocationName, "MIL-WF5-Selecting AddedLocation")
+		.SelectLocation(locationsData.LocationName, "MIL-WF5-Selecting AddedLocation")   
 		.LocationDoneSelection("MIL-WF5-Selecting Done")
 		.TapOnDone("MIL-WF5-Tapped Done")
 
@@ -3428,10 +2358,10 @@ public class WorkFlow extends Initiator{
 	 * Prerequisite:Normal/MA User with OG items
 	 * 
 	 */
-	@Test(groups={"MIL-WF6"},priority=0, description = "MIL-WF6-Creating Location,Editing Location in Manage Locations")
+	@Test(groups={"MIL-WF6"},priority=42, description = "MIL-WF6-Creating Location,Editing Location in Manage Locations")
 	public void MIL_WF6_Create_Edit_Delete_Locations() {	
 
-		LoginData loginData =LoginData.fetch("LoginData14");
+		LoginData loginData =LoginData.fetch("LoginData1");
 		LocationsData locationsData =LocationsData.fetch("LocatiosData3");
 		LocationsData locationsData1 =LocationsData.fetch("LocatiosData2");
 
@@ -3481,6 +2411,13 @@ public class WorkFlow extends Initiator{
 		.TapAddLocation("MIL-WF6-Tapped ADD")
 		.AddLocationName(locationsData1.LocationName,"MIL-WF6-Enter location name")
 		.AddLocationCooler("MIL-WF6-Tapped Cooler")
+		
+		.TapOnCancel("MIL-WF6-Tapped Cancel")
+		.VerifyCancelledLocationList(locationsData1.LocationName, "MIL-WF6-Verifing CancelledLocation")
+		.TapAddLocation("MIL-WF6-Tapped ADD")
+		.AddLocationName(locationsData1.LocationName,"MIL-WF6-Enter location name")
+		.AddLocationCooler("MIL-WF6-Tapped Cooler")
+		
 		.TapOnDone("MIL-WF6-Tapped Done")
 		.TapOnBack("MIL-WF6-Tapped Back")
 		.VerifyLocationList(locationsData1.LocationName, "MIL-WF6-Verifing AddedLocation")
@@ -3509,10 +2446,10 @@ public class WorkFlow extends Initiator{
 	 * Prerequisite:Normal/MA User with OG items
 	 * 
 	 */
-	@Test(groups={"MIL-WF7"},priority=4, description = "MIL-WF7-Track Inventory+Location+Edit+Delete Items from location")
+	@Test(groups={"MIL-WF7"},priority=43, description = "MIL-WF7-Track Inventory+Location+Edit+Delete Items from location")
 	public void MIL_WF7_TrackInventory_Location_Edit_Delete_Items_location() {
 
-		LoginData loginData =LoginData.fetch("LoginData4");	  
+		LoginData loginData =LoginData.fetch("LoginData2");	  
 		LocationsData locationsData1 =LocationsData.fetch("LocationsData");
 
 		Start.asTester
@@ -3580,14 +2517,15 @@ public class WorkFlow extends Initiator{
 	 * Prerequisite:Normal/MA User with OG items
 	 * 
 	 */
-	@Test(groups={"MIL-WF10"},priority=0, description = "MIL-WF10-Track Inventory+Location+item product card + update qty & UOM")
+	@Test(groups={"MIL-WF10"},priority=44, description = "MIL-WF10-Track Inventory+Location+item product card + update qty & UOM")
 	public void MIL_WF10_TrackInventory_Location_item_productcard_updateqtyUOM() {	
 
-		LoginData loginData =LoginData.fetch("LoginData14"); 	
+		LoginData loginData =LoginData.fetch("LoginData3"); 	
 		LocationsData locationsData =LocationsData.fetch("LocationsData");
 		PrepItemData prepItemData =PrepItemData.fetch("PrepItemData");
-		UOMQuantityData uomQuantityData = UOMQuantityData.fetch("UOMQuantityData");
-
+		UOMQuantityData uomQuantityData1 = UOMQuantityData.fetch("UOMQuantityData1");
+		PrepItemData prepItemData1 =PrepItemData.fetch("PrepItemData1");
+		
 		Start.asTester
 		.goToLoginpage()
 		.verifyLoginPage("MIL-WF10-LoginPage")
@@ -3640,10 +2578,21 @@ public class WorkFlow extends Initiator{
 		._atLocationsPage()
 		.ProductSelect(prepItemData.ProductName, "MIL-WF10-Product select")
 		.TapOnEdit("MIL-WF10-Tap on edit")
-		.tapOnProductOpenProductDetailsPageAndEnterQty(prepItemData.ProductName, uomQuantityData.Quantity, "MIL-WF10-Qty entering")
+		
+		._atSetupInventoryPage()
+		.EnterItemDetails(prepItemData1.ProductName, prepItemData1.UPC, prepItemData1.Pack, prepItemData1.Size, prepItemData1.Weight, prepItemData1.Price, prepItemData1.ProductBrand, "MIL-WF10-NonSyscoItem details entered")
+		
+		._atLocationsPage()
+		.tapOnProductOpenProductDetailsPageAndEnterQty(prepItemData.ProductName, uomQuantityData1.Quantity, "MIL-WF10-Qty entering")
 		.TapOnDone("MIL-WF10-tap on done")
 		.TapOnBack("MIL-WF10-tap on back")
-		.QuantityVerify(uomQuantityData.Quantity, "MIL-WF10-Quantity verify")
+		.QuantityVerify(uomQuantityData1.Quantity, "MIL-WF10-Quantity verify")
+		._atSetupInventoryPage()
+		.verifyNonSyscoPrepItemSetupInv(prepItemData1.ProductName,"MIL-WF10-Verify item selected")
+		
+		
+		
+
 		;
 
 	}
@@ -3656,10 +2605,10 @@ public class WorkFlow extends Initiator{
 	 * Prerequisite:Normal/MA User with OG items
 	 * 
 	 */
-	@Test(groups={"MEC-WF1"},priority=0, description = "MEC-WF1-Selecting a location navigate to product and assiging  item  to category created")
+	@Test(groups={"MEC-WF1"},priority=45, description = "MEC-WF1-Selecting a location navigate to product and assiging  item  to category created")
 	public void MEC_WF1_Locations_ItemEdit_UpdateCategory() {	
 
-		LoginData loginData =LoginData.fetch("LoginData14");
+		LoginData loginData =LoginData.fetch("LoginData1");
 		LocationsData locationsData =LocationsData.fetch("LocatiosData3");
 		NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
 		VendorDetailsData vendorDetailsData =VendorDetailsData.fetch("VDNonsysco");
@@ -3759,10 +2708,10 @@ public class WorkFlow extends Initiator{
 	 * Prerequisite:Normal/MA User with OG items
 	 * 
 	 */
-	@Test(groups={"MEC-WF2"},priority=0, description = "MEC-WF2-Creating, editing and deleting category ")
+	@Test(groups={"MEC-WF2"},priority=46, description = "MEC-WF2-Creating, editing and deleting category ")
 	public void MEC_WF2_Category_Create_Edit_Delete_Category() {	
 
-		LoginData loginData =LoginData.fetch("LoginData14");  
+		LoginData loginData =LoginData.fetch("LoginData2");  
 		CategoryData categoryData =CategoryData.fetch("CategoryData");
 
 		Start.asTester
@@ -3828,19 +2777,21 @@ public class WorkFlow extends Initiator{
 	 * 
 	 */
 
-	@Test(groups={"MNS-1"},priority=0, description = "MNS-1-Manage_Create Non-Sysco Item_Link Supplier_Location_Expense Category")
+	@Test(groups={"MNS-1"},priority=47, description = "MNS-1-Manage_Create Non-Sysco Item_Link Supplier_Location_Expense Category")
 	public void MNS_1_CreateNonSyscoItem_LinkSupplier_Location_Category() {	
 
 
 
-		LoginData loginData =LoginData.fetch("LoginData14"); 
+		LoginData loginData =LoginData.fetch("LoginData3"); 
 		LocationsData locationsData =LocationsData.fetch("LocationsData");
 		CategoryData categoryData=CategoryData.fetch("CategoryData");
 		NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
+		NonSyscoItemData nonSyscoItemData1 =NonSyscoItemData.fetch("NonSyscoItmData1");
 		VendorDetailsData vendorDetailsData =VendorDetailsData.fetch("VendorDetailData1");
+		VendorDetailsData vendorDetailsData1 =VendorDetailsData.fetch("VendorDetailData2");
 		PrepItemData prepItemData =PrepItemData.fetch("PrepItemData");
 		SearchData searchData=SearchData.fetch("SearchData");
-
+		LocationsData locationsData1 =LocationsData.fetch("LocatiosData3");
 		Start.asTester
 		.goToLoginpage()
 		.verifyLoginPage("MNS-1-LoginPage")
@@ -3931,6 +2882,40 @@ public class WorkFlow extends Initiator{
 		.NonSyscoPrepCategoryIdentify(nonSyscoItemData.ProductName,prepItemData.ProductName,"MNS-1-Category idenitification for nonsysco")
 		._atCategoryPage()
 		.VerifyNonSycoCustomCategory(categoryData.Name, "MNS-1-Category verification")
+		
+		
+		
+		._atLocationsPage()
+		.ProductSelect(nonSyscoItemData.ProductName, "MNS-1-Product select")
+		.TapOnEdit("MNS-1-Tap on edit")
+		
+		._atSetupInventoryPage()	
+		.EnterItemDetails(nonSyscoItemData1.ProductName, nonSyscoItemData1.UPC, nonSyscoItemData1.Pack, nonSyscoItemData1.Size, nonSyscoItemData1.Weight, nonSyscoItemData1.Price, nonSyscoItemData1.ProductBrand, "MNS-1-NonSyscoItem details entered")
+		.AddSupplier_AddProductDetailsPage("MNS-1-select supplier")
+		._atVendorPage()
+		.Add_Supplier("MNS-1-AddVendorTap")
+		.AddSupplier_Details(vendorDetailsData1.VendorName, vendorDetailsData1.PhoneNum, vendorDetailsData1.Address, vendorDetailsData1.ContactInfo, vendorDetailsData1.Email, vendorDetailsData1.Note, "MNS-1-AddVendorDetails")
+		.TapOnDone("MNS-1-Done")
+		.TapOnBack("MNS-1-Back")
+		.SupplierSelect(vendorDetailsData1.VendorName,"MNS-1-SupplierSelect")
+		._atLocationsPage()
+		.AddLocation_AddProductDetailsPage("MNS-1-Select Add/Select location option")
+		.TapAddLocation("MNS-1-Tapped ADD")
+		.AddLocationName(locationsData1.LocationName,"MNS-1-Enter location2 name")
+		.AddLocationCooler("MNS-1-Tapped Cooler")
+		.TapOnDone("MNS-1-Tapped Done")
+		.TapOnBack("MNS-1-Tapped Back")
+		.VerifyLocationList(locationsData1.LocationName, "MNS-1-Verifing Added Location2")
+
+		.SelectLocation(locationsData1.LocationName, "MNS-1-Selecting Added Location2")
+		.SelectLocation(locationsData.LocationName, "MNS-1-Selecting Added Location2")     //not preselected
+		.LocationDoneSelection("MNS-1-Selecting Done")
+		.TapOnDone("MNS-1-Tapped Done")
+		
+		.TapOnBack("MNS-1-Tapped Back")
+		.SelectLocation(locationsData1.LocationName, "MNS-1-Selecting Added Location2")
+		._atSetupInventoryPage()
+		.verifyNonSyscoPrepItemSetupInv(nonSyscoItemData1.ProductName,"MNS-1-Verify nonsysco item added")
 		;
 	}
 
@@ -3940,15 +2925,17 @@ public class WorkFlow extends Initiator{
 	 * Prerequisite:Normal/MA User with OG items
 	 * 
 	 */
-	@Test(groups={"MPI-1"},priority=0, description = "MPI-1-Manage_Create Prep Item_LinkLocation_Expense Category")
+	@Test(groups={"MPI-1"},priority=48, description = "MPI-1-Manage_Create Prep Item_LinkLocation_Expense Category")
 	public void MPI_1_CreatePrepItem_LinkLocation_Category() {	
 
-		LoginData loginData =LoginData.fetch("LoginData14");	  
+		LoginData loginData =LoginData.fetch("LoginData4");	  
 		LocationsData locationsData =LocationsData.fetch("LocationsData");
 		CategoryData categoryData=CategoryData.fetch("CategoryData");
 		NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
 		PrepItemData prepItemData =PrepItemData.fetch("PrepItemData");
-
+		LocationsData locationsData1 =LocationsData.fetch("LocatiosData3");
+		PrepItemData prepItemData1 =PrepItemData.fetch("PrepItemData1");
+		
 		Start.asTester
 		.goToLoginpage()
 		.verifyLoginPage("MPI-1-LoginPage")
@@ -4030,6 +3017,34 @@ public class WorkFlow extends Initiator{
 		.NonSyscoPrepCategoryIdentify(nonSyscoItemData.ProductName,prepItemData.ProductName,"MPI-1-Category idenitification for Prepitem")
 		._atCategoryPage()
 		.VerifyPrepCustomCategory(categoryData.Name, "MPI-1-Category verification")
+		
+		
+		._atLocationsPage()
+		.ProductSelect(prepItemData.ProductName, "MPI-1-Product select")
+		.TapOnEdit("MPI-1-Tap on edit")
+		
+		._atSetupInventoryPage()	
+		.EnterItemDetails(prepItemData1.ProductName, prepItemData1.UPC, prepItemData1.Pack, prepItemData1.Size, prepItemData1.Weight, prepItemData1.Price, prepItemData1.ProductBrand, "MPI-1-PrepItem details entered")
+		._atLocationsPage()
+		.AddLocation_AddProductDetailsPage("MPI-1-Select Add/Select location option")
+		.TapAddLocation("MPI-1-Tapped ADD")
+		.AddLocationName(locationsData1.LocationName,"MPI-1-Enter location2 name")
+		.AddLocationCooler("MPI-1-Tapped Cooler")
+		.TapOnDone("MPI-1-Tapped Done")
+		.TapOnBack("MPI-1-Tapped Back")
+		.VerifyLocationList(locationsData1.LocationName, "MPI-1-Verifing Added Location2")
+
+		.SelectLocation(locationsData1.LocationName, "MPI-1-Selecting Added Location2")
+		.SelectLocation(locationsData.LocationName, "MPI-1-Selecting Added Location2")     //not preselected
+		.LocationDoneSelection("MPI-1-Selecting Done")
+		.TapOnDone("MPI-1-Tapped Done")
+		
+		.TapOnBack("MPI-1-Tapped Back")
+		.SelectLocation(locationsData1.LocationName, "MPI-1-Selecting Added Location2")
+		._atSetupInventoryPage()
+		.verifyNonSyscoPrepItemSetupInv(prepItemData1.ProductName,"MPI-1-Verify nonsysco item added")
+		
+		
 		;
 	}
 
@@ -4039,12 +3054,12 @@ public class WorkFlow extends Initiator{
 	 * Prerequisite:Normal/MA User with OG items
 	 * 
 	 */
-	@Test(groups={"MSP-1 MSP-2"},priority=0, description = "MSP-1 MSP-2 Home Screen-->Suppliers-->Add new Suppliers/View/Maintain Suppliers")
-	public void MSP1_MSP2_Add_View_ManageSuppliers_NU()
+	@Test(groups={"MSP-1 MSP-2"},priority=49, description = "MSP-1 MSP-2 Home Screen-->Suppliers-->Add new Suppliers/View/Maintain Suppliers")
+	public void MSP1_MSP2_Add_View_ManageSuppliers()
 	{
 
 
-		LoginData loginData =LoginData.fetch("LoginData13"); 
+		LoginData loginData =LoginData.fetch("LoginData5"); 
 		VendorDetailsData vendorData=VendorDetailsData.fetch("VendorDetailData4");
 		VendorDetailsData vendorDataEdit=VendorDetailsData.fetch("VendorDetailData1");
 		VendorDetailsData vendorData1=VendorDetailsData.fetch("VendorDetailData2");

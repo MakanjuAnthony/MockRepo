@@ -1,10 +1,19 @@
 NonSyscoItmData : !!com.components.yaml.NonSyscoItemData {
  ProductName    : bholaNon7,
  UPC            : 123456,
- Pack		 	: 10,
- Size		 	: 1,
- Weight		 	: 12,
- Price		 	: 30,
- ProductBrand	: Milma1,
+ Pack		 : 10,
+ Size		 : 1,
+ Weight		 : 12,
+ Price		 : 30,
+ ProductBrand	 : Milma1,
+ }
+NonSyscoItmData1: !!com.components.yaml.NonSyscoItemData {
+ ProductName    : bholaNon7Edited,
+ UPC            : 789456,
+ Pack		 : 10,
+ Size		 : 1,
+ Weight		 : 12,
+ Price		 : 30,
+ ProductBrand	 : Milma1,
  }
  

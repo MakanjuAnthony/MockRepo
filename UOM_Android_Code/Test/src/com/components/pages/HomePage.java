@@ -1,4 +1,21 @@
+		/**
+		 ********************************************************************************************************************************************
+		 ********************************************************************************************************************************************
+		 *																																		   	*
+		 * 2016-2017 Infosys Limited, Banglore, India. All Rights Reserved																			*
 
+		 * Version: 1.0																																*
+		 * 																																			*
+		 * Except for any free or open source software components embedded in this Infosys proprietary software program ("Program"),				*
+		 * this Program is protected by copyright laws, international treaties and other pending or existing intellectual property rights in India, *
+		 * the United States and other countries. Except as expressly permitted, any unautorized reproduction, storage, transmission 				*
+		 * in any form or by any means (including without limitation electronic, mechanical, printing, photocopying, recording or otherwise), 		*
+		 * or any distribution of this Program, or any portion of it, may result in severe civil and criminal penalties, 							*
+		 * and will be prosecuted to the maximum extent possible under the law 																		*
+		 *																																			*
+		 ********************************************************************************************************************************************
+		 ********************************************************************************************************************************************
+		 **/
 package com.components.pages;
 
 import org.testng.Assert;
@@ -33,7 +50,7 @@ public class HomePage extends SitePage {
 		log("Tapping on Hamburger menu", LogType.STEP);
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -60,7 +77,7 @@ public class HomePage extends SitePage {
 	public HomePage HamMenu_Logout(String string) {
 		log("Tapping on Logout from Hamburger menu", LogType.STEP);
 
-		String finalPath1 = GlobalVariable.drivePath + string + GlobalVariable.string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + SitePage.string2 + SitePage.pathExtension;
 
 		try {
 
@@ -86,7 +103,7 @@ public class HomePage extends SitePage {
 
 	@SuppressWarnings("rawtypes")
 	public HomePage ClickAccount(String str1, String string) {
-		String finalPath1 = GlobalVariable.drivePath + string + GlobalVariable.string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + SitePage.string2 + SitePage.pathExtension;
 
 		try {
 

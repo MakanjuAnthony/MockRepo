@@ -62,7 +62,6 @@ public class LoginPage extends SitePage {
 
 		String finalPath1 = SitePage.drivePath + string + SitePage.string2 + SitePage.pathExtension;
 		try {
-
 			Set<String> contextNames1 = ((IOSDriver) getCommand().driver).getContextHandles();
 			System.out.println("contxtname is " + contextNames1);
 
@@ -107,8 +106,7 @@ public class LoginPage extends SitePage {
 			getCommand().click(HomPwd);
 			getCommand().sendKeys(HomPwd, Password);
 
-			getCommand().captureScreenshot(finalPath);
-			if (getCommand().isTargetPresent(HomLogin)) {
+				if (getCommand().isTargetPresent(HomLogin)) {
 				getCommand().click(HomLogin);
 			}
 

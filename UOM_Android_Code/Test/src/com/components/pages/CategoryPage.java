@@ -1,4 +1,21 @@
+		/**
+		 ********************************************************************************************************************************************
+		 ********************************************************************************************************************************************
+		 *																																		   	*
+		 * 2016-2017 Infosys Limited, Banglore, India. All Rights Reserved																			*
 
+		 * Version: 1.0																																*
+		 * 																																			*
+		 * Except for any free or open source software components embedded in this Infosys proprietary software program ("Program"),				*
+		 * this Program is protected by copyright laws, international treaties and other pending or existing intellectual property rights in India, *
+		 * the United States and other countries. Except as expressly permitted, any unautorized reproduction, storage, transmission 				*
+		 * in any form or by any means (including without limitation electronic, mechanical, printing, photocopying, recording or otherwise), 		*
+		 * or any distribution of this Program, or any portion of it, may result in severe civil and criminal penalties, 							*
+		 * and will be prosecuted to the maximum extent possible under the law 																		*
+		 *																																			*
+		 ********************************************************************************************************************************************
+		 ********************************************************************************************************************************************
+		 **/
 package com.components.pages;
 
 import java.util.Set;
@@ -87,14 +104,14 @@ public class CategoryPage extends SitePage {
 	public static int CategorysNoOfElements2;
 
 	public static final Target ADD_CategoryName = new Target("ADD_CategoryName", "//*[@id='name']", Target.XPATH);
-	public static final Target AddCategory_FoodWeb = new Target("AddCategory_Food",
+	public static final Target AddCategory_Food = new Target("AddCategory_Food",
 			"(//*[@class='mm-c-expense__details-radio']//*[@class='radio'])[1]", Target.XPATH);
 
-	public static final Target DoneWeb = new Target("DoneWeb", "//*[@id='done-nav']/a", Target.XPATH);
+	public static final Target Done = new Target("Done", "//*[@id='done-nav']/a", Target.XPATH);
 
 	public static final Target Back = new Target("Back", "//*[@id='back-nav']/a/i", Target.XPATH);
-	public static final Target AddWeb = new Target("AddWeb", "//*[@id='add-nav']/a/i", Target.XPATH);
-	public static final Target EditWeb = new Target("Edit", "//*[@id='edit-nav']/a/i", Target.XPATH);
+	public static final Target Add = new Target("Add", "//*[@id='add-nav']/a/i", Target.XPATH);
+	public static final Target Edit = new Target("Edit", "//*[@id='edit-nav']/a/i", Target.XPATH);
 	public static final Target Delete = new Target("Delete ",
 			"//*[@id='delete-button' and contains(text(),'Delete Expense Category')]", Target.XPATH);
 	public static final Target YesDelete = new Target("YesDelete ",
@@ -179,7 +196,7 @@ public class CategoryPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -207,7 +224,7 @@ public class CategoryPage extends SitePage {
 	public CategoryPage tapContinue(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 			getCommand().waitForTargetPresent(Continue);
 			getCommand().clickWithJavascript(Continue);
@@ -231,7 +248,7 @@ public class CategoryPage extends SitePage {
 		log("Creating custom category", LogType.STEP);
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		String name = Name;
 		try {
@@ -266,7 +283,7 @@ public class CategoryPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 			getCommand().waitForTargetPresent(Next);
@@ -294,8 +311,8 @@ public class CategoryPage extends SitePage {
 		String string2 = "Issue";
 		String string3 = "Page";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
-		String finalPath2 = GlobalVariable.drivePath + string + string3 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
+		String finalPath2 = SitePage.drivePath + string + string3 + SitePage.pathExtension;
 		try {
 
 			getCommand().captureScreenshot(finalPath2);
@@ -314,8 +331,8 @@ public class CategoryPage extends SitePage {
 				log("First item selected :Pass", LogType.VERIFICATION_STEP);
 			}
 
-			if (getCommand().isTargetPresent(DoneWeb)) {
-				getCommand().click(DoneWeb);
+			if (getCommand().isTargetPresent(Done)) {
+				getCommand().click(Done);
 
 				getCommand().waitForTargetPresent(InvToolsPg);
 
@@ -332,7 +349,7 @@ public class CategoryPage extends SitePage {
 					log("Second Category Page available :Pass", LogType.VERIFICATION_STEP);
 					getCommand().click(SecondCategory_FirstItemSelect);
 					log("First item selected in second category:Pass", LogType.VERIFICATION_STEP);
-					getCommand().click(DoneWeb);
+					getCommand().click(Done);
 
 					getCommand().waitForTargetPresent(InvToolsPg);
 					log("Item added to Second Category :Pass", LogType.VERIFICATION_STEP);
@@ -357,7 +374,7 @@ public class CategoryPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 			getCommand().waitForTargetPresent(FoodAndNonFood);
@@ -383,7 +400,7 @@ public class CategoryPage extends SitePage {
 	public CategoryPage tapComplete(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 			getCommand().waitForTargetPresent(Complete);
 			getCommand().click(Complete);
@@ -406,7 +423,7 @@ public class CategoryPage extends SitePage {
 	@SuppressWarnings("rawtypes")
 	public CategoryPage CreateTwoExpenseCategory(String Name1, String Name2, String string) {
 		log("Creating multiple custom category", LogType.STEP);
-		String finalPath1 = GlobalVariable.drivePath + string + GlobalVariable.string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + SitePage.string2 + SitePage.pathExtension;
 
 		try {
 			getCommand().waitForTargetPresent(ExpenseCategory_Page);
@@ -454,7 +471,7 @@ public class CategoryPage extends SitePage {
 		log("Verifyinging added item is in  custom category - Uncategorised and All Items", LogType.STEP);
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -514,13 +531,15 @@ public class CategoryPage extends SitePage {
 	public CategoryPage selectMultipleItemsFromCategory1(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
 			log(" Selecting multiple Items to category", LogType.STEP);
 
 			getCommand().waitForTargetPresent(Category_1stItemSelect);
+			getCommand().waitForTargetPresent(Category_2ndItemSelect);
+			getCommand().waitForTargetPresent(Category_3rdItemSelect);
 
 			if (getCommand().isTargetPresent(Category_1stItemSelect)) {
 				CategoryNoOfElements1++;
@@ -576,14 +595,16 @@ public class CategoryPage extends SitePage {
 	public CategoryPage selectMultipleItemsFromCategory2(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
 			log(" Selecting multiple Items to category", LogType.STEP);
 
 			getCommand().waitForTargetPresent(Category_1stItemSelect);
-
+			getCommand().waitForTargetPresent(Category_2ndItemSelect);
+			getCommand().waitForTargetPresent(Category_3rdItemSelect);
+			
 			if (getCommand().isTargetPresent(Category_1stItemSelect)) {
 				CategoryNoOfElements1++;
 				CategoryItemName2_1 = getCommand().getText(Category_1stItemHeading);
@@ -636,7 +657,7 @@ public class CategoryPage extends SitePage {
 	public CategoryPage AddCategoryName(String categoryName, String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -662,12 +683,12 @@ public class CategoryPage extends SitePage {
 	public CategoryPage AddCategoryFood(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
-			getCommand().waitForTargetPresent(AddCategory_FoodWeb);
-			getCommand().click(AddCategory_FoodWeb);
+			getCommand().waitForTargetPresent(AddCategory_Food);
+			getCommand().click(AddCategory_Food);
 
 			log("Selected cooler :Pass", LogType.VERIFICATION_STEP);
 		}
@@ -688,14 +709,14 @@ public class CategoryPage extends SitePage {
 	public CategoryPage TapOnDone(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
-			getCommand().waitForTargetPresent(DoneWeb);
-			if (getCommand().isTargetPresent(DoneWeb)) {
+			getCommand().waitForTargetPresent(Done);
+			if (getCommand().isTargetPresent(Done)) {
 
-				getCommand().clickWithJavascript(DoneWeb);
+				getCommand().clickWithJavascript(Done);
 				log("Tapped on done:Pass", LogType.VERIFICATION_STEP);
 
 			}
@@ -714,7 +735,7 @@ public class CategoryPage extends SitePage {
 	@SuppressWarnings("rawtypes")
 	public CategoryPage SelectCategory(String name, String string) {
 
-		String finalPath1 = GlobalVariable.drivePath + string + GlobalVariable.string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + SitePage.string2 + SitePage.pathExtension;
 
 		log("Selecting Category", LogType.STEP);
 		try {
@@ -741,7 +762,7 @@ public class CategoryPage extends SitePage {
 	@SuppressWarnings("rawtypes")
 	public CategoryPage TapOnBack(String string) {
 
-		String finalPath1 = GlobalVariable.drivePath + string + GlobalVariable.string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + SitePage.string2 + SitePage.pathExtension;
 
 		try {
 
@@ -769,7 +790,7 @@ public class CategoryPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Selected Category is there", LogType.STEP);
 		try {
@@ -796,13 +817,13 @@ public class CategoryPage extends SitePage {
 	public CategoryPage TapAdd(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
-			getCommand().waitForTargetPresent(AddWeb);
-			if (getCommand().isTargetPresent(AddWeb)) {
-				getCommand().clickWithJavascript(AddWeb);
+			getCommand().waitForTargetPresent(Add);
+			if (getCommand().isTargetPresent(Add)) {
+				getCommand().clickWithJavascript(Add);
 
 				log("Navigating to Add categories page :Pass", LogType.VERIFICATION_STEP);
 
@@ -825,7 +846,7 @@ public class CategoryPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Checking addeded Location in location list", LogType.STEP);
 		try {
 
@@ -855,13 +876,13 @@ public class CategoryPage extends SitePage {
 	public CategoryPage TapOnEdit(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Editing", LogType.STEP);
 		try {
-			getCommand().waitForTargetPresent(EditWeb);
-			if (getCommand().isTargetPresent(EditWeb)) {
-
-				getCommand().click(EditWeb);
+			getCommand().waitForTargetPresent(Edit);
+			if (getCommand().isTargetPresent(Edit)) {
+				
+				getCommand().click(Edit);
 
 				log("Tap on edit :Pass", LogType.VERIFICATION_STEP);
 			}
@@ -881,7 +902,7 @@ public class CategoryPage extends SitePage {
 	public CategoryPage TapOnDeleteCategory(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Delete cliking", LogType.STEP);
 		try {
 
@@ -908,7 +929,7 @@ public class CategoryPage extends SitePage {
 	public CategoryPage TapOnYesDelete(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Deleted", LogType.STEP);
 		try {
 			getCommand().waitForTargetPresent(YesDelete);
@@ -934,7 +955,7 @@ public class CategoryPage extends SitePage {
 	public CategoryPage VerifyDeletedCategoryList(String categoryAdded, String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Checking addeded category in list", LogType.STEP);
 		try {
 
@@ -963,7 +984,7 @@ public class CategoryPage extends SitePage {
 	@SuppressWarnings("rawtypes")
 	public CategoryPage AssignMultipleItemsToCategory(String string) {
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 
 			log(" Adding Items of multiplelist to Category", LogType.STEP);
@@ -1022,7 +1043,7 @@ public class CategoryPage extends SitePage {
 		log("Selecting suggested category from Food cost page", LogType.STEP);
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 			getCommand().waitForTargetPresent(FoodAndNonFood);
@@ -1057,7 +1078,7 @@ public class CategoryPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Category verification", LogType.STEP);
 		try {
@@ -1111,7 +1132,7 @@ public class CategoryPage extends SitePage {
 		Boolean flag4 = false;
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Category verification for nonsysco", LogType.STEP);
 		try {
@@ -1148,7 +1169,7 @@ public class CategoryPage extends SitePage {
 		Boolean flag2 = false;
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Category verification", LogType.STEP);
 		try {
@@ -1213,7 +1234,7 @@ public class CategoryPage extends SitePage {
 		Boolean flag2 = false;
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Category verification", LogType.STEP);
 		try {
@@ -1278,7 +1299,7 @@ public class CategoryPage extends SitePage {
 		Boolean flag3 = false;
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Category verification for nonsysco", LogType.STEP);
 		try {
@@ -1311,7 +1332,7 @@ public class CategoryPage extends SitePage {
 	public CategoryPage VerifySuggestedCategoryList(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Suggested Category list verification", LogType.STEP);
 		try {
@@ -1360,7 +1381,7 @@ public class CategoryPage extends SitePage {
 		Boolean flag2 = false;
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Default Category verification", LogType.STEP);
 		try {
@@ -1408,7 +1429,7 @@ public class CategoryPage extends SitePage {
 		Boolean flag2 = false;
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Default Category verification", LogType.STEP);
 		try {
@@ -1453,7 +1474,7 @@ public class CategoryPage extends SitePage {
 	public CategoryPage VerifyDefaultCategoryList(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Default Category list verification", LogType.STEP);
 		try {
@@ -1493,7 +1514,7 @@ public class CategoryPage extends SitePage {
 	public CategoryPage VerifySuggestedCategory(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -1527,7 +1548,7 @@ public class CategoryPage extends SitePage {
 	public CategoryPage TapAnySuggestedCategory(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -1557,7 +1578,7 @@ public class CategoryPage extends SitePage {
 
 		String string2 = "Issue";
 
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
@@ -1583,7 +1604,7 @@ public class CategoryPage extends SitePage {
 	public CategoryPage VerifyOptionsOnSetUpFoodCost(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Category page verify ", LogType.STEP);
 		try {
@@ -1620,7 +1641,7 @@ public class CategoryPage extends SitePage {
 		Boolean flag2 = false;
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Custom Category verification on location1", LogType.STEP);
 		try {
@@ -1665,7 +1686,7 @@ public class CategoryPage extends SitePage {
 		Boolean flag2 = false;
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Custom Category verification on location2", LogType.STEP);
 		try {
@@ -1707,7 +1728,7 @@ public class CategoryPage extends SitePage {
 	public CategoryPage VerifyItemPresentUncategorizedAndAllItems(String string) {
 
 		String string2 = "Issue";
-		String finalPath1 = GlobalVariable.drivePath + string + string2 + GlobalVariable.pathExtension;
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 			getCommand().waitFor(5);
