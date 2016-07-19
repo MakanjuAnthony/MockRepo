@@ -23,6 +23,8 @@ import io.appium.java_client.android.AndroidDriver;
 
 import java.util.Set;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.testng.Assert;
 
 import com.components.repository.SiteRepository;
@@ -286,7 +288,16 @@ public class LocationsPage extends SitePage {
 	public static Integer count1 = 0;
 	public static final Target ViewItemsOnLocation = new Target("ViewItemsOnLocation",
 			"//*[contains(text(),'View items in this location')]", Target.XPATH);
-
+	public static final Target SetUp_Pg2Header = new Target("SetUp_Pg1Header",
+			"//*[@class='navbar-brand']//*[contains(text(),'Setup Inventory')]", Target.XPATH);
+	
+	public static final Target CreateLocationDesc = new Target("CreateLocationDesc",
+			"//*[@class='mm-c-customlocation__setup mm-u-navbar-padding']//*[contains(text(),'Create Locations')]",
+			Target.XPATH);
+	
+	public static String[] locationNamesArray1;
+	public static String[] locationNamesArray;
+	
 	public LocationsPage(SiteRepository repository) {
 		super(repository);
 	}
@@ -382,7 +393,9 @@ public class LocationsPage extends SitePage {
 		try {
 
 			getCommand().waitFor(5);
+			
 			getCommand().waitForTargetPresent(SetUp_Pg2Title);
+			getCommand().waitForTargetPresent(SetUp_Pg2Header);
 			getCommand().waitForTargetPresent(CustomLocations);
 			getCommand().clickWithJavascript(CustomLocations);
 
@@ -409,7 +422,9 @@ public class LocationsPage extends SitePage {
 		try {
 
 			getCommand().waitFor(5);
+		
 			getCommand().waitForTargetPresent(SetUp_Pg2Title);
+			getCommand().waitForTargetPresent(SetUp_Pg2Header);
 			getCommand().waitForTargetPresent(DefaultLocation);
 			getCommand().click(DefaultLocation);
 
@@ -2538,4 +2553,102 @@ public class LocationsPage extends SitePage {
 		return this;
 	}
 
+	
+	@SuppressWarnings("rawtypes")
+	public LocationsPage VerifyOptionsOnCustomLocations(String string) {
+
+		String string2 = "Issue";
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
+
+		log("Custom locations page verify ", LogType.STEP);
+		try {
+			
+			getCommand().waitForTargetPresent(SetUp_Pg2Header);
+			
+			if (getCommand().isTargetPresent(CreateLocationDesc) && getCommand().isTargetPresent(SetUp_Pg2Header)
+					&& getCommand().isTargetPresent(ADD_AnotherLocation)) {
+				log("All options are there", LogType.STEP);
+			} else {
+
+				throw new Exception();
+			}
+
+			log("Custom  location verification done :Pass", LogType.VERIFICATION_STEP);
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Custom location verification done  :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+
+		return this;
+
+	}
+
+	@SuppressWarnings("rawtypes")
+	public LocationsPage verifyUIAfterSearch(String string) {
+		String string2 = "Issue";
+
+		String finalPath1 = SitePage.drivePath + string + string2
+				+ SitePage.pathExtension;
+		try {
+		
+			
+			boolean flag = getCommand().isTargetPresent(Edit);
+			boolean flag1 = getCommand().isTargetPresent(Add);
+			boolean flag2 = getCommand().isTargetPresent(Done);
+			
+			if (flag||flag1||flag2) {
+				throw new Exception();
+			}
+			
+			log("verify UI After Search :Pass", LogType.VERIFICATION_STEP);
+		}
+
+		catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("verify UI After Search :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+
+		return this;
+
+	}
+
+
+
+
+	@SuppressWarnings("rawtypes")
+	public LocationsPage GetLocationsNameText(String string)
+	{
+		  String string2="Issue";
+	    String finalPath1=SitePage.drivePath+string+string2+SitePage.pathExtension;
+	    
+		
+	try{	
+	  final Target ItemNameHeading= new Target("Product_Selected","define",Target.XPATH); 
+			if(getCommand().isTargetPresent(ItemNameHeading)){
+				final Target locationNames= new Target("locationNames","locationNames",Target.XPATH); 
+				String SyscocategoryKeyword1 = getCommand().getText(locationNames);
+					locationNamesArray1 = SyscocategoryKeyword1.split("/");
+					locationNamesArray = locationNamesArray1[1].split(",");
+
+			}
+		   
+			log("Location Names are stored into an Array :Pass",LogType.VERIFICATION_STEP);						
+		}
+		
+		
+		
+		catch(Exception e){
+			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
+			 getCommand().captureScreenshot(finalPath1); 
+			log("Location Names are stored into an Array  :Fail",LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+		return this;
+		
+	}
+	
 }

@@ -96,7 +96,18 @@
 			public static final Target Category_NonSyscoItem2Select= new Target("Category_NonSyscoItem2Select","(//*[@class='mm-c-product-minlist mm-c-product__custom']//*[@class='mm-o-icon'])[2]",Target.XPATH);
 			public static final Target Category_4thItemHeading= new Target("Category_4thItemHeading","(//*[@class='mm-c-product-minlist__item']/h4)[4]",Target.XPATH);
 			public static	String CategoryItemName1_4;
+			public static final Target SetUp_Pg3Header = new Target("SetUp_Pg1Header",
+					"//*[@class='navbar-brand']//*[contains(text(),'Setup Inventory')]", Target.XPATH);
+			public static final Target CreateExpenseCategoryHeader = new Target("CreateExpenseCategoryHeader",
+					"//*[@class='mm-c-customexpense__setup-text']//*[contains(text(),'Create Custom Expense Categories')]",
+					Target.XPATH);
+			public static final Target CreateExpenseCategoryDesc1 = new Target("CreateExpenseCategoryDesc1",
+					"//*[@class='mm-c-customexpense__setup-text']//*[contains(text(),'Create one or more custom expense categories ')]",Target.XPATH);
+			public static final Target CreateExpenseCategoryDesc2 = new Target("CreateExpenseCategoryDesc2",
+					"//*[@class='mm-c-customexpense__setup-text']//*[contains(text(),'and then select items that belong to each.')]",
+					Target.XPATH); 
 		
+
 		
 			public static String SyscocategoryKeyword1;
 			public static String[] SyscoCategory1;
@@ -145,7 +156,7 @@
 		          String finalPath1=SitePage.drivePath+string+string2+SitePage.pathExtension;
 		          try{
 		        	 	getCommand().waitForTargetPresent(FoodAndNonFood);
-						
+		        	 	getCommand().waitForTargetPresent(SetUp_Pg3Header);
 						getCommand().waitForTargetPresent(CustomCategories);
 						
 						if(getCommand().isTargetPresent(CustomCategories))
@@ -314,7 +325,7 @@
 					
 			          try{
 			        	    getCommand().waitForTargetPresent(FoodAndNonFood);
-							
+			        	    getCommand().waitForTargetPresent(SetUp_Pg3Header);
 							if(getCommand().isTargetPresent(FoodAndNonFood))
 							{
 								getCommand().click(FoodAndNonFood);
@@ -962,7 +973,7 @@
 		      try{
 		    	 
 		    		 getCommand().waitForTargetPresent(FoodAndNonFood);
-					
+		    		 getCommand().waitForTargetPresent(SetUp_Pg3Header);
 					getCommand().waitForTargetPresent(SuggestedCategories);
 					
 					if(getCommand().isTargetPresent(SuggestedCategories))
@@ -1641,5 +1652,38 @@
 		
 		}
 		
-		
+		@SuppressWarnings("rawtypes")
+		public CategoryPage VerifyOptionsOnCreateExpenseCategory(String string) {
+
+			String string2 = "Issue";
+			String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
+
+			log("Category page verify ", LogType.STEP);
+			try {
+
+				getCommand().waitForTargetPresent(CreateExpenseCategoryHeader);
+				if (getCommand().isTargetPresent(CreateExpenseCategoryHeader) && getCommand().isTargetPresent(SetUp_Pg3Header)
+						&& getCommand().isTargetPresent(CreateExpenseCategoryDesc1)
+						&& getCommand().isTargetPresent(CreateExpenseCategoryDesc2)) {
+					
+					log("Verify Options On Create custom category page:Pass", LogType.STEP);
+
+				} else {
+
+					log("Verify Options On Create custom category page:Fail", LogType.STEP);
+					throw new Exception();
+				}
+				log("Create custom Category page verification done :Pass", LogType.VERIFICATION_STEP);
+			} catch (Exception e) {
+				((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+				getCommand().captureScreenshot(finalPath1);
+				log("Create custom Category page verification done  :Fail", LogType.VERIFICATION_STEP);
+				Assert.assertTrue(false);
+			}
+
+			return this;
+
+		}
+
+
 		}

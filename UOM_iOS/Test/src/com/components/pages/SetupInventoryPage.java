@@ -31,7 +31,9 @@ import com.iwaf.framework.components.Target;
 import com.iwaf.framework.components.IReporter.LogType;
 
 public class SetupInventoryPage extends SitePage {
-
+	public static final Target SetUp_Pg1Header = new Target("SetUp_Pg1Header",
+			"//*[@class='navbar-brand']//*[contains(text(),'Setup Inventory')]", Target.XPATH);
+	
 	public static final Target SetUp_Pg1Title = new Target(
 			"SetUp_Pg1Title",
 			"//*[@class='mm-c-inventory-setup']//*[contains(text(),'Import Items')]",
@@ -243,6 +245,9 @@ public class SetupInventoryPage extends SitePage {
 	public static String[] AddedItemId1_1;
 	public static String[] AddedItemId1_2;
 	public static String[] AddedItemId1_3;
+	
+	public static String[] ItemName2_2;
+	
 	public static final Target SuccessMsg1 = new Target("SuccessMsg1",
 			"//*[contains(text(),'Congratulations!')]", Target.XPATH);
 	public static final Target SuccessMsg2 = new Target(
@@ -266,6 +271,9 @@ public class SetupInventoryPage extends SitePage {
 			"StartFromScratchDesc",
 			"//*[@class='mm-c-inventory-setup']//*[contains(text(),'Add items manually')]",
 			Target.XPATH);
+	
+	
+	
 	VendorPage vp = new VendorPage(repository);
 
 	public SetupInventoryPage(SiteRepository repository) {
@@ -752,8 +760,9 @@ public class SetupInventoryPage extends SitePage {
 				+ SitePage.pathExtension;
 
 		try {
-
+		
 			getCommand().waitForTargetPresent(SetUp_Pg1Title);
+			getCommand().waitForTargetPresent(SetUp_Pg1Header);
 			getCommand().waitForTargetPresent(OrderGuide);
 			getCommand().click(OrderGuide);
 
@@ -1204,6 +1213,9 @@ public class SetupInventoryPage extends SitePage {
 				noOfElements++;
 				getCommand().click(OrderGuide_2ndItemSelect);
 				ItemName2 = getCommand().getText(OrderGuide_2ndItemHeading);
+				ItemName2_2=ItemName2.split("\\s+");
+				////
+				
 				final Target keyword1 = new Target(
 						"keyword1",
 						"//*[@class='mm-c-product-minlist__item']//*[contains(text(),'"
@@ -1325,10 +1337,17 @@ public class SetupInventoryPage extends SitePage {
 		try {
 
 			getCommand().waitForTargetPresent(Search);
+			getCommand().clear(Search);
 			getCommand().click(Search);
 			getCommand().sendKeys(Search, AddedItemId1_2[0]);
 
+			
+			((IOSDriver) getCommand().driver).findElement(
+					By.xpath("//*[@placeholder='Search']"))
+					.sendKeys(Keys.ENTER);
+
 			log("Searching using keyword :Pass", LogType.VERIFICATION_STEP);
+		
 		} catch (Exception e) {
 			((IOSDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
@@ -1531,4 +1550,129 @@ public class SetupInventoryPage extends SitePage {
 		}
 		return this;
 	}
+	@SuppressWarnings("rawtypes")
+	public SetupInventoryPage SearchWord(String string) {
+
+		String string2 = "Issue";
+
+		String finalPath1 = SitePage.drivePath + string + string2
+				+ SitePage.pathExtension;
+
+		try {
+
+			getCommand().waitForTargetPresent(Search);
+			getCommand().clear(Search);
+			getCommand().click(Search);
+			
+			System.out.println("1111" +ItemName2_2[1]);
+			
+			getCommand().sendKeys(Search, ItemName2_2[1]);
+
+			
+			((IOSDriver) getCommand().driver).findElement(
+					By.xpath("//*[@placeholder='Search']"))
+					.sendKeys(Keys.ENTER);
+
+			log("Searching using keyword :Pass", LogType.VERIFICATION_STEP);
+		
+		} catch (Exception e) {
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Searching using keyword :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+		return this;
+	}
+	@SuppressWarnings("rawtypes")
+	public SetupInventoryPage verifyWordSearchItems(String string) {
+		String string2 = "Issue";
+
+		String finalPath1 = SitePage.drivePath + string + string2
+				+ SitePage.pathExtension;
+		try {
+		final Target SearchCheck = new Target(
+					"SearchCheck",
+					"((//*[@class='mm-c-product-list__item mm-c-product__sysco ']//*[@class='mm-c-product-list__row-wrapper']//*[@class='mm-c-product-list__details'])//h4)[1]", Target.XPATH);
+			
+		String ItemWordSearch = getCommand().getText(SearchCheck);
+		
+	if (ItemWordSearch.contains(ItemName2_2[1]))
+		 {
+				log("Item Found in location:Pass", LogType.VERIFICATION_STEP);
+			} else {
+				log("Item Found in location:Fail", LogType.VERIFICATION_STEP);
+				Assert.assertTrue(false);
+			}
+
+		}
+
+		catch (Exception e) {
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Item Found in in location:Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+
+		return this;
+
+	}
+	@SuppressWarnings("rawtypes")
+	public SetupInventoryPage verifyEditLocationPage(String string) {
+		String string2 = "Issue";
+
+		String finalPath1 = SitePage.drivePath + string + string2
+				+ SitePage.pathExtension;
+		try {
+		
+			
+			boolean flag = getCommand().isTargetPresent(Search);
+			
+			if (flag) {
+				throw new Exception();
+			}
+			
+			log("Search not displayed when edit tapped :Pass", LogType.VERIFICATION_STEP);
+		}
+
+		catch (Exception e) {
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Search not displayed when edit tapped :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+
+		return this;
+
+	}
+	
+		@SuppressWarnings("rawtypes")
+		public SetupInventoryPage verifySearchedItems(String keyword,String string) {
+			String string2 = "Issue";
+
+			String finalPath1 = SitePage.drivePath + string + string2
+					+ SitePage.pathExtension;
+			try {
+				if ((LocationsPage.LocationsItemName1_1.contains(keyword))&&
+						(LocationsPage.LocationsItemName1_2.contains(keyword))&&
+						(LocationsPage.LocationsItemName1_3.contains(keyword)))
+				 {
+					log("Searched items displayed :Pass", LogType.VERIFICATION_STEP);
+					
+				 } else {
+						
+						Assert.assertTrue(false);
+					}
+
+			}
+
+			catch (Exception e) {
+				((IOSDriver) getCommand().driver).context("NATIVE_APP");
+				getCommand().captureScreenshot(finalPath1);
+				log("Searched items displayed :Fail", LogType.VERIFICATION_STEP);
+				Assert.assertTrue(false);
+			}
+
+			return this;
+
+		}
 }

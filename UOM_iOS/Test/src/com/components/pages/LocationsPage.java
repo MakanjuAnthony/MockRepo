@@ -53,6 +53,11 @@ public class LocationsPage extends SitePage {
 			"(//*[@class='checkbox']//*[@class='mm-o-icon'])[1]", Target.XPATH);
 	public static final Target LocationsPage_Header = new Target("LocationName", "//*[@class='navbar-brand']/h3",
 			Target.XPATH);
+	public static final Target SetUp_Pg2Header = new Target("SetUp_Pg1Header",
+			"//*[@class='navbar-brand']//*[contains(text(),'Setup Inventory')]", Target.XPATH);
+	public static final Target CreateLocationDesc = new Target("CreateLocationDesc",
+			"//*[@class='mm-c-customlocation__setup mm-u-navbar-padding']//*[contains(text(),'Create Locations')]",
+			Target.XPATH);
 
 	public static final Target OrderGuide_FirstItemSelect = new Target("Category_FirstItemSelect",
 			"(//*[@id='mount']//*[@class='mm-o-icon'])[1]", Target.XPATH);
@@ -67,6 +72,8 @@ public class LocationsPage extends SitePage {
 
 	public static final Target AddWeb = new Target("ADD_Vendor", "//*[@id='add-nav']/a/i", Target.XPATH);
 	public static final Target EditWeb = new Target("Edit", "//*[@id='edit-nav']/a/i", Target.XPATH);
+	public static final Target DoneWeb = new Target("Done", "//*[@id='done-nav']/a/i", Target.XPATH);
+	
 	public static final Target AddLocation_LocTypeCooler = new Target("LocationDry",
 			"//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIAElement[1]", Target.XPATH);
 
@@ -311,6 +318,9 @@ public class LocationsPage extends SitePage {
 	public static String DeletedCategory3;
 	public static Integer count = 0;
 	public static Integer count1 = 0;
+	public static String[] locationNamesArray1;
+	public static String[] locationNamesArray;
+
 	public LocationsPage(SiteRepository repository) {
 		super(repository);
 	}
@@ -409,6 +419,7 @@ public class LocationsPage extends SitePage {
 		try {
 			Set<String> contextNames1 = ((IOSDriver) getCommand().driver).getContextHandles();
 			getCommand().waitForTargetPresent(SetUp_Pg2Title);
+			getCommand().waitForTargetPresent(SetUp_Pg2Header);
 			getCommand().waitForTargetPresent(CustomLocations);
 			getCommand().click(CustomLocations);
 			log("custom location clicked :Pass", LogType.VERIFICATION_STEP);
@@ -433,6 +444,7 @@ public class LocationsPage extends SitePage {
 		try {
 
 			getCommand().waitForTargetPresent(SetUp_Pg2Title);
+			getCommand().waitForTargetPresent(SetUp_Pg2Header);
 			getCommand().waitForTargetPresent(DefaultLocation);
 			getCommand().click(DefaultLocation);
 
@@ -2629,4 +2641,98 @@ public class LocationsPage extends SitePage {
 
 		return this;
 	}
+	
+	@SuppressWarnings("rawtypes")
+	public LocationsPage verifyUIAfterSearch(String string) {
+		String string2 = "Issue";
+
+		String finalPath1 = SitePage.drivePath + string + string2
+				+ SitePage.pathExtension;
+		try {
+		
+			
+			boolean flag = getCommand().isTargetPresent(EditWeb);
+			boolean flag1 = getCommand().isTargetPresent(AddWeb);
+			boolean flag2 = getCommand().isTargetPresent(DoneWeb);
+			
+			if (flag||flag1||flag2) {
+				throw new Exception();
+			}
+			
+			log("verify UI After Search :Pass", LogType.VERIFICATION_STEP);
+		}
+
+		catch (Exception e) {
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("verify UI After Search :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+
+		return this;
+
+	}
+	@SuppressWarnings("rawtypes")
+	public LocationsPage GetLocationsNameText(String string)
+	{
+		  String string2="Issue";
+	    String finalPath1=SitePage.drivePath+string+string2+SitePage.pathExtension;
+	    
+		
+	try{	
+	  final Target ItemNameHeading= new Target("Product_Selected","define",Target.XPATH); 
+			if(getCommand().isTargetPresent(ItemNameHeading)){
+				final Target locationNames= new Target("locationNames","locationNames",Target.XPATH); 
+				String SyscocategoryKeyword1 = getCommand().getText(locationNames);
+					locationNamesArray1 = SyscocategoryKeyword1.split("/");
+					locationNamesArray = locationNamesArray1[1].split(",");
+
+			}
+		   
+			log("Location Names are stored into an Array :Pass",LogType.VERIFICATION_STEP);						
+		}
+		
+		
+		
+		catch(Exception e){
+			((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+			 getCommand().captureScreenshot(finalPath1); 
+			log("Location Names are stored into an Array  :Fail",LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+		return this;
+		
+	}
+	@SuppressWarnings("rawtypes")
+	public LocationsPage VerifyOptionsOnCustomLocations(String string) {
+
+		String string2 = "Issue";
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
+
+		log("Custom locations page verify ", LogType.STEP);
+		try {
+			
+			getCommand().waitForTargetPresent(SetUp_Pg2Header);
+			
+			if (getCommand().isTargetPresent(CreateLocationDesc) && getCommand().isTargetPresent(SetUp_Pg2Header)
+					&& getCommand().isTargetPresent(ADD_AnotherLocation)) {
+				log("All options are there", LogType.STEP);
+			} else {
+
+				throw new Exception();
+			}
+
+			log("Custom  location verification done :Pass", LogType.VERIFICATION_STEP);
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Custom location verification done  :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+
+		return this;
+
+	}
+	
+
 }

@@ -41,6 +41,8 @@ public class ListPage extends SitePage {
 	public static final Target Category_Header = new Target("Category_Header",
 			"//*[@id='mount']/div/div/div[2]/nav/div/div/span/h3", Target.XPATH);
 	public static final Target Next = new Target("Next", "//*[@id='next-nav']/a", Target.XPATH);
+	public static final Target SetUp_Pg1Header = new Target("SetUp_Pg1Header",
+			"//*[@class='navbar-brand']//*[contains(text(),'Setup Inventory')]", Target.XPATH);
 
 	public ListPage(SiteRepository repository) {
 		super(repository);
@@ -65,6 +67,7 @@ public class ListPage extends SitePage {
 		try {
 
 			getCommand().waitForTargetPresent(SetUp_Pg1Title);
+			getCommand().waitForTargetPresent(SetUp_Pg1Header);
 			getCommand().waitForTargetPresent(CustomList);
 			getCommand().click(CustomList);
 
