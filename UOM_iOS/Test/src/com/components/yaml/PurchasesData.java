@@ -8,8 +8,14 @@ public class PurchasesData {
 	
 	public String  InvoiceNumber;
 	public String InvoiceTotal;
+
+	public String Category1;
+	public String Category2;
+	public String ExpenseAmt1;
+	public String ExpenseAmt2;
+	public String Revenue1;
+	public String Revenue2;
 	public String ExpenseAmount;
-	
 
 	
 	@SuppressWarnings("deprecation")

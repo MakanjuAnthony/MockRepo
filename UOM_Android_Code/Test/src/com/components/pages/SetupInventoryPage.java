@@ -549,6 +549,13 @@ public class SetupInventoryPage extends SitePage {
 
 				getCommand().sendKeys(AddProductPage_ProductName, name);
 			}
+			if (getCommand().isTargetPresent(AddProductPage_ProductBrand)) {
+				log("Entering Product brand", LogType.STEP);
+				getCommand().clear(AddProductPage_ProductBrand);
+				getCommand().click(AddProductPage_ProductBrand);
+
+				getCommand().sendKeys(AddProductPage_ProductBrand, brand);
+			}
 
 			getCommand().waitForTargetPresent(AddProductPage_UPC);
 			if (getCommand().isTargetPresent(AddProductPage_UPC)) {
@@ -586,15 +593,8 @@ public class SetupInventoryPage extends SitePage {
 
 				getCommand().sendKeys(AddProductPage_Price, price);
 			}
-			if (getCommand().isTargetPresent(AddProductPage_ProductBrand)) {
-				log("Entering Product brand", LogType.STEP);
-				getCommand().clear(AddProductPage_ProductBrand);
-				getCommand().click(AddProductPage_ProductBrand);
-
-				getCommand().sendKeys(AddProductPage_ProductBrand, brand);
-			}
-
-			getCommand().waitFor(2);
+		
+			getCommand().waitFor(5);
 
 			log("Item details are entered :Pass", LogType.VERIFICATION_STEP);
 
@@ -906,7 +906,7 @@ public class SetupInventoryPage extends SitePage {
 			getCommand().waitForTargetPresent(Search);
 			getCommand().click(Search);
 			getCommand().sendKeys(Search, keyword);
-
+System.out.println(keyword);
 			((AndroidDriver) getCommand().driver).findElement(By.xpath("//*[@placeholder='Search']"))
 					.sendKeys(Keys.ENTER);
 
@@ -1470,7 +1470,8 @@ public class SetupInventoryPage extends SitePage {
 				log("Item Found in location:Pass", LogType.VERIFICATION_STEP);
 			} else {
 				log("Item Found in location:Fail", LogType.VERIFICATION_STEP);
-				Assert.assertTrue(false);
+				throw new Exception();
+				
 			}
 
 		}
@@ -1529,7 +1530,7 @@ public class SetupInventoryPage extends SitePage {
 					
 				 } else {
 						
-						Assert.assertTrue(false);
+						throw new Exception();
 					}
 
 			}

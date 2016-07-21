@@ -10,6 +10,7 @@ import com.components.yaml.ListData;
 import com.components.yaml.NonSyscoItemData;
 import com.components.yaml.PrepItemData;
 import com.components.yaml.ProductNickNameData;
+import com.components.yaml.PurchasesData;
 import com.components.yaml.SearchData;
 import com.components.yaml.UOMQuantityData;
 import com.components.yaml.VendorDetailsData;
@@ -35,7 +36,7 @@ public class WorkFlow extends Initiator{
 		LocationsData locDataCooler=LocationsData.fetch("LocatiosData5");
 		LocationsData locDataFreezer=LocationsData.fetch("LocatiosData6");
 		LocationsData locDataDry=LocationsData.fetch("LocatiosData7");
-
+	
 		Start.asTester
 		.goToLoginpage()
 		.verifyLoginPage("SI-WF1-LoginPage")
@@ -85,6 +86,8 @@ public class WorkFlow extends Initiator{
 		.VerifyItemsOnDefaultLocation(locDataDry.LocationName, "SI-WF1-Verified dry")
 		.TapOnBack("SI-WF1-Tapped on Back")
 	//	.VerifyCountOfItemsInLocation(locDataDry.LocationName, "SI-WF1-Count of items in Dry")
+		
+		
 		;
 	}
 
@@ -183,7 +186,7 @@ public class WorkFlow extends Initiator{
 	@Test(groups={"SI-WF4"},priority=2, description = "SI-WF4-OG + Default Loc + Custom Category")
 	public void SI_WF4_OG_DefaultLocation_CustomCategory() {
 
-		LoginData loginData =LoginData.fetch("LoginData3");
+		LoginData loginData =LoginData.fetch("LoginData2");
 
 		CategoryData categoryData=CategoryData.fetch("CategoryData");
 		LocationsData locDataCooler=LocationsData.fetch("LocatiosData5");
@@ -228,16 +231,20 @@ public class WorkFlow extends Initiator{
 		.TapTakeHome("SI-WF4-Tapped TakeHome") 
 
 		._atInventoryToolPage()
+		.InvTools_Locations("SI-WF4-Selected Locations")
+		._atLocationsPage()
+		.VerifyOrderOfLocations(locDataCooler.LocationName, locDataFreezer.LocationName, locDataDry.LocationName, locDataNoLoc.LocationName, "SI-WF4-Verified order of locations")
+		.TapOnBack("SI-WF4-Tapped Back")
+		
+		._atInventoryToolPage()
 		.InvTools_TrackInventory("SI-WF4-Selected track inventory")
 		._atLocationsPage()
 		.VerifyOrderOfLocations(locDataCooler.LocationName, locDataFreezer.LocationName, locDataDry.LocationName, locDataNoLoc.LocationName, "SI-WF4-Verified order of locations")
 		
-		.TapOnBack("SI-WF4-Tapped Back")
-		._atInventoryToolPage()
-		.InvTools_Locations("SI-WF4-Selected Locations")
-		._atLocationsPage()
-		.VerifyOrderOfLocations(locDataCooler.LocationName, locDataFreezer.LocationName, locDataDry.LocationName, locDataNoLoc.LocationName, "SI-WF4-Verified order of locations")
 		
+		//checking INV_248,249 scenario 5, INV_250,251 scenario 5
+		.SelectLocation(locDataNoLoc.LocationName, "SI-WF4-Selecting no location")
+		.NoItemsCheckInNoLocation("SI-WF4-Item verification in no location")
 		
 		
 		;
@@ -252,10 +259,11 @@ public class WorkFlow extends Initiator{
 	@Test(groups={"SI-WF5"},priority=3, description = "SI-WF5-OG + Custom Loc + Default Category")
 	public void SI_WF5_OG_CustomLocation_DefaultCategory() {
 
-		LoginData loginData =LoginData.fetch("LoginData4");
+		LoginData loginData =LoginData.fetch("LoginData1");
 
 		LocationsData locationsData1 =LocationsData.fetch("LocationsData");
 		LocationsData locationsData2 =LocationsData.fetch("LocatiosData1");
+		LocationsData locationsData3 =LocationsData.fetch("LocatiosData4");
 		Start.asTester
 		.goToLoginpage()
 		.verifyLoginPage("SI-WF5-LoginPage")
@@ -317,8 +325,31 @@ public class WorkFlow extends Initiator{
 		.SelectLocation(locationsData1.LocationName, "SI-WF5-Selecting Location1")
 		.ViewItemsOnLocation("SI-WF5-view items on Location1")
 		.ItemVerifyOnLocation1("SI-WF5-Verify item inside location1")
+		
+		
+		.TapOnBack("SI-WF5-Tap on Back1")
+		.TapOnBack("SI-WF5-Tap on Back1")
+		.TapOnBack("SI-WF5-Tap on Back1")
+		
+		._atInventoryToolPage()
+		.InvTools_TrackInventory("SI-WF5-Selected track inventory")
 
-
+		//checking INV_248,249 scenario 1
+		._atLocationsPage()
+		.SelectLocation(locationsData3.LocationName, "SI-WF5-Selecting no location")
+		.CustomLocItemsCheckInNoLocation("SI-WF5-Item verification in no location")
+        .NoLocationTextCheck(locationsData3.LocationName,"SI-WF5-No location text verification")
+       
+      //checking INV_250,251 scenario 1
+    	.NoLocationEdit("SI-WF5-No location verification")
+    	.TapOnBack("SI-WF5-Tap on Back1")
+		.SelectLocation(locationsData1.LocationName, "SI-WF5-Selecting no location")
+		.LocationFirstItemCheck("SI-WF5-")
+		.TapOnBack("SI-WF5-Tap on Back1")
+		.SelectLocation(locationsData2.LocationName, "SI-WF5-Selecting no location")
+		.LocationFirstItemCheck("SI-WF5-Verifying no loc item in another location")
+		.TapOnBack("SI-WF5-Tap on Back1")
+		
 		;
 	}
 
@@ -496,64 +527,7 @@ public class WorkFlow extends Initiator{
 	}		
 
 
-	/*
-	 * Validating user is able to setup inventory by adding items from StartFromScratch(Product catalog) and then assign those items to Default location and Default category.
-	 * Prerequisite:Normal/MA User
-	 */
-	@Test(groups={"SI-WF9"},priority=7, description = "SI-WF9-Start From Scratch + add items from Product catelog +Default Loc + Default Category ")
-	public void SI_WF9_StartFromScratch_PdtCatalog_DefaultLocation_DefaultCategory() {	
-
-		LoginData loginData =LoginData.fetch("LoginData1");
-
-		SearchData searchData=SearchData.fetch("SearchData");
-
-		Start.asTester
-		.goToLoginpage()
-		.verifyLoginPage("SI-WF9-LoginPage")
-		.saveUsernameCheckBoxClick("SI-WF9-save username")
-		.signIn(loginData.UserName, loginData.Password,"SI-WF9-Login")
-
-		._atHomePage()
-		.ClickAccount(loginData.UserName,"SI-WF9-Clicked account")
-
-		._atAccountsPage()
-		.Second_AccountSelection(loginData.UserName,"SI-WF9-FirstAccountSelect")
-
-		._atInventoryToolPage()
-		.InvTools_SetUpInventory("SI-WF9-SetupInventoryTap")
-
-		._atSetupInventoryPage()
-		.TapOnSkip("SI-WF9-Tapped Skip")
-
-		.StartFromScratch("SI-WF9-ScratchSelected")
-		.tapContinue("SI-WF9-Tapped Continue")
-		.Scratch_AddItems("SI-WF9-Tapped Add items")
-		.SearchItem(searchData.keyword,"SI-WF9-Search item")
-		.SelectMultipleItemsFrom_OrderGuide("SI-WF9-Selected item from OG")
-		.TapOnDone("SI-WF9-Tapped Done")
-		.verifyMultipleItemsfromOGonSetUpInv("SI-WF9-Verify item selected")
-		.TapOnDone("SI-WF9-Tapped Done")
-
-
-		._atLocationsPage()
-		.DefaultLocation("SI-WF9-Tapped Default location")
-		.tapContinue("SI-WF9-Tapped Continue")
-
-		._atCategoryPage()
-		.defaultCategories("SI-WF9-Tapped Custom category")
-		.tapComplete("SI-WF9-Tapped Complete")
-		._atSetupInventoryPage()
-		.TapTakeHome("SI-WF9-Tapped Home")
-
-		._atInventoryToolPage()
-		.InvTools_TrackInventory("SI-WF9-Selected track inventory")
-
-
-
-		;
-	}
-
-
+	
 	
 	/*
 	 * Validating user is able to setup inventory by adding items from CustomList and then assign those items to Default  location and default category.
@@ -730,8 +704,8 @@ public class WorkFlow extends Initiator{
 		.InvTools_TrackInventory("SI-WF20-Tapped Track Inventory")
 		._atLocationsPage()
 		.SelectLocation(locationsData.LocationName, "SI-WF20-Selecting nolocation")
-		.ItemVerifyOnLocation1("SI-WF20-Item verification in nolocation")
-		.VerifyCountOfItemsInLocation(locationsData.LocationName, "MIL-WF3-Verifying count of items in location1")
+		.ItemVerifyOnLocation1("SI-WF20-Item verification in no location")	
+	//	.VerifyCountOfItemsInLocation(locationsData.LocationName, "SI-WF20-Verifying count of items in location1")
 		.VerifyDeletedItemsCategory(locationsData.LocationName,"SI-WF20-Item category verification in nolocation")  
 		;
 	}	
@@ -745,7 +719,7 @@ public class WorkFlow extends Initiator{
 	public void SI_WF21_CustomList_CustomLoc_Customcategory_FewItems() {	
 
 		LoginData loginData =LoginData.fetch("LoginData13");
-		ListData listData=ListData.fetch("ListData");
+		ListData listData=ListData.fetch("ListData");  
 		LocationsData locationsData =LocationsData.fetch("LocatiosData4");
 		LocationsData locationsData1 =LocationsData.fetch("LocationsData");
 		LocationsData locationsData2 =LocationsData.fetch("LocatiosData1");
@@ -901,11 +875,11 @@ public class WorkFlow extends Initiator{
 	public void SI_WF23_CustomList_CustomLoc_defaultcategory() {	
 
 		LoginData loginData =LoginData.fetch("LoginData11");
-		ListData listData=ListData.fetch("ListData");
+		ListData listData=ListData.fetch("ListData4");   //list with semicategorized items
 
 		LocationsData locationsData1 =LocationsData.fetch("LocationsData");
 		LocationsData locationsData2 =LocationsData.fetch("LocatiosData1");
-
+		LocationsData locationsData3 =LocationsData.fetch("LocatiosData4");
 		Start.asTester
 		.goToLoginpage()
 		.verifyLoginPage("SI-WF23-LoginPage")
@@ -973,8 +947,27 @@ public class WorkFlow extends Initiator{
 		.ItemVerifyOnLocation2("SI-WF23-Item verification in location2")
 		.SyscoCategoryIdentify("SI-WF23-Category Identification in location1")
 		._atCategoryPage()
-		.VerifyCustomListItemsDefaultCategoryLocation2("SI- WF 23-TC1-Verifying default categories in location2")
-
+		.VerifyCustomListItemsDefaultCategoryLocation2("SI-WF23-TC1-Verifying default categories in location2")
+		
+		
+		
+		.TapOnDone("SI-WF23-Tapped Done")
+		//checking INV_248,249 scenario 3
+		._atLocationsPage()
+		.SelectLocation(locationsData3.LocationName, "SI-WF23-Selecting no location")
+		.CustomLocItemsCheckInNoLocation("SI-WF23-Item verification in no location")
+		.NoLocationTextCheck(locationsData3.LocationName,"SI-WF23-No location text verification")
+		        
+	    //checking INV_250,251 scenario 3	
+		.NoLocationEdit("SI-WF23-No location verification")
+		.TapOnBack("SI-WF23-Tap on Back")
+		.SelectLocation(locationsData1.LocationName, "SI-WF23-Selecting no location")
+		.LocationFirstItemCheck("SI-WF23-")
+		.TapOnBack("SI-WF23-Tap on Back")
+		.SelectLocation(locationsData2.LocationName, "SI-WF23-Selecting no location")
+		.LocationFirstItemCheck("SI-WF23-Verifying no loc item in another location")
+		.TapOnBack("SI-WF23-Tap on Back1")
+		
 		;
 	}
 	/*
@@ -1291,8 +1284,9 @@ public class WorkFlow extends Initiator{
 	@Test(groups={"SI-WF29"},priority=27, description = "SI-WF29-Custom List + Select single  List +Custom categories as location+Default Cat")
 	public void SI_WF29_CustomListSingleList_CustomCategoryOnLocationsPage_defaultcategory() {	
 
-		LoginData loginData =LoginData.fetch("LoginData13");
-		ListData listData=ListData.fetch("ListData");
+		LoginData loginData =LoginData.fetch("LoginData12");
+		ListData listData=ListData.fetch("ListData");  //list with fully categorized items
+		LocationsData locDataNoLoc=LocationsData.fetch("LocatiosData4");
 
 		Start.asTester
 		.goToLoginpage()
@@ -1331,7 +1325,11 @@ public class WorkFlow extends Initiator{
 		._atInventoryToolPage()
 		.InvTools_TrackInventory("SI-WF29-Selected track inventory")
 
-
+		//checking INV_248,249 scenario 5 INV_250,251 scenario 5
+		._atLocationsPage()
+		.SelectLocation(locDataNoLoc.LocationName, "SI-WF29-Selecting no location")
+		.NoItemsCheckInNoLocation("SI-WF29-Item verification in no location")
+				
 		;
 	}
 
@@ -1345,9 +1343,9 @@ public class WorkFlow extends Initiator{
 	@Test(groups={"SI-WF30"},priority=28, description = "SI-WF30-Custom List + Select single  List +Custom Categories as location+Custom Cat")
 	public void SI_WF30_CustomListSingleList_CustomCategoryOnLocationsPage_customcategory() {	
 
-		LoginData loginData =LoginData.fetch("LoginData14");
-		ListData listData=ListData.fetch("ListData");
-
+		LoginData loginData =LoginData.fetch("LoginData12");
+		ListData listData=ListData.fetch("ListData4");   //list with semicategorized items,both categorized and u
+		LocationsData locationsData3 =LocationsData.fetch("LocatiosData4");
 		CategoryData categoryData=CategoryData.fetch("CategoryData");
 		Start.asTester
 		.goToLoginpage()
@@ -1396,6 +1394,21 @@ public class WorkFlow extends Initiator{
 
 		._atInventoryToolPage()
 		.InvTools_TrackInventory("SI-WF30-Selected track inventory")
+		
+		
+		//checking INV_248,249 scenario 4
+		._atLocationsPage()
+		.SelectLocation(locationsData3.LocationName, "SI-WF30-Selecting no location")
+		.UncategorizedItemsCheckInNoLocation(listData.UnCatPdt1,listData.UnCatPdt2,listData.UnCatPdt3,"SI-WF30-Item verification in no location")
+		.NoLocationTextCheck(locationsData3.LocationName,"SI-WF30-No location text verification")
+				        
+		 //checking INV_250,251 scenario 4
+		.NoLocationEdit("SI-WF30-No location verification")
+		.TapOnBack("SI-WF30-Tap on Back")
+		.SelectLocation(listData.CatName, "SI-WF23-Selecting no location")
+		.LocationFirstItemCheck("SI-WF30-Verifying no loc item in another location")
+		.TapOnBack("SI-WF30-Tap on Back")
+		
 
 		;
 	}
@@ -2161,7 +2174,7 @@ public class WorkFlow extends Initiator{
 	@Test(groups={"MIL-WF3"},priority=40, description = "MIL-WF3-Selecting a specific location in trackinventory and search for items within location")
 	public void MIL_WF3_Location_SearchItems() {	
 
-		LoginData loginData =LoginData.fetch("LoginData12");
+		LoginData loginData =LoginData.fetch("LoginData15");
 		LocationsData locationsData =LocationsData.fetch("LocatiosData3");
 		SearchData searchData=SearchData.fetch("SearchData");
 		LocationsData locationsData1 =LocationsData.fetch("LocatiosData1");
@@ -2516,11 +2529,12 @@ public class WorkFlow extends Initiator{
 	@Test(groups={"MIL-WF7"},priority=43, description = "MIL-WF7-Track Inventory+Location+Edit+Delete Items from location")
 	public void MIL_WF7_TrackInventory_Location_Edit_Delete_Items_location() {
 
-		LoginData loginData =LoginData.fetch("LoginData2");	  
+		LoginData loginData =LoginData.fetch("LoginData12");	  
 		LocationsData locationsData4 =LocationsData.fetch("LocationsData");
 		LocationsData locationsData3 =LocationsData.fetch("LocatiosData3");
 		LocationsData locationsData1 =LocationsData.fetch("LocatiosData1");
 		LocationsData locationsData2 =LocationsData.fetch("LocatiosData2");
+		LocationsData locationsData5 =LocationsData.fetch("LocatiosData4");
 		NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
 		PrepItemData prepItemData =PrepItemData.fetch("PrepItemData");
 		VendorDetailsData vendorDetailsData =VendorDetailsData.fetch("VDNonsysco");
@@ -2652,7 +2666,7 @@ public class WorkFlow extends Initiator{
 		.TapOnBack("MIL-WF7-Tapped back")
 
 		.SelectLocation(locationsData1.LocationName, "MIL-WF7-Selecting Added Location2") 
-		.TapOnBack("")
+		.TapOnBack("MIL-WF7-Tapped back")
 		._atInventoryToolPage()
 		.InvTools_TrackInventory("MIL-WF7-TrackinventoryTap")
 		._atLocationsPage()
@@ -2669,13 +2683,13 @@ public class WorkFlow extends Initiator{
 		.TapOnBack("MIL-WF7-Tapped back")
 		//inv 254 
 		._atInventoryToolPage()
-		.InvTools_Locations("")
+		.InvTools_Locations("MIL-WF7-Tapped Locations")
 		._atLocationsPage()
 		.SelectLocation(locationsData3.LocationName, "MIL-WF7-selected location1")
 		.TapOnEdit("MIL-WF7-Tapped Edit")
 		.TapOnDeleteLocation("MIL-WF7-Tapped delete location")
 		.TapOnYesDelete("MIL-WF7-confirming Deleting items")
-		.SelectLocation("MIL-WF7-Select no location", "")
+		.SelectLocation(locationsData5.LocationName,"MIL-WF7-Select no location")
 		.ViewItemsOnLocation("MIL-WF7-view items on Location1")
 		//verify items in no location
 		.GetLocationsNameText("")
@@ -2782,12 +2796,18 @@ public class WorkFlow extends Initiator{
 	@Test(groups={"MEC-WF1"},priority=45, description = "MEC-WF1-Selecting a location navigate to product and assiging  item  to category created")
 	public void MEC_WF1_Locations_ItemEdit_UpdateCategory() {	
 
-		LoginData loginData =LoginData.fetch("LoginData1");
+		LoginData loginData =LoginData.fetch("LoginData2");
 		LocationsData locationsData =LocationsData.fetch("LocatiosData3");
 		NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
 		VendorDetailsData vendorDetailsData =VendorDetailsData.fetch("VDNonsysco");
 		CategoryData categoryData =CategoryData.fetch("CategoryData");
-
+		
+		LocationsData locationsData1 =LocationsData.fetch("LocationsData");
+		PrepItemData prepItemData =PrepItemData.fetch("PrepItemData");
+		LocationsData locationsData2 =LocationsData.fetch("LocatiosData4");
+		PrepItemData prepItemData1 =PrepItemData.fetch("PrepItemData1");
+		LocationsData locationsData3 =LocationsData.fetch("LocatiosData2");	
+		
 		Start.asTester
 		.goToLoginpage()
 		.verifyLoginPage("MEC-WF1-LoginPage")
@@ -2851,7 +2871,7 @@ public class WorkFlow extends Initiator{
 		._atLocationsPage()
 		.ProductSelect(nonSyscoItemData.ProductName, "MEC-WF1-Select Product")
 		.TapOnEdit("MEC-WF1-Tapped Edit")
-
+		
 		._atLocationsPage()
 		.AddCategory_AddProductDetailsPage("MEC-WF1-CategorySelect")
 		.TapAddLocation("MEC-WF1-Tapped Add")
@@ -2864,12 +2884,97 @@ public class WorkFlow extends Initiator{
 		.TapOnDone("MEC-WF1-Tapped Done") 
 		.TapOnBack("MEC-WF1-Tapped Back")
 		.TapOnBack("MEC-WF1-Tapped Back")
-
+		
 		._atLocationsPage()
 		.SelectLocation(locationsData.LocationName, "MEC-WF1-Selecting AddedLocation")
 		._atCategoryPage()
 		.VerifyCategory(categoryData.Name, "MEC-WF1-Verified Category")
+		
+		
+		//inv 252,253
+		
+		//no scenario
+		._atLocationsPage()
+		.TapAddLocation("MEC-WF1-Tapped ADD")
+		._atSetupInventoryPage()
+		.AddItemFrom_PrepItem("MEC-WF1-Tapped Prepitem")
+		.EnterItemDetails(prepItemData.ProductName, prepItemData.UPC, prepItemData.Pack, prepItemData.Size, prepItemData.Weight, prepItemData.Price, prepItemData.ProductBrand, "MEC-WF1-NonSyscoItem details entered")
 
+		// prep item addition to 2 locations created 
+		._atLocationsPage()
+		.AddLocation_AddProductDetailsPage("MEC-WF1-Select Add/Select location option")
+		.TapAddLocation("MEC-WF1-Tapped ADD5")
+		.AddLocationName(locationsData1.LocationName,"MEC-WF1-Enter location3 name")
+		.AddLocationCooler("MEC-WF1-Tapped Cooler")
+		.TapOnDone("MEC-WF1-Tapped Done")
+		.TapOnBack("MEC-WF1-Tapped Back")
+		.VerifyLocationList(locationsData1.LocationName, "MEC-WF1-Verifing Added Location3")
+
+		.SelectLocation(locationsData1.LocationName, "MEC-WF1-Selecting Added Location3")
+	    .SelectLocation(locationsData.LocationName, "MEC-WF1-Selecting Added Location1")
+		.LocationDoneSelection("MEC-WF1-Selecting Done")
+		.TapOnDone("MEC-WF1-Tapped Done")
+		
+		._atSetupInventoryPage()
+		.verifyNonSyscoPrepItemSetupInv(prepItemData.ProductName,"MEC-WF1-Verify item selected")
+	
+		._atLocationsPage()
+		.ProductSelect(prepItemData.ProductName, "MEC-WF1-Select Product")
+		.TapOnEdit("MEC-WF1-Tapped Edit")
+		.LocationsDelete("MEC-WF1-Tapped Edit")
+		//.LocationsDelete("MEC-WF1-Tapped Edit")
+		.TapOnNoDelete("MEC-WF1-Confirming deleting all locations")
+		.TapOnEdit("MEC-WF1-Tapped Edit")
+		.TapOnDone("MEC-WF1-Tapped Done")
+		.TapOnBack("MEC-WF1-Tapped Back")
+		.TapOnBack("MEC-WF1-Tapped Back")
+		.SelectLocation(locationsData2.LocationName, "MEC-WF1-Selecting Added Location3")
+		._atLocationsPage()
+		.NoItemsCheckInNoLocation("MEC-WF1-No items in no location")
+		
+		
+		.TapOnBack("MEC-WF1-Tapped Back")
+		//yes scenario
+		.SelectLocation(locationsData.LocationName, "MEC-WF1-Selecting AddedLocation")
+		._atLocationsPage()
+		.TapAddLocation("MEC-WF1-Tapped ADD")
+		._atSetupInventoryPage()
+		.AddItemFrom_PrepItem("MIL-WF2-Tapped Prepitem")
+		.EnterItemDetails(prepItemData1.ProductName, prepItemData1.UPC, prepItemData1.Pack, prepItemData1.Size, prepItemData1.Weight, prepItemData1.Price, prepItemData1.ProductBrand, "MEC-WF1-PrepItem details entered")
+
+		// prep item addition to 2 locations created 
+		._atLocationsPage()
+		.AddLocation_AddProductDetailsPage("MEC-WF1-Select Add/Select location option")
+		.TapAddLocation("MEC-WF1-Tapped ADD5")
+		.AddLocationName(locationsData3.LocationName,"MEC-WF1-Enter location3 name")
+		.AddLocationCooler("MEC-WF1-Tapped Cooler")
+		.TapOnDone("MEC-WF1-Tapped Done")
+		.TapOnBack("MEC-WF1-Tapped Back")
+		.VerifyLocationList(locationsData3.LocationName, "MEC-WF1-Verifing Added Location3")
+
+		.SelectLocation(locationsData3.LocationName, "MEC-WF1-Selecting Added Location3")
+	    .SelectLocation(locationsData.LocationName, "MEC-WF1-Selecting Added Location1")
+		.LocationDoneSelection("MEC-WF1-Selecting Done")
+		.TapOnDone("MEC-WF1-Tapped Done")
+		
+		._atSetupInventoryPage()
+		.verifyNonSyscoPrepItemSetupInv(prepItemData1.ProductName,"MEC-WF1-Verify item selected")
+
+		._atLocationsPage()
+		.ProductSelect(prepItemData1.ProductName, "MEC-WF1-Select Product")
+		
+		.TapOnEdit("MEC-WF1-Tapped Edit")
+		.LocationsDelete("MEC-WF1-Tapped Edit")
+		//.LocationsDelete("MEC-WF1-Tapped Edit")
+		.TapOnYesDelete("MEC-WF1-Confirming deleting all locations")
+		.TapOnDone("MEC-WF1-Tapped Done")
+		.TapOnBack("MEC-WF1-Tapped Back")
+		.SelectLocation(locationsData2.LocationName, "MEC-WF1-Selecting Added Location3")
+		._atSetupInventoryPage()
+		.verifyNonSyscoPrepItemSetupInv(prepItemData1.ProductName,"MEC-WF1-Verify item selected")
+		._atLocationsPage()
+		.NoLocationTextCheck(locationsData2.LocationName,"MEC-WF1-No location text verification")
+	
 		;
 	}
 
@@ -3292,7 +3397,6 @@ public class WorkFlow extends Initiator{
 		.VerifyDeletedSupplier(vendorDataEdit.VendorName, "MSP-1,MSP-2-verify deleted  vendor")
 		;
 	}
-
 
 
 

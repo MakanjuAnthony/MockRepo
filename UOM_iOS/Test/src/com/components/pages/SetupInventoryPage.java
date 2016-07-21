@@ -1601,7 +1601,7 @@ public class SetupInventoryPage extends SitePage {
 				log("Item Found in location:Pass", LogType.VERIFICATION_STEP);
 			} else {
 				log("Item Found in location:Fail", LogType.VERIFICATION_STEP);
-				Assert.assertTrue(false);
+				throw new Exception();
 			}
 
 		}
@@ -1660,7 +1660,7 @@ public class SetupInventoryPage extends SitePage {
 					
 				 } else {
 						
-						Assert.assertTrue(false);
+					 throw new Exception();
 					}
 
 			}

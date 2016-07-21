@@ -638,7 +638,6 @@
 		    			
 		    			getCommand().click(Done);
 		    			log("Tapped on done:Pass",LogType.VERIFICATION_STEP);
-		    			getCommand().captureScreenshot(finalPath);
 		    			Set<String> contextNames1 = ((IOSDriver)getCommand().driver).getContextHandles();
 		         		System.out.println("contxtname is "+contextNames1);
 		         		

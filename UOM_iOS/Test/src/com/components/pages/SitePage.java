@@ -86,6 +86,10 @@ public class SitePage extends BasePage
 	{
 		return this.repository.listPage();
 	}
+	public FoodCostPage _atFoodCostPage()
+	{
+		return this.repository.foodCostPage();
+	}
 }
 	
 	

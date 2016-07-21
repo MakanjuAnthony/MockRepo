@@ -26,6 +26,7 @@ import com.components.pages.InventoryToolPage;
 import com.components.pages.LoginPage;
 
 import com.components.pages.CategoryPage;
+import com.components.pages.FoodCostPage;
 import com.components.pages.ListPage;
 import com.components.pages.PurchasesPage;
 import com.components.pages.VendorPage;
@@ -92,5 +93,11 @@ public ListPage listPage()
 
 {
 	return new ListPage(this);
+}
+
+
+
+public FoodCostPage foodCostPage() {
+	return new FoodCostPage(this);
 }
 }

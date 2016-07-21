@@ -30,3 +30,11 @@ LocatiosData7 : !!com.components.yaml.LocationsData {
  LocationName : Dry,
  EditLocation : EditedLocation4,
  }
+LocatiosData8 : !!com.components.yaml.LocationsData {
+ LocationName : location8,
+ EditLocation : EditedLocation8,
+ }
+LocatiosData9 : !!com.components.yaml.LocationsData {
+ LocationName : location9,
+ EditLocation : EditedLocation9,
+ }
