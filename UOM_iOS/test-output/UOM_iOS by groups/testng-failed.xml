@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [UOM_iOS by groups]">
+  <test name="GRP-SI-WF1(failed)">
+    <groups>
+      <run>
+        <include name="SI-WF1"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.tests.WorkFlow">
+        <methods>
+          <include name="SI_WF1_OG_DefaultLocation_DefaultCategory"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.tests.WorkFlow -->
+    </classes>
+  </test> <!-- GRP-SI-WF1(failed) -->
+</suite> <!-- Failed suite [UOM_iOS by groups] -->

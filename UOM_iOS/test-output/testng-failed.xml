@@ -5,14 +5,19 @@
     <listener class-name="com.iwaf.framework.testng.TestNGTestListener"/>
     <listener class-name="com.iwaf.framework.testng.TestSoftAssert"/>
   </listeners>
-  <test verbose="2" name="GRP-SI - WF 27 NU">
+  <test name="GRP-TEST(failed)">
     <groups>
       <run>
-        <include name="SI - WF 27 NU"/>
+        <include name="TEST"/>
       </run>
     </groups>
     <classes>
-      <class name="com.tests.WorkFlow"/>
+      <class name="com.tests.WorkFlow">
+        <methods>
+          <include name="setUp"/>
+          <include name="TestTab"/>
+        </methods>
+      </class> <!-- com.tests.WorkFlow -->
     </classes>
-  </test> <!-- GRP-SI - WF 27 NU -->
+  </test> <!-- GRP-TEST(failed) -->
 </suite> <!-- Failed suite [somename] -->

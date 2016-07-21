@@ -1,0 +1,142 @@
+<html>
+<head>
+<title>TestNG:  GRP-SI - WF 5</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>GRP-SI - WF 5</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Jul 12 14:54:06 IST 2016</td>
+</tr>
+<tr><td>Total time:</td><td>291 seconds (291274 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td>SI - WF 5 </td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.tests.WorkFlow.SI_WF5_OG_CustomLocation_DefaultCategory()'><b>SI_WF5_OG_CustomLocation_DefaultCategory</b><br>Test class: com.tests.WorkFlow<br>Test method: SI - WF 5-OG + Custom Loc + Default Category<br/>
+<a href="#Output-1272883899" onClick='toggleBox("Output-1272883899", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1272883899" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1272883899">
+[14:54:21] : <b><FONT SIZE="2">Launched Sysco UOM</FONT></b><br><br/>
+[14:54:28] : <b><FONT SIZE="2">Login page verification :Pass</FONT></b><br><br/>
+[14:54:29] : <b><FONT SIZE="2">Save username verification :Pass</FONT></b><br><br/>
+[14:54:29] : <b><FONT SIZE="2">Sign In</FONT></b><br><br/>
+[14:55:06] : <b><FONT SIZE="2">Sign in :Pass</FONT></b><br><br/>
+[14:55:07] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Navigating to Setup inventory page :Pass</FONT></FONT></b><br><br/>
+[14:55:11] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on skip :Pass</FONT></FONT></b><br><br/>
+[14:55:13] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Selected  orderguide  from SetupInventoryImportItems:Pass</FONT></FONT></b><br><br/>
+[14:55:14] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Continue :Pass</FONT></FONT></b><br><br/>
+[14:55:16] : <b><FONT COLOR="GREEN"><FONT SIZE="2">custom location clicked :Pass</FONT></FONT></b><br><br/>
+[14:55:18] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Continue :Pass</FONT></FONT></b><br><br/>
+[14:55:22] : <b><FONT COLOR="GREEN"><FONT SIZE="2">added location name :Pass</FONT></FONT></b><br><br/>
+[14:55:22] : <b><FONT SIZE="2">Entering type Dry</FONT></b><br><br/>
+[14:55:34] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Entered type in add Locations page :Pass</FONT></FONT></b><br><br/>
+[14:55:45] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Entered type in add Locations page :Pass</FONT></FONT></b><br><br/>
+[14:55:45] : <b><FONT SIZE="2">Entering anotherloc</FONT></b><br><br/>
+[14:55:52] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Entered second loc in Locations page :Pass</FONT></FONT></b><br><br/>
+[14:55:52] : <b><FONT SIZE="2">Entering Location name</FONT></b><br><br/>
+[14:56:10] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Entered location name2 in add Locations page :Pass</FONT></FONT></b><br><br/>
+[14:56:10] : <b><FONT SIZE="2">Entering type Dry</FONT></b><br><br/>
+[14:56:17] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Entered type in add Locations page :Pass</FONT></FONT></b><br><br/>
+[14:56:23] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Entered type in add Locations page :Pass</FONT></FONT></b><br><br/>
+[14:56:32] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Next : Pass</FONT></FONT></b><br><br/>
+[14:56:32] : <b><FONT SIZE="2"> Adding Item from Order Guide</FONT></b><br><br/>
+[14:57:09] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Multiple items selected :Pass</FONT></FONT></b><br><br/>
+[14:57:18] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Next : Pass</FONT></FONT></b><br><br/>
+[14:57:36] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Multiple items selected :Pass</FONT></FONT></b><br><br/>
+[14:57:45] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on done:Pass</FONT></FONT></b><br><br/>
+[14:57:47] : <b><FONT SIZE="2">Selecting default category from Food cost page</FONT></b><br><br/>
+[14:57:50] : <b><FONT COLOR="GREEN"><FONT SIZE="2">default Category selected :Pass</FONT></FONT></b><br><br/>
+[14:57:51] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Complete :Pass</FONT></FONT></b><br><br/>
+[14:58:10] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on TakeHome :Pass</FONT></FONT></b><br><br/>
+[14:58:20] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped  TrackInventory from inventory tools page:Pass</FONT></FONT></b><br><br/>
+[14:58:20] : <b><FONT SIZE="2">Selecting location</FONT></b><br><br/>
+[14:58:24] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Location is selected for item :Pass</FONT></FONT></b><br><br/>
+[14:58:24] : <b><FONT SIZE="2">locationItem verify </FONT></b><br><br/>
+[14:58:26] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Item verification done :Pass</FONT></FONT></b><br><br/>
+[14:58:30] : <b><FONT COLOR="GREEN"><FONT SIZE="2">tap on back :Pass</FONT></FONT></b><br><br/>
+[14:58:30] : <b><FONT SIZE="2">Selecting location</FONT></b><br><br/>
+[14:58:34] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Location is selected for item :Pass</FONT></FONT></b><br><br/>
+[14:58:34] : <b><FONT SIZE="2">locationItem verify </FONT></b><br><br/>
+[14:58:36] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Item verification done :Pass</FONT></FONT></b><br><br/>
+[14:58:40] : <b><FONT COLOR="GREEN"><FONT SIZE="2">tap on back :Pass</FONT></FONT></b><br><br/>
+[14:58:44] : <b><FONT COLOR="GREEN"><FONT SIZE="2">tap on back :Pass</FONT></FONT></b><br><br/>
+[14:58:47] : <b><FONT SIZE="2">In locations Page</FONT></b><br><br/>
+[14:58:47] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Navigating to Locations page :Pass</FONT></FONT></b><br><br/>
+[14:58:47] : <b><FONT SIZE="2">Selecting location</FONT></b><br><br/>
+[14:58:50] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Location is selected for item :Pass</FONT></FONT></b><br><br/>
+[14:58:52] : <b><FONT COLOR="GREEN"><FONT SIZE="2">tap on view items on location  :Pass</FONT></FONT></b><br><br/>
+[14:58:52] : <b><FONT SIZE="2">locationItem verify </FONT></b><br><br/>
+[14:58:54] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Item verification done :Pass</FONT></FONT></b><br><br/>
+Test completed : SI_WF5_OG_CustomLocation_DefaultCategory<br/>
+</div>
+</td>
+<td></td>
+<td>288</td>
+<td>com.tests.WorkFlow@4667ae56</td></tr>
+</table><p>
+</body>
+</html>
