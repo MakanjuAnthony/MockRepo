@@ -539,7 +539,7 @@ public class LocationsPage extends SitePage {
 
 				getCommand().clickWithJavascript(Done);
 				log("Tapped on done:Pass", LogType.VERIFICATION_STEP);
-
+				getCommand().waitFor(15);
 			}
 
 		} catch (Exception e) {
@@ -3004,37 +3004,7 @@ public class LocationsPage extends SitePage {
 	}
 	
 	
-	@SuppressWarnings("rawtypes")
-	public LocationsPage LocationsDelete(String string)
-	{
-		  String string2="Issue";
-	    String finalPath1=SitePage.drivePath+string+string2+SitePage.pathExtension;
-	    
-	    log("Deleting locations from product card", LogType.STEP);
-	  
-	    getCommand().waitFor(5);
-		
-	try{
-		getCommand().scrollTo(AddProductPage_AddLocations);
-
-		getCommand().click(ProductCardDelete_Loc1);
-		getCommand().click(ProductCardDelete_Loc1);
-	//	getCommand().click(ProductCardDelete_Loc2);	
-		getCommand().waitForTargetPresent(ProductCardDeleteAllLoc_Confirmation);
-		
-		log("Deleting all locations from product card:Pass",LogType.VERIFICATION_STEP);
-		
-		}
-		
-			catch(Exception e){
-			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
-			 getCommand().captureScreenshot(finalPath1); 
-			log("Deleting all locations from product card :Fail",LogType.VERIFICATION_STEP);
-			Assert.assertTrue(false);
-		}
-		return this;
-		
-	}
+	
 	
 	@SuppressWarnings("rawtypes")
 	public LocationsPage TapOnNoDelete(String string) {
@@ -3061,5 +3031,58 @@ public class LocationsPage extends SitePage {
 
 		return this;
 	}
-	
+	@SuppressWarnings("rawtypes")
+	public LocationsPage LocationsDelete(String loc,String string)
+	{
+		  String string2="Issue";
+	    String finalPath1=SitePage.drivePath+string+string2+SitePage.pathExtension;
+	    
+	    log("Deleting locations from product card", LogType.STEP);
+	  
+	    getCommand().waitFor(5);
+		final Target LocDelete_Icon= new Target("FirstLocDelete_Icon",
+				"//*[contains(text(),'"+loc+"')]/ancestor::div[@class='mm-c-product-details__location']//*[@class='mm-o-icon icon-minus-circle']",
+				Target.XPATH);
+	try{
+		
+		getCommand().click(LocDelete_Icon);
+		
+		
+		log("Deleting location from product card:Pass",LogType.VERIFICATION_STEP);
+			
+		}
+		
+			catch(Exception e){
+			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
+			 getCommand().captureScreenshot(finalPath1); 
+			log("Deleting  location from product card :Fail",LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+		return this;
+		
+	}
+	@SuppressWarnings("rawtypes")
+	public LocationsPage DeleteAllLocConfirmation(String string) {
+
+		String string2 = "Issue";
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
+		log("Deleted", LogType.STEP);
+		try {
+			
+				getCommand().waitFor(5);
+				getCommand().waitForTargetPresent(ProductCardDeleteAllLoc_Confirmation);
+						
+				log("Deleting all locations from product card confirmation:Pass",LogType.VERIFICATION_STEP);
+				
+			
+
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Deleting all locations from product card confirmation:Fail",LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+
+		return this;
+	}
 }

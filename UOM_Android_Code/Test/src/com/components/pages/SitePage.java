@@ -78,4 +78,7 @@ public class SitePage extends BasePage {
 	public ListPage _atListPage() {
 		return this.repository.listPage();
 	}
+	public FoodCostPage _atFoodCostPage() {
+		return this.repository.foodCostPage();
+	}
 }

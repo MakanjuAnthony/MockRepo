@@ -2,180 +2,678 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
     <line>
-      <![CDATA[[16:53:41] : <b><FONT SIZE="2">Launched Sysco UOM</FONT></b><br>]]>
+      <![CDATA[[15:16:00] : <b><FONT SIZE="2">Launched Sysco UOM</FONT></b><br>]]>
     </line>
     <line>
-      <![CDATA[[16:53:46] : <b><FONT SIZE="2">Verify the Login Page</FONT></b><br>]]>
+      <![CDATA[[15:16:05] : <b><FONT SIZE="2">Verify the Login Page</FONT></b><br>]]>
     </line>
     <line>
-      <![CDATA[[16:53:54] : <b><FONT SIZE="2">Login page verification :Pass</FONT></b><br>]]>
+      <![CDATA[[15:17:10] : <b><FONT SIZE="2">Login page verification :Pass</FONT></b><br>]]>
     </line>
     <line>
-      <![CDATA[[16:53:54] : <b><FONT SIZE="2">Sign In</FONT></b><br>]]>
+      <![CDATA[[15:17:11] : <b><FONT SIZE="2">Login page verification :Pass</FONT></b><br>]]>
     </line>
     <line>
-      <![CDATA[[16:54:15] : <b><FONT SIZE="2">Sign in :Pass</FONT></b><br>]]>
+      <![CDATA[[15:17:11] : <b><FONT SIZE="2">Sign In</FONT></b><br>]]>
     </line>
     <line>
-      <![CDATA[[16:54:16] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Clicked  account :Pass</FONT></FONT></b><br>]]>
+      <![CDATA[[15:17:18] : <b><FONT SIZE="2">Sign in :Pass</FONT></b><br>]]>
     </line>
     <line>
-      <![CDATA[[16:54:16] : <b><FONT SIZE="2">Selecting 5 account from Accounts page</FONT></b><br>]]>
+      <![CDATA[[15:17:18] : <b><FONT SIZE="2">Sign in :Pass</FONT></b><br>]]>
     </line>
     <line>
-      <![CDATA[[16:54:22] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Got 5 account information :Pass</FONT></FONT></b><br>]]>
+      <![CDATA[[15:17:18] : <b><FONT SIZE="2">Selecting 1st account from Accounts page</FONT></b><br>]]>
     </line>
     <line>
-      <![CDATA[[16:54:22] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Navigating to Setup inventory page :Pass</FONT></FONT></b><br>]]>
+      <![CDATA[[15:17:19] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Navigating to Setup inventory page :Pass</FONT></FONT></b><br>]]>
     </line>
     <line>
-      <![CDATA[[16:54:22] : <b><FONT SIZE="2">Setup inventory page</FONT></b><br>]]>
+      <![CDATA[[15:17:19] : <b><FONT SIZE="2">Setup inventory page</FONT></b><br>]]>
     </line>
     <line>
-      <![CDATA[[16:54:25] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on skip :Pass</FONT></FONT></b><br>]]>
+      <![CDATA[[15:17:25] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on skip :Pass</FONT></FONT></b><br>]]>
     </line>
     <line>
-      <![CDATA[[16:54:25] : <b><FONT SIZE="2">Selecting Orderguide </FONT></b><br>]]>
+      <![CDATA[[15:17:25] : <b><FONT SIZE="2">Selecting Orderguide </FONT></b><br>]]>
     </line>
     <line>
-      <![CDATA[[16:54:26] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Selected  orderguide  from SetupInventoryImportItems:Pass</FONT></FONT></b><br>]]>
+      <![CDATA[[15:17:30] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Selected  orderguide  from SetupInventoryImportItems:Pass</FONT></FONT></b><br>]]>
     </line>
     <line>
-      <![CDATA[[16:54:26] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Continue :Pass</FONT></FONT></b><br>]]>
+      <![CDATA[[15:17:31] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Continue :Pass</FONT></FONT></b><br>]]>
     </line>
     <line>
-      <![CDATA[[16:54:26] : <b><FONT SIZE="2">Setup inventory page</FONT></b><br>]]>
+      <![CDATA[[15:17:36] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Default location clicked :Pass</FONT></FONT></b><br>]]>
     </line>
     <line>
-      <![CDATA[[16:54:29] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on skip :Pass</FONT></FONT></b><br>]]>
+      <![CDATA[[15:17:42] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Continue :Pass</FONT></FONT></b><br>]]>
     </line>
     <line>
-      <![CDATA[[16:54:29] : <b><FONT COLOR="GREEN"><FONT SIZE="2">custom location clicked :Pass</FONT></FONT></b><br>]]>
+      <![CDATA[[15:17:42] : <b><FONT SIZE="2">Selecting default category from Food cost page</FONT></b><br>]]>
     </line>
     <line>
-      <![CDATA[[16:54:30] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Continue :Pass</FONT></FONT></b><br>]]>
+      <![CDATA[[15:17:52] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Default Category selected :Pass</FONT></FONT></b><br>]]>
     </line>
     <line>
-      <![CDATA[[16:54:30] : <b><FONT SIZE="2">Setup inventory page</FONT></b><br>]]>
+      <![CDATA[[15:17:52] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Complete :Pass</FONT></FONT></b><br>]]>
     </line>
     <line>
-      <![CDATA[[16:54:32] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on skip :Pass</FONT></FONT></b><br>]]>
+      <![CDATA[[15:17:59] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on TakeHome :Pass</FONT></FONT></b><br>]]>
     </line>
     <line>
-      <![CDATA[[16:54:33] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on DoThisLater :Pass</FONT></FONT></b><br>]]>
+      <![CDATA[[15:17:59] : <b><FONT SIZE="2">Selecting TrackInventory from inventory tools page </FONT></b><br>]]>
     </line>
     <line>
-      <![CDATA[[16:54:33] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Take me Home :Pass</FONT></FONT></b><br>]]>
+      <![CDATA[[15:18:04] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped  TrackInventory from inventory tools page:Pass</FONT></FONT></b><br>]]>
     </line>
     <line>
-      <![CDATA[[16:54:33] : <b><FONT SIZE="2">Selecting TrackInventory from inventory tools page </FONT></b><br>]]>
+      <![CDATA[[15:18:04] : <b><FONT SIZE="2">Selecting location</FONT></b><br>]]>
     </line>
     <line>
-      <![CDATA[[16:54:35] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped  TrackInventory from inventory tools page:Pass</FONT></FONT></b><br>]]>
+      <![CDATA[[15:18:07] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Location is selected for item :Pass</FONT></FONT></b><br>]]>
     </line>
     <line>
-      <![CDATA[Test completed : SI_WF7_OG_DefaultLocation_SkipCategory_MA]]>
+      <![CDATA[[15:18:07] : <b><FONT SIZE="2">Quantity entering  </FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:18:08] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Quantity entered in locations page :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:18:08] : <b><FONT SIZE="2">Quantity entering  </FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:18:08] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Uom entered in locations page :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:18:14] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on done:Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:18:30] : <b><FONT COLOR="GREEN"><FONT SIZE="2">tap on back :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:18:30] : <b><FONT SIZE="2">Selecting closeinventory from inventory tools page </FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:18:30] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped  closeinventory from inventory tools page:Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:18:30] : <b><FONT SIZE="2">Selecting Yes </FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:18:43] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Closed inventory successfully :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:18:43] : <b><FONT SIZE="2">Selecting closeinventory from inventory tools page </FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:18:44] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped  closeinventory from inventory tools page:Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:18:44] : <b><FONT SIZE="2">Selecting Yes </FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:18:56] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Closed inventory successfully :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:18:56] : <b><FONT SIZE="2">Selecting TrackInventory from inventory tools page </FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:18:57] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped  TrackInventory from inventory tools page:Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:18:57] : <b><FONT SIZE="2">Selecting location</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:19:00] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Location is selected for item :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:19:00] : <b><FONT SIZE="2">Quantity entering  </FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:19:01] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Quantity entered in locations page :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:19:01] : <b><FONT SIZE="2">Quantity entering  </FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:19:01] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Uom entered in locations page :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:19:07] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on done:Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:19:22] : <b><FONT COLOR="GREEN"><FONT SIZE="2">tap on back :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:19:22] : <b><FONT SIZE="2">Tapping on Suppliers from Inventory tools page</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:19:28] : <b><FONT SIZE="2">Tap on Suppliers from Inventory tools page</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:19:28] : <b><FONT SIZE="2">In Vendors Page</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:19:28] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Navigating to Vendors page :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:19:28] : <b><FONT SIZE="2">Add vendor tap</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:19:28] : <b><FONT SIZE="2">Click on ADD Vendor Button</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:19:34] : <b><FONT SIZE="2">In Add Vendor Page</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:19:34] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Add vendor button click :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:19:34] : <b><FONT SIZE="2">Adding vendor details</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:19:35] : <b><FONT SIZE="2">Enter vendorname</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:19:37] : <b><FONT SIZE="2">Enter vendornumber</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:19:39] : <b><FONT SIZE="2">Enter vendor address</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:19:41] : <b><FONT SIZE="2">Enter vendor contact info</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:19:43] : <b><FONT SIZE="2">Enter vendor email</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:19:45] : <b><FONT SIZE="2">Enter vendor note</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:19:51] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Vendor details entered  :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:20:12] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on done:Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:20:12] : <b><FONT COLOR="GREEN"><FONT SIZE="2">tap on back :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:20:13] : <b><FONT COLOR="GREEN"><FONT SIZE="2">tap on back :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:20:13] : <b><FONT SIZE="2">Selecting purchases from inventory tools page </FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:20:13] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped  purchases from inventory tools page:Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:20:13] : <b><FONT SIZE="2">Creating purchases  </FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:20:44] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped  Add purchases :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:20:44] : <b><FONT SIZE="2">Creating purchases  </FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:20:50] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Selected  vendor:Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:20:50] : <b><FONT SIZE="2">Date selection on purchases </FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:20:52] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Selected  Date:Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:20:53] : <b><FONT SIZE="2">Enter purchase details  </FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:20:55] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Purchase details enterd:Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:20:55] : <b><FONT SIZE="2">Expense category selection on purchases  </FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:20:55] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Selected  category:Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:20:55] : <b><FONT SIZE="2">Enter expense amount details  </FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:20:57] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Enter expense amount :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:20:57] : <b><FONT SIZE="2">Tapping Add other Expense category</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:20:57] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped Add other Expense category :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:20:57] : <b><FONT SIZE="2">Expense category selection on purchases  </FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:20:58] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Selected  category:Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:20:58] : <b><FONT SIZE="2">Enter expense amount details  </FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:21:00] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Enter expense amount :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:21:00] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on done:Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:21:00] : <b><FONT SIZE="2">Tapping Add other Expense category</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:21:12] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped No on Adding other Purchase :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:21:13] : <b><FONT COLOR="GREEN"><FONT SIZE="2">tap on back :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:21:13] : <b><FONT SIZE="2">Selecting closeinventory from inventory tools page </FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:21:13] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped  closeinventory from inventory tools page:Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:21:13] : <b><FONT SIZE="2">Selecting Yes </FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:21:26] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Closed inventory successfully :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:21:26] : <b><FONT SIZE="2">Selecting closeinventory from inventory tools page </FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:21:28] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped  closeinventory from inventory tools page:Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:21:28] : <b><FONT SIZE="2">Verify purchase value</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:21:29] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Verify purchase value :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:21:29] : <b><FONT SIZE="2">Verify net purchase value</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:21:30] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Verify net purchase value :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:21:30] : <b><FONT SIZE="2">Verify cost of goods sold value</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:21:47] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Verify cost of goods sold value :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:21:47] : <b><FONT SIZE="2">Enter Revenue value</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:21:51] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Enter Revenue :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:21:51] : <b><FONT SIZE="2">Calculating Food cost</FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[[15:22:07] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Food cost calculation :Pass</FONT></FONT></b><br>]]>
+    </line>
+    <line>
+      <![CDATA[Test completed : MP_WF1_Purchases_FoodCost]]>
     </line>
   </reporter-output>
-  <suite name="somename" duration-ms="80518" started-at="2016-06-02T11:23:16Z" finished-at="2016-06-02T11:24:36Z">
+  <suite name="somename" duration-ms="380021" started-at="2016-07-22T09:45:48Z" finished-at="2016-07-22T09:52:08Z">
     <groups>
-      <group name="SI - WF 7 MA">
-        <method signature="WorkFlow.SI_WF7_OG_DefaultLocation_SkipCategory_MA()[pri:4, instance:com.tests.WorkFlow@be92ad]" name="SI_WF7_OG_DefaultLocation_SkipCategory_MA" class="com.tests.WorkFlow"/>
-      </group> <!-- SI - WF 7 MA -->
+      <group name="MP-WF1">
+        <method signature="WorkFlow.MP_WF1_Purchases_FoodCost()[pri:0, instance:com.tests.WorkFlow@3ddda70f]" name="MP_WF1_Purchases_FoodCost" class="com.tests.WorkFlow"/>
+      </group> <!-- MP-WF1 -->
     </groups>
-    <test name="Default test" duration-ms="80518" started-at="2016-06-02T11:23:16Z" finished-at="2016-06-02T11:24:36Z">
+    <test name="GRP-MP-WF1" duration-ms="380021" started-at="2016-07-22T09:45:48Z" finished-at="2016-07-22T09:52:08Z">
       <class name="com.tests.WorkFlow">
-        <test-method status="PASS" signature="setUp(java.lang.reflect.Method)[pri:0, instance:com.tests.WorkFlow@be92ad]" name="setUp" is-config="true" duration-ms="15" started-at="2016-06-02T16:53:16Z" finished-at="2016-06-02T16:53:16Z">
+        <test-method status="PASS" signature="setUp(java.lang.reflect.Method)[pri:0, instance:com.tests.WorkFlow@3ddda70f]" name="setUp" is-config="true" duration-ms="12" started-at="2016-07-22T15:15:48Z" finished-at="2016-07-22T15:15:48Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.tests.WorkFlow.SI_WF7_OG_DefaultLocation_SkipCategory_MA()]]>
+                <![CDATA[public void com.tests.WorkFlow.MP_WF1_Purchases_FoodCost()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="SI_WF7_OG_DefaultLocation_SkipCategory_MA()[pri:4, instance:com.tests.WorkFlow@be92ad]" name="SI_WF7_OG_DefaultLocation_SkipCategory_MA" duration-ms="79238" started-at="2016-06-02T16:53:16Z" description="SI - WF 7-TC2-OG+Default loc + Skip Category for MA user" finished-at="2016-06-02T16:54:35Z">
+        <test-method status="PASS" signature="MP_WF1_Purchases_FoodCost()[pri:0, instance:com.tests.WorkFlow@3ddda70f]" name="MP_WF1_Purchases_FoodCost" duration-ms="378285" started-at="2016-07-22T15:15:48Z" description="MP-WF1-Purchases-FoodCost" finished-at="2016-07-22T15:22:07Z">
           <reporter-output>
             <line>
-              <![CDATA[[16:53:41] : <b><FONT SIZE="2">Launched Sysco UOM</FONT></b><br>]]>
+              <![CDATA[[15:16:00] : <b><FONT SIZE="2">Launched Sysco UOM</FONT></b><br>]]>
             </line>
             <line>
-              <![CDATA[[16:53:46] : <b><FONT SIZE="2">Verify the Login Page</FONT></b><br>]]>
+              <![CDATA[[15:16:05] : <b><FONT SIZE="2">Verify the Login Page</FONT></b><br>]]>
             </line>
             <line>
-              <![CDATA[[16:53:54] : <b><FONT SIZE="2">Login page verification :Pass</FONT></b><br>]]>
+              <![CDATA[[15:17:10] : <b><FONT SIZE="2">Login page verification :Pass</FONT></b><br>]]>
             </line>
             <line>
-              <![CDATA[[16:53:54] : <b><FONT SIZE="2">Sign In</FONT></b><br>]]>
+              <![CDATA[[15:17:11] : <b><FONT SIZE="2">Login page verification :Pass</FONT></b><br>]]>
             </line>
             <line>
-              <![CDATA[[16:54:15] : <b><FONT SIZE="2">Sign in :Pass</FONT></b><br>]]>
+              <![CDATA[[15:17:11] : <b><FONT SIZE="2">Sign In</FONT></b><br>]]>
             </line>
             <line>
-              <![CDATA[[16:54:16] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Clicked  account :Pass</FONT></FONT></b><br>]]>
+              <![CDATA[[15:17:18] : <b><FONT SIZE="2">Sign in :Pass</FONT></b><br>]]>
             </line>
             <line>
-              <![CDATA[[16:54:16] : <b><FONT SIZE="2">Selecting 5 account from Accounts page</FONT></b><br>]]>
+              <![CDATA[[15:17:18] : <b><FONT SIZE="2">Sign in :Pass</FONT></b><br>]]>
             </line>
             <line>
-              <![CDATA[[16:54:22] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Got 5 account information :Pass</FONT></FONT></b><br>]]>
+              <![CDATA[[15:17:18] : <b><FONT SIZE="2">Selecting 1st account from Accounts page</FONT></b><br>]]>
             </line>
             <line>
-              <![CDATA[[16:54:22] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Navigating to Setup inventory page :Pass</FONT></FONT></b><br>]]>
+              <![CDATA[[15:17:19] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Navigating to Setup inventory page :Pass</FONT></FONT></b><br>]]>
             </line>
             <line>
-              <![CDATA[[16:54:22] : <b><FONT SIZE="2">Setup inventory page</FONT></b><br>]]>
+              <![CDATA[[15:17:19] : <b><FONT SIZE="2">Setup inventory page</FONT></b><br>]]>
             </line>
             <line>
-              <![CDATA[[16:54:25] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on skip :Pass</FONT></FONT></b><br>]]>
+              <![CDATA[[15:17:25] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on skip :Pass</FONT></FONT></b><br>]]>
             </line>
             <line>
-              <![CDATA[[16:54:25] : <b><FONT SIZE="2">Selecting Orderguide </FONT></b><br>]]>
+              <![CDATA[[15:17:25] : <b><FONT SIZE="2">Selecting Orderguide </FONT></b><br>]]>
             </line>
             <line>
-              <![CDATA[[16:54:26] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Selected  orderguide  from SetupInventoryImportItems:Pass</FONT></FONT></b><br>]]>
+              <![CDATA[[15:17:30] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Selected  orderguide  from SetupInventoryImportItems:Pass</FONT></FONT></b><br>]]>
             </line>
             <line>
-              <![CDATA[[16:54:26] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Continue :Pass</FONT></FONT></b><br>]]>
+              <![CDATA[[15:17:31] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Continue :Pass</FONT></FONT></b><br>]]>
             </line>
             <line>
-              <![CDATA[[16:54:26] : <b><FONT SIZE="2">Setup inventory page</FONT></b><br>]]>
+              <![CDATA[[15:17:36] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Default location clicked :Pass</FONT></FONT></b><br>]]>
             </line>
             <line>
-              <![CDATA[[16:54:29] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on skip :Pass</FONT></FONT></b><br>]]>
+              <![CDATA[[15:17:42] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Continue :Pass</FONT></FONT></b><br>]]>
             </line>
             <line>
-              <![CDATA[[16:54:29] : <b><FONT COLOR="GREEN"><FONT SIZE="2">custom location clicked :Pass</FONT></FONT></b><br>]]>
+              <![CDATA[[15:17:42] : <b><FONT SIZE="2">Selecting default category from Food cost page</FONT></b><br>]]>
             </line>
             <line>
-              <![CDATA[[16:54:30] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Continue :Pass</FONT></FONT></b><br>]]>
+              <![CDATA[[15:17:52] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Default Category selected :Pass</FONT></FONT></b><br>]]>
             </line>
             <line>
-              <![CDATA[[16:54:30] : <b><FONT SIZE="2">Setup inventory page</FONT></b><br>]]>
+              <![CDATA[[15:17:52] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Complete :Pass</FONT></FONT></b><br>]]>
             </line>
             <line>
-              <![CDATA[[16:54:32] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on skip :Pass</FONT></FONT></b><br>]]>
+              <![CDATA[[15:17:59] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on TakeHome :Pass</FONT></FONT></b><br>]]>
             </line>
             <line>
-              <![CDATA[[16:54:33] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on DoThisLater :Pass</FONT></FONT></b><br>]]>
+              <![CDATA[[15:17:59] : <b><FONT SIZE="2">Selecting TrackInventory from inventory tools page </FONT></b><br>]]>
             </line>
             <line>
-              <![CDATA[[16:54:33] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Take me Home :Pass</FONT></FONT></b><br>]]>
+              <![CDATA[[15:18:04] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped  TrackInventory from inventory tools page:Pass</FONT></FONT></b><br>]]>
             </line>
             <line>
-              <![CDATA[[16:54:33] : <b><FONT SIZE="2">Selecting TrackInventory from inventory tools page </FONT></b><br>]]>
+              <![CDATA[[15:18:04] : <b><FONT SIZE="2">Selecting location</FONT></b><br>]]>
             </line>
             <line>
-              <![CDATA[[16:54:35] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped  TrackInventory from inventory tools page:Pass</FONT></FONT></b><br>]]>
+              <![CDATA[[15:18:07] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Location is selected for item :Pass</FONT></FONT></b><br>]]>
             </line>
             <line>
-              <![CDATA[Test completed : SI_WF7_OG_DefaultLocation_SkipCategory_MA]]>
+              <![CDATA[[15:18:07] : <b><FONT SIZE="2">Quantity entering  </FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:18:08] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Quantity entered in locations page :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:18:08] : <b><FONT SIZE="2">Quantity entering  </FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:18:08] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Uom entered in locations page :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:18:14] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on done:Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:18:30] : <b><FONT COLOR="GREEN"><FONT SIZE="2">tap on back :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:18:30] : <b><FONT SIZE="2">Selecting closeinventory from inventory tools page </FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:18:30] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped  closeinventory from inventory tools page:Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:18:30] : <b><FONT SIZE="2">Selecting Yes </FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:18:43] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Closed inventory successfully :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:18:43] : <b><FONT SIZE="2">Selecting closeinventory from inventory tools page </FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:18:44] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped  closeinventory from inventory tools page:Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:18:44] : <b><FONT SIZE="2">Selecting Yes </FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:18:56] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Closed inventory successfully :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:18:56] : <b><FONT SIZE="2">Selecting TrackInventory from inventory tools page </FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:18:57] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped  TrackInventory from inventory tools page:Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:18:57] : <b><FONT SIZE="2">Selecting location</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:19:00] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Location is selected for item :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:19:00] : <b><FONT SIZE="2">Quantity entering  </FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:19:01] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Quantity entered in locations page :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:19:01] : <b><FONT SIZE="2">Quantity entering  </FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:19:01] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Uom entered in locations page :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:19:07] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on done:Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:19:22] : <b><FONT COLOR="GREEN"><FONT SIZE="2">tap on back :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:19:22] : <b><FONT SIZE="2">Tapping on Suppliers from Inventory tools page</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:19:28] : <b><FONT SIZE="2">Tap on Suppliers from Inventory tools page</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:19:28] : <b><FONT SIZE="2">In Vendors Page</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:19:28] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Navigating to Vendors page :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:19:28] : <b><FONT SIZE="2">Add vendor tap</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:19:28] : <b><FONT SIZE="2">Click on ADD Vendor Button</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:19:34] : <b><FONT SIZE="2">In Add Vendor Page</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:19:34] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Add vendor button click :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:19:34] : <b><FONT SIZE="2">Adding vendor details</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:19:35] : <b><FONT SIZE="2">Enter vendorname</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:19:37] : <b><FONT SIZE="2">Enter vendornumber</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:19:39] : <b><FONT SIZE="2">Enter vendor address</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:19:41] : <b><FONT SIZE="2">Enter vendor contact info</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:19:43] : <b><FONT SIZE="2">Enter vendor email</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:19:45] : <b><FONT SIZE="2">Enter vendor note</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:19:51] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Vendor details entered  :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:20:12] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on done:Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:20:12] : <b><FONT COLOR="GREEN"><FONT SIZE="2">tap on back :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:20:13] : <b><FONT COLOR="GREEN"><FONT SIZE="2">tap on back :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:20:13] : <b><FONT SIZE="2">Selecting purchases from inventory tools page </FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:20:13] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped  purchases from inventory tools page:Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:20:13] : <b><FONT SIZE="2">Creating purchases  </FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:20:44] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped  Add purchases :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:20:44] : <b><FONT SIZE="2">Creating purchases  </FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:20:50] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Selected  vendor:Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:20:50] : <b><FONT SIZE="2">Date selection on purchases </FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:20:52] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Selected  Date:Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:20:53] : <b><FONT SIZE="2">Enter purchase details  </FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:20:55] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Purchase details enterd:Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:20:55] : <b><FONT SIZE="2">Expense category selection on purchases  </FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:20:55] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Selected  category:Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:20:55] : <b><FONT SIZE="2">Enter expense amount details  </FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:20:57] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Enter expense amount :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:20:57] : <b><FONT SIZE="2">Tapping Add other Expense category</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:20:57] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped Add other Expense category :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:20:57] : <b><FONT SIZE="2">Expense category selection on purchases  </FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:20:58] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Selected  category:Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:20:58] : <b><FONT SIZE="2">Enter expense amount details  </FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:21:00] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Enter expense amount :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:21:00] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on done:Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:21:00] : <b><FONT SIZE="2">Tapping Add other Expense category</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:21:12] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped No on Adding other Purchase :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:21:13] : <b><FONT COLOR="GREEN"><FONT SIZE="2">tap on back :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:21:13] : <b><FONT SIZE="2">Selecting closeinventory from inventory tools page </FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:21:13] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped  closeinventory from inventory tools page:Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:21:13] : <b><FONT SIZE="2">Selecting Yes </FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:21:26] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Closed inventory successfully :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:21:26] : <b><FONT SIZE="2">Selecting closeinventory from inventory tools page </FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:21:28] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped  closeinventory from inventory tools page:Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:21:28] : <b><FONT SIZE="2">Verify purchase value</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:21:29] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Verify purchase value :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:21:29] : <b><FONT SIZE="2">Verify net purchase value</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:21:30] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Verify net purchase value :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:21:30] : <b><FONT SIZE="2">Verify cost of goods sold value</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:21:47] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Verify cost of goods sold value :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:21:47] : <b><FONT SIZE="2">Enter Revenue value</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:21:51] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Enter Revenue :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:21:51] : <b><FONT SIZE="2">Calculating Food cost</FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[[15:22:07] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Food cost calculation :Pass</FONT></FONT></b><br>]]>
+            </line>
+            <line>
+              <![CDATA[Test completed : MP_WF1_Purchases_FoodCost]]>
             </line>
           </reporter-output>
-        </test-method> <!-- SI_WF7_OG_DefaultLocation_SkipCategory_MA -->
+        </test-method> <!-- MP_WF1_Purchases_FoodCost -->
       </class> <!-- com.tests.WorkFlow -->
-    </test> <!-- Default test -->
+    </test> <!-- GRP-MP-WF1 -->
   </suite> <!-- somename -->
 </testng-results>

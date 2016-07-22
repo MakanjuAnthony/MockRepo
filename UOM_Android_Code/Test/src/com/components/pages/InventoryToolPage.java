@@ -55,6 +55,11 @@ public class InventoryToolPage extends SitePage {
 			"//*[@class='navbar-brand']//*[contains(text(),'Add Product')]", Target.XPATH);
 	public static final Target InvTool_CreateNonSyscoItem = new Target("InvTool_CreateNonSyscoItem",
 			"//*[@id='menu-item']/a/div/span[contains(text(),'Create Non-Sysco Item')]", Target.XPATH);
+	public static final Target  InvTool_CloseInventory= new Target("InvTool_Purchases","//*[@id='menu-item']//span[contains(text(),'Close Inventory')]",Target.XPATH);  
+	public static final Target  InvTool_CloseInventoryYes= new Target("InvTool_Purchases","//*[@id='yes-button']",Target.XPATH);  
+	public static final Target  InvTool_CloseInventoryOK= new Target("InvTool_Purchases","//*[@id='yes-button' and contains(text(),'Ok! Sounds Good')]",Target.XPATH);  
+	public static final Target  InvTool_FoodCost= new Target("InvTool_Purchases","//*[@id='menu-item']//span[contains(text(),'View Food Cost')]",Target.XPATH);   
+	public static final Target  InvTool_FoodCostsPage= new Target("InvTool_Purchases", "//*[@class='navbar-brand']//*[contains(text(),'Food Costs')]",Target.XPATH);   
 
 	public InventoryToolPage(SiteRepository repository) {
 		super(repository);
@@ -323,5 +328,107 @@ public class InventoryToolPage extends SitePage {
 		return this;
 
 	}
+@SuppressWarnings("rawtypes")
+public  InventoryToolPage InvTools_CloseInventory(String string){
+		
+		log("Selecting closeinventory from inventory tools page ",LogType.STEP);
+		  String string2="Issue";
+		 
+	    String finalPath1=drivePath+string+string2+pathExtension;
+	    
+	    try{
+	    	  getCommand().waitForTargetPresent(InvTool_CloseInventory);
+		
+		if (getCommand().isTargetPresent(InvTool_CloseInventory))
+		{
+			getCommand().click(InvTool_CloseInventory);
+			
+			getCommand().waitForTargetPresent(InvTool_CloseInventoryYes);
+			
+			log("Tapped  closeinventory from inventory tools page:Pass",LogType.VERIFICATION_STEP);						
+		}
+		
+	}
+		catch(Exception e){
+			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
+			getCommand().captureScreenshot(finalPath1);
+			log("Tapped  closeinventory from inventory tools page:Fail",LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+			
+		}
+		
+		return this;
+		
+	}
+
+
+
+	@SuppressWarnings("rawtypes")
+	public  InventoryToolPage InvTools_ClosedInventoryYes(String string){
+		
+		log("Selecting Yes ",LogType.STEP);
+		   String string2="Issue";
+		 
+	     String finalPath1=drivePath+string+string2+pathExtension;
+	    
+	    try{
+	    	 		
+		
+		if (getCommand().isTargetPresent(InvTool_CloseInventoryYes))
+		{
+			getCommand().click(InvTool_CloseInventoryYes);
+			
+			getCommand().waitForTargetPresent(InvTool_CloseInventoryOK);
+			getCommand().click(InvTool_CloseInventoryOK);
+			
+			log("Closed inventory successfully :Pass",LogType.VERIFICATION_STEP);						
+		}
+		
+	}
+		catch(Exception e){
+			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
+			getCommand().captureScreenshot(finalPath1);
+			log("Closed inventory successfully :Fail",LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+			
+		}
+		
+		return this;
+		
+	}
+
+	@SuppressWarnings("rawtypes")
+	public  InventoryToolPage InvTools_FoodCost(String string){
+		
+		log("Selecting closeinventory from inventory tools page ",LogType.STEP);
+		  String string2="Issue";
+		 
+	     String finalPath1=drivePath+string+string2+pathExtension;
+	    
+	    try{
+	    			getCommand().waitForTargetPresent(InvTool_FoodCost);
+		
+		if (getCommand().isTargetPresent(InvTool_FoodCost))
+		{
+			getCommand().click(InvTool_FoodCost);
+			
+			getCommand().waitForTargetPresent(InvTool_FoodCostsPage);
+			
+			log("Tapped  closeinventory from inventory tools page:Pass",LogType.VERIFICATION_STEP);						
+		}
+		
+	}
+		catch(Exception e){
+			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
+			getCommand().captureScreenshot(finalPath1);
+			log("Tapped  closeinventory from inventory tools page:Fail",LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+			
+		}
+		
+		return this;
+		
+	}
+
 
 }

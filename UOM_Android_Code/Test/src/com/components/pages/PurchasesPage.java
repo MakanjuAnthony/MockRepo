@@ -41,15 +41,15 @@ public class PurchasesPage extends SitePage {
 	
 	
 //	public static final Target PurchasesDetails_Supplier = new Target(
-//			"InvToolsPage", "//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIAElement[1]", Target.XPATH);
+//			"InvToolsPage", ""//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.widget.Spinner[1]"", Target.XPATH);
 //	public static final Target PurchasesDetails_SupplierSelect = new Target(
-//			"InvToolsPage", "//UIAApplication[1]/UIAWindow[1]/UIAPopover[1]/UIATableView[1]/UIATableCell[2]/UIAStaticText[1]", Target.XPATH);
+//			"InvToolsPage", ""//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.ListView[1]/android.widget.CheckedTextView[2]"", Target.XPATH);
 
 
 	public static final Target PurchasesDetails_Date = new Target("InvToolsPage","//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.widget.Spinner[2]",Target.XPATH);
-//	public static final Target PurchasesDetails_Day = new Target("InvToolsPage","//UIAApplication[1]/UIAWindow[1]/UIAPopover[1]/UIAPicker[1]/UIAPickerWheel[1]",Target.XPATH);
-//	public static final Target PurchasesDetails_Month = new Target("InvToolsPage","//UIAApplication[1]/UIAWindow[1]/UIAPopover[1]/UIAPicker[1]/UIAPickerWheel[2]",Target.XPATH);
-//	public static final Target PurchasesDetails_Year = new Target("InvToolsPage","//UIAApplication[1]/UIAWindow[1]/UIAPopover[1]/UIAPicker[1]/UIAPickerWheel[3]",Target.XPATH);
+	public static final Target PurchasesDetails_Day = new Target("InvToolsPage","//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.DatePicker[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.EditText[1]",Target.XPATH);
+	public static final Target PurchasesDetails_Month = new Target("InvToolsPage","//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.DatePicker[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.EditText[1]",Target.XPATH);
+	public static final Target PurchasesDetails_Year = new Target("InvToolsPage","//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.DatePicker[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[3]/android.widget.EditText[1]",Target.XPATH);
 	public static final Target PurchasesDetails_Set = new Target("InvToolsPage","//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.Button[1]",Target.XPATH);
 
 
@@ -57,7 +57,8 @@ public class PurchasesPage extends SitePage {
 	public static final Target PurchasesDetails_InvoiceTotal = new Target("InvToolsPage","//*[@id='invoice-total']",Target.XPATH);
 	public static final Target PurchasesDetails_ExpenseAmount = new Target("InvToolsPage","//*[@id='expense-amount']",Target.XPATH);
 	public static final Target PurchasesDetails_ExpenseCategory = new Target("InvToolsPage","//*[@id='expense-category']",Target.XPATH);
-	public static final Target Done = new Target("Continue","//*[@id='done-nav/a']",Target.XPATH);
+	public static final Target Done = new Target("Continue","//*[@id='done-nav']/a",Target.XPATH);
+	
 
 	public static final Target PurchasesDetails_AddExpenseCategory = new Target("InvToolsPage","//*[@class='mm-o-icon icon-plus-circle']",Target.XPATH);
 
@@ -65,10 +66,10 @@ public class PurchasesPage extends SitePage {
 	
 
 	public static final Target YesAddPurchase = new Target("InvToolsPage",
-			"//*[contains(text(),'Yes, add a new purchase')]",
+			"//*[@class='modal-content']//*[@id='yes-button']",
 			Target.XPATH);
 	public static final Target NoAddPurchase = new Target("InvToolsPage",
-			"//*[contains(text(),'No, I'm done')]",
+			"//*[@class='modal-content']//*[@id='no-button']",
 			Target.XPATH);
 
 	
@@ -98,11 +99,13 @@ public class PurchasesPage extends SitePage {
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
+			getCommand().waitFor(15);
 			getCommand().waitForTargetPresent(PurchasesPage);
 
 			if (getCommand().isTargetPresent(PurchasesPage)) {
 				getCommand().click(Purchases_Add);
-
+				
+				getCommand().waitFor(15);
 				getCommand().waitForTargetPresent(PurchasesDetails_Done);
 
 				log("Tapped  Add purchases :Pass", LogType.VERIFICATION_STEP);
@@ -169,9 +172,14 @@ public class PurchasesPage extends SitePage {
 			getCommand().waitForTargetPresent(PurchasesDetails_Date);
 
 			getCommand().click(PurchasesDetails_Date);
-		/*	getCommand().sendKeys(PurchasesDetails_Day, "19");
-			getCommand().sendKeys(PurchasesDetails_Month, "June");
+			
+		/*	getCommand().clear(PurchasesDetails_Day);
+			getCommand().sendKeys(PurchasesDetails_Day, "22");
+			getCommand().clear(PurchasesDetails_Month);
+			getCommand().sendKeys(PurchasesDetails_Month, "Jul");
+			getCommand().clear(PurchasesDetails_Year);
 			getCommand().sendKeys(PurchasesDetails_Year, "2016");*/
+			
 			getCommand().click(PurchasesDetails_Set);
 			log("Selected  Date:Pass",LogType.VERIFICATION_STEP);	
 
@@ -306,11 +314,8 @@ public class PurchasesPage extends SitePage {
 
 			getCommand().waitForTargetPresent(PurchasesDetails_ExpenseAmount);
 
-
 			getCommand().sendKeys(PurchasesDetails_ExpenseAmount,number);
-
-
-
+			((AndroidDriver) getCommand().driver).hideKeyboard();
 
 			log("Enter expense amount :Pass",LogType.VERIFICATION_STEP);						
 

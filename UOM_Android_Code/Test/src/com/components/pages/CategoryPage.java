@@ -733,7 +733,7 @@ public class CategoryPage extends SitePage {
 
 				getCommand().clickWithJavascript(Done);
 				log("Tapped on done:Pass", LogType.VERIFICATION_STEP);
-
+				getCommand().waitFor(10);
 			}
 
 		} catch (Exception e) {

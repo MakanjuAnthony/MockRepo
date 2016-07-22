@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/8/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/6/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue May 03 12:41:13 IST 2016</td>
+<td>Started on:</td><td>Thu May 12 15:27:40 IST 2016</td>
 </tr>
-<tr><td>Total time:</td><td>18 seconds (18147 ms)</td>
+<tr><td>Total time:</td><td>19 seconds (19504 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,12 +75,12 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.tests.SampleTest.AddVendorMA_Home()'><b>AddVendorMA_Home</b><br>Test class: com.tests.SampleTest<br>Test method: Sprint1-Adding a new vendor and verify added vendor displayed on vendor list page as a MA user(through home page)<br/>
-<a href="#Output-6994896" onClick='toggleBox("Output-6994896", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.tests.SampleTest.AddNonsysco_MA()'><b>AddNonsysco_MA</b><br>Test class: com.tests.SampleTest<br>Test method: Sprint3-Adding non sysco item to inventory as a MA user<br/>
+<a href="#Output-300610051" onClick='toggleBox("Output-300610051", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-6994896" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-6994896">
-[12:41:31] : <b><FONT SIZE="2">Launched Sysco UOM</FONT></b><br><br/>
+<a href="#Output-300610051" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-300610051">
+[15:27:59] : <b><FONT SIZE="2">Launched Sysco UOM</FONT></b><br><br/>
 </div>
 </td>
 <td><div><pre>java.lang.NullPointerException
@@ -89,20 +89,20 @@ function toggleAllBoxes() {
 	at com.iwaf.framework.components.IReporter.log(IReporter.java:105)
 	at zRfghY.p.a(ThreadFactory.java:190)
 	at com.iwaf.framework.BasePage.log(BasePage.java:101)
-	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:38)
+	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:40)
 	at com.components.entities.Tester.goToLoginpage(Tester.java:27)
-	at com.tests.SampleTest.AddVendorMA_Home(SampleTest.java:122)
+	at com.tests.SampleTest.AddNonsysco_MA(SampleTest.java:880)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:823)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1131)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:822)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1130)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:778)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
 	at org.testng.TestRunner.run(TestRunner.java:632)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
 	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
@@ -110,34 +110,33 @@ function toggleAllBoxes() {
 	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1225)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1150)
-	at org.testng.TestNG.runSuites(TestNG.java:1075)
-	at org.testng.TestNG.run(TestNG.java:1047)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-</pre></div><a href='#' onClick='toggleBox("stack-trace6994896", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace6994896'><pre>java.lang.NullPointerException
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+</pre></div><a href='#' onClick='toggleBox("stack-trace300610051", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace300610051'><pre>java.lang.NullPointerException
 	at com.iwaf.framework.components.IReporter.a(IReporter.java:31)
 	at com.iwaf.framework.components.IReporter.c(IReporter.java:41)
 	at com.iwaf.framework.components.IReporter.log(IReporter.java:105)
 	at zRfghY.p.a(ThreadFactory.java:190)
 	at com.iwaf.framework.BasePage.log(BasePage.java:101)
-	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:38)
+	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:40)
 	at com.components.entities.Tester.goToLoginpage(Tester.java:27)
-	at com.tests.SampleTest.AddVendorMA_Home(SampleTest.java:122)
+	at com.tests.SampleTest.AddNonsysco_MA(SampleTest.java:880)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:823)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1131)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:822)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1130)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:778)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
 	at org.testng.TestRunner.run(TestRunner.java:632)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
 	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
@@ -145,23 +144,101 @@ function toggleAllBoxes() {
 	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1225)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1150)
-	at org.testng.TestNG.runSuites(TestNG.java:1075)
-	at org.testng.TestNG.run(TestNG.java:1047)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+</pre></div></td>
+<td>19</td>
+<td>com.tests.SampleTest@fb95de0</td></tr>
+<tr>
+<td title='com.tests.SampleTest.CreateCategoryItem_MA()'><b>CreateCategoryItem_MA</b><br>Test class: com.tests.SampleTest<br>Test method: Sprint3-Creting expensence category and adding item to it as a MA user<br/>
+<a href="#Output-1954533156" onClick='toggleBox("Output-1954533156", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1954533156" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1954533156">
+[15:27:59] : <b><FONT SIZE="2">Launched Sysco UOM</FONT></b><br><br/>
+</div>
+</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.iwaf.framework.components.IReporter.a(IReporter.java:31)
+	at com.iwaf.framework.components.IReporter.c(IReporter.java:41)
+	at com.iwaf.framework.components.IReporter.log(IReporter.java:105)
+	at zRfghY.p.a(ThreadFactory.java:190)
+	at com.iwaf.framework.BasePage.log(BasePage.java:101)
+	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:40)
+	at com.components.entities.Tester.goToLoginpage(Tester.java:27)
+	at com.tests.SampleTest.CreateCategoryItem_MA(SampleTest.java:1042)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:822)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1130)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1954533156", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1954533156'><pre>java.lang.NullPointerException
+	at com.iwaf.framework.components.IReporter.a(IReporter.java:31)
+	at com.iwaf.framework.components.IReporter.c(IReporter.java:41)
+	at com.iwaf.framework.components.IReporter.log(IReporter.java:105)
+	at zRfghY.p.a(ThreadFactory.java:190)
+	at com.iwaf.framework.BasePage.log(BasePage.java:101)
+	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:40)
+	at com.components.entities.Tester.goToLoginpage(Tester.java:27)
+	at com.tests.SampleTest.CreateCategoryItem_MA(SampleTest.java:1042)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:822)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1130)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
 </pre></div></td>
 <td>0</td>
-<td>com.tests.SampleTest@7fa833</td></tr>
+<td>com.tests.SampleTest@fb95de0</td></tr>
 <tr>
-<td title='com.tests.SampleTest.AddVendorNU_Home()'><b>AddVendorNU_Home</b><br>Test class: com.tests.SampleTest<br>Test method: Sprint1-Adding a new vendor and verify added vendor displayed on vendor list page as a normal user(through home page)<br/>
-<a href="#Output-16539396" onClick='toggleBox("Output-16539396", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.tests.SampleTest.CreateCategory_MA()'><b>CreateCategory_MA</b><br>Test class: com.tests.SampleTest<br>Test method: Sprint3-Creating expense category as MA  user<br/>
+<a href="#Output-558033477" onClick='toggleBox("Output-558033477", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-16539396" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-16539396">
-[12:41:31] : <b><FONT SIZE="2">Launched Sysco UOM</FONT></b><br><br/>
+<a href="#Output-558033477" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-558033477">
+[15:27:59] : <b><FONT SIZE="2">Launched Sysco UOM</FONT></b><br><br/>
 </div>
 </td>
 <td><div><pre>java.lang.NullPointerException
@@ -170,20 +247,20 @@ function toggleAllBoxes() {
 	at com.iwaf.framework.components.IReporter.log(IReporter.java:105)
 	at zRfghY.p.a(ThreadFactory.java:190)
 	at com.iwaf.framework.BasePage.log(BasePage.java:101)
-	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:38)
+	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:40)
 	at com.components.entities.Tester.goToLoginpage(Tester.java:27)
-	at com.tests.SampleTest.AddVendorNU_Home(SampleTest.java:100)
+	at com.tests.SampleTest.CreateCategory_MA(SampleTest.java:1106)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:823)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1131)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:822)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1130)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:778)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
 	at org.testng.TestRunner.run(TestRunner.java:632)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
 	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
@@ -191,34 +268,33 @@ function toggleAllBoxes() {
 	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1225)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1150)
-	at org.testng.TestNG.runSuites(TestNG.java:1075)
-	at org.testng.TestNG.run(TestNG.java:1047)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-</pre></div><a href='#' onClick='toggleBox("stack-trace16539396", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace16539396'><pre>java.lang.NullPointerException
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+</pre></div><a href='#' onClick='toggleBox("stack-trace558033477", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace558033477'><pre>java.lang.NullPointerException
 	at com.iwaf.framework.components.IReporter.a(IReporter.java:31)
 	at com.iwaf.framework.components.IReporter.c(IReporter.java:41)
 	at com.iwaf.framework.components.IReporter.log(IReporter.java:105)
 	at zRfghY.p.a(ThreadFactory.java:190)
 	at com.iwaf.framework.BasePage.log(BasePage.java:101)
-	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:38)
+	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:40)
 	at com.components.entities.Tester.goToLoginpage(Tester.java:27)
-	at com.tests.SampleTest.AddVendorNU_Home(SampleTest.java:100)
+	at com.tests.SampleTest.CreateCategory_MA(SampleTest.java:1106)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:823)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1131)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:822)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1130)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:778)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
 	at org.testng.TestRunner.run(TestRunner.java:632)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
 	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
@@ -226,23 +302,22 @@ function toggleAllBoxes() {
 	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1225)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1150)
-	at org.testng.TestNG.runSuites(TestNG.java:1075)
-	at org.testng.TestNG.run(TestNG.java:1047)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
 </pre></div></td>
 <td>0</td>
-<td>com.tests.SampleTest@7fa833</td></tr>
+<td>com.tests.SampleTest@fb95de0</td></tr>
 <tr>
-<td title='com.tests.SampleTest.DeleteVendorMA_Home()'><b>DeleteVendorMA_Home</b><br>Test class: com.tests.SampleTest<br>Test method: Spint1-Deleting added vendor and checking in vendor list  as a MA user(through home page)<br/>
-<a href="#Output-18269011" onClick='toggleBox("Output-18269011", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.tests.SampleTest.CreateMultipleCategories_MA()'><b>CreateMultipleCategories_MA</b><br>Test class: com.tests.SampleTest<br>Test method: Sprint3-Create Categories while go with MA<br/>
+<a href="#Output-1624422779" onClick='toggleBox("Output-1624422779", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-18269011" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-18269011">
-[12:41:31] : <b><FONT SIZE="2">Launched Sysco UOM</FONT></b><br><br/>
+<a href="#Output-1624422779" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1624422779">
+[15:27:59] : <b><FONT SIZE="2">Launched Sysco UOM</FONT></b><br><br/>
 </div>
 </td>
 <td><div><pre>java.lang.NullPointerException
@@ -251,20 +326,20 @@ function toggleAllBoxes() {
 	at com.iwaf.framework.components.IReporter.log(IReporter.java:105)
 	at zRfghY.p.a(ThreadFactory.java:190)
 	at com.iwaf.framework.BasePage.log(BasePage.java:101)
-	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:38)
+	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:40)
 	at com.components.entities.Tester.goToLoginpage(Tester.java:27)
-	at com.tests.SampleTest.DeleteVendorMA_Home(SampleTest.java:244)
+	at com.tests.SampleTest.CreateMultipleCategories_MA(SampleTest.java:1242)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:823)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1131)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:822)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1130)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:778)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
 	at org.testng.TestRunner.run(TestRunner.java:632)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
 	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
@@ -272,34 +347,33 @@ function toggleAllBoxes() {
 	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1225)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1150)
-	at org.testng.TestNG.runSuites(TestNG.java:1075)
-	at org.testng.TestNG.run(TestNG.java:1047)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-</pre></div><a href='#' onClick='toggleBox("stack-trace18269011", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace18269011'><pre>java.lang.NullPointerException
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1624422779", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1624422779'><pre>java.lang.NullPointerException
 	at com.iwaf.framework.components.IReporter.a(IReporter.java:31)
 	at com.iwaf.framework.components.IReporter.c(IReporter.java:41)
 	at com.iwaf.framework.components.IReporter.log(IReporter.java:105)
 	at zRfghY.p.a(ThreadFactory.java:190)
 	at com.iwaf.framework.BasePage.log(BasePage.java:101)
-	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:38)
+	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:40)
 	at com.components.entities.Tester.goToLoginpage(Tester.java:27)
-	at com.tests.SampleTest.DeleteVendorMA_Home(SampleTest.java:244)
+	at com.tests.SampleTest.CreateMultipleCategories_MA(SampleTest.java:1242)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:823)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1131)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:822)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1130)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:778)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
 	at org.testng.TestRunner.run(TestRunner.java:632)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
 	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
@@ -307,23 +381,22 @@ function toggleAllBoxes() {
 	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1225)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1150)
-	at org.testng.TestNG.runSuites(TestNG.java:1075)
-	at org.testng.TestNG.run(TestNG.java:1047)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
 </pre></div></td>
 <td>0</td>
-<td>com.tests.SampleTest@7fa833</td></tr>
+<td>com.tests.SampleTest@fb95de0</td></tr>
 <tr>
-<td title='com.tests.SampleTest.DeleteVendorNU_Home()'><b>DeleteVendorNU_Home</b><br>Test class: com.tests.SampleTest<br>Test method: Spint1-Deleting added vendor and checking in vendor list  as a normal user(through home page)<br/>
-<a href="#Output-12329518" onClick='toggleBox("Output-12329518", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.tests.SampleTest.ItemWeighCheck_MA()'><b>ItemWeighCheck_MA</b><br>Test class: com.tests.SampleTest<br>Test method: Sprint3-Catch weigh items as MA  user<br/>
+<a href="#Output-2077712545" onClick='toggleBox("Output-2077712545", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-12329518" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-12329518">
-[12:41:31] : <b><FONT SIZE="2">Launched Sysco UOM</FONT></b><br><br/>
+<a href="#Output-2077712545" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2077712545">
+[15:27:59] : <b><FONT SIZE="2">Launched Sysco UOM</FONT></b><br><br/>
 </div>
 </td>
 <td><div><pre>java.lang.NullPointerException
@@ -332,20 +405,20 @@ function toggleAllBoxes() {
 	at com.iwaf.framework.components.IReporter.log(IReporter.java:105)
 	at zRfghY.p.a(ThreadFactory.java:190)
 	at com.iwaf.framework.BasePage.log(BasePage.java:101)
-	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:38)
+	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:40)
 	at com.components.entities.Tester.goToLoginpage(Tester.java:27)
-	at com.tests.SampleTest.DeleteVendorNU_Home(SampleTest.java:215)
+	at com.tests.SampleTest.ItemWeighCheck_MA(SampleTest.java:1138)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:823)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1131)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:822)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1130)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:778)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
 	at org.testng.TestRunner.run(TestRunner.java:632)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
 	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
@@ -353,34 +426,33 @@ function toggleAllBoxes() {
 	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1225)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1150)
-	at org.testng.TestNG.runSuites(TestNG.java:1075)
-	at org.testng.TestNG.run(TestNG.java:1047)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-</pre></div><a href='#' onClick='toggleBox("stack-trace12329518", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace12329518'><pre>java.lang.NullPointerException
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2077712545", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2077712545'><pre>java.lang.NullPointerException
 	at com.iwaf.framework.components.IReporter.a(IReporter.java:31)
 	at com.iwaf.framework.components.IReporter.c(IReporter.java:41)
 	at com.iwaf.framework.components.IReporter.log(IReporter.java:105)
 	at zRfghY.p.a(ThreadFactory.java:190)
 	at com.iwaf.framework.BasePage.log(BasePage.java:101)
-	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:38)
+	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:40)
 	at com.components.entities.Tester.goToLoginpage(Tester.java:27)
-	at com.tests.SampleTest.DeleteVendorNU_Home(SampleTest.java:215)
+	at com.tests.SampleTest.ItemWeighCheck_MA(SampleTest.java:1138)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:823)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1131)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:822)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1130)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:778)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
 	at org.testng.TestRunner.run(TestRunner.java:632)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
 	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
@@ -388,23 +460,22 @@ function toggleAllBoxes() {
 	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1225)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1150)
-	at org.testng.TestNG.runSuites(TestNG.java:1075)
-	at org.testng.TestNG.run(TestNG.java:1047)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
 </pre></div></td>
 <td>0</td>
-<td>com.tests.SampleTest@7fa833</td></tr>
+<td>com.tests.SampleTest@fb95de0</td></tr>
 <tr>
-<td title='com.tests.SampleTest.DisplayVendorListMA_Home()'><b>DisplayVendorListMA_Home</b><br>Test class: com.tests.SampleTest<br>Test method: Sprint1-Verify vendors displayed in list view as a MA user(through home page)<br/>
-<a href="#Output-8607197" onClick='toggleBox("Output-8607197", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.tests.SampleTest.OrderGuidePro_MA()'><b>OrderGuidePro_MA</b><br>Test class: com.tests.SampleTest<br>Test method: Sprint3-425.8 Inventory & Food Cost<br/>
+<a href="#Output-645559631" onClick='toggleBox("Output-645559631", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-8607197" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-8607197">
-[12:41:31] : <b><FONT SIZE="2">Launched Sysco UOM</FONT></b><br><br/>
+<a href="#Output-645559631" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-645559631">
+[15:27:59] : <b><FONT SIZE="2">Launched Sysco UOM</FONT></b><br><br/>
 </div>
 </td>
 <td><div><pre>java.lang.NullPointerException
@@ -413,20 +484,20 @@ function toggleAllBoxes() {
 	at com.iwaf.framework.components.IReporter.log(IReporter.java:105)
 	at zRfghY.p.a(ThreadFactory.java:190)
 	at com.iwaf.framework.BasePage.log(BasePage.java:101)
-	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:38)
+	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:40)
 	at com.components.entities.Tester.goToLoginpage(Tester.java:27)
-	at com.tests.SampleTest.DisplayVendorListMA_Home(SampleTest.java:74)
+	at com.tests.SampleTest.OrderGuidePro_MA(SampleTest.java:1354)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:823)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1131)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:822)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1130)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:778)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
 	at org.testng.TestRunner.run(TestRunner.java:632)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
 	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
@@ -434,34 +505,33 @@ function toggleAllBoxes() {
 	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1225)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1150)
-	at org.testng.TestNG.runSuites(TestNG.java:1075)
-	at org.testng.TestNG.run(TestNG.java:1047)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-</pre></div><a href='#' onClick='toggleBox("stack-trace8607197", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace8607197'><pre>java.lang.NullPointerException
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+</pre></div><a href='#' onClick='toggleBox("stack-trace645559631", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace645559631'><pre>java.lang.NullPointerException
 	at com.iwaf.framework.components.IReporter.a(IReporter.java:31)
 	at com.iwaf.framework.components.IReporter.c(IReporter.java:41)
 	at com.iwaf.framework.components.IReporter.log(IReporter.java:105)
 	at zRfghY.p.a(ThreadFactory.java:190)
 	at com.iwaf.framework.BasePage.log(BasePage.java:101)
-	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:38)
+	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:40)
 	at com.components.entities.Tester.goToLoginpage(Tester.java:27)
-	at com.tests.SampleTest.DisplayVendorListMA_Home(SampleTest.java:74)
+	at com.tests.SampleTest.OrderGuidePro_MA(SampleTest.java:1354)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:823)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1131)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:822)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1130)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:778)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
 	at org.testng.TestRunner.run(TestRunner.java:632)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
 	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
@@ -469,259 +539,15 @@ function toggleAllBoxes() {
 	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1225)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1150)
-	at org.testng.TestNG.runSuites(TestNG.java:1075)
-	at org.testng.TestNG.run(TestNG.java:1047)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
 </pre></div></td>
 <td>0</td>
-<td>com.tests.SampleTest@7fa833</td></tr>
-<tr>
-<td title='com.tests.SampleTest.DisplayVendorListNU_Home()'><b>DisplayVendorListNU_Home</b><br>Test class: com.tests.SampleTest<br>Test method: Sprint1-Verify vendors displayed in list view as a normal user(through home page)<br/>
-<a href="#Output-4766562" onClick='toggleBox("Output-4766562", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-4766562" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-4766562">
-[12:41:31] : <b><FONT SIZE="2">Launched Sysco UOM</FONT></b><br><br/>
-</div>
-</td>
-<td><div><pre>java.lang.NullPointerException
-	at com.iwaf.framework.components.IReporter.a(IReporter.java:31)
-	at com.iwaf.framework.components.IReporter.c(IReporter.java:41)
-	at com.iwaf.framework.components.IReporter.log(IReporter.java:105)
-	at zRfghY.p.a(ThreadFactory.java:190)
-	at com.iwaf.framework.BasePage.log(BasePage.java:101)
-	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:38)
-	at com.components.entities.Tester.goToLoginpage(Tester.java:27)
-	at com.tests.SampleTest.DisplayVendorListNU_Home(SampleTest.java:55)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:823)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1131)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:778)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1225)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1150)
-	at org.testng.TestNG.runSuites(TestNG.java:1075)
-	at org.testng.TestNG.run(TestNG.java:1047)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-</pre></div><a href='#' onClick='toggleBox("stack-trace4766562", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace4766562'><pre>java.lang.NullPointerException
-	at com.iwaf.framework.components.IReporter.a(IReporter.java:31)
-	at com.iwaf.framework.components.IReporter.c(IReporter.java:41)
-	at com.iwaf.framework.components.IReporter.log(IReporter.java:105)
-	at zRfghY.p.a(ThreadFactory.java:190)
-	at com.iwaf.framework.BasePage.log(BasePage.java:101)
-	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:38)
-	at com.components.entities.Tester.goToLoginpage(Tester.java:27)
-	at com.tests.SampleTest.DisplayVendorListNU_Home(SampleTest.java:55)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:823)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1131)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:778)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1225)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1150)
-	at org.testng.TestNG.runSuites(TestNG.java:1075)
-	at org.testng.TestNG.run(TestNG.java:1047)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-</pre></div></td>
-<td>18</td>
-<td>com.tests.SampleTest@7fa833</td></tr>
-<tr>
-<td title='com.tests.SampleTest.VendorDetailsMA_Home()'><b>VendorDetailsMA_Home</b><br>Test class: com.tests.SampleTest<br>Test method: Sprint1-verify vendor information displayed on vendor details page as a MA user(through homepage)<br/>
-<a href="#Output-32751037" onClick='toggleBox("Output-32751037", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-32751037" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-32751037">
-[12:41:31] : <b><FONT SIZE="2">Launched Sysco UOM</FONT></b><br><br/>
-</div>
-</td>
-<td><div><pre>java.lang.NullPointerException
-	at com.iwaf.framework.components.IReporter.a(IReporter.java:31)
-	at com.iwaf.framework.components.IReporter.c(IReporter.java:41)
-	at com.iwaf.framework.components.IReporter.log(IReporter.java:105)
-	at zRfghY.p.a(ThreadFactory.java:190)
-	at com.iwaf.framework.BasePage.log(BasePage.java:101)
-	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:38)
-	at com.components.entities.Tester.goToLoginpage(Tester.java:27)
-	at com.tests.SampleTest.VendorDetailsMA_Home(SampleTest.java:180)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:823)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1131)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:778)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1225)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1150)
-	at org.testng.TestNG.runSuites(TestNG.java:1075)
-	at org.testng.TestNG.run(TestNG.java:1047)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-</pre></div><a href='#' onClick='toggleBox("stack-trace32751037", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace32751037'><pre>java.lang.NullPointerException
-	at com.iwaf.framework.components.IReporter.a(IReporter.java:31)
-	at com.iwaf.framework.components.IReporter.c(IReporter.java:41)
-	at com.iwaf.framework.components.IReporter.log(IReporter.java:105)
-	at zRfghY.p.a(ThreadFactory.java:190)
-	at com.iwaf.framework.BasePage.log(BasePage.java:101)
-	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:38)
-	at com.components.entities.Tester.goToLoginpage(Tester.java:27)
-	at com.tests.SampleTest.VendorDetailsMA_Home(SampleTest.java:180)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:823)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1131)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:778)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1225)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1150)
-	at org.testng.TestNG.runSuites(TestNG.java:1075)
-	at org.testng.TestNG.run(TestNG.java:1047)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-</pre></div></td>
-<td>0</td>
-<td>com.tests.SampleTest@7fa833</td></tr>
-<tr>
-<td title='com.tests.SampleTest.VendorDetailsNU_Home()'><b>VendorDetailsNU_Home</b><br>Test class: com.tests.SampleTest<br>Test method: Sprint1-verify vendor information displayed on vendor details page as a normal user(through homepage)<br/>
-<a href="#Output-22179417" onClick='toggleBox("Output-22179417", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-22179417" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-22179417">
-[12:41:31] : <b><FONT SIZE="2">Launched Sysco UOM</FONT></b><br><br/>
-</div>
-</td>
-<td><div><pre>java.lang.NullPointerException
-	at com.iwaf.framework.components.IReporter.a(IReporter.java:31)
-	at com.iwaf.framework.components.IReporter.c(IReporter.java:41)
-	at com.iwaf.framework.components.IReporter.log(IReporter.java:105)
-	at zRfghY.p.a(ThreadFactory.java:190)
-	at com.iwaf.framework.BasePage.log(BasePage.java:101)
-	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:38)
-	at com.components.entities.Tester.goToLoginpage(Tester.java:27)
-	at com.tests.SampleTest.VendorDetailsNU_Home(SampleTest.java:153)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:823)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1131)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:778)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1225)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1150)
-	at org.testng.TestNG.runSuites(TestNG.java:1075)
-	at org.testng.TestNG.run(TestNG.java:1047)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-</pre></div><a href='#' onClick='toggleBox("stack-trace22179417", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace22179417'><pre>java.lang.NullPointerException
-	at com.iwaf.framework.components.IReporter.a(IReporter.java:31)
-	at com.iwaf.framework.components.IReporter.c(IReporter.java:41)
-	at com.iwaf.framework.components.IReporter.log(IReporter.java:105)
-	at zRfghY.p.a(ThreadFactory.java:190)
-	at com.iwaf.framework.BasePage.log(BasePage.java:101)
-	at com.components.pages.LoginPage.atLoginPage(LoginPage.java:38)
-	at com.components.entities.Tester.goToLoginpage(Tester.java:27)
-	at com.tests.SampleTest.VendorDetailsNU_Home(SampleTest.java:153)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:823)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1131)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:778)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1225)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1150)
-	at org.testng.TestNG.runSuites(TestNG.java:1075)
-	at org.testng.TestNG.run(TestNG.java:1047)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-</pre></div></td>
-<td>0</td>
-<td>com.tests.SampleTest@7fa833</td></tr>
+<td>com.tests.SampleTest@fb95de0</td></tr>
 </table><p>
 </body>
 </html>

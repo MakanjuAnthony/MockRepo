@@ -1,15 +1,10 @@
 package com.components.pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.testng.Assert;
 
+import org.testng.Assert;
 import com.components.repository.SiteRepository;
 import com.iwaf.framework.components.Target;
 import com.iwaf.framework.components.IReporter.LogType;
-
-import java.util.Set;
-
 import io.appium.java_client.android.AndroidDriver;
 
 
@@ -34,20 +29,20 @@ public class FoodCostPage extends SitePage {
 	public static String[] EndInventoryValue1;
 	public static String[] CostOfGoodSoldValue1;
 	
-	public static int	beginInv;
-	public static int totPurchase;
-	public static int netPurchase;
-	public static int costGoods;
-	public static int endInv;
-	public static int foodSales;
-	public static String foodSales1;
-	public static String[] foodSales2;
-	public static int revenue;
+	public static float	beginInv;
+	public static float totPurchase;
+	public static float netPurchase;
+	public static float costGoods;
+	public static float endInv;
+	public static float foodSales;
+	public static int foodSales1;
+	public static String foodSales2;
+	public static float revenue;
 	public static String foodSalesPercent;
 	public static String[] foodSalesPercent1;
 	public static final Target Revenue = new Target("Revenue","//*[@class='mm-c-food-cost__details container']//*[@placeholder='Revenue']", Target.XPATH);
 	
-	public static final Target FoodSalesPercent = new Target("FoodSales","//*[@class='mm-c-food-cost__details container']//*[@class='mm-c-food-cost__percentage_number row']", Target.XPATH);
+	public static final Target FoodSalesPercent = new Target("FoodSales","//*[@class='mm-c-food-cost__details container']//*[@class='mm-c-food-cost__percentage_number row']/div", Target.XPATH);
 	
 	public FoodCostPage(SiteRepository repository) {
 		super(repository);
@@ -63,6 +58,7 @@ public class FoodCostPage extends SitePage {
 	
 	
 	
+	@SuppressWarnings("rawtypes")
 	public FoodCostPage VerifyTotalPurchase(String value, String string) {
 		log("Verify purchase value",LogType.STEP);
 		
@@ -76,13 +72,14 @@ public class FoodCostPage extends SitePage {
 			
 			TotalPurchasesValue =getCommand().getText(TotalPurchases);
 			TotalPurchasesValue1 = TotalPurchasesValue.split("\\s");
-			// totPurchase=Integer.parseInt(TotalPurchasesValue1[1]);
+			
 			if(!(TotalPurchasesValue1[1].equals(value))){
 				throw new Exception();
 			}
 			
 			log("Verify purchase value :Pass",LogType.VERIFICATION_STEP);						
-System.out.println("tot purch passed"+value+TotalPurchasesValue1[1]);
+
+			System.out.println("tot purch passed"+value+TotalPurchasesValue1[1]);
 
 		}
 		catch(Exception e){
@@ -96,6 +93,7 @@ System.out.println("tot purch passed"+value+TotalPurchasesValue1[1]);
 		return this;
 
 	}
+	@SuppressWarnings("rawtypes")
 	public FoodCostPage VerifyNetPurchases(String string) {
 		log("Verify net purchase value",LogType.STEP);
 		
@@ -115,9 +113,9 @@ System.out.println("tot purch passed"+value+TotalPurchasesValue1[1]);
 			NetPurchasesValue =getCommand().getText(NetPurchases);
 			NetPurchasesValue1 = NetPurchasesValue.split("\\s");
 			
-			 beginInv=Integer.parseInt(BeginInventoryValue1[1]);
-			 totPurchase=Integer.parseInt(TotalPurchasesValue1[1]);
-			 netPurchase=Integer.parseInt(NetPurchasesValue1[1]);
+			 beginInv=Float.parseFloat(BeginInventoryValue1[1]);
+			 totPurchase=Float.parseFloat(TotalPurchasesValue1[1]);
+			 netPurchase=Float.parseFloat(NetPurchasesValue1[1]);
 			
 			
 			
@@ -126,7 +124,8 @@ System.out.println("tot purch passed"+value+TotalPurchasesValue1[1]);
 			}
 			
 			log("Verify net purchase value :Pass",LogType.VERIFICATION_STEP);						
-System.out.println("net pur passed"+beginInv+totPurchase+netPurchase);
+
+			System.out.println("net pur passed"+beginInv+totPurchase+netPurchase);
 
 		}
 		catch(Exception e){
@@ -141,6 +140,7 @@ System.out.println("net pur passed"+beginInv+totPurchase+netPurchase);
 
 	}
 	
+	@SuppressWarnings("rawtypes")
 	public FoodCostPage VerifyCostOfGoodsSold(String string) {
 		log("Verify cost of goods sold value",LogType.STEP);
 		
@@ -149,22 +149,25 @@ System.out.println("net pur passed"+beginInv+totPurchase+netPurchase);
 		String finalPath1=drivePath+string+string2+pathExtension;
 
 		try{
+			getCommand().waitFor(15);
 			getCommand().waitForTargetPresent(CostOfGoodSold); 
-
+			
+			
 			EndInventoryValue =getCommand().getText(EndInventory);
 			EndInventoryValue1 = EndInventoryValue.split("\\s");
 			
 			CostOfGoodSoldValue =getCommand().getText(CostOfGoodSold);
 			CostOfGoodSoldValue1 = CostOfGoodSoldValue.split("\\s");
 			
-			costGoods=Integer.parseInt(CostOfGoodSoldValue1[1]);
-			endInv=Integer.parseInt(EndInventoryValue1[1]);
+			costGoods=Float.parseFloat(CostOfGoodSoldValue1[1]);
+			endInv=Float.parseFloat(EndInventoryValue1[1]);
 			
 			if(!(costGoods==(netPurchase-endInv))){
 				throw new Exception();
 			}
 
 			
+			System.out.println(costGoods);
 			
 			log("Verify cost of goods sold value :Pass",LogType.VERIFICATION_STEP);						
 
@@ -181,6 +184,7 @@ System.out.println("net pur passed"+beginInv+totPurchase+netPurchase);
 		return this;
 
 	}
+	@SuppressWarnings("rawtypes")
 	public FoodCostPage EnterRevenue(String value,String string) {
 		log("Enter Revenue value",LogType.STEP);
 		
@@ -189,17 +193,17 @@ System.out.println("net pur passed"+beginInv+totPurchase+netPurchase);
 		String finalPath1=drivePath+string+string2+pathExtension;
 
 		try{
-			revenue=Integer.parseInt(value);
+			revenue=Float.parseFloat(value);
 			getCommand().waitForTargetPresent(Revenue); 
-
+			
 			getCommand().click(Revenue);
 			
 			getCommand().sendKeys(Revenue, value);
 			
-			/*((IOSDriver) getCommand().driver).findElement(
-					By.xpath("//*[@placeholder='Revenue']"))
-					.sendKeys(Keys.ENTER);
-			*/
+			getCommand().click(CostOfGoodSold);
+			getCommand().waitFor(3);
+			
+	
 			log("Enter Revenue :Pass",LogType.VERIFICATION_STEP);						
 
 
@@ -215,44 +219,44 @@ System.out.println("net pur passed"+beginInv+totPurchase+netPurchase);
 		return this;
 
 	}
+	
+	@SuppressWarnings("rawtypes")
 	public FoodCostPage CalculateFoodCost(String string) {
-		log("Calculating Food cost",LogType.STEP);
-		
-		String string2="Issue";
-
-		String finalPath1=drivePath+string+string2+pathExtension;
-
-		try{
+		log("Calculating Food cost", LogType.STEP);
+		String string2 = "Issue";
+		String finalPath1 = drivePath + string + string2 + pathExtension;
+		try {
 			
-			foodSales=(costGoods/revenue)*100;
+			getCommand().waitFor(15);
+			foodSales = (costGoods / revenue) * 100;
+			
 			System.out.println(foodSales);
-			foodSales1=String.valueOf(foodSales);
-			System.out.println(foodSales1);
 			
-			foodSales2 = foodSales1.split(".");
-			System.out.println(foodSales2);
+			foodSales1 = (int) Math.round(foodSales);
+			foodSales2 = String.valueOf(foodSales1);
 			
-			foodSalesPercent =getCommand().getText(FoodSalesPercent);
-			foodSalesPercent1 = foodSales1.split("%");
+			System.out.println("foodSales2" + foodSales2);
 			
-			if(!(foodSales2[0]==foodSalesPercent1[0])){
+			foodSalesPercent = getCommand().getText(FoodSalesPercent);
+			foodSalesPercent1 = foodSalesPercent.split("%");
+			
+			System.out.println(foodSales2 + foodSalesPercent1[0]);
+			
+			if (!(foodSales2.equals(foodSalesPercent1[0]))) {
 				throw new Exception();
 			}
 			
-			log("Food cost calculation :Pass",LogType.VERIFICATION_STEP);						
-System.out.println(foodSales2[0]+foodSalesPercent1[0]);
-
+			log("Food cost calculation :Pass", LogType.VERIFICATION_STEP);
+			
 		}
-		catch(Exception e){
+		catch (Exception e) {
 			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
-			log("Food cost calculation  :Fail",LogType.VERIFICATION_STEP);
+			log("Food cost calculation :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
-
 		}
-
 		return this;
-
 	}
-	}
+	
+}
 
