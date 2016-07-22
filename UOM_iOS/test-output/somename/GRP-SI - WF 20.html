@@ -1,0 +1,247 @@
+<html>
+<head>
+<title>TestNG:  GRP-SI - WF 20</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>GRP-SI - WF 20</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+</tr><tr>
+<td>Started on:</td><td>Wed Jun 22 16:39:28 IST 2016</td>
+</tr>
+<tr><td>Total time:</td><td>293 seconds (293139 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td>SI - WF 20 </td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.tests.WorkFlow.SI_WF20_CustomList_CustomLoc_Customcategory_AllItems_NU()'><b>SI_WF20_CustomList_CustomLoc_Customcategory_AllItems_NU</b><br>Test class: com.tests.WorkFlow<br>Test method: SI - WF 20-TC1-Custom List + Custom Loc + Custom Category + All items for Normal user<br/>
+<a href="#Output-1762070524" onClick='toggleBox("Output-1762070524", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1762070524" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1762070524">
+[16:39:38] : <b><FONT SIZE="2">Launched Sysco UOM</FONT></b><br><br/>
+[16:39:43] : <b><FONT SIZE="2">Login page verification :Pass</FONT></b><br><br/>
+[16:39:44] : <b><FONT SIZE="2">Save username verification :Pass</FONT></b><br><br/>
+[16:39:44] : <b><FONT SIZE="2">Sign In</FONT></b><br><br/>
+[16:40:07] : <b><FONT SIZE="2">Sign in :Pass</FONT></b><br><br/>
+[16:40:07] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Navigating to Setup inventory page :Pass</FONT></FONT></b><br><br/>
+[16:40:07] : <b><FONT SIZE="2">Setup inventory page</FONT></b><br><br/>
+[16:40:09] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on skip :Pass</FONT></FONT></b><br><br/>
+[16:40:09] : <b><FONT SIZE="2">Selecting custom list  </FONT></b><br><br/>
+[16:40:09] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Selected  custom list  from SetupInventoryImportItems:Pass</FONT></FONT></b><br><br/>
+[16:40:10] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Continue :Pass</FONT></FONT></b><br><br/>
+[16:40:10] : <b><FONT SIZE="2">Selecting list</FONT></b><br><br/>
+[16:40:15] : <b><FONT COLOR="GREEN"><FONT SIZE="2">List is selected :Pass</FONT></FONT></b><br><br/>
+[16:40:17] : <b><FONT COLOR="GREEN"><FONT SIZE="2">custom location clicked :Pass</FONT></FONT></b><br><br/>
+[16:40:17] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Continue :Pass</FONT></FONT></b><br><br/>
+[16:40:18] : <b><FONT COLOR="GREEN"><FONT SIZE="2">added location name :Pass</FONT></FONT></b><br><br/>
+[16:40:18] : <b><FONT SIZE="2">Entering type Dry</FONT></b><br><br/>
+[16:40:28] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Entered type in add Locations page :Pass</FONT></FONT></b><br><br/>
+[16:40:38] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Entered type in add Locations page :Pass</FONT></FONT></b><br><br/>
+[16:40:38] : <b><FONT SIZE="2">Entering anotherloc</FONT></b><br><br/>
+[16:40:43] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Entered second loc in Locations page :Pass</FONT></FONT></b><br><br/>
+[16:40:43] : <b><FONT SIZE="2">Entering Location name</FONT></b><br><br/>
+[16:40:54] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Entered location name2 in add Locations page :Pass</FONT></FONT></b><br><br/>
+[16:40:54] : <b><FONT SIZE="2">Entering type Dry</FONT></b><br><br/>
+[16:40:59] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Entered type in add Locations page :Pass</FONT></FONT></b><br><br/>
+[16:41:05] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Entered type in add Locations page :Pass</FONT></FONT></b><br><br/>
+[16:41:14] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Next : Pass</FONT></FONT></b><br><br/>
+[16:41:14] : <b><FONT SIZE="2"> Adding Item from Order Guide</FONT></b><br><br/>
+[16:41:31] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Multiple items selected :Pass</FONT></FONT></b><br><br/>
+[16:41:40] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Next : Pass</FONT></FONT></b><br><br/>
+[16:41:46] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Multiple items selected :Pass</FONT></FONT></b><br><br/>
+[16:41:55] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on done:Pass</FONT></FONT></b><br><br/>
+[16:41:58] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Custom Category selected from Food cost page :Pass</FONT></FONT></b><br><br/>
+[16:41:58] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Continue :Pass</FONT></FONT></b><br><br/>
+[16:41:58] : <b><FONT SIZE="2">Creating multiple custom category</FONT></b><br><br/>
+[16:42:04] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Custom Categories created:Pass</FONT></FONT></b><br><br/>
+[16:42:14] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Next : Pass</FONT></FONT></b><br><br/>
+[16:42:19] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Multiple items selected :Pass</FONT></FONT></b><br><br/>
+[16:42:28] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on Next : Pass</FONT></FONT></b><br><br/>
+[16:42:31] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Multiple items selected :Pass</FONT></FONT></b><br><br/>
+[16:42:40] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on done:Pass</FONT></FONT></b><br><br/>
+[16:42:46] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on TakeHome :Pass</FONT></FONT></b><br><br/>
+[16:42:49] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped  TrackInventory from inventory tools page:Pass</FONT></FONT></b><br><br/>
+[16:42:49] : <b><FONT SIZE="2">Selecting location</FONT></b><br><br/>
+[16:42:52] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Location is selected for item :Pass</FONT></FONT></b><br><br/>
+[16:42:52] : <b><FONT SIZE="2">locationItem verify </FONT></b><br><br/>
+[16:42:52] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Item verification done :Pass</FONT></FONT></b><br><br/>
+[16:42:52] : <b><FONT SIZE="2">category verify </FONT></b><br><br/>
+[16:42:54] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Categories identified for syscoitems :Pass</FONT></FONT></b><br><br/>
+[16:42:54] : <b><FONT SIZE="2">Custom Category verification on location1</FONT></b><br><br/>
+[16:42:56] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Custom Category is verified for items in location1 :Pass</FONT></FONT></b><br><br/>
+[16:42:56] : <b><FONT SIZE="2">Verifying location of items </FONT></b><br><br/>
+[16:43:01] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Verifying location of items  :Pass</FONT></FONT></b><br><br/>
+[16:43:09] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on done:Pass</FONT></FONT></b><br><br/>
+[16:43:11] : <b><FONT SIZE="2">Selecting location</FONT></b><br><br/>
+[16:43:14] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Location is selected for item :Pass</FONT></FONT></b><br><br/>
+[16:43:14] : <b><FONT SIZE="2">locationItem verify </FONT></b><br><br/>
+[16:43:14] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Item verification done :Pass</FONT></FONT></b><br><br/>
+[16:43:14] : <b><FONT SIZE="2">category verify </FONT></b><br><br/>
+[16:43:15] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Categories identified for syscoitems :Pass</FONT></FONT></b><br><br/>
+[16:43:15] : <b><FONT SIZE="2">Custom Category verification on location2</FONT></b><br><br/>
+[16:43:17] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Custom Category is verified for items in location2 :Pass</FONT></FONT></b><br><br/>
+[16:43:17] : <b><FONT SIZE="2">Verifying location of items </FONT></b><br><br/>
+[16:43:22] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Verifying location of items  :Pass</FONT></FONT></b><br><br/>
+[16:43:30] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped on done:Pass</FONT></FONT></b><br><br/>
+[16:43:35] : <b><FONT COLOR="GREEN"><FONT SIZE="2">tap on back :Pass</FONT></FONT></b><br><br/>
+[16:43:35] : <b><FONT SIZE="2">In locations Page</FONT></b><br><br/>
+[16:43:35] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Navigating to Locations page :Pass</FONT></FONT></b><br><br/>
+[16:43:35] : <b><FONT SIZE="2">Selecting location</FONT></b><br><br/>
+[16:43:37] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Location is selected for item :Pass</FONT></FONT></b><br><br/>
+[16:43:37] : <b><FONT SIZE="2">Delete cliking</FONT></b><br><br/>
+[16:43:40] : <b><FONT COLOR="GREEN"><FONT SIZE="2">tap on delete :Pass</FONT></FONT></b><br><br/>
+[16:43:40] : <b><FONT SIZE="2">Deleted</FONT></b><br><br/>
+[16:43:42] : <b><FONT COLOR="GREEN"><FONT SIZE="2">tap on yes delete button :Pass</FONT></FONT></b><br><br/>
+[16:43:42] : <b><FONT SIZE="2">Checking addeded Location in location list</FONT></b><br><br/>
+[16:43:44] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Cancelled location is not listed   :Pass</FONT></FONT></b><br><br/>
+[16:43:46] : <b><FONT COLOR="GREEN"><FONT SIZE="2">tap on back :Pass</FONT></FONT></b><br><br/>
+[16:43:46] : <b><FONT SIZE="2">In categories Page</FONT></b><br><br/>
+[16:43:46] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Navigating to categories page :Pass</FONT></FONT></b><br><br/>
+[16:43:46] : <b><FONT SIZE="2">Selecting Category</FONT></b><br><br/>
+[16:43:49] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Category is selected for item :Pass</FONT></FONT></b><br><br/>
+[16:43:54] : <b><FONT COLOR="GREEN"><FONT SIZE="2">tap on Delete :Pass</FONT></FONT></b><br><br/>
+[16:43:54] : <b><FONT SIZE="2">Deleted</FONT></b><br><br/>
+[16:43:59] : <b><FONT COLOR="GREEN"><FONT SIZE="2">tap on yes delete :Pass</FONT></FONT></b><br><br/>
+[16:44:04] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Deleted category is not listed   :Pass</FONT></FONT></b><br><br/>
+[16:44:04] : <b><FONT COLOR="GREEN"><FONT SIZE="2">tap on back :Pass</FONT></FONT></b><br><br/>
+[16:44:06] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Tapped  TrackInventory from inventory tools page:Pass</FONT></FONT></b><br><br/>
+[16:44:06] : <b><FONT SIZE="2">Selecting location</FONT></b><br><br/>
+[16:44:09] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Location is selected for item :Pass</FONT></FONT></b><br><br/>
+[16:44:09] : <b><FONT SIZE="2">locationItem verify </FONT></b><br><br/>
+[16:44:09] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Item verification done :Pass</FONT></FONT></b><br><br/>
+[16:44:09] : <b><FONT SIZE="2">Verifying category of items </FONT></b><br><br/>
+[16:44:17] : <b><FONT COLOR="GREEN"><FONT SIZE="2">Verifying category of items    :Fail</FONT></FONT></b><br><br/>
+<b><font color='RED'>ERROR	:- expected [true] but found [false]</font></b><br/>
+</div>
+</td>
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at com.components.pages.LocationsPage.VerifyDeletedItemsCategory(LocationsPage.java:3441)
+	at com.tests.WorkFlow.SI_WF20_CustomList_CustomLoc_Customcategory_AllItems_NU(WorkFlow.java:1508)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:822)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1130)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1762070524", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1762070524'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at com.components.pages.LocationsPage.VerifyDeletedItemsCategory(LocationsPage.java:3441)
+	at com.tests.WorkFlow.SI_WF20_CustomList_CustomLoc_Customcategory_AllItems_NU(WorkFlow.java:1508)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:822)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1130)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+</pre></div></td>
+<td>288</td>
+<td>com.tests.WorkFlow@4373e7e5</td></tr>
+</table><p>
+</body>
+</html>

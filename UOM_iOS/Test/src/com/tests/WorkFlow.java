@@ -3316,6 +3316,8 @@ public class WorkFlow extends Initiator{
 		.EnterExpenseAmount(purchasesData.ExpenseAmt2, "Entered expense amount")
 		.TapOnDone("Tapped on done")
 		.TapNoAddingPurchase("Tapped No adding purchase")
+		._atVendorPage()
+		.TapOnBack("MSP-1,MSP-2-Back tapped")
 		
 		._atInventoryToolPage()
 		.InvTools_CloseInventory("Tapped close inventory")
@@ -3326,8 +3328,8 @@ public class WorkFlow extends Initiator{
 		.VerifyTotalPurchase(purchasesData.ExpenseAmt1,"verify total purchase value")
 		.VerifyNetPurchases("verify net purchase value")
 		.VerifyCostOfGoodsSold("verify cost of goods sold value")
-		.EnterRevenue(purchasesData.Revenue1, "Entered Revenue")
-		.CalculateFoodCost("Calculated food cost")
+		.EnterRevenue(purchasesData.Revenue1, "Entered Revenue") ///hide keybrd
+		.CalculateFoodCost("Calculated food cost")//decml grtr dan 5
 		
 		
 		
