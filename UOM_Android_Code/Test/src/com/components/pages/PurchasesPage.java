@@ -62,8 +62,10 @@ public class PurchasesPage extends SitePage {
 
 	public static final Target PurchasesDetails_AddExpenseCategory = new Target("InvToolsPage","//*[@class='mm-o-icon icon-plus-circle']",Target.XPATH);
 
-	
-	
+	public static final Target PurchasesBack = new Target("PurchasesBack","//*[@class='mm-c-purchases__header']//*[@id='back']//*[@class='mm-o-icon icon-arrow-left']",Target.XPATH);
+
+	public static final Target PurchasesFwd = new Target("PurchasesFwd","//*[@class='mm-c-purchases__header']//*[@id='forward']//*[@class='mm-o-icon icon-arrow-right']",Target.XPATH);
+
 
 	public static final Target YesAddPurchase = new Target("InvToolsPage",
 			"//*[@class='modal-content']//*[@id='yes-button']",
@@ -159,7 +161,7 @@ public class PurchasesPage extends SitePage {
 	
 	
 	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
-	public  PurchasesPage DateSelect(String string){
+	public  PurchasesPage DateSelect(String day,String month,String year,String string){
 
 		log("Date selection on purchases ",LogType.STEP);
 
@@ -174,11 +176,11 @@ public class PurchasesPage extends SitePage {
 			getCommand().click(PurchasesDetails_Date);
 			
 		/*	getCommand().clear(PurchasesDetails_Day);
-			getCommand().sendKeys(PurchasesDetails_Day, "22");
+			getCommand().sendKeys(PurchasesDetails_Day, day);
 			getCommand().clear(PurchasesDetails_Month);
-			getCommand().sendKeys(PurchasesDetails_Month, "Jul");
+			getCommand().sendKeys(PurchasesDetails_Month, month);
 			getCommand().clear(PurchasesDetails_Year);
-			getCommand().sendKeys(PurchasesDetails_Year, "2016");*/
+			getCommand().sendKeys(PurchasesDetails_Year, year);*/
 			
 			getCommand().click(PurchasesDetails_Set);
 			log("Selected  Date:Pass",LogType.VERIFICATION_STEP);	
@@ -390,5 +392,99 @@ public class PurchasesPage extends SitePage {
 
 	}
 
+	@SuppressWarnings("rawtypes")
+	public PurchasesPage ViewPurchasesForward(String string) {
 
+		String string2 = "Issue";
+
+		String finalPath1 = SitePage.drivePath + string + string2
+				+ SitePage.pathExtension;
+
+		try {
+
+			getCommand().waitForTargetPresent(PurchasesFwd);
+
+
+			getCommand().click(PurchasesFwd);
+			
+			
+			log("Tapped  Right arrow purchases :Pass", LogType.VERIFICATION_STEP);
+
+
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Tapped  Right arrow purchases :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+
+		}
+
+		return this;
+
+	}
+	@SuppressWarnings("rawtypes")
+	public PurchasesPage ViewPurchasesBack(String string) {
+
+		String string2 = "Issue";
+
+		String finalPath1 = SitePage.drivePath + string + string2
+				+ SitePage.pathExtension;
+
+		try {
+
+			getCommand().waitForTargetPresent(PurchasesBack);
+
+
+			getCommand().click(PurchasesBack);
+			
+			
+			log("Tapped  Left arrow purchases :Pass", LogType.VERIFICATION_STEP);
+
+
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Tapped  Left arrow purchases :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+
+		}
+
+		return this;
+
+	}
+	@SuppressWarnings("rawtypes")
+	public PurchasesPage VerifyPurchaseAdded(String string) {
+
+		String string2 = "Issue";
+
+		String finalPath1 = SitePage.drivePath + string + string2
+				+ SitePage.pathExtension;
+
+		try {
+
+			getCommand().waitForTargetPresent(PurchasesBack);
+
+
+			getCommand().click(PurchasesBack);
+			
+			
+			log("Tapped  Left arrow purchases :Pass", LogType.VERIFICATION_STEP);
+
+
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Tapped  Left arrow purchases :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+
+		}
+
+		return this;
+
+	}
+
+
+
+	
+	
 }

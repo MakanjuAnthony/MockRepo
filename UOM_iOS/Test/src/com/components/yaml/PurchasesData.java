@@ -16,7 +16,10 @@ public class PurchasesData {
 	public String Revenue1;
 	public String Revenue2;
 	public String ExpenseAmount;
-
+	public String Day;
+	public String Month;
+	public String Year;
+	public String InvTotal1;
 	
 	@SuppressWarnings("deprecation")
 	public static PurchasesData fetch(String key){

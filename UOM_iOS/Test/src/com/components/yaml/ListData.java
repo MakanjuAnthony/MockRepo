@@ -9,6 +9,10 @@ public class ListData {
 	public String ListName;
 	public int Pdt1;
 	public int Pdt2;
+	public int UnCatPdt1;
+	public int UnCatPdt2;
+	public int UnCatPdt3;
+	public String CatName;
 	
 	@SuppressWarnings("deprecation")
 	public static ListData fetch(String key){

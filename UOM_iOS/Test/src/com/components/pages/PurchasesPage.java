@@ -65,18 +65,19 @@ public class PurchasesPage extends SitePage {
 	public static final Target DoneWeb = new Target("Continue","//*[@id='done-nav/a']",Target.XPATH);
 
 	public static final Target PurchasesDetails_AddExpenseCategory = new Target("InvToolsPage","//*[@class='mm-o-icon icon-plus-circle']",Target.XPATH);
+	public static final Target PurchasesBack = new Target("PurchasesBack","//*[@class='mm-c-purchases__header']//*[@id='back']//*[@class='mm-o-icon icon-arrow-left']",Target.XPATH);
 
-	
+	public static final Target PurchasesFwd = new Target("PurchasesFwd","//*[@class='mm-c-purchases__header']//*[@id='forward']//*[@class='mm-o-icon icon-arrow-right']",Target.XPATH);
+
 	
 
 	public static final Target YesAddPurchase = new Target("InvToolsPage",
-			"//*[contains(text(),'Yes, add a new purchase')]",
+			"//*[@class='modal-content']//*[@id='yes-button']",
 			Target.XPATH);
 	public static final Target NoAddPurchase = new Target("InvToolsPage",
-			"//*[contains(text(),'No, I'm done')]",
+			"//*[@class='modal-content']//*[@id='no-button']",
 			Target.XPATH);
-	//Purchase added successfully
-	//Would you like to add another purchase?
+
 	
 	HomePage homepage = new HomePage(repository);
 
@@ -161,7 +162,7 @@ public class PurchasesPage extends SitePage {
 
 	}
 	///
-	public  PurchasesPage DateSelect(String string){
+	public  PurchasesPage DateSelect(String day, String month, String year,String string){
 
 		log("Date selection on purchases ",LogType.STEP);
 
@@ -174,9 +175,9 @@ public class PurchasesPage extends SitePage {
 			getCommand().waitForTargetPresent(PurchasesDetails_Date);
 
 			getCommand().click(PurchasesDetails_Date);
-			getCommand().sendKeys(PurchasesDetails_Day, "19");
-			getCommand().sendKeys(PurchasesDetails_Month, "June");
-			getCommand().sendKeys(PurchasesDetails_Year, "2016");
+			getCommand().sendKeys(PurchasesDetails_Day, day);
+			getCommand().sendKeys(PurchasesDetails_Month, month);
+			getCommand().sendKeys(PurchasesDetails_Year, year);
 
 			log("Selected  Date:Pass",LogType.VERIFICATION_STEP);	
 
@@ -367,7 +368,7 @@ public class PurchasesPage extends SitePage {
 	}
 	public  PurchasesPage TapNoAddingPurchase(String string){
 
-		log("Tapping Add other Expense category",LogType.STEP);
+		log("Tapping Not to add anymore purchase",LogType.STEP);
 		String string2="Issue";
 
 		String finalPath1=drivePath+string+string2+pathExtension;
@@ -393,4 +394,95 @@ public class PurchasesPage extends SitePage {
 		return this;
 
 	}
+	@SuppressWarnings("rawtypes")
+	public PurchasesPage ViewPurchasesForward(String string) {
+
+		String string2 = "Issue";
+
+		String finalPath1 = SitePage.drivePath + string + string2
+				+ SitePage.pathExtension;
+
+		try {
+
+			getCommand().waitForTargetPresent(PurchasesFwd);
+
+
+			getCommand().click(PurchasesFwd);
+			
+			
+			log("Tapped  Right arrow purchases :Pass", LogType.VERIFICATION_STEP);
+
+
+		} catch (Exception e) {
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Tapped  Right arrow purchases :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+
+		}
+
+		return this;
+
+	}
+	@SuppressWarnings("rawtypes")
+	public PurchasesPage ViewPurchasesBack(String string) {
+
+		String string2 = "Issue";
+
+		String finalPath1 = SitePage.drivePath + string + string2
+				+ SitePage.pathExtension;
+
+		try {
+
+			getCommand().waitForTargetPresent(PurchasesBack);
+
+
+			getCommand().click(PurchasesBack);
+			
+			
+			log("Tapped  Left arrow purchases :Pass", LogType.VERIFICATION_STEP);
+
+
+		} catch (Exception e) {
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Tapped  Left arrow purchases :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+
+		}
+
+		return this;
+
+	}
+	@SuppressWarnings("rawtypes")
+	public PurchasesPage VerifyPurchaseAdded(String string) {
+
+		String string2 = "Issue";
+
+		String finalPath1 = SitePage.drivePath + string + string2
+				+ SitePage.pathExtension;
+
+		try {
+
+			getCommand().waitForTargetPresent(PurchasesBack);//to edit
+
+
+			getCommand().click(PurchasesBack);
+			
+			
+			log("Tapped  Left arrow purchases :Pass", LogType.VERIFICATION_STEP);
+
+
+		} catch (Exception e) {
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Tapped  Left arrow purchases :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+
+		}
+
+		return this;
+
+	}
+	
 }

@@ -19,7 +19,7 @@
 		 **/
 package com.components.pages;
 
-import io.appium.java_client.android.AndroidDriver;
+
 import io.appium.java_client.ios.IOSDriver;
 
 import java.util.Set;
@@ -320,6 +320,35 @@ public class LocationsPage extends SitePage {
 	public static Integer count1 = 0;
 	public static String[] locationNamesArray1;
 	public static String[] locationNamesArray;
+	
+	
+	public static String 	LocAddedItemId;
+	public static String[] Loc1AddedItemId_1;
+	public static String[] Loc1AddedItemId_2;
+	public static String[] Loc1AddedItemId_3;
+	public static String[] Loc2AddedItemId_1;
+	public static String[] Loc2AddedItemId_2;
+	public static String[] Loc2AddedItemId_3;
+	public static String[] Loc2AddedItemId_4;
+	//public static String LocationsItemName2_4;
+	public static final Target Locations_4thItemSelect = new Target("Locations_4thItemSelect",
+			"(//*[@class='mm-c-product-minlist mm-c-product__sysco']//*[@class='mm-o-icon'])[4]", Target.XPATH);
+	public static String 	NoLocItemId;
+	public static String[] NoLocItemId_1;
+	
+public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete_Loc1",
+			"(//*[@class='mm-o-icon icon-minus-circle'])[1]",
+			Target.XPATH);
+	public static final Target ProductCardDelete_Loc2= new Target("ProductCardDelete_Loc2",
+			"(//*[@class='mm-o-icon icon-minus-circle'])[22]",
+			Target.XPATH);
+	public static final Target ProductCardDeleteAllLoc_Confirmation = new Target("ProductCardDeleteAllLoc_Confirmation",
+			"//*[contains(text(),'By removing all locations from this item, you will no longer be able to track this item in your inventory. Are you sure? ')]",
+			Target.XPATH);
+	public static final Target NoDelete = new Target("Back",
+			"//*[@id='no-button' and contains(text(),'No, Cancel')]", Target.XPATH);
+
+
 
 	public LocationsPage(SiteRepository repository) {
 		super(repository);
@@ -486,7 +515,7 @@ public class LocationsPage extends SitePage {
 		return this;
 
 	}
-
+/*
 	@SuppressWarnings("rawtypes")
 	public LocationsPage SelectItemFromLocations(String string) {
 
@@ -517,7 +546,7 @@ public class LocationsPage extends SitePage {
 
 		return this;
 
-	}
+	}*/
 
 	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
 	public LocationsPage TapOnDone(String string) {
@@ -1419,18 +1448,41 @@ public class LocationsPage extends SitePage {
 				LocationsItemName1_1 = getCommand().getText(Locations_1stItemHeading);
 				getCommand().click(Locations_1stItemSelect);
 
+				final Target keyword1 = new Target("keyword1",
+						"//*[@class='mm-c-product-minlist__item']//*[contains(text(),'" + LocationsItemName1_1
+								+ "')]/following-sibling::div[@class='mm-c-product-minlist__details']",
+						Target.XPATH);
+				LocAddedItemId = getCommand().getText(keyword1);
+				Loc1AddedItemId_1 = LocAddedItemId.split("/");
+
+
 			}
 			if (getCommand().isTargetPresent(Locations_2ndItemHeading)) {
 
 				locationsNoOfElements1++;
 				LocationsItemName1_2 = getCommand().getText(Locations_2ndItemHeading);
 				getCommand().click(Locations_2ndItemSelect);
+				final Target keyword2 = new Target("keyword2",
+						"//*[@class='mm-c-product-minlist__item']//*[contains(text(),'" + LocationsItemName1_2
+								+ "')]/following-sibling::div[@class='mm-c-product-minlist__details']",
+						Target.XPATH);
+				LocAddedItemId = getCommand().getText(keyword2);
+				Loc1AddedItemId_2 = LocAddedItemId.split("/");
+
 			}
 
 			if (getCommand().isTargetPresent(Locations_3rdItemHeading)) {
 				locationsNoOfElements1++;
 				LocationsItemName1_3 = getCommand().getText(Locations_3rdItemHeading);
 				getCommand().click(Locations_3rdItemSelect);
+
+				final Target keyword3 = new Target("keyword3",
+						"//*[@class='mm-c-product-minlist__item']//*[contains(text(),'" + LocationsItemName1_3
+								+ "')]/following-sibling::div[@class='mm-c-product-minlist__details']",
+						Target.XPATH);
+				LocAddedItemId = getCommand().getText(keyword3);
+				Loc1AddedItemId_3 = LocAddedItemId.split("/");
+
 			}
 
 			log("Multiple items selected :Pass", LogType.VERIFICATION_STEP);
@@ -1458,6 +1510,13 @@ public class LocationsPage extends SitePage {
 				locationsNoOfElements1++;
 				LocationsItemName2_1 = getCommand().getText(Locations_1stItemHeading);
 				getCommand().click(Locations_1stItemSelect);
+				final Target keyword1 = new Target("keyword1",
+						"//*[@class='mm-c-product-minlist__item']//*[contains(text(),'" + LocationsItemName2_1
+								+ "')]/following-sibling::div[@class='mm-c-product-minlist__details']",
+						Target.XPATH);
+				LocAddedItemId = getCommand().getText(keyword1);
+				Loc2AddedItemId_1 = LocAddedItemId.split("/");
+
 
 			}
 			if (getCommand().isTargetPresent(Locations_2ndItemHeading)) {
@@ -1465,12 +1524,39 @@ public class LocationsPage extends SitePage {
 				locationsNoOfElements1++;
 				LocationsItemName2_2 = getCommand().getText(Locations_2ndItemHeading);
 				getCommand().click(Locations_2ndItemSelect);
+				final Target keyword2 = new Target("keyword2",
+						"//*[@class='mm-c-product-minlist__item']//*[contains(text(),'" + LocationsItemName2_2
+								+ "')]/following-sibling::div[@class='mm-c-product-minlist__details']",
+						Target.XPATH);
+				LocAddedItemId = getCommand().getText(keyword2);
+				Loc2AddedItemId_2 = LocAddedItemId.split("/");
+
 			}
 
 			if (getCommand().isTargetPresent(Locations_3rdItemHeading)) {
 				locationsNoOfElements1++;
 				LocationsItemName2_3 = getCommand().getText(Locations_3rdItemHeading);
 				getCommand().click(Locations_3rdItemSelect);
+				final Target keyword3 = new Target("keyword3",
+						"//*[@class='mm-c-product-minlist__item']//*[contains(text(),'" + LocationsItemName2_3
+								+ "')]/following-sibling::div[@class='mm-c-product-minlist__details']",
+						Target.XPATH);
+				LocAddedItemId = getCommand().getText(keyword3);
+				Loc2AddedItemId_3 = LocAddedItemId.split("/");
+
+			}
+			
+
+			if (getCommand().isTargetPresent(Locations_4thItemSelect)) {
+				
+				LocationsItemName2_4 = getCommand().getText(Locations_4thItemHeading);
+				
+				final Target keyword4 = new Target("keyword4",
+						"//*[@class='mm-c-product-minlist__item']//*[contains(text(),'" + LocationsItemName2_4
+								+ "')]/following-sibling::div[@class='mm-c-product-minlist__details']",
+						Target.XPATH);
+				LocAddedItemId = getCommand().getText(keyword4);
+				Loc2AddedItemId_4 = LocAddedItemId.split("/");
 			}
 
 			log("Multiple items selected :Pass", LogType.VERIFICATION_STEP);
@@ -2724,7 +2810,7 @@ public class LocationsPage extends SitePage {
 
 			log("Custom  location verification done :Pass", LogType.VERIFICATION_STEP);
 		} catch (Exception e) {
-			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Custom location verification done  :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -2734,5 +2820,484 @@ public class LocationsPage extends SitePage {
 
 	}
 	
+	
+@SuppressWarnings("rawtypes")
+	public LocationsPage CustomLocItemsCheckInNoLocation(String string)
+	{
+		  String string2="Issue";
+	    String finalPath1=SitePage.drivePath+string+string2+SitePage.pathExtension;
+	    
+	    log("No location Items verification ", LogType.STEP);
+	    
+	    final Target Loc1_1stItemHeading = new Target("OrderGuide_1stItemHeading",
+				"//*[@class='mm-c-product-list']//*[@class='Grid__innerScrollContainer']//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
+						+ Loc1AddedItemId_1[0] + "')]",
+				Target.XPATH);
+		final Target Loc1_2ndItemHeading = new Target("OrderGuide_2ndItemHeading",
+				"//*[@class='mm-c-product-list']//*[@class='Grid__innerScrollContainer']//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
+						+ Loc1AddedItemId_2[0] + "')]",
+				Target.XPATH);
+		final Target Loc1_3rdItemHeading = new Target("OrderGuide_3rdItemHeading",
+				"//*[@class='mm-c-product-list']//*[@class='Grid__innerScrollContainer']//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
+						+ Loc1AddedItemId_3[0] + "')]",
+				Target.XPATH);
+		final Target Loc2_1stItemHeading = new Target("OrderGuide_1stItemHeading",
+				"//*[@class='mm-c-product-list']//*[@class='Grid__innerScrollContainer']//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
+						+ Loc2AddedItemId_1[0] + "')]",
+				Target.XPATH);
+		final Target Loc2_2ndItemHeading = new Target("OrderGuide_2ndItemHeading",
+				"//*[@class='mm-c-product-list']//*[@class='Grid__innerScrollContainer']//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
+						+ Loc2AddedItemId_2[0] + "')]",
+				Target.XPATH);
+		final Target Loc2_3rdItemHeading = new Target("OrderGuide_3rdItemHeading",
+				"//*[@class='mm-c-product-list']//*[@class='Grid__innerScrollContainer']//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
+						+ Loc2AddedItemId_3[0] + "')]",
+				Target.XPATH);
+		
+		final Target Loc2_4thItemHeading = new Target("OrderGuide_3rdItemHeading",
+				"//*[@class='mm-c-product-list']//*[@class='Grid__innerScrollContainer']//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
+						+ Loc2AddedItemId_4[0] + "')]",
+				Target.XPATH);
+
+		getCommand().waitFor(5);
+		
+	try{	
+		
+		boolean flag1_1 = getCommand().isTargetPresentAfterWait(Loc1_1stItemHeading, 3);
+		boolean flag1_2 = getCommand().isTargetPresentAfterWait(Loc1_2ndItemHeading, 3);
+		boolean flag1_3 = getCommand().isTargetPresentAfterWait(Loc1_3rdItemHeading, 3);
+		boolean flag2_1 = getCommand().isTargetPresentAfterWait(Loc2_1stItemHeading, 3);
+		boolean flag2_2 = getCommand().isTargetPresentAfterWait(Loc2_2ndItemHeading, 3);
+		boolean flag2_3 = getCommand().isTargetPresentAfterWait(Loc2_3rdItemHeading, 3);
+		boolean flag2_4 = getCommand().isTargetPresentAfterWait(Loc2_4thItemHeading, 3);
+		if ((flag1_1 || flag1_2 || flag1_3 || flag2_1 || flag2_2 || flag2_3)) {
+			
+			throw new Exception();
+		}
+		
+		if (flag2_4) {
+		
+			log("Items in custom location are not assigned to no location : Pass",LogType.VERIFICATION_STEP);
+		}
+		
+		
+		}
+		
+		
+		
+		catch(Exception e){
+			((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+			 getCommand().captureScreenshot(finalPath1); 
+			log("Items in custom location are not assigned to no location :Fail",LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+		return this;
+		
+	}
+	
+	
+	@SuppressWarnings("rawtypes")
+	public LocationsPage NoItemsCheckInNoLocation(String string)
+	{
+		  String string2="Issue";
+	    String finalPath1=SitePage.drivePath+string+string2+SitePage.pathExtension;
+	    
+	    log("No location Items verification ", LogType.STEP);
+	    
+	    final Target Location_FirstItemVerify = new Target("Location_FirstItemVerify",
+				"(//*[@class='mm-c-product-list__details']//h4)[1]", Target.XPATH);
+		
+
+		getCommand().waitFor(5);
+		
+		
+	try{	
+		
+		boolean flag1_1 = getCommand().isTargetPresentAfterWait(Location_FirstItemVerify, 3);
+			
+		if ((flag1_1 )) {
+			
+			throw new Exception();
+			
+		}
+		
+		else {
+			log("No items present in no location: Pass",LogType.VERIFICATION_STEP);
+			
+		}
+		
+		}
+		
+			catch(Exception e){
+			((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+			 getCommand().captureScreenshot(finalPath1); 
+			log("No items present in no location:Fail",LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+		return this;
+		
+	}
+	
+	@SuppressWarnings("rawtypes")
+	public LocationsPage NoLocationTextCheck(String loc,String string)
+	{
+		  String string2="Issue";
+	    String finalPath1=SitePage.drivePath+string+string2+SitePage.pathExtension;
+	    
+	    log("No location text verification ", LogType.STEP);
+	  
+
+		getCommand().waitFor(5);
+		
+		final Target Locations_check1 = new Target("Locations_check1",
+				"(//*[@class='mm-c-product-list__details-wrapper']//*[@class='mm-c-product-list__details']//*[@class='mm-c-product-list__location']//*[contains(text(),'"+loc+"')])",
+				Target.XPATH);
+		
+	try{	
+		boolean flag1_1 = getCommand().isTargetPresentAfterWait( Locations_check1, 3);
+		if (flag1_1) {
+			
+			throw new Exception();
+		}
+
+		log("Items in no location are not associated with no location text : Pass",LogType.VERIFICATION_STEP);
+		}
+		
+			catch(Exception e){
+			((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+			 getCommand().captureScreenshot(finalPath1); 
+			log("Items in no location are not associated with no location text  :Fail",LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+		return this;
+		
+	}
+	
+	@SuppressWarnings("rawtypes")
+	public LocationsPage UncategorizedItemsCheckInNoLocation(int item1,int item2,int item3, String string)
+	{
+		  String string2="Issue";
+	    String finalPath1=SitePage.drivePath+string+string2+SitePage.pathExtension;
+	    
+	    log("No location Items verification ", LogType.STEP);
+	    
+	
+	try{	
+		
+
+		final Target Locations_Productcheck = new Target("Locations_check",
+				"//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'" + item1 + "')]",
+				Target.XPATH);
+		final Target Locations_Productcheck1 = new Target("Locations_check",
+				"//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'" + item2 + "')]",
+				Target.XPATH);
+		final Target Locations_Productcheck2 = new Target("Locations_check",
+				"//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'" + item3 + "')]",
+				Target.XPATH);
+		boolean flag = getCommand().isTargetPresentAfterWait(Locations_Productcheck, 3);
+		boolean flag1 = getCommand().isTargetPresentAfterWait(Locations_Productcheck1, 3);
+		boolean flag2 = getCommand().isTargetPresentAfterWait(Locations_Productcheck2, 3);
+		if (!(flag && flag1 && flag2)) {
+			throw new Exception();
+		}
+		log("Uncategorized items present in no location:Pass",LogType.VERIFICATION_STEP);
+		}
+		
+			catch(Exception e){
+			((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+			 getCommand().captureScreenshot(finalPath1); 
+			log("Uncategorized items present in no location:Fail",LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+		return this;
+		
+	}
+	
+	
+	
+	@SuppressWarnings("rawtypes")
+	public LocationsPage NoLocationEdit(String string)
+	{
+		  String string2="Issue";
+	    String finalPath1=SitePage.drivePath+string+string2+SitePage.pathExtension;
+	    
+	    log("No location  verification ", LogType.STEP);
+	  
+
+		getCommand().waitFor(5);
+		
+		
+	try{
+		
+		final Target keyword1 = new Target("keyword1","(//*[@class='mm-c-product-list__description'])[1]",Target.XPATH);
+		NoLocItemId = getCommand().getText(keyword1);
+		NoLocItemId_1 = NoLocItemId.split("/");
+		
+		 
+		boolean flag = getCommand().isTargetPresent(EditWeb);
+		boolean flag1 = getCommand().isTargetPresent(AddWeb);
+		
+		boolean flag2 = getCommand().isTargetPresent(DoneWeb);
+		
+		if (flag||flag1||flag2) {
+			throw new Exception();
+		}
+		log("No operations can be performed in No location  :Pass",LogType.VERIFICATION_STEP);
+		
+		}
+		
+			catch(Exception e){
+			((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+			 getCommand().captureScreenshot(finalPath1); 
+			log("No operations can be performed in No location  :Fail",LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+		return this;
+		
+	}
+	
+
+	@SuppressWarnings("rawtypes")
+	public LocationsPage LocationFirstItemCheck(String string)
+	{
+		  String string2="Issue";
+	    String finalPath1=SitePage.drivePath+string+string2+SitePage.pathExtension;
+	    
+	    log("No location item verification in another location ", LogType.STEP);
+	  
+
+		getCommand().waitFor(5);
+		
+		
+		
+	try{
+		final Target Loc_FirstItemID= new Target("Loc_FirstItemID",
+				"//*[@class='mm-c-product-list']//*[@class='Grid__innerScrollContainer']//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
+						+ NoLocItemId_1[0] + "')]",
+				Target.XPATH);
+
+		Boolean boolean1 = getCommand().isTargetPresent(Loc_FirstItemID); 
+		if (boolean1) {
+			throw new Exception();
+
+		}
+		log("Items in no location is not available in other location:Pass",LogType.VERIFICATION_STEP);	
+		}
+		
+			catch(Exception e){
+			((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+			 getCommand().captureScreenshot(finalPath1); 
+			log("Items in no location is not available in other location:Fail",LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+		return this;
+		
+	}
+
+	
+	@SuppressWarnings("rawtypes")
+	public LocationsPage LocationsDelete(String string)
+	{
+		  String string2="Issue";
+	    String finalPath1=SitePage.drivePath+string+string2+SitePage.pathExtension;
+	    
+	    log("Deleting locations from product card", LogType.STEP);
+	  
+	    getCommand().waitFor(5);
+		
+	try{
+		getCommand().click(ProductCardDelete_Loc1);
+	//	getCommand().click(ProductCardDelete_Loc2);
+		
+		getCommand().waitForTargetPresent(ProductCardDeleteAllLoc_Confirmation);
+		
+		log("Deleting all locations from product card:Pass",LogType.VERIFICATION_STEP);
+		
+		}
+		
+			catch(Exception e){
+			((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+			 getCommand().captureScreenshot(finalPath1); 
+			log("Deleting all locations from product card :Fail",LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+		return this;
+		
+	}
+	
+	@SuppressWarnings("rawtypes")
+	public LocationsPage TapOnNoDelete(String string) {
+
+		String string2 = "Issue";
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
+		log("Deleted", LogType.STEP);
+		try {
+			getCommand().waitForTargetPresent(NoDelete);
+			if (getCommand().isTargetPresent(NoDelete)) {
+
+				getCommand().click(NoDelete);
+
+				log("Tap on no delete button :Pass", LogType.VERIFICATION_STEP);
+			}
+
+		} catch (Exception e) {
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Tap on no delete button :Fail", LogType.VERIFICATION_STEP);
+
+			Assert.assertTrue(false);
+		}
+
+		return this;
+	}
+
+
+@SuppressWarnings("rawtypes")
+	public LocationsPage LocationsDelete(String loc,String string)
+	{
+		  String string2="Issue";
+	    String finalPath1=SitePage.drivePath+string+string2+SitePage.pathExtension;
+	    
+	    log("Deleting locations from product card", LogType.STEP);
+	  
+	    getCommand().waitFor(5);
+		final Target LocDelete_Icon= new Target("FirstLocDelete_Icon",
+				"//*[contains(text(),'"+loc+"')]/ancestor::div[@class='mm-c-product-details__location']//*[@class='mm-o-icon icon-minus-circle']",
+				Target.XPATH);
+	try{
+		
+		getCommand().click(LocDelete_Icon);
+		
+		
+		log("Deleting location from product card:Pass",LogType.VERIFICATION_STEP);
+			
+		}
+		
+			catch(Exception e){
+			((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+			 getCommand().captureScreenshot(finalPath1); 
+			log("Deleting  location from product card :Fail",LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+		return this;
+		
+	}
+	@SuppressWarnings("rawtypes")
+	public LocationsPage DeleteAllLocConfirmation(String string) {
+
+		String string2 = "Issue";
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
+		log("Deleted", LogType.STEP);
+		try {
+			
+				getCommand().waitFor(5);
+				getCommand().waitForTargetPresent(ProductCardDeleteAllLoc_Confirmation);
+						
+				log("Deleting all locations from product card confirmation:Pass",LogType.VERIFICATION_STEP);
+				
+			
+
+		} catch (Exception e) {
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Deleting all locations from product card confirmation:Fail",LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+
+		return this;
+	}
+
+
+@SuppressWarnings("rawtypes")
+	public LocationsPage SelectItemFromLocations(String string) {
+
+		log("Selecting item from location", LogType.STEP);
+
+		String string2 = "Issue";
+
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
+		try {
+			getCommand().waitForTargetPresent(LocationsPage_Header);
+			final Target Product_Select = new Target("Product_Select",
+					"(//*[@class='mm-c-product-list__details-wrapper']//a)[1]",
+					Target.XPATH);
+			if (getCommand().isTargetPresent(LocationsPage_Header)) {
+				
+				getCommand().waitFor(5);
+				getCommand().click(Product_Select);
+				getCommand().waitFor(5);
+
+				log("Selecting item1 from locations :Pass", LogType.VERIFICATION_STEP);
+			}
+
+		} catch (Exception e) {
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Selecting item1 from locations:Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+
+		return this;
+
+	}
+
+
+@SuppressWarnings("rawtypes")
+	public LocationsPage FirstFoodItemQtyEnter(String qty,String string) {
+
+		String string2 = "Issue";
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
+		log("Adding qty for food item", LogType.STEP);
+		final Target FirstFoodItem_QtyEnter= new Target("FirstLocDelete_Icon",
+				"(//*[@class='mm-c-product-list__row-wrapper']//*[contains(text(),'Food') and not(contains(text(),'Non-Food'))])[1]/ancestor::div[@class='mm-c-product-list__row-wrapper']//*[@class='item-input mm-u-input-border mm-c-product-list__qty form-control']",
+				Target.XPATH);
+		try {
+			
+				getCommand().waitFor(5);
+				getCommand().waitForTargetPresent(FirstFoodItem_QtyEnter);
+				getCommand().sendKeys(FirstFoodItem_QtyEnter, qty);
+				
+				log("Adding qty for food item:Pass",LogType.VERIFICATION_STEP);
+				
+			
+
+		} catch (Exception e) {
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Adding qty for food item:Fail",LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+
+		return this;
+	}
+	
+	@SuppressWarnings("rawtypes")
+	public LocationsPage FirstNonFoodItemQtyEnter(String qty,String string) {
+
+		String string2 = "Issue";
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
+		log("Adding qty for non-food item", LogType.STEP);
+		final Target FirstNonFoodItem_QtyEnter= new Target("FirstLocDelete_Icon",
+				"(//*[@class='mm-c-product-list__row-wrapper']//*[contains(text(),'Non-Food')])[1]/ancestor::div[@class='mm-c-product-list__row-wrapper']//*[@class='item-input mm-u-input-border mm-c-product-list__qty form-control']",
+				Target.XPATH);
+		try {
+			
+				getCommand().waitFor(5);
+				getCommand().waitForTargetPresent(FirstNonFoodItem_QtyEnter);
+				getCommand().sendKeys(FirstNonFoodItem_QtyEnter, qty);
+				
+				log("Adding qty for non-food item:Pass",LogType.VERIFICATION_STEP);
+				
+			
+
+		} catch (Exception e) {
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Adding qty for non-food item:Fail",LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+
+		return this;
+	}
 
 }

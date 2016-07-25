@@ -43,7 +43,10 @@ public class FoodCostPage extends SitePage {
 	public static final Target Revenue = new Target("Revenue","//*[@class='mm-c-food-cost__details container']//*[@placeholder='Revenue']", Target.XPATH);
 	
 	public static final Target FoodSalesPercent = new Target("FoodSales","//*[@class='mm-c-food-cost__details container']//*[@class='mm-c-food-cost__percentage_number row']/div", Target.XPATH);
-	
+	public static final Target Back = new Target("Back",
+			"//*[@id='back-nav']/a/i", Target.XPATH);
+
+
 	public FoodCostPage(SiteRepository repository) {
 		super(repository);
 	}
@@ -257,6 +260,57 @@ public class FoodCostPage extends SitePage {
 		}
 		return this;
 	}
-	
+	@SuppressWarnings("rawtypes")
+	public FoodCostPage TapOnBack(String string) {
+			String string2 = "Issue";
+
+			String finalPath1 = SitePage.drivePath + string + string2
+				+ SitePage.pathExtension;
+
+		try {
+			getCommand().waitForTargetPresent(Back);
+			if (getCommand().isTargetPresent(Back)) {
+
+				getCommand().click(Back);
+				log("tap on back :Pass", LogType.VERIFICATION_STEP);
+			}
+
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			log("tap on back :Fail", LogType.VERIFICATION_STEP);
+			getCommand().captureScreenshot(finalPath1);
+			Assert.assertTrue(false);
+		}
+
+		return this;
+	}
+	@SuppressWarnings("rawtypes")
+	public FoodCostPage VerifyCurrentAndLastclosedPrice(String string) {
+			String string2 = "Issue";
+
+			String finalPath1 = SitePage.drivePath + string + string2
+				+ SitePage.pathExtension;
+
+		try {
+			getCommand().waitForTargetPresent(BeginInventory);
+			BeginInventoryValue =getCommand().getText(BeginInventory);
+			BeginInventoryValue1 = BeginInventoryValue.split("\\s");
+			 beginInv=Float.parseFloat(BeginInventoryValue1[1]);
+			
+			if(!(endInv==beginInv)){
+				throw new Exception();
+			}
+			log("Verify current price same as price when the inventory closed :Pass", LogType.VERIFICATION_STEP);
+			
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			log("Verify current price same as price when the inventory closed :Fail", LogType.VERIFICATION_STEP);
+			getCommand().captureScreenshot(finalPath1);
+			Assert.assertTrue(false);
+		}
+
+		return this;
+	}
+
 }
 

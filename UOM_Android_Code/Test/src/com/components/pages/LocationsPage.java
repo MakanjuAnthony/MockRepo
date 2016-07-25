@@ -496,28 +496,29 @@ public class LocationsPage extends SitePage {
 	@SuppressWarnings("rawtypes")
 	public LocationsPage SelectItemFromLocations(String string) {
 
-		log("Selecting item", LogType.STEP);
+		log("Selecting item from location", LogType.STEP);
 
 		String string2 = "Issue";
 
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 			getCommand().waitForTargetPresent(LocationsPage_Header);
-
+			final Target Product_Select = new Target("Product_Select",
+					"(//*[@class='mm-c-product-list__details-wrapper']//a)[1]",
+					Target.XPATH);
 			if (getCommand().isTargetPresent(LocationsPage_Header)) {
-
+				
 				getCommand().waitFor(5);
-				getCommand().click(Location_FirstItem);
-				Location1ItemSelected = getCommand().getText(Location_FirstItemSelect);
+				getCommand().click(Product_Select);
 				getCommand().waitFor(5);
 
-				log("Selecting item1 :Pass", LogType.VERIFICATION_STEP);
+				log("Selecting item1 from locations :Pass", LogType.VERIFICATION_STEP);
 			}
 
 		} catch (Exception e) {
 			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
-			log("Selecting item1 :Fail", LogType.VERIFICATION_STEP);
+			log("Selecting item1 from locations:Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
 
@@ -3080,6 +3081,64 @@ public class LocationsPage extends SitePage {
 			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Deleting all locations from product card confirmation:Fail",LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+
+		return this;
+	}
+	
+	@SuppressWarnings("rawtypes")
+	public LocationsPage FirstFoodItemQtyEnter(String qty,String string) {
+
+		String string2 = "Issue";
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
+		log("Adding qty for food item", LogType.STEP);
+		final Target FirstFoodItem_QtyEnter= new Target("FirstLocDelete_Icon",
+				"(//*[@class='mm-c-product-list__row-wrapper']//*[contains(text(),'Food') and not(contains(text(),'Non-Food'))])[1]/ancestor::div[@class='mm-c-product-list__row-wrapper']//*[@class='item-input mm-u-input-border mm-c-product-list__qty form-control']",
+				Target.XPATH);
+		try {
+			
+				getCommand().waitFor(5);
+				getCommand().waitForTargetPresent(FirstFoodItem_QtyEnter);
+				getCommand().sendKeys(FirstFoodItem_QtyEnter, qty);
+				
+				log("Adding qty for food item:Pass",LogType.VERIFICATION_STEP);
+				
+			
+
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Adding qty for food item:Fail",LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+
+		return this;
+	}
+	
+	@SuppressWarnings("rawtypes")
+	public LocationsPage FirstNonFoodItemQtyEnter(String qty,String string) {
+
+		String string2 = "Issue";
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
+		log("Adding qty for non-food item", LogType.STEP);
+		final Target FirstNonFoodItem_QtyEnter= new Target("FirstLocDelete_Icon",
+				"(//*[@class='mm-c-product-list__row-wrapper']//*[contains(text(),'Non-Food')])[1]/ancestor::div[@class='mm-c-product-list__row-wrapper']//*[@class='item-input mm-u-input-border mm-c-product-list__qty form-control']",
+				Target.XPATH);
+		try {
+			
+				getCommand().waitFor(5);
+				getCommand().waitForTargetPresent(FirstNonFoodItem_QtyEnter);
+				getCommand().sendKeys(FirstNonFoodItem_QtyEnter, qty);
+				
+				log("Adding qty for non-food item:Pass",LogType.VERIFICATION_STEP);
+				
+			
+
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Adding qty for non-food item:Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
 

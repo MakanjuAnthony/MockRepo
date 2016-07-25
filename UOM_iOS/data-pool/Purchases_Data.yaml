@@ -7,5 +7,9 @@ PurchasesData  : !!com.components.yaml.PurchasesData {
  Category2     : Non-Food,
  Revenue1      : 20,
  Revenue2      : 10,
+ Day           : 22,
+ Month         : July,
+ Year          : 2016,
+ InvTotal1     : 100,
  }
  
