@@ -1334,9 +1334,7 @@ System.out.println(keyword);
 		try {
 
 			if (getCommand().isTargetPresent(OrderGuide) && getCommand().isTargetPresent(OrderGuideDesc)
-					&& getCommand().isTargetPresent(CustomList) && getCommand().isTargetPresent(CustomListsDesc)
-					&& getCommand().isTargetPresent(StartFromScratch)
-					&& getCommand().isTargetPresent(StartFromScratchDesc)) {
+					&& getCommand().isTargetPresent(CustomList) && getCommand().isTargetPresent(CustomListsDesc)) {
 
 			} else {
 

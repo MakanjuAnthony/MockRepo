@@ -15,7 +15,7 @@ LocatiosData3 : !!com.components.yaml.LocationsData {
  EditLocation : EditedLocation4,
  }
 LocatiosData4 : !!com.components.yaml.LocationsData {
- LocationName : no location,
+ LocationName : No Location,
  EditLocation : EditedLocation4,
  }
 LocatiosData5 : !!com.components.yaml.LocationsData {

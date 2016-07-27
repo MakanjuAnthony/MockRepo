@@ -255,6 +255,7 @@ public class PurchasesPage extends SitePage {
 			getCommand().waitForTargetPresent(PurchasesDetails_InvoiceTotal);
 
 			getCommand().sendKeys(PurchasesDetails_InvoiceTotal,total);
+			((AndroidDriver) getCommand().driver).hideKeyboard();
 
 		/*	getCommand().waitForTargetPresent(PurchasesDetails_ExpenseAmount);
 

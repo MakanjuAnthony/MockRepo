@@ -13,6 +13,10 @@ public class ListData {
 	public int UnCatPdt1;
 	public int UnCatPdt2;
 	public int UnCatPdt3;
+	public String FoodPrice;
+	public String NonFoodPrice;
+	public String FoodPdt1;
+	public String NonFoodPdt1;
 	
 	@SuppressWarnings("deprecation")
 	public static ListData fetch(String key){

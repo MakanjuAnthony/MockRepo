@@ -69,12 +69,12 @@ public class CategoryPage extends SitePage {
 	public static final Target Next = new Target("Next", "//*[@id='next-nav']/a", Target.XPATH);
 
 	public static final Target ExpenseCategory_NameTxt = new Target("ExpenseCategory_NameTxt",
-			"//*[@class='mm-c-customexpense__details-category-name form-control form-control' and @name='formFields[0].name']",
+			"//*[@class='mm-c-customexpense__details-category-name form-control form-control' and @name='dynamicFields[0].name']",
 			Target.XPATH);
 	public static final Target ExpenseCategory_AnotherCategory = new Target("ExpenseCategory_AnotherCategory",
 			"//*[@class='mm-c-customexpense__setup-cta']//*[contains(text(),'Add Another Category')]", Target.XPATH);
 	public static final Target ExpenseCategory_Name1 = new Target("ExpenseCategory_Name1",
-			"//*[@class='mm-c-customexpense__details-category-name form-control form-control' and @name='formFields[1].name']",
+			"//*[@class='mm-c-customexpense__details-category-name form-control form-control' and @name='dynamicFields[1].name']",
 			Target.XPATH);
 	public static final Target ExpenseCategory_Food1 = new Target("ExpenseCategory_Food1",
 			"(//*[@class='mm-c-customexpense__details-category']//*[@class='radio'])[3]/label", Target.XPATH);
@@ -105,7 +105,7 @@ public class CategoryPage extends SitePage {
 
 	public static final Target ADD_CategoryName = new Target("ADD_CategoryName", "//*[@id='name']", Target.XPATH);
 	public static final Target AddCategory_Food = new Target("AddCategory_Food",
-			"(//*[@class='mm-c-expense__details-radio']//*[@class='radio'])[1]", Target.XPATH);
+			"(//*[@class='mm-c-expense__details-radio']//*[@class='radio'])[1]//input", Target.XPATH);
 
 	public static final Target Done = new Target("Done", "//*[@id='done-nav']/a", Target.XPATH);
 
@@ -149,11 +149,14 @@ public class CategoryPage extends SitePage {
 	public static String[] SyscoCategory1;
 	public static String Selected_SuggCat1;
 
-	public static final Target Select_SuggCat_Dairy = new Target("Select_SuggCat_Dairy",
+/*	public static final Target Select_SuggCat_Dairy = new Target("Select_SuggCat_Dairy",
 			"//*[@id='list-item']//*[contains(text(),'Dairy')]", Target.XPATH);
 	public static final Target Select_SuggCat_Meat = new Target("Select_SuggCat_Meat",
-			"//*[@id='list-item']//*[contains(text(),'Meat')]", Target.XPATH);
-
+			"//*[@id='list-item']//*[contains(text(),'Meat')]", Target.XPATH);*/
+	public static final Target Select_SuggCat_Meat = new Target("Select_SuggCat_Meat",
+			"//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.ListView[1]/android.widget.CheckedTextView[3]", Target.XPATH);
+	public static final Target Select_SuggCat_Dairy = new Target("Select_SuggCat_Dairy",
+			"//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.ListView[1]/android.widget.CheckedTextView[2]", Target.XPATH);
 	public static final Target SetUp_Pg3Title = new Target("SetUp_Pg3Title", "//*[contains(text(),'Set up Food Cost')]",
 			Target.XPATH);
 	public static final Target FoodAndNonFood = new Target("FoodAndNonFood", "//*[contains(text(),'Food & Non-Food')]",
@@ -190,6 +193,11 @@ public class CategoryPage extends SitePage {
 			"//*[@class='mm-c-customexpense__setup-text']//*[contains(text(),'and then select items that belong to each.')]",
 			Target.XPATH);
 	
+	public static final Target ExpenseCategory_NonFood1 = new Target("ExpenseCategory_NonFood1",
+			"(//*[@class='mm-c-customexpense__details-category']//*[@class='radio'])[4]/label", Target.XPATH);
+	public static final Target AddProductPage_AddCategory = new Target("AddProductPage_AddCategory",
+			"//*[@id='expense-add']/div/select", Target.XPATH);
+
 	public CategoryPage(SiteRepository repository) {
 		super(repository);
 	}
@@ -447,8 +455,8 @@ public class CategoryPage extends SitePage {
 				getCommand().click(ExpenseCategory_NameTxt);
 				getCommand().sendKeys(ExpenseCategory_NameTxt, Name1);
 
-				getCommand().waitForTargetPresent(ExpenseCategory_Food);
-				getCommand().click(ExpenseCategory_Food);
+				getCommand().waitForTargetPresent(ExpenseCategory_NonFood);
+				getCommand().click(ExpenseCategory_NonFood);
 
 				if (getCommand().isTargetPresent(ExpenseCategory_AnotherCategory)) {
 
@@ -703,16 +711,16 @@ public class CategoryPage extends SitePage {
 		try {
 
 			getCommand().waitForTargetPresent(AddCategory_Food);
-			getCommand().click(AddCategory_Food);
+			getCommand().clickWithJavascript(AddCategory_Food);
 
-			log("Selected cooler :Pass", LogType.VERIFICATION_STEP);
+			log("Selected Food :Pass", LogType.VERIFICATION_STEP);
 		}
 
 		catch (Exception e) {
 			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 
-			log("Selected cooler :Fail", LogType.VERIFICATION_STEP);
+			log("Selected Food :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
 
@@ -1567,13 +1575,37 @@ public class CategoryPage extends SitePage {
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
-
+System.out.println(SyscoCategory1[0]);
 			if (SyscoCategory1[0].equalsIgnoreCase("Dairy")) {
+				
+			//	((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+				
+				getCommand().selectDropDown(AddProductPage_AddCategory, 1);
+				
 				getCommand().waitForTargetPresent(Select_SuggCat_Meat).click(Select_SuggCat_Meat);
 				Selected_SuggCat1 = "Meat";
+				
+			/*	Set<String> contextNames1 = ((AndroidDriver)getCommand().driver).getContextHandles();
+				System.out.println("contxtname is "+contextNames1);
+
+				for (String contextName : contextNames1){
+					System.out.println("inside loop "+contextNames1);
+				}
+				System.out.println(((AndroidDriver)getCommand().driver).context((String) contextNames1.toArray()[1]));
+*/
 			} else {
+				((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+				
 				getCommand().waitForTargetPresent(Select_SuggCat_Dairy).click(Select_SuggCat_Dairy);
 				Selected_SuggCat1 = "Dairy";
+				Set<String> contextNames1 = ((AndroidDriver)getCommand().driver).getContextHandles();
+				System.out.println("contxtname is "+contextNames1);
+
+				for (String contextName : contextNames1){
+					System.out.println("inside loop "+contextNames1);
+				}
+				System.out.println(((AndroidDriver)getCommand().driver).context((String) contextNames1.toArray()[1]));
+
 			}
 
 			log("Suggested Category is selected for item :Pass", LogType.VERIFICATION_STEP);

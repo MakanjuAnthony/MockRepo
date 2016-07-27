@@ -261,16 +261,16 @@ System.out.println("net pur passed"+beginInv+totPurchase+netPurchase);
 			/*foodSales2 = foodSales1.split(".");  //delete
 			System.out.println(foodSales2);
 			*/
-					
+		    getCommand().waitFor(5);
 			foodSalesPercent =getCommand().getText(FoodSalesPercent);
 			foodSalesPercent1 = foodSalesPercent.split("%");
-			
+			System.out.println(foodSales2+foodSalesPercent1[0]);	
 			if(!(foodSales2.equals(foodSalesPercent1[0]))){
 				throw new Exception();
 			}
 			
 			log("Food cost calculation :Pass",LogType.VERIFICATION_STEP);						
-System.out.println(foodSales2+foodSalesPercent1[0]);
+
 
 		}
 		catch(Exception e){
@@ -325,6 +325,7 @@ System.out.println(foodSales2+foodSalesPercent1[0]);
 				throw new Exception();
 			}
 			log("Verify current price same as price when the inventory closed :Pass", LogType.VERIFICATION_STEP);
+			System.out.println(endInv+""+beginInv);
 			
 		} catch (Exception e) {
 			((IOSDriver) getCommand().driver).context("NATIVE_APP");

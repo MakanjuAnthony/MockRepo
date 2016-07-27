@@ -175,10 +175,12 @@ public class PurchasesPage extends SitePage {
 			getCommand().waitForTargetPresent(PurchasesDetails_Date);
 
 			getCommand().click(PurchasesDetails_Date);
-			getCommand().sendKeys(PurchasesDetails_Day, day);
+		/*	getCommand().sendKeys(PurchasesDetails_Day, day);
 			getCommand().sendKeys(PurchasesDetails_Month, month);
 			getCommand().sendKeys(PurchasesDetails_Year, year);
-
+*/
+			//getCommand().click(PurchasesDetails_InvoiceNumber);
+			
 			log("Selected  Date:Pass",LogType.VERIFICATION_STEP);	
 
 			Set<String> contextNames1 = ((IOSDriver)getCommand().driver).getContextHandles();

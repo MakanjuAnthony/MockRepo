@@ -31,7 +31,7 @@ public class WorkFlow extends Initiator{
 	 */
 	@Test(groups={"SI - WF 1"},priority=4, description = "SI - WF 1-OG + Dafault Loc + Default Category")
 	public void SI_WF1_OG_DefaultLocation_DefaultCategory() {
-		LoginData loginData =LoginData.fetch("LoginData5");
+		LoginData loginData =LoginData.fetch("LoginData1");
 		LocationsData locDataCooler=LocationsData.fetch("LocatiosData5");
 		LocationsData locDataFreezer=LocationsData.fetch("LocatiosData6");
 		LocationsData locDataDry=LocationsData.fetch("LocatiosData7");
@@ -80,7 +80,7 @@ public class WorkFlow extends Initiator{
 		.VerifyItemsOnDefaultLocation(locDataCooler.LocationName, "SI - WF 1-Verified cooler")
 
 		.TapOnBack("SI - WF 1-Tapped on Back")
-	//	.VerifyCountOfItemsInLocation(locDataCooler.LocationName, "")
+		//	.VerifyCountOfItemsInLocation(locDataCooler.LocationName, "")
 
 		.SelectLocation(locDataFreezer.LocationName, "SI - WF 1-Selected freezer")
 		.VerifyItemsOnDefaultLocation(locDataFreezer.LocationName, "SI - WF 1-Verified freezer")
@@ -103,7 +103,7 @@ public class WorkFlow extends Initiator{
 	@Test(groups={"SI - WF 3"},priority=0, description = "SI - WF 3-OG + Cus Loc + Cust Category")
 	public void SI_WF3_OG_CustomMultipleLocation_CustomMultipleCategory() {	
 
-		LoginData loginData =LoginData.fetch("LoginData5");
+		LoginData loginData =LoginData.fetch("LoginData2");
 		LocationsData locationsData1 =LocationsData.fetch("LocatiosData1");
 		LocationsData locationsData2 =LocationsData.fetch("LocatiosData2");
 		CategoryData categoryData=CategoryData.fetch("CategoryData");
@@ -129,7 +129,7 @@ public class WorkFlow extends Initiator{
 		._atLocationsPage()
 		.CustomLocation("SI - WF 3-Tapped Custom location")
 		.tapContinue("SI - WF 3-Tapped Continue2")
-.VerifyOptionsOnCustomLocations("SI-WF3-Verified create custom LocationsPage")
+		.VerifyOptionsOnCustomLocations("SI-WF3-Verified create custom LocationsPage")
 
 		.EnterLocationName(locationsData1.LocationName,"SI - WF 3-Enter location name")
 		.AddLocations1_TypeDry("SI - WF 3-Tapped Dry1")
@@ -140,18 +140,18 @@ public class WorkFlow extends Initiator{
 		.TapOnNext("SI - WF 3-Tapped Next1")
 
 		.selectMultipleItemsFromLocation1("SI - WF 3-Selected Multiple items")
-		
+
 		.TapOnNext("SI - WF 3-Tapped Next2")
 
 		.selectMultipleItemsFromLocation2("SI - WF 3-Selected Multiple items")
-		
+
 		.TapOnDone("SI - WF 3-Tapped Done1")
 		._atSetupInventoryPage()
 
 		._atCategoryPage()
 		.CustomCategories("SI - WF 1-CustomCategories Tapped")
 		.tapContinue("SI - WF 3-Tapped Continue3")
-		
+
 		.VerifyOptionsOnCreateExpenseCategory("SI-WF3-Verified create custom category Page")
 
 		.CreateTwoExpenseCategory(categoryData.Name, categoryData.Name1, "SI - WF 3-CreateTwoExpenseCategory")
@@ -160,7 +160,7 @@ public class WorkFlow extends Initiator{
 		.selectMultipleItemsFromCategory1("SI - WF 3-selectMultipleItemsFromCategory1")
 		.TapOnNext("SI - WF 3-Tapped Next4")
 		.selectMultipleItemsFromCategory2("SI - WF 3-selectMultipleItemsFromCategory2")
-		
+
 		._atSetupInventoryPage()
 		.TapOnDone("SI - WF 3-Tapped Done2")
 		.TapTakeHome("SI - WF 3-Tapped Continue4") 
@@ -188,7 +188,7 @@ public class WorkFlow extends Initiator{
 	 */
 	@Test(groups={"SI - WF 4"},priority=4, description = "SI - WF 4-OG + Default Loc + Custom Category ")
 	public void SI_WF4_OG_DefaultLocation_CustomCategory() {
-		LoginData loginData =LoginData.fetch("LoginData7");
+		LoginData loginData =LoginData.fetch("LoginData1");
 		CategoryData categoryData=CategoryData.fetch("CategoryData");
 		LocationsData locDataCooler=LocationsData.fetch("LocatiosData5");
 		LocationsData locDataFreezer=LocationsData.fetch("LocatiosData6");
@@ -231,22 +231,22 @@ public class WorkFlow extends Initiator{
 		._atSetupInventoryPage()
 		.TapOnDone("SI - WF 4-Tapped Done2")
 		.TapTakeHome("SI - WF 4-Tapped Continue4") 
-
+._atInventoryToolPage()
+		.InvTools_Locations("SI-WF4-Selected Locations")
+		._atLocationsPage()
+		.VerifyOrderOfLocations(locDataCooler.LocationName, locDataFreezer.LocationName, locDataDry.LocationName, locDataNoLoc.LocationName, "SI-WF4-Verified order of locations")
+.TapOnBack("SI-WF4-Tapped Back")
 		._atInventoryToolPage()
 		.InvTools_TrackInventory("SI - WF 4-Selected track inventory")
 
 		._atLocationsPage()
 		.VerifyOrderOfLocations(locDataCooler.LocationName, locDataFreezer.LocationName, locDataDry.LocationName, locDataNoLoc.LocationName, "SI - WF 4-Verified order of locations")
-		.TapOnBack("SI-WF4-Tapped Back")
-		._atInventoryToolPage()
-		.InvTools_Locations("SI-WF4-Selected Locations")
-		._atLocationsPage()
-		.VerifyOrderOfLocations(locDataCooler.LocationName, locDataFreezer.LocationName, locDataDry.LocationName, locDataNoLoc.LocationName, "SI-WF4-Verified order of locations")
 		
-			//checking INV_248,249 scenario 5, INV_250,251 scenario 5
+		
+		//checking INV_248,249 scenario 5, INV_250,251 scenario 5
 		.SelectLocation(locDataNoLoc.LocationName, "SI-WF4-Selecting no location")
 		.NoItemsCheckInNoLocation("SI-WF4-Item verification in no location")
-		
+
 
 		;
 	}
@@ -260,7 +260,7 @@ public class WorkFlow extends Initiator{
 	@Test(groups={"SI - WF 5"},priority=4, description = "SI - WF 5-OG + Custom Loc + Default Category")
 	public void SI_WF5_OG_CustomLocation_DefaultCategory() {
 
-		LoginData loginData =LoginData.fetch("LoginData8");
+		LoginData loginData =LoginData.fetch("LoginData4");
 		LocationsData locationsData1 =LocationsData.fetch("LocatiosData1");
 		LocationsData locationsData2 =LocationsData.fetch("LocatiosData2");
 		LocationsData locationsData3 =LocationsData.fetch("LocatiosData4");
@@ -331,7 +331,7 @@ public class WorkFlow extends Initiator{
 		.TapOnBack("SI-WF5-Tap on Back1")
 		.TapOnBack("SI-WF5-Tap on Back1")
 		.TapOnBack("SI-WF5-Tap on Back1")
-		
+
 		._atInventoryToolPage()
 		.InvTools_TrackInventory("SI-WF5-Selected track inventory")
 
@@ -339,14 +339,14 @@ public class WorkFlow extends Initiator{
 		._atLocationsPage()
 		.SelectLocation(locationsData3.LocationName, "SI-WF5-Selecting no location")
 		.CustomLocItemsCheckInNoLocation("SI-WF5-Item verification in no location")
-        .NoLocationTextCheck(locationsData3.LocationName,"SI-WF5-No location text verification")
-        //.TapOnBack("SI-WF5-Tap on Back1")
-        
-      //checking INV_250,251 scenario 1
+		.NoLocationTextCheck(locationsData3.LocationName,"SI-WF5-No location text verification")
+		//.TapOnBack("SI-WF5-Tap on Back1")
+
+		//checking INV_250,251 scenario 1
 		//._atLocationsPage()
-    //	.SelectLocation(locationsData3.LocationName, "SI-WF5-Selecting no location")
-    	.NoLocationEdit("SI-WF5-No location verification")
-    	.TapOnBack("SI-WF5-Tap on Back1")
+		//	.SelectLocation(locationsData3.LocationName, "SI-WF5-Selecting no location")
+		.NoLocationEdit("SI-WF5-No location verification")
+		.TapOnBack("SI-WF5-Tap on Back1")
 		.SelectLocation(locationsData1.LocationName, "SI-WF5-Selecting no location")
 		.LocationFirstItemCheck("SI-WF5-")
 		.TapOnBack("SI-WF5-Tap on Back1")
@@ -364,7 +364,7 @@ public class WorkFlow extends Initiator{
 	@Test(groups={"SI - WF 6"},priority=0, description = "SI - WF 6-OG + Skip Loc + Skip Cust")
 	public void SI_WF6_OG_SkipLocation_SkipCategory() {	
 
-		LoginData loginData =LoginData.fetch("LoginData9");
+		LoginData loginData =LoginData.fetch("LoginData5");
 		Start.asTester
 		.goToLoginpage()
 		.verifyLoginPage("SI - WF 6-LoginPage")
@@ -403,7 +403,7 @@ public class WorkFlow extends Initiator{
 	 */
 	@Test(groups={"SI - WF 7"},priority=0, description = "SI - WF 7-OG+Default loc + Skip Category")
 	public void SI_WF7_OG_DefaultLocation_SkipCategory() {
-		LoginData loginData =LoginData.fetch("LoginData8");
+		LoginData loginData =LoginData.fetch("LoginData9");
 		LocationsData locationsData =LocationsData.fetch("LocatiosData3");
 		SearchData searchData=SearchData.fetch("SearchData");
 
@@ -447,7 +447,7 @@ public class WorkFlow extends Initiator{
 
 		._atLoginPage()
 		.signIn(loginData.UserName, loginData.Password,"SI - WF 7-Login")
-		
+
 		._atHomePage()
 		.ClickAccount(loginData.UserName,"SI - WF 7-Clicked account")
 
@@ -466,7 +466,7 @@ public class WorkFlow extends Initiator{
 		.TapOnBack("SI - WF 7-Tapped Back")
 		.VerifyLocationList(locationsData.LocationName, "SI - WF 7-Verifing AddedLocation")
 		.SelectLocation(locationsData.LocationName, "SI - WF 7-Selecting AddedLocation")
-		
+
 		._atLocationsPage()
 		.TapAddLocation("MIL - WF 1 WF 4-Tapped ADD") 
 		._atSetupInventoryPage()
@@ -474,9 +474,9 @@ public class WorkFlow extends Initiator{
 		.SelectItemFrom_Catalog("SI - WF 7-Selected item from OG")
 		.TapOnDone("SI - WF 7-Done")
 		.verifySearchItemsOnSetupInv("SI - WF 7-Verify item selected")
-		.TapOnDone("SI - WF 7-Tapped Done")
+		/*.TapOnDone("SI - WF 7-Tapped Done")
 		.verifySearchItemsOnSetupInv("SI - WF 7-Verify item selected")
-
+*/
 		;
 
 	}
@@ -486,7 +486,7 @@ public class WorkFlow extends Initiator{
 	 */
 	@Test(groups={"SI - WF 8"},priority=4, description = "SI - WF 8-OG + Skip Loc + Default Category ")
 	public void SI_WF8_OG_SkipLocation_DefaultCategory() {
-		LoginData loginData =LoginData.fetch("LoginData2");
+		LoginData loginData =LoginData.fetch("LoginData5");
 
 		Start.asTester
 		.goToLoginpage()
@@ -703,12 +703,12 @@ public class WorkFlow extends Initiator{
 		._atLocationsPage()
 		.SelectLocation(locationsData3.LocationName, "SI - WF 20-Selecting nolocation")
 		.ItemVerifyOnLocation1("SI - WF 20-Item verification in nolocation")
-			.TapOnBack("SI - WF 20-Tapped Back")
+		.TapOnBack("SI - WF 20-Tapped Back")
 
 		.VerifyCountOfItemsInLocation(locationsData3.LocationName, "MIL WF3 verify count")
 		.VerifyDeletedItemsCategory(locationsData3.LocationName,"SI - WF 20-Item category verification in nolocation")
-		
-		
+
+
 		;
 	}	
 
@@ -721,7 +721,7 @@ public class WorkFlow extends Initiator{
 	@Test(groups={"SI - WF 21"},priority=0, description = "SI - WF 21-Custom List + Custom Loc + Custom Category + Few items")
 	public void SI_WF21_CustomList_CustomLoc_Customcategory_FewItems() {	
 
-		LoginData loginData =LoginData.fetch("LoginData3");
+		LoginData loginData =LoginData.fetch("LoginData1");
 		ListData listData=ListData.fetch("ListData");
 		LocationsData locationsData4 =LocationsData.fetch("LocatiosData4");
 		LocationsData locationsData1 =LocationsData.fetch("LocatiosData1");
@@ -793,7 +793,7 @@ public class WorkFlow extends Initiator{
 		.TapOnDone("SI - WF 1-Tapped Done")
 		.SelectLocation(locationsData4.LocationName, "SI - WF 21-select added location")
 		.ItemVerifyOnLocation2("SI - WF 21-Item verification")
-		.TapOnDone("SI - WF 21-Tapped Done")      
+		//.TapOnDone("SI - WF 21-Tapped Done")      
 		;
 	}	
 
@@ -806,7 +806,7 @@ public class WorkFlow extends Initiator{
 	@Test(groups={"SI - WF 22"},priority=0, description = "SI - WF 22-Custom List + Default Loc + custom Category")
 	public void SI_WF22_CustomList_DefaultLoc_Customcategory() {	
 
-		LoginData loginData =LoginData.fetch("LoginData4");
+		LoginData loginData =LoginData.fetch("LoginData1");
 		ListData listData=ListData.fetch("ListData");
 		CategoryData categoryData=CategoryData.fetch("CategoryData");
 
@@ -873,7 +873,7 @@ public class WorkFlow extends Initiator{
 	@Test(groups={"SI - WF 23"},priority=0, description = "SI - WF 23-Custom List + Custom Loc + default Category")
 	public void SI_WF23_CustomList_CustomLoc_defaultcategory() {	
 
-		LoginData loginData =LoginData.fetch("LoginData1");
+		LoginData loginData =LoginData.fetch("LoginData2");
 		ListData listData=ListData.fetch("ListData4");
 		LocationsData locationsData1 =LocationsData.fetch("LocatiosData1");
 		LocationsData locationsData2 =LocationsData.fetch("LocatiosData2");
@@ -946,17 +946,17 @@ public class WorkFlow extends Initiator{
 		._atCategoryPage()
 		.VerifyCustomListItemsDefaultCategoryLocation2("SI- WF 23-Verifying default categories in location2")
 		.TapOnDone("SI - WF 23-Tapped Done") 
-		
+
 		//checking INV_248,249 scenario 3
 		._atLocationsPage()
 		.SelectLocation(locationsData3.LocationName, "SI-WF23-Selecting no location")
 		.CustomLocItemsCheckInNoLocation("SI-WF23-Item verification in no location")
 		.NoLocationTextCheck(locationsData3.LocationName,"SI-WF23-No location text verification")
 		//.TapOnBack("SI-WF23-Tap on Back1")
-		        
-	    //checking INV_250,251 scenario 3
+
+		//checking INV_250,251 scenario 3
 		//._atLocationsPage()
-	//	.SelectLocation(locationsData3.LocationName, "SI-WF23-Selecting no location")
+		//	.SelectLocation(locationsData3.LocationName, "SI-WF23-Selecting no location")
 		.NoLocationEdit("SI-WF23-No location verification")
 		.TapOnBack("SI-WF23-Tap on Back")
 		.SelectLocation(locationsData1.LocationName, "SI-WF23-Selecting no location")
@@ -977,7 +977,7 @@ public class WorkFlow extends Initiator{
 	@Test(groups={"SI - WF 24"},priority=0, description = "SI - WF 24-Custom List + Skip location+ Skip Category")
 	public void SI_WF24_CustomList_SkipLoc_Skipcategory() {	
 
-		LoginData loginData =LoginData.fetch("LoginData2");
+		LoginData loginData =LoginData.fetch("LoginData4");
 		ListData listData=ListData.fetch("ListData");
 		LocationsData locationsData =LocationsData.fetch("LocatiosData4");
 
@@ -1023,7 +1023,7 @@ public class WorkFlow extends Initiator{
 		._atLocationsPage()
 		.SelectLocation(locationsData.LocationName, "SI - WF 24-select added location")
 		//.ItemVerifyOnLocation(locationsData.LocationName, "SI - WF 1-Verify item inside location")
-		.TapOnDone("SI - WF 24-Tapped Done")
+		//.TapOnDone("SI - WF 24-Tapped Done")
 		;
 
 	}
@@ -1036,7 +1036,7 @@ public class WorkFlow extends Initiator{
 	@Test(groups={"SI - WF 25"},priority=0, description = "SI - WF 25-Custom List+Default loc + Skip Category")
 	public void SI_WF25_CustomList_DefaultLoc_Skipcategory() {	
 
-		LoginData loginData =LoginData.fetch("LoginData3");
+		LoginData loginData =LoginData.fetch("LoginData2");
 		ListData listData=ListData.fetch("ListData");
 
 		Start.asTester
@@ -1289,7 +1289,7 @@ public class WorkFlow extends Initiator{
 	@Test(groups={"SI - WF 29"},priority=0, description = "SI - WF 29-Custom List + Select single  List +Custom categories as location+Default Cat")
 	public void SI_WF29_CustomListSingleList_CustomCategoryOnLocationsPage_defaultcategory() {	
 
-		LoginData loginData =LoginData.fetch("LoginData3");
+		LoginData loginData =LoginData.fetch("LoginData4");
 		ListData listData=ListData.fetch("ListData");
 		LocationsData locDataNoLoc=LocationsData.fetch("LocatiosData4");
 
@@ -1331,7 +1331,7 @@ public class WorkFlow extends Initiator{
 		._atInventoryToolPage()
 		.InvTools_TrackInventory("SI - WF 29-Selected track inventory")
 
-//checking INV_248,249 scenario 5 INV_250,251 scenario 5
+		//checking INV_248,249 scenario 5 INV_250,251 scenario 5
 		._atLocationsPage()
 		.SelectLocation(locDataNoLoc.LocationName, "SI-WF29-Selecting no location")
 		.NoItemsCheckInNoLocation("SI-WF29-Item verification in no location")
@@ -1404,11 +1404,11 @@ public class WorkFlow extends Initiator{
 		.SelectLocation(locationsData3.LocationName, "SI-WF30-Selecting no location")
 		.UncategorizedItemsCheckInNoLocation(listData.UnCatPdt1,listData.UnCatPdt2,listData.UnCatPdt3,"SI-WF30-Item verification in no location")
 		.NoLocationTextCheck(locationsData3.LocationName,"SI-WF30-No location text verification")
-	//	.TapOnBack("SI-WF23-Tap on Back")
-				        
-		 //checking INV_250,251 scenario 4
-	//	._atLocationsPage()
-	//	.SelectLocation(locationsData3.LocationName, "SI-WF23-Selecting no location")
+		//	.TapOnBack("SI-WF23-Tap on Back")
+
+		//checking INV_250,251 scenario 4
+		//	._atLocationsPage()
+		//	.SelectLocation(locationsData3.LocationName, "SI-WF23-Selecting no location")
 		.NoLocationEdit("SI-WF30-No location verification")
 		.TapOnBack("SI-WF30-Tap on Back")
 		.SelectLocation(listData.CatName, "SI-WF23-Selecting no location")
@@ -1488,7 +1488,7 @@ public class WorkFlow extends Initiator{
 	@Test(groups={"SI - WF 32"},priority=0, description = "SI - WF 32-Custom List + Select single  List +Custom categories as location+Skip Cat")
 	public void SI_WF32_CustomList_SingleList_CustomCatLoc_Skipcategory() {	
 
-		LoginData loginData =LoginData.fetch("LoginData1");
+		LoginData loginData =LoginData.fetch("LoginData4");
 		ListData listData=ListData.fetch("ListData");
 
 		Start.asTester
@@ -1542,7 +1542,7 @@ public class WorkFlow extends Initiator{
 	@Test(groups={"SI - WF 33"},priority=4, description = "SI - WF 33-OG + Default Loc + Suggested Category")
 	public void SI_WF33_OG_DefaultLocation_SuggestedCategory() {	
 
-		LoginData loginData =LoginData.fetch("LoginData6");	 
+		LoginData loginData =LoginData.fetch("LoginData4");	 
 		LocationsData locDataCooler=LocationsData.fetch("LocatiosData5");
 		LocationsData locDataFreezer=LocationsData.fetch("LocatiosData6");
 		LocationsData locDataDry=LocationsData.fetch("LocatiosData7");
@@ -1585,7 +1585,7 @@ public class WorkFlow extends Initiator{
 		.InvTools_TrackInventory("SI- WF 33-Selected track inventory")
 		._atLocationsPage()
 		.VerifyOrderOfLocations(locDataCooler.LocationName, locDataFreezer.LocationName, locDataDry.LocationName, locDataNoLoc.LocationName, "SI - WF 4-Verified order of locations")
-	
+
 
 		;
 
@@ -1602,7 +1602,7 @@ public class WorkFlow extends Initiator{
 	@Test(groups={"SI - WF 34"},priority=0, description = "SI - WF 34-OG + Custom Loc + Suggested Category")
 	public void SI_WF34_OG_CustomLocation_SuggestedCategory() {	
 
-		LoginData loginData =LoginData.fetch("LoginData6"); 
+		LoginData loginData =LoginData.fetch("LoginData5"); 
 		LocationsData locationsData1 =LocationsData.fetch("LocatiosData1");
 		LocationsData locationsData2 =LocationsData.fetch("LocatiosData2");
 
@@ -1812,7 +1812,7 @@ public class WorkFlow extends Initiator{
 
 
 	}
-	
+
 
 	/*
 	 * Validating user is able to setup inventory.
@@ -1823,7 +1823,7 @@ public class WorkFlow extends Initiator{
 	@Test(groups={"TI-WF1-WF2"},priority=3, description = "TI-WF1-WF2-Select a location from trackinventory updating quantity and uom")
 	public void TI_WF1_WF2_Location_Item_UOMQuantity() {	
 
-		LoginData loginData =LoginData.fetch("LoginData1");	
+		LoginData loginData =LoginData.fetch("LoginData10");	
 		LocationsData locationsData1 =LocationsData.fetch("LocationsData");
 		UOMQuantityData uomQuantityData=UOMQuantityData.fetch("UOMQuantityData");
 		UOMQuantityData uomQuantityData1=UOMQuantityData.fetch("UOMQuantityData1");
@@ -1915,7 +1915,7 @@ public class WorkFlow extends Initiator{
 	@Test(groups={"MIL-WF1-WF4"},priority=0, description = "MIL - WF 1,WF 4-Creating Location in trackinventory and add items from multiple lists to location")
 	public void MIL_WF1_WF4_Location_AddItems() {	
 
-		LoginData loginData =LoginData.fetch("LoginData2");	
+		LoginData loginData =LoginData.fetch("LoginData7");	
 		LocationsData locationsData =LocationsData.fetch("LocatiosData3");
 		ProductNickNameData productNickNameData=ProductNickNameData.fetch("ProductNickNameData");
 		NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
@@ -1965,7 +1965,7 @@ public class WorkFlow extends Initiator{
 		._atSetupInventoryPage()
 		.AddItemFrom_NonSysco("MIL-WF1-WF4-Tapped NonSysco")
 		.NonSysco_Prompt(loginData.UserName,"MIL-WF1-WF4-verify NonSysco")
-		
+
 		.EnterItemDetails(nonSyscoItemData.ProductName, nonSyscoItemData.UPC, nonSyscoItemData.Pack, nonSyscoItemData.Size, nonSyscoItemData.Weight, nonSyscoItemData.Price, nonSyscoItemData.ProductBrand, "MIL-WF1-WF4-NonSyscoItem details entered")
 		.AddSupplier_AddProductDetailsPage("MIL-WF1-WF4-select supplier")
 		._atVendorPage()
@@ -1983,7 +1983,7 @@ public class WorkFlow extends Initiator{
 		._atSetupInventoryPage()
 		.AddItemFrom_PrepItem("MIL-WF1-WF4-Tapped NonSysco")
 		.Prep_Prompt("MIL-WF1-WF4-verify Prep")   ///change to prep item
-		
+
 		.EnterItemDetails(prepItemData.ProductName, prepItemData.UPC, prepItemData.Pack, prepItemData.Size, prepItemData.Weight, prepItemData.Price, prepItemData.ProductBrand, "MIL-WF1-WF4-NonSyscoItem details entered")
 		.TapOnDone("MIL-WF1-WF4-Tapped Done")
 
@@ -2047,7 +2047,7 @@ public class WorkFlow extends Initiator{
 	@Test(groups={"MIL - WF 2"},priority=1, description = "MIL - WF 2-Selecing a location, adding same items to multiple location")
 	public void MIL_WF2_Location_AddItems__MultipleLocation() {	
 
-		LoginData loginData =LoginData.fetch("LoginData3");
+		LoginData loginData =LoginData.fetch("LoginData8");
 		LocationsData locationsData3 =LocationsData.fetch("LocatiosData3");
 		LocationsData locationsData1 =LocationsData.fetch("LocatiosData1");
 		LocationsData locationsData2 =LocationsData.fetch("LocatiosData2");
@@ -2192,7 +2192,7 @@ public class WorkFlow extends Initiator{
 		.TapOnBack("MIL-WF 2-Tapped Back")
 		.SelectLocation(locationsData1.LocationName, "MIL-WF 2-Selecting Added Location1")
 		.QuantityVerify(uomQuantityData.Quantity, "MIL - WF 2 NU Quantity verify")
-///////change location also here
+		///////change location also here
 
 
 		;
@@ -2207,14 +2207,14 @@ public class WorkFlow extends Initiator{
 	@Test(groups={"MIL - WF 3"},priority=2, description = "MIL - WF 3-Selecting a specific location in trackinventory and search for items within location for MA user")
 	public void MIL_WF3_Location_SearchItems() {	
 
-		LoginData loginData =LoginData.fetch("LoginData1");
+		LoginData loginData =LoginData.fetch("LoginData9");
 		LocationsData locationsData =LocationsData.fetch("LocatiosData3");
 		SearchData searchData=SearchData.fetch("SearchData");
 		LocationsData locationsData1 =LocationsData.fetch("LocatiosData1");
 		LocationsData locationsData2 =LocationsData.fetch("LocatiosData2");
 		CategoryData categoryData=CategoryData.fetch("CategoryData");
 
-		
+
 		Start.asTester
 		.goToLoginpage()
 		.verifyLoginPage("MIL - WF 3-LoginPage")
@@ -2232,10 +2232,10 @@ public class WorkFlow extends Initiator{
 
 		._atSetupInventoryPage()
 		.TapOnSkip("MIL - WF 3-Tapped Skip")
-		
+
 		.TapOrderGuide("MIL - WF 5-OG Selected")
 		.tapContinue("MIL - WF 5-Tapped Continue1")
-		
+
 		._atLocationsPage()
 		.CustomLocation("MIL - WF 20-Tapped Custom location")
 		.tapContinue("MIL - WF 20-Tapped Continue2")
@@ -2265,7 +2265,7 @@ public class WorkFlow extends Initiator{
 		.tapContinue("MIL - WF 20-Tapped Continue3")
 		.CreateTwoExpenseCategory(categoryData.Name, categoryData.Name1, "MIL - WF 20-CreateTwoExpenseCategory")
 		.TapOnNext("MIL - WF 20-Tapped Next3")
-		
+
 		._atSetupInventoryPage()
 		.SearchItem(searchData.keyword1,"MIL-WF3-Search item")
 		._atCategoryPage()
@@ -2309,7 +2309,7 @@ public class WorkFlow extends Initiator{
 		.TapOnDone("MIL-WF3-Done tap")
 		._atLocationsPage()
 		.VerifyCountOfItemsInLocation(locationsData.LocationName, "MIL WF3 verify count")
-		
+
 		.SelectLocation(locationsData.LocationName, "MIL-WF3-Selecting location")
 		.TapAddLocation("MIL-WF3-Tapped ADD")
 		._atSetupInventoryPage()
@@ -2317,29 +2317,29 @@ public class WorkFlow extends Initiator{
 		.verifyItemDescriptionSearch(searchData.keyword2, "MIL-WF3-Verified search with item description")
 		.SelectItemFrom_Catalog("MIL-WF3-Selected item from catalog")
 		.TapOnDone("MIL-WF3-Tapped Done4")
-		
+
 		//added 
 		.TapOnDone("MIL-WF3-Tapped Done4")
 		._atLocationsPage()
 		.SelectLocation(locationsData.LocationName, "MIL-WF3-Selecting location")
-       ._atSetupInventoryPage()
+		._atSetupInventoryPage()
 		.SearchWord("MIL-WF3-Keyword searching")
 		.verifyWordSearchItems("MIL-WF3-Verify word search")
 		._atLocationsPage()
 		.verifyUIAfterSearch("MIL-WF3-Verify after search")
 		.TapOnBack("tapped on back")
-		
+
 		.SelectLocation(locationsData.LocationName, "MIL-WF3-Selecting location")
 		.TapOnEdit("MIL-WF3-Tapped Edit")
-		 ._atSetupInventoryPage()
+		._atSetupInventoryPage()
 		.verifyEditLocationPage("MIL-WF3-verify edit location page")
-		
-		
-	
+
+
+
 		//
-		
-		
-;
+
+
+		;
 	}
 
 	/*
@@ -2349,1361 +2349,1391 @@ public class WorkFlow extends Initiator{
 	 * Prerequisite:Normal/MA User with OG items
 	 * 
 	 */@Test(groups={"MIL - WF 5"},priority=3, description = "MIL - WF 5-Selecting a location navigate to product and assiging  item  to diff location")
-	public void MIL_WF5_Locations_ItemEdit_UpdateLocation() {	
+	 public void MIL_WF5_Locations_ItemEdit_UpdateLocation() {	
 
-		LoginData loginData =LoginData.fetch("LoginData2");
-		LocationsData locationsData =LocationsData.fetch("LocatiosData3");
-		LocationsData locationsData1 =LocationsData.fetch("LocatiosData2");
-		NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
-		VendorDetailsData vendorDetailsData =VendorDetailsData.fetch("VDNonsysco");
-		Start.asTester
-		.goToLoginpage()
-		.verifyLoginPage("MIL- WF 5-LoginPage")
-		.signIn(loginData.UserName, loginData.Password,"MIL- WF 5-Login")
+		 LoginData loginData =LoginData.fetch("LoginData10");
+		 LocationsData locationsData =LocationsData.fetch("LocatiosData3");
+		 LocationsData locationsData1 =LocationsData.fetch("LocatiosData2");
+		 NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
+		 VendorDetailsData vendorDetailsData =VendorDetailsData.fetch("VDNonsysco");
+		 Start.asTester
+		 .goToLoginpage()
+		 .verifyLoginPage("MIL- WF 5-LoginPage")
+		 .signIn(loginData.UserName, loginData.Password,"MIL- WF 5-Login")
 
-		._atHomePage()
-		.ClickAccount(loginData.UserName,"Clicked account")
+		 ._atHomePage()
+		 .ClickAccount(loginData.UserName,"Clicked account")
 
-		._atAccountsPage()
-		.Fifth_AccountSelection(loginData.UserName,"MIL- WF 5-FirstAccountSelect")
+		 ._atAccountsPage()
+		 .Fifth_AccountSelection(loginData.UserName,"MIL- WF 5-FirstAccountSelect")
 
-		._atInventoryToolPage()
-		.InvTools_SetUpInventory("MIL- WF 5-SetupInventoryTap")
+		 ._atInventoryToolPage()
+		 .InvTools_SetUpInventory("MIL- WF 5-SetupInventoryTap")
 
-		._atSetupInventoryPage()
-		.TapOnSkip("MIL-WF6-Tapped Skip")
-		
-		.TapOrderGuide("MIL - WF 5-OG Selected")
-		.tapContinue("MIL - WF 5-Tapped Continue1")
-		
-		._atLocationsPage()
-		.DefaultLocation("SI - WF 1-Tapped Custom location")
-		.tapContinue("SI - WF 1-Tapped Continue")
-		._atSetupInventoryPage()
+		 ._atSetupInventoryPage()
+		 .TapOnSkip("MIL-WF6-Tapped Skip")
 
-		.TapOnDOThisLater("MIL-WF6-Tapped do this later")
-		.TapTakeHome("SI - WF 32-Tapped take me home")
+		 .TapOrderGuide("MIL - WF 5-OG Selected")
+		 .tapContinue("MIL - WF 5-Tapped Continue1")
+
+		 ._atLocationsPage()
+		 .DefaultLocation("SI - WF 1-Tapped Custom location")
+		 .tapContinue("SI - WF 1-Tapped Continue")
+		 ._atSetupInventoryPage()
+
+		 .TapOnDOThisLater("MIL-WF6-Tapped do this later")
+		 .TapTakeHome("SI - WF 32-Tapped take me home")
 
 
-		._atInventoryToolPage()
-		.InvTools_TrackInventory("MIL- WF 5-TrackinventoryTap")
+		 ._atInventoryToolPage()
+		 .InvTools_TrackInventory("MIL- WF 5-TrackinventoryTap")
 
-		._atLocationsPage()
-		.TapAddLocation("MIL- WF 5-Tapped ADD")
-		.AddLocationName(locationsData.LocationName,"MIL- WF 5-Enter location name")
-		.AddLocationCooler("MIL- WF 5-Tapped Cooler")
-		.TapOnDone("MIL- WF 5-Tapped Done")
-		.TapOnBack("MIL- WF 5-Tapped Back")
-		.VerifyLocationList(locationsData.LocationName, "MIL- WF 5-Verifing AddedLocation")
-		.SelectLocation(locationsData.LocationName, "MIL- WF 5-Selecting AddedLocation")
-		.TapAddLocation("MIL- WF 5-Tapped ADD")
+		 ._atLocationsPage()
+		 .TapAddLocation("MIL- WF 5-Tapped ADD")
+		 .AddLocationName(locationsData.LocationName,"MIL- WF 5-Enter location name")
+		 .AddLocationCooler("MIL- WF 5-Tapped Cooler")
+		 .TapOnDone("MIL- WF 5-Tapped Done")
+		 .TapOnBack("MIL- WF 5-Tapped Back")
+		 .VerifyLocationList(locationsData.LocationName, "MIL- WF 5-Verifing AddedLocation")
+		 .SelectLocation(locationsData.LocationName, "MIL- WF 5-Selecting AddedLocation")
+		 .TapAddLocation("MIL- WF 5-Tapped ADD")
 
-		._atSetupInventoryPage()
-		.AddItemFrom_NonSysco("MIL- WF 5-Tapped NonSysco")
-		.EnterItemDetails(nonSyscoItemData.ProductName, nonSyscoItemData.UPC, nonSyscoItemData.Pack, nonSyscoItemData.Size, nonSyscoItemData.Weight, nonSyscoItemData.Price, nonSyscoItemData.ProductBrand, "MIL- WF 5-NonSyscoItem details entered")
-		.AddSupplier_AddProductDetailsPage("MIL- WF 5-select supplier")
+		 ._atSetupInventoryPage()
+		 .AddItemFrom_NonSysco("MIL- WF 5-Tapped NonSysco")
+		 .EnterItemDetails(nonSyscoItemData.ProductName, nonSyscoItemData.UPC, nonSyscoItemData.Pack, nonSyscoItemData.Size, nonSyscoItemData.Weight, nonSyscoItemData.Price, nonSyscoItemData.ProductBrand, "MIL- WF 5-NonSyscoItem details entered")
+		 .AddSupplier_AddProductDetailsPage("MIL- WF 5-select supplier")
 
-		._atVendorPage()
-		.Add_Supplier("MIL- WF 5-AddVendorTap")
-		.AddSupplier_Details(vendorDetailsData.VendorName, vendorDetailsData.PhoneNum, vendorDetailsData.Address, vendorDetailsData.ContactInfo, vendorDetailsData.Email, vendorDetailsData.Note, "MIL- WF 5-AddVendorDetails")
-		.TapOnDone("MIL- WF 5-Done")
+		 ._atVendorPage()
+		 .Add_Supplier("MIL- WF 5-AddVendorTap")
+		 .AddSupplier_Details(vendorDetailsData.VendorName, vendorDetailsData.PhoneNum, vendorDetailsData.Address, vendorDetailsData.ContactInfo, vendorDetailsData.Email, vendorDetailsData.Note, "MIL- WF 5-AddVendorDetails")
+		 .TapOnDone("MIL- WF 5-Done")
 
-		.TapOnBack("MIL- WF 5-Back")
-		.SupplierSelect(vendorDetailsData.VendorName,"MIL- WF 5-SupplierSelect")
-		.TapOnDone("MIL- WF 5-Done")
+		 .TapOnBack("MIL- WF 5-Back")
+		 .SupplierSelect(vendorDetailsData.VendorName,"MIL- WF 5-SupplierSelect")
+		 .TapOnDone("MIL- WF 5-Done")
 
-		._atSetupInventoryPage()
-		.verifyNonSyscoPrepItemSetupInv(nonSyscoItemData.ProductName,"MIL- WF 5-Verify item selected")
+		 ._atSetupInventoryPage()
+		 .verifyNonSyscoPrepItemSetupInv(nonSyscoItemData.ProductName,"MIL- WF 5-Verify item selected")
 
-		._atLocationsPage()
-		.ProductSelect(nonSyscoItemData.ProductName, "MIL- WF 5-Select Product")
-		.TapOnEdit("MIL- WF 5-Tapped Edit")
-		.AddLocation_AddProductDetailsPage("MIL- WF 5-Select Add/Select option")
-		.TapAddLocation("MIL- WF 5-Tapped ADD")
-		.AddLocationName(locationsData1.LocationName,"MIL- WF 5-Enter location name")
-		.AddLocationCooler("MIL- WF 5-Tapped Cooler")
-		.TapOnDone("MIL- WF 5-Tapped Done")
-		.TapOnBack("MIL- WF 5-Tapped Back")
-		.VerifyLocationList(locationsData1.LocationName, "MIL- WF 5-Verifing AddedLocation") ////////
+		 ._atLocationsPage()
+		 .ProductSelect(nonSyscoItemData.ProductName, "MIL- WF 5-Select Product")
+		 .TapOnEdit("MIL- WF 5-Tapped Edit")
+		 .AddLocation_AddProductDetailsPage("MIL- WF 5-Select Add/Select option")
+		 .TapAddLocation("MIL- WF 5-Tapped ADD")
+		 .AddLocationName(locationsData1.LocationName,"MIL- WF 5-Enter location name")
+		 .AddLocationCooler("MIL- WF 5-Tapped Cooler")
+		 .TapOnDone("MIL- WF 5-Tapped Done")
+		 .TapOnBack("MIL- WF 5-Tapped Back")
+		 .VerifyLocationList(locationsData1.LocationName, "MIL- WF 5-Verifing AddedLocation") ////////
 
-		.SelectLocation(locationsData1.LocationName, "MIL- WF 5-Selecting AddedLocation")
-		.SelectLocation(locationsData.LocationName, "MIL- WF 5-Selecting AddedLocation")
-		.LocationDoneSelection("MIL- WF 5-Selecting Done")
-		.TapOnDone("MIL- WF 5-Tapped Done")
+		 .SelectLocation(locationsData1.LocationName, "MIL- WF 5-Selecting AddedLocation")
+		 .SelectLocation(locationsData.LocationName, "MIL- WF 5-Selecting AddedLocation")
+		 .LocationDoneSelection("MIL- WF 5-Selecting Done")
+		 .TapOnDone("MIL- WF 5-Tapped Done")
 
-		.TapOnBack("MIL- WF 5-Tapped Back")
-		.TapOnBack("MIL- WF 5-Tapped Back")
+		 .TapOnBack("MIL- WF 5-Tapped Back")
+		 .TapOnBack("MIL- WF 5-Tapped Back")
 
-		.SelectLocation(locationsData.LocationName, "MIL- WF 5-Selecting AddedLocation")
-		._atSetupInventoryPage()
-		.verifyNonSyscoPrepItemSetupInv(nonSyscoItemData.ProductName,"MIL- WF 5-Verify item selected")
+		 .SelectLocation(locationsData.LocationName, "MIL- WF 5-Selecting AddedLocation")
+		 ._atSetupInventoryPage()
+		 .verifyNonSyscoPrepItemSetupInv(nonSyscoItemData.ProductName,"MIL- WF 5-Verify item selected")
 
-		._atLocationsPage() 
-		.TapOnBack("MIL- WF 5-Tapped Back")
-		.SelectLocation(locationsData1.LocationName, "MIL- WF 5-Selecting AddedLocation")
+		 ._atLocationsPage() 
+		 .TapOnBack("MIL- WF 5-Tapped Back")
+		 .SelectLocation(locationsData1.LocationName, "MIL- WF 5-Selecting AddedLocation")
 
-		._atSetupInventoryPage()
-		.verifyNonSyscoPrepItemSetupInv(nonSyscoItemData.ProductName,"MIL- WF 5-Verify item selected")
+		 ._atSetupInventoryPage()
+		 .verifyNonSyscoPrepItemSetupInv(nonSyscoItemData.ProductName,"MIL- WF 5-Verify item selected")
 
-		;
-	}
+		 ;
+	 }
 
 	 /*
-		 * Validating user is able to setup inventory.
-		 * Validating Creating Location,Editing Location in Manage Locations and deleting location
-		 * Prerequisite:Normal/MA User with OG items
-		 * 
-		 */
-
-
-@Test(groups={"MIL - WF 6"},priority=4, description = "MIL - WF 6-Creating Location,Editing Location in Manage Locations and assiging  item  to diff location")
-	public void MIL_WF6_Create_Edit_Delete_Locations() {	
-
-		LoginData loginData =LoginData.fetch("LoginData4");
-		LocationsData locationsData2 =LocationsData.fetch("LocatiosData2");
-		LocationsData locationsData1 =LocationsData.fetch("LocatiosData1");
-		Start.asTester
-		.goToLoginpage()
-		.verifyLoginPage("MIL - WF 6-LoginPage")
-		.signIn(loginData.UserName, loginData.Password,"MIL - WF 6-Login")
-
-		._atHomePage()
-		.ClickAccount(loginData.UserName,"Clicked account")
-
-		._atAccountsPage()
-		.Sixth_AccountSelection(loginData.UserName,"MIL - WF 6-FirstAccountSelect")
-
-
-		//setting up inventory    
-		._atInventoryToolPage()
-		.InvTools_SetUpInventory("MIL - WF 6-SetupInventoryTap")
-
-		._atSetupInventoryPage()
-		.TapOnSkip("MIL - WF 6-Skip1 Tapped")
-		.TapOrderGuide("MIL - WF 6-OG Selected")
-		.tapContinue("MIL - WF 6-Tapped Continue")
-
-		._atLocationsPage()
-		.DefaultLocation("MIL - WF 6-Tapped Custom location")
-		.tapContinue("MIL - WF 6-Tapped Continue")
-
-		._atSetupInventoryPage()
-		.TapOnDOThisLater("MIL - WF 6-Tapped do this later")
-		.TapTakeHome("MIL - WF 6-Tapped Take me Home")
-
-		._atInventoryToolPage()
-		.InvTools_Locations("MIL - WF 6-TrackinventoryTap")
-
-		._atLocationsPage()
-		.TapAddLocation("MIL- WF 6-Tapped ADD")
-		.AddLocationName(locationsData1.LocationName,"MIL- WF 6-Enter location name")
-		.AddLocationFreezer("MIL- WF 6-Tapped Cooler")
-		.TapOnDone("MIL- WF 6-Tapped Done")
-		.TapOnBack("MIL- WF 6-Tapped Back")
-		.VerifyLocationList(locationsData1.LocationName, "MIL- WF 6-Verifing AddedLocation")
-
-		.TapAddLocation("MIL- WF 6-Tapped ADD")
-		.AddLocationName(locationsData2.LocationName,"MIL- WF 6-Enter location name")
-		.AddLocationCooler("MIL- WF 6-Tapped Cooler")
-		
-		.TapOnCancel("MIL- WF 6-Tapped Cancel")
-		.VerifyCancelledLocationList(locationsData2.LocationName, "MIL- WF 6-Verifing AddedLocation")
-		.TapAddLocation("MIL- WF 6-Tapped ADD")
-		.AddLocationName(locationsData2.LocationName,"MIL- WF 6-Enter location name")
-		.AddLocationCooler("MIL- WF 6-Tapped Cooler")
-		
-		.TapOnDone("MIL- WF 6-Tapped Done")
-		.TapOnBack("MIL- WF 6-Tapped Back")
-		.VerifyLocationList(locationsData2.LocationName, "MIL- WF 6-Verifing AddedLocation")
-
-		._atLocationsPage()
-		.SelectLocation(locationsData2.LocationName, "MIL- WF 6-Selecting AddedLocation")
-		.TapOnEdit("MIL- WF 6-Editing AddedLocation")
-		.AddLocationFreezer("MIL- WF 6-Tapped Cooler")
-		.AddLocationName(locationsData2.EditLocation,"MIL- WF 6-Enter location name")
-
-		.TapOnDone("MIL- WF 6-Tapped Done")
-		.TapOnBack("MIL- WF 6-Tapped Back")
-		.VerifyLocationList(locationsData2.EditLocation, "MIL- WF 6-Verifing AddedLocation")
-
-		.SelectLocation(locationsData2.EditLocation, "MIL- WF 6-Selecting AddedLocation")
-		.TapOnDeleteLocation("MIL- WF 6-Tapped Delete")
-		.TapOnYesDelete("MIL- WF 6-Deleting AddedLocation")
-		//  .TapOnBack("MIL- WF 6-Tapped Back")
-		.VerifyCancelledLocationList(locationsData2.EditLocation, "MIL- WF 6-Verifing AddedLocation")
-
-
-
-		;
-	}
-/*
- * Validating user is able to setup inventory.
- * Validating Creating Location and Delete Items from location
- * Prerequisite:Normal/MA User with OG items
- * 
- */
-
-	@Test(groups={"MIL - WF 7"},priority=4, description = "MIL - WF 7-Track Inventory+Location+Edit+Delete Items from location")
-	public void MIL_WF7_TrackInventory_Location_Edit_Delete_Items_location_MA() {
-
-		LoginData loginData =LoginData.fetch("LoginData3"); 
-		LocationsData locationsData8 =LocationsData.fetch("LocatiosData8");
-		LocationsData locationsData9 =LocationsData.fetch("LocatiosData9");
-		
-		LocationsData locationsData3 =LocationsData.fetch("LocatiosData3");
-		LocationsData locationsData1 =LocationsData.fetch("LocatiosData1");
-		LocationsData locationsData2 =LocationsData.fetch("LocatiosData2");
-		NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
-		PrepItemData prepItemData =PrepItemData.fetch("PrepItemData");
-		VendorDetailsData vendorDetailsData =VendorDetailsData.fetch("VDNonsysco");
-		//SearchData searchData=SearchData.fetch("SearchData");
-		UOMQuantityData uomQuantityData = UOMQuantityData.fetch("UOMQuantityData");
-		UOMQuantityData uomQuantityData1 = UOMQuantityData.fetch("UOMQuantityData1");
-
-		Start.asTester
-		.goToLoginpage()
-		.verifyLoginPage("MIL-WF7-LoginPage")
-		.signIn(loginData.UserName, loginData.Password,"MIL-WF7-LoginPage")
-
-		._atHomePage()
-		.ClickAccount(loginData.UserName,"MIL-WF7-Clicked account")
-
-		._atAccountsPage()
-		.First_AccountSelection(loginData.UserName,"MIL-WF7-FirstAccountSelect")
-
-		._atInventoryToolPage()
-		.InvTools_SetUpInventory("MIL-WF7-SetupInventoryTap")
-
-		._atSetupInventoryPage()
-		.TapOnSkip("MIL-WF7-Skip1 Tapped")
-		.TapOrderGuide("MIL-WF7-OG Selected")
-		.tapContinue("MIL-WF7-Tapped Continue1")
-
-		._atLocationsPage()
-		.CustomLocation("MIL-WF7-Tapped Custom location")
-		.tapContinue("MIL-WF7-Tapped Continue2")
-
-		.EnterLocationName(locationsData8.LocationName,"MIL-WF7-Enter location name1")
-		.AddLocations1_TypeDry("MIL-WF7-Tapped Dry1")
-
-		.AddLocations2("MIL-WF7-Add location2")
-		.AddLocations2_name(locationsData9.LocationName,"MIL-WF7-Enter location name2")
-		.AddLocations2_TypeDry("MIL-WF7-Tapped Dry2")
-		.TapOnNext("MIL-WF7-Tapped Next1")
-
-		.selectMultipleItemsFromLocation1("MIL-WF7-Selected Multiple items")
-		.TapOnNext("MIL-WF7-Tapped Next2")
-
-		.selectMultipleItemsFromLocation2("MIL-WF7-Selected Multiple items")
-		.TapOnDone("MIL-WF7-Tapped Done1")
-
-		._atCategoryPage()
-		.defaultCategories("MIL-WF7-Tapped Default category")
-		.tapComplete("MIL-WF7-Tapped Complete")
-
-		._atSetupInventoryPage()
-		.TapTakeHome("MIL-WF7-Tapped Take me Home")  
-
-		._atInventoryToolPage()
-		.InvTools_TrackInventory("MIL-WF7-Selected track inventory")
-
-		._atLocationsPage()
-		.SelectLocation(locationsData8.LocationName, "MIL-WF7-selected location1")
-		.ItemVerifyOnLocation1("MIL-WF7-Verify items inside location1")    
-		.TapOnEdit("MIL-WF7-Tapped Edit")
-		.DeleteItems("MIL-WF7-Deleting items in location")
-		.TapOnDone("MIL-WF7-Tapped Done2")
-		.TapOnYesDelete("MIL-WF7-confirming Deleting items")
-		.VerifyDeleteItemsList("MIL-WF7-Verifying Deleted items list")
-		.TapOnBack("tapped on back")
-		
-		//creating a location1       
-	._atLocationsPage()
-	.TapAddLocation("MIL-WF 2-Tapped ADD")
-	.AddLocationName(locationsData1.LocationName,"MIL-WF 2-Enter location1 name")
-	.AddLocationCooler("MIL-WF 2-Tapped Cooler")
-	.TapOnDone("MIL-WF 2-Tapped Done")
-	.TapOnBack("MIL-WF 2-Tapped Back")
-	.VerifyLocationList(locationsData1.LocationName, "MIL-WF 2-Verifing Added Location1")
-
-	//nonsysco item addition to location1
-	.SelectLocation(locationsData1.LocationName, "MIL-WF 2-Selecting Added Location1")
-	.TapAddLocation("MIL-WF 2-Tapped ADD")
-
-	._atSetupInventoryPage()
-	.AddItemFrom_NonSysco("MIL-WF 2-Tapped NonSysco")
-	.EnterItemDetails(nonSyscoItemData.ProductName, nonSyscoItemData.UPC, nonSyscoItemData.Pack, nonSyscoItemData.Size, nonSyscoItemData.Weight, nonSyscoItemData.Price, nonSyscoItemData.ProductBrand, "MIL-WF 2-NonSyscoItem details entered")
-	.AddSupplier_AddProductDetailsPage("MIL-WF 2-select supplier")
-
-	._atVendorPage()
-	.Add_Supplier("MIL-WF 2-AddVendorTap")
-	.AddSupplier_Details(vendorDetailsData.VendorName, vendorDetailsData.PhoneNum, vendorDetailsData.Address, vendorDetailsData.ContactInfo, vendorDetailsData.Email, vendorDetailsData.Note, "MIL-WF 2-AddVendorDetails")
-	.TapOnDone("MIL-WF 2-Done")
-	.TapOnBack("MIL-WF 2-Back")
-	.SupplierSelect(vendorDetailsData.VendorName,"MIL-WF 2-SupplierSelect")
-
-	//same nonsysco item addition to location2 
-	._atLocationsPage()
-	.AddLocation_AddProductDetailsPage("MIL-WF 2-Select Add/Select location option")
-	.TapAddLocation("MIL-WF 2-Tapped ADD")
-	.AddLocationName(locationsData2.LocationName,"MIL-WF 2-Enter location2 name")
-	.AddLocationCooler("MIL-WF 2-Tapped Cooler")
-	.TapOnDone("MIL-WF 2-Tapped Done")
-	.TapOnBack("MIL-WF 2-Tapped Back")
-	.VerifyLocationList(locationsData2.LocationName, "MIL-WF 2-Verifing Added Location2")
-	.SelectLocation(locationsData2.LocationName, "MIL-WF 2-Selecting Added Location3")
-	.SelectLocation(locationsData1.LocationName, "MIL-WF 2-Selecting Added Location2")
-	.LocationDoneSelection("MIL-WF 2-Selecting Done")
-	.TapOnDone("MIL-WF 2-Tapped Done")
-
-	//location1 displayed with 1 non sysco item
-	//prep item addition to location1
-
-	.TapAddLocation("MIL-WF 2-Tapped ADD")
-
-	._atSetupInventoryPage()
-	.AddItemFrom_PrepItem("MIL-WF 2-Tapped Prepitem")
-	.EnterItemDetails(prepItemData.ProductName, prepItemData.UPC, prepItemData.Pack, prepItemData.Size, prepItemData.Weight, prepItemData.Price, prepItemData.ProductBrand, "MIL-WF 2-NonSyscoItem details entered")
-
-	//same prep item addition to location3 
-	._atLocationsPage()
-	.AddLocation_AddProductDetailsPage("MIL-WF 2-Select Add/Select location option")
-	.TapAddLocation("MIL-WF 2-Tapped ADD")
-	.AddLocationName(locationsData3.LocationName,"MIL-WF 2-Enter location3 name")
-	.AddLocationCooler("MIL-WF 2-Tapped Cooler")
-	.TapOnDone("MIL-WF 2-Tapped Done")
-	.TapOnBack("MIL-WF 2-Tapped Back")
-	.VerifyLocationList(locationsData3.LocationName, "MIL-WF 2-Verifing Added Location3")
-
-	.SelectLocation(locationsData3.LocationName, "MIL-WF 2-Selecting Added Location3")
-	.SelectLocation(locationsData1.LocationName, "MIL-WF 2-Selecting Added Location3")
-	.LocationDoneSelection("MIL-WF 2-Selecting Done")
-	.TapOnDone("MIL-WF 2-Tapped Done")
-	// .TapOnDone("MIL-WF 2-Tapped Done")
-
-	//location1 displayed with nonsysco and prep item
-	//Verifications
-	._atLocationsPage()
-	.TapOnBack("MIL-WF 2-Tapped back")
-
-	.SelectLocation(locationsData1.LocationName, "MIL-WF 2-Selecting Added Location2") 
-	.TapOnBack("")
-	._atInventoryToolPage()
-	.InvTools_TrackInventory("MIL- WF 5-TrackinventoryTap")
-	._atLocationsPage()
-	.SelectLocation(locationsData1.LocationName, "MIL-WF7-selected location1")
-	.TapOnEdit("MIL-WF7-Tapped Edit")
-	.DeleteItems("MIL-WF7-Deleting items in location")
-	.TapOnDone("MIL-WF7-Tapped Done2")
-	.TapOnYesDelete("MIL-WF7-confirming Deleting items")
-	//.VerifyDeleteItemsList("MIL-WF7-Verifying Deleted items list")
-	.TapOnBack("")
-	.SelectLocation(locationsData3.LocationName, "MIL-WF7-selected location1")
-	//verify item deleted locn
-	.TapOnBack("")
-	.TapOnBack("")
-	//inv 254 
-	._atInventoryToolPage()
-	.InvTools_Locations("")
-	._atLocationsPage()
-	.SelectLocation(locationsData3.LocationName, "MIL-WF7-selected location1")
-	.TapOnEdit("MIL-WF7-Tapped Edit")
-	.TapOnDeleteLocation("")
-	.TapOnYesDelete("MIL-WF7-confirming Deleting items")
-	.SelectLocation("no lacation", "")
-	.ViewItemsOnLocation("SI - WF 5-view items on Location1")
-	//verify items in no location
-	.GetLocationsNameText("")
-	//verify item on the split location obtained
-	
-		;
-	}	
-	/*
-	 * Validating user is able to setup inventory.
-	 * Validating Creating Location and updating quantity on product card
-	 * Prerequisite:Normal/MA User with OG items
-	 * 
-	 */
-
-
-	@Test(groups={"MIL - WF 10"},priority=6, description = "MIL - WF 10 NU Track Inventory+Location+item product card + update qty & UOM")
-	public void MIL_WF10_TrackInventory_Location_item_productcard_updateqtyUOM() {	
-
-		LoginData loginData =LoginData.fetch("LoginData4");;
-		LocationsData locationsData =LocationsData.fetch("LocationsData");
-		PrepItemData prepItemData =PrepItemData.fetch("PrepItemData");
-		PrepItemData prepItemData1 =PrepItemData.fetch("PrepItemData1");
-		UOMQuantityData uomQuantityData1 = UOMQuantityData.fetch("UOMQuantityData1");
-
-		Start.asTester
-		.goToLoginpage()
-		.verifyLoginPage("MIL - WF 10 NU-LoginPage")
-		.signIn(loginData.UserName, loginData.Password,"MIL - WF 10 NU-Login")
-
-
-		._atHomePage()
-		.ClickAccount(loginData.UserName,"Clicked account")
-
-
-		._atAccountsPage()
-		.Second_AccountSelection(loginData.UserName,"MIL-WF 2-FirstAccountSelect")
-
-
-
-		._atInventoryToolPage()
-		.InvTools_SetUpInventory("SI - MIL - WF 10 NU-SetupInventoryTap")
-
-
-		._atSetupInventoryPage()
-		.TapOnSkip("MIL - WF 10 NU-Skip1 Tapped")
-		.TapOrderGuide("MIL - WF 10 NU Selected")
-		.tapContinue("MIL - WF 10 NU-Tapped Continue")
-		._atLocationsPage()
-		.DefaultLocation("MIL-WF 2-Tapped Custom location")
-		.tapContinue("MIL-WF 2-Tapped Continue")
-		._atSetupInventoryPage()
-
-		.TapOnDOThisLater("MIL-WF6-Tapped do this later")
-		.TapTakeHome("MIL-WF 2-Tapped take me home")
-
-		._atInventoryToolPage()
-		.InvTools_TrackInventory("MIL - WF 10 NU-TrackinventoryTap")
-
-
-		._atLocationsPage()
-		.TapAddLocation("MIL - WF 10 NU-Tapped ADD")
-		.AddLocationName(locationsData.LocationName,"MIL - WF 10 NU-Enter location name")
-		.AddLocationCooler("MIL - WF 10 NU-Tapped Cooler")
-		.TapOnDone("MIL - WF 10 NU-Tapped Done")
-		.TapOnBack("MIL - WF 10 NU-Tapped Back")
-		.VerifyLocationList(locationsData.LocationName, "MIL - WF 10 NU-Verifing AddedLocation")
-
-		.SelectLocation(locationsData.LocationName, "MIL - WF 10 NU-Selecting AddedLocation")
-		.TapAddLocation("MIL - WF 10 NU-Tapped ADD")
-		._atSetupInventoryPage()
-		.AddItemFrom_PrepItem("MIL - WF 10 NU-Tapped NonSysco")
-		.EnterItemDetails(prepItemData.ProductName, prepItemData.UPC, prepItemData.Pack, prepItemData.Size, prepItemData.Weight, prepItemData.Price, prepItemData.ProductBrand, "MIL - WF 1,3-NonSyscoItem details entered")
-		.TapOnDone("MIL - WF 10 NU-Tapped Done")
-		._atLocationsPage()
-		.ProductSelect(prepItemData.ProductName, "")
-		.TapOnEdit("MIL - WF 10 NU Tap on edit")
-		._atSetupInventoryPage()
-		.EnterItemDetails(prepItemData1.ProductName, prepItemData1.UPC, prepItemData1.Pack, prepItemData1.Size, prepItemData1.Weight, prepItemData1.Price, prepItemData1.ProductBrand, "MIL - WF 1,3-NonSyscoItem details entered")
-		._atLocationsPage()
-		.tapOnProductOpenProductDetailsPageAndEnterQty(prepItemData1.ProductName, uomQuantityData1.Quantity, "")
-		.TapOnDone("MIL - WF 10 NU tap on done")
-		.TapOnBack("MIL - WF 10 NU tap on back")      ///////
-		.QuantityVerify(uomQuantityData1.Quantity, "MIL - WF 10 NU Quantity verify")
-		._atSetupInventoryPage()
-		.verifyNonSyscoPrepItemSetupInv(prepItemData1.ProductName,"MIL-WF1-WF4-Verify item selected")
-
-		;
-
-	}
-
-
-
-	/*
-	 * Validating user is able to setup inventory.
-	 * Validating editing item and updating category on product card
-	 * Prerequisite:Normal/MA User with OG items
-	 * 
-	 */
-
-     @Test(groups={"MEC - WF 1"},priority=7, description = "MEC - WF 1-Selecting a location navigate to product and assiging  item  to category created")
-	public void MEC_WF1_Locations_ItemEdit_UpdateCategory_MA() {	
-
-		LoginData loginData =LoginData.fetch("LoginData1");
-		LocationsData locationsData =LocationsData.fetch("LocatiosData1");
-		NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
-		VendorDetailsData vendorDetailsData =VendorDetailsData.fetch("VDNonsysco");
-		CategoryData categoryData =CategoryData.fetch("CategoryData");
-		LocationsData locationsData1 =LocationsData.fetch("LocationsData");
-		PrepItemData prepItemData =PrepItemData.fetch("PrepItemData");
-		LocationsData locationsData2 =LocationsData.fetch("LocatiosData4");
-		PrepItemData prepItemData1 =PrepItemData.fetch("PrepItemData1");
-		LocationsData locationsData3 =LocationsData.fetch("LocatiosData2");	
-
-		Start.asTester
-		.goToLoginpage()
-		.verifyLoginPage("SMEC - WF 1-LoginPage")
-		.signIn(loginData.UserName, loginData.Password,"MEC-WF 1-Login")
-
-		._atHomePage()
-		.ClickAccount(loginData.UserName,"Clicked account")
-
-		._atAccountsPage()
-		.Third_AccountSelection(loginData.UserName,"SI - WF 10-FirstAccountSelect")
-
-		._atInventoryToolPage()
-		.InvTools_SetUpInventory("SI - WF 19-SetupInventoryTap")
-
-		._atSetupInventoryPage()
-		.TapOnSkip("MIL - WF 10 NU-Skip1 Tapped")
-		.TapOrderGuide("MIL - WF 10 NU Selected")
-		.tapContinue("MIL - WF 10 NU-Tapped Continue")
-		._atLocationsPage()
-		.DefaultLocation("MIL-WF 2-Tapped Custom location")
-		.tapContinue("MIL-WF 2-Tapped Continue")
-		._atSetupInventoryPage()
-
-		.TapOnDOThisLater("MIL-WF6-Tapped do this later")
-		.TapTakeHome("MIL-WF 2-Tapped take me home")
-
-
-		._atInventoryToolPage()
-		.InvTools_TrackInventory("MEC-WF 1-TrackinventoryTap")
-
-		._atLocationsPage()
-		.TapAddLocation("MEC-WF 1-Tapped ADD")
-		.AddLocationName(locationsData.LocationName,"MEC-WF 1-Enter location name")
-		.AddLocationCooler("MEC-WF 1-Tapped Cooler")
-		.TapOnDone("MEC-WF 1-Tapped Done")
-		.TapOnBack("MEC-WF 1-Tapped Back")
-		.VerifyLocationList(locationsData.LocationName, "MEC-WF 1-Verifing AddedLocation")
-		//nonsysco item addition 
-		.SelectLocation(locationsData.LocationName, "MEC-WF 1-Selecting AddedLocation")
-		.TapAddLocation("MEC-WF 1-Tapped ADD")
-
-		._atSetupInventoryPage()
-		.AddItemFrom_NonSysco("MEC-WF 1-Tapped NonSysco")
-		.EnterItemDetails(nonSyscoItemData.ProductName, nonSyscoItemData.UPC, nonSyscoItemData.Pack, nonSyscoItemData.Size, nonSyscoItemData.Weight, nonSyscoItemData.Price, nonSyscoItemData.ProductBrand, "MEC-WF 1-NonSyscoItem details entered")
-		.AddSupplier_AddProductDetailsPage("MEC-WF 1-select supplier")
-		._atVendorPage()
-		.Add_Supplier("MEC-WF 1-AddVendorTap")
-		.AddSupplier_Details(vendorDetailsData.VendorName, vendorDetailsData.PhoneNum, vendorDetailsData.Address, vendorDetailsData.ContactInfo, vendorDetailsData.Email, vendorDetailsData.Note, "MEC-WF 1-AddVendorDetails")
-		.TapOnDone("MEC-WF 1-Tapped Done")
-		.TapOnBack("MEC-WF 1-Tapped Back")
-		.SupplierSelect(vendorDetailsData.VendorName,"MEC-WF 1-SupplierSelect")
-		.TapOnDone("MEC-WF 1-Tapped Done")
-
-		._atSetupInventoryPage()
-		.verifyNonSyscoPrepItemSetupInv(nonSyscoItemData.ProductName,"MEC-WF 1-Verify item selected")
-
-		._atLocationsPage()
-		.ProductSelect(nonSyscoItemData.ProductName, "MEC-WF 1-Select Product")
-		.TapOnEdit("MEC-WF 1-Tapped Edit")
-
-		._atLocationsPage()
-		.AddCategory_AddProductDetailsPage("MEC-WF 1-CategorySelect")
-		.TapAddLocation("MEC-WF 1-Tapped Add")
-		._atCategoryPage()
-		.AddCategoryName(categoryData.Name, "MEC-WF 1-Enter Category Name")
-		.AddCategoryFood("MEC-WF 1-Enter type food")
-		.TapOnDone("MEC-WF 1-Tapped Done")
-		.TapOnBack("MEC-WF 1-Tapped Back")
-		.SelectCategory(categoryData.Name, "MEC-WF 1-Select Category Name")
-		.TapOnDone("MEC-WF 1-Tapped Done") 
-		.TapOnBack("MEC-WF 1-Tapped Back")
-		.TapOnBack("MEC-WF 1-Tapped Back")
-
-		._atLocationsPage()
-		.SelectLocation(locationsData.LocationName, "MEC-WF 1-Selecting AddedLocation")
-		._atCategoryPage()
-		.VerifyCategory(categoryData.Name, "MEC-WF 1-Verified Category")
-		
-		//inv 252,253
-		
-		//no scenario
-		._atLocationsPage()
-		.TapAddLocation("MEC-WF1-Tapped ADD")
-		._atSetupInventoryPage()
-		.AddItemFrom_PrepItem("MEC-WF1-Tapped Prepitem")
-		.EnterItemDetails(prepItemData.ProductName, prepItemData.UPC, prepItemData.Pack, prepItemData.Size, prepItemData.Weight, prepItemData.Price, prepItemData.ProductBrand, "MEC-WF1-NonSyscoItem details entered")
-
-		// prep item addition to 2 locations created 
-		._atLocationsPage()
-		.AddLocation_AddProductDetailsPage("MEC-WF1-Select Add/Select location option")
-		.TapAddLocation("MEC-WF1-Tapped ADD")
-		.AddLocationName(locationsData1.LocationName,"MEC-WF1-Enter location3 name")
-		.AddLocationCooler("MEC-WF1-Tapped Cooler")
-		.TapOnDone("MEC-WF1-Tapped Done")
-		.TapOnBack("MEC-WF1-Tapped Back")
-		.VerifyLocationList(locationsData1.LocationName, "MEC-WF1-Verifing Added Location3")
-
-		.SelectLocation(locationsData1.LocationName, "MEC-WF1-Selecting Added Location3")
-	    .SelectLocation(locationsData.LocationName, "MEC-WF1-Selecting Added Location1")
-		.LocationDoneSelection("MEC-WF1-Selecting Done")
-		.TapOnDone("MEC-WF1-Tapped Done")
-		
-		._atSetupInventoryPage()
-		.verifyNonSyscoPrepItemSetupInv(prepItemData.ProductName,"MEC-WF1-Verify item selected")
-	
-		._atLocationsPage()
-		.ProductSelect(prepItemData.ProductName, "MEC-WF1-Select Product")
-		.TapOnEdit("MEC-WF1-Tapped Edit")
-		//.LocationsDelete("MEC-WF1-Tapped Edit")
-		.LocationsDelete(locationsData1.LocationName,"MEC-WF1-Tapped delete")
-		.LocationsDelete(locationsData.LocationName,"MEC-WF1-Tapped delete")
-		.DeleteAllLocConfirmation("MEC-WF1-Confirming deleting all locations")
-		.TapOnNoDelete("MEC-WF1-Tapped No for deletion")
-		.TapOnEdit("MEC-WF1-Tapped Edit")
-		.TapOnDone("MEC-WF1-Tapped Done")
-		.TapOnBack("MEC-WF1-Tapped Back")
-		.TapOnBack("MEC-WF1-Tapped Back")
-		.SelectLocation(locationsData2.LocationName, "MEC-WF1-Selecting Added Location3")
-		._atLocationsPage()
-		.NoItemsCheckInNoLocation("MEC-WF1-No items in no location")
-		
-		
-		.TapOnBack("MEC-WF1-Tapped Back")
-		//yes scenario
-		.SelectLocation(locationsData.LocationName, "MEC-WF1-Selecting AddedLocation")
-		._atLocationsPage()
-		.TapAddLocation("MEC-WF1-Tapped ADD")
-		._atSetupInventoryPage()
-		.AddItemFrom_PrepItem("MIL-WF2-Tapped Prepitem")
-		.EnterItemDetails(prepItemData1.ProductName, prepItemData1.UPC, prepItemData1.Pack, prepItemData1.Size, prepItemData1.Weight, prepItemData1.Price, prepItemData1.ProductBrand, "MEC-WF1-PrepItem details entered")
-
-		// prep item addition to 2 locations created 
-		._atLocationsPage()
-		.AddLocation_AddProductDetailsPage("MEC-WF1-Select Add/Select location option")
-		.TapAddLocation("MEC-WF1-Tapped ADD")
-		.AddLocationName(locationsData3.LocationName,"MEC-WF1-Enter location3 name")
-		.AddLocationCooler("MEC-WF1-Tapped Cooler")
-		.TapOnDone("MEC-WF1-Tapped Done")
-		.TapOnBack("MEC-WF1-Tapped Back")
-		.VerifyLocationList(locationsData3.LocationName, "MEC-WF1-Verifing Added Location3")
-
-		.SelectLocation(locationsData3.LocationName, "MEC-WF1-Selecting Added Location3")
-	    .SelectLocation(locationsData.LocationName, "MEC-WF1-Selecting Added Location1")
-		.LocationDoneSelection("MEC-WF1-Selecting Done")
-		.TapOnDone("MEC-WF1-Tapped Done")
-		
-		._atSetupInventoryPage()
-		.verifyNonSyscoPrepItemSetupInv(prepItemData1.ProductName,"MEC-WF1-Verify item selected")
-
-		._atLocationsPage()
-		.ProductSelect(prepItemData1.ProductName, "MEC-WF1-Select Product")
-		
-		.TapOnEdit("MEC-WF1-Tapped Edit")
-	//	.LocationsDelete("MEC-WF1-Tapped delete")
-		.LocationsDelete(locationsData3.LocationName,"MEC-WF1-Tapped delete")
-		.LocationsDelete(locationsData.LocationName,"MEC-WF1-Tapped delete")
-		.DeleteAllLocConfirmation("MEC-WF1-Confirming deleting all locations")
-		.TapOnYesDelete("MEC-WF1-Tapped yes for deleting all locations")
-		.TapOnDone("MEC-WF1-Tapped Done")
-		.TapOnBack("MEC-WF1-Tapped Back")
-		.TapOnBack("MEC-WF1-Tapped Back")
-		.SelectLocation(locationsData2.LocationName, "MEC-WF1-Selecting Added Location3")
-		._atSetupInventoryPage()
-		.verifyNonSyscoPrepItemSetupInv(prepItemData1.ProductName,"MEC-WF1-Verify item selected")
-		._atLocationsPage()
-		.NoLocationTextCheck(locationsData2.LocationName,"MEC-WF1-No location text verification")
-	
-
-
-		;
-	}
-
-     /*
- 	 * Validating user is able to setup inventory.
- 	 * Validating Creating, editing and deleting category
- 	 * Prerequisite:Normal/MA User with OG items
- 	 * 
- 	 */
-
-	@Test(groups={"MEC - WF 2"},priority=8, description = "MEC - WF 2-Creating, editing and deleting category ")
-	public void MEC_WF2_Category_Create_Edit_Delete_Category() {	
-
-		LoginData loginData =LoginData.fetch("LoginData2");
-		CategoryData categoryData =CategoryData.fetch("CategoryData");
-		Start.asTester
-		.goToLoginpage()
-		.verifyLoginPage("MIL-WF 2-LoginPage")
-		.signIn(loginData.UserName, loginData.Password,"MEC-WF 2-Login")
-
-
-		._atHomePage()
-		.ClickAccount(loginData.UserName,"Clicked account")
-
-		._atAccountsPage()
-		.First_AccountSelection(loginData.UserName,"SI - WF 10-FirstAccountSelect")
-
-
-		//setting up inventory    
-		._atInventoryToolPage()
-		.InvTools_SetUpInventory("TI-WF1-WF2-SetupInventoryTap")
-
-		._atSetupInventoryPage()
-		.TapOnSkip("TI-WF1-WF2-Skip1 Tapped")
-		.TapOrderGuide("TI-WF1-WF2-OG Selected")
-		.tapContinue("TI-WF1-WF2-Tapped Continue")
-
-		._atLocationsPage()
-		.DefaultLocation("TI-WF1-WF2-Tapped Custom location")
-		.tapContinue("TI-WF1-WF2-Tapped Continue")
-		._atSetupInventoryPage()
-		.TapOnDOThisLater("TI-WF1-WF2-Tapped do this later")
-		.TapTakeHome("TI-WF1-WF2-Tapped Take me Home")
-
-
-		._atInventoryToolPage()
-		.InvTools_Category("MEC-WF 2-Expense Category Tap")
-
-		._atCategoryPage()
-		.TapAdd("MEC-WF 2-Add Expense Category Tap")
-		.AddCategoryName(categoryData.Name, "MEC-WF 2-Enter Category Name")
-		.AddCategoryFood("MEC-WF 2-Enter type food")
-		.TapOnDone("MEC-WF 2-Tapped Done")
-		.TapOnBack("MEC-WF 2-Tapped Back")
-		.VerifyCategoryList(categoryData.Name, "MEC-WF 2-Verifying added category list")
-
-		.SelectCategory(categoryData.Name, "MEC-WF 2-Selecting Category")
-		.TapOnEdit("MEC-WF 2-Tap on Edit")
-		.AddCategoryFood("MEC-WF 2-Enter type food")
-		.AddCategoryName(categoryData.Name1, "MEC-WF 2-Entering new name")
-		.TapOnDone("MEC-WF 2-Tapped Done")
-		.TapOnBack("MEC-WF 2-Tapped Back")
-		.VerifyCategoryList(categoryData.Name1, "MEC-WF 2-Verifying edited category list")
-
-		.SelectCategory(categoryData.Name1, "MEC-WF 2-Selecting Category")
-		.TapOnDeleteCategory("MEC-WF 2-Deleting Category")
-		.TapOnYesDelete("MEC-WF 2-Tap on Yes Delete")
-		.VerifyDeletedCategoryList(categoryData.Name1, "MEC-WF 2-Verifying Deleted category list")
-		;
-	}		
-	  /*
-	 	 * Validating user is able to setup inventory.
-	 	 * Validating Non sysco item addition through Homepage and linking supplier location and category
-	 	 * Prerequisite:Normal/MA User with OG items
-	 	 * 
-	 	 */
-
-	@Test(groups={"MNS-1"},priority=2, description = "MNS-1-Manage_Create Non-Sysco Item_Link Supplier_Location_Expense Category")
-	public void MNS_1_CreateNonSyscoItem_LinkSupplier_Location_Category() {	
-
-		LoginData loginData =LoginData.fetch("LoginData3");	  
-		LocationsData locationsData =LocationsData.fetch("LocationsData");
-		CategoryData categoryData=CategoryData.fetch("CategoryData");
-		NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
-		VendorDetailsData vendorDetailsData =VendorDetailsData.fetch("VendorDetailData1");
-		PrepItemData prepItemData =PrepItemData.fetch("PrepItemData");
-		NonSyscoItemData nonSyscoItemData1 =NonSyscoItemData.fetch("NonSyscoItmData1");
-		VendorDetailsData vendorDetailsData1 =VendorDetailsData.fetch("VendorDetailData2");
-		LocationsData locationsData1 =LocationsData.fetch("LocatiosData3");
-
-		Start.asTester
-		.goToLoginpage()
-		.verifyLoginPage("MNS-1-LoginPage")
-		.saveUsernameCheckBoxClick("MNS-1-save username")
-		.signIn(loginData.UserName, loginData.Password,"MNS-1-Login")
-
-		._atHomePage()
-		.ClickAccount(loginData.UserName,"MNS-1-Clicked account")
-
-		._atAccountsPage()
-		.Second_AccountSelection(loginData.UserName,"MNS-1-FirstAccountSelect")
-
-		._atInventoryToolPage()
-		.InvTools_SetUpInventory("MNS-1-SetupInventoryTap")
-
-		._atSetupInventoryPage()
-		.TapOnSkip("MNS-1-Tapped Skip1")
-		.TapOrderGuide("MIL - WF 5-OG Selected")
-		.tapContinue("MIL - WF 5-Tapped Continue1")
-			._atLocationsPage()
-		.DefaultLocation("SI - WF 1-Tapped Custom location")
-		.tapContinue("SI - WF 1-Tapped Continue")
-		._atSetupInventoryPage()
-
-		.TapOnDOThisLater("MIL-WF6-Tapped do this later")
-		.TapTakeHome("SI - WF 32-Tapped take me home")  
-
-		._atInventoryToolPage()
-		.InvTools_CreateNonSysco("MNS-1-Tapped Nonsysco item")
-
-		._atSetupInventoryPage()
-		.EnterItemDetails(nonSyscoItemData.ProductName, nonSyscoItemData.UPC, nonSyscoItemData.Pack, nonSyscoItemData.Size, nonSyscoItemData.Weight, nonSyscoItemData.Price, nonSyscoItemData.ProductBrand, "MNS-1-NonSyscoItem details entered")
-
-		//linking supplier
-		.AddSupplier_AddProductDetailsPage("MNS-1-Select supplier")
-		._atVendorPage()
-		.Add_Supplier("MNS-1-AddVendorTap")
-		.AddSupplier_Details(vendorDetailsData.VendorName, vendorDetailsData.PhoneNum, vendorDetailsData.Address, vendorDetailsData.ContactInfo, vendorDetailsData.Email, vendorDetailsData.Note, "MNS-1-AddVendorDetails")
-		.TapOnDone("MNS-1-Supplier added")
-		.TapOnBack("MNS-1-Tapped Back1")
-		.SupplierSelect(vendorDetailsData.VendorName,"MNS-1-SupplierSelect")
-
-		//linking location
-		._atLocationsPage()
-		.AddLocation_AddProductDetailsPage("MNS-1-Select Add/Select location option")
-		.TapAddLocation("MNS-1-Tapped ADD Location")
-		.AddLocationName(locationsData.LocationName,"MNS-1-Enter location name")
-		.AddLocationCooler("MNS-1-Tapped Cooler")
-		.TapOnDone("MNS-1-Tapped Done4")
-		.TapOnBack("MNS-1-Tapped Back2")
-		.VerifyLocationList(locationsData.LocationName, "MNS-1-Verifing Added Location")
-		.SelectLocation(locationsData.LocationName, "MNS-1-Selecting Added Location")
-		.LocationDoneSelection("MNS-1-Selecting Done")
-
-		//linking category
-		._atLocationsPage()
-		.AddCategory_AddProductDetailsPage("MNS-1-Tapped CategorySelect")
-		._atCategoryPage()
-		.TapAdd("MNS-1-Tapped Add category")
-		.AddCategoryName(categoryData.Name, "MNS-1-Enter Category Name")
-		.AddCategoryFood("MNS-1-Enter type food")
-		.TapOnDone("MNS-1-Tapped Done5")
-		.TapOnBack("MNS-1-Tapped Back3")
-		.SelectCategory(categoryData.Name, "MNS-1-Select Category Name")
-
-		.TapOnDone("MNS-1-Tapped Done,Nonsyscoitem added")   
-
-		._atInventoryToolPage()
-		.InvTools_TrackInventory("MNS-1-Selected track inventory")
-
-
-		._atLocationsPage()
-		.SelectLocation(locationsData.LocationName, "MNS-1-Select added location")
-
-		._atSetupInventoryPage()
-		.verifyNonSyscoPrepItemSetupInv(nonSyscoItemData.ProductName,"MNS-1-Verify nonsysco item added")
-		._atLocationsPage()
-		.NonSyscoPrepCategoryIdentify(nonSyscoItemData.ProductName,prepItemData.ProductName,"MNS-1-Category idenitification for nonsysco")
-		._atCategoryPage()
-		.VerifyNonSycoCustomCategory(categoryData.Name, "MNS-1-Category verification")
-		
-		
-		
-		
-		._atLocationsPage()
-		.ProductSelect(nonSyscoItemData.ProductName, "MIL-WF10-Product select")
-		.TapOnEdit("MIL-WF10-Tap on edit")
-		
-		._atSetupInventoryPage()	
-		.EnterItemDetails(nonSyscoItemData1.ProductName, nonSyscoItemData1.UPC, nonSyscoItemData1.Pack, nonSyscoItemData1.Size, nonSyscoItemData1.Weight, nonSyscoItemData1.Price, nonSyscoItemData1.ProductBrand, "MIL-WF10-NonSyscoItem details entered")
-		.AddSupplier_AddProductDetailsPage("MIL-WF10-select supplier")
-		._atVendorPage()
-		.Add_Supplier("MIL-WF10-AddVendorTap")
-		.AddSupplier_Details(vendorDetailsData1.VendorName, vendorDetailsData1.PhoneNum, vendorDetailsData1.Address, vendorDetailsData1.ContactInfo, vendorDetailsData1.Email, vendorDetailsData1.Note, "MIL-WF10-AddVendorDetails")
-		.TapOnDone("MIL-WF10-Done")
-		.TapOnBack("MIL-WF10-Back")
-		.SupplierSelect(vendorDetailsData1.VendorName,"MIL-WF10-SupplierSelect")
-		._atLocationsPage()
-		.AddLocation_AddProductDetailsPage("MIL-WF10-Select Add/Select location option")
-		.TapAddLocation("MIL-WF10-Tapped ADD")
-		.AddLocationName(locationsData1.LocationName,"MIL-WF10-Enter location2 name")
-		.AddLocationCooler("MIL-WF10-Tapped Cooler")
-		.TapOnDone("MIL-WF10-Tapped Done")
-		.TapOnBack("MIL-WF10-Tapped Back")
-		.VerifyLocationList(locationsData1.LocationName, "MIL-WF10-Verifing Added Location2")
-
-		.SelectLocation(locationsData1.LocationName, "MIL-WF10-Selecting Added Location2")
-		.SelectLocation(locationsData.LocationName, "MIL-WF2-Selecting Added Location2")     //not preselected
-		.LocationDoneSelection("MIL-WF10-Selecting Done")
-		.TapOnDone("MIL-WF10-Tapped Done")
-		
-		.TapOnBack("MIL-WF10-Tapped Back")
-		.SelectLocation(locationsData1.LocationName, "MIL-WF10-Selecting Added Location2")
-		._atSetupInventoryPage()
-		.verifyNonSyscoPrepItemSetupInv(nonSyscoItemData1.ProductName,"MIL-WF10-Verify nonsysco item added")
-		;
-		;
-	}
+	  * Validating user is able to setup inventory.
+	  * Validating Creating Location,Editing Location in Manage Locations and deleting location
+	  * Prerequisite:Normal/MA User with OG items
+	  * 
+	  */
+
+
+	 @Test(groups={"MIL - WF 6"},priority=4, description = "MIL - WF 6-Creating Location,Editing Location in Manage Locations and assiging  item  to diff location")
+	 public void MIL_WF6_Create_Edit_Delete_Locations() {	
+
+		 LoginData loginData =LoginData.fetch("LoginData11");
+		 LocationsData locationsData2 =LocationsData.fetch("LocatiosData2");
+		 LocationsData locationsData1 =LocationsData.fetch("LocatiosData1");
+		 Start.asTester
+		 .goToLoginpage()
+		 .verifyLoginPage("MIL - WF 6-LoginPage")
+		 .signIn(loginData.UserName, loginData.Password,"MIL - WF 6-Login")
+
+		 ._atHomePage()
+		 .ClickAccount(loginData.UserName,"Clicked account")
+
+		 ._atAccountsPage()
+		 .Sixth_AccountSelection(loginData.UserName,"MIL - WF 6-FirstAccountSelect")
+
+
+		 //setting up inventory    
+		 ._atInventoryToolPage()
+		 .InvTools_SetUpInventory("MIL - WF 6-SetupInventoryTap")
+
+		 ._atSetupInventoryPage()
+		 .TapOnSkip("MIL - WF 6-Skip1 Tapped")
+		 .TapOrderGuide("MIL - WF 6-OG Selected")
+		 .tapContinue("MIL - WF 6-Tapped Continue")
+
+		 ._atLocationsPage()
+		 .DefaultLocation("MIL - WF 6-Tapped Custom location")
+		 .tapContinue("MIL - WF 6-Tapped Continue")
+
+		 ._atSetupInventoryPage()
+		 .TapOnDOThisLater("MIL - WF 6-Tapped do this later")
+		 .TapTakeHome("MIL - WF 6-Tapped Take me Home")
+
+		 ._atInventoryToolPage()
+		 .InvTools_Locations("MIL - WF 6-TrackinventoryTap")
+
+		 ._atLocationsPage()
+		 .TapAddLocation("MIL- WF 6-Tapped ADD")
+		 .AddLocationName(locationsData1.LocationName,"MIL- WF 6-Enter location name")
+		 .AddLocationFreezer("MIL- WF 6-Tapped Cooler")
+		 .TapOnDone("MIL- WF 6-Tapped Done")
+		 .TapOnBack("MIL- WF 6-Tapped Back")
+		 .VerifyLocationList(locationsData1.LocationName, "MIL- WF 6-Verifing AddedLocation")
+
+		 .TapAddLocation("MIL- WF 6-Tapped ADD")
+		 .AddLocationName(locationsData2.LocationName,"MIL- WF 6-Enter location name")
+		 .AddLocationCooler("MIL- WF 6-Tapped Cooler")
+
+		 .TapOnCancel("MIL- WF 6-Tapped Cancel")
+		 .VerifyCancelledLocationList(locationsData2.LocationName, "MIL- WF 6-Verifing AddedLocation")
+		 .TapAddLocation("MIL- WF 6-Tapped ADD")
+		 .AddLocationName(locationsData2.LocationName,"MIL- WF 6-Enter location name")
+		 .AddLocationCooler("MIL- WF 6-Tapped Cooler")
+
+		 .TapOnDone("MIL- WF 6-Tapped Done")
+		 .TapOnBack("MIL- WF 6-Tapped Back")
+		 .VerifyLocationList(locationsData2.LocationName, "MIL- WF 6-Verifing AddedLocation")
+
+		 ._atLocationsPage()
+		 .SelectLocation(locationsData2.LocationName, "MIL- WF 6-Selecting AddedLocation")
+		 .TapOnEdit("MIL- WF 6-Editing AddedLocation")
+		 .AddLocationFreezer("MIL- WF 6-Tapped Cooler")
+		 .AddLocationName(locationsData2.EditLocation,"MIL- WF 6-Enter location name")
+
+		 .TapOnDone("MIL- WF 6-Tapped Done")
+		 .TapOnBack("MIL- WF 6-Tapped Back")
+		 .VerifyLocationList(locationsData2.EditLocation, "MIL- WF 6-Verifing AddedLocation")
+
+		 .SelectLocation(locationsData2.EditLocation, "MIL- WF 6-Selecting AddedLocation")
+		 .TapOnDeleteLocation("MIL- WF 6-Tapped Delete")
+		 .TapOnYesDelete("MIL- WF 6-Deleting AddedLocation")
+		 //  .TapOnBack("MIL- WF 6-Tapped Back")
+		 .VerifyCancelledLocationList(locationsData2.EditLocation, "MIL- WF 6-Verifing AddedLocation")
+
+
+
+		 ;
+	 }
+	 /*
+	  * Validating user is able to setup inventory.
+	  * Validating Creating Location and Delete Items from location
+	  * Prerequisite:Normal/MA User with OG items
+	  * 
+	  */
+
+	 @Test(groups={"MIL - WF 7"},priority=4, description = "MIL - WF 7-Track Inventory+Location+Edit+Delete Items from location")
+	 public void MIL_WF7_TrackInventory_Location_Edit_Delete_Items_location_MA() {
+
+		 LoginData loginData =LoginData.fetch("LoginData12"); 
+		 LocationsData locationsData8 =LocationsData.fetch("LocatiosData8");
+		 LocationsData locationsData9 =LocationsData.fetch("LocatiosData9");
+
+		 LocationsData locationsData3 =LocationsData.fetch("LocatiosData3");
+		 LocationsData locationsData1 =LocationsData.fetch("LocatiosData1");
+		 LocationsData locationsData2 =LocationsData.fetch("LocatiosData2");
+		 NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
+		 PrepItemData prepItemData =PrepItemData.fetch("PrepItemData");
+		 VendorDetailsData vendorDetailsData =VendorDetailsData.fetch("VDNonsysco");
+		 //SearchData searchData=SearchData.fetch("SearchData");
+		 UOMQuantityData uomQuantityData = UOMQuantityData.fetch("UOMQuantityData");
+		 UOMQuantityData uomQuantityData1 = UOMQuantityData.fetch("UOMQuantityData1");
+
+		 Start.asTester
+		 .goToLoginpage()
+		 .verifyLoginPage("MIL-WF7-LoginPage")
+		 .signIn(loginData.UserName, loginData.Password,"MIL-WF7-LoginPage")
+
+		 ._atHomePage()
+		 .ClickAccount(loginData.UserName,"MIL-WF7-Clicked account")
+
+		 ._atAccountsPage()
+		 .First_AccountSelection(loginData.UserName,"MIL-WF7-FirstAccountSelect")
+
+		 ._atInventoryToolPage()
+		 .InvTools_SetUpInventory("MIL-WF7-SetupInventoryTap")
+
+		 ._atSetupInventoryPage()
+		 .TapOnSkip("MIL-WF7-Skip1 Tapped")
+		 .TapOrderGuide("MIL-WF7-OG Selected")
+		 .tapContinue("MIL-WF7-Tapped Continue1")
+
+		 ._atLocationsPage()
+		 .CustomLocation("MIL-WF7-Tapped Custom location")
+		 .tapContinue("MIL-WF7-Tapped Continue2")
+
+		 .EnterLocationName(locationsData8.LocationName,"MIL-WF7-Enter location name1")
+		 .AddLocations1_TypeDry("MIL-WF7-Tapped Dry1")
+
+		 .AddLocations2("MIL-WF7-Add location2")
+		 .AddLocations2_name(locationsData9.LocationName,"MIL-WF7-Enter location name2")
+		 .AddLocations2_TypeDry("MIL-WF7-Tapped Dry2")
+		 .TapOnNext("MIL-WF7-Tapped Next1")
+
+		 .selectMultipleItemsFromLocation1("MIL-WF7-Selected Multiple items")
+		 .TapOnNext("MIL-WF7-Tapped Next2")
+
+		 .selectMultipleItemsFromLocation2("MIL-WF7-Selected Multiple items")
+		 .TapOnDone("MIL-WF7-Tapped Done1")
+
+		 ._atCategoryPage()
+		 .defaultCategories("MIL-WF7-Tapped Default category")
+		 .tapComplete("MIL-WF7-Tapped Complete")
+
+		 ._atSetupInventoryPage()
+		 .TapTakeHome("MIL-WF7-Tapped Take me Home")  
+
+		 ._atInventoryToolPage()
+		 .InvTools_TrackInventory("MIL-WF7-Selected track inventory")
+
+		 ._atLocationsPage()
+		 .SelectLocation(locationsData8.LocationName, "MIL-WF7-selected location1")
+		 .ItemVerifyOnLocation1("MIL-WF7-Verify items inside location1")    
+		 .TapOnEdit("MIL-WF7-Tapped Edit")
+		 .DeleteItems("MIL-WF7-Deleting items in location")
+		 .TapOnDone("MIL-WF7-Tapped Done2")
+		 .TapOnYesDelete("MIL-WF7-confirming Deleting items")
+		 .VerifyDeleteItemsList("MIL-WF7-Verifying Deleted items list")
+		 .TapOnBack("tapped on back")
+
+		 //creating a location1       
+		 ._atLocationsPage()
+		 .TapAddLocation("MIL-WF 2-Tapped ADD")
+		 .AddLocationName(locationsData1.LocationName,"MIL-WF 2-Enter location1 name")
+		 .AddLocationCooler("MIL-WF 2-Tapped Cooler")
+		 .TapOnDone("MIL-WF 2-Tapped Done")
+		 .TapOnBack("MIL-WF 2-Tapped Back")
+		 .VerifyLocationList(locationsData1.LocationName, "MIL-WF 2-Verifing Added Location1")
+
+		 //nonsysco item addition to location1
+		 .SelectLocation(locationsData1.LocationName, "MIL-WF 2-Selecting Added Location1")
+		 .TapAddLocation("MIL-WF 2-Tapped ADD")
+
+		 ._atSetupInventoryPage()
+		 .AddItemFrom_NonSysco("MIL-WF 2-Tapped NonSysco")
+		 .EnterItemDetails(nonSyscoItemData.ProductName, nonSyscoItemData.UPC, nonSyscoItemData.Pack, nonSyscoItemData.Size, nonSyscoItemData.Weight, nonSyscoItemData.Price, nonSyscoItemData.ProductBrand, "MIL-WF 2-NonSyscoItem details entered")
+		 .AddSupplier_AddProductDetailsPage("MIL-WF 2-select supplier")
+
+		 ._atVendorPage()
+		 .Add_Supplier("MIL-WF 2-AddVendorTap")
+		 .AddSupplier_Details(vendorDetailsData.VendorName, vendorDetailsData.PhoneNum, vendorDetailsData.Address, vendorDetailsData.ContactInfo, vendorDetailsData.Email, vendorDetailsData.Note, "MIL-WF 2-AddVendorDetails")
+		 .TapOnDone("MIL-WF 2-Done")
+		 .TapOnBack("MIL-WF 2-Back")
+		 .SupplierSelect(vendorDetailsData.VendorName,"MIL-WF 2-SupplierSelect")
+
+		 //same nonsysco item addition to location2 
+		 ._atLocationsPage()
+		 .AddLocation_AddProductDetailsPage("MIL-WF 2-Select Add/Select location option")
+		 .TapAddLocation("MIL-WF 2-Tapped ADD")
+		 .AddLocationName(locationsData2.LocationName,"MIL-WF 2-Enter location2 name")
+		 .AddLocationCooler("MIL-WF 2-Tapped Cooler")
+		 .TapOnDone("MIL-WF 2-Tapped Done")
+		 .TapOnBack("MIL-WF 2-Tapped Back")
+		 .VerifyLocationList(locationsData2.LocationName, "MIL-WF 2-Verifing Added Location2")
+		 .SelectLocation(locationsData2.LocationName, "MIL-WF 2-Selecting Added Location3")
+		 .SelectLocation(locationsData1.LocationName, "MIL-WF 2-Selecting Added Location2")
+		 .LocationDoneSelection("MIL-WF 2-Selecting Done")
+		 .TapOnDone("MIL-WF 2-Tapped Done")
+
+		 //location1 displayed with 1 non sysco item
+		 //prep item addition to location1
+
+		 .TapAddLocation("MIL-WF 2-Tapped ADD")
+
+		 ._atSetupInventoryPage()
+		 .AddItemFrom_PrepItem("MIL-WF 2-Tapped Prepitem")
+		 .EnterItemDetails(prepItemData.ProductName, prepItemData.UPC, prepItemData.Pack, prepItemData.Size, prepItemData.Weight, prepItemData.Price, prepItemData.ProductBrand, "MIL-WF 2-NonSyscoItem details entered")
+
+		 //same prep item addition to location3 
+		 ._atLocationsPage()
+		 .AddLocation_AddProductDetailsPage("MIL-WF 2-Select Add/Select location option")
+		 .TapAddLocation("MIL-WF 2-Tapped ADD")
+		 .AddLocationName(locationsData3.LocationName,"MIL-WF 2-Enter location3 name")
+		 .AddLocationCooler("MIL-WF 2-Tapped Cooler")
+		 .TapOnDone("MIL-WF 2-Tapped Done")
+		 .TapOnBack("MIL-WF 2-Tapped Back")
+		 .VerifyLocationList(locationsData3.LocationName, "MIL-WF 2-Verifing Added Location3")
+
+		 .SelectLocation(locationsData3.LocationName, "MIL-WF 2-Selecting Added Location3")
+		 .SelectLocation(locationsData1.LocationName, "MIL-WF 2-Selecting Added Location3")
+		 .LocationDoneSelection("MIL-WF 2-Selecting Done")
+		 .TapOnDone("MIL-WF 2-Tapped Done")
+		 // .TapOnDone("MIL-WF 2-Tapped Done")
+
+		 //location1 displayed with nonsysco and prep item
+		 //Verifications
+		 ._atLocationsPage()
+		 .TapOnBack("MIL-WF 2-Tapped back")
+
+		 .SelectLocation(locationsData1.LocationName, "MIL-WF 2-Selecting Added Location2") 
+		 .TapOnBack("")
+		 ._atInventoryToolPage()
+		 .InvTools_TrackInventory("MIL- WF 5-TrackinventoryTap")
+		 ._atLocationsPage()
+		 .SelectLocation(locationsData1.LocationName, "MIL-WF7-selected location1")
+		 .TapOnEdit("MIL-WF7-Tapped Edit")
+		 .DeleteItems("MIL-WF7-Deleting items in location")
+		 .TapOnDone("MIL-WF7-Tapped Done2")
+		 .TapOnYesDelete("MIL-WF7-confirming Deleting items")
+		 //.VerifyDeleteItemsList("MIL-WF7-Verifying Deleted items list")
+		 .TapOnBack("")
+		 .SelectLocation(locationsData3.LocationName, "MIL-WF7-selected location1")
+		 //verify item deleted locn
+		 .TapOnBack("")
+		 .TapOnBack("")
+		 //inv 254 
+		 ._atInventoryToolPage()
+		 .InvTools_Locations("")
+		 ._atLocationsPage()
+		 .SelectLocation(locationsData3.LocationName, "MIL-WF7-selected location1")
+		 .TapOnEdit("MIL-WF7-Tapped Edit")
+		 .TapOnDeleteLocation("")
+		 .TapOnYesDelete("MIL-WF7-confirming Deleting items")
+		 .SelectLocation("no lacation", "")
+		 .ViewItemsOnLocation("SI - WF 5-view items on Location1")
+		 //verify items in no location
+		 .GetLocationsNameText("")
+		 //verify item on the split location obtained
+
+		 ;
+	 }	
+	 /*
+	  * Validating user is able to setup inventory.
+	  * Validating Creating Location and updating quantity on product card
+	  * Prerequisite:Normal/MA User with OG items
+	  * 
+	  */
+
+
+	 @Test(groups={"MIL - WF 10"},priority=6, description = "MIL - WF 10 NU Track Inventory+Location+item product card + update qty & UOM")
+	 public void MIL_WF10_TrackInventory_Location_item_productcard_updateqtyUOM() {	
+
+		 LoginData loginData =LoginData.fetch("LoginData13");;
+		 LocationsData locationsData =LocationsData.fetch("LocationsData");
+		 PrepItemData prepItemData =PrepItemData.fetch("PrepItemData");
+		 PrepItemData prepItemData1 =PrepItemData.fetch("PrepItemData1");
+		 UOMQuantityData uomQuantityData1 = UOMQuantityData.fetch("UOMQuantityData1");
+
+		 Start.asTester
+		 .goToLoginpage()
+		 .verifyLoginPage("MIL - WF 10 NU-LoginPage")
+		 .signIn(loginData.UserName, loginData.Password,"MIL - WF 10 NU-Login")
+
+
+		 ._atHomePage()
+		 .ClickAccount(loginData.UserName,"Clicked account")
+
+
+		 ._atAccountsPage()
+		 .Second_AccountSelection(loginData.UserName,"MIL-WF 2-FirstAccountSelect")
+
+
+
+		 ._atInventoryToolPage()
+		 .InvTools_SetUpInventory("SI - MIL - WF 10 NU-SetupInventoryTap")
+
+
+		 ._atSetupInventoryPage()
+		 .TapOnSkip("MIL - WF 10 NU-Skip1 Tapped")
+		 .TapOrderGuide("MIL - WF 10 NU Selected")
+		 .tapContinue("MIL - WF 10 NU-Tapped Continue")
+		 ._atLocationsPage()
+		 .DefaultLocation("MIL-WF 2-Tapped Custom location")
+		 .tapContinue("MIL-WF 2-Tapped Continue")
+		 ._atSetupInventoryPage()
+
+		 .TapOnDOThisLater("MIL-WF6-Tapped do this later")
+		 .TapTakeHome("MIL-WF 2-Tapped take me home")
+
+		 ._atInventoryToolPage()
+		 .InvTools_TrackInventory("MIL - WF 10 NU-TrackinventoryTap")
+
+
+		 ._atLocationsPage()
+		 .TapAddLocation("MIL - WF 10 NU-Tapped ADD")
+		 .AddLocationName(locationsData.LocationName,"MIL - WF 10 NU-Enter location name")
+		 .AddLocationCooler("MIL - WF 10 NU-Tapped Cooler")
+		 .TapOnDone("MIL - WF 10 NU-Tapped Done")
+		 .TapOnBack("MIL - WF 10 NU-Tapped Back")
+		 .VerifyLocationList(locationsData.LocationName, "MIL - WF 10 NU-Verifing AddedLocation")
+
+		 .SelectLocation(locationsData.LocationName, "MIL - WF 10 NU-Selecting AddedLocation")
+		 .TapAddLocation("MIL - WF 10 NU-Tapped ADD")
+		 ._atSetupInventoryPage()
+		 .AddItemFrom_PrepItem("MIL - WF 10 NU-Tapped NonSysco")
+		 .EnterItemDetails(prepItemData.ProductName, prepItemData.UPC, prepItemData.Pack, prepItemData.Size, prepItemData.Weight, prepItemData.Price, prepItemData.ProductBrand, "MIL - WF 1,3-NonSyscoItem details entered")
+		 .TapOnDone("MIL - WF 10 NU-Tapped Done")
+		 ._atLocationsPage()
+		 .ProductSelect(prepItemData.ProductName, "")
+		 .TapOnEdit("MIL - WF 10 NU Tap on edit")
+		 ._atSetupInventoryPage()
+		 .EnterItemDetails(prepItemData1.ProductName, prepItemData1.UPC, prepItemData1.Pack, prepItemData1.Size, prepItemData1.Weight, prepItemData1.Price, prepItemData1.ProductBrand, "MIL - WF 1,3-NonSyscoItem details entered")
+		 ._atLocationsPage()
+		 .tapOnProductOpenProductDetailsPageAndEnterQty(prepItemData1.ProductName, uomQuantityData1.Quantity, "")
+		 .TapOnDone("MIL - WF 10 NU tap on done")
+		 .TapOnBack("MIL - WF 10 NU tap on back")      ///////
+		 .QuantityVerify(uomQuantityData1.Quantity, "MIL - WF 10 NU Quantity verify")
+		 ._atSetupInventoryPage()
+		 .verifyNonSyscoPrepItemSetupInv(prepItemData1.ProductName,"MIL-WF1-WF4-Verify item selected")
+
+		 ;
+
+	 }
+
 
 
 	 /*
- 	 * Validating user is able to setup inventory.
- 	 * Validating Prep item addition through Homepage and linking supplier location and category
- 	 * Prerequisite:Normal/MA User with OG items
- 	 * 
- 	 */
+	  * Validating user is able to setup inventory.
+	  * Validating editing item and updating category on product card
+	  * Prerequisite:Normal/MA User with OG items
+	  * 
+	  */
 
-	@Test(groups={"MPI-1"},priority=1, description = "MPI-1-Manage_Create Prep Item_LinkLocation_Expense Category")
-	public void MPI_1_CreatePrepItem_LinkLocation_Category_NU() {	
+	 @Test(groups={"MEC - WF 1"},priority=7, description = "MEC - WF 1-Selecting a location navigate to product and assiging  item  to category created")
+	 public void MEC_WF1_Locations_ItemEdit_UpdateCategory_MA() {	
 
-		LoginData loginData =LoginData.fetch("LoginData4");	  
-		SearchData searchData=SearchData.fetch("SearchData");
+		 LoginData loginData =LoginData.fetch("LoginData10");
+		 LocationsData locationsData =LocationsData.fetch("LocatiosData1");
+		 NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
+		 VendorDetailsData vendorDetailsData =VendorDetailsData.fetch("VDNonsysco");
+		 CategoryData categoryData =CategoryData.fetch("CategoryData");
+		 LocationsData locationsData1 =LocationsData.fetch("LocationsData");
+		 PrepItemData prepItemData =PrepItemData.fetch("PrepItemData");
+		 LocationsData locationsData2 =LocationsData.fetch("LocatiosData4");
+		 PrepItemData prepItemData1 =PrepItemData.fetch("PrepItemData1");
+		 LocationsData locationsData3 =LocationsData.fetch("LocatiosData2");	
 
-		LocationsData locationsData =LocationsData.fetch("LocationsData");
-		CategoryData categoryData=CategoryData.fetch("CategoryData");
-		NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
-		PrepItemData prepItemData =PrepItemData.fetch("PrepItemData");
-		PrepItemData prepItemData1 =PrepItemData.fetch("PrepItemData1");
-		LocationsData locationsData1 =LocationsData.fetch("LocationsData2");
-		Start.asTester
-		.goToLoginpage()
-		.verifyLoginPage("MPI-1-LoginPage")
-		.saveUsernameCheckBoxClick("MPI-1-save username")
-		.signIn(loginData.UserName, loginData.Password,"MPI-1-Login")
+		 Start.asTester
+		 .goToLoginpage()
+		 .verifyLoginPage("SMEC - WF 1-LoginPage")
+		 .signIn(loginData.UserName, loginData.Password,"MEC-WF 1-Login")
 
-		._atHomePage()
-		.ClickAccount(loginData.UserName,"MPI-1-Clicked account")
+		 ._atHomePage()
+		 .ClickAccount(loginData.UserName,"Clicked account")
 
-		._atAccountsPage()
-		.Third_AccountSelection(loginData.UserName,"MPI-1-FirstAccountSelect")
+		 ._atAccountsPage()
+		 .Third_AccountSelection(loginData.UserName,"SI - WF 10-FirstAccountSelect")
 
-		._atInventoryToolPage()
-		.InvTools_SetUpInventory("MPI-1-SetupInventoryTap")
+		 ._atInventoryToolPage()
+		 .InvTools_SetUpInventory("SI - WF 19-SetupInventoryTap")
 
-		._atSetupInventoryPage()
-		.TapOnSkip("MPI-1-Tapped Skip1")
-		.TapOrderGuide("MIL - WF 5-OG Selected")
-		.tapContinue("MIL - WF 5-Tapped Continue1")
-		
-		._atLocationsPage()
-		.DefaultLocation("SI - WF 1-Tapped Custom location")
-		.tapContinue("SI - WF 1-Tapped Continue")
-		._atSetupInventoryPage()
+		 ._atSetupInventoryPage()
+		 .TapOnSkip("MIL - WF 10 NU-Skip1 Tapped")
+		 .TapOrderGuide("MIL - WF 10 NU Selected")
+		 .tapContinue("MIL - WF 10 NU-Tapped Continue")
+		 ._atLocationsPage()
+		 .DefaultLocation("MIL-WF 2-Tapped Custom location")
+		 .tapContinue("MIL-WF 2-Tapped Continue")
+		 ._atSetupInventoryPage()
 
-		.TapOnDOThisLater("MIL-WF6-Tapped do this later")
-		.TapTakeHome("SI - WF 32-Tapped take me home")
-
-		._atInventoryToolPage()
-		.InvTools_CreatePrep("MPI-1-Tapped Prep item")
-
-		._atSetupInventoryPage()
-		.EnterItemDetails(prepItemData.ProductName, prepItemData.UPC, prepItemData.Pack, prepItemData.Size, prepItemData.Weight, prepItemData.Price, prepItemData.ProductBrand, "MPI-1-PrepItem details entered")
+		 .TapOnDOThisLater("MIL-WF6-Tapped do this later")
+		 .TapTakeHome("MIL-WF 2-Tapped take me home")
 
 
+		 ._atInventoryToolPage()
+		 .InvTools_TrackInventory("MEC-WF 1-TrackinventoryTap")
 
-		//linking location
-		._atLocationsPage()
-		.AddLocation_AddProductDetailsPage("MPI-1-Select Add/Select location option")
-		.TapAddLocation("MPI-1-Tapped ADD Location")
-		.AddLocationName(locationsData.LocationName,"MPI-1-Enter location name")
-		.AddLocationCooler("MPI-1-Tapped Cooler")
-		.TapOnDone("MPI-1-Tapped Done3")
-		.TapOnBack("MPI-1-Tapped Back1")
-		.VerifyLocationList(locationsData.LocationName, "MPI-1-Verifing Added Location")
-		.SelectLocation(locationsData.LocationName, "MPI-1-Selecting Added Location")
-		.LocationDoneSelection("MPI-1-Selecting Done")
+		 ._atLocationsPage()
+		 .TapAddLocation("MEC-WF 1-Tapped ADD")
+		 .AddLocationName(locationsData.LocationName,"MEC-WF 1-Enter location name")
+		 .AddLocationCooler("MEC-WF 1-Tapped Cooler")
+		 .TapOnDone("MEC-WF 1-Tapped Done")
+		 .TapOnBack("MEC-WF 1-Tapped Back")
+		 .VerifyLocationList(locationsData.LocationName, "MEC-WF 1-Verifing AddedLocation")
+		 //nonsysco item addition 
+		 .SelectLocation(locationsData.LocationName, "MEC-WF 1-Selecting AddedLocation")
+		 .TapAddLocation("MEC-WF 1-Tapped ADD")
 
-		//linking category
-		._atLocationsPage()
-		.AddCategory_AddProductDetailsPage("MPI-1-Tapped CategorySelect")
-		._atCategoryPage()
-		.TapAdd("MPI-1-Tapped Add category")
-		.AddCategoryName(categoryData.Name, "MPI-1-Enter Category Name")
-		.AddCategoryFood("MPI-1-Enter type food")
-		.TapOnDone("MPI-1-Tapped Done4")
-		.TapOnBack("MPI-1-Tapped Back2")
-		.SelectCategory(categoryData.Name, "MPI-1-Select Category Name")
+		 ._atSetupInventoryPage()
+		 .AddItemFrom_NonSysco("MEC-WF 1-Tapped NonSysco")
+		 .EnterItemDetails(nonSyscoItemData.ProductName, nonSyscoItemData.UPC, nonSyscoItemData.Pack, nonSyscoItemData.Size, nonSyscoItemData.Weight, nonSyscoItemData.Price, nonSyscoItemData.ProductBrand, "MEC-WF 1-NonSyscoItem details entered")
+		 .AddSupplier_AddProductDetailsPage("MEC-WF 1-select supplier")
+		 ._atVendorPage()
+		 .Add_Supplier("MEC-WF 1-AddVendorTap")
+		 .AddSupplier_Details(vendorDetailsData.VendorName, vendorDetailsData.PhoneNum, vendorDetailsData.Address, vendorDetailsData.ContactInfo, vendorDetailsData.Email, vendorDetailsData.Note, "MEC-WF 1-AddVendorDetails")
+		 .TapOnDone("MEC-WF 1-Tapped Done")
+		 .TapOnBack("MEC-WF 1-Tapped Back")
+		 .SupplierSelect(vendorDetailsData.VendorName,"MEC-WF 1-SupplierSelect")
+		 .TapOnDone("MEC-WF 1-Tapped Done")
 
-		.TapOnDone("MPI-1-Tapped Done,Prepitem added") 
+		 ._atSetupInventoryPage()
+		 .verifyNonSyscoPrepItemSetupInv(nonSyscoItemData.ProductName,"MEC-WF 1-Verify item selected")
 
-		._atInventoryToolPage()
-		.InvTools_TrackInventory("MPI-1-Selected track inventory")
+		 ._atLocationsPage()
+		 .ProductSelect(nonSyscoItemData.ProductName, "MEC-WF 1-Select Product")
+		 .TapOnEdit("MEC-WF 1-Tapped Edit")
+
+		 ._atLocationsPage()
+		 .AddCategory_AddProductDetailsPage("MEC-WF 1-CategorySelect")
+		 .TapAddLocation("MEC-WF 1-Tapped Add")
+		 ._atCategoryPage()
+		 .AddCategoryName(categoryData.Name, "MEC-WF 1-Enter Category Name")
+		 .AddCategoryFood("MEC-WF 1-Enter type food")
+		 .TapOnDone("MEC-WF 1-Tapped Done")
+		 .TapOnBack("MEC-WF 1-Tapped Back")
+		 .SelectCategory(categoryData.Name, "MEC-WF 1-Select Category Name")
+		 .TapOnDone("MEC-WF 1-Tapped Done") 
+		 .TapOnBack("MEC-WF 1-Tapped Back")
+		 .TapOnBack("MEC-WF 1-Tapped Back")
+
+		 ._atLocationsPage()
+		 .SelectLocation(locationsData.LocationName, "MEC-WF 1-Selecting AddedLocation")
+		 ._atCategoryPage()
+		 .VerifyCategory(categoryData.Name, "MEC-WF 1-Verified Category")
+
+		 //inv 252,253
+
+		 //no scenario
+		 ._atLocationsPage()
+		 .TapAddLocation("MEC-WF1-Tapped ADD")
+		 ._atSetupInventoryPage()
+		 .AddItemFrom_PrepItem("MEC-WF1-Tapped Prepitem")
+		 .EnterItemDetails(prepItemData.ProductName, prepItemData.UPC, prepItemData.Pack, prepItemData.Size, prepItemData.Weight, prepItemData.Price, prepItemData.ProductBrand, "MEC-WF1-NonSyscoItem details entered")
+
+		 // prep item addition to 2 locations created 
+		 ._atLocationsPage()
+		 .AddLocation_AddProductDetailsPage("MEC-WF1-Select Add/Select location option")
+		 .TapAddLocation("MEC-WF1-Tapped ADD")
+		 .AddLocationName(locationsData1.LocationName,"MEC-WF1-Enter location3 name")
+		 .AddLocationCooler("MEC-WF1-Tapped Cooler")
+		 .TapOnDone("MEC-WF1-Tapped Done")
+		 .TapOnBack("MEC-WF1-Tapped Back")
+		 .VerifyLocationList(locationsData1.LocationName, "MEC-WF1-Verifing Added Location3")
+
+		 .SelectLocation(locationsData1.LocationName, "MEC-WF1-Selecting Added Location3")
+		 .SelectLocation(locationsData.LocationName, "MEC-WF1-Selecting Added Location1")
+		 .LocationDoneSelection("MEC-WF1-Selecting Done")
+		 .TapOnDone("MEC-WF1-Tapped Done")
+
+		 ._atSetupInventoryPage()
+		 .verifyNonSyscoPrepItemSetupInv(prepItemData.ProductName,"MEC-WF1-Verify item selected")
+
+		 ._atLocationsPage()
+		 .ProductSelect(prepItemData.ProductName, "MEC-WF1-Select Product")
+		 .TapOnEdit("MEC-WF1-Tapped Edit")
+		 //.LocationsDelete("MEC-WF1-Tapped Edit")
+		 .LocationsDelete(locationsData1.LocationName,"MEC-WF1-Tapped delete")
+		 .LocationsDelete(locationsData.LocationName,"MEC-WF1-Tapped delete")
+		 .DeleteAllLocConfirmation("MEC-WF1-Confirming deleting all locations")
+		 .TapOnNoDelete("MEC-WF1-Tapped No for deletion")
+		 .TapOnEdit("MEC-WF1-Tapped Edit")
+		 .TapOnDone("MEC-WF1-Tapped Done")
+		 .TapOnBack("MEC-WF1-Tapped Back")
+		 .TapOnBack("MEC-WF1-Tapped Back")
+		 .SelectLocation(locationsData2.LocationName, "MEC-WF1-Selecting Added Location3")
+		 ._atLocationsPage()
+		 .NoItemsCheckInNoLocation("MEC-WF1-No items in no location")
 
 
-		._atLocationsPage()
-		.SelectLocation(locationsData.LocationName, "MPI-1-Select added location")
+		 .TapOnBack("MEC-WF1-Tapped Back")
+		 //yes scenario
+		 .SelectLocation(locationsData.LocationName, "MEC-WF1-Selecting AddedLocation")
+		 ._atLocationsPage()
+		 .TapAddLocation("MEC-WF1-Tapped ADD")
+		 ._atSetupInventoryPage()
+		 .AddItemFrom_PrepItem("MIL-WF2-Tapped Prepitem")
+		 .EnterItemDetails(prepItemData1.ProductName, prepItemData1.UPC, prepItemData1.Pack, prepItemData1.Size, prepItemData1.Weight, prepItemData1.Price, prepItemData1.ProductBrand, "MEC-WF1-PrepItem details entered")
 
-		._atSetupInventoryPage()
-		.verifyNonSyscoPrepItemSetupInv(prepItemData.ProductName,"MPI-1-Verify Prep item added")
-		._atLocationsPage()
-		.NonSyscoPrepCategoryIdentify(nonSyscoItemData.ProductName,prepItemData.ProductName,"MPI-1-Category idenitification for Prepitem")
-		._atCategoryPage()
-		.VerifyPrepCustomCategory(categoryData.Name, "MPI-1-Category verification")
-		
-		
-		._atLocationsPage()
-		.ProductSelect(prepItemData.ProductName, "MNS-1-Product select")
-		.TapOnEdit("MNS-1-Tap on edit")
-		
-		._atSetupInventoryPage()	
-		.EnterItemDetails(prepItemData1.ProductName, prepItemData1.UPC, prepItemData1.Pack, prepItemData1.Size, prepItemData1.Weight, prepItemData1.Price, prepItemData1.ProductBrand, "MNS-1-PrepItem details entered")
-		._atLocationsPage()
-		.AddLocation_AddProductDetailsPage("MIL-WF10-Select Add/Select location option")
-		.TapAddLocation("MIL-WF10-Tapped ADD")
-		.AddLocationName(locationsData1.LocationName,"MIL-WF10-Enter location2 name")
-		.AddLocationCooler("MIL-WF10-Tapped Cooler")
-		.TapOnDone("MIL-WF10-Tapped Done")
-		.TapOnBack("MIL-WF10-Tapped Back")
-		.VerifyLocationList(locationsData1.LocationName, "MIL-WF10-Verifing Added Location2")
+		 // prep item addition to 2 locations created 
+		 ._atLocationsPage()
+		 .AddLocation_AddProductDetailsPage("MEC-WF1-Select Add/Select location option")
+		 .TapAddLocation("MEC-WF1-Tapped ADD")
+		 .AddLocationName(locationsData3.LocationName,"MEC-WF1-Enter location3 name")
+		 .AddLocationCooler("MEC-WF1-Tapped Cooler")
+		 .TapOnDone("MEC-WF1-Tapped Done")
+		 .TapOnBack("MEC-WF1-Tapped Back")
+		 .VerifyLocationList(locationsData3.LocationName, "MEC-WF1-Verifing Added Location3")
 
-		.SelectLocation(locationsData1.LocationName, "MIL-WF10-Selecting Added Location2")
-		.SelectLocation(locationsData.LocationName, "MIL-WF2-Selecting Added Location2")     //not preselected
-		.LocationDoneSelection("MIL-WF10-Selecting Done")
-		.TapOnDone("MIL-WF10-Tapped Done")
-		
-		.TapOnBack("MIL-WF10-Tapped Back")
-		.SelectLocation(locationsData1.LocationName, "MIL-WF10-Selecting Added Location2")
-		._atSetupInventoryPage()
-		.verifyNonSyscoPrepItemSetupInv(prepItemData1.ProductName,"MIL-WF10-Verify nonsysco item added")
-		
-		;
-	}
+		 .SelectLocation(locationsData3.LocationName, "MEC-WF1-Selecting Added Location3")
+		 .SelectLocation(locationsData.LocationName, "MEC-WF1-Selecting Added Location1")
+		 .LocationDoneSelection("MEC-WF1-Selecting Done")
+		 .TapOnDone("MEC-WF1-Tapped Done")
+
+		 ._atSetupInventoryPage()
+		 .verifyNonSyscoPrepItemSetupInv(prepItemData1.ProductName,"MEC-WF1-Verify item selected")
+
+		 ._atLocationsPage()
+		 .ProductSelect(prepItemData1.ProductName, "MEC-WF1-Select Product")
+
+		 .TapOnEdit("MEC-WF1-Tapped Edit")
+		 //	.LocationsDelete("MEC-WF1-Tapped delete")
+		 .LocationsDelete(locationsData3.LocationName,"MEC-WF1-Tapped delete")
+		 .LocationsDelete(locationsData.LocationName,"MEC-WF1-Tapped delete")
+		 .DeleteAllLocConfirmation("MEC-WF1-Confirming deleting all locations")
+		 .TapOnYesDelete("MEC-WF1-Tapped yes for deleting all locations")
+		 .TapOnDone("MEC-WF1-Tapped Done")
+		 .TapOnBack("MEC-WF1-Tapped Back")
+		 .TapOnBack("MEC-WF1-Tapped Back")
+		 .SelectLocation(locationsData2.LocationName, "MEC-WF1-Selecting Added Location3")
+		 ._atSetupInventoryPage()
+		 .verifyNonSyscoPrepItemSetupInv(prepItemData1.ProductName,"MEC-WF1-Verify item selected")
+		 ._atLocationsPage()
+		 .NoLocationTextCheck(locationsData2.LocationName,"MEC-WF1-No location text verification")
+
+
+
+		 ;
+	 }
+
+	 /*
+	  * Validating user is able to setup inventory.
+	  * Validating Creating, editing and deleting category
+	  * Prerequisite:Normal/MA User with OG items
+	  * 
+	  */
+
+	 @Test(groups={"MEC - WF 2"},priority=8, description = "MEC - WF 2-Creating, editing and deleting category ")
+	 public void MEC_WF2_Category_Create_Edit_Delete_Category() {	
+
+		 LoginData loginData =LoginData.fetch("LoginData11");
+		 CategoryData categoryData =CategoryData.fetch("CategoryData");
+		 Start.asTester
+		 .goToLoginpage()
+		 .verifyLoginPage("MIL-WF 2-LoginPage")
+		 .signIn(loginData.UserName, loginData.Password,"MEC-WF 2-Login")
+
+
+		 ._atHomePage()
+		 .ClickAccount(loginData.UserName,"Clicked account")
+
+		 ._atAccountsPage()
+		 .First_AccountSelection(loginData.UserName,"SI - WF 10-FirstAccountSelect")
+
+
+		 //setting up inventory    
+		 ._atInventoryToolPage()
+		 .InvTools_SetUpInventory("TI-WF1-WF2-SetupInventoryTap")
+
+		 ._atSetupInventoryPage()
+		 .TapOnSkip("TI-WF1-WF2-Skip1 Tapped")
+		 .TapOrderGuide("TI-WF1-WF2-OG Selected")
+		 .tapContinue("TI-WF1-WF2-Tapped Continue")
+
+		 ._atLocationsPage()
+		 .DefaultLocation("TI-WF1-WF2-Tapped Custom location")
+		 .tapContinue("TI-WF1-WF2-Tapped Continue")
+		 ._atSetupInventoryPage()
+		 .TapOnDOThisLater("TI-WF1-WF2-Tapped do this later")
+		 .TapTakeHome("TI-WF1-WF2-Tapped Take me Home")
+
+
+		 ._atInventoryToolPage()
+		 .InvTools_Category("MEC-WF 2-Expense Category Tap")
+
+		 ._atCategoryPage()
+		 .TapAdd("MEC-WF 2-Add Expense Category Tap")
+		 .AddCategoryName(categoryData.Name, "MEC-WF 2-Enter Category Name")
+		 .AddCategoryFood("MEC-WF 2-Enter type food")
+		 .TapOnDone("MEC-WF 2-Tapped Done")
+		 .TapOnBack("MEC-WF 2-Tapped Back")
+		 .VerifyCategoryList(categoryData.Name, "MEC-WF 2-Verifying added category list")
+
+		 .SelectCategory(categoryData.Name, "MEC-WF 2-Selecting Category")
+		 .TapOnEdit("MEC-WF 2-Tap on Edit")
+		 .AddCategoryFood("MEC-WF 2-Enter type food")
+		 .AddCategoryName(categoryData.Name1, "MEC-WF 2-Entering new name")
+		 .TapOnDone("MEC-WF 2-Tapped Done")
+		 .TapOnBack("MEC-WF 2-Tapped Back")
+		 .VerifyCategoryList(categoryData.Name1, "MEC-WF 2-Verifying edited category list")
+
+		 .SelectCategory(categoryData.Name1, "MEC-WF 2-Selecting Category")
+		 .TapOnDeleteCategory("MEC-WF 2-Deleting Category")
+		 .TapOnYesDelete("MEC-WF 2-Tap on Yes Delete")
+		 .VerifyDeletedCategoryList(categoryData.Name1, "MEC-WF 2-Verifying Deleted category list")
+		 ;
+	 }		
+	 /*
+	  * Validating user is able to setup inventory.
+	  * Validating Non sysco item addition through Homepage and linking supplier location and category
+	  * Prerequisite:Normal/MA User with OG items
+	  * 
+	  */
+
+	 @Test(groups={"MNS-1"},priority=2, description = "MNS-1-Manage_Create Non-Sysco Item_Link Supplier_Location_Expense Category")
+	 public void MNS_1_CreateNonSyscoItem_LinkSupplier_Location_Category() {	
+
+		 LoginData loginData =LoginData.fetch("LoginData12");	  
+		 LocationsData locationsData =LocationsData.fetch("LocationsData");
+		 CategoryData categoryData=CategoryData.fetch("CategoryData");
+		 NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
+		 VendorDetailsData vendorDetailsData =VendorDetailsData.fetch("VendorDetailData1");
+		 PrepItemData prepItemData =PrepItemData.fetch("PrepItemData");
+		 NonSyscoItemData nonSyscoItemData1 =NonSyscoItemData.fetch("NonSyscoItmData1");
+		 VendorDetailsData vendorDetailsData1 =VendorDetailsData.fetch("VendorDetailData2");
+		 LocationsData locationsData1 =LocationsData.fetch("LocatiosData3");
+
+		 Start.asTester
+		 .goToLoginpage()
+		 .verifyLoginPage("MNS-1-LoginPage")
+		 .saveUsernameCheckBoxClick("MNS-1-save username")
+		 .signIn(loginData.UserName, loginData.Password,"MNS-1-Login")
+
+		 ._atHomePage()
+		 .ClickAccount(loginData.UserName,"MNS-1-Clicked account")
+
+		 ._atAccountsPage()
+		 .Second_AccountSelection(loginData.UserName,"MNS-1-FirstAccountSelect")
+
+		 ._atInventoryToolPage()
+		 .InvTools_SetUpInventory("MNS-1-SetupInventoryTap")
+
+		 ._atSetupInventoryPage()
+		 .TapOnSkip("MNS-1-Tapped Skip1")
+		 .TapOrderGuide("MIL - WF 5-OG Selected")
+		 .tapContinue("MIL - WF 5-Tapped Continue1")
+		 ._atLocationsPage()
+		 .DefaultLocation("SI - WF 1-Tapped Custom location")
+		 .tapContinue("SI - WF 1-Tapped Continue")
+		 ._atSetupInventoryPage()
+
+		 .TapOnDOThisLater("MIL-WF6-Tapped do this later")
+		 .TapTakeHome("SI - WF 32-Tapped take me home")  
+
+		 ._atInventoryToolPage()
+		 .InvTools_CreateNonSysco("MNS-1-Tapped Nonsysco item")
+
+		 ._atSetupInventoryPage()
+		 .EnterItemDetails(nonSyscoItemData.ProductName, nonSyscoItemData.UPC, nonSyscoItemData.Pack, nonSyscoItemData.Size, nonSyscoItemData.Weight, nonSyscoItemData.Price, nonSyscoItemData.ProductBrand, "MNS-1-NonSyscoItem details entered")
+
+		 //linking supplier
+		 .AddSupplier_AddProductDetailsPage("MNS-1-Select supplier")
+		 ._atVendorPage()
+		 .Add_Supplier("MNS-1-AddVendorTap")
+		 .AddSupplier_Details(vendorDetailsData.VendorName, vendorDetailsData.PhoneNum, vendorDetailsData.Address, vendorDetailsData.ContactInfo, vendorDetailsData.Email, vendorDetailsData.Note, "MNS-1-AddVendorDetails")
+		 .TapOnDone("MNS-1-Supplier added")
+		 .TapOnBack("MNS-1-Tapped Back1")
+		 .SupplierSelect(vendorDetailsData.VendorName,"MNS-1-SupplierSelect")
+
+		 //linking location
+		 ._atLocationsPage()
+		 .AddLocation_AddProductDetailsPage("MNS-1-Select Add/Select location option")
+		 .TapAddLocation("MNS-1-Tapped ADD Location")
+		 .AddLocationName(locationsData.LocationName,"MNS-1-Enter location name")
+		 .AddLocationCooler("MNS-1-Tapped Cooler")
+		 .TapOnDone("MNS-1-Tapped Done4")
+		 .TapOnBack("MNS-1-Tapped Back2")
+		 .VerifyLocationList(locationsData.LocationName, "MNS-1-Verifing Added Location")
+		 .SelectLocation(locationsData.LocationName, "MNS-1-Selecting Added Location")
+		 .LocationDoneSelection("MNS-1-Selecting Done")
+
+		 //linking category
+		 ._atLocationsPage()
+		 .AddCategory_AddProductDetailsPage("MNS-1-Tapped CategorySelect")
+		 ._atCategoryPage()
+		 .TapAdd("MNS-1-Tapped Add category")
+		 .AddCategoryName(categoryData.Name, "MNS-1-Enter Category Name")
+		 .AddCategoryFood("MNS-1-Enter type food")
+		 .TapOnDone("MNS-1-Tapped Done5")
+		 .TapOnBack("MNS-1-Tapped Back3")
+		 .SelectCategory(categoryData.Name, "MNS-1-Select Category Name")
+
+		 .TapOnDone("MNS-1-Tapped Done,Nonsyscoitem added")   
+
+		 ._atInventoryToolPage()
+		 .InvTools_TrackInventory("MNS-1-Selected track inventory")
+
+
+		 ._atLocationsPage()
+		 .SelectLocation(locationsData.LocationName, "MNS-1-Select added location")
+
+		 ._atSetupInventoryPage()
+		 .verifyNonSyscoPrepItemSetupInv(nonSyscoItemData.ProductName,"MNS-1-Verify nonsysco item added")
+		 ._atLocationsPage()
+		 .NonSyscoPrepCategoryIdentify(nonSyscoItemData.ProductName,prepItemData.ProductName,"MNS-1-Category idenitification for nonsysco")
+		 ._atCategoryPage()
+		 .VerifyNonSycoCustomCategory(categoryData.Name, "MNS-1-Category verification")
+
+
+
+
+		 ._atLocationsPage()
+		 .ProductSelect(nonSyscoItemData.ProductName, "MIL-WF10-Product select")
+		 .TapOnEdit("MIL-WF10-Tap on edit")
+
+		 ._atSetupInventoryPage()	
+		 .EnterItemDetails(nonSyscoItemData1.ProductName, nonSyscoItemData1.UPC, nonSyscoItemData1.Pack, nonSyscoItemData1.Size, nonSyscoItemData1.Weight, nonSyscoItemData1.Price, nonSyscoItemData1.ProductBrand, "MIL-WF10-NonSyscoItem details entered")
+		 .AddSupplier_AddProductDetailsPage("MIL-WF10-select supplier")
+		 ._atVendorPage()
+		 .Add_Supplier("MIL-WF10-AddVendorTap")
+		 .AddSupplier_Details(vendorDetailsData1.VendorName, vendorDetailsData1.PhoneNum, vendorDetailsData1.Address, vendorDetailsData1.ContactInfo, vendorDetailsData1.Email, vendorDetailsData1.Note, "MIL-WF10-AddVendorDetails")
+		 .TapOnDone("MIL-WF10-Done")
+		 .TapOnBack("MIL-WF10-Back")
+		 .SupplierSelect(vendorDetailsData1.VendorName,"MIL-WF10-SupplierSelect")
+		 ._atLocationsPage()
+		 .AddLocation_AddProductDetailsPage("MIL-WF10-Select Add/Select location option")
+		 .TapAddLocation("MIL-WF10-Tapped ADD")
+		 .AddLocationName(locationsData1.LocationName,"MIL-WF10-Enter location2 name")
+		 .AddLocationCooler("MIL-WF10-Tapped Cooler")
+		 .TapOnDone("MIL-WF10-Tapped Done")
+		 .TapOnBack("MIL-WF10-Tapped Back")
+		 .VerifyLocationList(locationsData1.LocationName, "MIL-WF10-Verifing Added Location2")
+
+		 .SelectLocation(locationsData1.LocationName, "MIL-WF10-Selecting Added Location2")
+		 .SelectLocation(locationsData.LocationName, "MIL-WF2-Selecting Added Location2")     //not preselected
+		 .LocationDoneSelection("MIL-WF10-Selecting Done")
+		 .TapOnDone("MIL-WF10-Tapped Done")
+
+		 .TapOnBack("MIL-WF10-Tapped Back")
+		 .SelectLocation(locationsData1.LocationName, "MIL-WF10-Selecting Added Location2")
+		 ._atSetupInventoryPage()
+		 .verifyNonSyscoPrepItemSetupInv(nonSyscoItemData1.ProductName,"MIL-WF10-Verify nonsysco item added")
+		 ;
+		 ;
+	 }
 
 
 	 /*
- 	 * Validating user is able to setup inventory.
- 	 * Validating add/edit/delete supplier  through Homepage 
- 	 * Prerequisite:Normal/MA User with OG items
- 	 * 
- 	 */
+	  * Validating user is able to setup inventory.
+	  * Validating Prep item addition through Homepage and linking supplier location and category
+	  * Prerequisite:Normal/MA User with OG items
+	  * 
+	  */
 
-	@Test(groups={"MSP-1 MSP-2"},priority=0, description = "MSP-1 MSP-2 Home Screen-->Suppliers-->Add new Suppliers/View/Maintain Suppliers")
-	public void MSP1_MSP2_Add_View_ManageSuppliers()
-	{
-		LoginData loginData =LoginData.fetch("LoginData1");
-		VendorDetailsData vendorData=VendorDetailsData.fetch("VendorDetailData2");
-		VendorDetailsData vendorDataEdit=VendorDetailsData.fetch("VendorDetailData3");
-		VendorDetailsData vendorData1=VendorDetailsData.fetch("VendorDetailData1");
-		Start.asTester
-		.goToLoginpage()
-		.verifyLoginPage("MSP-1,MSP-2-LoginPage")
-		.signIn(loginData.UserName, loginData.Password,"MSP-1,MSP-2-LoginPage")
-		._atHomePage()
-		.ClickAccount(loginData.UserName,"Clicked account")
-		._atAccountsPage()
-		.Fourth_AccountSelection(loginData.UserName,"MSP-1,MSP-2-FirstAccountSelect")
+	 @Test(groups={"MPI-1"},priority=1, description = "MPI-1-Manage_Create Prep Item_LinkLocation_Expense Category")
+	 public void MPI_1_CreatePrepItem_LinkLocation_Category_NU() {	
 
-		._atInventoryToolPage()
-		.InvTools_SetUpInventory("SI - WF 1-SetupInventoryTap")
-		._atSetupInventoryPage()
-		.TapOnSkip("SI - WF 1-Skip1 Tapped")
-		.TapOrderGuide("SI - WF 1-OG Selected")
-		.tapContinue("SI - WF 1-Tapped Continue")
-		._atLocationsPage()
-		.DefaultLocation("SI - WF 1-Tapped Custom location")
-		.tapContinue("SI - WF 1-Tapped Continue")
-		._atSetupInventoryPage()
+		 LoginData loginData =LoginData.fetch("LoginData13");	  
+		 SearchData searchData=SearchData.fetch("SearchData");
 
-		.TapOnDOThisLater("MIL-WF6-Tapped do this later")
-		.TapTakeHome("SI - WF 32-Tapped take me home")  
+		 LocationsData locationsData =LocationsData.fetch("LocationsData");
+		 CategoryData categoryData=CategoryData.fetch("CategoryData");
+		 NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
+		 PrepItemData prepItemData =PrepItemData.fetch("PrepItemData");
+		 PrepItemData prepItemData1 =PrepItemData.fetch("PrepItemData1");
+		 LocationsData locationsData1 =LocationsData.fetch("LocationsData2");
+		 Start.asTester
+		 .goToLoginpage()
+		 .verifyLoginPage("MPI-1-LoginPage")
+		 .saveUsernameCheckBoxClick("MPI-1-save username")
+		 .signIn(loginData.UserName, loginData.Password,"MPI-1-Login")
 
-		._atInventoryToolPage()
-		.InvTools_Suppliers("MSP-1,MSP-2-Tapped on suppliers")
-		._atVendorPage()
-		.verifySupplierPage("MSP-1,MSP-2-Supplier page verified")
-		.Add_Supplier("MSP-1,MSP-2-Add button clicked")
-		.AddSupplier_Details(vendorData.VendorName, vendorData.PhoneNum, vendorData.Address, vendorData.ContactInfo, vendorData.Email, vendorData.Note, "MSP-1,MSP-2-Vendor details added")
-		.TapOnDone("MSP-1,MSP-2-Done tapped")
-		.TapOnBack("MSP-1,MSP-2-Back tapped")
-		.SupplierSelect(vendorData.VendorName,"MSP-1,MSP-2-selected added vendor")
-		.TapOnEdit("MSP-1,MSP-2-Edit tapped")
-		.ViewSupplierDetails(vendorData.VendorName, vendorData.PhoneNum, vendorData.Address, vendorData.ContactInfo, vendorData.Email,vendorData.Note,"MSP-1,MSP-2-Verified vendor details")
-		.AddSupplier_Details(vendorDataEdit.VendorName, vendorDataEdit.PhoneNum, vendorDataEdit.Address, vendorDataEdit.ContactInfo, vendorDataEdit.Email, vendorDataEdit.Note, "MSP-1,MSP-2-Editted vendor details")
-		.TapOnDone("MSP-1,MSP-2-Done tapped")
-		.TapOnBack("MSP-1,MSP-2-Back tapped")
-		.Add_Supplier("MSP-1,MSP-2-Add2 button clicked")
-		.AddSupplier_Details(vendorData1.VendorName, vendorData1.PhoneNum, vendorData1.Address, vendorData1.ContactInfo, vendorDataEdit.Email, vendorData1.Note, "MSP-1,MSP-2-Entered vendor details to be cancelled vendor details")
-		.TapOnCancel("MSP-1,MSP-2-Cancel tapped")
-		.SupplierCancelledVerify(vendorData1.VendorName, "MSP-1,MSP-2-SupplierCancel Verified")
-		.SupplierSelect(vendorDataEdit.VendorName, "MSP-1,MSP-2-selected edited vendor")
-		.TapOnEdit("MSP-1,MSP-2-Edit tapped")
-		.ViewSupplierDetails(vendorDataEdit.VendorName, vendorDataEdit.PhoneNum, vendorDataEdit.Address, vendorDataEdit.ContactInfo, vendorDataEdit.Email, vendorDataEdit.Note, "MSP-1,MSP-2-Verified editted vendor details")
-		.DeleteSupplier("MSP-1,MSP-2-deleted added vendor")
-		.VerifyDeletedSupplier(vendorDataEdit.VendorName, "MSP-1,MSP-2-verify deleted  vendor")
-		;
-	}
+		 ._atHomePage()
+		 .ClickAccount(loginData.UserName,"MPI-1-Clicked account")
 
-	 
-	/*
-	 * Validating user is able to add purchase and Food cost
-	 */
-	
-	
-	@Test(groups={"MP-WF1"},priority=0, description = "MP - WF 1-Purchases-FoodCost")
-	public void MP_WF1_OG_DefaultLoc_DefaultCat_Track_UpdateQty_Purchases_FoodCost()
-	{
-		LoginData loginData =LoginData.fetch("LoginData7");
-		LocationsData locDataCooler=LocationsData.fetch("LocatiosData5");
-		LocationsData locDataFreezer=LocationsData.fetch("LocatiosData6");
-		LocationsData locDataDry=LocationsData.fetch("LocatiosData7");
-		UOMQuantityData uomQuantityData=UOMQuantityData.fetch("UOMQuantityData");
-		UOMQuantityData uomQuantityData3=UOMQuantityData.fetch("UOMQuantityData3");
-		VendorDetailsData vendorData=VendorDetailsData.fetch("VendorDetailData1");
-		PurchasesData purchasesData=PurchasesData.fetch("PurchasesData");
-		
-		Start.asTester
-		.goToLoginpage()
-		.verifyLoginPage("SI - WF 1-LoginPage")
-		.saveUsernameCheckBoxClick("SI - WF 1-save username")
-		.signIn(loginData.UserName, loginData.Password,"SI - WF 1-Login")
+		 ._atAccountsPage()
+		 .Third_AccountSelection(loginData.UserName,"MPI-1-FirstAccountSelect")
 
-		._atHomePage()
-		.ClickAccount(loginData.UserName,"Clicked account")
+		 ._atInventoryToolPage()
+		 .InvTools_SetUpInventory("MPI-1-SetupInventoryTap")
 
-		._atAccountsPage()
-		.First_AccountSelection(loginData.UserName,"SI - WF 1-FirstAccountSelect")
+		 ._atSetupInventoryPage()
+		 .TapOnSkip("MPI-1-Tapped Skip1")
+		 .TapOrderGuide("MIL - WF 5-OG Selected")
+		 .tapContinue("MIL - WF 5-Tapped Continue1")
 
-		._atInventoryToolPage()
-		.InvTools_SetUpInventory("SI - WF 1-SetupInventoryTap")
+		 ._atLocationsPage()
+		 .DefaultLocation("SI - WF 1-Tapped Custom location")
+		 .tapContinue("SI - WF 1-Tapped Continue")
+		 ._atSetupInventoryPage()
 
-		._atSetupInventoryPage()
-		.TapOnSkip("SI - WF 1-Skip1 Tapped")
+		 .TapOnDOThisLater("MIL-WF6-Tapped do this later")
+		 .TapTakeHome("SI - WF 32-Tapped take me home")
 
-		.TapOrderGuide("SI - WF 1-OG Selected")
-		.tapContinue("SI - WF 1-Tapped Continue")
+		 ._atInventoryToolPage()
+		 .InvTools_CreatePrep("MPI-1-Tapped Prep item")
+
+		 ._atSetupInventoryPage()
+		 .EnterItemDetails(prepItemData.ProductName, prepItemData.UPC, prepItemData.Pack, prepItemData.Size, prepItemData.Weight, prepItemData.Price, prepItemData.ProductBrand, "MPI-1-PrepItem details entered")
 
 
-		._atLocationsPage()
-		.DefaultLocation("SI - WF 1-Tapped Custom location")
-		.tapContinue("SI - WF 1-Tapped Continue")
+
+		 //linking location
+		 ._atLocationsPage()
+		 .AddLocation_AddProductDetailsPage("MPI-1-Select Add/Select location option")
+		 .TapAddLocation("MPI-1-Tapped ADD Location")
+		 .AddLocationName(locationsData.LocationName,"MPI-1-Enter location name")
+		 .AddLocationCooler("MPI-1-Tapped Cooler")
+		 .TapOnDone("MPI-1-Tapped Done3")
+		 .TapOnBack("MPI-1-Tapped Back1")
+		 .VerifyLocationList(locationsData.LocationName, "MPI-1-Verifing Added Location")
+		 .SelectLocation(locationsData.LocationName, "MPI-1-Selecting Added Location")
+		 .LocationDoneSelection("MPI-1-Selecting Done")
+
+		 //linking category
+		 ._atLocationsPage()
+		 .AddCategory_AddProductDetailsPage("MPI-1-Tapped CategorySelect")
+		 ._atCategoryPage()
+		 .TapAdd("MPI-1-Tapped Add category")
+		 .AddCategoryName(categoryData.Name, "MPI-1-Enter Category Name")
+		 .AddCategoryFood("MPI-1-Enter type food")
+		 .TapOnDone("MPI-1-Tapped Done4")
+		 .TapOnBack("MPI-1-Tapped Back2")
+		 .SelectCategory(categoryData.Name, "MPI-1-Select Category Name")
+
+		 .TapOnDone("MPI-1-Tapped Done,Prepitem added") 
+
+		 ._atInventoryToolPage()
+		 .InvTools_TrackInventory("MPI-1-Selected track inventory")
 
 
-		._atCategoryPage()
-			.defaultCategories("SI - WF 1-Tapped Default category")
-		.tapComplete("SI - WF 1-Tapped Complete")
+		 ._atLocationsPage()
+		 .SelectLocation(locationsData.LocationName, "MPI-1-Select added location")
 
-		._atSetupInventoryPage()
-		.TapTakeHome("SI - WF 1-Tapped take me home")   
+		 ._atSetupInventoryPage()
+		 .verifyNonSyscoPrepItemSetupInv(prepItemData.ProductName,"MPI-1-Verify Prep item added")
+		 ._atLocationsPage()
+		 .NonSyscoPrepCategoryIdentify(nonSyscoItemData.ProductName,prepItemData.ProductName,"MPI-1-Category idenitification for Prepitem")
+		 ._atCategoryPage()
+		 .VerifyPrepCustomCategory(categoryData.Name, "MPI-1-Category verification")
 
-		._atInventoryToolPage()
-		.InvTools_TrackInventory("SI - WF 1-Selected track inventory")
 
-		._atLocationsPage()
-		.SelectLocation(locDataCooler.LocationName, "SI - WF 1-Selected cooler")
-		.ProductQtyEnter(uomQuantityData.Quantity,"TI-WF1-WF2-Entering Quantity1")
-		.UomEnterOZ(uomQuantityData.UOM, "TI-WF1-WF2-Entering Uom unit OZ")
-		.TapOnDone("TI-WF1-WF2-Tapped done")
-		.TapOnBack("SI - WF 1-Tapped on Back")
-	
-		._atInventoryToolPage()
-		.InvTools_CloseInventory("Tapped close inventory")
+		 ._atLocationsPage()
+		 .ProductSelect(prepItemData.ProductName, "MNS-1-Product select")
+		 .TapOnEdit("MNS-1-Tap on edit")
+
+		 ._atSetupInventoryPage()	
+		 .EnterItemDetails(prepItemData1.ProductName, prepItemData1.UPC, prepItemData1.Pack, prepItemData1.Size, prepItemData1.Weight, prepItemData1.Price, prepItemData1.ProductBrand, "MNS-1-PrepItem details entered")
+		 ._atLocationsPage()
+		 .AddLocation_AddProductDetailsPage("MIL-WF10-Select Add/Select location option")
+		 .TapAddLocation("MIL-WF10-Tapped ADD")
+		 .AddLocationName(locationsData1.LocationName,"MIL-WF10-Enter location2 name")
+		 .AddLocationCooler("MIL-WF10-Tapped Cooler")
+		 .TapOnDone("MIL-WF10-Tapped Done")
+		 .TapOnBack("MIL-WF10-Tapped Back")
+		 .VerifyLocationList(locationsData1.LocationName, "MIL-WF10-Verifing Added Location2")
+
+		 .SelectLocation(locationsData1.LocationName, "MIL-WF10-Selecting Added Location2")
+		 .SelectLocation(locationsData.LocationName, "MIL-WF2-Selecting Added Location2")     //not preselected
+		 .LocationDoneSelection("MIL-WF10-Selecting Done")
+		 .TapOnDone("MIL-WF10-Tapped Done")
+
+		 .TapOnBack("MIL-WF10-Tapped Back")
+		 .SelectLocation(locationsData1.LocationName, "MIL-WF10-Selecting Added Location2")
+		 ._atSetupInventoryPage()
+		 .verifyNonSyscoPrepItemSetupInv(prepItemData1.ProductName,"MIL-WF10-Verify nonsysco item added")
+
+		 ;
+	 }
+
+
+	 /*
+	  * Validating user is able to setup inventory.
+	  * Validating add/edit/delete supplier  through Homepage 
+	  * Prerequisite:Normal/MA User with OG items
+	  * 
+	  */
+
+	 @Test(groups={"MSP-1 MSP-2"},priority=0, description = "MSP-1 MSP-2 Home Screen-->Suppliers-->Add new Suppliers/View/Maintain Suppliers")
+	 public void MSP1_MSP2_Add_View_ManageSuppliers()
+	 {
+		 LoginData loginData =LoginData.fetch("LoginData4");
+		 VendorDetailsData vendorData=VendorDetailsData.fetch("VendorDetailData2");
+		 VendorDetailsData vendorDataEdit=VendorDetailsData.fetch("VendorDetailData3");
+		 VendorDetailsData vendorData1=VendorDetailsData.fetch("VendorDetailData1");
+		 Start.asTester
+		 .goToLoginpage()
+		 .verifyLoginPage("MSP-1,MSP-2-LoginPage")
+		 .signIn(loginData.UserName, loginData.Password,"MSP-1,MSP-2-LoginPage")
+		 ._atHomePage()
+		 .ClickAccount(loginData.UserName,"Clicked account")
+		 ._atAccountsPage()
+		 .Fourth_AccountSelection(loginData.UserName,"MSP-1,MSP-2-FirstAccountSelect")
+
+		 ._atInventoryToolPage()
+		 .InvTools_SetUpInventory("SI - WF 1-SetupInventoryTap")
+		 ._atSetupInventoryPage()
+		 .TapOnSkip("SI - WF 1-Skip1 Tapped")
+		 .TapOrderGuide("SI - WF 1-OG Selected")
+		 .tapContinue("SI - WF 1-Tapped Continue")
+		 ._atLocationsPage()
+		 .DefaultLocation("SI - WF 1-Tapped Custom location")
+		 .tapContinue("SI - WF 1-Tapped Continue")
+		 ._atSetupInventoryPage()
+
+		 .TapOnDOThisLater("MIL-WF6-Tapped do this later")
+		 .TapTakeHome("SI - WF 32-Tapped take me home")  
+
+		 ._atInventoryToolPage()
+		 .InvTools_Suppliers("MSP-1,MSP-2-Tapped on suppliers")
+		 ._atVendorPage()
+		 .verifySupplierPage("MSP-1,MSP-2-Supplier page verified")
+		 .Add_Supplier("MSP-1,MSP-2-Add button clicked")
+		 .AddSupplier_Details(vendorData.VendorName, vendorData.PhoneNum, vendorData.Address, vendorData.ContactInfo, vendorData.Email, vendorData.Note, "MSP-1,MSP-2-Vendor details added")
+		 .TapOnDone("MSP-1,MSP-2-Done tapped")
+		 .TapOnBack("MSP-1,MSP-2-Back tapped")
+		 .SupplierSelect(vendorData.VendorName,"MSP-1,MSP-2-selected added vendor")
+		 .TapOnEdit("MSP-1,MSP-2-Edit tapped")
+		 .ViewSupplierDetails(vendorData.VendorName, vendorData.PhoneNum, vendorData.Address, vendorData.ContactInfo, vendorData.Email,vendorData.Note,"MSP-1,MSP-2-Verified vendor details")
+		 .AddSupplier_Details(vendorDataEdit.VendorName, vendorDataEdit.PhoneNum, vendorDataEdit.Address, vendorDataEdit.ContactInfo, vendorDataEdit.Email, vendorDataEdit.Note, "MSP-1,MSP-2-Editted vendor details")
+		 .TapOnDone("MSP-1,MSP-2-Done tapped")
+		 .TapOnBack("MSP-1,MSP-2-Back tapped")
+		 .Add_Supplier("MSP-1,MSP-2-Add2 button clicked")
+		 .AddSupplier_Details(vendorData1.VendorName, vendorData1.PhoneNum, vendorData1.Address, vendorData1.ContactInfo, vendorDataEdit.Email, vendorData1.Note, "MSP-1,MSP-2-Entered vendor details to be cancelled vendor details")
+		 .TapOnCancel("MSP-1,MSP-2-Cancel tapped")
+		 .SupplierCancelledVerify(vendorData1.VendorName, "MSP-1,MSP-2-SupplierCancel Verified")
+		 .SupplierSelect(vendorDataEdit.VendorName, "MSP-1,MSP-2-selected edited vendor")
+		 .TapOnEdit("MSP-1,MSP-2-Edit tapped")
+		 .ViewSupplierDetails(vendorDataEdit.VendorName, vendorDataEdit.PhoneNum, vendorDataEdit.Address, vendorDataEdit.ContactInfo, vendorDataEdit.Email, vendorDataEdit.Note, "MSP-1,MSP-2-Verified editted vendor details")
+		 .DeleteSupplier("MSP-1,MSP-2-deleted added vendor")
+		 .VerifyDeletedSupplier(vendorDataEdit.VendorName, "MSP-1,MSP-2-verify deleted  vendor")
+		 ;
+	 }
+
+
+	 /*
+	  * Validating user is able to add purchase and Food cost
+	  * //INV_071,INV_072//INV_139,INV_140 validations
+	  */
+
+
+	 @Test(groups={"FC1"},priority=0, description = "MP - WF 1-Purchases-FoodCost")
+	 public void MP_WF1_OG_DefaultLoc_DefaultCat_Track_UpdateQty_Purchases_FoodCost()
+	 {
+		 LoginData loginData =LoginData.fetch("LoginData12");
+		 LocationsData locDataCooler=LocationsData.fetch("LocatiosData5");
+		 LocationsData locDataFreezer=LocationsData.fetch("LocatiosData6");
+		 LocationsData locDataDry=LocationsData.fetch("LocatiosData7");
+		 UOMQuantityData uomQuantityData=UOMQuantityData.fetch("UOMQuantityData");
+		 UOMQuantityData uomQuantityData3=UOMQuantityData.fetch("UOMQuantityData3");
+		 VendorDetailsData vendorData=VendorDetailsData.fetch("VendorDetailData1");
+		 PurchasesData purchasesData=PurchasesData.fetch("PurchasesData");
+
+		 Start.asTester
+		 .goToLoginpage()
+		 .verifyLoginPage("SI - WF 1-LoginPage")
+		 .saveUsernameCheckBoxClick("SI - WF 1-save username")
+		 .signIn(loginData.UserName, loginData.Password,"SI - WF 1-Login")
+
+		 ._atHomePage()
+		 .ClickAccount(loginData.UserName,"Clicked account")
+
+		 ._atAccountsPage()
+		 .First_AccountSelection(loginData.UserName,"SI - WF 1-FirstAccountSelect")
+
+		 ._atInventoryToolPage()
+		 .InvTools_SetUpInventory("SI - WF 1-SetupInventoryTap")
+
+		 ._atSetupInventoryPage()
+		 .TapOnSkip("SI - WF 1-Skip1 Tapped")
+
+		 .TapOrderGuide("SI - WF 1-OG Selected")
+		 .tapContinue("SI - WF 1-Tapped Continue")
+
+
+		 ._atLocationsPage()
+		 .DefaultLocation("SI - WF 1-Tapped Custom location")
+		 .tapContinue("SI - WF 1-Tapped Continue")
+
+
+		 ._atCategoryPage()
+		 .defaultCategories("SI - WF 1-Tapped Default category")
+		 .tapComplete("SI - WF 1-Tapped Complete")
+
+		 ._atSetupInventoryPage()
+		 .TapTakeHome("SI - WF 1-Tapped take me home")   
+
+		 ._atInventoryToolPage()
+		 .InvTools_TrackInventory("SI - WF 1-Selected track inventory")
+
+		 ._atLocationsPage()
+		 .SelectLocation(locDataCooler.LocationName, "SI - WF 1-Selected cooler")
+		 .ProductQtyEnter(uomQuantityData.Quantity,"TI-WF1-WF2-Entering Quantity1")
+		 .UomEnterOZ(uomQuantityData.UOM, "TI-WF1-WF2-Entering Uom unit OZ")
+		 .TapOnDone("TI-WF1-WF2-Tapped done")
+		 .TapOnBack("SI - WF 1-Tapped on Back")
+
+		 ._atInventoryToolPage()
+		 .InvTools_CloseInventory("Tapped close inventory")
+		 .InvTools_ClosedInventoryYes("Tapped Yes,Close")
+		 /*.InvTools_CloseInventory("Tapped close inventory")
 		.InvTools_ClosedInventoryYes("Tapped Yes,Close")
-		.InvTools_CloseInventory("Tapped close inventory")
-		.InvTools_ClosedInventoryYes("Tapped Yes,Close")
-		.InvTools_TrackInventory("SI - WF 1-Selected track inventory")
-		._atLocationsPage()
-		.SelectLocation(locDataFreezer.LocationName, "SI - WF 1-Selected cooler")
-		.ProductQtyEnter(uomQuantityData3.Quantity,"TI-WF1-WF2-Entering Quantity1")
-		.UomEnterOZ(uomQuantityData.UOM, "TI-WF1-WF2-Entering Uom unit OZ")
-		.TapOnDone("TI-WF1-WF2-Tapped done")
-		.TapOnBack("SI - WF 1-Tapped on Back")
-	
-		._atInventoryToolPage()
-		.InvTools_Suppliers("MSP-1,MSP-2-Tapped on suppliers")
-		._atVendorPage()
-		.Add_Supplier("MSP-1,MSP-2-Add button clicked")
-		.AddSupplier_Details(vendorData.VendorName, vendorData.PhoneNum, vendorData.Address, vendorData.ContactInfo, vendorData.Email, vendorData.Note, "MSP-1,MSP-2-Vendor details added")
-		.TapOnDone("MSP-1,MSP-2-Done tapped")
-		.TapOnBack("MSP-1,MSP-2-Back tapped")
-		.TapOnBack("MSP-1,MSP-2-Back tapped")
-		
-		._atInventoryToolPage()
-		.InvTools_Purchases("Tapped on purchase")
-		
-		//INV_139,INV_140 validations
-		._atPurchasesPage()
-		.AddPurchases("Tapped on Add purchase")
-		.SupplierSelect("Selected supplier")
-		.DateSelect(purchasesData.Day,purchasesData.Month,purchasesData.Year,"Date selected")
-		.ExpenseCategorySelect(purchasesData.Category1,"Selected Food category")
-		.EnterExpenseAmount(purchasesData.ExpenseAmt1, "Entered expense amount")
-		.AddExpenseCategory("Tapped add button")
-		.ExpenseCategorySelect(purchasesData.Category2,"Selected Non Food category")
-		.EnterExpenseAmount(purchasesData.ExpenseAmt2, "Entered expense amount")
-		.AddExpenseCategory("Tapped add button")
-		.PurchaseDetails(purchasesData.InvoiceNumber,purchasesData.InvoiceTotal,"Entered purchase details")
+		  */.InvTools_TrackInventory("SI - WF 1-Selected track inventory")
+
+
+		  ._atLocationsPage()
+		  .SelectLocation(locDataFreezer.LocationName, "SI - WF 1-Selected cooler")
+		  .ProductQtyEnter(uomQuantityData3.Quantity,"TI-WF1-WF2-Entering Quantity1")
+		  .UomEnterOZ(uomQuantityData.UOM, "TI-WF1-WF2-Entering Uom unit OZ")
+		  .TapOnDone("TI-WF1-WF2-Tapped done")
+		  .TapOnBack("SI - WF 1-Tapped on Back")
+
+		  ._atInventoryToolPage()
+		  .InvTools_Suppliers("MSP-1,MSP-2-Tapped on suppliers")
+		  ._atVendorPage()
+		  .Add_Supplier("MSP-1,MSP-2-Add button clicked")
+		  .AddSupplier_Details(vendorData.VendorName, vendorData.PhoneNum, vendorData.Address, vendorData.ContactInfo, vendorData.Email, vendorData.Note, "MSP-1,MSP-2-Vendor details added")
+		  .TapOnDone("MSP-1,MSP-2-Done tapped")
+		  .TapOnBack("MSP-1,MSP-2-Back tapped")
+		  .TapOnBack("MSP-1,MSP-2-Back tapped")
+
+		  ._atInventoryToolPage()
+		  .InvTools_Purchases("Tapped on purchase")
+
+		  //INV_139,INV_140 validations
+		  ._atPurchasesPage()
+		  .AddPurchases("Tapped on Add purchase")
+		  .SupplierSelect("Selected supplier")
+		  .DateSelect(purchasesData.Day,purchasesData.Month,purchasesData.Year,"Date selected")
+		  .ExpenseCategorySelect(purchasesData.Category1,"Selected Food category")
+		  .EnterExpenseAmount(purchasesData.ExpenseAmt1, "Entered expense amount")
+		  .AddExpenseCategory("Tapped add button")
+		  .ExpenseCategorySelect(purchasesData.Category2,"Selected Non Food category")
+		  .EnterExpenseAmount(purchasesData.ExpenseAmt2, "Entered expense amount")
+		  .AddExpenseCategory("Tapped add button")
+		  /*.PurchaseDetails(purchasesData.InvoiceNumber,purchasesData.InvTotal1,"Entered purchase details")
 		.TapOnDone("Tapped on done")
 		//verify error msg
-		.PurchaseDetails(purchasesData.InvoiceNumber,purchasesData.InvTotal1,"Entered purchase details")
-		.TapOnDone("Tapped on done")
-		
-		.TapNoAddingPurchase("Tapped No adding purchase")
-		._atVendorPage()
-		.TapOnBack("MSP-1,MSP-2-Back tapped")
-		
-		._atInventoryToolPage()
-		.InvTools_CloseInventory("Tapped close inventory")
-		.InvTools_ClosedInventoryYes("Tapped Yes,Close")
-		.InvTools_FoodCost("Tapped food cost")
-		
-		._atFoodCostPage()
-		.VerifyTotalPurchase(purchasesData.ExpenseAmt1,"verify total purchase value")
-		.VerifyNetPurchases("verify net purchase value")
-		.VerifyCostOfGoodsSold("verify cost of goods sold value")
-		.EnterRevenue(purchasesData.Revenue1, "Entered Revenue") 
-		.CalculateFoodCost("Calculated food cost")
-		
-		//INV_071,INV_072
-		.TapOnBack("Tapped back")
-		._atInventoryToolPage()
-		.InvTools_TrackInventory("SI - WF 1-Selected track inventory")
-		._atLocationsPage()
-		.SelectLocation(locDataDry.LocationName, "SI - WF 1-Selected cooler")
-		.ProductQtyEnter(uomQuantityData3.Quantity,"TI-WF1-WF2-Entering Quantity1")
-		.UomEnterOZ(uomQuantityData.UOM, "TI-WF1-WF2-Entering Uom unit OZ")
-		.TapOnDone("TI-WF1-WF2-Tapped done")
-		.TapOnBack("SI - WF 1-Tapped on Back")
-	    ._atInventoryToolPage()
-		.InvTools_CloseInventory("Tapped close inventory")
-		.InvTools_ClosedInventoryYes("Tapped Yes,Close")
-		.InvTools_FoodCost("Tapped food cost")
-		._atFoodCostPage()
-		.VerifyCurrentAndLastclosedPrice("Verify current price =  price when the inventory closed")
-		
-		;
-	}
+		   */.PurchaseDetails(purchasesData.InvoiceNumber,purchasesData.InvoiceTotal,"Entered purchase details")
+		   .TapOnDone("Tapped on done")
+
+		   .TapNoAddingPurchase("Tapped No adding purchase")
+		   ._atVendorPage()
+		   .TapOnBack("MSP-1,MSP-2-Back tapped")
+
+		   ._atInventoryToolPage()
+		   .InvTools_CloseInventory("Tapped close inventory")
+		   .InvTools_ClosedInventoryYes("Tapped Yes,Close")
+		   .InvTools_FoodCost("Tapped food cost")
+
+		   ._atFoodCostPage()
+		   .VerifyTotalPurchase(purchasesData.ExpenseAmt1,"verify total purchase value")
+		   .VerifyNetPurchases("verify net purchase value")
+		   .VerifyCostOfGoodsSold("verify cost of goods sold value")
+		   .EnterRevenue(purchasesData.Revenue1, "Entered Revenue") 
+		   .CalculateFoodCost("Calculated food cost")
+
+		   //INV_071,INV_072
+		   .TapOnBack("Tapped back")
+		   ._atInventoryToolPage()
+		   .InvTools_TrackInventory("SI - WF 1-Selected track inventory")
+		   ._atLocationsPage()
+		   .SelectLocation(locDataDry.LocationName, "SI - WF 1-Selected cooler")
+		   .ProductQtyEnter(uomQuantityData3.Quantity,"TI-WF1-WF2-Entering Quantity1")
+		   .UomEnterOZ(uomQuantityData.UOM, "TI-WF1-WF2-Entering Uom unit OZ")
+		   .TapOnDone("TI-WF1-WF2-Tapped done")
+		   .TapOnBack("SI - WF 1-Tapped on Back")
+		   ._atInventoryToolPage()
+		   .InvTools_CloseInventory("Tapped close inventory")
+		   .InvTools_ClosedInventoryYes("Tapped Yes,Close")
+		   .InvTools_FoodCost("Tapped food cost")
+		   ._atFoodCostPage()
+		   .VerifyCurrentAndLastclosedPrice("Verify current price =  price when the inventory closed")
+
+		   ;
+	 }
+	 /*
+	  * Validating user is able to add purchase and Food cost
+	  * //INV_035,36 validations
+	  */
+	 @Test(groups={"FC2"},priority=0, description = "MP - WF 1-Purchases-FoodCost")
+	 public void MP_WF1_OG_CustomLoc_SuggestedCat_Track_UpdateQty_Purchases_FoodCost()
+	 {
+		 LoginData loginData =LoginData.fetch("LoginData13");
+		 LocationsData locDataCooler=LocationsData.fetch("LocatiosData5");
+		 LocationsData locDataFreezer=LocationsData.fetch("LocatiosData6");
+		 LocationsData locDataDry=LocationsData.fetch("LocatiosData7");
+		 UOMQuantityData uomQuantityData=UOMQuantityData.fetch("UOMQuantityData");
+		 UOMQuantityData uomQuantityData3=UOMQuantityData.fetch("UOMQuantityData3");
+		 VendorDetailsData vendorData=VendorDetailsData.fetch("VendorDetailData1");
+		 PurchasesData purchasesData=PurchasesData.fetch("PurchasesData");
+		 LocationsData locationsData1 =LocationsData.fetch("LocatiosData1");
+		 LocationsData locationsData2 =LocationsData.fetch("LocatiosData2");
+		/* CategoryData categoryData=CategoryData.fetch("CategoryData");
+*/
+		 Start.asTester
+		 .goToLoginpage()
+		 .verifyLoginPage("SI - WF 1-LoginPage")
+		 .saveUsernameCheckBoxClick("SI - WF 1-save username")
+		 .signIn(loginData.UserName, loginData.Password,"SI - WF 1-Login")
+
+		 ._atHomePage()
+		 .ClickAccount(loginData.UserName,"Clicked account")
+
+		 ._atAccountsPage()
+		 .First_AccountSelection(loginData.UserName,"SI - WF 1-FirstAccountSelect")
+
+		 ._atInventoryToolPage()
+		 .InvTools_SetUpInventory("SI - WF 1-SetupInventoryTap")
+
+		 ._atSetupInventoryPage()
+		 .TapOnSkip("SI - WF 1-Skip1 Tapped")
+
+		 .TapOrderGuide("SI - WF 1-OG Selected")
+		 .tapContinue("SI - WF 1-Tapped Continue")
 
 
-	@Test(groups={"MP-WF1"},priority=0, description = "MP - WF 1-Purchases-FoodCost")
-	public void MP_WF1_CustomList_DefaultLoc_DefaultCat_Track_UpdateQty_Purchases_FoodCost()
-	{
-		LoginData loginData =LoginData.fetch("LoginData7");
-		LocationsData locDataCooler=LocationsData.fetch("LocatiosData5");
-		LocationsData locDataFreezer=LocationsData.fetch("LocatiosData6");
-		LocationsData locDataDry=LocationsData.fetch("LocatiosData7");
-		UOMQuantityData uomQuantityData=UOMQuantityData.fetch("UOMQuantityData");
-		UOMQuantityData uomQuantityData3=UOMQuantityData.fetch("UOMQuantityData3");
-		VendorDetailsData vendorData=VendorDetailsData.fetch("VendorDetailData1");
-		PurchasesData purchasesData=PurchasesData.fetch("PurchasesData");
-		ListData listData=ListData.fetch("ListData");
-		
-		Start.asTester
-		.goToLoginpage()
-		.verifyLoginPage("SI - WF 1-LoginPage")
-		.saveUsernameCheckBoxClick("SI - WF 1-save username")
-		.signIn(loginData.UserName, loginData.Password,"SI - WF 1-Login")
+		 
+		 ._atLocationsPage()
+		 .CustomLocation("SI - WF 21-Tapped Custom location")
+		 .tapContinue("SI - WF 21-Tapped Continue2")
 
-		._atHomePage()
-		.ClickAccount(loginData.UserName,"Clicked account")
+		 .EnterLocationName(locationsData1.LocationName,"SI - WF 21-Enter location name")
+		 .AddLocations1_TypeDry("SI - WF 21-Tapped Dry1")
 
-		._atAccountsPage()
-		.First_AccountSelection(loginData.UserName,"SI - WF 1-FirstAccountSelect")
+		 .AddLocations2("SI - WF 21- tapped add another location")
+		 .AddLocations2_name(locationsData2.LocationName,"enter loc name 2")
+		 .AddLocations2_TypeDry("SI - WF 21-Tapped Dry2")
+		 .TapOnNext("SI - WF 21-Tapped Next1")
 
-		._atInventoryToolPage()
-		.InvTools_SetUpInventory("SI - WF 1-SetupInventoryTap")
+		 .selectMultipleItemsFromLocation1("SI - WF 21-Selected Multiple items")
+		 .TapOnNext("SI - WF 21-Tapped Next2")
+		 .selectMultipleItemsFromLocation2("SI - WF 21-Selected Multiple items")
+		 .TapOnDone("SI - WF 21-Tapped Done1")
 
-		._atSetupInventoryPage()
-		.TapOnSkip("SI - WF 1-Skip1 Tapped")
+		 ._atCategoryPage()
+		 .SuggestedCategories("SI - WF 33-SuggestedCategories Tapped")
+		 .tapContinue("SI - WF 33-Tapped Continue3")
 
-		._atListPage()
-		.TapCustomList("SI - WF 19-custom list Selected")
-		.tapContinue("SI - WF 19-Tapped Continue1")
-		.SelectListwithItems(listData.ListName, "SI - WF 19-select list")
-		.TapOnNext("SI - WF 19-tapped next")
+		 ._atSetupInventoryPage()
+
+		 .TapTakeHome("SI - WF 3-Tapped Continue4") 
 
 
-		._atLocationsPage()
-		.DefaultLocation("SI - WF 1-Tapped Custom location")
-		.tapContinue("SI - WF 1-Tapped Continue")
+		 ._atInventoryToolPage()
+		 .InvTools_TrackInventory("SI - WF 1-Selected track inventory")
+
+		 ._atLocationsPage()
+		// .SelectLocation(locationsData1.LocationName, "SI - WF 1-Selected cooler")
+		  .SelectLocation(locDataCooler.LocationName, "SI - WF 1-Selected cooler")
+		 .ProductQtyEnter(uomQuantityData.Quantity,"TI-WF1-WF2-Entering Quantity1")
+		 .UomEnterOZ(uomQuantityData.UOM, "TI-WF1-WF2-Entering Uom unit OZ")
+		 .TapOnDone("TI-WF1-WF2-Tapped done")
+		 .TapOnBack("SI - WF 1-Tapped on Back")
+
+		 ._atInventoryToolPage()
+		 .InvTools_CloseInventory("Tapped close inventory")
+		 .InvTools_ClosedInventoryYes("Tapped Yes,Close")
+		 
+		 .InvTools_TrackInventory("SI - WF 1-Selected track inventory")
+		 ._atLocationsPage()
+		// .SelectLocation(locationsData2.LocationName, "SI - WF 1-Selected cooler")
+		   .SelectLocation(locDataDry.LocationName, "SI - WF 1-Selected cooler")
+		 .ProductQtyEnter(uomQuantityData3.Quantity,"TI-WF1-WF2-Entering Quantity1")
+		 .UomEnterOZ(uomQuantityData.UOM, "TI-WF1-WF2-Entering Uom unit OZ")
+		 .TapOnDone("TI-WF1-WF2-Tapped done")
+		 .TapOnBack("SI - WF 1-Tapped on Back")
+
+		 ._atInventoryToolPage()
+		 .InvTools_Suppliers("MSP-1,MSP-2-Tapped on suppliers")
+		 ._atVendorPage()
+		 .Add_Supplier("MSP-1,MSP-2-Add button clicked")
+		 .AddSupplier_Details(vendorData.VendorName, vendorData.PhoneNum, vendorData.Address, vendorData.ContactInfo, vendorData.Email, vendorData.Note, "MSP-1,MSP-2-Vendor details added")
+		 .TapOnDone("MSP-1,MSP-2-Done tapped")
+		 .TapOnBack("MSP-1,MSP-2-Back tapped")
+		 .TapOnBack("MSP-1,MSP-2-Back tapped")
+
+		 ._atInventoryToolPage()
+		 .InvTools_Purchases("Tapped on purchase")
 
 
-		._atCategoryPage()
-			.defaultCategories("SI - WF 1-Tapped Default category")
-		.tapComplete("SI - WF 1-Tapped Complete")
+		 ._atPurchasesPage()
+		 .AddPurchases("Tapped on Add purchase")
+		 .SupplierSelect("Selected supplier")
+		 .DateSelect(purchasesData.Day,purchasesData.Month,purchasesData.Year,"Date selected")
+		 .ExpenseCategorySelect(purchasesData.Suggcat,"Selected Food category")
+		 .EnterExpenseAmount(purchasesData.ExpenseAmt1, "Entered expense amount")
+		 .AddExpenseCategory("Tapped add button")
+		 /*.ExpenseCategorySelect(purchasesData.Category2,"Selected Non Food category")
+		 .EnterExpenseAmount(purchasesData.ExpenseAmt2, "Entered expense amount")
+		 .AddExpenseCategory("Tapped add button")
+		*/ .PurchaseDetails(purchasesData.InvoiceNumber,purchasesData.InvoiceTotal,"Entered purchase details")
+		 .TapOnDone("Tapped on done")
 
-		._atSetupInventoryPage()
-		.TapTakeHome("SI - WF 1-Tapped take me home")   
+		 .TapNoAddingPurchase("Tapped No adding purchase")
+		 ._atVendorPage()
+		 .TapOnBack("MSP-1,MSP-2-Back tapped")
 
-		._atInventoryToolPage()
-		.InvTools_TrackInventory("SI - WF 1-Selected track inventory")
+		 ._atInventoryToolPage()
+		 .InvTools_CloseInventory("Tapped close inventory")
+		 .InvTools_ClosedInventoryYes("Tapped Yes,Close")
+		 .InvTools_FoodCost("Tapped food cost")
 
-		._atLocationsPage()
-		.SelectLocation(locDataCooler.LocationName, "SI - WF 1-Selected cooler")
-		.ProductQtyEnter(uomQuantityData.Quantity,"TI-WF1-WF2-Entering Quantity1")
-		.UomEnterOZ(uomQuantityData.UOM, "TI-WF1-WF2-Entering Uom unit OZ")
-		.TapOnDone("TI-WF1-WF2-Tapped done")
-		.TapOnBack("SI - WF 1-Tapped on Back")
-	
-		._atInventoryToolPage()
-		.InvTools_CloseInventory("Tapped close inventory")
-		.InvTools_ClosedInventoryYes("Tapped Yes,Close")
-		.InvTools_CloseInventory("Tapped close inventory")
-		.InvTools_ClosedInventoryYes("Tapped Yes,Close")
-		.InvTools_TrackInventory("SI - WF 1-Selected track inventory")
-		._atLocationsPage()
-		.SelectLocation(locDataFreezer.LocationName, "SI - WF 1-Selected cooler")
-		.ProductQtyEnter(uomQuantityData3.Quantity,"TI-WF1-WF2-Entering Quantity1")
-		.UomEnterOZ(uomQuantityData.UOM, "TI-WF1-WF2-Entering Uom unit OZ")
-		.TapOnDone("TI-WF1-WF2-Tapped done")
-		.TapOnBack("SI - WF 1-Tapped on Back")
-	
-		._atInventoryToolPage()
-		.InvTools_Suppliers("MSP-1,MSP-2-Tapped on suppliers")
-		._atVendorPage()
-		.Add_Supplier("MSP-1,MSP-2-Add button clicked")
-		.AddSupplier_Details(vendorData.VendorName, vendorData.PhoneNum, vendorData.Address, vendorData.ContactInfo, vendorData.Email, vendorData.Note, "MSP-1,MSP-2-Vendor details added")
-		.TapOnDone("MSP-1,MSP-2-Done tapped")
-		.TapOnBack("MSP-1,MSP-2-Back tapped")
-		.TapOnBack("MSP-1,MSP-2-Back tapped")
-		
-		._atInventoryToolPage()
-		.InvTools_Purchases("Tapped on purchase")
-		
-		
-		._atPurchasesPage()
-		.AddPurchases("Tapped on Add purchase")
-		.SupplierSelect("Selected supplier")
-		.DateSelect(purchasesData.Day,purchasesData.Month,purchasesData.Year,"Date selected")
-		.ExpenseCategorySelect(purchasesData.Category1,"Selected Food category")
-		.EnterExpenseAmount(purchasesData.ExpenseAmt1, "Entered expense amount")
-		.AddExpenseCategory("Tapped add button")
-		.ExpenseCategorySelect(purchasesData.Category2,"Selected Non Food category")
-		.EnterExpenseAmount(purchasesData.ExpenseAmt2, "Entered expense amount")
-		.AddExpenseCategory("Tapped add button")
-		.PurchaseDetails(purchasesData.InvoiceNumber,purchasesData.InvTotal1,"Entered purchase details")
-		.TapOnDone("Tapped on done")
-		
-		.TapNoAddingPurchase("Tapped No adding purchase")
-		.VerifyPurchaseAdded("verify purchase added")
-		
-		._atVendorPage()
-		.TapOnBack("MSP-1,MSP-2-Back tapped")
-		
-		._atInventoryToolPage()
-		.InvTools_CloseInventory("Tapped close inventory")
-		.InvTools_ClosedInventoryYes("Tapped Yes,Close")
-		.InvTools_FoodCost("Tapped food cost")
-		
-		._atFoodCostPage()
-		.VerifyTotalPurchase(purchasesData.ExpenseAmt1,"verify total purchase value")
-		.VerifyNetPurchases("verify net purchase value")
-		.VerifyCostOfGoodsSold("verify cost of goods sold value")
-		.EnterRevenue(purchasesData.Revenue1, "Entered Revenue") 
-		.CalculateFoodCost("Calculated food cost")
-		
-		
-		;
-	}
+		 ._atFoodCostPage()
+		 .VerifyTotalPurchase(purchasesData.ExpenseAmt1,"verify total purchase value")
+		 .VerifyNetPurchases("verify net purchase value")
+		 .VerifyCostOfGoodsSold("verify cost of goods sold value")
+		 .EnterRevenue(purchasesData.Revenue1, "Entered Revenue") 
+		 .CalculateFoodCost("Calculated food cost")
+		 .TapOnBack("Tapped back")
 
-	/*
-	 * Validating user is able to close inventory and verify Food cost
-	 */
-	
-	
-	@Test(groups={"FC-WF1_1"},priority=0, description = "FC-WF1-TrackInventory-FoodCost")
-	public void FC_WF1_OG_DefaultLoc_DefaultCategory_TrackInventory_FoodCost()
-	{
-		LoginData loginData =LoginData.fetch("LoginData11");
-		LocationsData locDataCooler=LocationsData.fetch("LocatiosData5");
-		LocationsData locDataFreezer=LocationsData.fetch("LocatiosData6");
-	
-		UOMQuantityData uomQuantityData=UOMQuantityData.fetch("UOMQuantityData");
-		UOMQuantityData uomQuantityData1=UOMQuantityData.fetch("UOMQuantityData2");
-		PurchasesData purchasesData=PurchasesData.fetch("PurchasesData");
-		
-		Start.asTester
-		.goToLoginpage()
-		.verifyLoginPage("MP-WF1-LoginPage")
-		.saveUsernameCheckBoxClick("MP-WF1-save username")
-		.signIn(loginData.UserName, loginData.Password,"MP-WF1-Login")
+		 ._atInventoryToolPage()
+		 .InvTools_TrackInventory("SI - WF 1-Selected track inventory")
 
-		._atHomePage()
-		.ClickAccount(loginData.UserName,"MP-WF1-Clicked account")
+		 ._atLocationsPage()
+		 .SelectLocation(locDataCooler.LocationName,"TI-WF1-WF2-Selected location for update verify")
+		 .QuantityVerify(uomQuantityData.Quantity,"TI-WF1-WF2-Verifying Quantity2")
+		 .TapOnBack("Tapped on back")
+		 .SelectLocation(locDataDry.LocationName,"TI-WF1-WF2-Selected location for update verify")
+		 .QuantityVerify(uomQuantityData3.Quantity,"TI-WF1-WF2-Verifying Quantity2")
+		 .TapOnBack("Tapped on back")
+		 ;
+	 }
 
-		._atAccountsPage()
-		.First_AccountSelection(loginData.UserName,"MP-WF1-FirstAccountSelect")
 
-		._atInventoryToolPage()
-		.InvTools_SetUpInventory("MP-WF1-SetupInventoryTap")
 
-		._atSetupInventoryPage()
-		.TapOnSkip("MP-WF1-Skip1 Tapped")
+	 /*
+	  * Validating user is able to close inventory and verify Food cost
+	  */
 
-		.TapOrderGuide("MP-WF1-OG Selected")
-		.tapContinue("MP-WF1-Tapped Continue")
 
-		._atLocationsPage()
-		.DefaultLocation("MP-WF1-Tapped Custom location")
-		.tapContinue("MP-WF1-Tapped Continue")
+	 @Test(groups={"FC-WF1_1"},priority=0, description = "FC-WF1-TrackInventory-FoodCost")
+	 public void FC_WF1_OG_DefaultLoc_DefaultCategory_TrackInventory_FoodCost()
+	 {
+		 LoginData loginData =LoginData.fetch("LoginData11");
+		 LocationsData locDataCooler=LocationsData.fetch("LocatiosData5");
+		 LocationsData locDataFreezer=LocationsData.fetch("LocatiosData6");
 
-		._atCategoryPage()
-		.defaultCategories("MP-WF1-Tapped Default category")
-		.tapComplete("MP-WF1-Tapped Complete")
+		 UOMQuantityData uomQuantityData=UOMQuantityData.fetch("UOMQuantityData");
+		 UOMQuantityData uomQuantityData1=UOMQuantityData.fetch("UOMQuantityData2");
+		 PurchasesData purchasesData=PurchasesData.fetch("PurchasesData");
 
-		._atSetupInventoryPage()
-		.TapTakeHome("MP-WF1-Tapped take me home")   
-	
-    
-	/*	
+		 Start.asTester
+		 .goToLoginpage()
+		 .verifyLoginPage("MP-WF1-LoginPage")
+		 .saveUsernameCheckBoxClick("MP-WF1-save username")
+		 .signIn(loginData.UserName, loginData.Password,"MP-WF1-Login")
+
+		 ._atHomePage()
+		 .ClickAccount(loginData.UserName,"MP-WF1-Clicked account")
+
+		 ._atAccountsPage()
+		 .First_AccountSelection(loginData.UserName,"MP-WF1-FirstAccountSelect")
+
+		 ._atInventoryToolPage()
+		 .InvTools_SetUpInventory("MP-WF1-SetupInventoryTap")
+
+		 ._atSetupInventoryPage()
+		 .TapOnSkip("MP-WF1-Skip1 Tapped")
+
+		 .TapOrderGuide("MP-WF1-OG Selected")
+		 .tapContinue("MP-WF1-Tapped Continue")
+
+		 ._atLocationsPage()
+		 .DefaultLocation("MP-WF1-Tapped Custom location")
+		 .tapContinue("MP-WF1-Tapped Continue")
+
+		 ._atCategoryPage()
+		 .defaultCategories("MP-WF1-Tapped Default category")
+		 .tapComplete("MP-WF1-Tapped Complete")
+
+		 ._atSetupInventoryPage()
+		 .TapTakeHome("MP-WF1-Tapped take me home")   
+
+
+		 /*	
 		//inv_117,119 OG+Default+default category---446
-		
+
 		._atInventoryToolPage()
 		.InvTools_TrackInventory("MP-WF1-Selected track inventory")
 
@@ -3714,11 +3744,11 @@ public class WorkFlow extends Initiator{
 	//	.ProductQtyEnter(uomQuantityData1.Quantity,"MP-WF1-Entering Quantity1")
 		.TapOnDone("MP-WF1-Tapped done")
 		.TapOnBack("MP-WF1-Tapped on Back")
-	
+
 		._atInventoryToolPage()
 		.InvTools_CloseInventory("MP-WF1-Tapped close inventory")
 		.InvTools_ClosedInventoryYes("MP-WF1-Tapped Yes,Close")
-	
+
 		._atInventoryToolPage()
 		.InvTools_TrackInventory("MP-WF1-Selected track inventory")
 
@@ -3729,13 +3759,13 @@ public class WorkFlow extends Initiator{
 	//	.ProductQtyEnter(uomQuantityData.Quantity,"MP-WF1-Entering Quantity1")
 		.TapOnDone("MP-WF1-Tapped done")
 		.TapOnBack("MP-WF1-Tapped on Back")
-		
+
 		._atInventoryToolPage()
 		.InvTools_CloseInventory("MP-WF1-Tapped close inventory")
 		.InvTools_ClosedInventoryYes("MP-WF1-Tapped Yes,Close")
-	
+
 		.InvTools_FoodCost("MP-WF1-Tapped food cost")
-		
+
 		._atFoodCostPage()
 		//	price validation
 		 .VerifyNetPurchases("MP-WF1-Verify net purchase value")
@@ -3744,149 +3774,149 @@ public class WorkFlow extends Initiator{
 		.CalculateFoodCost("MP-WF1-Calculated food cost")
 		._atLocationsPage()
 		.TapOnBack("MP-WF1-Tapped on Back")*/
-		
-		
 
-		//inv_127,129 OG+Defaultloc+default category---447_1
-		
-		._atInventoryToolPage()
-		.InvTools_TrackInventory("MP-WF1-Selected track inventory")
 
-		._atLocationsPage()
-		.SelectLocation(locDataCooler.LocationName, "MP-WF1-Selected cooler")
-		.ProductQtyEnter(uomQuantityData.Quantity,"MP-WF1-Entering Quantity1")
-		.TapOnDone("MP-WF1-Tapped done")
-		.TapOnBack("MP-WF1-Tapped on Back")
-	
-		._atInventoryToolPage()
-		.InvTools_CloseInventory("MP-WF1-Tapped close inventory")
-		.InvTools_ClosedInventoryYes("MP-WF1-Tapped Yes,Close")
-	
-		._atInventoryToolPage()
-		.InvTools_TrackInventory("MP-WF1-Selected track inventory")
 
-		._atLocationsPage()
-		.SelectLocation(locDataCooler.LocationName, "MP-WF1-Selected cooler")
-		.SelectItemFromLocations("MP-WF1-Selected first product")
-		.TapOnEdit("")
-		.PdtDetailPage_Location1_EnterQty(uomQuantityData1.Quantity, locDataCooler.LocationName, "MP-WF1-Edited qty")
-		.TapOnDone("MP-WF1-Tapped done")
-		.TapOnBack("MP-WF1-Tapped on Back")
-		.TapOnBack("MP-WF1-Tapped on Back")
-		.TapOnBack("MP-WF1-Tapped on Back")
-		._atInventoryToolPage()
-		.InvTools_CloseInventory("MP-WF1-Tapped close inventory")
-		.InvTools_ClosedInventoryYes("MP-WF1-Tapped Yes,Close")
-	
-		.InvTools_FoodCost("MP-WF1-Tapped food cost")
-		
-		._atFoodCostPage()
-		.VerifyNetPurchases("MP-WF1-Verify net purchase value")
-		.VerifyCostOfGoodsSold("MP-WF1-Verify cost of goods sold value")
-		.EnterRevenue(purchasesData.Revenue1, "MP-WF1-Entered Revenue")
-		.CalculateFoodCost("MP-WF1-Calculated food cost")
-		
-		
-		;
-	}
-	/*
-	 * Validating user is able to close inventory and verify Food cost
-	 */
-	
-	
-	@Test(groups={"FC-WF1"},priority=0, description = "FC-WF1-TrackInventory-FoodCost")
-	public void FC_WF1_OG_DefaultLoc_CustomCategory_TrackInventory_FoodCost()
-	{
-		LoginData loginData =LoginData.fetch("LoginData11");
-		LocationsData locDataCooler=LocationsData.fetch("LocatiosData5");
-		LocationsData locDataFreezer=LocationsData.fetch("LocatiosData6");
-		CategoryData categoryData=CategoryData.fetch("CategoryData");
-		UOMQuantityData uomQuantityData=UOMQuantityData.fetch("UOMQuantityData");
-		UOMQuantityData uomQuantityData1=UOMQuantityData.fetch("UOMQuantityData2");
-		PurchasesData purchasesData=PurchasesData.fetch("PurchasesData");
-		
-		Start.asTester
-		.goToLoginpage()
-		.verifyLoginPage("MP-WF1-LoginPage")
-		.saveUsernameCheckBoxClick("MP-WF1-save username")
-		.signIn(loginData.UserName, loginData.Password,"MP-WF1-Login")
+		 //inv_127,129 OG+Defaultloc+default category---447_1
 
-		._atHomePage()
-		.ClickAccount(loginData.UserName,"MP-WF1-Clicked account")
+		 ._atInventoryToolPage()
+		 .InvTools_TrackInventory("MP-WF1-Selected track inventory")
 
-		._atAccountsPage()
-		.First_AccountSelection(loginData.UserName,"MP-WF1-FirstAccountSelect")
+		 ._atLocationsPage()
+		 .SelectLocation(locDataCooler.LocationName, "MP-WF1-Selected cooler")
+		 .ProductQtyEnter(uomQuantityData.Quantity,"MP-WF1-Entering Quantity1")
+		 .TapOnDone("MP-WF1-Tapped done")
+		 .TapOnBack("MP-WF1-Tapped on Back")
 
-		._atInventoryToolPage()
-		.InvTools_SetUpInventory("MP-WF1-SetupInventoryTap")
+		 ._atInventoryToolPage()
+		 .InvTools_CloseInventory("MP-WF1-Tapped close inventory")
+		 .InvTools_ClosedInventoryYes("MP-WF1-Tapped Yes,Close")
 
-		._atSetupInventoryPage()
-		.TapOnSkip("MP-WF1-Skip1 Tapped")
+		 ._atInventoryToolPage()
+		 .InvTools_TrackInventory("MP-WF1-Selected track inventory")
 
-		.TapOrderGuide("MP-WF1-OG Selected")
-		.tapContinue("MP-WF1-Tapped Continue")
+		 ._atLocationsPage()
+		 .SelectLocation(locDataCooler.LocationName, "MP-WF1-Selected cooler")
+		 .SelectItemFromLocations("MP-WF1-Selected first product")
+		 .TapOnEdit("")
+		 .PdtDetailPage_Location1_EnterQty(uomQuantityData1.Quantity, locDataCooler.LocationName, "MP-WF1-Edited qty")
+		 .TapOnDone("MP-WF1-Tapped done")
+		 .TapOnBack("MP-WF1-Tapped on Back")
+		 .TapOnBack("MP-WF1-Tapped on Back")
+		 .TapOnBack("MP-WF1-Tapped on Back")
+		 ._atInventoryToolPage()
+		 .InvTools_CloseInventory("MP-WF1-Tapped close inventory")
+		 .InvTools_ClosedInventoryYes("MP-WF1-Tapped Yes,Close")
 
-		._atLocationsPage()
-		.DefaultLocation("MP-WF1-Tapped Custom location")
-		.tapContinue("MP-WF1-Tapped Continue")
+		 .InvTools_FoodCost("MP-WF1-Tapped food cost")
 
-		._atCategoryPage()
-		.CustomCategories("SI-WF4-CustomCategories Tapped")
-		.tapContinue("SI-WF4-Tapped Continue3")
-		.VerifyOptionsOnCreateExpenseCategory("SI-WF3-Verified create custom category Page")
-		
-		.CreateTwoExpenseCategory(categoryData.Name, categoryData.Name1, "SI-WF4-CreateTwoExpenseCategory")
-		.TapOnNext("SI-WF4-Tapped Next3")
-		.selectMultipleItemsFromCategory1("SI-WF4-selectMultipleItemsFromCategory1")
-		.TapOnNext("SI-WF4-Tapped Next4")
-		.selectMultipleItemsFromCategory2("SI-WF4-selectMultipleItemsFromCategory2")
+		 ._atFoodCostPage()
+		 .VerifyNetPurchases("MP-WF1-Verify net purchase value")
+		 .VerifyCostOfGoodsSold("MP-WF1-Verify cost of goods sold value")
+		 .EnterRevenue(purchasesData.Revenue1, "MP-WF1-Entered Revenue")
+		 .CalculateFoodCost("MP-WF1-Calculated food cost")
 
-		._atSetupInventoryPage()
-		.TapTakeHome("MP-WF1-Tapped take me home")   
-	
-  
-		//inv_123,121 OG+Defaultloc+default category--
-		
-		._atInventoryToolPage()
-		.InvTools_TrackInventory("MP-WF1-Selected track inventory")
 
-		._atLocationsPage()
-		.SelectLocation(locDataCooler.LocationName, "MP-WF1-Selected cooler")
-		.ProductQtyEnter(uomQuantityData.Quantity,"MP-WF1-Entering Quantity1")
-		.TapOnDone("MP-WF1-Tapped done")
-		.TapOnBack("MP-WF1-Tapped on Back")
-	
-		._atInventoryToolPage()
-		.InvTools_CloseInventory("MP-WF1-Tapped close inventory")
-		.InvTools_ClosedInventoryYes("MP-WF1-Tapped Yes,Close")
-	
-		._atInventoryToolPage()
-		.InvTools_TrackInventory("MP-WF1-Selected track inventory")
+		 ;
+	 }
+	 /*
+	  * Validating user is able to close inventory and verify Food cost
+	  */
 
-		._atLocationsPage()
-		.SelectLocation(locDataCooler.LocationName, "MP-WF1-Selected cooler")
-		.SelectItemFromLocations("MP-WF1-Selected first product")
-		.TapOnEdit("")
-		.PdtDetailPage_Location1_EnterQty(uomQuantityData1.Quantity, locDataCooler.LocationName, "MP-WF1-Edited qty")
-		.TapOnDone("MP-WF1-Tapped done")
-		.TapOnBack("MP-WF1-Tapped on Back")
-		.TapOnBack("MP-WF1-Tapped on Back")
-		.TapOnBack("MP-WF1-Tapped on Back")
-		._atInventoryToolPage()
-		.InvTools_CloseInventory("MP-WF1-Tapped close inventory")
-		.InvTools_ClosedInventoryYes("MP-WF1-Tapped Yes,Close")
-	
-		.InvTools_FoodCost("MP-WF1-Tapped food cost")
-		
-		._atFoodCostPage()
-		.VerifyNetPurchases("MP-WF1-Verify net purchase value")
-		.VerifyCostOfGoodsSold("MP-WF1-Verify cost of goods sold value")
-		.EnterRevenue(purchasesData.Revenue1, "MP-WF1-Entered Revenue")
-		.CalculateFoodCost("MP-WF1-Calculated food cost")
-		
-		
-		;
-	}
+
+	 @Test(groups={"FC-WF1"},priority=0, description = "FC-WF1-TrackInventory-FoodCost")
+	 public void FC_WF1_OG_DefaultLoc_CustomCategory_TrackInventory_FoodCost()
+	 {
+		 LoginData loginData =LoginData.fetch("LoginData11");
+		 LocationsData locDataCooler=LocationsData.fetch("LocatiosData5");
+		 LocationsData locDataFreezer=LocationsData.fetch("LocatiosData6");
+		 CategoryData categoryData=CategoryData.fetch("CategoryData");
+		 UOMQuantityData uomQuantityData=UOMQuantityData.fetch("UOMQuantityData");
+		 UOMQuantityData uomQuantityData1=UOMQuantityData.fetch("UOMQuantityData2");
+		 PurchasesData purchasesData=PurchasesData.fetch("PurchasesData");
+
+		 Start.asTester
+		 .goToLoginpage()
+		 .verifyLoginPage("MP-WF1-LoginPage")
+		 .saveUsernameCheckBoxClick("MP-WF1-save username")
+		 .signIn(loginData.UserName, loginData.Password,"MP-WF1-Login")
+
+		 ._atHomePage()
+		 .ClickAccount(loginData.UserName,"MP-WF1-Clicked account")
+
+		 ._atAccountsPage()
+		 .First_AccountSelection(loginData.UserName,"MP-WF1-FirstAccountSelect")
+
+		 ._atInventoryToolPage()
+		 .InvTools_SetUpInventory("MP-WF1-SetupInventoryTap")
+
+		 ._atSetupInventoryPage()
+		 .TapOnSkip("MP-WF1-Skip1 Tapped")
+
+		 .TapOrderGuide("MP-WF1-OG Selected")
+		 .tapContinue("MP-WF1-Tapped Continue")
+
+		 ._atLocationsPage()
+		 .DefaultLocation("MP-WF1-Tapped Custom location")
+		 .tapContinue("MP-WF1-Tapped Continue")
+
+		 ._atCategoryPage()
+		 .CustomCategories("SI-WF4-CustomCategories Tapped")
+		 .tapContinue("SI-WF4-Tapped Continue3")
+		 .VerifyOptionsOnCreateExpenseCategory("SI-WF3-Verified create custom category Page")
+
+		 .CreateTwoExpenseCategory(categoryData.Name, categoryData.Name1, "SI-WF4-CreateTwoExpenseCategory")
+		 .TapOnNext("SI-WF4-Tapped Next3")
+		 .selectMultipleItemsFromCategory1("SI-WF4-selectMultipleItemsFromCategory1")
+		 .TapOnNext("SI-WF4-Tapped Next4")
+		 .selectMultipleItemsFromCategory2("SI-WF4-selectMultipleItemsFromCategory2")
+
+		 ._atSetupInventoryPage()
+		 .TapTakeHome("MP-WF1-Tapped take me home")   
+
+
+		 //inv_123,121 OG+Defaultloc+default category--
+
+		 ._atInventoryToolPage()
+		 .InvTools_TrackInventory("MP-WF1-Selected track inventory")
+
+		 ._atLocationsPage()
+		 .SelectLocation(locDataCooler.LocationName, "MP-WF1-Selected cooler")
+		 .ProductQtyEnter(uomQuantityData.Quantity,"MP-WF1-Entering Quantity1")
+		 .TapOnDone("MP-WF1-Tapped done")
+		 .TapOnBack("MP-WF1-Tapped on Back")
+
+		 ._atInventoryToolPage()
+		 .InvTools_CloseInventory("MP-WF1-Tapped close inventory")
+		 .InvTools_ClosedInventoryYes("MP-WF1-Tapped Yes,Close")
+
+		 ._atInventoryToolPage()
+		 .InvTools_TrackInventory("MP-WF1-Selected track inventory")
+
+		 ._atLocationsPage()
+		 .SelectLocation(locDataCooler.LocationName, "MP-WF1-Selected cooler")
+		 .SelectItemFromLocations("MP-WF1-Selected first product")
+		 .TapOnEdit("")
+		 .PdtDetailPage_Location1_EnterQty(uomQuantityData1.Quantity, locDataCooler.LocationName, "MP-WF1-Edited qty")
+		 .TapOnDone("MP-WF1-Tapped done")
+		 .TapOnBack("MP-WF1-Tapped on Back")
+		 .TapOnBack("MP-WF1-Tapped on Back")
+		 .TapOnBack("MP-WF1-Tapped on Back")
+		 ._atInventoryToolPage()
+		 .InvTools_CloseInventory("MP-WF1-Tapped close inventory")
+		 .InvTools_ClosedInventoryYes("MP-WF1-Tapped Yes,Close")
+
+		 .InvTools_FoodCost("MP-WF1-Tapped food cost")
+
+		 ._atFoodCostPage()
+		 .VerifyNetPurchases("MP-WF1-Verify net purchase value")
+		 .VerifyCostOfGoodsSold("MP-WF1-Verify cost of goods sold value")
+		 .EnterRevenue(purchasesData.Revenue1, "MP-WF1-Entered Revenue")
+		 .CalculateFoodCost("MP-WF1-Calculated food cost")
+
+
+		 ;
+	 }
 
 
 }

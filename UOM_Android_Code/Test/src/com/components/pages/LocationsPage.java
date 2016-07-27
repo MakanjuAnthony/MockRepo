@@ -33,7 +33,7 @@ import com.iwaf.framework.components.IReporter.LogType;
 public class LocationsPage extends SitePage {
 
 	public static final Target NewLocation = new Target("LocationName",
-			"//*[@class='mm-c-customlocation__setup-form']//*[@name='formFields[0].name']", Target.XPATH);
+			"//*[@class='mm-c-customlocation__setup-form']//*[@name='dynamicFields[0].name']", Target.XPATH);
 	public static final Target LocationCooler = new Target("LocationCooler",
 			"(//*[@class='mm-c-customlocation__details-column']//*[@class='radio'])[1]", Target.XPATH);
 	public static final Target Next = new Target("Next", "//*[@id='next-nav']/a", Target.XPATH);
@@ -174,10 +174,10 @@ public class LocationsPage extends SitePage {
 	public static final Target LocType_Dry1T1 = new Target("LocType_Dry1T1", "//*[@id='dry0']", Target.XPATH);
 
 	public static final Target ADD_LocationName2 = new Target("LocationName",
-			"//*[@class='mm-c-customlocation__setup-form']//*[@name='formFields[1].name']", Target.XPATH);
+			"//*[@class='mm-c-customlocation__setup-form']//*[@name='dynamicFields[1].name']", Target.XPATH);
 
 	public static final Target AddProductPage_AddCategory = new Target("AddProductPage_AddCategory",
-			"//*[@class='row']//*[contains(text(),'Add/Select Expense Category')]", Target.XPATH);
+			"//*[@id='expense-add']/div/select", Target.XPATH);
 
 	public static final Target LocationItem1_QuantityInput = new Target("LocationItem1_QuantityInput",
 			"(//*[@class='mm-c-product-list']//*[@class='item-input mm-u-input-border mm-c-product-list__qty form-control'])[1]",
@@ -1008,8 +1008,6 @@ public class LocationsPage extends SitePage {
 			getCommand().waitForTargetPresent(Locname);
 			getCommand().click(Locname);
 
-			 
-				
 			log("Location is selected for item :Pass", LogType.VERIFICATION_STEP);
 		}
 
@@ -1601,6 +1599,7 @@ public class LocationsPage extends SitePage {
 			getCommand().waitForTargetPresent(AddProductPage_AddCategory);
 			if (getCommand().isTargetPresent(AddProductPage_AddCategory)) {
 				getCommand().click(AddProductPage_AddCategory);
+				getCommand().waitFor(5);
 			}
 			log("Selected add category : Pass", LogType.STEP);
 
@@ -2232,14 +2231,12 @@ public class LocationsPage extends SitePage {
 							+ "')]/ancestor::div[@class='mm-c-product-list__details-wrapper'])//a)[1]",
 					Target.XPATH);
 		
-			System.out.println("id"+SetupInventoryPage.AddedItemId1[0]);
-            System.out.println("product select"+Product_Select);
+			
             
 			getCommand().waitForTargetPresent(Product_Select);
 
 			getCommand().clickWithJavascript(Product_Select);
 			
-			System.out.println("clicked product");
 			
 			getCommand().waitForTargetPresent(ProductDetailsPage);
 			log("Selecting an item from location :Pass", LogType.VERIFICATION_STEP);
@@ -2366,17 +2363,28 @@ public class LocationsPage extends SitePage {
 			String firstLoc = getCommand().getText(FirstLocation);
 			String secondLoc = getCommand().getText(SecondLocation);
 			String thirdLoc = getCommand().getText(ThirdLocation);
-			String fourthLoc = getCommand().getText(FourthLocation);
+			
 
-			fourthLoc = fourthLoc.toLowerCase();
-			if (firstLoc.contains(cooler) && secondLoc.contains(freezer) && thirdLoc.contains(dry)
-					&& fourthLoc.contains(noloc)) {
+		//	fourthLoc = fourthLoc.toLowerCase();
+			if(getCommand().isTargetPresentAfterWait(FourthLocation,3)){
+				String fourthLoc = getCommand().getText(FourthLocation);
+				if (firstLoc.contains(cooler) && secondLoc.contains(freezer) && thirdLoc.contains(dry)
+						&& fourthLoc.contains(noloc)) {
+					log("Order Correct", LogType.STEP);
+				} else {
+
+					throw new Exception();
+				}
+			}
+			
+			else{
+				if (firstLoc.contains(cooler) && secondLoc.contains(freezer) && thirdLoc.contains(dry)) {
 				log("Order Correct", LogType.STEP);
-			} else {
+				} else {
 
 				throw new Exception();
+				}
 			}
-
 			log("Verify Order Of Locations:Pass", LogType.VERIFICATION_STEP);
 		} catch (Exception e) {
 			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
@@ -2552,9 +2560,11 @@ public class LocationsPage extends SitePage {
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 
+			getCommand().waitFor(15);
 			getCommand().waitForTargetPresent(ViewItemsOnLocation);
 
 			getCommand().click(ViewItemsOnLocation);
+			getCommand().waitFor(10);
 			log("Tap on view items on location  :Pass", LogType.VERIFICATION_STEP);
 
 		} catch (Exception e) {
@@ -3088,19 +3098,20 @@ public class LocationsPage extends SitePage {
 	}
 	
 	@SuppressWarnings("rawtypes")
-	public LocationsPage FirstFoodItemQtyEnter(String qty,String string) {
+	public LocationsPage ItemQtyEnterById(String itemid,String qty,String string) {
 
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Adding qty for food item", LogType.STEP);
 		final Target FirstFoodItem_QtyEnter= new Target("FirstLocDelete_Icon",
-				"(//*[@class='mm-c-product-list__row-wrapper']//*[contains(text(),'Food') and not(contains(text(),'Non-Food'))])[1]/ancestor::div[@class='mm-c-product-list__row-wrapper']//*[@class='item-input mm-u-input-border mm-c-product-list__qty form-control']",
+				"(//*[@class='mm-c-product-list__row-wrapper']//*[contains(text(),'"+itemid+"')])[1]/ancestor::div[@class='mm-c-product-list__row-wrapper']//*[@class='item-input mm-u-input-border mm-c-product-list__qty form-control']",
 				Target.XPATH);
 		try {
 			
 				getCommand().waitFor(5);
-				getCommand().waitForTargetPresent(FirstFoodItem_QtyEnter);
-				getCommand().sendKeys(FirstFoodItem_QtyEnter, qty);
+				if(getCommand().isTargetPresentAfterWait(FirstFoodItem_QtyEnter,5)){
+					getCommand().sendKeys(FirstFoodItem_QtyEnter, qty);	
+				}
 				
 				log("Adding qty for food item:Pass",LogType.VERIFICATION_STEP);
 				
@@ -3116,7 +3127,7 @@ public class LocationsPage extends SitePage {
 		return this;
 	}
 	
-	@SuppressWarnings("rawtypes")
+/*	@SuppressWarnings("rawtypes")
 	public LocationsPage FirstNonFoodItemQtyEnter(String qty,String string) {
 
 		String string2 = "Issue";
@@ -3143,5 +3154,5 @@ public class LocationsPage extends SitePage {
 		}
 
 		return this;
-	}
+	}*/
 }

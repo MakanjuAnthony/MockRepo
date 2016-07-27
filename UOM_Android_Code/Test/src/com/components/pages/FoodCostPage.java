@@ -45,8 +45,9 @@ public class FoodCostPage extends SitePage {
 	public static final Target FoodSalesPercent = new Target("FoodSales","//*[@class='mm-c-food-cost__details container']//*[@class='mm-c-food-cost__percentage_number row']/div", Target.XPATH);
 	public static final Target Back = new Target("Back",
 			"//*[@id='back-nav']/a/i", Target.XPATH);
-
-
+	
+	public static float	beginInvValue;
+	public static float endInvValue;
 	public FoodCostPage(SiteRepository repository) {
 		super(repository);
 	}
@@ -311,6 +312,86 @@ public class FoodCostPage extends SitePage {
 
 		return this;
 	}
+	@SuppressWarnings("rawtypes")
+	public FoodCostPage VerifyBeginningInventory(String qty1,String foodprice, String string) {
+		log("Verify purchase value",LogType.STEP);
+		
+		String string2="Issue";
 
+		String finalPath1=drivePath+string+string2+pathExtension;
+
+		try{
+			getCommand().waitForTargetPresent(BeginInventory); 
+
+			BeginInventoryValue =getCommand().getText(BeginInventory);
+			BeginInventoryValue1 = BeginInventoryValue.split("\\s");
+		   beginInv=Float.parseFloat(BeginInventoryValue1[1]);
+			System.out.println(beginInv);
+			beginInvValue= (Float.parseFloat(qty1))*(Float.parseFloat(foodprice));
+			//beginInvValue= qty1*foodprice;
+			System.out.println("Calaculated"+beginInvValue);
+			
+
+			if(!(beginInv==beginInvValue)){
+				throw new Exception();
+			}
+			
+			log("Verify beginning inventory value :Pass",LogType.VERIFICATION_STEP);						
+
+			
+
+		}
+		catch(Exception e){
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Verify beginning inventory value :Fail",LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+
+		}
+
+		return this;
+
+	}
+	
+	
+	public FoodCostPage VerifyEndingInventory(String qty1,String foodprice, String string) {
+		log("Verify purchase value",LogType.STEP);
+		
+		String string2="Issue";
+
+		String finalPath1=drivePath+string+string2+pathExtension;
+
+		try{
+			getCommand().waitForTargetPresent(BeginInventory); 
+
+			EndInventoryValue =getCommand().getText(EndInventory);
+			EndInventoryValue1 = EndInventoryValue.split("\\s");
+			endInv=Float.parseFloat(EndInventoryValue1[1]);
+			System.out.println(endInv);
+			
+			endInvValue=  (Float.parseFloat(qty1))*(Float.parseFloat(foodprice));
+			System.out.println("Calaculated"+endInvValue);
+			
+
+			if(!(endInv==endInvValue)){
+				throw new Exception();
+			}
+			
+			log("Verify ending inventory value :Pass",LogType.VERIFICATION_STEP);						
+
+			
+
+		}
+		catch(Exception e){
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Verify ending inventory value :Fail",LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+
+		}
+
+		return this;
+
+	}
 }
 

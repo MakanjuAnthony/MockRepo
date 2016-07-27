@@ -213,10 +213,16 @@ public class SetupInventoryPage extends SitePage {
 	public static final Target Search = new Target("Search",
 			"//*[@placeholder='Search']", Target.XPATH);
 
-	public static final Target AddProductPage_AddLocations = new Target(
+	/*public static final Target AddProductPage_AddLocations = new Target(
 			"AddProductPage_AddLocations",
 			"//*[@class='row']//*[contains(text(),'Add/Select Location(s)')]",
+			Target.XPATH);*/
+	public static final Target AddProductPage_AddLocations = new Target(
+			"AddProductPage_AddLocations",
+			"//*[@class='row']//*[contains(text(),'Add Another Location')]",
 			Target.XPATH);
+	
+	
 	public static final Target AddProductPage_AddCategory = new Target(
 			"AddProductPage_AddCategory",
 			"//*[@class='row']//*[contains(text(),'Add/Select Expense Category')]",
@@ -1404,9 +1410,7 @@ public class SetupInventoryPage extends SitePage {
 			if (getCommand().isTargetPresent(OrderGuide)
 					&& getCommand().isTargetPresent(OrderGuideDesc)
 					&& getCommand().isTargetPresent(CustomList)
-					&& getCommand().isTargetPresent(CustomListsDesc)
-					&& getCommand().isTargetPresent(StartFromScratch)
-					&& getCommand().isTargetPresent(StartFromScratchDesc)) {
+					&& getCommand().isTargetPresent(CustomListsDesc)) {
 			} else {
 				throw new Exception();
 			}

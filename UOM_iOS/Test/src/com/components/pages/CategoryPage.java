@@ -53,12 +53,13 @@
 			public static final Target ExpenseCategory_NonFood= new Target("ExpenseCategory_NonFood","(//*[@class='mm-c-customexpense__details-category']//*[@class='radio'])[2]/label",Target.XPATH); 
 			public static final Target Next= new Target("Next","//UIAStaticText[@label='Next']",Target.XPATH); 
 		
-			public static final Target ExpenseCategory_NameTxt= new Target("ExpenseCategory_NameTxt","//*[@class='mm-c-customexpense__details-category-name form-control form-control' and @name='formFields[0].name']",Target.XPATH); 
+			public static final Target ExpenseCategory_NameTxt= new Target("ExpenseCategory_NameTxt","//*[@class='mm-c-customexpense__details-category-name form-control form-control' and @name='dynamicFields[0].name']",Target.XPATH); 
 			public static final Target ExpenseCategory_AnotherCategory= new Target("ExpenseCategory_AnotherCategory","//*[@class='mm-c-customexpense__setup-cta']//*[contains(text(),'Add Another Category')]",Target.XPATH);
-			public static final Target ExpenseCategory_Name1= new Target("ExpenseCategory_Name1","//*[@class='mm-c-customexpense__details-category-name form-control form-control' and @name='formFields[1].name']",Target.XPATH);
+			public static final Target ExpenseCategory_Name1= new Target("ExpenseCategory_Name1","//*[@class='mm-c-customexpense__details-category-name form-control form-control' and @name='dynamicFields[1].name']",Target.XPATH);
 			public static final Target ExpenseCategory_Food1= new Target("ExpenseCategory_Food1","(//*[@class='mm-c-customexpense__details-category']//*[@class='radio'])[3]/label",Target.XPATH); 
 		
-		
+			public static final Target ExpenseCategory_NonFood1= new Target("ExpenseCategory_NonFood","(//*[@class='mm-c-customexpense__details-category']//*[@class='radio'])[4]/label",Target.XPATH); 
+			
 		
 			public static final Target Category_1stItemSelect= new Target("Category_1stItemSelect","(//*[@class='mm-c-product-minlist mm-c-product__sysco']//*[@class='mm-o-icon'])[1]",Target.XPATH);
 			public static final Target Category_2ndItemSelect= new Target("Category_2ndItemSelect","(//*[@class='mm-c-product-minlist mm-c-product__sysco']//*[@class='mm-o-icon'])[2]",Target.XPATH);
@@ -398,7 +399,7 @@
 			       			getCommand().waitForTargetPresent(ExpenseCategory_Food1);
 		
 			       			getCommand().click(ExpenseCategory_Food1);
-		
+		//ExpenseCategory_NonFood1
 			       			}
 			       			
 			       		getCommand().waitFor(5);

@@ -33,7 +33,7 @@ import com.iwaf.framework.components.IReporter.LogType;
 public class LocationsPage extends SitePage {
 
 	public static final Target NewLocation = new Target("LocationName",
-			"//*[@class='mm-c-customlocation__setup-form']//*[@name='formFields[0].name']", Target.XPATH);
+			"//*[@class='mm-c-customlocation__setup-form']//*[@name='dynamicFields[0].name']", Target.XPATH);
 	public static final Target LocationCooler = new Target("LocationCooler",
 			"(//*[@class='mm-c-customlocation__details-column']//*[@class='radio'])[1]", Target.XPATH);
 	public static final Target Next = new Target("Next", "//UIAStaticText[@label='Next']", Target.XPATH);
@@ -210,7 +210,7 @@ public class LocationsPage extends SitePage {
 			"(//*[@class='mm-c-customlocation__details-column']//*[@class='radio'])[3]/label", Target.XPATH);
 
 	public static final Target ADD_LocationName2 = new Target("LocationName",
-			"//*[@class='mm-c-customlocation__setup-form']//*[@name='formFields[1].name']", Target.XPATH);
+			"//*[@class='mm-c-customlocation__setup-form']//*[@name='dynamicFields[1].name']", Target.XPATH);
 
 	public static final Target AddProductPage_AddCategory = new Target("AddProductPage_AddCategory",
 			"//*[@class='row']//*[contains(text(),'Add/Select Expense Category')]", Target.XPATH);
@@ -701,6 +701,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 				getCommand().waitFor(5);
 				getCommand().click(LocType_Dry1T1);
 				getCommand().waitFor(5);
+				
 				log("Entered type in add Locations page :Pass", LogType.VERIFICATION_STEP);
 			}
 
@@ -708,6 +709,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 				getCommand().waitFor(5);
 				getCommand().click(LocType_Dry1T2);
 				getCommand().waitFor(5);
+				
 				log("Entered type in add Locations page :Pass", LogType.VERIFICATION_STEP);
 			}
 
@@ -764,12 +766,14 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 			if (getCommand().isTargetPresent(LocType_Dry2T1)) {
 				getCommand().click(LocType_Dry2T1);
 				getCommand().waitFor(5);
+				
 				log("Entered type in add Locations page :Pass", LogType.VERIFICATION_STEP);
 			}
 
 			if (getCommand().isTargetPresent(LocType_Dry2T2)) {
 				getCommand().click(LocType_Dry2T2);
 				getCommand().waitFor(5);
+				
 				log("Entered type in add Locations page :Pass", LogType.VERIFICATION_STEP);
 			}
 
@@ -2446,15 +2450,29 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 			String firstLoc = getCommand().getText(FirstLocation);
 			String secondLoc = getCommand().getText(SecondLocation);
 			String thirdLoc = getCommand().getText(ThirdLocation);
-			String fourthLoc = getCommand().getText(FourthLocation);
-			fourthLoc = fourthLoc.toLowerCase();
-			if (firstLoc.contains(cooler) && secondLoc.contains(freezer) && thirdLoc.contains(dry)
-					&& fourthLoc.contains(noloc)) {
-				log("VerifyOrderOfLocations:Pass", LogType.VERIFICATION_STEP);
-			} else {
-				System.out.println("Order incorrect");
-				throw new Exception();
+			
+			//fourthLoc = fourthLoc.toLowerCase();
+			if(getCommand().isTargetVisibleAfterWait(FourthLocation,3)){
+				String fourthLoc = getCommand().getText(FourthLocation);
+				if (firstLoc.contains(cooler) && secondLoc.contains(freezer) && thirdLoc.contains(dry)
+						&& fourthLoc.contains(noloc)) {
+					log("VerifyOrderOfLocations:Pass", LogType.VERIFICATION_STEP);
+				} else {
+					System.out.println("Order incorrect");
+					throw new Exception();
+				}
 			}
+				else{
+					if (firstLoc.contains(cooler) && secondLoc.contains(freezer) && thirdLoc.contains(dry))
+							 {
+						log("VerifyOrderOfLocations:Pass", LogType.VERIFICATION_STEP);
+					} else {
+						System.out.println("Order incorrect");
+						throw new Exception();
+					}
+				}
+			
+	
 
 		} catch (Exception e) {
 			((IOSDriver) getCommand().driver).context("NATIVE_APP");
