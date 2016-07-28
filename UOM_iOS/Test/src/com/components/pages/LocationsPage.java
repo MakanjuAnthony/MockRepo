@@ -1,4 +1,3 @@
-		
 		/**
 		 ********************************************************************************************************************************************
 		 ********************************************************************************************************************************************
@@ -17,12 +16,13 @@
 		 ********************************************************************************************************************************************
 		 ********************************************************************************************************************************************
 		 **/
+
 package com.components.pages;
 
-
-import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.android.AndroidDriver;
 
 import java.util.Set;
+
 
 import org.testng.Assert;
 
@@ -36,27 +36,22 @@ public class LocationsPage extends SitePage {
 			"//*[@class='mm-c-customlocation__setup-form']//*[@name='dynamicFields[0].name']", Target.XPATH);
 	public static final Target LocationCooler = new Target("LocationCooler",
 			"(//*[@class='mm-c-customlocation__details-column']//*[@class='radio'])[1]", Target.XPATH);
-	public static final Target Next = new Target("Next", "//UIAStaticText[@label='Next']", Target.XPATH);
-	public static final Target SetUp_Pg2Title = new Target("SetUp_Pg2Title",
-			"//*[@class='mm-c-inventory-setup']//*[contains(text(),'Setup Locations')]", Target.XPATH);
+	public static final Target Next = new Target("Next", "//*[@id='next-nav']/a", Target.XPATH);
+	public static final Target SetUp_Pg2Title = new Target("SetUp_Pg2Title", "//*[contains(text(),'Setup Locations')]",
+			Target.XPATH);
 	public static final Target DefaultLocation = new Target("DefaultLocation",
 			"//*[@class='btn btn-sm btn-primary' and contains(text(),'Default')]", Target.XPATH);
 	public static final Target CustomLocations = new Target("CustomLocations",
 			"//*[@class='btn btn-sm btn-primary' and contains(text(),'Custom Locations')]", Target.XPATH);
 	public static final Target Continue = new Target("Continue",
 			"//*[@class='btn btn-default' and contains(text(),'Continue')]", Target.XPATH);
-	public static final Target Done = new Target("DoneWeb", "//UIAStaticText[@label='Done']", Target.XPATH);
+	public static final Target Done = new Target("DoneWeb", "//*[@id='done-nav']/a", Target.XPATH);
 
 	public static final Target Location_FirstItemSelect = new Target("LocationName",
 			"(//*[@class='mm-c-product-list__details-wrapper'])[1]/h4", Target.XPATH);
 	public static final Target Location_FirstItem = new Target("LocationName",
 			"(//*[@class='checkbox']//*[@class='mm-o-icon'])[1]", Target.XPATH);
 	public static final Target LocationsPage_Header = new Target("LocationName", "//*[@class='navbar-brand']/h3",
-			Target.XPATH);
-	public static final Target SetUp_Pg2Header = new Target("SetUp_Pg1Header",
-			"//*[@class='navbar-brand']//*[contains(text(),'Setup Inventory')]", Target.XPATH);
-	public static final Target CreateLocationDesc = new Target("CreateLocationDesc",
-			"//*[@class='mm-c-customlocation__setup mm-u-navbar-padding']//*[contains(text(),'Create Locations')]",
 			Target.XPATH);
 
 	public static final Target OrderGuide_FirstItemSelect = new Target("Category_FirstItemSelect",
@@ -67,38 +62,28 @@ public class LocationsPage extends SitePage {
 			"//*[@id='mount']/div/div/div[2]/div/div/div[2]/div[1]/div/div/div/div/div[2]/div[2]/h4", Target.XPATH);
 
 	public static final Target AddLocation_LocName = new Target("ADDLocation_LocName", "//*[@id='name']", Target.XPATH);
-	public static final Target AddLocation_LocTypeCoolerWeb = new Target("ADDLocation_LocTypeCooler",
+	public static final Target AddLocation_LocTypeCooler = new Target("ADDLocation_LocTypeCooler",
 			"(//*[@class='mm-c-location__details-radio']//*[@class='radio'])[1]", Target.XPATH);
 
-	public static final Target AddWeb = new Target("ADD_Vendor", "//*[@id='add-nav']/a/i", Target.XPATH);
-	public static final Target EditWeb = new Target("Edit", "//*[@id='edit-nav']/a/i", Target.XPATH);
-	public static final Target DoneWeb = new Target("Done", "//*[@id='done-nav']/a/i", Target.XPATH);
-	
-	public static final Target AddLocation_LocTypeCooler = new Target("LocationDry",
-			"//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIAElement[1]", Target.XPATH);
-
-	public static final Target AddLocation_LocTypeFreezer = new Target("LocationDry",
-			"//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIAElement[2]", Target.XPATH);
+	public static final Target Add = new Target("Add", "//*[@id='add-nav']/a/i", Target.XPATH);
+	public static final Target Edit= new Target("Edit", "//*[@id='edit-nav']/a/i", Target.XPATH);
 
 	public static final Target Back = new Target("Back", "//*[@id='back-nav']/a/i", Target.XPATH);
 
+	public static final Target LocType_Dry1 = new Target("LocationName", "(//*[@class='form-group'])[4]", Target.XPATH);
+
 	public static final Target ADD_AnotherLocation = new Target("LocationName",
 			"//*[@class='mm-c-customlocation__setup-cta']//*[contains(text(),'Add Another Location')]", Target.XPATH);
-	public static final Target LocType_Dry1 = new Target("LocationName",
-			"(//*[@class='mm-c-customlocation__details-column']//*[@class='radio'])[3]", Target.XPATH);
-	public static final Target LocType_Dry1T2 = new Target("LocationName",
-			"(//*[@class='mm-c-customlocation__details-column']//*[@class='radio'])[3]//*[@type='radio']",
+	public static final Target LocType_Dry1T2 = new Target("LocationName", "(//*[@class='form-group'])[4]",
+			Target.XPATH);
+	public static final Target LocType_Dry2T1 = new Target("LocationName", "//*[@id='dry1']", Target.XPATH);
+	public static final Target LocType_Dry2 = new Target("LocationName", "(//*[@class='form-group'])[4]", Target.XPATH);
+	public static final Target LocType_Dry2T2 = new Target("LocationName", "(//*[@class='form-group'])[4]",
+			Target.XPATH);
+	public static final Target ADD_LocTypeDry = new Target("LocationName", "(//*[@class='form-group'])[4]",
 			Target.XPATH);
 
-	public static final Target LocType_Dry2 = new Target("LocationName",
-			"(//*[@class='mm-c-customlocation__details-column']//*[@class='radio'])[6]", Target.XPATH);
-	public static final Target LocType_Dry2T1 = new Target("LocationName",
-			"(//*[@class='mm-c-customlocation__details-column']//*[@class='radio'])[6]/label", Target.XPATH);
-	public static final Target LocType_Dry2T2 = new Target("LocationName",
-			"(//*[@class='mm-c-customlocation__details-column']//*[@class='radio'])[6]//*[@type='radio']",
-			Target.XPATH);
 	public static final Target ADD_LocationName = new Target("LocationName", "//*[@id='name']", Target.XPATH);
-	public static final Target ADD_LocTypeDry = new Target("LocationName", "//*[@value='D']", Target.XPATH);
 	public static final Target ADD_LocationName1 = new Target("LocationName",
 			"//*[@class='mm-c-customlocation__setup-form']//*[@name='formFields[0].name']", Target.XPATH);
 	public static final Target SetupInventoryLocationUncategorizedTab = new Target("SetupInventoryCustomLoc_LocName",
@@ -122,20 +107,7 @@ public class LocationsPage extends SitePage {
 	public static final Target LocationItem2_InputTextBoxCheck = new Target("LocationItem1_InputTextBoxCheck",
 			locationInputTextBox2, Target.XPATH);
 	public static String Location2ItemAdded;
-	public static final Target BackWeb = new Target("Back",
-			"//*[@class='nav navbar-nav']//*[@role='presentation']//*[@class='mm-o-icon icon-chevron-left']",
-			Target.XPATH);
 
-	public static final Target Locator_firstLocname = new Target("Locator_firstLocname",
-			"//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIAButton[2]", Target.XPATH);
-	public static final Target EditBtnLocDetailsPg = new Target("Edit",
-			"//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIALink[4]/UIALink[1]/UIAStaticText[1]",
-			Target.XPATH);
-	public static final Target LocationFreezer = new Target("LocationFreezer",
-			"//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIAElement[3]", Target.XPATH);
-	public static final Target LocationDry = new Target("LocationCooler",
-			"//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIAElement[2]", Target.XPATH);
-	public static final Target Update = new Target("Update", "//UIAStaticText[@label='Update']", Target.XPATH);
 	public static final Target Delete = new Target("Back",
 			"//*[@id='delete-button' and contains(text(),'Delete Location')]", Target.XPATH);
 	public static final Target YesDelete = new Target("Back",
@@ -180,40 +152,32 @@ public class LocationsPage extends SitePage {
 	public static String LocationsItemPresent1_1;
 	public static String LocationsItemPresent1_2;
 	public static String LocationsItemPresent1_3;
-	public static String LocationsItemName1_4;
 
 	public static String LocationsItemPresent2_1;
 	public static String LocationsItemPresent2_2;
 	public static String LocationsItemPresent2_3;
-	public static String LocationsItemName2_4;
-	public static String LocationsItemPresent1_4;
-	public static String LocationsItemPresent2_4;
-	public final Target Location1_FirstItemSelectedVerify = new Target("Location1_FirstItemSelectedVerify",
+
+	public static Target Location1_FirstItemSelectedVerify = new Target("Location1_FirstItemSelectedVerify",
 			"//*[contains(text(),'" + LocationsItemName1_1 + "')]", Target.XPATH);
-	public final Target Location1_SecondItemSelectedVerify = new Target("Location1_SecondItemSelectedVerify",
+	public static Target Location1_SecondItemSelectedVerify = new Target("Location1_SecondItemSelectedVerify",
 			"//*[contains(text(),'" + LocationsItemName1_2 + "')]", Target.XPATH);
-	public final Target Location1_ThirdItemSelectedVerify = new Target("Location1_ThirdItemSelectedVerify",
+	public static Target Location1_ThirdItemSelectedVerify = new Target("Location1_ThirdItemSelectedVerify",
 			"//*[contains(text(),'" + LocationsItemName1_3 + "')]", Target.XPATH);
-	public final Target Location1_FourthItemSelectedVerify = new Target("Location1_FourthItemSelectedVerify",
-			"//*[contains(text(),'" + LocationsItemName1_4 + "')]", Target.XPATH);
 
-	public final Target Location2_FirstItemSelectedVerify = new Target("Location2_FirstItemSelectedVerify",
+	public static Target Location2_FirstItemSelectedVerify = new Target("Location2_FirstItemSelectedVerify",
 			"//*[contains(text(),'" + LocationsItemName2_1 + "')]", Target.XPATH);
-	public final Target Location2_SecondItemSelectedVerify = new Target("Location2_SecondItemSelectedVerify",
+	public static Target Location2_SecondItemSelectedVerify = new Target("Location2_SecondItemSelectedVerify",
 			"//*[contains(text(),'" + LocationsItemName2_2 + "')]", Target.XPATH);
-	public final Target Location2_ThirdItemSelectedVerify = new Target("Location2_ThirdItemSelectedVerify",
+	public static Target Location2_ThirdItemSelectedVerify = new Target("Location2_ThirdItemSelectedVerify",
 			"//*[contains(text(),'" + LocationsItemName2_3 + "')]", Target.XPATH);
-	public final Target Location2_FourthItemSelectedVerify = new Target("Location1_FourthItemSelectedVerify",
-			"//*[contains(text(),'" + LocationsItemName2_4 + "')]", Target.XPATH);
 
-	public static final Target LocType_Dry1T1 = new Target("LocationName",
-			"(//*[@class='mm-c-customlocation__details-column']//*[@class='radio'])[3]/label", Target.XPATH);
+	public static final Target LocType_Dry1T1 = new Target("LocType_Dry1T1", "//*[@id='dry0']", Target.XPATH);
 
 	public static final Target ADD_LocationName2 = new Target("LocationName",
 			"//*[@class='mm-c-customlocation__setup-form']//*[@name='dynamicFields[1].name']", Target.XPATH);
 
 	public static final Target AddProductPage_AddCategory = new Target("AddProductPage_AddCategory",
-			"//*[@class='row']//*[contains(text(),'Add/Select Expense Category')]", Target.XPATH);
+			"//*[@id='expense-add']/div/select", Target.XPATH);
 
 	public static final Target LocationItem1_QuantityInput = new Target("LocationItem1_QuantityInput",
 			"(//*[@class='mm-c-product-list']//*[@class='item-input mm-u-input-border mm-c-product-list__qty form-control'])[1]",
@@ -226,12 +190,15 @@ public class LocationsPage extends SitePage {
 	public static final Target UomUNITEA = new Target("LocationName", "(//*[@id='uom']/option[3])[1]", Target.XPATH);
 	public static final Target UomUNITOZ = new Target("LocationName", "(//*[@id='uom']/option[4])[1]", Target.XPATH);
 
+	public static String LocationsItemName1_4;
 	public static final Target Locations_NonSyscoItem1Select = new Target("Locations_NonSyscoItem1Select",
 			"(//*[@class='mm-c-product-minlist mm-c-product__custom']//*[@class='mm-o-icon'])[1]", Target.XPATH);
 	public static final Target Locations_NonSyscoItem2Select = new Target("Locations_NonSyscoItem2Select",
 			"(//*[@class='mm-c-product-minlist mm-c-product__custom']//*[@class='mm-o-icon'])[2]", Target.XPATH);
 	public static final Target Locations_4thItemHeading = new Target("Locations_4thItemHeading",
 			"(//*[@class='mm-c-product-minlist__item']/h4)[4]", Target.XPATH);
+	public Target Location1_FourthItemSelectedVerify = new Target("Location1_FourthItemSelectedVerify",
+			"//*[contains(text(),'" + LocationsItemName1_4 + "')]", Target.XPATH);
 	public static String categoryKeyword1;
 	public static String[] Category1;
 	public static String categoryKeyword2;
@@ -259,12 +226,20 @@ public class LocationsPage extends SitePage {
 	public static String[] Category8;
 	public static String categoryKeyword7;
 	public static String[] Category7;
-	public static final Target Locations_Item1Delete = new Target("Locations_Item1Delete",
+
+	public static final Target Locations_Item1DeleteButton = new Target("Locations_Item1Delete",
 			"(//*[@class='mm-c-product-list__delete-option'])[1]", Target.XPATH);
-	public static final Target Locations_Item2Delete = new Target("Locations_Item2Delete",
+	public static final Target Locations_Item2DeleteButton = new Target("Locations_Item2Delete",
 			"(//*[@class='mm-c-product-list__delete-option'])[2]", Target.XPATH);
-	public static final Target Locations_Item3Delete = new Target("Locations_Item3Delete",
+	public static final Target Locations_Item3DeleteButton = new Target("Locations_Item3Delete",
 			"(//*[@class='mm-c-product-list__delete-option'])[3]", Target.XPATH);
+
+	public static final Target Locations_Item1Delete = new Target("Locations_Item1Delete",
+			"(//*[@class='mm-c-product-list__edit']//*[@class='mm-o-icon icon-minus-circle'])[1]", Target.XPATH);
+	public static final Target Locations_Item2Delete = new Target("Locations_Item2Delete",
+			"(//*[@class='mm-c-product-list__edit']//*[@class='mm-o-icon icon-minus-circle'])[2]", Target.XPATH);
+	public static final Target Locations_Item3Delete = new Target("Locations_Item3Delete",
+			"(//*[@class='mm-c-product-list__edit']//*[@class='mm-o-icon icon-minus-circle'])[3]", Target.XPATH);
 
 	public static final Target Locations_Item1DeleteHeading = new Target("Locations_Item1DeleteHeading",
 			"(//*[@class='mm-c-product-list__edit']//*[@class='mm-c-product-list__details-wrapper']/h4)[1]",
@@ -288,7 +263,6 @@ public class LocationsPage extends SitePage {
 			Target.XPATH);
 	public static final Target CustomLocationsDesc = new Target("CustomLocationsDesc",
 			"//*[@class='mm-c-inventory-setup']//*[contains(text(),'Create your own locations')]", Target.XPATH);
-
 	public static final Target ItemVerify = new Target("ItemVerify",
 			"//*[@class='mm-c-product-list__item mm-c-product__sysco ']", Target.XPATH);
 
@@ -304,23 +278,24 @@ public class LocationsPage extends SitePage {
 			"(//*[@class='list-group']//*[@id='list-item']//*[@class='mm-c-simplelist__name'])[3]", Target.XPATH);
 	public static final Target FourthLocation = new Target("FourthLocation",
 			"(//*[@class='list-group']//*[@id='list-item']//*[@class='mm-c-simplelist__name'])[4]", Target.XPATH);
-
-	public static String AddedItemId;
-	public static String[] AddedItemId1;
-
-	public static final Target ViewItemsOnLocation = new Target("ViewItemsOnLocation",
-			"//*[contains(text(),'View items in this location')]", Target.XPATH);
-	public static final Target Cancel = new Target("Cancel",
-			"//UIAStaticText[@label='Cancel']", Target.XPATH);
+	public static final Target Cancel = new Target("Cancel", "//*[contains(text(),'Cancel')]", Target.XPATH);
 
 	public static String DeletedCategory1;
 	public static String DeletedCategory2;
 	public static String DeletedCategory3;
 	public static Integer count = 0;
 	public static Integer count1 = 0;
+	public static final Target ViewItemsOnLocation = new Target("ViewItemsOnLocation",
+			"//*[contains(text(),'View items in this location')]", Target.XPATH);
+	public static final Target SetUp_Pg2Header = new Target("SetUp_Pg1Header",
+			"//*[@class='navbar-brand']//*[contains(text(),'Setup Inventory')]", Target.XPATH);
+	
+	public static final Target CreateLocationDesc = new Target("CreateLocationDesc",
+			"//*[@class='mm-c-customlocation__setup mm-u-navbar-padding']//*[contains(text(),'Create Locations')]",
+			Target.XPATH);
+	
 	public static String[] locationNamesArray1;
 	public static String[] locationNamesArray;
-	
 	
 	public static String 	LocAddedItemId;
 	public static String[] Loc1AddedItemId_1;
@@ -330,13 +305,13 @@ public class LocationsPage extends SitePage {
 	public static String[] Loc2AddedItemId_2;
 	public static String[] Loc2AddedItemId_3;
 	public static String[] Loc2AddedItemId_4;
-	//public static String LocationsItemName2_4;
+	public static String LocationsItemName2_4;
 	public static final Target Locations_4thItemSelect = new Target("Locations_4thItemSelect",
 			"(//*[@class='mm-c-product-minlist mm-c-product__sysco']//*[@class='mm-o-icon'])[4]", Target.XPATH);
 	public static String 	NoLocItemId;
 	public static String[] NoLocItemId_1;
 	
-public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete_Loc1",
+	public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete_Loc1",
 			"(//*[@class='mm-o-icon icon-minus-circle'])[1]",
 			Target.XPATH);
 	public static final Target ProductCardDelete_Loc2= new Target("ProductCardDelete_Loc2",
@@ -347,9 +322,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 			Target.XPATH);
 	public static final Target NoDelete = new Target("Back",
 			"//*[@id='no-button' and contains(text(),'No, Cancel')]", Target.XPATH);
-
-
-
+	
 	public LocationsPage(SiteRepository repository) {
 		super(repository);
 	}
@@ -371,13 +344,14 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 			getCommand().click(NewLocation);
 			getCommand().sendKeys(NewLocation, locationName);
-			log("added location name :Pass", LogType.VERIFICATION_STEP);
+
+			log("Added location name :Pass", LogType.VERIFICATION_STEP);
 		}
 
 		catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
-			log("added location name :Fail", LogType.VERIFICATION_STEP);
+			log("Added location name :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
 
@@ -387,6 +361,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	@SuppressWarnings("rawtypes")
 	public LocationsPage SelectLocationCooler(String string) {
+
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
@@ -394,11 +369,12 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 			getCommand().waitForTargetPresent(LocationCooler);
 			getCommand().click(LocationCooler);
+
 			log("Selected cooler :Pass", LogType.VERIFICATION_STEP);
 		}
 
 		catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Selected cooler :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -408,54 +384,51 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	}
 
-	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
+	@SuppressWarnings("rawtypes")
 	public LocationsPage TapOnNext(String string) {
-		String string2 = "Issue";
 
+		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().waitForTargetPresent(Next);
 			if (getCommand().isTargetPresent(Next)) {
 
-				getCommand().click(Next);
+				getCommand().clickWithJavascript(Next);
 				log("Tapped on Next : Pass", LogType.VERIFICATION_STEP);
 
 			}
-			Set<String> contextNames1 = ((IOSDriver) getCommand().driver).getContextHandles();
-			System.out.println("contxtname is " + contextNames1);
-
-			for (String contextName : contextNames1) {
-				System.out.println("inside loop " + contextNames1);
-			}
-			System.out.println(((IOSDriver) getCommand().driver).context((String) contextNames1.toArray()[1]));
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
-			log("Tapped on Next :Fail", LogType.VERIFICATION_STEP);
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
+			log("Tapped on Next :Fail", LogType.VERIFICATION_STEP);
+
 			Assert.assertTrue(false);
 		}
 
 		return this;
 	}
-		
-	@SuppressWarnings({ "rawtypes", "unused", "unchecked" })
+
+	@SuppressWarnings("rawtypes")
 	public LocationsPage CustomLocation(String string) {
+
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
-			Set<String> contextNames1 = ((IOSDriver) getCommand().driver).getContextHandles();
+
+			getCommand().waitFor(5);
+			
 			getCommand().waitForTargetPresent(SetUp_Pg2Title);
 			getCommand().waitForTargetPresent(SetUp_Pg2Header);
 			getCommand().waitForTargetPresent(CustomLocations);
-			getCommand().click(CustomLocations);
+			getCommand().clickWithJavascript(CustomLocations);
+
 			log("custom location clicked :Pass", LogType.VERIFICATION_STEP);
 		}
 
 		catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("custom location clicked :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -468,22 +441,25 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	@SuppressWarnings("rawtypes")
 	public LocationsPage DefaultLocation(String string) {
+
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 
+			getCommand().waitFor(5);
+		
 			getCommand().waitForTargetPresent(SetUp_Pg2Title);
 			getCommand().waitForTargetPresent(SetUp_Pg2Header);
 			getCommand().waitForTargetPresent(DefaultLocation);
 			getCommand().click(DefaultLocation);
 
-			log("default location clicked :Pass", LogType.VERIFICATION_STEP);
+			log("Default location clicked :Pass", LogType.VERIFICATION_STEP);
 		}
 
 		catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
-			log("default location clicked :Fail", LogType.VERIFICATION_STEP);
+			log("Default location clicked :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 
 		}
@@ -494,18 +470,19 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	@SuppressWarnings("rawtypes")
 	public LocationsPage tapContinue(String string) {
+
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
-
+			getCommand().waitFor(5);
 			getCommand().waitForTargetPresent(Continue);
-			getCommand().click(Continue);
+			getCommand().clickWithJavascript(Continue);
 
 			log("Tapped on Continue :Pass", LogType.VERIFICATION_STEP);
 		}
 
 		catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Tapped on Continue :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -515,70 +492,62 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 		return this;
 
 	}
-/*
+
 	@SuppressWarnings("rawtypes")
 	public LocationsPage SelectItemFromLocations(String string) {
 
-		log("Selecting item", LogType.STEP);
+		log("Selecting item from location", LogType.STEP);
+
 		String string2 = "Issue";
 
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 			getCommand().waitForTargetPresent(LocationsPage_Header);
-
+			final Target Product_Select = new Target("Product_Select",
+					"(//*[@class='mm-c-product-list__details-wrapper']//a)[1]",
+					Target.XPATH);
 			if (getCommand().isTargetPresent(LocationsPage_Header)) {
-				System.out.println(getCommand().getText(LocationsPage_Header));
-
+				
 				getCommand().waitFor(5);
-				getCommand().click(Location_FirstItem);
-
-				Location1ItemSelected = getCommand().getText(Location_FirstItemSelect);
+				getCommand().click(Product_Select);
 				getCommand().waitFor(5);
-				log("Selecting item1 :Pass", LogType.VERIFICATION_STEP);
+
+				log("Selecting item1 from locations :Pass", LogType.VERIFICATION_STEP);
 			}
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
-			log("Selecting item1 :Fail", LogType.VERIFICATION_STEP);
+			log("Selecting item1 from locations:Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
 
 		return this;
 
-	}*/
+	}
 
-	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
+	@SuppressWarnings("rawtypes")
 	public LocationsPage TapOnDone(String string) {
-		String string1 = "Success";
-		String string2 = "Issue";
 
-		String finalPath = SitePage.drivePath + string + string1 + SitePage.pathExtension;
+		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().waitFor(5);
 			getCommand().waitForTargetPresent(Done);
 			if (getCommand().isTargetPresent(Done)) {
 
-				getCommand().click(Done);
+				getCommand().clickWithJavascript(Done);
 				log("Tapped on done:Pass", LogType.VERIFICATION_STEP);
-
-				Set<String> contextNames1 = ((IOSDriver) getCommand().driver).getContextHandles();
-				System.out.println("contxtname is " + contextNames1);
-
-				for (String contextName : contextNames1) {
-					System.out.println("inside loop " + contextNames1);
-				}
-				System.out.println(((IOSDriver) getCommand().driver).context((String) contextNames1.toArray()[1]));
-				
+				getCommand().waitFor(15);
 			}
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
-			log("Tapped on done :Fail", LogType.VERIFICATION_STEP);
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
+			log("Tapped on done :Fail", LogType.VERIFICATION_STEP);
+
 			Assert.assertTrue(false);
 		}
 
@@ -586,7 +555,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 	}
 
 	@SuppressWarnings("rawtypes")
-	public LocationsPage ItemVerifyOnLocation(String string) {
+	public LocationsPage ItemVerifyOnLocation(String location, String string) {
 
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
@@ -604,13 +573,15 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 			boolean flag = getCommand().isTargetPresentAfterWait(Locations_Productcheck, 3);
 
 			if (!flag) {
+
 				throw new Exception();
 			}
 
 			log("Item verification done :Pass", LogType.VERIFICATION_STEP);
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
+
 			log("Item verification done  :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
@@ -635,10 +606,10 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 			getCommand().click(Locations_random1);
 
 			Location1ItemAdded = getCommand().getText(Location_FirstItemAdded);
+
 			final Target Locations_Productcheck = new Target("Locations_check",
 					"//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'" + product + "')]",
 					Target.XPATH);
-
 			getCommand().waitForTargetPresent(Locations_Productcheck);
 			boolean flag = getCommand().isTargetPresentAfterWait(Locations_Productcheck, 3);
 
@@ -648,8 +619,9 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 			log("Item verification done :Pass", LogType.VERIFICATION_STEP);
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
+
 			log("Item verification done  :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
@@ -659,16 +631,15 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 	}
 
 	@SuppressWarnings("rawtypes")
-	public LocationsPage AddLocations1_name(String locname, String string) {
-		String string2 = "Issue";
-		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
-
+	public LocationsPage AddLocations1_name(String locname) {
 		log("Entering Location name1", LogType.STEP);
 		try {
 
 			getCommand().waitForTargetPresent(ADD_LocationName1);
+
 			if (getCommand().isTargetPresent(ADD_LocationName1)) {
 				getCommand().click(ADD_LocationName1);
+
 				getCommand().clear(ADD_LocationName1);
 				getCommand().waitFor(5);
 
@@ -678,8 +649,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 			}
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
-			getCommand().captureScreenshot(finalPath1);
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			log("Entered location name1 in add Locations page  :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
@@ -692,6 +662,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 	public LocationsPage AddLocations1_TypeDry(String string) {
 
 		log("Entering type Dry", LogType.STEP);
+
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
@@ -699,23 +670,16 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 			if (getCommand().isTargetPresent(LocType_Dry1T1)) {
 				getCommand().waitFor(5);
-				getCommand().click(LocType_Dry1T1);
+				getCommand().clickWithJavascript(LocType_Dry1T1);
 				getCommand().waitFor(5);
-				
-				log("Entered type in add Locations page :Pass", LogType.VERIFICATION_STEP);
-			}
 
-			if (getCommand().isTargetPresent(LocType_Dry1T2)) {
-				getCommand().waitFor(5);
-				getCommand().click(LocType_Dry1T2);
-				getCommand().waitFor(5);
-				
 				log("Entered type in add Locations page :Pass", LogType.VERIFICATION_STEP);
 			}
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
+
 			log("Entered location type in add Locations page  :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
@@ -724,29 +688,26 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	}
 
-	@SuppressWarnings("rawtypes")
-	public LocationsPage AddLocations2_name(String locname, String string) {
-		String string2 = "Issue";
-		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
+	public LocationsPage AddLocations2_name(String locname) {
 
 		log("Entering Location name", LogType.STEP);
+		
 		try {
 
 			getCommand().waitForTargetPresent(ADD_LocationName2);
+
 			if (getCommand().isTargetPresent(ADD_LocationName2)) {
 				getCommand().click(ADD_LocationName2);
+
 				getCommand().clear(ADD_LocationName2);
 				getCommand().waitFor(5);
 
 				getCommand().sendKeys(ADD_LocationName2, locname);
 				getCommand().waitFor(5);
-
 				log("Entered location name2 in add Locations page :Pass", LogType.VERIFICATION_STEP);
 			}
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
-			getCommand().captureScreenshot(finalPath1);
 			log("Entered location name2 in add Locations page  :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
@@ -759,26 +720,21 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 	public LocationsPage AddLocations2_TypeDry(String string) {
 
 		log("Entering type Dry", LogType.STEP);
+
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 
 			if (getCommand().isTargetPresent(LocType_Dry2T1)) {
-				getCommand().click(LocType_Dry2T1);
+				;
+				getCommand().clickWithJavascript(LocType_Dry2T1);
 				getCommand().waitFor(5);
-				
-				log("Entered type in add Locations page :Pass", LogType.VERIFICATION_STEP);
-			}
 
-			if (getCommand().isTargetPresent(LocType_Dry2T2)) {
-				getCommand().click(LocType_Dry2T2);
-				getCommand().waitFor(5);
-				
 				log("Entered type in add Locations page :Pass", LogType.VERIFICATION_STEP);
 			}
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Entered location type in add Locations page  :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -789,10 +745,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 	}
 
 	@SuppressWarnings("rawtypes")
-	public LocationsPage AddLocations2(String string) {
-		String string2 = "Issue";
-
-		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
+	public LocationsPage AddLocations2() {
 		log("Entering anotherloc", LogType.STEP);
 
 		try {
@@ -807,8 +760,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 			}
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
-			getCommand().captureScreenshot(finalPath1);
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			log("Entered second loc in Locations page  :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
@@ -821,22 +773,26 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 	public LocationsPage Itemselect1(String string) {
 
 		log("Selecting item", LogType.STEP);
+
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 			getCommand().waitForTargetPresent(LocationsPage_Header);
+
 			if (getCommand().isTargetPresent(LocationsPage_Header)) {
+
 				getCommand().waitFor(5);
 				getCommand().click(Location_FirstItem);
 
 				Location1ItemSelected = getCommand().getText(Location_FirstItemSelect);
+
 				getCommand().waitFor(5);
 
 				log("Selecting item1 :Pass", LogType.VERIFICATION_STEP);
 			}
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Selecting item1 :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -850,6 +806,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 	public LocationsPage Itemselect2(String string) {
 
 		log("Selecting item", LogType.STEP);
+
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
@@ -857,11 +814,11 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 			if (getCommand().isTargetPresent(LocationsPage_Header)) {
 				getCommand().click(SetupInventoryLocationAllItemsTab);
+
 				getCommand().waitFor(5);
 				getCommand().click(Location_FirstItem);
 
 				Location2ItemSelected = getCommand().getText(Location_FirstItemSelect);
-
 				getCommand().waitFor(5);
 
 				if ((Location2ItemSelected.equalsIgnoreCase(Location1ItemSelected))) {
@@ -869,11 +826,12 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 				} else {
 					log("Same item is selected for location2 :Fail", LogType.VERIFICATION_STEP);
 				}
+
 				log("Selecting item1 :Pass", LogType.VERIFICATION_STEP);
 			}
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Selecting item1 :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -885,18 +843,13 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	@SuppressWarnings("rawtypes")
 	public LocationsPage locationItemClick1AndEnterValue(String location, String string) {
-		String string1 = "Success";
-		String string2 = "Issue";
 
-		String finalPath = SitePage.drivePath + string + string1 + SitePage.pathExtension;
+		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("locationItemClick1AndEnterValue ", LogType.STEP);
 		try {
-
 			final Target Locations_random1 = new Target("Locations_random1",
 					"//*[@id='list-item' and contains(text(),'" + location + "')]", Target.XPATH);
-
-			System.out.println("location1" + location);
 
 			getCommand().waitForTargetPresent(Locations_random1);
 			getCommand().click(Locations_random1);
@@ -905,9 +858,12 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 			getCommand().waitForTargetPresent(LocationItem1_InputTextBox);
 			getCommand().sendKeys(LocationItem1_InputTextBox, value);
+
 			getCommand().waitFor(2);
+
 			getCommand().waitForTargetPresent(Back);
 			getCommand().click(Back);
+
 			getCommand().waitForTargetPresent(Locations_random1);
 			getCommand().click(Locations_random1);
 
@@ -918,12 +874,8 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 			}
 
 			log("locationItemClick1AndEnterValue :Pass", LogType.VERIFICATION_STEP);
-
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
-			getCommand().captureScreenshot(finalPath);
-
-			log("locationItemClick1AndEnterValue :Pass", LogType.VERIFICATION_STEP);
 		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("locationItemClick1AndEnterValue :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -933,23 +885,17 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	}
 
-	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
+	@SuppressWarnings("rawtypes")
 	public LocationsPage locationItemClick2AndEnterValue(String location, String string) {
+
 		String string2 = "Issue";
+
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("locationItemClick1AndEnterValue ", LogType.STEP);
 		try {
 
 			final Target Locations_random2 = new Target("Locations_random2",
 					"//*[@id='list-item' and contains(text(),'" + location + "')]", Target.XPATH);
-
-			Set<String> contextNames1 = ((IOSDriver) getCommand().driver).getContextHandles();
-			System.out.println("contxtname is " + contextNames1);
-
-			for (String contextName : contextNames1) {
-				System.out.println("inside loop " + contextNames1);
-			}
-			System.out.println(((IOSDriver) getCommand().driver).context((String) contextNames1.toArray()[1]));
 
 			getCommand().waitForTargetPresent(Back);
 			getCommand().click(Back);
@@ -975,10 +921,8 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 			}
 
 			log("locationItemClick2AndEnterValue :Pass", LogType.VERIFICATION_STEP);
-
-			log("locationItemClick2AndEnterValue :Pass", LogType.VERIFICATION_STEP);
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("locationItemClick1AndEnterValue :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -990,20 +934,25 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	@SuppressWarnings("rawtypes")
 	public LocationsPage TapAddLocation(String string) {
+
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
-			getCommand().waitForTargetPresent(AddWeb);
-			if (getCommand().isTargetPresent(AddWeb)) {
-				getCommand().click(AddWeb);
+			getCommand().waitForTargetPresent(Add);
+
+			if (getCommand().isTargetPresent(Add)) {
+
+				getCommand().clickWithJavascript(Add);
+				getCommand().waitFor(10);
+				
 				log("Navigating to Add Locations page :Pass", LogType.VERIFICATION_STEP);
 
 			}
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Navigating to Add Locations page :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -1013,26 +962,28 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	}
 
-
+	@SuppressWarnings("rawtypes")
 	public LocationsPage AddLocationDetails(String locationName, String string) {
-		String string1 = "Success";
+
 		String string2 = "Issue";
-		String finalPath = SitePage.drivePath + string + string1 + SitePage.pathExtension;
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
 			getCommand().click(NewLocation);
+
 			getCommand().sendKeys(NewLocation, locationName);
+
 			getCommand().waitForTargetPresent(LocationCooler);
 			getCommand().click(LocationCooler);
-			getCommand().captureScreenshot(finalPath);
-			log("added location details :Pass", LogType.VERIFICATION_STEP);
+
+			log("Added location details :Pass", LogType.VERIFICATION_STEP);
 		}
 
 		catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
-			log("added location details :Fail", LogType.VERIFICATION_STEP);
+			log("Added location details :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
 
@@ -1042,7 +993,9 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	@SuppressWarnings("rawtypes")
 	public LocationsPage SelectLocation(String name, String string) {
+
 		String string2 = "Issue";
+
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("Selecting location", LogType.STEP);
@@ -1059,7 +1012,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 		}
 
 		catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Location is selected for item   :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -1072,18 +1025,18 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 	public LocationsPage AddLocationName(String locationName, String string) {
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
-
+		log("Entering location name ", LogType.STEP);
 		try {
 			getCommand().clear(AddLocation_LocName);
 			getCommand().click(AddLocation_LocName);
 			getCommand().sendKeys(AddLocation_LocName, locationName);
-			log("added location name :Pass", LogType.VERIFICATION_STEP);
+			log("Added location name :Pass", LogType.VERIFICATION_STEP);
 		}
 
 		catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
-			log("added location name :Fail", LogType.VERIFICATION_STEP);
+			log("Added location name :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
 
@@ -1091,29 +1044,22 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	}
 
-	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
+	@SuppressWarnings("rawtypes")
 	public LocationsPage AddLocationCooler(String string) {
+
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().waitForTargetPresent(AddLocation_LocTypeCooler);
 			getCommand().click(AddLocation_LocTypeCooler);
-			System.out.println("selected cooler");
 
-			Set<String> contextNames = ((IOSDriver) getCommand().driver).getContextHandles();
-
-			for (String contextName : contextNames) {
-				System.out.println(contextNames);
-			}
-			System.out.println(((IOSDriver) getCommand().driver).context((String) contextNames.toArray()[1]));
 			log("Selected cooler :Pass", LogType.VERIFICATION_STEP);
 		}
 
 		catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Selected cooler :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -1125,25 +1071,25 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	@SuppressWarnings("rawtypes")
 	public LocationsPage TapOnBack(String string) {
-		String string2 = "Issue";
 
+		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
-			getCommand().waitFor(2);
 			getCommand().waitForTargetPresent(Back);
 			if (getCommand().isTargetPresent(Back)) {
 
-				getCommand().click(Back);
+				getCommand().clickWithJavascript(Back);
 
 				log("tap on back :Pass", LogType.VERIFICATION_STEP);
 			}
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
-			log("tap on back :Fail", LogType.VERIFICATION_STEP);
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
+			log("tap on back :Fail", LogType.VERIFICATION_STEP);
+
 			Assert.assertTrue(false);
 		}
 
@@ -1152,22 +1098,27 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	@SuppressWarnings("rawtypes")
 	public LocationsPage VerifyLocationList(String locationAdded, String string) {
+
 		String string2 = "Issue";
+
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Checking addeded Location in location list", LogType.STEP);
 		try {
 
 			String AddedLocation = locationAdded;
+
 			final Target LocAdded = new Target("PrepProduct",
 					"//*[@id='list-item']//span[contains(text(),'" + AddedLocation + "')]", Target.XPATH);
 
 			getCommand().waitForTargetPresent(LocAdded);
+
 			if (getCommand().isTargetPresent(LocAdded)) {
+
 				log("Location is added :Pass", LogType.VERIFICATION_STEP);
 			}
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Added new location is listed   :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -1177,74 +1128,26 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	}
 
-	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
-	public LocationsPage editLocation(String editlocation, String string) {
-		String string1 = "Success";
-		String string2 = "Issue";
-
-		String finalPath = SitePage.drivePath + string + string1 + SitePage.pathExtension;
-		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
-
-		try {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
-
-			getCommand().waitForTargetPresent(Locator_firstLocname);
-			getCommand().click(Locator_firstLocname);
-
-			getCommand().waitForTargetPresent(EditBtnLocDetailsPg);
-			getCommand().click(EditBtnLocDetailsPg);
-
-			String Name = getCommand().getText(NewLocation);
-
-			getCommand().click(NewLocation);
-			getCommand().clear(NewLocation);
-			getCommand().sendKeys(NewLocation, editlocation);
-
-			getCommand().waitForTargetPresent(LocationDry);
-			getCommand().click(LocationDry);
-
-			getCommand().waitForTargetPresent(Update);
-			getCommand().click(Update);
-
-			Set<String> contextNames = ((IOSDriver) getCommand().driver).getContextHandles();
-			getCommand().captureScreenshot(finalPath);
-			for (String contextName : contextNames) {
-				System.out.println(contextNames);
-			}
-			System.out.println(((IOSDriver) getCommand().driver).context((String) contextNames.toArray()[1]));
-
-			getCommand().waitForTargetPresent(Back);
-			getCommand().click(Back);
-
-			log("Edit location  :Pass", LogType.VERIFICATION_STEP);
-		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
-			getCommand().captureScreenshot(finalPath1);
-			log("Edit location  :Fail", LogType.VERIFICATION_STEP);
-			Assert.assertTrue(false);
-		}
-
-		return this;
-	}
-
 	@SuppressWarnings("rawtypes")
 	public LocationsPage TapOnEdit(String string) {
-		String string2 = "Issue";
 
+		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Editing", LogType.STEP);
 		try {
 
-			getCommand().waitForTargetPresent(EditWeb);
-			if (getCommand().isTargetPresent(EditWeb)) {
-				getCommand().click(EditWeb);
-				log("tap on edit :Pass", LogType.VERIFICATION_STEP);
+			getCommand().waitForTargetPresent(Edit);
+			if (getCommand().isTargetPresent(Edit)) {
+
+				getCommand().click(Edit);
+
+				log("Tap on edit :Pass", LogType.VERIFICATION_STEP);
 			}
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
-			log("tap on edit :Fail", LogType.VERIFICATION_STEP);
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
+			log("Tap on edit :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
 
@@ -1253,24 +1156,25 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	@SuppressWarnings("rawtypes")
 	public LocationsPage TapOnDeleteLocation(String string) {
+
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Delete cliking", LogType.STEP);
 		try {
 
-			getCommand().waitFor(2);
 			getCommand().waitForTargetPresent(Delete);
 			if (getCommand().isTargetPresent(Delete)) {
 
-				getCommand().click(Delete);
+				getCommand().clickWithJavascript(Delete);
 
-				log("tap on delete :Pass", LogType.VERIFICATION_STEP);
+				log("Tap on delete :Pass", LogType.VERIFICATION_STEP);
 			}
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
-			log("tap on delete :Fail", LogType.VERIFICATION_STEP);
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
+			log("Tap on delete :Fail", LogType.VERIFICATION_STEP);
+
 			Assert.assertTrue(false);
 		}
 
@@ -1279,24 +1183,24 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	@SuppressWarnings("rawtypes")
 	public LocationsPage TapOnYesDelete(String string) {
+
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Deleted", LogType.STEP);
 		try {
-
-			getCommand().waitFor(2);
 			getCommand().waitForTargetPresent(YesDelete);
 			if (getCommand().isTargetPresent(YesDelete)) {
 
-				getCommand().click(YesDelete);
+				getCommand().clickWithJavascript(YesDelete);
 
-				log("tap on yes delete button :Pass", LogType.VERIFICATION_STEP);
+				log("Tap on yes delete button :Pass", LogType.VERIFICATION_STEP);
 			}
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
-			log("tap on yes delete button :Fail", LogType.VERIFICATION_STEP);
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
+			log("Tap on yes delete button :Fail", LogType.VERIFICATION_STEP);
+
 			Assert.assertTrue(false);
 		}
 
@@ -1306,22 +1210,24 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 	@SuppressWarnings("rawtypes")
 	public LocationsPage VerifyCancelledLocationList(String locationAdded, String string) {
 		String string2 = "Issue";
-
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Checking addeded Location in location list", LogType.STEP);
 		try {
-			getCommand().waitFor(2);
+
 			String AddedLocation = locationAdded;
+
 			final Target LocAdded = new Target("LocAdded",
 					"//*[@id='list-item']//span[contains(text(),'" + AddedLocation + "')]", Target.XPATH);
 
 			if (getCommand().isTargetPresent(LocAdded)) {
+
 				log("Cancelled Location is there :Fail", LogType.VERIFICATION_STEP);
 				Assert.assertTrue(false);
 			}
+
 			log("Cancelled location is not listed   :Pass", LogType.VERIFICATION_STEP);
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Cancelled location is  listed   :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -1333,6 +1239,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	@SuppressWarnings("rawtypes")
 	public LocationsPage AddItemFrom_OrderGuide(String string) {
+
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
@@ -1349,7 +1256,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 			}
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Order Guide Click : Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -1367,10 +1274,12 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 			getCommand().waitForTargetPresent(AddProductPage_AddLocations);
 			if (getCommand().isTargetPresent(AddProductPage_AddLocations)) {
 				getCommand().click(AddProductPage_AddLocations);
+				getCommand().waitFor(2);
 			}
 			log("Selected locations : Pass", LogType.STEP);
+
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Selected locations :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -1380,14 +1289,15 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	@SuppressWarnings("rawtypes")
 	public LocationsPage ProductSelect(String item, String string) {
+
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Selecting an item from location ", LogType.STEP);
 		try {
 
 			final Target Product_Select = new Target("Product_Select",
-					"//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'" + item
-							+ "')]/ancestor::div[@class='mm-c-product-list__details-wrapper']//*[@class='mm-c-product-list__image']//a",
+					"((//*[@class='mm-c-product-list__details-wrapper']//*[@class='mm-c-product-list__details']//*[contains(text(),'"
+							+ item + "')]/ancestor::div[@class='mm-c-product-list__details-wrapper'])//a)[1]",
 					Target.XPATH);
 
 			getCommand().waitForTargetPresent(Product_Select);
@@ -1398,7 +1308,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 			log("Selecting an item from location :Pass", LogType.VERIFICATION_STEP);
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Selecting an item from location :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -1410,8 +1320,8 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	@SuppressWarnings("rawtypes")
 	public LocationsPage LocationDoneSelection(String string) {
-		String string2 = "Issue";
 
+		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
@@ -1421,14 +1331,14 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 				getCommand().click(LocationsDone);
 
-				log("tap on back :Pass", LogType.VERIFICATION_STEP);
+				log("Tap on back :Pass", LogType.VERIFICATION_STEP);
 			}
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
-
-			log("tap on back :Fail", LogType.VERIFICATION_STEP);
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
+			log("Tap on back :Fail", LogType.VERIFICATION_STEP);
+
 			Assert.assertTrue(false);
 		}
 
@@ -1437,21 +1347,23 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	@SuppressWarnings("rawtypes")
 	public LocationsPage selectMultipleItemsFromLocation1(String string) {
-		String string2 = "Issue";
 
+		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
+
 		try {
 
 			log(" Adding Item from Order Guide", LogType.STEP);
 
 			getCommand().waitFor(5);
-			getCommand().waitForTargetPresent(Locations_1stItemHeading);
+
+			getCommand().waitForTargetPresent(Locations_1stItemSelect);
 
 			if (getCommand().isTargetPresent(Locations_1stItemSelect)) {
 				locationsNoOfElements1++;
 				LocationsItemName1_1 = getCommand().getText(Locations_1stItemHeading);
 				getCommand().click(Locations_1stItemSelect);
-
+				
 				final Target keyword1 = new Target("keyword1",
 						"//*[@class='mm-c-product-minlist__item']//*[contains(text(),'" + LocationsItemName1_1
 								+ "')]/following-sibling::div[@class='mm-c-product-minlist__details']",
@@ -1459,41 +1371,43 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 				LocAddedItemId = getCommand().getText(keyword1);
 				Loc1AddedItemId_1 = LocAddedItemId.split("/");
 
+				if (getCommand().isTargetPresent(Locations_2ndItemSelect)) {
 
-			}
-			if (getCommand().isTargetPresent(Locations_2ndItemHeading)) {
+					locationsNoOfElements1++;
+					LocationsItemName1_2 = getCommand().getText(Locations_2ndItemHeading);
+					getCommand().click(Locations_2ndItemSelect);
+					
+					final Target keyword2 = new Target("keyword2",
+							"//*[@class='mm-c-product-minlist__item']//*[contains(text(),'" + LocationsItemName1_2
+									+ "')]/following-sibling::div[@class='mm-c-product-minlist__details']",
+							Target.XPATH);
+					LocAddedItemId = getCommand().getText(keyword2);
+					Loc1AddedItemId_2 = LocAddedItemId.split("/");
 
-				locationsNoOfElements1++;
-				LocationsItemName1_2 = getCommand().getText(Locations_2ndItemHeading);
-				getCommand().click(Locations_2ndItemSelect);
-				final Target keyword2 = new Target("keyword2",
-						"//*[@class='mm-c-product-minlist__item']//*[contains(text(),'" + LocationsItemName1_2
-								+ "')]/following-sibling::div[@class='mm-c-product-minlist__details']",
-						Target.XPATH);
-				LocAddedItemId = getCommand().getText(keyword2);
-				Loc1AddedItemId_2 = LocAddedItemId.split("/");
+				}
 
-			}
+				if (getCommand().isTargetPresent(Locations_3rdItemSelect)) {
+					locationsNoOfElements1++;
+					LocationsItemName1_3 = getCommand().getText(Locations_3rdItemHeading);
+					getCommand().click(Locations_3rdItemSelect);
+					
+					final Target keyword3 = new Target("keyword3",
+							"//*[@class='mm-c-product-minlist__item']//*[contains(text(),'" + LocationsItemName1_3
+									+ "')]/following-sibling::div[@class='mm-c-product-minlist__details']",
+							Target.XPATH);
+					LocAddedItemId = getCommand().getText(keyword3);
+					Loc1AddedItemId_3 = LocAddedItemId.split("/");
 
-			if (getCommand().isTargetPresent(Locations_3rdItemHeading)) {
-				locationsNoOfElements1++;
-				LocationsItemName1_3 = getCommand().getText(Locations_3rdItemHeading);
-				getCommand().click(Locations_3rdItemSelect);
+					log("Multiple items selected :Pass", LogType.VERIFICATION_STEP);
 
-				final Target keyword3 = new Target("keyword3",
-						"//*[@class='mm-c-product-minlist__item']//*[contains(text(),'" + LocationsItemName1_3
-								+ "')]/following-sibling::div[@class='mm-c-product-minlist__details']",
-						Target.XPATH);
-				LocAddedItemId = getCommand().getText(keyword3);
-				Loc1AddedItemId_3 = LocAddedItemId.split("/");
+				}
+			} else
 
-			}
-
-			log("Multiple items selected :Pass", LogType.VERIFICATION_STEP);
+				log("Multiple items selected :Fail", LogType.VERIFICATION_STEP);
 		}
 
 		catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Multiple items selected :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -1503,14 +1417,18 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	@SuppressWarnings("rawtypes")
 	public LocationsPage selectMultipleItemsFromLocation2(String string) {
+
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
+
 		try {
 
-			getCommand().waitFor(5);
-			getCommand().waitForTargetPresent(Locations_1stItemHeading);
+			log(" Adding Item from Order Guide", LogType.STEP);
 
-			if (getCommand().isTargetPresent(Locations_1stItemHeading)) {
+			getCommand().waitFor(5);
+			getCommand().waitForTargetPresent(Locations_1stItemSelect);
+
+			if (getCommand().isTargetPresent(Locations_1stItemSelect)) {
 				locationsNoOfElements1++;
 				LocationsItemName2_1 = getCommand().getText(Locations_1stItemHeading);
 				getCommand().click(Locations_1stItemSelect);
@@ -1520,54 +1438,53 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 						Target.XPATH);
 				LocAddedItemId = getCommand().getText(keyword1);
 				Loc2AddedItemId_1 = LocAddedItemId.split("/");
+				if (getCommand().isTargetPresent(Locations_2ndItemSelect)) {
 
+					locationsNoOfElements1++;
+					LocationsItemName2_2 = getCommand().getText(Locations_2ndItemHeading);
+					getCommand().click(Locations_2ndItemSelect);
+					final Target keyword2 = new Target("keyword2",
+							"//*[@class='mm-c-product-minlist__item']//*[contains(text(),'" + LocationsItemName2_2
+									+ "')]/following-sibling::div[@class='mm-c-product-minlist__details']",
+							Target.XPATH);
+					LocAddedItemId = getCommand().getText(keyword2);
+					Loc2AddedItemId_2 = LocAddedItemId.split("/");
+				}
 
-			}
-			if (getCommand().isTargetPresent(Locations_2ndItemHeading)) {
+				if (getCommand().isTargetPresent(Locations_3rdItemSelect)) {
+					locationsNoOfElements1++;
+					LocationsItemName2_3 = getCommand().getText(Locations_3rdItemHeading);
+					getCommand().click(Locations_3rdItemSelect);
+					
+					final Target keyword3 = new Target("keyword3",
+							"//*[@class='mm-c-product-minlist__item']//*[contains(text(),'" + LocationsItemName2_3
+									+ "')]/following-sibling::div[@class='mm-c-product-minlist__details']",
+							Target.XPATH);
+					LocAddedItemId = getCommand().getText(keyword3);
+					Loc2AddedItemId_3 = LocAddedItemId.split("/");
 
-				locationsNoOfElements1++;
-				LocationsItemName2_2 = getCommand().getText(Locations_2ndItemHeading);
-				getCommand().click(Locations_2ndItemSelect);
-				final Target keyword2 = new Target("keyword2",
-						"//*[@class='mm-c-product-minlist__item']//*[contains(text(),'" + LocationsItemName2_2
-								+ "')]/following-sibling::div[@class='mm-c-product-minlist__details']",
-						Target.XPATH);
-				LocAddedItemId = getCommand().getText(keyword2);
-				Loc2AddedItemId_2 = LocAddedItemId.split("/");
+					log("Multiple items selected :Pass", LogType.VERIFICATION_STEP);
+					
+					if (getCommand().isTargetPresent(Locations_4thItemSelect)) {
+						
+						LocationsItemName2_4 = getCommand().getText(Locations_4thItemHeading);
+						
+						final Target keyword4 = new Target("keyword4",
+								"//*[@class='mm-c-product-minlist__item']//*[contains(text(),'" + LocationsItemName2_4
+										+ "')]/following-sibling::div[@class='mm-c-product-minlist__details']",
+								Target.XPATH);
+						LocAddedItemId = getCommand().getText(keyword4);
+						Loc2AddedItemId_4 = LocAddedItemId.split("/");
+					}
+				}
 
-			}
+			} else
 
-			if (getCommand().isTargetPresent(Locations_3rdItemHeading)) {
-				locationsNoOfElements1++;
-				LocationsItemName2_3 = getCommand().getText(Locations_3rdItemHeading);
-				getCommand().click(Locations_3rdItemSelect);
-				final Target keyword3 = new Target("keyword3",
-						"//*[@class='mm-c-product-minlist__item']//*[contains(text(),'" + LocationsItemName2_3
-								+ "')]/following-sibling::div[@class='mm-c-product-minlist__details']",
-						Target.XPATH);
-				LocAddedItemId = getCommand().getText(keyword3);
-				Loc2AddedItemId_3 = LocAddedItemId.split("/");
-
-			}
-			
-
-			if (getCommand().isTargetPresent(Locations_4thItemSelect)) {
-				
-				LocationsItemName2_4 = getCommand().getText(Locations_4thItemHeading);
-				
-				final Target keyword4 = new Target("keyword4",
-						"//*[@class='mm-c-product-minlist__item']//*[contains(text(),'" + LocationsItemName2_4
-								+ "')]/following-sibling::div[@class='mm-c-product-minlist__details']",
-						Target.XPATH);
-				LocAddedItemId = getCommand().getText(keyword4);
-				Loc2AddedItemId_4 = LocAddedItemId.split("/");
-			}
-
-			log("Multiple items selected :Pass", LogType.VERIFICATION_STEP);
+				log("Multiple items selected :Fail", LogType.VERIFICATION_STEP);
 		}
 
 		catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Multiple items selected :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -1575,13 +1492,20 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 		return this;
 	}
 
-	@SuppressWarnings("rawtypes")
+	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
 	public LocationsPage ItemVerifyOnLocation2(String string) {
 
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("locationItem verify ", LogType.STEP);
+		final Target Location2_FirstItemSelectedVerify = new Target("Location2_FirstItemSelectedVerify",
+				"//*[contains(text(),'" + LocationsItemName2_1 + "')]", Target.XPATH);
+		final Target Location2_SecondItemSelectedVerify = new Target("Location2_SecondItemSelectedVerify",
+				"//*[contains(text(),'" + LocationsItemName2_2 + "')]", Target.XPATH);
+		final Target Location2_ThirdItemSelectedVerify = new Target("Location2_ThirdItemSelectedVerify",
+				"//*[contains(text(),'" + LocationsItemName2_3 + "')]", Target.XPATH);
+
 		try {
 
 			getCommand().waitForTargetPresent(Location2_FirstItemSelectedVerify);
@@ -1589,12 +1513,23 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 			boolean flag2_2 = getCommand().isTargetPresentAfterWait(Location2_SecondItemSelectedVerify, 3);
 			boolean flag2_3 = getCommand().isTargetPresentAfterWait(Location2_ThirdItemSelectedVerify, 3);
 
-			if (!(flag2_1 && flag2_2 && flag2_3)) {
-				throw new Exception();
+			if ((flag2_1 && flag2_2 && flag2_3)) {
+				log("Item verification done :Pass", LogType.VERIFICATION_STEP);
 			}
-			log("Item verification done :Pass", LogType.VERIFICATION_STEP);
+
+			else {
+
+				((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+				getCommand().captureScreenshot(finalPath1);
+				log("Item Found in Setup Inventory:Fail", LogType.VERIFICATION_STEP);
+				Assert.assertTrue(false);
+				Set<String> contextNames1 = ((AndroidDriver) getCommand().driver).getContextHandles();
+				for (String contextName : contextNames1) {
+				}
+				((AndroidDriver) getCommand().driver).context((String) contextNames1.toArray()[1]);
+			}
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Item verification done  :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -1604,13 +1539,20 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	}
 
-	@SuppressWarnings("rawtypes")
+	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
 	public LocationsPage ItemVerifyOnLocation1(String string) {
 
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		log("locationItem verify ", LogType.STEP);
+		final Target Location1_FirstItemSelectedVerify = new Target("Location1_FirstItemSelectedVerify",
+				"//*[contains(text(),'" + LocationsItemName1_1 + "')]", Target.XPATH);
+		final Target Location1_SecondItemSelectedVerify = new Target("Location1_SecondItemSelectedVerify",
+				"//*[contains(text(),'" + LocationsItemName1_2 + "')]", Target.XPATH);
+		final Target Location1_ThirdItemSelectedVerify = new Target("Location1_ThirdItemSelectedVerify",
+				"//*[contains(text(),'" + LocationsItemName1_3 + "')]", Target.XPATH);
+
 		try {
 
 			getCommand().waitForTargetPresent(Location1_FirstItemSelectedVerify);
@@ -1618,13 +1560,25 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 			boolean flag1_2 = getCommand().isTargetPresentAfterWait(Location1_SecondItemSelectedVerify, 3);
 			boolean flag1_3 = getCommand().isTargetPresentAfterWait(Location1_ThirdItemSelectedVerify, 3);
 
-			if (!(flag1_1 && flag1_2 && flag1_3)) {
-				throw new Exception();
+			if ((flag1_1 && flag1_2 && flag1_3)) {
+				log("Item verification done :Pass", LogType.VERIFICATION_STEP);
+				count1=3;
 			}
-			log("Item verification done :Pass", LogType.VERIFICATION_STEP);
-			count1=3;
+
+			else {
+
+				((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+				getCommand().captureScreenshot(finalPath1);
+				log("Item Found in Setup Inventory:Fail", LogType.VERIFICATION_STEP);
+				Assert.assertTrue(false);
+				Set<String> contextNames1 = ((AndroidDriver) getCommand().driver).getContextHandles();
+				for (String contextName : contextNames1) {
+				}
+				((AndroidDriver) getCommand().driver).context((String) contextNames1.toArray()[1]);
+			}
+
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Item verification done  :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -1645,10 +1599,12 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 			getCommand().waitForTargetPresent(AddProductPage_AddCategory);
 			if (getCommand().isTargetPresent(AddProductPage_AddCategory)) {
 				getCommand().click(AddProductPage_AddCategory);
+				getCommand().waitFor(5);
 			}
 			log("Selected add category : Pass", LogType.STEP);
+
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Selected add category :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -1660,19 +1616,21 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 	public LocationsPage ProductQtyEnter(String qty, String string) {
 
 		String string2 = "Issue";
-
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Quantity entering  ", LogType.STEP);
 		try {
+			
+			if(getCommand().isTargetPresent(LocationItem1_QuantityInput)){
 
 			getCommand().waitForTargetPresent(LocationItem1_QuantityInput)
 					.isTargetAvailable(LocationItem1_QuantityInput);
 
 			getCommand().sendKeys(LocationItem1_QuantityInput, qty);
+			}
 
 			log("Quantity entered in locations page :Pass", LogType.VERIFICATION_STEP);
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Quantity entered in locations page:Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -1684,16 +1642,19 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	@SuppressWarnings("rawtypes")
 	public LocationsPage UomEnterOZ(String uom, String string) {
+
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Quantity entering  ", LogType.STEP);
 		try {
+
 			getCommand().waitForTargetPresent(UomUNITOZ);
+
 			getCommand().click(UomUNITOZ);
 
 			log("Uom entered in locations page :Pass", LogType.VERIFICATION_STEP);
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Uom entered in locations page:Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -1705,6 +1666,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	@SuppressWarnings("rawtypes")
 	public LocationsPage QuantityVerify(String qty, String string) {
+
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Quantity verification ", LogType.STEP);
@@ -1715,7 +1677,6 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 			final Target InputTextBoxCheck1 = new Target("InputTextBoxCheck1", locationInputTextBox3, Target.XPATH);
 
 			boolean flag = getCommand().isTargetPresentAfterWait(InputTextBoxCheck1, 5);
-			System.out.println("Flag1: " + flag);
 
 			if (!flag) {
 				throw new Exception();
@@ -1723,7 +1684,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 			log("Quantities updated :Pass", LogType.VERIFICATION_STEP);
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Quantities updated:Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -1735,48 +1696,53 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	@SuppressWarnings("rawtypes")
 	public LocationsPage AssignMultipleListItemsToLocation(String string) {
+
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 
-			log(" Adding Items of multiplelist to location", LogType.STEP);
-			getCommand().waitFor(5);
+			log("Adding Items of multiplelist to location", LogType.STEP);
+
 			getCommand().waitForTargetPresent(Locations_1stItemHeading);
 			getCommand().waitForTargetPresent(Locations_1stItemSelect);
 			getCommand().waitForTargetPresent(Locations_2ndItemSelect);
 			getCommand().waitForTargetPresent(Locations_NonSyscoItem1Select);
 			getCommand().waitForTargetPresent(Locations_NonSyscoItem2Select);
 
+			getCommand().waitFor(5);
 			if (getCommand().isTargetPresent(Locations_1stItemSelect)) {
-				locationsNoOfElements1++;
+
 				LocationsItemName1_1 = getCommand().getText(Locations_1stItemHeading);
 				getCommand().click(Locations_1stItemSelect);
-
+				log("1st items selected :Pass", LogType.VERIFICATION_STEP);
 			}
+
 			if (getCommand().isTargetPresent(Locations_2ndItemHeading)) {
 
-				locationsNoOfElements1++;
 				LocationsItemName1_2 = getCommand().getText(Locations_2ndItemHeading);
 				getCommand().click(Locations_2ndItemSelect);
+				log("3rd items selected :Pass", LogType.VERIFICATION_STEP);
 			}
 
 			if (getCommand().isTargetPresent(Locations_3rdItemHeading)) {
-				locationsNoOfElements1++;
+
 				LocationsItemName1_3 = getCommand().getText(Locations_3rdItemHeading);
 				getCommand().click(Locations_NonSyscoItem1Select);
+				log("3rd items selected :Pass", LogType.VERIFICATION_STEP);
 			}
 
 			if (getCommand().isTargetPresent(Locations_4thItemHeading)) {
-				locationsNoOfElements1++;
+
 				LocationsItemName1_4 = getCommand().getText(Locations_4thItemHeading);
 				getCommand().click(Locations_NonSyscoItem2Select);
+				log("4th items selected :Pass", LogType.VERIFICATION_STEP);
+
 			}
 
-			log("Multiple items selected :Pass", LogType.VERIFICATION_STEP);
 		}
 
 		catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Multiple items selected :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -1788,20 +1754,22 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 	public LocationsPage AllItemsTabClick(String string) {
 
 		log("Selecting item", LogType.STEP);
+
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
+
 			getCommand().waitForTargetPresent(LocationsPage_Header);
 
-			if (getCommand().isTargetPresent(LocationsPage_Header)) {
+			if (getCommand().isTargetPresent(SetupInventoryLocationAllItemsTab)) {
 				getCommand().click(SetupInventoryLocationAllItemsTab);
-				getCommand().waitFor(3);
 
+				getCommand().waitFor(3);
 				log("Selected all items tab :Pass", LogType.VERIFICATION_STEP);
 			}
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Selected all items tab:Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -1811,27 +1779,46 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	}
 
-	@SuppressWarnings("rawtypes")
+	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
 	public LocationsPage VerifyMultipleListItemsInLocation(String string) {
 
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
+		final Target Location1_FirstItemSelectedVerify = new Target("Location1_FirstItemSelectedVerify",
+				"//*[contains(text(),'" + LocationsItemName1_1 + "')]", Target.XPATH);
+		final Target Location1_SecondItemSelectedVerify = new Target("Location1_SecondItemSelectedVerify",
+				"//*[contains(text(),'" + LocationsItemName1_2 + "')]", Target.XPATH);
+		final Target Location1_ThirdItemSelectedVerify = new Target("Location1_ThirdItemSelectedVerify",
+				"//*[contains(text(),'" + LocationsItemName1_3 + "')]", Target.XPATH);
+		final Target Location1_FourthItemSelectedVerify = new Target("Location1_FourthItemSelectedVerify",
+				"//*[contains(text(),'" + LocationsItemName1_4 + "')]", Target.XPATH);
 
 		log("locationItem verify ", LogType.STEP);
 		try {
 
 			getCommand().waitForTargetPresent(Location1_FirstItemSelectedVerify);
-			boolean flag1_1 = getCommand().isTargetPresentAfterWait(Location1_FirstItemSelectedVerify, 3);
-			boolean flag1_2 = getCommand().isTargetPresentAfterWait(Location1_SecondItemSelectedVerify, 3);
-			boolean flag1_3 = getCommand().isTargetPresentAfterWait(Location1_ThirdItemSelectedVerify, 3);
-			boolean flag1_4 = getCommand().isTargetPresentAfterWait(Location1_FourthItemSelectedVerify, 3);
+			boolean flag1_1 = getCommand().isTargetVisibleAfterWait(Location1_FirstItemSelectedVerify, 5);
 
-			if (!(flag1_1 && flag1_2 && flag1_3 && flag1_4)) {
-				throw new Exception();
+			boolean flag1_2 = getCommand().isTargetVisibleAfterWait(Location1_SecondItemSelectedVerify, 5);
+			boolean flag1_3 = getCommand().isTargetVisibleAfterWait(Location1_ThirdItemSelectedVerify, 5);
+			boolean flag1_4 = getCommand().isTargetVisibleAfterWait(Location1_FourthItemSelectedVerify, 5);
+
+			if ((flag1_1 && flag1_2 && flag1_3 && flag1_4)) {
+				log("Items verification done :Pass", LogType.VERIFICATION_STEP);
+			} else {
+				log("Items verification done :Fail", LogType.VERIFICATION_STEP);
+				((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+				getCommand().captureScreenshot(finalPath1);
+				log("Item Found in Setup Inventory:Fail", LogType.VERIFICATION_STEP);
+				Assert.assertTrue(false);
+				Set<String> contextNames1 = ((AndroidDriver) getCommand().driver).getContextHandles();
+				for (String contextName : contextNames1) {
+				}
+				((AndroidDriver) getCommand().driver).context((String) contextNames1.toArray()[1]);
+
 			}
-			log("Items verification done :Pass", LogType.VERIFICATION_STEP);
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Items verification done  :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -1860,7 +1847,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 			}
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Custom category selected from locations page :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -1888,7 +1875,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 			}
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("List Names selected from locations page :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -1912,7 +1899,6 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 			final Target Locations_Productcheck1 = new Target("Locations_check",
 					"//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'" + item2 + "')]",
 					Target.XPATH);
-
 			boolean flag = getCommand().isTargetPresentAfterWait(Locations_Productcheck, 3);
 			boolean flag1 = getCommand().isTargetPresentAfterWait(Locations_Productcheck1, 3);
 
@@ -1922,7 +1908,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 			log("Item verification done :Pass", LogType.VERIFICATION_STEP);
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Item verification done  :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -1933,179 +1919,12 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 	}
 
 	@SuppressWarnings("rawtypes")
-	public LocationsPage NonSyscoPrepCategoryIdentify(String nonsysco, String prep, String string) {
-
-		String string2 = "Issue";
-
-		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
-		log("category verify ", LogType.STEP);
-		try {
-			System.out.println("inside veify");
-
-			final Target Nonsyscoitem_Heading = new Target("NonSyscoItem",
-					"//*[@class='mm-c-product-list']//*[@class='Grid__innerScrollContainer']//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
-							+ nonsysco + "')]",
-					Target.XPATH);
-			final Target Prepitem_Heading = new Target("NonSyscoItem",
-					"//*[@class='mm-c-product-list']//*[@class='Grid__innerScrollContainer']//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
-							+ prep + "')]",
-					Target.XPATH);
-
-			if (getCommand().isTargetPresent(Nonsyscoitem_Heading)) {
-				final Target Nonsysco_CategoryLine1 = new Target("Nonsysco_CategoryLine1",
-						"//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'" + nonsysco
-								+ "')]/ancestor::div[@class='mm-c-product-list__all-prods']//*[@class='mm-c-product-list__location']",
-						Target.XPATH);
-
-				Nonsysco_categoryKeyword1 = getCommand().getText(Nonsysco_CategoryLine1);
-
-				NonSysco_Category1 = Nonsysco_categoryKeyword1.split("\\s+");
-
-			}
-
-			if (getCommand().isTargetPresent(Prepitem_Heading)) {
-				final Target Prep_CategoryLine1 = new Target("Prep_CategoryLine1",
-						"//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'" + prep
-								+ "')]/ancestor::div[@class='mm-c-product-list__all-prods']//*[@class='mm-c-product-list__location']",
-						Target.XPATH);
-
-				Prep_categoryKeyword1 = getCommand().getText(Prep_CategoryLine1);
-
-				Prep_Category1 = Prep_categoryKeyword1.split("\\s+");
-
-			}
-
-			log("Categories identified for nonsyscoitems :Pass", LogType.VERIFICATION_STEP);
-		}
-
-		catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
-			getCommand().captureScreenshot(finalPath1);
-			log("Categories identified for nonsyscoitems :Fail", LogType.VERIFICATION_STEP);
-			Assert.assertTrue(false);
-		}
-		return this;
-	}
-
-	@SuppressWarnings("rawtypes")
-	public LocationsPage DeleteItems(String string) {
-		String string2 = "Issue";
-		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
-
-		log("Delete cliking", LogType.STEP);
-		try {
-
-			getCommand().waitForTargetPresent(Locations_Item1DeleteHeading);
-			if (getCommand().isTargetPresent(Locations_Item1DeleteHeading)) {
-				LocationsDeleteItemName1_1 = getCommand().getText(Locations_Item1DeleteHeading);
-
-				final Target keyword1 = new Target("keyword2",
-						"//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
-								+ LocationsDeleteItemName1_1
-								+ "')]/following-sibling::div[@class='mm-c-product-list__details']",
-						Target.XPATH);
-				LocationsDeleteItemId = getCommand().getText(keyword1);
-				LocationsDeleteItemId1_1 = LocationsDeleteItemId.split("\\s+");
-				getCommand().click(Locations_Item1Delete); // deleting first
-															// item in location
-
-				LocationsDeleteItemName1_2 = getCommand().getText(Locations_Item2DeleteHeading);
-
-				final Target keyword2 = new Target("keyword2",
-						"//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
-								+ LocationsDeleteItemName1_2
-								+ "')]/following-sibling::div[@class='mm-c-product-list__details']",
-						Target.XPATH);
-				LocationsDeleteItemId = getCommand().getText(keyword2);
-				LocationsDeleteItemId1_2 = LocationsDeleteItemId.split("\\s+");
-				getCommand().click(Locations_Item2Delete); // deleting 2nd item
-															// in location
-
-				log("Deleting items :Pass", LogType.VERIFICATION_STEP);
-			}
-
-		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
-			log("Deleting items :Fail", LogType.VERIFICATION_STEP);
-			getCommand().captureScreenshot(finalPath1);
-			Assert.assertTrue(false);
-		}
-
-		return this;
-	}
-
-	@SuppressWarnings("rawtypes")
-	public LocationsPage VerifyDeleteItemsList(String string) {
-		String string2 = "Issue";
-		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
-
-		log("Checking addeded Location in location list", LogType.STEP);
-		try {
-
-			System.out.println("inside loc");
-			final Target DeleteItem1 = new Target("DeleteItem1",
-					"//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
-							+ LocationsDeleteItemId1_1[0] + "')]",
-					Target.XPATH);
-			final Target DeleteItem2 = new Target("DeleteItem1",
-					"//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
-							+ LocationsDeleteItemId1_2[0] + "')]",
-					Target.XPATH);
-
-			boolean flag = getCommand().isTargetPresentAfterWait(DeleteItem1, 3);
-			boolean flag1 = getCommand().isTargetPresentAfterWait(DeleteItem2, 3);
-
-			if ((flag || flag1)) {
-				throw new Exception();
-			}
-
-			log("Deleted items is not listed   :Pass", LogType.VERIFICATION_STEP);
-		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
-			getCommand().captureScreenshot(finalPath1);
-			log("Deleted items is listed   :Fail", LogType.VERIFICATION_STEP);
-			Assert.assertTrue(false);
-		}
-
-		return this;
-
-	}
-
-	public LocationsPage tapOnProductOpenProductDetailsPageAndEnterQty(String prepItemName, String quantity,
-			String string) {
-
-		String string2 = "Issue";
-		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
-
-		log("tapOnProductOpenProductDetailsPageAndEnterQty", LogType.STEP);
-		try {
-
-			final Target LocationItemProdDetailsEnterQuantity = new Target("LocationItemClickToOpenProddetails",
-					"//*[@class='mm-c-product-details__select-options']//*[@type='number']", Target.XPATH);
-
-			getCommand().click(LocationItemProdDetailsEnterQuantity);
-			getCommand().waitForTargetPresent(LocationItemProdDetailsEnterQuantity);
-			getCommand().sendKeys(LocationItemProdDetailsEnterQuantity, quantity);
-
-			log("tapOnProductOpenProductDetailsPageAndEnterQty :Pass", LogType.VERIFICATION_STEP);
-		} catch (Exception e) {
-			getCommand().captureScreenshot(finalPath1);
-			log("tapOnProductOpenProductDetailsPageAndEnterQty :Fail", LogType.VERIFICATION_STEP);
-			Assert.assertTrue(false);
-		}
-
-		return this;
-
-	}
-
-	
-	@SuppressWarnings("rawtypes")
 	public LocationsPage SyscoCategoryIdentify(String string) {
 
 		String string2 = "Issue";
 
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
-		log("category verify ", LogType.STEP);
+		log("Category Identification ", LogType.STEP);
 		try {
 
 			final Target Location1_FirstItemSelectedVerify = new Target("Location1_FirstItemSelectedVerify",
@@ -2158,8 +1977,8 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 						Target.XPATH);
 
 				categoryKeyword3 = getCommand().getText(CategoryLine3);
-
 				Category3 = categoryKeyword3.split("\\s+");
+
 			}
 
 			if (getCommand().isTargetPresent(Location1_SecondItemSelectedVerify)) {
@@ -2169,8 +1988,8 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 						Target.XPATH);
 
 				categoryKeyword4 = getCommand().getText(CategoryLine4);
-
 				Category4 = categoryKeyword4.split("\\s+");
+
 			}
 
 			if (getCommand().isTargetPresent(Location1_ThirdItemSelectedVerify)) {
@@ -2180,7 +1999,6 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 						Target.XPATH);
 
 				categoryKeyword5 = getCommand().getText(CategoryLine5);
-
 				Category5 = categoryKeyword5.split("\\s+");
 
 			}
@@ -2193,7 +2011,6 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 						Target.XPATH);
 
 				categoryKeyword6 = getCommand().getText(CategoryLine6);
-
 				Category6 = categoryKeyword6.split("\\s+");
 
 			}
@@ -2205,7 +2022,6 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 						Target.XPATH);
 
 				categoryKeyword7 = getCommand().getText(CategoryLine7);
-
 				Category7 = categoryKeyword7.split("\\s+");
 
 			}
@@ -2217,14 +2033,13 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 						Target.XPATH);
 
 				categoryKeyword8 = getCommand().getText(CategoryLine8);
-
 				Category8 = categoryKeyword8.split("\\s+");
 
 			}
 
 			log("Categories identified for syscoitems :Pass", LogType.VERIFICATION_STEP);
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Categories identified for syscoitems :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -2233,15 +2048,225 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 	}
 
 	@SuppressWarnings("rawtypes")
+	public LocationsPage NonSyscoPrepCategoryIdentify(String nonsysco, String prep, String string) {
+
+		String string2 = "Issue";
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
+		log("category verify ", LogType.STEP);
+		try {
+
+			final Target Nonsyscoitem_Heading = new Target("NonSyscoItem",
+					"//*[@class='mm-c-product-list']//*[@class='Grid__innerScrollContainer']//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
+							+ nonsysco + "')]",
+					Target.XPATH);
+			final Target Prepitem_Heading = new Target("NonSyscoItem",
+					"//*[@class='mm-c-product-list']//*[@class='Grid__innerScrollContainer']//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
+							+ prep + "')]",
+					Target.XPATH);
+
+			if (getCommand().isTargetPresent(Nonsyscoitem_Heading)) {
+				final Target Nonsysco_CategoryLine1 = new Target("Nonsysco_CategoryLine1",
+						"//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'" + nonsysco
+								+ "')]/ancestor::div[@class='mm-c-product-list__all-prods']//*[@class='mm-c-product-list__location']",
+						Target.XPATH);
+
+				Nonsysco_categoryKeyword1 = getCommand().getText(Nonsysco_CategoryLine1);
+
+				NonSysco_Category1 = Nonsysco_categoryKeyword1.split("\\s+");
+
+			}
+
+			if (getCommand().isTargetPresent(Prepitem_Heading)) {
+				final Target Prep_CategoryLine1 = new Target("Prep_CategoryLine1",
+						"//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'" + prep
+								+ "')]/ancestor::div[@class='mm-c-product-list__all-prods']//*[@class='mm-c-product-list__location']",
+						Target.XPATH);
+
+				Prep_categoryKeyword1 = getCommand().getText(Prep_CategoryLine1);
+
+				Prep_Category1 = Prep_categoryKeyword1.split("\\s+");
+
+			}
+
+			log("Categories identified for nonsyscoitems :Pass", LogType.VERIFICATION_STEP);
+		}
+
+		catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Categories identified for nonsyscoitems :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+		return this;
+	}
+
+	@SuppressWarnings("rawtypes")
+	public LocationsPage DeleteItems(String string) {
+
+		String string2 = "Issue";
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
+
+		log("Delete cliking", LogType.STEP);
+		try {
+
+			getCommand().waitForTargetPresent(Locations_Item1DeleteHeading);
+			if (getCommand().isTargetPresent(Locations_Item1DeleteHeading)) {
+
+				LocationsDeleteItemName1_1 = getCommand().getText(Locations_Item1DeleteHeading);
+
+				final Target keyword1 = new Target("keyword2",
+						"//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
+								+ LocationsDeleteItemName1_1
+								+ "')]/following-sibling::div[@class='mm-c-product-list__details']",
+						Target.XPATH);
+				LocationsDeleteItemId = getCommand().getText(keyword1);
+				LocationsDeleteItemId1_1 = LocationsDeleteItemId.split("\\s+");
+
+				getCommand().click(Locations_Item1Delete);
+				getCommand().waitForTargetPresent(Locations_Item1DeleteButton);
+				getCommand().click(Locations_Item1DeleteButton);
+
+				LocationsDeleteItemName1_2 = getCommand().getText(Locations_Item2DeleteHeading);
+
+				final Target keyword2 = new Target("keyword2",
+						"//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
+								+ LocationsDeleteItemName1_2
+								+ "')]/following-sibling::div[@class='mm-c-product-list__details']",
+						Target.XPATH);
+				LocationsDeleteItemId = getCommand().getText(keyword2);
+				LocationsDeleteItemId1_2 = LocationsDeleteItemId.split("\\s+");
+
+				getCommand().click(Locations_Item2Delete);
+				getCommand().waitForTargetPresent(Locations_Item2DeleteButton);
+				getCommand().click(Locations_Item2DeleteButton);
+
+				log("Deleting items :Pass", LogType.VERIFICATION_STEP);
+			}
+
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Deleting items :Fail", LogType.VERIFICATION_STEP);
+
+			Assert.assertTrue(false);
+		}
+
+		return this;
+	}
+
+	@SuppressWarnings("rawtypes")
+	public LocationsPage VerifyDeleteItemsList(String string) {
+
+		String string2 = "Issue";
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
+
+		log("Checking addeded Location in location list", LogType.STEP);
+		try {
+
+			final Target DeleteItem1 = new Target("DeleteItem1",
+					"//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
+							+ LocationsDeleteItemId1_1[0] + "')]",
+					Target.XPATH);
+			final Target DeleteItem2 = new Target("DeleteItem1",
+					"//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
+							+ LocationsDeleteItemId1_2[0] + "')]",
+					Target.XPATH);
+
+			boolean flag = getCommand().isTargetPresentAfterWait(DeleteItem1, 3);
+			boolean flag1 = getCommand().isTargetPresentAfterWait(DeleteItem2, 3);
+
+			if ((flag || flag1)) {
+				throw new Exception();
+			}
+
+			log("Deleted items is not listed   :Pass", LogType.VERIFICATION_STEP);
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Deleted items is listed   :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+
+		return this;
+
+	}
+
+	@SuppressWarnings("rawtypes")
+	public LocationsPage tapOnProductOpenProductDetailsPageAndEnterQty(String prepItemName, String quantity,
+			String string) {
+
+		String string2 = "Issue";
+
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
+
+		log("Tap On Product,Open ProductDetailsPage And Enter Qty", LogType.STEP);
+		try {
+
+			final Target LocationItemProdDetailsEnterQuantity = new Target("LocationItemClickToOpenProddetails",
+					"//*[@class='mm-c-product-details__select-options']//*[@type='number']", Target.XPATH);
+
+			getCommand().click(LocationItemProdDetailsEnterQuantity);
+			getCommand().waitForTargetPresent(LocationItemProdDetailsEnterQuantity);
+			getCommand().sendKeys(LocationItemProdDetailsEnterQuantity, quantity);
+
+			log("Tap On Product, Open ProductDetailsPage And Enter Qty :Pass", LogType.VERIFICATION_STEP);
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Tap On Product, Open ProductDetailsPage And Enter Qty :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+
+		return this;
+
+	}
+
+	@SuppressWarnings("rawtypes")
+	public LocationsPage SyscoProductSelect(String string) {
+
+		String string2 = "Issue";
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
+		log("Selecting an item from location ", LogType.STEP);
+		try {
+			final Target Product_Select = new Target("Product_Select",
+					"((//*[@class='mm-c-product-list__details-wrapper']//*[@class='mm-c-product-list__details']//*[contains(text(),'"
+							+ SetupInventoryPage.AddedItemId1[0]
+							+ "')]/ancestor::div[@class='mm-c-product-list__details-wrapper'])//a)[1]",
+					Target.XPATH);
+		
+			
+            
+			getCommand().waitForTargetPresent(Product_Select);
+
+			getCommand().clickWithJavascript(Product_Select);
+			
+			
+			getCommand().waitForTargetPresent(ProductDetailsPage);
+			log("Selecting an item from location :Pass", LogType.VERIFICATION_STEP);
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Selecting an item from location :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+
+		return this;
+
+	}
+
+	@SuppressWarnings("rawtypes")
 	public LocationsPage VerifyItemsOnDefaultLocation(String location, String string) {
 
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
+		log("locationItem verify ", LogType.STEP);
 		try {
 
 			if (getCommand().isTargetPresent(ItemVerify)) {
+
 				count = getCommand().getTargetCount(ItemVerify);
+              
 				getCommand().waitFor(5);
 				final Target Locations_check = new Target("Locations_check",
 						"//*[@class='mm-c-product-list__details-wrapper']//*[@class='mm-c-product-list__details']//*[@class='mm-c-product-list__location']//*[contains(text(),'"
@@ -2249,8 +2274,8 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 						Target.XPATH);
 
 				if (getCommand().isTargetPresent(Locations_check)) {
-
 					log("Item verification done :Pass", LogType.VERIFICATION_STEP);
+
 				} else {
 
 					throw new Exception();
@@ -2258,8 +2283,9 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 			}
 
+			log("Item verification done :Pass", LogType.VERIFICATION_STEP);
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Item verification done  :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -2271,6 +2297,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	@SuppressWarnings("rawtypes")
 	public LocationsPage VerifyOptionsOnSetupLocations(String string) {
+
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
@@ -2280,13 +2307,15 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 			if (getCommand().isTargetPresent(DefaultLocation) && getCommand().isTargetPresent(DefaultLocationDesc)
 					&& getCommand().isTargetPresent(CustomLocations)
 					&& getCommand().isTargetPresent(CustomLocationsDesc)) {
-				log("Set up location verification done :Pass", LogType.VERIFICATION_STEP);
+				log("All options are there", LogType.STEP);
 			} else {
+
 				throw new Exception();
 			}
 
+			log("Set up location verification done :Pass", LogType.VERIFICATION_STEP);
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Set up location verification done  :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -2297,123 +2326,10 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 	}
 
 	@SuppressWarnings("rawtypes")
-	public LocationsPage PdtDetailPage_Location1_EnterQty(String quantity, String loc1, String string) {
-		String string2 = "Issue";
-
-		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
-
-		try {
-
-			final Target LocationItemProdDetailsEnterQuantity = new Target("LocationItemClickToOpenProddetails",
-					"//*[@class='input-group']//*[contains(text(),'" + loc1
-							+ "')]/ancestor::div[@class='input-group']//*[@type='number']",
-					Target.XPATH);
-
-			getCommand().click(LocationItemProdDetailsEnterQuantity);
-			getCommand().clear(LocationItemProdDetailsEnterQuantity);
-			getCommand().sendKeys(LocationItemProdDetailsEnterQuantity, quantity);
-
-			log("Entered qty on first location on product detail page :Pass", LogType.VERIFICATION_STEP);
-		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
-			getCommand().captureScreenshot(finalPath1);
-			log("Entered qty on first location on product detail page :Fail", LogType.VERIFICATION_STEP);
-			Assert.assertTrue(false);
-		}
-
-		return this;
-
-	}
-
-	@SuppressWarnings("rawtypes")
-	public LocationsPage PdtDetailPage_Location2_EnterQty(String quantity, String loc2, String string) {
-
-		String string2 = "Issue";
-		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
-
-		try {
-			final Target LocationItemProdDetailsEnterQuantity = new Target("LocationItemClickToOpenProddetails",
-					"//*[@class='input-group']//*[contains(text(),'" + loc2
-							+ "')]/ancestor::div[@class='input-group']//*[@type='number']",
-					Target.XPATH);
-
-			getCommand().click(LocationItemProdDetailsEnterQuantity);
-			getCommand().clear(LocationItemProdDetailsEnterQuantity);
-			getCommand().sendKeys(LocationItemProdDetailsEnterQuantity, quantity);
-
-			log("Entered qty on second location on product detail page :Pass", LogType.VERIFICATION_STEP);
-		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
-			getCommand().captureScreenshot(finalPath1);
-			log("Entered qty on second location on product detail page :Fail", LogType.VERIFICATION_STEP);
-			Assert.assertTrue(false);
-		}
-
-		return this;
-
-	}
-
-	@SuppressWarnings("rawtypes")
-	public LocationsPage verifyLocations2(String string, String locationName, String locationNumber) {
-
-		String string2 = "Issue";
-		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
-		log("Entering anotherloc", LogType.STEP);
-
-		try {
-			final Target LocationnameNumberVerification = new Target("LocationnameNumberVerification",
-					"//*[contains(text(),'" + locationName + "')]", Target.XPATH);
-			getCommand().waitForTargetPresent(LocationnameNumberVerification);
-			String locationNameToBeVerified = getCommand().getText(LocationnameNumberVerification);
-			if (!(locationNameToBeVerified.contains(locationNumber))) {
-				throw new Exception();
-			}
-
-			log("Entered second loc in Locations page :Pass", LogType.VERIFICATION_STEP);
-
-		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
-			getCommand().captureScreenshot(finalPath1);
-			log("LocationName(x) :Fail", LogType.VERIFICATION_STEP);
-			Assert.assertTrue(false);
-		}
-
-		return this;
-
-	}
-
-	@SuppressWarnings("rawtypes")
-	public LocationsPage SyscoProductSelect(String string) {
-		String string2 = "Issue";
-		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
-		log("Selecting sysco item from location ", LogType.STEP);
-		try {
-
-			final Target Product_Select = new Target("Product_Select",
-					"((//*[@class='mm-c-product-list__details-wrapper']//*[@class='mm-c-product-list__details']//*[contains(text(),'"
-							+ SetupInventoryPage.AddedItemId1[0]
-							+ "')]/ancestor::div[@class='mm-c-product-list__details-wrapper'])//a)[1]",
-					Target.XPATH);
-
-			getCommand().waitForTargetPresent(Product_Select);
-			
-			getCommand().click(Product_Select);
-			getCommand().waitForTargetPresent(ProductDetailsPage);
-			log("Selecting an item from location :Pass", LogType.VERIFICATION_STEP);
-		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
-			getCommand().captureScreenshot(finalPath1);
-			log("Selecting an item from location :Fail", LogType.VERIFICATION_STEP);
-			Assert.assertTrue(false);
-		}
-
-		return this;
-
-	}
-
-	@SuppressWarnings("rawtypes")
 	public LocationsPage EditProduct_NickName(String nickName, String string) {
+
 		String string2 = "Issue";
+
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Assigining nickname to product", LogType.STEP);
 		try {
@@ -2429,7 +2345,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 			}
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Assigining nickname to product: Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -2451,64 +2367,32 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 			String secondLoc = getCommand().getText(SecondLocation);
 			String thirdLoc = getCommand().getText(ThirdLocation);
 			
-			//fourthLoc = fourthLoc.toLowerCase();
-			if(getCommand().isTargetVisibleAfterWait(FourthLocation,3)){
+
+		//	fourthLoc = fourthLoc.toLowerCase();
+			if(getCommand().isTargetPresentAfterWait(FourthLocation,3)){
 				String fourthLoc = getCommand().getText(FourthLocation);
 				if (firstLoc.contains(cooler) && secondLoc.contains(freezer) && thirdLoc.contains(dry)
 						&& fourthLoc.contains(noloc)) {
-					log("VerifyOrderOfLocations:Pass", LogType.VERIFICATION_STEP);
+					log("Order Correct", LogType.STEP);
 				} else {
-					System.out.println("Order incorrect");
+
 					throw new Exception();
 				}
 			}
-				else{
-					if (firstLoc.contains(cooler) && secondLoc.contains(freezer) && thirdLoc.contains(dry))
-							 {
-						log("VerifyOrderOfLocations:Pass", LogType.VERIFICATION_STEP);
-					} else {
-						System.out.println("Order incorrect");
-						throw new Exception();
-					}
-				}
 			
-	
+			else{
+				if (firstLoc.contains(cooler) && secondLoc.contains(freezer) && thirdLoc.contains(dry)) {
+				log("Order Correct", LogType.STEP);
+				} else {
 
-		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
-			getCommand().captureScreenshot(finalPath1);
-			log("VerifyOrderOfLocations :Fail", LogType.VERIFICATION_STEP);
-			Assert.assertTrue(false);
-		}
-
-		return this;
-
-	}
-
-	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
-	public LocationsPage AddLocationFreezer(String string) {
-		String string2 = "Issue";
-		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
-
-		try {
-
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
-			getCommand().waitForTargetPresent(AddLocation_LocTypeFreezer);
-			getCommand().click(AddLocation_LocTypeFreezer);
-
-			Set<String> contextNames = ((IOSDriver) getCommand().driver).getContextHandles();
-
-			for (String contextName : contextNames) {
-				System.out.println(contextNames);
+				throw new Exception();
+				}
 			}
-			System.out.println(((IOSDriver) getCommand().driver).context((String) contextNames.toArray()[1]));
-			log("Selected freezer :Pass", LogType.VERIFICATION_STEP);
-		}
-
-		catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			log("Verify Order Of Locations:Pass", LogType.VERIFICATION_STEP);
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
-			log("Selected freezer :Fail", LogType.VERIFICATION_STEP);
+			log("Verify Order Of Locations :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
 
@@ -2517,28 +2401,66 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 	}
 
 	@SuppressWarnings("rawtypes")
-	public LocationsPage ViewItemsOnLocation(String string) {
+	public LocationsPage PdtDetailPage_Location1_EnterQty(String quantity, String loc1, String string) {
+
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
+
 		try {
 
-			getCommand().waitForTargetPresent(ViewItemsOnLocation);
+			final Target LocationItemProdDetailsEnterQuantity = new Target("LocationItemClickToOpenProddetails",
+					"//*[@class='list-group']//*[contains(text(),'" + loc1
+							+ "')]/ancestor::div[@class='mm-c-product-details__location']//*[@class='form-group']//*[@type='number']",
+					Target.XPATH);
 
-			getCommand().click(ViewItemsOnLocation);
-			log("tap on view items on location  :Pass", LogType.VERIFICATION_STEP);
+			getCommand().click(LocationItemProdDetailsEnterQuantity);
+			getCommand().clear(LocationItemProdDetailsEnterQuantity);
+			getCommand().sendKeys(LocationItemProdDetailsEnterQuantity, quantity);
 
+			log("Entered qty on first location on product detail page :Pass", LogType.VERIFICATION_STEP);
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
-			log("tap on view items on location  :Fail", LogType.VERIFICATION_STEP);
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
+			log("Entered qty on first location on product detail page :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
 
 		return this;
+
+	}
+
+	@SuppressWarnings("rawtypes")
+	public LocationsPage PdtDetailPage_Location2_EnterQty(String quantity, String loc2, String string) {
+
+		String string2 = "Issue";
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
+
+		try {
+
+			final Target LocationItemProdDetailsEnterQuantity = new Target("LocationItemClickToOpenProddetails",
+					"//*[@class='list-group']//*[contains(text(),'" + loc2
+							+ "')]/ancestor::div[@class='mm-c-product-details__location']//*[@class='form-group']//*[@type='number']",
+					Target.XPATH);
+
+			getCommand().click(LocationItemProdDetailsEnterQuantity);
+			getCommand().clear(LocationItemProdDetailsEnterQuantity);
+			getCommand().sendKeys(LocationItemProdDetailsEnterQuantity, quantity);
+
+			log("Entered qty on second location on product detail page :Pass", LogType.VERIFICATION_STEP);
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Entered qty on second location on product detail page :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+
+		return this;
+
 	}
 
 	@SuppressWarnings("rawtypes")
 	public LocationsPage VerifyCustomListItemsCustomLocation(String location, String string) {
+
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
@@ -2569,7 +2491,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 			log("Verifying location of items  :Pass", LogType.VERIFICATION_STEP);
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Verifying location of items   :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -2581,6 +2503,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	@SuppressWarnings("rawtypes")
 	public LocationsPage VerifyDeletedItemsCategory(String location, String string) {
+
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
@@ -2617,14 +2540,13 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 			}
 
-			System.out.println("Flag1: " + flag1 + flag2 + flag3);
 			if (!(flag2 && flag1 && flag3)) {
 				throw new Exception();
 			}
 
 			log("Verifying category of items  :Pass", LogType.VERIFICATION_STEP);
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Verifying category of items    :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -2635,46 +2557,32 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 	}
 
 	@SuppressWarnings("rawtypes")
-	public LocationsPage VerifyMultipleOGItemsCount(String locationName, String string) {
+	public LocationsPage ViewItemsOnLocation(String string) {
 
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
-
-		log("Verifying item count", LogType.STEP);
-
 		try {
 
-			final Target LocationnameNumberVerification = new Target("LocationnameNumberVerification",
-					"//*[contains(text(),'" + locationName + "')]", Target.XPATH);
+			getCommand().waitFor(15);
+			getCommand().waitForTargetPresent(ViewItemsOnLocation);
 
-			getCommand().waitForTargetPresent(LocationnameNumberVerification);
+			getCommand().click(ViewItemsOnLocation);
+			getCommand().waitFor(10);
+			log("Tap on view items on location  :Pass", LogType.VERIFICATION_STEP);
 
-			String locationNameToBeVerified = getCommand().getText(LocationnameNumberVerification);
-
-			if (!(locationNameToBeVerified.contains("SetupInventoryPage.noOfElements"))) {
-
-				throw new Exception();
-
-			}
-
-			log("Item count verified :Pass", LogType.VERIFICATION_STEP);
-
-		}
-
-		catch (Exception e) {
-
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			log("Tap on view items on location  :Fail", LogType.VERIFICATION_STEP);
 			getCommand().captureScreenshot(finalPath1);
-			log("Item count verified,LocationName(x) :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
-
 		}
-		return this;
 
+		return this;
 	}
 
 	@SuppressWarnings("rawtypes")
 	public LocationsPage VerifyCountOfItemsInLocation(String locationName, String string) {
+
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
@@ -2688,7 +2596,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 			getCommand().waitForTargetPresent(LocationnameNumberVerification);
 
 			String locationNameToBeVerified = getCommand().getText(LocationnameNumberVerification);
-
+			
 			if (!(locationNameToBeVerified.contains("(" + count.toString() + ")"))) {
 
 				throw new Exception();
@@ -2701,7 +2609,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 		catch (Exception e) {
 
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Item count verified,LocationName(x) :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -2711,33 +2619,25 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 	}
 	
-	
-	@SuppressWarnings({ "unchecked", "rawtypes", "unused" })
+	@SuppressWarnings("rawtypes")
 	public LocationsPage TapOnCancel(String string) {
-		String string2 = "Issue";
 
-		String finalPath1 = SitePage.drivePath + string + string2
-				+ SitePage.pathExtension;
+		String string2 = "Issue";
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+
 			getCommand().waitForTargetPresent(Cancel);
 			if (getCommand().isTargetPresent(Cancel)) {
 
 				getCommand().click(Cancel);
+
 				log("Tapped on Cancel", LogType.VERIFICATION_STEP);
 
 			}
-			Set<String> contextNames = ((IOSDriver) getCommand().driver)
-					.getContextHandles();
 
-			for (String contextName : contextNames) {
-				System.out.println(contextNames);
-			}
-			System.out.println(((IOSDriver) getCommand().driver)
-					.context((String) contextNames.toArray()[1]));
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			log("Tapped on Cancel :Fail", LogType.VERIFICATION_STEP);
 			getCommand().captureScreenshot(finalPath1);
 			Assert.assertTrue(false);
@@ -2745,7 +2645,39 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 		return this;
 	}
+
 	
+	@SuppressWarnings("rawtypes")
+	public LocationsPage VerifyOptionsOnCustomLocations(String string) {
+
+		String string2 = "Issue";
+		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
+
+		log("Custom locations page verify ", LogType.STEP);
+		try {
+			
+			getCommand().waitForTargetPresent(SetUp_Pg2Header);
+			
+			if (getCommand().isTargetPresent(CreateLocationDesc) && getCommand().isTargetPresent(SetUp_Pg2Header)
+					&& getCommand().isTargetPresent(ADD_AnotherLocation)) {
+				log("All options are there", LogType.STEP);
+			} else {
+
+				throw new Exception();
+			}
+
+			log("Custom  location verification done :Pass", LogType.VERIFICATION_STEP);
+		} catch (Exception e) {
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			getCommand().captureScreenshot(finalPath1);
+			log("Custom location verification done  :Fail", LogType.VERIFICATION_STEP);
+			Assert.assertTrue(false);
+		}
+
+		return this;
+
+	}
+
 	@SuppressWarnings("rawtypes")
 	public LocationsPage verifyUIAfterSearch(String string) {
 		String string2 = "Issue";
@@ -2755,9 +2687,9 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 		try {
 		
 			
-			boolean flag = getCommand().isTargetPresent(EditWeb);
-			boolean flag1 = getCommand().isTargetPresent(AddWeb);
-			boolean flag2 = getCommand().isTargetPresent(DoneWeb);
+			boolean flag = getCommand().isTargetPresent(Edit);
+			boolean flag1 = getCommand().isTargetPresent(Add);
+			boolean flag2 = getCommand().isTargetPresent(Done);
 			
 			if (flag||flag1||flag2) {
 				throw new Exception();
@@ -2767,7 +2699,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 		}
 
 		catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("verify UI After Search :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -2776,6 +2708,10 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 		return this;
 
 	}
+
+
+
+
 	@SuppressWarnings("rawtypes")
 	public LocationsPage GetLocationsNameText(String string)
 	{
@@ -2799,7 +2735,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 		
 		
 		catch(Exception e){
-			((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
 			 getCommand().captureScreenshot(finalPath1); 
 			log("Location Names are stored into an Array  :Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -2807,39 +2743,9 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 		return this;
 		
 	}
+	
+	
 	@SuppressWarnings("rawtypes")
-	public LocationsPage VerifyOptionsOnCustomLocations(String string) {
-
-		String string2 = "Issue";
-		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
-
-		log("Custom locations page verify ", LogType.STEP);
-		try {
-			
-			getCommand().waitForTargetPresent(SetUp_Pg2Header);
-			
-			if (getCommand().isTargetPresent(CreateLocationDesc) && getCommand().isTargetPresent(SetUp_Pg2Header)
-					&& getCommand().isTargetPresent(ADD_AnotherLocation)) {
-				log("All options are there", LogType.STEP);
-			} else {
-
-				throw new Exception();
-			}
-
-			log("Custom  location verification done :Pass", LogType.VERIFICATION_STEP);
-		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
-			getCommand().captureScreenshot(finalPath1);
-			log("Custom location verification done  :Fail", LogType.VERIFICATION_STEP);
-			Assert.assertTrue(false);
-		}
-
-		return this;
-
-	}
-	
-	
-@SuppressWarnings("rawtypes")
 	public LocationsPage CustomLocItemsCheckInNoLocation(String string)
 	{
 		  String string2="Issue";
@@ -2904,7 +2810,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 		
 		
 		catch(Exception e){
-			((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
 			 getCommand().captureScreenshot(finalPath1); 
 			log("Items in custom location are not assigned to no location :Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -2947,7 +2853,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 		}
 		
 			catch(Exception e){
-			((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
 			 getCommand().captureScreenshot(finalPath1); 
 			log("No items present in no location:Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -2982,7 +2888,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 		}
 		
 			catch(Exception e){
-			((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
 			 getCommand().captureScreenshot(finalPath1); 
 			log("Items in no location are not associated with no location text  :Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -3022,7 +2928,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 		}
 		
 			catch(Exception e){
-			((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
 			 getCommand().captureScreenshot(finalPath1); 
 			log("Uncategorized items present in no location:Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -3052,10 +2958,9 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 		NoLocItemId_1 = NoLocItemId.split("/");
 		
 		 
-		boolean flag = getCommand().isTargetPresent(EditWeb);
-		boolean flag1 = getCommand().isTargetPresent(AddWeb);
-		
-		boolean flag2 = getCommand().isTargetPresent(DoneWeb);
+		boolean flag = getCommand().isTargetPresent(Edit);
+		boolean flag1 = getCommand().isTargetPresent(Add);
+		boolean flag2 = getCommand().isTargetPresent(Done);
 		
 		if (flag||flag1||flag2) {
 			throw new Exception();
@@ -3065,7 +2970,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 		}
 		
 			catch(Exception e){
-			((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
 			 getCommand().captureScreenshot(finalPath1); 
 			log("No operations can be performed in No location  :Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -3103,7 +3008,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 		}
 		
 			catch(Exception e){
-			((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
 			 getCommand().captureScreenshot(finalPath1); 
 			log("Items in no location is not available in other location:Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -3111,37 +3016,9 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 		return this;
 		
 	}
-
 	
-	@SuppressWarnings("rawtypes")
-	public LocationsPage LocationsDelete(String string)
-	{
-		  String string2="Issue";
-	    String finalPath1=SitePage.drivePath+string+string2+SitePage.pathExtension;
-	    
-	    log("Deleting locations from product card", LogType.STEP);
-	  
-	    getCommand().waitFor(5);
-		
-	try{
-		getCommand().click(ProductCardDelete_Loc1);
-	//	getCommand().click(ProductCardDelete_Loc2);
-		
-		getCommand().waitForTargetPresent(ProductCardDeleteAllLoc_Confirmation);
-		
-		log("Deleting all locations from product card:Pass",LogType.VERIFICATION_STEP);
-		
-		}
-		
-			catch(Exception e){
-			((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
-			 getCommand().captureScreenshot(finalPath1); 
-			log("Deleting all locations from product card :Fail",LogType.VERIFICATION_STEP);
-			Assert.assertTrue(false);
-		}
-		return this;
-		
-	}
+	
+	
 	
 	@SuppressWarnings("rawtypes")
 	public LocationsPage TapOnNoDelete(String string) {
@@ -3159,7 +3036,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 			}
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Tap on no delete button :Fail", LogType.VERIFICATION_STEP);
 
@@ -3168,9 +3045,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 		return this;
 	}
-
-
-@SuppressWarnings("rawtypes")
+	@SuppressWarnings("rawtypes")
 	public LocationsPage LocationsDelete(String loc,String string)
 	{
 		  String string2="Issue";
@@ -3192,7 +3067,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 		}
 		
 			catch(Exception e){
-			((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
+			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
 			 getCommand().captureScreenshot(finalPath1); 
 			log("Deleting  location from product card :Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -3216,7 +3091,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 			
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Deleting all locations from product card confirmation:Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -3224,63 +3099,29 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 
 		return this;
 	}
-
-
-@SuppressWarnings("rawtypes")
-	public LocationsPage SelectItemFromLocations(String string) {
-
-		log("Selecting item from location", LogType.STEP);
-
-		String string2 = "Issue";
-
-		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
-		try {
-			getCommand().waitForTargetPresent(LocationsPage_Header);
-			final Target Product_Select = new Target("Product_Select",
-					"(//*[@class='mm-c-product-list__details-wrapper']//a)[1]",
-					Target.XPATH);
-			if (getCommand().isTargetPresent(LocationsPage_Header)) {
-				
-				getCommand().waitFor(5);
-				getCommand().click(Product_Select);
-				getCommand().waitFor(5);
-
-				log("Selecting item1 from locations :Pass", LogType.VERIFICATION_STEP);
-			}
-
-		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
-			getCommand().captureScreenshot(finalPath1);
-			log("Selecting item1 from locations:Fail", LogType.VERIFICATION_STEP);
-			Assert.assertTrue(false);
-		}
-
-		return this;
-
-	}
-
-
-@SuppressWarnings("rawtypes")
-	public LocationsPage FirstFoodItemQtyEnter(String qty,String string) {
+	
+	@SuppressWarnings("rawtypes")
+	public LocationsPage ItemQtyEnterById(String itemid,String qty,String string) {
 
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Adding qty for food item", LogType.STEP);
 		final Target FirstFoodItem_QtyEnter= new Target("FirstLocDelete_Icon",
-				"(//*[@class='mm-c-product-list__row-wrapper']//*[contains(text(),'Food') and not(contains(text(),'Non-Food'))])[1]/ancestor::div[@class='mm-c-product-list__row-wrapper']//*[@class='item-input mm-u-input-border mm-c-product-list__qty form-control']",
+				"(//*[@class='mm-c-product-list__row-wrapper']//*[contains(text(),'"+itemid+"')])[1]/ancestor::div[@class='mm-c-product-list__row-wrapper']//*[@class='item-input mm-u-input-border mm-c-product-list__qty form-control']",
 				Target.XPATH);
 		try {
 			
 				getCommand().waitFor(5);
-				getCommand().waitForTargetPresent(FirstFoodItem_QtyEnter);
-				getCommand().sendKeys(FirstFoodItem_QtyEnter, qty);
+				if(getCommand().isTargetPresentAfterWait(FirstFoodItem_QtyEnter,5)){
+					getCommand().sendKeys(FirstFoodItem_QtyEnter, qty);	
+				}
 				
 				log("Adding qty for food item:Pass",LogType.VERIFICATION_STEP);
 				
 			
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Adding qty for food item:Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -3289,7 +3130,7 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 		return this;
 	}
 	
-	@SuppressWarnings("rawtypes")
+/*	@SuppressWarnings("rawtypes")
 	public LocationsPage FirstNonFoodItemQtyEnter(String qty,String string) {
 
 		String string2 = "Issue";
@@ -3309,13 +3150,12 @@ public static final Target ProductCardDelete_Loc1= new Target("ProductCardDelete
 			
 
 		} catch (Exception e) {
-			((IOSDriver) getCommand().driver).context("NATIVE_APP");
+			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Adding qty for non-food item:Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
 
 		return this;
-	}
-
+	}*/
 }

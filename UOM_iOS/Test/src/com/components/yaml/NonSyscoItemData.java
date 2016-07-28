@@ -11,7 +11,8 @@ public class NonSyscoItemData {
 	public String  Weight;
 	public String  Price;
 	public String  ProductBrand;
-	
+	public String  Category1;
+	public String  Category2;
 	@SuppressWarnings("deprecation")
 	public static NonSyscoItemData fetch(String key){
 		BasePage pageObj = new BasePage();

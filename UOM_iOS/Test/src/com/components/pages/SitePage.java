@@ -1,4 +1,3 @@
-		
 		/**
 		 ********************************************************************************************************************************************
 		 ********************************************************************************************************************************************
@@ -17,79 +16,69 @@
 		 ********************************************************************************************************************************************
 		 ********************************************************************************************************************************************
 		 **/
+
 package com.components.pages;
 
 import com.components.repository.SiteRepository;
 
 import com.iwaf.framework.BasePage;
 
-
-
-public class SitePage extends BasePage
-
-
-{
-	public static	String drivePath="/Users/sujina_s/Desktop/Sysco/iOSScreenshot/";
-	public static String pathExtension=".png";
-
-	public static String string1="Success";
-	public static String string2="Issue";
-
-	protected SiteRepository repository;
+public class SitePage extends BasePage {
 	
-	SitePage(SiteRepository repository)
-	{
-		this.repository=repository;
-		
+	public static String drivePath = "/Users/jinita_jose/Desktop/ScreenShots_Android/WF/";
+	public static String pathExtension = ".png";
+
+	public static String string1 = "Success";
+	public static String string2 = "Issue";
+	
+	protected SiteRepository repository;
+
+	SitePage(SiteRepository repository) {
+		this.repository = repository;
+
 	}
 
-	public LoginPage _atLoginPage() 
-	{
+	public LoginPage _atLoginPage() {
 		return this.repository.loginPage();
 	}
-	public HomePage _atHomePage() 
-	{
+
+	public HomePage _atHomePage() {
 		return this.repository.homePage();
-		
+
 	}
 
-	
-	public VendorPage _atVendorPage() 
-	{
+	public VendorPage _atVendorPage() {
 		return this.repository.vendorPage();
 	}
-	public InventoryToolPage _atInventoryToolPage() 
-	{
+
+	public InventoryToolPage _atInventoryToolPage() {
 		return this.repository.inventoryToolPage();
 	}
-	public LocationsPage _atLocationsPage() 
-	{
+
+	public LocationsPage _atLocationsPage() {
 		return this.repository.locationsPage();
 	}
-	public SetupInventoryPage _atSetupInventoryPage()
-	{
+
+	public SetupInventoryPage _atSetupInventoryPage() {
 		return this.repository.setUpInventoryPage();
 	}
-	public PurchasesPage _atPurchasesPage()
-	{
+
+	public PurchasesPage _atPurchasesPage() {
 		return this.repository.purchasesPage();
 	}
-	public AccountsPage _atAccountsPage()
-	{
+
+	public AccountsPage _atAccountsPage() {
 		return this.repository.accountsPage();
 	}
-	public CategoryPage _atCategoryPage()
-	{
+
+	public CategoryPage _atCategoryPage() {
 		return this.repository.categoryPage();
 	}
-	public ListPage _atListPage()
-	{
+
+	public ListPage _atListPage() {
 		return this.repository.listPage();
 	}
-	public FoodCostPage _atFoodCostPage()
-	{
+	public FoodCostPage _atFoodCostPage() {
 		return this.repository.foodCostPage();
 	}
 }
-	
-	

@@ -1,5 +1,5 @@
 VendorDetailData1 : !!com.components.yaml.VendorDetailsData {
- VendorName       : ABC Vendor1,
+ VendorName       : Verka4,
  PhoneNum         : 9743210000,
  Address          : Test address,
  ContactInfo      : Tester,
@@ -7,7 +7,7 @@ VendorDetailData1 : !!com.components.yaml.VendorDetailsData {
  Note             : NA,
  }
 VendorDetailData2 : !!com.components.yaml.VendorDetailsData {
- VendorName       : ABC Vendor2,
+ VendorName       : Verka3,
  PhoneNum         : 9743210000,
  Address          : Test address,
  ContactInfo      : Tester,
@@ -15,15 +15,15 @@ VendorDetailData2 : !!com.components.yaml.VendorDetailsData {
  Note             : NA,
  }
 VendorDetailData3 : !!com.components.yaml.VendorDetailsData {
- VendorName       : ABC Vendor3,
- PhoneNum         : 8888444422,
- Address          : Test address edited,
- ContactInfo      : Tester edited,
- Email            : abcEdited@test.com,
- Note             : NA Edited,
+ VendorName       : Verka2,
+ PhoneNum         : 9743210000,
+ Address          : Test address,
+ ContactInfo      : Tester,
+ Email            : abc@test.com,
+ Note             : NA,
  }
 VendorDetailData4 : !!com.components.yaml.VendorDetailsData {
- VendorName       : ABC Vendor4,
+ VendorName       : Verka1,
  PhoneNum         : 9743210000,
  Address          : Test address,
  ContactInfo      : Tester,
@@ -31,7 +31,7 @@ VendorDetailData4 : !!com.components.yaml.VendorDetailsData {
  Note             : NA,
  } 
 VDNonsysco       : !!com.components.yaml.VendorDetailsData {
- VendorName       : ABC Vendor,
+ VendorName       : Bhola1,
  PhoneNum         : 9743210000,
  Address          : Test address,
  ContactInfo      : Tester,

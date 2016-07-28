@@ -22,6 +22,8 @@ public class PurchasesData {
 	public String InvTotal1;
 	public String Suggcat;
 	
+
+	
 	@SuppressWarnings("deprecation")
 	public static PurchasesData fetch(String key){
 		BasePage pageObj = new BasePage();
