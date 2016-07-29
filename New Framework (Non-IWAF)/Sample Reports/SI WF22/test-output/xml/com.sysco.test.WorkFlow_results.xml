@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="95.709">
+  <properties />
+  
+  
+            <testcase name="SI_WF22_CustomList_DefaultLoc_Customcategory" time="95.709" classname="com.sysco.test.WorkFlow" />
+      
+</testsuite>

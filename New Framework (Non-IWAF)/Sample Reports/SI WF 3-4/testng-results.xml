@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+    <line>
+      <![CDATA[Login page verification :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Save username verification :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Sign In]]>
+    </line>
+    <line>
+      <![CDATA[Sign in :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Navigating to Setup inventory page :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on skip :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Selected  orderguide  from SetupInventoryImportItems:Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on Continue :Pass]]>
+    </line>
+    <line>
+      <![CDATA[custom location clickElemented :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on Continue :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Custom locations page verify ]]>
+    </line>
+    <line>
+      <![CDATA[All options are there]]>
+    </line>
+    <line>
+      <![CDATA[Custom  location verification done :Pass]]>
+    </line>
+    <line>
+      <![CDATA[added location name :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Entering type Dry]]>
+    </line>
+    <line>
+      <![CDATA[Entered type in add Locations page :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Entered type in add Locations page :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Entering anotherloc]]>
+    </line>
+    <line>
+      <![CDATA[Entered second loc in Locations page :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Entering Location name]]>
+    </line>
+    <line>
+      <![CDATA[Entered location name2 in add Locations page :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Entering type Dry]]>
+    </line>
+    <line>
+      <![CDATA[Entered type in add Locations page :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Entered type in add Locations page :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on Next : Pass]]>
+    </line>
+    <line>
+      <![CDATA[ Adding Item from Order Guide]]>
+    </line>
+    <line>
+      <![CDATA[Multiple items selected :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on Next : Pass]]>
+    </line>
+    <line>
+      <![CDATA[Multiple items selected :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on done:Pass]]>
+    </line>
+    <line>
+      <![CDATA[Custom Category selected from Food cost page :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on Continue :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Category page verify ]]>
+    </line>
+    <line>
+      <![CDATA[Verify Options On Create custom category page:Pass]]>
+    </line>
+    <line>
+      <![CDATA[Create custom Category page verification done :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Creating multiple custom category]]>
+    </line>
+    <line>
+      <![CDATA[Custom Categories created:Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on Next : Pass]]>
+    </line>
+    <line>
+      <![CDATA[Multiple items selected :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Multiple items selected :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on Next : Pass]]>
+    </line>
+    <line>
+      <![CDATA[Multiple items selected :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on done:Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on TakeHome :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped  TrackInventory from inventory tools page:Pass]]>
+    </line>
+    <line>
+      <![CDATA[Selecting location]]>
+    </line>
+    <line>
+      <![CDATA[Location is selected for item :Pass]]>
+    </line>
+    <line>
+      <![CDATA[locationItem verify ]]>
+    </line>
+    <line>
+      <![CDATA[Item verification done :Pass]]>
+    </line>
+    <line>
+      <![CDATA[tap on back :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Selecting location]]>
+    </line>
+    <line>
+      <![CDATA[Location is selected for item :Pass]]>
+    </line>
+    <line>
+      <![CDATA[locationItem verify ]]>
+    </line>
+    <line>
+      <![CDATA[Item verification done :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Login page verification :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Save username verification :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Sign In]]>
+    </line>
+    <line>
+      <![CDATA[Sign in :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Navigating to Setup inventory page :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on skip :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Selected  orderguide  from SetupInventoryImportItems:Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on Continue :Pass]]>
+    </line>
+    <line>
+      <![CDATA[default location clickElemented :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on Continue :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Custom Category selected from Food cost page :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on Continue :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Creating multiple custom category]]>
+    </line>
+    <line>
+      <![CDATA[Custom Categories created:Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on Next : Pass]]>
+    </line>
+    <line>
+      <![CDATA[Multiple items selected :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on Next : Pass]]>
+    </line>
+    <line>
+      <![CDATA[Multiple items selected :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on done:Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on TakeHome :Pass]]>
+    </line>
+    <line>
+      <![CDATA[In locations Page]]>
+    </line>
+    <line>
+      <![CDATA[Navigating to Locations page :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Order of locations verify]]>
+    </line>
+    <line>
+      <![CDATA[VerifyOrderOfLocations:Pass]]>
+    </line>
+    <line>
+      <![CDATA[tap on back :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped  TrackInventory from inventory tools page:Pass]]>
+    </line>
+    <line>
+      <![CDATA[Order of locations verify]]>
+    </line>
+    <line>
+      <![CDATA[VerifyOrderOfLocations:Pass]]>
+    </line>
+    <line>
+      <![CDATA[Selecting location]]>
+    </line>
+    <line>
+      <![CDATA[Location is selected for item :Pass]]>
+    </line>
+    <line>
+      <![CDATA[No location Items verification ]]>
+    </line>
+    <line>
+      <![CDATA[No items present in no location: Pass]]>
+    </line>
+  </reporter-output>
+  <suite name="Suite" duration-ms="584231" started-at="2016-07-28T11:31:07Z" finished-at="2016-07-28T11:40:51Z">
+    <groups>
+      <group name="SI - WF 4">
+        <method signature="WorkFlow.SI_WF4_OG_DefaultLocation_CustomCategory()[pri:0, instance:com.sysco.test.WorkFlow@63e2203c]" name="SI_WF4_OG_DefaultLocation_CustomCategory" class="com.sysco.test.WorkFlow"/>
+      </group> <!-- SI - WF 4 -->
+      <group name="SI - WF 3">
+        <method signature="WorkFlow.SI_WF3_OG_CustomMultipleLocation_CustomMultipleCategory()[pri:0, instance:com.sysco.test.WorkFlow@63e2203c]" name="SI_WF3_OG_CustomMultipleLocation_CustomMultipleCategory" class="com.sysco.test.WorkFlow"/>
+      </group> <!-- SI - WF 3 -->
+    </groups>
+    <test name="Test" duration-ms="584231" started-at="2016-07-28T11:31:07Z" finished-at="2016-07-28T11:40:51Z">
+      <class name="com.sysco.test.WorkFlow">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.sysco.test.WorkFlow@63e2203c]" name="setUp" is-config="true" duration-ms="20091" started-at="2016-07-28T17:01:07Z" finished-at="2016-07-28T17:01:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="SI_WF3_OG_CustomMultipleLocation_CustomMultipleCategory()[pri:0, instance:com.sysco.test.WorkFlow@63e2203c]" name="SI_WF3_OG_CustomMultipleLocation_CustomMultipleCategory" duration-ms="256247" started-at="2016-07-28T17:01:27Z" description="SI - WF 3-OG + Cus Loc + Cust Category" finished-at="2016-07-28T17:05:43Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Login page verification :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Save username verification :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Sign In]]>
+            </line>
+            <line>
+              <![CDATA[Sign in :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Navigating to Setup inventory page :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on skip :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Selected  orderguide  from SetupInventoryImportItems:Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on Continue :Pass]]>
+            </line>
+            <line>
+              <![CDATA[custom location clickElemented :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on Continue :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Custom locations page verify ]]>
+            </line>
+            <line>
+              <![CDATA[All options are there]]>
+            </line>
+            <line>
+              <![CDATA[Custom  location verification done :Pass]]>
+            </line>
+            <line>
+              <![CDATA[added location name :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Entering type Dry]]>
+            </line>
+            <line>
+              <![CDATA[Entered type in add Locations page :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Entered type in add Locations page :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Entering anotherloc]]>
+            </line>
+            <line>
+              <![CDATA[Entered second loc in Locations page :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Entering Location name]]>
+            </line>
+            <line>
+              <![CDATA[Entered location name2 in add Locations page :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Entering type Dry]]>
+            </line>
+            <line>
+              <![CDATA[Entered type in add Locations page :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Entered type in add Locations page :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on Next : Pass]]>
+            </line>
+            <line>
+              <![CDATA[ Adding Item from Order Guide]]>
+            </line>
+            <line>
+              <![CDATA[Multiple items selected :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on Next : Pass]]>
+            </line>
+            <line>
+              <![CDATA[Multiple items selected :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on done:Pass]]>
+            </line>
+            <line>
+              <![CDATA[Custom Category selected from Food cost page :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on Continue :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Category page verify ]]>
+            </line>
+            <line>
+              <![CDATA[Verify Options On Create custom category page:Pass]]>
+            </line>
+            <line>
+              <![CDATA[Create custom Category page verification done :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Creating multiple custom category]]>
+            </line>
+            <line>
+              <![CDATA[Custom Categories created:Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on Next : Pass]]>
+            </line>
+            <line>
+              <![CDATA[Multiple items selected :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Multiple items selected :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on Next : Pass]]>
+            </line>
+            <line>
+              <![CDATA[Multiple items selected :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on done:Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on TakeHome :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped  TrackInventory from inventory tools page:Pass]]>
+            </line>
+            <line>
+              <![CDATA[Selecting location]]>
+            </line>
+            <line>
+              <![CDATA[Location is selected for item :Pass]]>
+            </line>
+            <line>
+              <![CDATA[locationItem verify ]]>
+            </line>
+            <line>
+              <![CDATA[Item verification done :Pass]]>
+            </line>
+            <line>
+              <![CDATA[tap on back :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Selecting location]]>
+            </line>
+            <line>
+              <![CDATA[Location is selected for item :Pass]]>
+            </line>
+            <line>
+              <![CDATA[locationItem verify ]]>
+            </line>
+            <line>
+              <![CDATA[Item verification done :Pass]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- SI_WF3_OG_CustomMultipleLocation_CustomMultipleCategory -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.sysco.test.WorkFlow@63e2203c]" name="tearDown" is-config="true" duration-ms="1982" started-at="2016-07-28T17:05:43Z" finished-at="2016-07-28T17:05:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.sysco.test.WorkFlow@63e2203c]" name="setUp" is-config="true" duration-ms="18099" started-at="2016-07-28T17:05:45Z" finished-at="2016-07-28T17:06:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="SI_WF4_OG_DefaultLocation_CustomCategory()[pri:0, instance:com.sysco.test.WorkFlow@63e2203c]" name="SI_WF4_OG_DefaultLocation_CustomCategory" duration-ms="285336" started-at="2016-07-28T17:06:03Z" description="SI - WF 4-OG + Default Loc + Custom Category " finished-at="2016-07-28T17:10:49Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Login page verification :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Save username verification :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Sign In]]>
+            </line>
+            <line>
+              <![CDATA[Sign in :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Navigating to Setup inventory page :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on skip :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Selected  orderguide  from SetupInventoryImportItems:Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on Continue :Pass]]>
+            </line>
+            <line>
+              <![CDATA[default location clickElemented :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on Continue :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Custom Category selected from Food cost page :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on Continue :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Creating multiple custom category]]>
+            </line>
+            <line>
+              <![CDATA[Custom Categories created:Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on Next : Pass]]>
+            </line>
+            <line>
+              <![CDATA[Multiple items selected :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on Next : Pass]]>
+            </line>
+            <line>
+              <![CDATA[Multiple items selected :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on done:Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on TakeHome :Pass]]>
+            </line>
+            <line>
+              <![CDATA[In locations Page]]>
+            </line>
+            <line>
+              <![CDATA[Navigating to Locations page :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Order of locations verify]]>
+            </line>
+            <line>
+              <![CDATA[VerifyOrderOfLocations:Pass]]>
+            </line>
+            <line>
+              <![CDATA[tap on back :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped  TrackInventory from inventory tools page:Pass]]>
+            </line>
+            <line>
+              <![CDATA[Order of locations verify]]>
+            </line>
+            <line>
+              <![CDATA[VerifyOrderOfLocations:Pass]]>
+            </line>
+            <line>
+              <![CDATA[Selecting location]]>
+            </line>
+            <line>
+              <![CDATA[Location is selected for item :Pass]]>
+            </line>
+            <line>
+              <![CDATA[No location Items verification ]]>
+            </line>
+            <line>
+              <![CDATA[No items present in no location: Pass]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- SI_WF4_OG_DefaultLocation_CustomCategory -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.sysco.test.WorkFlow@63e2203c]" name="tearDown" is-config="true" duration-ms="2448" started-at="2016-07-28T17:10:49Z" finished-at="2016-07-28T17:10:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.sysco.test.WorkFlow -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[Login page verification :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Save username verification :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Sign In]]>
+    </line>
+    <line>
+      <![CDATA[Sign in :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Navigating to Setup inventory page :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on skip :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Selected  orderguide  from SetupInventoryImportItems:Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on Continue :Pass]]>
+    </line>
+    <line>
+      <![CDATA[default location clickElemented :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on Continue :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Selecting suggested category from Food cost page]]>
+    </line>
+    <line>
+      <![CDATA[Suggested Category selected :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on Continue :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on TakeHome :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped  TrackInventory from inventory tools page:Pass]]>
+    </line>
+    <line>
+      <![CDATA[Order of locations verify]]>
+    </line>
+    <line>
+      <![CDATA[VerifyOrderOfLocations:Pass]]>
+    </line>
+  </reporter-output>
+  <suite name="Suite2" duration-ms="95691" started-at="2016-07-29T07:04:27Z" finished-at="2016-07-29T07:06:02Z">
+    <groups>
+      <group name="SI - WF 33">
+        <method signature="WorkFlow.SI_WF33_OG_DefaultLocation_SuggestedCategory()[pri:0, instance:com.sysco.test.WorkFlow@d2cc05a]" name="SI_WF33_OG_DefaultLocation_SuggestedCategory" class="com.sysco.test.WorkFlow"/>
+      </group> <!-- SI - WF 33 -->
+    </groups>
+    <test name="Test" duration-ms="95691" started-at="2016-07-29T07:04:27Z" finished-at="2016-07-29T07:06:02Z">
+      <class name="com.sysco.test.WorkFlow">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.sysco.test.WorkFlow@d2cc05a]" name="setUp" is-config="true" duration-ms="8758" started-at="2016-07-29T12:34:27Z" finished-at="2016-07-29T12:34:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="SI_WF33_OG_DefaultLocation_SuggestedCategory()[pri:0, instance:com.sysco.test.WorkFlow@d2cc05a]" name="SI_WF33_OG_DefaultLocation_SuggestedCategory" duration-ms="85208" started-at="2016-07-29T12:34:35Z" description="SI - WF 33-OG + Default Loc + Suggested Category" finished-at="2016-07-29T12:36:01Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Login page verification :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Save username verification :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Sign In]]>
+            </line>
+            <line>
+              <![CDATA[Sign in :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Navigating to Setup inventory page :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on skip :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Selected  orderguide  from SetupInventoryImportItems:Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on Continue :Pass]]>
+            </line>
+            <line>
+              <![CDATA[default location clickElemented :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on Continue :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Selecting suggested category from Food cost page]]>
+            </line>
+            <line>
+              <![CDATA[Suggested Category selected :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on Continue :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on TakeHome :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped  TrackInventory from inventory tools page:Pass]]>
+            </line>
+            <line>
+              <![CDATA[Order of locations verify]]>
+            </line>
+            <line>
+              <![CDATA[VerifyOrderOfLocations:Pass]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- SI_WF33_OG_DefaultLocation_SuggestedCategory -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.sysco.test.WorkFlow@d2cc05a]" name="tearDown" is-config="true" duration-ms="1714" started-at="2016-07-29T12:36:01Z" finished-at="2016-07-29T12:36:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.sysco.test.WorkFlow -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite2 -->
+</testng-results>

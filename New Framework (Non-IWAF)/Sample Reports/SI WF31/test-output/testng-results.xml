@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[Login page verification :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Save username verification :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Sign In]]>
+    </line>
+    <line>
+      <![CDATA[Sign in :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Navigating to Setup inventory page :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on skip :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Selecting custom list  ]]>
+    </line>
+    <line>
+      <![CDATA[Selected  custom list  from SetupInventoryImportItems:Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on Continue :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Selecting list]]>
+    </line>
+    <line>
+      <![CDATA[List is selected :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Selecting list]]>
+    </line>
+    <line>
+      <![CDATA[List is selected :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Selecting custom category from Locations page]]>
+    </line>
+    <line>
+      <![CDATA[List Names selected from locations page :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on Continue :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on DoThisLater :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on TakeHome :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped  TrackInventory from inventory tools page:Pass]]>
+    </line>
+    <line>
+      <![CDATA[Selecting location]]>
+    </line>
+    <line>
+      <![CDATA[Location is selected for item :Pass]]>
+    </line>
+    <line>
+      <![CDATA[locationItem verify ]]>
+    </line>
+    <line>
+      <![CDATA[Item verification done :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on done:Pass]]>
+    </line>
+    <line>
+      <![CDATA[Selecting location]]>
+    </line>
+    <line>
+      <![CDATA[Location is selected for item :Pass]]>
+    </line>
+    <line>
+      <![CDATA[locationItem verify ]]>
+    </line>
+    <line>
+      <![CDATA[Item verification done :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on done:Pass]]>
+    </line>
+  </reporter-output>
+  <suite name="Suite2" duration-ms="46031" started-at="2016-07-29T09:36:41Z" finished-at="2016-07-29T09:37:27Z">
+    <groups>
+      <group name="SI - WF 31">
+        <method signature="WorkFlow.SI_WF31_CustomList_MultipleList_ListNames_Skipcategory()[pri:0, instance:com.sysco.test.WorkFlow@7dc7cbad]" name="SI_WF31_CustomList_MultipleList_ListNames_Skipcategory" class="com.sysco.test.WorkFlow"/>
+      </group> <!-- SI - WF 31 -->
+    </groups>
+    <test name="Test" duration-ms="46031" started-at="2016-07-29T09:36:41Z" finished-at="2016-07-29T09:37:27Z">
+      <class name="com.sysco.test.WorkFlow">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.sysco.test.WorkFlow@7dc7cbad]" name="setUp" is-config="true" duration-ms="20267" started-at="2016-07-29T15:06:41Z" finished-at="2016-07-29T15:07:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="SI_WF31_CustomList_MultipleList_ListNames_Skipcategory()[pri:0, instance:com.sysco.test.WorkFlow@7dc7cbad]" name="SI_WF31_CustomList_MultipleList_ListNames_Skipcategory" duration-ms="24485" started-at="2016-07-29T15:07:01Z" description="SI - WF 31-Custom List + Select Multiple List +List Names as location+skip Cat" finished-at="2016-07-29T15:07:26Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Login page verification :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Save username verification :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Sign In]]>
+            </line>
+            <line>
+              <![CDATA[Sign in :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Navigating to Setup inventory page :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on skip :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Selecting custom list  ]]>
+            </line>
+            <line>
+              <![CDATA[Selected  custom list  from SetupInventoryImportItems:Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on Continue :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Selecting list]]>
+            </line>
+            <line>
+              <![CDATA[List is selected :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Selecting list]]>
+            </line>
+            <line>
+              <![CDATA[List is selected :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Selecting custom category from Locations page]]>
+            </line>
+            <line>
+              <![CDATA[List Names selected from locations page :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on Continue :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on DoThisLater :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on TakeHome :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped  TrackInventory from inventory tools page:Pass]]>
+            </line>
+            <line>
+              <![CDATA[Selecting location]]>
+            </line>
+            <line>
+              <![CDATA[Location is selected for item :Pass]]>
+            </line>
+            <line>
+              <![CDATA[locationItem verify ]]>
+            </line>
+            <line>
+              <![CDATA[Item verification done :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on done:Pass]]>
+            </line>
+            <line>
+              <![CDATA[Selecting location]]>
+            </line>
+            <line>
+              <![CDATA[Location is selected for item :Pass]]>
+            </line>
+            <line>
+              <![CDATA[locationItem verify ]]>
+            </line>
+            <line>
+              <![CDATA[Item verification done :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on done:Pass]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- SI_WF31_CustomList_MultipleList_ListNames_Skipcategory -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.sysco.test.WorkFlow@7dc7cbad]" name="tearDown" is-config="true" duration-ms="1266" started-at="2016-07-29T15:07:26Z" finished-at="2016-07-29T15:07:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.sysco.test.WorkFlow -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite2 -->
+</testng-results>

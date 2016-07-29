@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="748.193">
+  <properties />
+  
+  
+            <testcase name="SI_WF34_OG_CustomLocation_SuggestedCategory" time="748.193" classname="com.sysco.test.WorkFlow" />
+      
+</testsuite>

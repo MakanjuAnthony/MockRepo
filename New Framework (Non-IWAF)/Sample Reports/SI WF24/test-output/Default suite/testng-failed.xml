@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.sysco.test.WorkFlow">
+        <methods>
+          <include name="SI_WF34_OG_CustomLocation_SuggestedCategory"/>
+          <include name="SI_WF36_CustomList_MultipleList_ListNames_SuggestedCat"/>
+          <include name="SI_WF22_CustomList_DefaultLoc_Customcategory"/>
+          <include name="SI_WF29_CustomListSingleList_CustomCategoryOnLocationsPage_defaultcategory"/>
+          <include name="SI_WF6_OG_SkipLocation_SkipCategory"/>
+          <include name="MIL_WF2_Location_AddItems__MultipleLocation"/>
+          <include name="MIL_WF5_Locations_ItemEdit_UpdateLocation"/>
+          <include name="MIL_WF1_WF4_Location_AddItems"/>
+          <include name="SI_WF20_CustomList_CustomLoc_Customcategory"/>
+          <include name="SI_WF31_CustomList_MultipleList_ListNames_Skipcategory"/>
+          <include name="MIL_WF6_Create_Edit_Delete_Locations"/>
+          <include name="SI_WF5_OG_CustomLocation_DefaultCategory"/>
+          <include name="SI_WF30_CustomListSingleList_CustomCategoryOnLocationsPage_customcategory"/>
+          <include name="SI_WF35_CustomListSingleList_CustomCategoryOnLocationsPage_suggestedcategory"/>
+          <include name="SI_WF1_OG_DefaultLocation_DefaultCategory"/>
+          <include name="SI_WF21_CustomList_CustomLoc_Customcategory_FewItems"/>
+          <include name="SI_WF19_CustomList_defaultLoc_defaultcategory"/>
+          <include name="SI_WF26_CustomList_SkipLoc_defaultcategory_NU"/>
+          <include name="MIL_WF3_Location_SearchItems"/>
+          <include name="MIL_WF10_TrackInventory_Location_item_productcard_updateqtyUOM"/>
+          <include name="MSP1_MSP2_Add_View_ManageSuppliers"/>
+          <include name="MP_WF1_Purchases_FoodCost"/>
+          <include name="setUp"/>
+          <include name="MEC_WF1_Locations_ItemEdit_UpdateCategory_MA"/>
+          <include name="SI_WF7_OG_DefaultLocation_SkipCategory"/>
+          <include name="MEC_WF2_Category_Create_Edit_Delete_Category"/>
+          <include name="SI_WF25_CustomList_DefaultLoc_Skipcategory"/>
+          <include name="SI_WF23_CustomList_CustomLoc_defaultcategory"/>
+          <include name="SI_WF8_OG_SkipLocation_DefaultCategory"/>
+          <include name="TI_WF1_WF2_Location_Item_UOMQuantity"/>
+          <include name="MPI_1_CreatePrepItem_LinkLocation_Category_NU"/>
+          <include name="SI_WF32_CustomList_SingleList_CustomCatLoc_Skipcategory"/>
+          <include name="SI_WF28_CustomList_MultipleList_ListNames_Customcategory"/>
+          <include name="MIL_WF7_TrackInventory_Location_Edit_Delete_Items_location_MA"/>
+          <include name="SI_WF4_OG_DefaultLocation_CustomCategory"/>
+          <include name="SI_WF33_OG_DefaultLocation_SuggestedCategory"/>
+          <include name="SI_WF27_CustomList_MultipleList_ListNames_DefaultCat"/>
+          <include name="MNS_1_CreateNonSyscoItem_LinkSupplier_Location_Category"/>
+          <include name="SI_WF3_OG_CustomMultipleLocation_CustomMultipleCategory"/>
+          <include name="SI_WF24_CustomList_SkipLoc_Skipcategory"/>
+        </methods>
+      </class> <!-- com.sysco.test.WorkFlow -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
