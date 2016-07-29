@@ -20,7 +20,7 @@ public class PurchasesData {
 	public String Month;
 	public String Year;
 	public String InvTotal1;
-;
+	public String Suggcat;
 	
 
 	

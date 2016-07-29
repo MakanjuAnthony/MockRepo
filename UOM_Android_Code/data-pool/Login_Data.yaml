@@ -28,7 +28,7 @@ LoginData7  : !!com.components.yaml.LoginData {
  Password   : welcome1,
  }
 LoginData8  : !!com.components.yaml.LoginData {
- UserName   : sqnorm27,
+ UserName   : sqnorm21,
  Password   : welcome1,
  }
 LoginData9  : !!com.components.yaml.LoginData {
@@ -65,5 +65,5 @@ LoginData16 : !!com.components.yaml.LoginData {
  }
 LoginData17 : !!com.components.yaml.LoginData {
  UserName   : sqsauser33,
- Password   : welcome2,
+ Password   : welcome1,
  }

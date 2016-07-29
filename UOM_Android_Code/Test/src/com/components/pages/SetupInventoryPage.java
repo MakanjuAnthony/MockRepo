@@ -728,7 +728,7 @@ public class SetupInventoryPage extends SitePage {
 
 				getCommand().waitForTargetPresent(AddProductPage_Weight);
 				
-				if ((str1.equalsIgnoreCase("uomsa001")) || (str1.equalsIgnoreCase("uomsa002"))) {
+				if ((str1.equalsIgnoreCase("sqsauser32")) || (str1.equalsIgnoreCase("sqsauser33"))) {
 				
 					if (getCommand().isTargetPresent(AddProductPage_Price)) {
 					
@@ -1194,8 +1194,7 @@ System.out.println(keyword);
 
 			getCommand().waitFor(10);
 			final Target SearchCheck = new Target("SearchCheck",
-					"((//*[@class='mm-c-product-list__item mm-c-product__sysco ']//*[@class='mm-c-product-list__row-wrapper']//*[@class='mm-c-product-list__description'])[1])//*[contains(text(),'"
-							+ AddedItemId1_2[0] + "')]",
+					"((//*[@class='mm-c-product-list__item mm-c-product__sysco mm-c-product-list__tracked-change']//*[@class='mm-c-product-list__row-wrapper']//*[@class='mm-c-product-list__description'])[1])//*[contains(text(),'"+ AddedItemId1_2[0] + "')]",
 					Target.XPATH);
 			Boolean boolean1 = getCommand().isTargetPresent(SearchCheck);
 
@@ -1459,7 +1458,7 @@ System.out.println(keyword);
 		try {
 		final Target SearchCheck = new Target(
 					"SearchCheck",
-					"((//*[@class='mm-c-product-list__item mm-c-product__sysco ']//*[@class='mm-c-product-list__row-wrapper']//*[@class='mm-c-product-list__details'])//h4)[1]", Target.XPATH);
+					"((//*[@class='mm-c-product-list__item mm-c-product__sysco mm-c-product-list__tracked-change']//*[@class='mm-c-product-list__row-wrapper']//*[@class='mm-c-product-list__details'])//h4)[1]", Target.XPATH);
 			
 		String ItemWordSearch = getCommand().getText(SearchCheck);
 		

@@ -1619,11 +1619,14 @@ public class LocationsPage extends SitePage {
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		log("Quantity entering  ", LogType.STEP);
 		try {
+			
+			if(getCommand().isTargetPresent(LocationItem1_QuantityInput)){
 
 			getCommand().waitForTargetPresent(LocationItem1_QuantityInput)
 					.isTargetAvailable(LocationItem1_QuantityInput);
 
 			getCommand().sendKeys(LocationItem1_QuantityInput, qty);
+			}
 
 			log("Quantity entered in locations page :Pass", LogType.VERIFICATION_STEP);
 		} catch (Exception e) {

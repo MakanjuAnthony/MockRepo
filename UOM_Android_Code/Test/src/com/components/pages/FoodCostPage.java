@@ -17,6 +17,8 @@ public class FoodCostPage extends SitePage {
 	
 	public static final Target EndInventory = new Target("InvToolsPage","(//*[@class='mm-c-food-cost__details container']//*[@class='row'])[4]//*[contains(text(),'$')]", Target.XPATH);
 	public static final Target CostOfGoodSold = new Target("InvToolsPage","(//*[@class='mm-c-food-cost__details container']//*[@class='row'])[5]//*[contains(text(),'$')]", Target.XPATH);
+//	public static final Target CostOfGoodSold = new Target("InvToolsPage","(//*[@class='mm-c-food-cost__details container']//*[@class='mm-c-food-cost__goods-sold row'])//*[contains(text(),'$')]", Target.XPATH);
+	
 	public static String BeginInventoryValue;
 	public static String TotalPurchasesValue;
 	public static String NetPurchasesValue;
@@ -165,7 +167,8 @@ public class FoodCostPage extends SitePage {
 			
 			costGoods=Float.parseFloat(CostOfGoodSoldValue1[1]);
 			endInv=Float.parseFloat(EndInventoryValue1[1]);
-			
+			System.out.println(costGoods);
+			System.out.println(endInv);
 			if(!(costGoods==(netPurchase-endInv))){
 				throw new Exception();
 			}

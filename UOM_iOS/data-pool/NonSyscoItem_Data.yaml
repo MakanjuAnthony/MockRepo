@@ -1,13 +1,11 @@
 NonSyscoItmData : !!com.components.yaml.NonSyscoItemData {
- ProductName    : bholaNon7,
- UPC            : 123456,
- Pack		 : 10,
- Size		 : 1,
- Weight		 : 12,
- Price		 : 30,
- ProductBrand	 : Milma1,
- Category1       : Miscellaneous,
- Category2       : Non-Food,
+ ProductName    : Milk,
+ UPC            : 1234561,
+ Pack		 	: 10,
+ Size		 	: 1,
+ Weight		 	: 12,
+ Price		 	: 30,
+ ProductBrand	: Milma1,
  }
 NonSyscoItmData1: !!com.components.yaml.NonSyscoItemData {
  ProductName    : bholaNon7Edited,
@@ -17,8 +15,6 @@ NonSyscoItmData1: !!com.components.yaml.NonSyscoItemData {
  Weight		 : 12,
  Price		 : 30,
  ProductBrand	 : Milma1,
- Category1       : Meat,
- Category2       : Food,
  }
 NonSyscoItmData2 : !!com.components.yaml.NonSyscoItemData {
  ProductName     : bholaNon8,
@@ -30,5 +26,5 @@ NonSyscoItmData2 : !!com.components.yaml.NonSyscoItemData {
  ProductBrand	 : Milma1,
  Category1       : Dairy,
  Category2       : Food,
- }
+ } 
  

@@ -1,3 +1,4 @@
+		
 		/**
 		 ********************************************************************************************************************************************
 		 ********************************************************************************************************************************************
@@ -16,11 +17,14 @@
 		 ********************************************************************************************************************************************
 		 ********************************************************************************************************************************************
 		 **/
-
 package com.components.pages;
 
+import io.appium.java_client.ios.IOSDriver;
+
+
+
 import org.testng.Assert;
-import io.appium.java_client.android.AndroidDriver;
+
 import com.components.repository.SiteRepository;
 
 import com.iwaf.framework.components.Target;
@@ -40,7 +44,6 @@ public class InventoryToolPage extends SitePage {
 			"//*[@id='menu-item']/a/div/span[contains(text(),'Suppliers')]", Target.XPATH);
 	public static final Target InvTool_Purchases = new Target("InvTool_Purchases",
 			"//*[@id='menu-item']/a/div/span[contains(text(),'Purchases')]", Target.XPATH); 
-																							
 	public static final Target InvTool_Locations = new Target("InvTool_Locations",
 			"//*[@id='menu-item']/a/div/span[contains(text(),'Locations')]", Target.XPATH);
 	public static final Target VendorsPage = new Target("VendorsPage",
@@ -56,38 +59,33 @@ public class InventoryToolPage extends SitePage {
 	public static final Target InvTool_CreateNonSyscoItem = new Target("InvTool_CreateNonSyscoItem",
 			"//*[@id='menu-item']/a/div/span[contains(text(),'Create Non-Sysco Item')]", Target.XPATH);
 	public static final Target  InvTool_CloseInventory= new Target("InvTool_Purchases","//*[@id='menu-item']//span[contains(text(),'Close Inventory')]",Target.XPATH);  
-	public static final Target  InvTool_CloseInventoryYes= new Target("InvTool_Purchases","//*[@id='yes-button']",Target.XPATH);  
-	public static final Target  InvTool_CloseInventoryOK= new Target("InvTool_Purchases","//*[@id='yes-button' and contains(text(),'Ok! Sounds Good')]",Target.XPATH);  
-	public static final Target  InvTool_FoodCost= new Target("InvTool_Purchases","//*[@id='menu-item']//span[contains(text(),'View Food Cost')]",Target.XPATH);   
-	public static final Target  InvTool_FoodCostsPage= new Target("InvTool_Purchases", "//*[@class='navbar-brand']//*[contains(text(),'Food Costs')]",Target.XPATH);   
-
-	public InventoryToolPage(SiteRepository repository) {
+	 public static final Target  InvTool_CloseInventoryYes= new Target("InvTool_Purchases","//*[@id='yes-button']",Target.XPATH);  
+	 public static final Target  InvTool_CloseInventoryOK= new Target("InvTool_Purchases","//*[@id='yes-button' and contains(text(),'Ok! Sounds Good')]",Target.XPATH);  
+	 public static final Target  InvTool_FoodCost= new Target("InvTool_Purchases","//*[@id='menu-item']//span[contains(text(),'View Food Cost')]",Target.XPATH);   
+	 public static final Target  InvTool_FoodCostsPage= new Target("InvTool_Purchases", "//*[@class='navbar-brand']//*[contains(text(),'Food Costs')]",Target.XPATH);   
+	
+	 public InventoryToolPage(SiteRepository repository) {
 		super(repository);
 
 	}
 
 	public InventoryToolPage atInventoryToolPage(String string) {
 		log("Opened InventoryTool Page ", LogType.STEP);
-
 		return this;
 	}
 
 	@SuppressWarnings("rawtypes")
 	public InventoryToolPage InvTools_SetUpInventory(String string) {
-
 		String string2 = "Issue";
-
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 		try {
 
 			getCommand().waitForTargetPresent(InvTool_SetUpInv);
-
 			getCommand().click(InvTool_SetUpInv);
-
 			log("Navigating to Setup inventory page :Pass", LogType.VERIFICATION_STEP);
 
 		} catch (Exception e) {
-			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Navigating to Setup inventory page :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -100,27 +98,23 @@ public class InventoryToolPage extends SitePage {
 	@SuppressWarnings("rawtypes")
 	public InventoryToolPage InvTools_TrackInventory(String string) {
 
-		log("Selecting TrackInventory from inventory tools page ", LogType.STEP);
-
 		String string2 = "Issue";
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 
-			if (getCommand().isTargetVisibleAfterWait(TrackInventory)) {
-				getCommand().clickWithJavascript(TrackInventory);
+			getCommand().waitForTargetPresent(TrackInventory);
+
+			if (getCommand().isTargetPresent(TrackInventory)) {
+				getCommand().click(TrackInventory);
 				getCommand().waitForTargetPresent(LocationsPage);
+				getCommand().waitFor(2);
+
 				log("Tapped  TrackInventory from inventory tools page:Pass", LogType.VERIFICATION_STEP);
-
-			}
-
-			else {
-				log("Tapped  TrackInventory from inventory tools page not available", LogType.VERIFICATION_STEP);
-
 			}
 
 		} catch (Exception e) {
-			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Tapped  TrackInventory from inventory tools page:Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -130,12 +124,13 @@ public class InventoryToolPage extends SitePage {
 		return this;
 
 	}
-
+	
 	@SuppressWarnings("rawtypes")
 	public InventoryToolPage InvTools_Suppliers(String string) {
 		log("Tapping on Suppliers from Inventory tools page", LogType.STEP);
 
 		String string2 = "Issue";
+
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
@@ -144,7 +139,6 @@ public class InventoryToolPage extends SitePage {
 			getCommand().waitForTargetPresent(InvTool_Vendors);
 
 			if (getCommand().isTargetPresent(InvTool_Vendors)) {
-
 				log("Tap on Suppliers from Inventory tools page", LogType.STEP);
 				getCommand().click(InvTool_Vendors);
 
@@ -152,7 +146,6 @@ public class InventoryToolPage extends SitePage {
 			getCommand().waitForTargetPresent(VendorsPage);
 
 			if (getCommand().isTargetPresent(VendorsPage)) {
-
 				log("In Vendors Page", LogType.STEP);
 				log("Navigating to Vendors page :Pass", LogType.VERIFICATION_STEP);
 
@@ -161,26 +154,25 @@ public class InventoryToolPage extends SitePage {
 		}
 
 		catch (Exception e) {
-			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Navigating to Vendors  page :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
 		}
 
 		return this;
-
 	}
-
+	
 	@SuppressWarnings("rawtypes")
 	public InventoryToolPage InvTools_Purchases(String string) {
 
 		log("Selecting purchases from inventory tools page ", LogType.STEP);
 
 		String string2 = "Issue";
+
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
-
 			getCommand().waitForTargetPresent(InvTool_Purchases);
 
 			if (getCommand().isTargetPresent(InvTool_Purchases)) {
@@ -190,7 +182,7 @@ public class InventoryToolPage extends SitePage {
 			}
 
 		} catch (Exception e) {
-			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Tapped  purchases from inventory tools page:Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -205,12 +197,12 @@ public class InventoryToolPage extends SitePage {
 	public InventoryToolPage InvTools_Locations(String string) {
 
 		String string2 = "Issue";
+
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
 			getCommand().waitForTargetPresent(InvTool_Locations);
 			if (getCommand().isTargetPresent(InvTool_Locations)) {
-
 				getCommand().click(InvTool_Locations);
 
 			}
@@ -218,12 +210,11 @@ public class InventoryToolPage extends SitePage {
 			getCommand().waitForTargetPresent(LocationsPage);
 
 			if (getCommand().isTargetPresent(LocationsPage)) {
-
 				log("In locations Page", LogType.STEP);
 				log("Navigating to Locations page :Pass", LogType.VERIFICATION_STEP);
 			}
 		} catch (Exception e) {
-			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Navigating to Locations page :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -237,10 +228,10 @@ public class InventoryToolPage extends SitePage {
 	public InventoryToolPage InvTools_Category(String string) {
 
 		String string2 = "Issue";
+
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
-
 			getCommand().waitForTargetPresent(InvTool_Category);
 			if (getCommand().isTargetPresent(InvTool_Category)) {
 
@@ -251,12 +242,11 @@ public class InventoryToolPage extends SitePage {
 			getCommand().waitForTargetPresent(CategoriesPage);
 
 			if (getCommand().isTargetPresent(CategoriesPage)) {
-
 				log("In categories Page", LogType.STEP);
 				log("Navigating to categories page :Pass", LogType.VERIFICATION_STEP);
 			}
 		} catch (Exception e) {
-			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Navigating to categories page :Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -272,6 +262,7 @@ public class InventoryToolPage extends SitePage {
 		log("Selecting Create Nonsysco item from inventory tools page ", LogType.STEP);
 
 		String string2 = "Issue";
+
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
@@ -279,14 +270,13 @@ public class InventoryToolPage extends SitePage {
 
 			if (getCommand().isTargetPresent(InvTool_CreatePrepItem)) {
 				getCommand().click(InvTool_CreatePrepItem);
-
 				getCommand().waitForTargetPresent(AddProduct_Page);
 
 				log("Tapped Create Prep Item from inventory tools page:Pass", LogType.VERIFICATION_STEP);
 			}
 
 		} catch (Exception e) {
-			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Tapped Create Prep Item from inventory tools page:Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -303,22 +293,21 @@ public class InventoryToolPage extends SitePage {
 		log("Selecting Create Nonsysco item from inventory tools page ", LogType.STEP);
 
 		String string2 = "Issue";
+
 		String finalPath1 = SitePage.drivePath + string + string2 + SitePage.pathExtension;
 
 		try {
-
 			getCommand().waitForTargetPresent(InvTool_CreateNonSyscoItem);
 
 			if (getCommand().isTargetPresent(InvTool_CreateNonSyscoItem)) {
 				getCommand().click(InvTool_CreateNonSyscoItem);
-
 				getCommand().waitForTargetPresent(AddProduct_Page);
 
 				log("Tapped Create NonSysco Item from inventory tools page:Pass", LogType.VERIFICATION_STEP);
 			}
 
 		} catch (Exception e) {
-			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Tapped Create NonSysco Item from inventory tools page:Fail", LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -328,8 +317,8 @@ public class InventoryToolPage extends SitePage {
 		return this;
 
 	}
-@SuppressWarnings("rawtypes")
-public  InventoryToolPage InvTools_CloseInventory(String string){
+///
+	public  InventoryToolPage InvTools_CloseInventory(String string){
 		
 		log("Selecting closeinventory from inventory tools page ",LogType.STEP);
 		  String string2="Issue";
@@ -342,7 +331,7 @@ public  InventoryToolPage InvTools_CloseInventory(String string){
 		if (getCommand().isTargetPresent(InvTool_CloseInventory))
 		{
 			getCommand().click(InvTool_CloseInventory);
-			
+			System.out.println("clicking closeinv");
 			getCommand().waitForTargetPresent(InvTool_CloseInventoryYes);
 			
 			log("Tapped  closeinventory from inventory tools page:Pass",LogType.VERIFICATION_STEP);						
@@ -350,7 +339,7 @@ public  InventoryToolPage InvTools_CloseInventory(String string){
 		
 	}
 		catch(Exception e){
-			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
+			((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
 			getCommand().captureScreenshot(finalPath1);
 			log("Tapped  closeinventory from inventory tools page:Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -363,7 +352,6 @@ public  InventoryToolPage InvTools_CloseInventory(String string){
 
 
 
-	@SuppressWarnings("rawtypes")
 	public  InventoryToolPage InvTools_ClosedInventoryYes(String string){
 		
 		log("Selecting Yes ",LogType.STEP);
@@ -377,7 +365,7 @@ public  InventoryToolPage InvTools_CloseInventory(String string){
 		if (getCommand().isTargetPresent(InvTool_CloseInventoryYes))
 		{
 			getCommand().click(InvTool_CloseInventoryYes);
-			
+			System.out.println("clicking yes");
 			getCommand().waitForTargetPresent(InvTool_CloseInventoryOK);
 			getCommand().click(InvTool_CloseInventoryOK);
 			
@@ -386,7 +374,7 @@ public  InventoryToolPage InvTools_CloseInventory(String string){
 		
 	}
 		catch(Exception e){
-			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
+			((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
 			getCommand().captureScreenshot(finalPath1);
 			log("Closed inventory successfully :Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -397,7 +385,6 @@ public  InventoryToolPage InvTools_CloseInventory(String string){
 		
 	}
 
-	@SuppressWarnings("rawtypes")
 	public  InventoryToolPage InvTools_FoodCost(String string){
 		
 		log("Selecting closeinventory from inventory tools page ",LogType.STEP);
@@ -411,7 +398,7 @@ public  InventoryToolPage InvTools_CloseInventory(String string){
 		if (getCommand().isTargetPresent(InvTool_FoodCost))
 		{
 			getCommand().click(InvTool_FoodCost);
-			
+			System.out.println("clicking foodcost");
 			getCommand().waitForTargetPresent(InvTool_FoodCostsPage);
 			
 			log("Tapped  closeinventory from inventory tools page:Pass",LogType.VERIFICATION_STEP);						
@@ -419,7 +406,7 @@ public  InventoryToolPage InvTools_CloseInventory(String string){
 		
 	}
 		catch(Exception e){
-			((AndroidDriver)getCommand().driver).context("NATIVE_APP"); 
+			((IOSDriver)getCommand().driver).context("NATIVE_APP"); 
 			getCommand().captureScreenshot(finalPath1);
 			log("Tapped  closeinventory from inventory tools page:Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);

@@ -5,8 +5,10 @@ import com.iwaf.framework.BasePage;
 public class SearchData  {
 	
 	public String keyword;
-	public String keyword2;
+	//public String itemCode;
 	public String keyword1;
+	public String keyword3;
+	public String keyword2;
 	
 	@SuppressWarnings("deprecation")
 	public static SearchData fetch(String key){

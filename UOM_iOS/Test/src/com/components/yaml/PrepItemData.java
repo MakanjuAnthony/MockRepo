@@ -11,7 +11,7 @@ public class PrepItemData {
 	public String  Weight;
 	public String  Price;
 	public String  ProductBrand;
-
+	
 	@SuppressWarnings("deprecation")
 	public static PrepItemData fetch(String key){
 		BasePage pageObj = new BasePage();

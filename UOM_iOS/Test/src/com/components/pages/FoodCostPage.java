@@ -1,12 +1,37 @@
+
+/**
+ ********************************************************************************************************************************************
+ ********************************************************************************************************************************************
+ *																																		   	*
+ * 2016-2017 Infosys Limited, Banglore, India. All Rights Reserved																			*
+
+ * Version: 1.0																																*
+ * 																																			*
+ * Except for any free or open source software components embedded in this Infosys proprietary software program ("Program"),				*
+ * this Program is protected by copyright laws, international treaties and other pending or existing intellectual property rights in India, *
+ * the United States and other countries. Except as expressly permitted, any unautorized reproduction, storage, transmission 				*
+ * in any form or by any means (including without limitation electronic, mechanical, printing, photocopying, recording or otherwise), 		*
+ * or any distribution of this Program, or any portion of it, may result in severe civil and criminal penalties, 							*
+ * and will be prosecuted to the maximum extent possible under the law 																		*
+ *																																			*
+ ********************************************************************************************************************************************
+ ********************************************************************************************************************************************
+ **/
 package com.components.pages;
 
+import java.util.Set;
 
+import io.appium.java_client.ios.IOSDriver;
+
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.testng.Assert;
+
 import com.components.repository.SiteRepository;
 import com.iwaf.framework.components.Target;
 import com.iwaf.framework.components.IReporter.LogType;
-import io.appium.java_client.android.AndroidDriver;
-
 
 public class FoodCostPage extends SitePage {
 
@@ -17,8 +42,6 @@ public class FoodCostPage extends SitePage {
 	
 	public static final Target EndInventory = new Target("InvToolsPage","(//*[@class='mm-c-food-cost__details container']//*[@class='row'])[4]//*[contains(text(),'$')]", Target.XPATH);
 	public static final Target CostOfGoodSold = new Target("InvToolsPage","(//*[@class='mm-c-food-cost__details container']//*[@class='row'])[5]//*[contains(text(),'$')]", Target.XPATH);
-//	public static final Target CostOfGoodSold = new Target("InvToolsPage","(//*[@class='mm-c-food-cost__details container']//*[@class='mm-c-food-cost__goods-sold row'])//*[contains(text(),'$')]", Target.XPATH);
-	
 	public static String BeginInventoryValue;
 	public static String TotalPurchasesValue;
 	public static String NetPurchasesValue;
@@ -64,7 +87,6 @@ public class FoodCostPage extends SitePage {
 	
 	
 	
-	@SuppressWarnings("rawtypes")
 	public FoodCostPage VerifyTotalPurchase(String value, String string) {
 		log("Verify purchase value",LogType.STEP);
 		
@@ -78,18 +100,17 @@ public class FoodCostPage extends SitePage {
 			
 			TotalPurchasesValue =getCommand().getText(TotalPurchases);
 			TotalPurchasesValue1 = TotalPurchasesValue.split("\\s");
-			
+			// totPurchase=Integer.parseInt(TotalPurchasesValue1[1]);
 			if(!(TotalPurchasesValue1[1].equals(value))){
 				throw new Exception();
 			}
 			
 			log("Verify purchase value :Pass",LogType.VERIFICATION_STEP);						
-
-			System.out.println("tot purch passed"+value+TotalPurchasesValue1[1]);
+System.out.println("tot purch passed"+value+TotalPurchasesValue1[1]);
 
 		}
 		catch(Exception e){
-			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Verify purchase value :Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -99,7 +120,6 @@ public class FoodCostPage extends SitePage {
 		return this;
 
 	}
-	@SuppressWarnings("rawtypes")
 	public FoodCostPage VerifyNetPurchases(String string) {
 		log("Verify net purchase value",LogType.STEP);
 		
@@ -130,12 +150,11 @@ public class FoodCostPage extends SitePage {
 			}
 			
 			log("Verify net purchase value :Pass",LogType.VERIFICATION_STEP);						
-
-			System.out.println("net pur passed"+beginInv+totPurchase+netPurchase);
+System.out.println("net pur passed"+beginInv+totPurchase+netPurchase);
 
 		}
 		catch(Exception e){
-			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Verify purchase value :Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -146,7 +165,6 @@ public class FoodCostPage extends SitePage {
 
 	}
 	
-	@SuppressWarnings("rawtypes")
 	public FoodCostPage VerifyCostOfGoodsSold(String string) {
 		log("Verify cost of goods sold value",LogType.STEP);
 		
@@ -155,10 +173,8 @@ public class FoodCostPage extends SitePage {
 		String finalPath1=drivePath+string+string2+pathExtension;
 
 		try{
-			getCommand().waitFor(15);
 			getCommand().waitForTargetPresent(CostOfGoodSold); 
-			
-			
+
 			EndInventoryValue =getCommand().getText(EndInventory);
 			EndInventoryValue1 = EndInventoryValue.split("\\s");
 			
@@ -167,21 +183,19 @@ public class FoodCostPage extends SitePage {
 			
 			costGoods=Float.parseFloat(CostOfGoodSoldValue1[1]);
 			endInv=Float.parseFloat(EndInventoryValue1[1]);
-			System.out.println(costGoods);
-			System.out.println(endInv);
+			
 			if(!(costGoods==(netPurchase-endInv))){
 				throw new Exception();
 			}
 
-			
-			System.out.println(costGoods);
+			System.out.println("cost "+costGoods);
 			
 			log("Verify cost of goods sold value :Pass",LogType.VERIFICATION_STEP);						
 
 
 		}
 		catch(Exception e){
-			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Verify cost of goods sold value :Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -191,7 +205,6 @@ public class FoodCostPage extends SitePage {
 		return this;
 
 	}
-	@SuppressWarnings("rawtypes")
 	public FoodCostPage EnterRevenue(String value,String string) {
 		log("Enter Revenue value",LogType.STEP);
 		
@@ -200,23 +213,28 @@ public class FoodCostPage extends SitePage {
 		String finalPath1=drivePath+string+string2+pathExtension;
 
 		try{
-			revenue=Float.parseFloat(value);
+			revenue=Integer.parseInt(value);
 			getCommand().waitForTargetPresent(Revenue); 
-			
+
 			getCommand().click(Revenue);
 			
 			getCommand().sendKeys(Revenue, value);
-			
+		
 			getCommand().click(CostOfGoodSold);
-			getCommand().waitFor(3);
+			getCommand().waitFor(5); 
 			
-	
+			/*((IOSDriver) getCommand().driver).findElement(
+					By.xpath("//*[@placeholder='Revenue']"))
+					.sendKeys(Keys.ENTER);
+			*/
+			
+			
 			log("Enter Revenue :Pass",LogType.VERIFICATION_STEP);						
 
 
 		}
 		catch(Exception e){
-			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Enter Revenue  :Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -226,43 +244,48 @@ public class FoodCostPage extends SitePage {
 		return this;
 
 	}
-	
-	@SuppressWarnings("rawtypes")
 	public FoodCostPage CalculateFoodCost(String string) {
-		log("Calculating Food cost", LogType.STEP);
-		String string2 = "Issue";
-		String finalPath1 = drivePath + string + string2 + pathExtension;
-		try {
+		log("Calculating Food cost",LogType.STEP);
+		
+		String string2="Issue";
+
+		String finalPath1=drivePath+string+string2+pathExtension;
+
+		try{
 			
-			getCommand().waitFor(15);
-			foodSales = (costGoods / revenue) * 100;
-			
+			foodSales=(costGoods/revenue)*100;
 			System.out.println(foodSales);
-			
-			foodSales1 = (int) Math.round(foodSales);
+			/*foodSales1=String.valueOf(foodSales);
+			System.out.println(foodSales1);  //round
+	*/
+			foodSales1=(int)Math.round(foodSales);
 			foodSales2 = String.valueOf(foodSales1);
-			
-			System.out.println("foodSales2" + foodSales2);
-			
-			foodSalesPercent = getCommand().getText(FoodSalesPercent);
+			System.out.println("foodSales2 "+foodSales2);
+			/*foodSales2 = foodSales1.split(".");  //delete
+			System.out.println(foodSales2);
+			*/
+		    getCommand().waitFor(5);
+			foodSalesPercent =getCommand().getText(FoodSalesPercent);
 			foodSalesPercent1 = foodSalesPercent.split("%");
-			
-			System.out.println(foodSales2 + foodSalesPercent1[0]);
-			
-			if (!(foodSales2.equals(foodSalesPercent1[0]))) {
+			System.out.println(foodSales2+foodSalesPercent1[0]);	
+			if(!(foodSales2.equals(foodSalesPercent1[0]))){
 				throw new Exception();
 			}
 			
-			log("Food cost calculation :Pass", LogType.VERIFICATION_STEP);
-			
+			log("Food cost calculation :Pass",LogType.VERIFICATION_STEP);						
+
+
 		}
-		catch (Exception e) {
-			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+		catch(Exception e){
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
-			log("Food cost calculation :Fail", LogType.VERIFICATION_STEP);
+			log("Food cost calculation  :Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
+
 		}
+
 		return this;
+
 	}
 	@SuppressWarnings("rawtypes")
 	public FoodCostPage TapOnBack(String string) {
@@ -280,7 +303,7 @@ public class FoodCostPage extends SitePage {
 			}
 
 		} catch (Exception e) {
-			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
 			log("tap on back :Fail", LogType.VERIFICATION_STEP);
 			getCommand().captureScreenshot(finalPath1);
 			Assert.assertTrue(false);
@@ -305,9 +328,10 @@ public class FoodCostPage extends SitePage {
 				throw new Exception();
 			}
 			log("Verify current price same as price when the inventory closed :Pass", LogType.VERIFICATION_STEP);
+			System.out.println(endInv+""+beginInv);
 			
 		} catch (Exception e) {
-			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
 			log("Verify current price same as price when the inventory closed :Fail", LogType.VERIFICATION_STEP);
 			getCommand().captureScreenshot(finalPath1);
 			Assert.assertTrue(false);
@@ -345,7 +369,7 @@ public class FoodCostPage extends SitePage {
 
 		}
 		catch(Exception e){
-			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Verify beginning inventory value :Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -386,7 +410,7 @@ public class FoodCostPage extends SitePage {
 
 		}
 		catch(Exception e){
-			((AndroidDriver) getCommand().driver).context("NATIVE_APP");
+			((IOSDriver) getCommand().driver).context("NATIVE_APP");
 			getCommand().captureScreenshot(finalPath1);
 			log("Verify ending inventory value :Fail",LogType.VERIFICATION_STEP);
 			Assert.assertTrue(false);
@@ -396,5 +420,8 @@ public class FoodCostPage extends SitePage {
 		return this;
 
 	}
-}
 
+	}
+	
+	
+	

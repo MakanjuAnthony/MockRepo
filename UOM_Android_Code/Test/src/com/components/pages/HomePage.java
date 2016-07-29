@@ -107,8 +107,9 @@ public class HomePage extends SitePage {
 
 		try {
 
-			if ((str1.equalsIgnoreCase("uomsa001")) || (str1.equalsIgnoreCase("uomsa002"))) {
+			if ((str1.equalsIgnoreCase("sqsauser33")) || (str1.equalsIgnoreCase("sqsauser32"))) {
 
+				getCommand().waitFor(10);
 				if (getCommand().isTargetPresent(selectAcc)) {
 					getCommand().click(selectAcc);
 
