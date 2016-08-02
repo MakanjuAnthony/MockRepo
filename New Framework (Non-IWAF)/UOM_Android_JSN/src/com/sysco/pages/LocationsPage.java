@@ -1042,7 +1042,7 @@ public static final String LocationCooler =
 		try {
 			clearElement(AddLocation_LocName);
 			clickElement(AddLocation_LocName);
-			sendText(AddLocation_LocName, locationName);
+			//sendText(AddLocation_LocName, locationName);
 			Reporter.log("added location name :Pass");
 		}
 
@@ -1060,6 +1060,33 @@ public static final String LocationCooler =
 
 	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
 	public LocationsPage AddLocationCooler(String string) throws InterruptedException, IOException {
+		String string2 = "Issue";
+		String finalPath1 = Screenshot.drivePath + string + string2 + Screenshot.pathExtension;
+
+		try {
+
+			
+			waitForElementToBeClickable(AddLocation_LocTypeCooler);
+			clickElement(AddLocation_LocTypeCooler);
+			System.out.println("selected cooler");
+
+			
+			Reporter.log("Selected cooler :Pass");
+		}
+
+		catch (Exception e) {
+			Reporter.log("Selected cooler :Fail");
+			switchToNativeContext();
+			takeScreenshot(finalPath1);
+			
+			Assert.assertTrue(false);
+		}
+
+		return this;
+
+	}
+	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
+	public LocationsPage AddCatFood(String string) throws InterruptedException, IOException {
 		String string2 = "Issue";
 		String finalPath1 = Screenshot.drivePath + string + string2 + Screenshot.pathExtension;
 

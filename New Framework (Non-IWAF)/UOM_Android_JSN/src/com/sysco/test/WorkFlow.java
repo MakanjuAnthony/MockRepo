@@ -2624,7 +2624,7 @@ public class WorkFlow extends JSN_Framework{
 		locationsPage.AddLocation_AddProductDetailsPage("MIL-WF10-Select Add/Select location option");
 		locationsPage.TapAddLocation("MIL-WF10-Tapped ADD");
 		locationsPage.AddLocationName( datapool.readFromExcelLocationInfo().locationNameDataPool[2],"MIL-WF10-Enter location2 name");
-		locationsPage.AddLocationCooler("MIL-WF10-Tapped Cooler");
+		locationsPage.AddCatFood("MIL-WF10-Tapped Food");
 		locationsPage.TapOnDone("MIL-WF10-Tapped Done");
 		locationsPage.TapOnBack("MIL-WF10-Tapped Back");
 		locationsPage.VerifyLocationList( datapool.readFromExcelLocationInfo().locationNameDataPool[2], "MIL-WF10-Verifing Added Location2");
@@ -2670,6 +2670,7 @@ public class WorkFlow extends JSN_Framework{
 			
 			setupInventoryPage.TapOnDOThisLater("MIL-WF6-Tapped do this later");
 			setupInventoryPage.TapTakeHome("SI - WF 32-Tapped take me home");
+			
 			inventoryToolPage.InvTools_CreatePrep("MPI-1-Tapped Prep item");
 			setupInventoryPage.EnterItemDetails(datapool.readFromExcelPrepItemInfo().prepItemDataPool[0], datapool.readFromExcelPrepItemInfo().prepItemDataPool[1], datapool.readFromExcelPrepItemInfo().prepItemDataPool[2],datapool.readFromExcelPrepItemInfo().prepItemDataPool[3], datapool.readFromExcelUserInfo().prepItemDataPool[4], datapool.readFromExcelPrepItemInfo().prepItemDataPool[5], datapool.readFromExcelPrepItemInfo().prepItemDataPool[6], "MPI-1-PrepItem details entered");
 
