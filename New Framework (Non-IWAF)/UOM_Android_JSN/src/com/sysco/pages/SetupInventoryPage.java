@@ -1558,6 +1558,62 @@ public class SetupInventoryPage extends JSN_Framework {
 		return this;
 
 	}
+	@SuppressWarnings("rawtypes")
+	public SetupInventoryPage SelectSupplier_PdtCard(String keyword,String string) throws InterruptedException, IOException {
+		String string2 = "Issue";
+		String finalPath1 = Screenshot.drivePath + string + string2 + Screenshot.pathExtension;
+		
+		try {
+
+			final String Supplier_Select =
+			"//*[contains(text(),'" + keyword+ "')]";
+					
+
+			waitForElementPresent(Supplier_Select);
+			
+			clickElement(Supplier_Select);
+			
+			Reporter.log("Selecting supplier from Pdt card :Pass");
+			
+		} catch (Exception e) {
+			Reporter.log("Selecting supplier from Pdt card :Fail");
+			switchToNativeContext();
+			takeScreenshot(finalPath1);
+			
+			Assert.assertTrue(false);
+		}
+
+		return this;
+
+	}
+	@SuppressWarnings("rawtypes")
+	public SetupInventoryPage SelectCategory_PdtCard(String keyword,String string) throws InterruptedException, IOException {
+		String string2 = "Issue";
+		String finalPath1 = Screenshot.drivePath + string + string2 + Screenshot.pathExtension;
+		
+		try {
+
+			final String Category_Select =
+			"//*[contains(text(),'" + keyword+ "')]";
+					
+
+			waitForElementPresent(Category_Select);
+			
+			clickElement(Category_Select);
+			
+			Reporter.log("Selecting category from Pdt card :Pass");
+			
+		} catch (Exception e) {
+			Reporter.log("Selecting category from Pdt card :Fail");
+			switchToNativeContext();
+			takeScreenshot(finalPath1);
+			
+			Assert.assertTrue(false);
+		}
+
+		return this;
+
+	}
 	
 		@SuppressWarnings("rawtypes")
 		public SetupInventoryPage verifySearchedItems(String keyword,String string) throws InterruptedException, IOException {

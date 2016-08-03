@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -58,7 +58,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="group-Suite">
-                    <span>3 groups</span>
+                    <span>1 group</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -90,7 +90,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods, 2 failed,   1 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -101,29 +101,10 @@
                     <div class="method-list-content failed suite-Suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.sysco.test.WorkFlow" hash-for-method="SI_WF20_CustomList_CustomLoc_Customcategory">SI_WF20_CustomList_CustomLoc_Customcategory</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.sysco.test.WorkFlow" hash-for-method="SI_WF21_CustomList_CustomLoc_Customcategory_FewItems">SI_WF21_CustomList_CustomLoc_Customcategory_FewItems</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.sysco.test.WorkFlow" hash-for-method="MNS_1_1_CreateNonSyscoItem_LinkSupplier_Location_Category">MNS_1_1_CreateNonSyscoItem_LinkSupplier_Location_Category</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
-                  </li>
-                  <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
-                    </span>
-                    <div class="method-list-content passed suite-Suite">
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.sysco.test.WorkFlow" hash-for-method="SI_WF19_CustomList_defaultLoc_defaultcategory">SI_WF19_CustomList_defaultLoc_defaultcategory</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content passed suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -143,55 +124,24 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="SI_WF20_CustomList_CustomLoc_Customcategory">
-                  </a> <!-- SI_WF20_CustomList_CustomLoc_Customcategory -->
-                  <span class="method-name">SI_WF20_CustomList_CustomLoc_Customcategory</span>
+                  <a name="MNS_1_1_CreateNonSyscoItem_LinkSupplier_Location_Category">
+                  </a> <!-- MNS_1_1_CreateNonSyscoItem_LinkSupplier_Location_Category -->
+                  <span class="method-name">MNS_1_1_CreateNonSyscoItem_LinkSupplier_Location_Category</span>
                   <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at com.sysco.pages.LocationsPage.SelectLocation(LocationsPage.java:1031)
-	at com.sysco.test.WorkFlow.SI_WF20_CustomList_CustomLoc_Customcategory(WorkFlow.java:499)
+	at com.sysco.pages.CategoryPage.TapOnBack(CategoryPage.java:694)
+	at com.sysco.test.WorkFlow.MNS_1_1_CreateNonSyscoItem_LinkSupplier_Location_Category(WorkFlow.java:2687)
 ... Removed 28 stack frames
 </div> <!-- stack-trace -->
                   <em>
-(SI-WF20-Custom List + Custom Loc + Custom Category )                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="SI_WF21_CustomList_CustomLoc_Customcategory_FewItems">
-                  </a> <!-- SI_WF21_CustomList_CustomLoc_Customcategory_FewItems -->
-                  <span class="method-name">SI_WF21_CustomList_CustomLoc_Customcategory_FewItems</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at com.sysco.pages.LoginPage.verifyLoginPage(LoginPage.java:63)
-	at com.sysco.test.WorkFlow.SI_WF21_CustomList_CustomLoc_Customcategory_FewItems(WorkFlow.java:551)
-... Removed 28 stack frames
-</div> <!-- stack-trace -->
-                  <em>
-(SI - WF 21-Custom List + Custom Loc + Custom Category + Few items)                  </em>
+(MNS-1-Manage_Create Non-Sysco Item_Link Supplier_Location_Expense Category)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Suite-class-failed -->
-          <div class="suite-Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.sysco.test.WorkFlow</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="SI_WF19_CustomList_defaultLoc_defaultcategory">
-                  </a> <!-- SI_WF19_CustomList_defaultLoc_defaultcategory -->
-                  <span class="method-name">SI_WF19_CustomList_defaultLoc_defaultcategory</span>
-                  <em>
-(SI-WF19-Custom List + default Loc + default Category )                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/Users/naveen_raj04/Desktop/UOM_Files/WorkspaceUOM/UOM_Android_JSN/Suite1.xml</span>
+            <span class="header-content">/Users/MrDon/Documents/Android/UOM_Android_JSN/Suite1.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -206,9 +156,7 @@
     &lt;classes&gt;
       &lt;class name=&quot;com.sysco.test.WorkFlow&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;SI_WF19_CustomList_defaultLoc_defaultcategory&quot;/&gt;
-          &lt;include name=&quot;SI_WF20_CustomList_CustomLoc_Customcategory&quot;/&gt;
-          &lt;include name=&quot;SI_WF21_CustomList_CustomLoc_Customcategory_FewItems&quot;/&gt;
+          &lt;include name=&quot;MNS_1_1_CreateNonSyscoItem_LinkSupplier_Location_Category&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- com.sysco.test.WorkFlow --&gt;
     &lt;/classes&gt;
@@ -235,26 +183,10 @@
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">SI - WF 21</span>
+              <span class="test-group-name">MNS-1-1</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">SI_WF21_CustomList_CustomLoc_Customcategory_FewItems</span>
-                <br/>
-              </div> <!-- method-in-group -->
-            </div> <!-- test-group -->
-            <div class="test-group">
-              <span class="test-group-name">SI-WF19</span>
-              <br/>
-              <div class="method-in-group">
-                <span class="method-in-group-name">SI_WF19_CustomList_defaultLoc_defaultcategory</span>
-                <br/>
-              </div> <!-- method-in-group -->
-            </div> <!-- test-group -->
-            <div class="test-group">
-              <span class="test-group-name">SI-WF20</span>
-              <br/>
-              <div class="method-in-group">
-                <span class="method-in-group-name">SI_WF20_CustomList_CustomLoc_Customcategory</span>
+                <span class="method-in-group-name">MNS_1_1_CreateNonSyscoItem_LinkSupplier_Location_Category</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -274,24 +206,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'SI_WF20_CustomList_CustomLoc_Customcategory')
+data.setCell(0, 1, 'MNS_1_1_CreateNonSyscoItem_LinkSupplier_Location_Category')
 data.setCell(0, 2, 'com.sysco.test.WorkFlow')
-data.setCell(0, 3, 95205);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'SI_WF19_CustomList_defaultLoc_defaultcategory')
-data.setCell(1, 2, 'com.sysco.test.WorkFlow')
-data.setCell(1, 3, 51508);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'SI_WF21_CustomList_CustomLoc_Customcategory_FewItems')
-data.setCell(2, 2, 'com.sysco.test.WorkFlow')
-data.setCell(2, 3, 1783);
+data.setCell(0, 3, 52577);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 52 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -303,96 +227,26 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="reporter-method-div">
-              <span class="reporter-method-name">SI_WF19_CustomList_defaultLoc_defaultcategory</span>
+              <span class="reporter-method-name">MNS_1_1_CreateNonSyscoItem_LinkSupplier_Location_Category</span>
               <div class="reporter-method-output-div">
                 <span class="reporter-method-output">Login page verification :Pass</span>
+                <span class="reporter-method-output">Save username verification :Pass</span>
                 <span class="reporter-method-output">Sign In</span>
                 <span class="reporter-method-output">Sign in :Pass</span>
-                <span class="reporter-method-output">Navigating to Setup inventory page :Pass</span>
-                <span class="reporter-method-output">Tapped on skip :Pass</span>
-                <span class="reporter-method-output">Selecting custom list  </span>
-                <span class="reporter-method-output">Selected  custom list  from SetupInventoryImportItems:Pass</span>
-                <span class="reporter-method-output">Tapped on Continue :Pass</span>
-                <span class="reporter-method-output">Selecting list</span>
-                <span class="reporter-method-output">List is selected :Pass</span>
-                <span class="reporter-method-output">default location clickElemented :Pass</span>
-                <span class="reporter-method-output">Tapped on Continue :Pass</span>
-                <span class="reporter-method-output">Selecting default category from Food cost page</span>
-                <span class="reporter-method-output">default Category selected :Pass</span>
-                <span class="reporter-method-output">Tapped on Complete :Pass</span>
-                <span class="reporter-method-output">Tapped on TakeHome :Pass</span>
                 <span class="reporter-method-output">In categories Page</span>
                 <span class="reporter-method-output">Navigating to categories page :Pass</span>
-                <span class="reporter-method-output">Default category list verification done :Pass</span>
-              </div> <!-- reporter-method-output-div -->
-            </div> <!-- reporter-method-div -->
-            <div class="reporter-method-div">
-              <span class="reporter-method-name">SI_WF21_CustomList_CustomLoc_Customcategory_FewItems</span>
-              <div class="reporter-method-output-div">
-                <span class="reporter-method-output">Login page verification :Fail</span>
-              </div> <!-- reporter-method-output-div -->
-            </div> <!-- reporter-method-div -->
-            <div class="reporter-method-div">
-              <span class="reporter-method-name">SI_WF20_CustomList_CustomLoc_Customcategory</span>
-              <div class="reporter-method-output-div">
-                <span class="reporter-method-output">Login page verification :Pass</span>
-                <span class="reporter-method-output">Sign In</span>
-                <span class="reporter-method-output">Sign in :Pass</span>
-                <span class="reporter-method-output">Navigating to Setup inventory page :Pass</span>
-                <span class="reporter-method-output">Tapped on skip :Pass</span>
-                <span class="reporter-method-output">Selecting custom list  </span>
-                <span class="reporter-method-output">Selected  custom list  from SetupInventoryImportItems:Pass</span>
-                <span class="reporter-method-output">Tapped on Continue :Pass</span>
-                <span class="reporter-method-output">Selecting list</span>
-                <span class="reporter-method-output">List is selected :Pass</span>
-                <span class="reporter-method-output">custom location clickElemented :Pass</span>
-                <span class="reporter-method-output">Tapped on Continue :Pass</span>
-                <span class="reporter-method-output">added location name :Pass</span>
-                <span class="reporter-method-output">Entering type Dry</span>
-                <span class="reporter-method-output">Entered type in add Locations page :Pass</span>
-                <span class="reporter-method-output">Entering anotherloc</span>
-                <span class="reporter-method-output">Entered second loc in Locations page :Pass</span>
-                <span class="reporter-method-output">Entering Location name</span>
-                <span class="reporter-method-output">Entered location name2 in add Locations page :Pass</span>
-                <span class="reporter-method-output">Entering type Dry</span>
-                <span class="reporter-method-output">Entered type in add Locations page :Pass</span>
-                <span class="reporter-method-output">Tapped on Next : Pass</span>
-                <span class="reporter-method-output"> Adding Item from Order Guide</span>
-                <span class="reporter-method-output">Multiple items selected :Pass</span>
-                <span class="reporter-method-output">Tapped on Next : Pass</span>
-                <span class="reporter-method-output">Multiple items selected :Pass</span>
+                <span class="reporter-method-output">Navigating to Add categories page :Pass</span>
+                <span class="reporter-method-output">added category name :Pass</span>
+                <span class="reporter-method-output">Selected food :Pass</span>
                 <span class="reporter-method-output">Tapped on done:Pass</span>
-                <span class="reporter-method-output">Custom Category selected from Food cost page :Pass</span>
-                <span class="reporter-method-output">Tapped on Continue :Pass</span>
-                <span class="reporter-method-output">Creating multiple custom category</span>
-                <span class="reporter-method-output">Custom Categories created:Pass</span>
-                <span class="reporter-method-output">Tapped on Next : Pass</span>
-                <span class="reporter-method-output">Multiple items selected :Pass</span>
-                <span class="reporter-method-output">Tapped on Next : Pass</span>
-                <span class="reporter-method-output">Multiple items selected :Pass</span>
-                <span class="reporter-method-output">Tapped on done:Pass</span>
-                <span class="reporter-method-output">Tapped on TakeHome :Pass</span>
-                <span class="reporter-method-output">Tapped  TrackInventory from inventory tools page:Pass</span>
-                <span class="reporter-method-output">Selecting location</span>
-                <span class="reporter-method-output">Location is selected for item :Pass</span>
-                <span class="reporter-method-output">locationItem verify </span>
-                <span class="reporter-method-output">Item verification done :Pass</span>
-                <span class="reporter-method-output">category verify </span>
-                <span class="reporter-method-output">Categories identified for syscoitems :Pass</span>
-                <span class="reporter-method-output">Custom Category verification on location1</span>
-                <span class="reporter-method-output">Custom Category is verified for items in location1 :Pass</span>
-                <span class="reporter-method-output">Verifying location of items </span>
-                <span class="reporter-method-output">Verifying location of items  :Pass</span>
-                <span class="reporter-method-output">Tapped on done:Pass</span>
-                <span class="reporter-method-output">Selecting location</span>
-                <span class="reporter-method-output">Location is selected for item   :Fail</span>
+                <span class="reporter-method-output">tap on back :Fail</span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">36 ignored methods</span>
+            <span class="header-content">39 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
@@ -408,11 +262,13 @@ return data;
                 <br/>
                 <span class="ignored-method-name">SI_WF22_CustomList_DefaultLoc_Customcategory</span>
                 <br/>
-                <span class="ignored-method-name">MIL_WF2_Location_AddItems__MultipleLocation</span>
-                <br/>
                 <span class="ignored-method-name">MIL_WF5_Locations_ItemEdit_UpdateLocation</span>
                 <br/>
+                <span class="ignored-method-name">MIL_WF2_Location_AddItems__MultipleLocation</span>
+                <br/>
                 <span class="ignored-method-name">MIL_WF1_WF4_Location_AddItems</span>
+                <br/>
+                <span class="ignored-method-name">SI_WF20_CustomList_CustomLoc_Customcategory</span>
                 <br/>
                 <span class="ignored-method-name">SI_WF31_CustomList_MultipleList_ListNames_Skipcategory</span>
                 <br/>
@@ -424,7 +280,11 @@ return data;
                 <br/>
                 <span class="ignored-method-name">SI_WF35_CustomListSingleList_CustomCategoryOnLocationsPage_suggestedcategory</span>
                 <br/>
+                <span class="ignored-method-name">SI_WF21_CustomList_CustomLoc_Customcategory_FewItems</span>
+                <br/>
                 <span class="ignored-method-name">SI_WF1_OG_DefaultLocation_DefaultCategory</span>
+                <br/>
+                <span class="ignored-method-name">SI_WF19_CustomList_defaultLoc_defaultcategory</span>
                 <br/>
                 <span class="ignored-method-name">SI_WF26_CustomList_SkipLoc_defaultcategory_NU</span>
                 <br/>
@@ -486,40 +346,14 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">SI_WF19_CustomList_defaultLoc_defaultcategory</span>
-                <span class="method-start">12965 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">64474 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">67044 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">SI_WF20_CustomList_CustomLoc_Customcategory</span>
-                <span class="method-start">81860 ms</span>
+                <span class="method-name">MNS_1_1_CreateNonSyscoItem_LinkSupplier_Location_Category</span>
+                <span class="method-start">14276 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">177067 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">179625 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">SI_WF21_CustomList_CustomLoc_Customcategory_FewItems</span>
-                <span class="method-start">252967 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">254755 ms</span>
+                <span class="method-start">66856 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

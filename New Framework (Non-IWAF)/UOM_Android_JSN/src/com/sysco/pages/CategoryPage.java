@@ -84,9 +84,10 @@ import io.appium.java_client.ios.IOSDriver;
 			public static	int CategorysNoOfElements2;
 			public static final String ADD_CategoryName= "//*[@id='name']";
 			public static final String AddCategory_FoodWeb= "(//*[@class='mm-c-expense__details-radio']//*[@class='radio'])[1]";
-			public static final String AddCategory_Food="//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIAElement[1]";
+			//public static final String AddCategory_Food="com.syscouom.uomqasq:id/foodType";
+			
 			public static final String AddCategory_NonFood="//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIAElement[2]";
-		
+		    
 		
 			public static final String Done="//UIAStaticText[@label='Done']";
 			public static final String DoneWeb="//*[@id='done-nav']/a";
@@ -553,7 +554,7 @@ import io.appium.java_client.ios.IOSDriver;
 		   		
 		   	}
 		   @SuppressWarnings({ "rawtypes", "unchecked", "unused" })
-		public CategoryPage AddCategoryFood(String string) throws InterruptedException, IOException
+		public CategoryPage AddLocationCooler(String string) throws InterruptedException, IOException
 		   	{
 		   		String string2="Issue";   
 		   		String finalPath1=Screenshot.drivePath+string+string2+Screenshot.pathExtension;	
@@ -643,8 +644,32 @@ import io.appium.java_client.ios.IOSDriver;
 			return this;
 			
 		}
-		
-		
+		   @SuppressWarnings({ "rawtypes", "unchecked", "unused" })
+			public CategoryPage AddCategoryFood(String string) throws InterruptedException, IOException
+			   	{
+			   		String string2="Issue";   
+			   		String finalPath1=Screenshot.drivePath+string+string2+Screenshot.pathExtension;	
+			   		
+			   		try{
+			  			//switchToNativeContext();
+			  			waitForElementToBeClickable(AddCategory_FoodWeb);
+			   		    clickElement(AddCategory_FoodWeb);
+			   		 switchToWebContext();
+			   			 		Reporter.log("Selected food :Pass");
+			   			}
+			   			
+			   	
+			   		
+			   		catch(Exception e)
+			   		{
+			   			Reporter.log("Selected food :Fail");
+			   			switchToNativeContext();takeScreenshot(finalPath1);
+			   			Assert.assertTrue(false);
+			   		}
+			   		
+			   		return this;
+			   		
+			   	}
 		@SuppressWarnings("rawtypes")
 		public CategoryPage TapOnBack(String string) throws InterruptedException, IOException{
 			String finalPath1=Screenshot.drivePath+string+Screenshot.string2+Screenshot.pathExtension;

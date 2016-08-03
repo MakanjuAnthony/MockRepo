@@ -82,9 +82,13 @@ public  JSN_Framework switchToNativeContext(){
 
 	
 public  JSN_Framework waitForElementPresent(String element) throws InterruptedException{
-	new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(element)));
+	new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(element)));
 		return this;
 	}
+public JSN_Framework waitForElementPresentByName(String element) throws InterruptedException{ 
+new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOfElementLocated(By.name(element)));
+return this; 
+}
 public  JSN_Framework waitForElementToBeClickable(String element) throws InterruptedException{
 	  new WebDriverWait(driver,30).until(ExpectedConditions.elementToBeClickable(By.xpath(element)));
 		return this;
@@ -98,6 +102,11 @@ public  JSN_Framework clickElement(String clickElement) throws InterruptedExcept
 	driver.findElement(By.xpath(clickElement)).click();
 		return this;
 	}
+public  JSN_Framework clickElementbyName(String clickElement) throws InterruptedException{
+	driver.findElement(By.name(clickElement)).click();
+		return this;
+	}
+
 
 
 public  JSN_Framework clearElement(String clear){

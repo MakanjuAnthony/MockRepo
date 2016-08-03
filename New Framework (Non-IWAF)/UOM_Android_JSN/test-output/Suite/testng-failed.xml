@@ -9,9 +9,8 @@
     <classes>
       <class name="com.sysco.test.WorkFlow">
         <methods>
-          <include name="SI_WF21_CustomList_CustomLoc_Customcategory_FewItems"/>
-          <include name="SI_WF20_CustomList_CustomLoc_Customcategory"/>
           <include name="tearDown"/>
+          <include name="MNS_1_1_CreateNonSyscoItem_LinkSupplier_Location_Category"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- com.sysco.test.WorkFlow -->

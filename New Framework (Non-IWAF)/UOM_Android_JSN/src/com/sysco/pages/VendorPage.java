@@ -46,7 +46,8 @@ public class VendorPage extends JSN_Framework {
 	public static final String ADD_VendorContactInfo =  "//*[@id='contactName']";
 	public static final String ADD_VendorEmail = 	"//*[@id='emailAddress']";
 	public static final String ADD_VendorNote = "//*[@id='notes']";
-	public static final String DoneWeb = "//*[@id='done-nav']/a/i";
+	public static final String DoneWeb = "//*[@id='done-nav']";
+	//done-nav
 	public static final String Done = 	"//UIAStaticText[@label='Done']";
 	public static final String Back = 	"//*[@id='back-nav']/a/i";
 

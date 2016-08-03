@@ -47,9 +47,9 @@ public class WorkFlow extends JSN_Framework{
 	public  void setUp() throws Exception{
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("platformName", "android");
-		capabilities.setCapability("platformVersion", "6.0");
-		capabilities.setCapability("deviceName", "device");
-		capabilities.setCapability("app", "/Users/naveen_raj04/Desktop/UOM_Files/Builds/july 27/UOMQA_SQ-debug-7.apk");
+		capabilities.setCapability("platformVersion", "5.0");
+		capabilities.setCapability("deviceName", "SAMSUNG-SM-N900A");
+		capabilities.setCapability("app", "/Users/MrDon/Desktop/UOMProject/UOMQA_SQ-debug.apk");
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);  
 		switchToWebContext();	
@@ -2261,7 +2261,7 @@ public class WorkFlow extends JSN_Framework{
 				 locationsPage.TapAddLocation("MEC-WF 1-Tapped Add");
 
 				 categoryPage.AddCategoryName(datapool.readFromExcelCategoryInfo().categoryNameDataPool[1], "MEC-WF 1-Enter Category Name");
-				 categoryPage.AddCategoryFood("MEC-WF 1-Enter type food");
+				 categoryPage.AddLocationCooler("MEC-WF 1-Enter type Cooler");
 				 categoryPage.TapOnDone("MEC-WF 1-Tapped Done");
 				 categoryPage.TapOnBack("MEC-WF 1-Tapped Back");
 				 categoryPage.SelectCategory(datapool.readFromExcelCategoryInfo().categoryNameDataPool[1], "MEC-WF 1-Select Category Name");
@@ -2400,14 +2400,14 @@ public class WorkFlow extends JSN_Framework{
 
 		 categoryPage.TapAdd("MEC-WF 2-Add Expense Category Tap");
 		 categoryPage.AddCategoryName(datapool.readFromExcelCategoryInfo().categoryNameDataPool[1], "MEC-WF 2-Enter Category Name");
-		 categoryPage.AddCategoryFood("MEC-WF 2-Enter type food");
+		 categoryPage.AddLocationCooler("MEC-WF 2-Enter type Cooler");
 		 categoryPage.TapOnDone("MEC-WF 2-Tapped Done");
 		 categoryPage.TapOnBack("MEC-WF 2-Tapped Back");
 		 categoryPage.VerifyCategoryList(datapool.readFromExcelCategoryInfo().categoryNameDataPool[1], "MEC-WF 2-Verifying added category list");
 
 		 categoryPage.SelectCategory(datapool.readFromExcelCategoryInfo().categoryNameDataPool[1], "MEC-WF 2-Selecting Category");
 		 categoryPage.TapOnEdit("MEC-WF 2-Tap on Edit");
-		 categoryPage.AddCategoryFood("MEC-WF 2-Enter type food");
+		 categoryPage.AddLocationCooler("MEC-WF 2-Enter type Cooler");
 		 categoryPage.AddCategoryName(datapool.readFromExcelCategoryInfo().categoryNameDataPool[2], "MEC-WF 2-Entering new name");
 		 categoryPage.TapOnDone("MEC-WF 2-Tapped Done");
 		 categoryPage.TapOnBack("MEC-WF 2-Tapped Back");
@@ -2543,9 +2543,108 @@ public class WorkFlow extends JSN_Framework{
 		 * Prerequisite:Normal/MA User with OG items
 		 * 
 		 */
+	 
+	 @Test(groups={"MNS-1"},priority=36, description = "MNS-1-Manage_Create Non-Sysco Item_Link Supplier_Location_Expense Category")
+		public void MNS_1_CreateNonSyscoItem_LinkSupplier_Location_Category() throws Exception {	
 
-	@Test(groups={"MNS-1"},priority=36, description = "MNS-1-Manage_Create Non-Sysco Item_Link Supplier_Location_Expense Category")
-	public void MNS_1_CreateNonSyscoItem_LinkSupplier_Location_Category() throws Exception {	
+			  
+
+					user=1;
+			
+			loginPage.verifyLoginPage("MNS-1-LoginPage");
+			loginPage.saveUsernameCheckBoxclickElement("MNS-1-save username");
+			loginPage.signIn(datapool.readFromExcelUserInfo().userNameDataPool[user],datapool.readFromExcelUserInfo().passwordDataPool[user],"MNS-1-Login");
+			homePage.ClickAccount(datapool.readFromExcelUserInfo().userNameDataPool[user],"MNS-1-Clicked account");
+			accountsPage.Second_AccountSelection(datapool.readFromExcelUserInfo().userNameDataPool[user],"MNS-1-FirstAccountSelect");
+
+			inventoryToolPage.InvTools_SetUpInventory("MNS-1-SetupInventoryTap");
+			setupInventoryPage.TapOnSkip("MNS-1-Tapped Skip1");
+			setupInventoryPage.TapOrderGuide("MIL - WF 5-OG Selected");
+			setupInventoryPage.tapContinue("MIL - WF 5-Tapped Continue1");
+				
+			locationsPage.DefaultLocation("SI - WF 1-Tapped Custom location");
+			locationsPage.tapContinue("SI - WF 1-Tapped Continue");
+			
+			setupInventoryPage.TapOnDOThisLater("MIL-WF6-Tapped do this later");
+			setupInventoryPage.TapTakeHome("SI - WF 32-Tapped take me home")  ;
+
+			inventoryToolPage.InvTools_CreateNonSysco("MNS-1-Tapped Nonsysco item");
+			setupInventoryPage.EnterItemDetails(datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[0], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[1], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[2],datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[3], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[4], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[5], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[6], "MNS-1-NonSyscoItem details entered");
+
+			//linking supplier
+			setupInventoryPage.AddSupplier_AddProductDetailsPage("MNS-1-Select supplier");
+			vendorPage.Add_Supplier("MNS-1-AddVendorTap");
+			vendorPage.AddSupplier_Details(datapool.readFromExcelSupplier1Info().supplier1DataPool[0],datapool.readFromExcelUserInfo().supplier1DataPool[1], datapool.readFromExcelSupplier1Info().supplier1DataPool[2], datapool.readFromExcelSupplier1Info().supplier1DataPool[3], datapool.readFromExcelSupplier1Info().supplier1DataPool[4], datapool.readFromExcelSupplier1Info().supplier1DataPool[5], "MSP-1,MSP-2-Entered vendor details to be cancelled vendor details");
+			
+			vendorPage.TapOnDone("MNS-1-Supplier added");
+			vendorPage.TapOnBack("MNS-1-Tapped Back1");
+			vendorPage.SupplierSelect(datapool.readFromExcelSupplier1Info().supplier1DataPool[0],"MNS-1-SupplierSelect");
+
+			//linking location
+			locationsPage.AddLocation_AddProductDetailsPage("MNS-1-Select Add/Select location option");
+			locationsPage.TapAddLocation("MNS-1-Tapped ADD Location");
+			locationsPage.AddLocationName( datapool.readFromExcelLocationInfo().locationNameDataPool[1],"MNS-1-Enter location name");
+			locationsPage.AddLocationCooler("MNS-1-Tapped Cooler");
+			locationsPage.TapOnDone("MNS-1-Tapped Done4");
+			locationsPage.TapOnBack("MNS-1-Tapped Back2");
+			locationsPage.VerifyLocationList( datapool.readFromExcelLocationInfo().locationNameDataPool[1], "MNS-1-Verifing Added Location");
+			locationsPage.SelectLocation( datapool.readFromExcelLocationInfo().locationNameDataPool[1], "MNS-1-Selecting Added Location");
+			locationsPage.LocationDoneSelection("MNS-1-Selecting Done");
+
+			//linking category
+			locationsPage.AddCategory_AddProductDetailsPage("MNS-1-Tapped CategorySelect");
+			categoryPage.TapAdd("MNS-1-Tapped Add category");
+			categoryPage.AddCategoryName(datapool.readFromExcelCategoryInfo().categoryNameDataPool[1], "MNS-1-Enter Category Name");
+			categoryPage.AddCategoryFood("MNS-1-Enter type food");
+			categoryPage.TapOnDone("MNS-1-Tapped Done5");
+			categoryPage.TapOnBack("MNS-1-Tapped Back3");
+			categoryPage.SelectCategory(datapool.readFromExcelCategoryInfo().categoryNameDataPool[1], "MNS-1-Select Category Name");
+
+			categoryPage.TapOnDone("MNS-1-Tapped Done,Nonsyscoitem added") ;
+			inventoryToolPage.InvTools_TrackInventory("MNS-1-Selected track inventory");
+			locationsPage.SelectLocation( datapool.readFromExcelLocationInfo().locationNameDataPool[1], "MNS-1-Select added location");
+
+			setupInventoryPage.verifyNonSyscoPrepItemSetupInv(datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[0],"MNS-1-Verify nonsysco item added");
+			locationsPage.NonSyscoPrepCategoryIdentify(datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[0],datapool.readFromExcelPrepItemInfo().prepItemDataPool[0],"MNS-1-Category idenitification for nonsysco");
+			categoryPage.VerifyNonSycoCustomCategory(datapool.readFromExcelCategoryInfo().categoryNameDataPool[1], "MNS-1-Category verification");
+			
+			locationsPage.ProductSelect(datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[0], "MIL-WF10-Product select");
+			locationsPage.TapOnEdit("MIL-WF10-Tap on edit");
+			
+			
+			setupInventoryPage.EnterItemDetails( datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[7],  datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[8],  datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[9],  datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[10],  datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[11], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[12],  datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[13], "MIL-WF10-NonSyscoItem details entered");
+			setupInventoryPage.AddSupplier_AddProductDetailsPage("MIL-WF10-select supplier");
+
+			vendorPage.Add_Supplier("MIL-WF10-AddVendorTap");
+			vendorPage.AddSupplier_Details(datapool.readFromExcelSupplier2Info().supplier2DataPool[0], datapool.readFromExcelSupplier2Info().supplier2DataPool[1], datapool.readFromExcelSupplier2Info().supplier2DataPool[2], datapool.readFromExcelSupplier2Info().supplier2DataPool[3], datapool.readFromExcelSupplier2Info().supplier2DataPool[4], datapool.readFromExcelSupplier2Info().supplier2DataPool[5], "MIL-WF10-AddVendorDetails");
+			vendorPage.TapOnDone("MIL-WF10-Done");
+			vendorPage.TapOnBack("MIL-WF10-Back");
+			vendorPage.SupplierSelect(datapool.readFromExcelSupplier2Info().supplier2DataPool[0],"MIL-WF10-SupplierSelect");
+			
+			locationsPage.AddLocation_AddProductDetailsPage("MIL-WF10-Select Add/Select location option");
+			locationsPage.TapAddLocation("MIL-WF10-Tapped ADD");
+			locationsPage.AddLocationName( datapool.readFromExcelLocationInfo().locationNameDataPool[2],"MIL-WF10-Enter location2 name");
+			locationsPage.AddCatFood("MIL-WF10-Tapped Food");
+			locationsPage.TapOnDone("MIL-WF10-Tapped Done");
+			locationsPage.TapOnBack("MIL-WF10-Tapped Back");
+			locationsPage.VerifyLocationList( datapool.readFromExcelLocationInfo().locationNameDataPool[2], "MIL-WF10-Verifing Added Location2");
+
+			locationsPage.SelectLocation( datapool.readFromExcelLocationInfo().locationNameDataPool[2], "MIL-WF10-Selecting Added Location2");
+			locationsPage.SelectLocation( datapool.readFromExcelLocationInfo().locationNameDataPool[1], "MIL-WF2-Selecting Added Location2") ;    //not preselected
+			locationsPage.LocationDoneSelection("MIL-WF10-Selecting Done");
+			locationsPage.TapOnDone("MIL-WF10-Tapped Done");
+			
+			locationsPage.TapOnBack("MIL-WF10-Tapped Back");
+			locationsPage.SelectLocation( datapool.readFromExcelLocationInfo().locationNameDataPool[2], "MIL-WF10-Selecting Added Location2");
+			setupInventoryPage.verifyNonSyscoPrepItemSetupInv( datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[7],"MIL-WF10-Verify nonsysco item added");
+			
+		}
+			
+			
+			 
+
+	@Test(groups={"MNS-1-1"},priority=36, description = "MNS-1-Manage_Create Non-Sysco Item_Link Supplier_Location_Expense Category")
+	public void MNS_1_1_CreateNonSyscoItem_LinkSupplier_Location_Category() throws Exception {	
 
 		  
 
@@ -2557,45 +2656,57 @@ public class WorkFlow extends JSN_Framework{
 		homePage.ClickAccount(datapool.readFromExcelUserInfo().userNameDataPool[user],"MNS-1-Clicked account");
 		accountsPage.Second_AccountSelection(datapool.readFromExcelUserInfo().userNameDataPool[user],"MNS-1-FirstAccountSelect");
 
-		inventoryToolPage.InvTools_SetUpInventory("MNS-1-SetupInventoryTap");
-		setupInventoryPage.TapOnSkip("MNS-1-Tapped Skip1");
-		setupInventoryPage.TapOrderGuide("MIL - WF 5-OG Selected");
-		setupInventoryPage.tapContinue("MIL - WF 5-Tapped Continue1");
+		//inventoryToolPage.InvTools_SetUpInventory("MNS-1-SetupInventoryTap");
+		//setupInventoryPage.TapOnSkip("MNS-1-Tapped Skip1");
+		//setupInventoryPage.TapOrderGuide("MIL - WF 5-OG Selected");
+		//setupInventoryPage.tapContinue("MIL - WF 5-Tapped Continue1");
 			
-		locationsPage.DefaultLocation("SI - WF 1-Tapped Custom location");
-		locationsPage.tapContinue("SI - WF 1-Tapped Continue");
+		//locationsPage.DefaultLocation("SI - WF 1-Tapped Custom location");
+		//locationsPage.tapContinue("SI - WF 1-Tapped Continue");
 		
-		setupInventoryPage.TapOnDOThisLater("MIL-WF6-Tapped do this later");
-		setupInventoryPage.TapTakeHome("SI - WF 32-Tapped take me home")  ;
-
-		inventoryToolPage.InvTools_CreateNonSysco("MNS-1-Tapped Nonsysco item");
-		setupInventoryPage.EnterItemDetails(datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[0], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[1], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[2],datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[3], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[4], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[5], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[6], "MNS-1-NonSyscoItem details entered");
-
-		//linking supplier
-		setupInventoryPage.AddSupplier_AddProductDetailsPage("MNS-1-Select supplier");
-		vendorPage.Add_Supplier("MNS-1-AddVendorTap");
-		vendorPage.AddSupplier_Details(datapool.readFromExcelSupplier1Info().supplier1DataPool[0],datapool.readFromExcelUserInfo().supplier1DataPool[1], datapool.readFromExcelSupplier1Info().supplier1DataPool[2], datapool.readFromExcelSupplier1Info().supplier1DataPool[3], datapool.readFromExcelSupplier1Info().supplier1DataPool[4], datapool.readFromExcelSupplier1Info().supplier1DataPool[5], "MSP-1,MSP-2-Entered vendor details to be cancelled vendor details");
+		//setupInventoryPage.TapOnDOThisLater("MIL-WF6-Tapped do this later");
+		//setupInventoryPage.TapTakeHome("SI - WF 32-Tapped take me home")  ;
 		
-		vendorPage.TapOnDone("MNS-1-Supplier added");
-		vendorPage.TapOnBack("MNS-1-Tapped Back1");
-		vendorPage.SupplierSelect(datapool.readFromExcelSupplier1Info().supplier1DataPool[0],"MNS-1-SupplierSelect");
+		//create supplier 2
+				/*inventoryToolPage.InvTools_Suppliers("MSP-1,MSP-2-Tapped on suppliers");
+				
+				vendorPage.verifySupplierPage("MSP-1,MSP-2-Supplier page verified");
+				vendorPage.Add_Supplier("MSP-1,MSP-2-Add button clicked");
+				vendorPage.AddSupplier_Details(datapool.readFromExcelSupplier2Info().supplier2DataPool[0], datapool.readFromExcelSupplier2Info().supplier2DataPool[1], datapool.readFromExcelSupplier2Info().supplier2DataPool[2], datapool.readFromExcelSupplier2Info().supplier2DataPool[3], datapool.readFromExcelSupplier2Info().supplier2DataPool[4], datapool.readFromExcelSupplier2Info().supplier2DataPool[5], "MSP-1,MSP-2-Vendor details added");
+				vendorPage.TapOnDone("MSP-1,MSP-2-Done tapped");
+				vendorPage.TapOnBack("MSP-1,MSP-2-Back tapped");
+				vendorPage.TapOnBack("MSP-1,MSP-2-Back tapped");
+				*/
+				//create category 1
+				 inventoryToolPage.InvTools_Category("MEC-WF 2-Expense Category Tap");
 
-		//linking location
-		locationsPage.AddLocation_AddProductDetailsPage("MNS-1-Select Add/Select location option");
-		locationsPage.TapAddLocation("MNS-1-Tapped ADD Location");
-		locationsPage.AddLocationName( datapool.readFromExcelLocationInfo().locationNameDataPool[1],"MNS-1-Enter location name");
-		locationsPage.AddLocationCooler("MNS-1-Tapped Cooler");
-		locationsPage.TapOnDone("MNS-1-Tapped Done4");
-		locationsPage.TapOnBack("MNS-1-Tapped Back2");
-		locationsPage.VerifyLocationList( datapool.readFromExcelLocationInfo().locationNameDataPool[1], "MNS-1-Verifing Added Location");
-		locationsPage.SelectLocation( datapool.readFromExcelLocationInfo().locationNameDataPool[1], "MNS-1-Selecting Added Location");
-		locationsPage.LocationDoneSelection("MNS-1-Selecting Done");
+				 categoryPage.TapAdd("MEC-WF 2-Add Expense Category Tap");
+				 categoryPage.AddCategoryName(datapool.readFromExcelCategoryInfo().categoryNameDataPool[1], "MEC-WF 2-Enter Category Name");
+				 categoryPage.AddCategoryFood("MEC-WF 2-Enter type food");
+				 categoryPage.TapOnDone("MEC-WF 2-Tapped Done");
+				 categoryPage.TapOnBack("MEC-WF 2-Tapped Back");
+				 categoryPage.VerifyCategoryList(datapool.readFromExcelCategoryInfo().categoryNameDataPool[1], "MEC-WF 2-Verifying added category list");
+				 categoryPage.TapOnBack("MEC-WF 2-Tapped Back");
+				 
+				//Non sysco pdt card page
+					inventoryToolPage.InvTools_CreateNonSysco("MNS-1-Tapped Nonsysco item");
+					setupInventoryPage.SelectSupplier_PdtCard(datapool.readFromExcelSupplier2Info().supplier2DataPool[0], "Supplier selected");
+					setupInventoryPage.SelectCategory_PdtCard(datapool.readFromExcelCategoryInfo().categoryNameDataPool[1], "Category selected");
+					
+					setupInventoryPage.EnterItemDetails(datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[0], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[1], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[2],datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[3], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[4], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[5], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[6], "MNS-1-NonSyscoItem details entered");
+					categoryPage.TapOnDone("MNS-1-Tapped Done,Nonsyscoitem added") ;
+					categoryPage.TapOnBack("MEC-WF 2-Tapped Back");
+						
+				 
+				inventoryToolPage.InvTools_CreateNonSysco("MNS-1-Tapped Nonsysco item");
+		        setupInventoryPage.EnterItemDetails(datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[0], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[1], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[2],datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[3], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[4], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[5], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[6], "MNS-1-NonSyscoItem details entered");
+
 
 		//linking category
 		locationsPage.AddCategory_AddProductDetailsPage("MNS-1-Tapped CategorySelect");
 		categoryPage.TapAdd("MNS-1-Tapped Add category");
 		categoryPage.AddCategoryName(datapool.readFromExcelCategoryInfo().categoryNameDataPool[1], "MNS-1-Enter Category Name");
-		categoryPage.AddCategoryFood("MNS-1-Enter type food");
+		categoryPage.AddLocationCooler("MNS-1-Enter type Cooler");
 		categoryPage.TapOnDone("MNS-1-Tapped Done5");
 		categoryPage.TapOnBack("MNS-1-Tapped Back3");
 		categoryPage.SelectCategory(datapool.readFromExcelCategoryInfo().categoryNameDataPool[1], "MNS-1-Select Category Name");
@@ -2624,7 +2735,7 @@ public class WorkFlow extends JSN_Framework{
 		locationsPage.AddLocation_AddProductDetailsPage("MIL-WF10-Select Add/Select location option");
 		locationsPage.TapAddLocation("MIL-WF10-Tapped ADD");
 		locationsPage.AddLocationName( datapool.readFromExcelLocationInfo().locationNameDataPool[2],"MIL-WF10-Enter location2 name");
-		locationsPage.AddCatFood("MIL-WF10-Tapped Food");
+		locationsPage.AddLocationCooler("MIL-WF10-Tapped Cooler");
 		locationsPage.TapOnDone("MIL-WF10-Tapped Done");
 		locationsPage.TapOnBack("MIL-WF10-Tapped Back");
 		locationsPage.VerifyLocationList( datapool.readFromExcelLocationInfo().locationNameDataPool[2], "MIL-WF10-Verifing Added Location2");
@@ -2690,7 +2801,7 @@ public class WorkFlow extends JSN_Framework{
 			locationsPage.AddCategory_AddProductDetailsPage("MPI-1-Tapped CategorySelect");
 			categoryPage.TapAdd("MPI-1-Tapped Add category");
 			categoryPage.AddCategoryName(datapool.readFromExcelCategoryInfo().categoryNameDataPool[1], "MPI-1-Enter Category Name");
-			categoryPage.AddCategoryFood("MPI-1-Enter type food");
+			categoryPage.AddLocationCooler("MPI-1-Enter type Cooler");
 			categoryPage.TapOnDone("MPI-1-Tapped Done4");
 			categoryPage.TapOnBack("MPI-1-Tapped Back2");
 			categoryPage.SelectCategory(datapool.readFromExcelCategoryInfo().categoryNameDataPool[1], "MPI-1-Select Category Name");

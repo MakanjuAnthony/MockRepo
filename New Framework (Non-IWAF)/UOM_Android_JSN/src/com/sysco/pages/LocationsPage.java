@@ -147,7 +147,7 @@ public static final String LocationCooler =
 	public static final String LocationsDone = 
 			"//*[@type='button' and contains(text(),'Done')]";
 	public static final String AddProductPage_AddLocations = 
-			"//*[@class='row']//*[contains(text(),'Add/Select Location(s)')]";
+			"#expense-add > div > select";
 	public static final String ProductDetailsPage = 
 			"//*[@class='navbar-brand']//*[contains(text(),'Product Details')]";
 
@@ -1348,6 +1348,28 @@ public static final String LocationCooler =
 		}
 		return this;
 	}
+	@SuppressWarnings("rawtypes")
+	public LocationsPage AddLocation_ProductDetailsPage(String string) throws InterruptedException, IOException {
+
+		String string2 = "Issue";
+		String finalPath1 = Screenshot.drivePath + string + string2 + Screenshot.pathExtension;
+		try {
+
+			waitForElementToBeClickable(AddProductPage_AddLocations);
+			if (isElementPresent(AddProductPage_AddLocations)) {
+				clickElement(AddProductPage_AddLocations);
+			}
+			Reporter.log("Selected locations : Pass");
+		} catch (Exception e) {
+			Reporter.log("Selected locations :Fail");
+			switchToNativeContext();
+			takeScreenshot(finalPath1);
+			
+			Assert.assertTrue(false);
+		}
+		return this;
+	}
+
 
 	@SuppressWarnings("rawtypes")
 	public LocationsPage AddLocation_AddProductDetailsPage(String string) throws InterruptedException, IOException {
