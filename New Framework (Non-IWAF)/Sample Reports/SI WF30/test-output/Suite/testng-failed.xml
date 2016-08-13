@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+  <test name="Test(failed)">
+    <classes>
+      <class name="com.sysco.test.WorkFlow">
+        <methods>
+          <include name="SI_WF7_OG_DefaultLocation_SkipCategory"/>
+          <include name="tearDown"/>
+          <include name="SI_WF5_OG_CustomLocation_DefaultCategory"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.sysco.test.WorkFlow -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

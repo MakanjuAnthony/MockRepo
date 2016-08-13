@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-somename">
+              <span class="suite-name border-passed">somename</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-somename">
+                    <span>testng-customsuite.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-somename">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-somename">
+                    <span>1 group</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-somename">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-somename">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-somename">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-somename">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">2 methods,   2 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-somename" class="hide-methods passed suite-somename"> (hide)</a> <!-- hide-methods passed suite-somename -->
+                      <a href="#" panel-name="suite-somename" class="show-methods passed suite-somename"> (show)</a> <!-- show-methods passed suite-somename -->
+                    </span>
+                    <div class="method-list-content passed suite-somename">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-somename" title="com.tests.May27TestSuite3" hash-for-method="historicalCanceledDelete">historicalCanceledDelete</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-somename" title="com.tests.May27TestSuite3" hash-for-method="submitOrder_Submitted_Modify">submitOrder_Submitted_Modify</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-somename -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-somename" class="panel somename">
+          <div class="suite-somename-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.tests.May27TestSuite3</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="historicalCanceledDelete">
+                  </a> <!-- historicalCanceledDelete -->
+                  <span class="method-name">historicalCanceledDelete</span>
+                  <em>
+(Try to delete an order from Historical list - Canceled )                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="submitOrder_Submitted_Modify">
+                  </a> <!-- submitOrder_Submitted_Modify -->
+                  <span class="method-name">submitOrder_Submitted_Modify</span>
+                  <em>
+(Try to modify an Order in Submitted Status before cutoff time and Place Order)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-somename-class-passed -->
+        </div> <!-- panel somename -->
+        <div panel-name="test-xml-somename" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">/private/var/folders/pz/5bj23l5524g9cl7hycz20mpwvwnf48/T/testng-eclipse-984209608/testng-customsuite.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;somename&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;com.iwaf.framework.testng.TestNGTestListener&quot;/&gt;
+    &lt;listener class-name=&quot;com.iwaf.framework.testng.TestSoftAssert&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.tests.May27TestSuite3&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Default test --&gt;
+&lt;/suite&gt; &lt;!-- somename --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-somename" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for somename</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Default test (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-somename" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for somename</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">Test_Script</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">historicalCanceledDelete</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">submitOrder_Submitted_Modify</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-somename" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for somename</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_somename');
+function tableData_somename() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(2);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'submitOrder_Submitted_Modify')
+data.setCell(0, 2, 'com.tests.May27TestSuite3')
+data.setCell(0, 3, 170025);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'historicalCanceledDelete')
+data.setCell(1, 2, 'com.tests.May27TestSuite3')
+data.setCell(1, 3, 135069);
+window.suiteTableData['somename']= { tableData: data, tableDiv: 'times-div-somename'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 5 minutes</span>
+              <div id="times-div-somename">
+              </div> <!-- times-div-somename -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-somename" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for somename</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">submitOrder_Submitted_Modify</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">[15:24:45] : <b><FONT SIZE="2">Opened Login Page </FONT></b><br></span>
+                <span class="reporter-method-output">[15:24:48] : <b><FONT SIZE="2">Enter User Name</FONT></b><br></span>
+                <span class="reporter-method-output">[15:24:49] : <b><FONT SIZE="2">Enter Password</FONT></b><br></span>
+                <span class="reporter-method-output">[15:24:51] : <b><FONT SIZE="2">Click on Login  Button</FONT></b><br></span>
+                <span class="reporter-method-output">[15:24:51] : <b><FONT SIZE="2">User Logged In: Pass</FONT></b><br></span>
+                <span class="reporter-method-output">[15:25:07] : <b><FONT SIZE="2">at submittedList</FONT></b><br></span>
+                <span class="reporter-method-output">[15:25:09] : <b><FONT SIZE="2">Clicked on submitted list in home Page: Pass</FONT></b><br></span>
+                <span class="reporter-method-output">[15:25:19] : <b><FONT SIZE="2">at  SubmittedOrdersPage</FONT></b><br></span>
+                <span class="reporter-method-output">[15:25:25] : <b><FONT SIZE="2">Select on Delivered Item in SubmittedOrdersPage Page: Pass</FONT></b><br></span>
+                <span class="reporter-method-output">[15:25:45] : <b><FONT SIZE="2">at My active order</FONT></b><br></span>
+                <span class="reporter-method-output">[15:25:46] : <b><FONT SIZE="2">Clicked on SubmittedPage Modify button: Pass</FONT></b><br></span>
+                <span class="reporter-method-output">[15:25:46] : <b><FONT SIZE="2">at ModifyOrder_Popup</FONT></b><br></span>
+                <span class="reporter-method-output">[15:25:52] : <b><FONT SIZE="2">Clicked on SubmittedPage Submitted_ModifyOrder_Continue button: Pass</FONT></b><br></span>
+                <span class="reporter-method-output">[15:25:54] : <b><FONT SIZE="2">at My active order</FONT></b><br></span>
+                <span class="reporter-method-output">[15:26:15] : <b><FONT SIZE="2">Clicked on My Active order Add more items button: Pass</FONT></b><br></span>
+                <span class="reporter-method-output">[15:26:15] : <b><FONT SIZE="2">at lists_Inventory</FONT></b><br></span>
+                <span class="reporter-method-output">[15:26:18] : <b><FONT SIZE="2">Create new order via inventory From Lists Page: Pass</FONT></b><br></span>
+                <span class="reporter-method-output">[15:26:18] : <b><FONT SIZE="2">at  InventoryPage</FONT></b><br></span>
+                <span class="reporter-method-output">[15:26:27] : <b><FONT SIZE="2">Clicked on Plus Btn : Pass</FONT></b><br></span>
+                <span class="reporter-method-output">[15:26:42] : <b><FONT SIZE="2">at inventory_CartClick</FONT></b><br></span>
+                <span class="reporter-method-output">[15:26:49] : <b><FONT SIZE="2">Clicked on Inventory Page Cart: Pass</FONT></b><br></span>
+                <span class="reporter-method-output">[15:26:49] : <b><FONT SIZE="2">at My active order</FONT></b><br></span>
+                <span class="reporter-method-output">[15:27:06] : <b><FONT SIZE="2">Clicked on My Active order Submit button: Pass</FONT></b><br></span>
+                <span class="reporter-method-output">[15:27:17] : <b><FONT SIZE="2">Alert closed: Pass</FONT></b><br></span>
+                <span class="reporter-method-output">Test completed : submitOrder_Submitted_Modify</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">historicalCanceledDelete</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">[15:22:28] : <b><FONT SIZE="2">Opened Login Page </FONT></b><br></span>
+                <span class="reporter-method-output">#scenario:Verify login Page Elements</span>
+                <span class="reporter-method-output">[15:22:32] : <b><FONT SIZE="2">Sysco logo  displayed:Pass</FONT></b><br></span>
+                <span class="reporter-method-output">[15:23:34] : <b><FONT SIZE="2">Enter User Name</FONT></b><br></span>
+                <span class="reporter-method-output">[15:23:35] : <b><FONT SIZE="2">Enter Password</FONT></b><br></span>
+                <span class="reporter-method-output">[15:23:37] : <b><FONT SIZE="2">Click on Login  Button</FONT></b><br></span>
+                <span class="reporter-method-output">[15:23:37] : <b><FONT SIZE="2">User Logged In: Pass</FONT></b><br></span>
+                <span class="reporter-method-output">[15:23:53] : <b><FONT SIZE="2">at Historical_Home</FONT></b><br></span>
+                <span class="reporter-method-output">[15:24:04] : <b><FONT SIZE="2">Clicked on Historical in home Page: Pass</FONT></b><br></span>
+                <span class="reporter-method-output">[15:24:04] : <b><FONT SIZE="2">at  HistoricalOrders Page</FONT></b><br></span>
+                <span class="reporter-method-output">[15:24:17] : <b><FONT SIZE="2">Select on Cancelled Item in HistoricalOrders Page: Pass</FONT></b><br></span>
+                <span class="reporter-method-output">Test completed : historicalCanceledDelete</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-somename" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-somename" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.tests.May27TestSuite3</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(public void com.tests.May27TestSuite3.historicalCanceledDelete() throws java.lang.InterruptedExcepti...)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">historicalCanceledDelete</span>
+                <span class="method-start">8 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(public void com.tests.May27TestSuite3.submitOrder_Submitted_Modify() throws java.lang.InterruptedExc...)</span>
+                <span class="method-start">136694 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">submitOrder_Submitted_Modify</span>
+                <span class="method-start">136694 ms</span>
+              </div> <!-- test-method -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

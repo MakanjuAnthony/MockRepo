@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="592.542">
+  <properties />
+  
+  
+            <testcase name="MIL_WF3_Location_SearchItems" time="592.542" classname="com.sysco.test.WorkFlow" />
+      
+</testsuite>

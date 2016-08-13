@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[Login page verification :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Save username verification :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Sign In]]>
+    </line>
+    <line>
+      <![CDATA[Sign in :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Navigating to Setup inventory page :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on skip :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Selected  orderguide  from SetupInventoryImportItems:Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on Continue :Pass]]>
+    </line>
+    <line>
+      <![CDATA[default location clickElemented :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on Continue :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on DoThisLater :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on TakeHome :Pass]]>
+    </line>
+    <line>
+      <![CDATA[In categories Page]]>
+    </line>
+    <line>
+      <![CDATA[Navigating to categories page :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Navigating to Add categories page :Pass]]>
+    </line>
+    <line>
+      <![CDATA[added category name :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Selected food :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on done:Pass]]>
+    </line>
+    <line>
+      <![CDATA[tap on back :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Checking addeded Location in location list]]>
+    </line>
+    <line>
+      <![CDATA[Added Category is listed :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Selecting Category]]>
+    </line>
+    <line>
+      <![CDATA[Category is selected for item :Pass]]>
+    </line>
+    <line>
+      <![CDATA[tap on edit :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Selected food :Pass]]>
+    </line>
+    <line>
+      <![CDATA[added category name :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on done:Pass]]>
+    </line>
+    <line>
+      <![CDATA[tap on back :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Checking addeded Location in location list]]>
+    </line>
+    <line>
+      <![CDATA[Added Category is listed :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Selecting Category]]>
+    </line>
+    <line>
+      <![CDATA[Category is selected for item :Pass]]>
+    </line>
+    <line>
+      <![CDATA[tap on Delete :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Deleted]]>
+    </line>
+    <line>
+      <![CDATA[tap on yes delete :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Deleted category is not listed   :Pass]]>
+    </line>
+  </reporter-output>
+  <suite name="Suite2" duration-ms="146487" started-at="2016-07-29T11:43:25Z" finished-at="2016-07-29T11:45:51Z">
+    <groups>
+      <group name="MEC - WF 2">
+        <method signature="WorkFlow.MEC_WF2_Category_Create_Edit_Delete_Category()[pri:0, instance:com.sysco.test.WorkFlow@7dc7cbad]" name="MEC_WF2_Category_Create_Edit_Delete_Category" class="com.sysco.test.WorkFlow"/>
+      </group> <!-- MEC - WF 2 -->
+    </groups>
+    <test name="Test" duration-ms="146487" started-at="2016-07-29T11:43:25Z" finished-at="2016-07-29T11:45:51Z">
+      <class name="com.sysco.test.WorkFlow">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.sysco.test.WorkFlow@7dc7cbad]" name="setUp" is-config="true" duration-ms="19010" started-at="2016-07-29T17:13:25Z" finished-at="2016-07-29T17:13:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="MEC_WF2_Category_Create_Edit_Delete_Category()[pri:0, instance:com.sysco.test.WorkFlow@7dc7cbad]" name="MEC_WF2_Category_Create_Edit_Delete_Category" duration-ms="125365" started-at="2016-07-29T17:13:44Z" description="MEC - WF 2-Creating, editing and deleting category " finished-at="2016-07-29T17:15:49Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Login page verification :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Save username verification :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Sign In]]>
+            </line>
+            <line>
+              <![CDATA[Sign in :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Navigating to Setup inventory page :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on skip :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Selected  orderguide  from SetupInventoryImportItems:Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on Continue :Pass]]>
+            </line>
+            <line>
+              <![CDATA[default location clickElemented :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on Continue :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on DoThisLater :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on TakeHome :Pass]]>
+            </line>
+            <line>
+              <![CDATA[In categories Page]]>
+            </line>
+            <line>
+              <![CDATA[Navigating to categories page :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Navigating to Add categories page :Pass]]>
+            </line>
+            <line>
+              <![CDATA[added category name :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Selected food :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on done:Pass]]>
+            </line>
+            <line>
+              <![CDATA[tap on back :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Checking addeded Location in location list]]>
+            </line>
+            <line>
+              <![CDATA[Added Category is listed :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Selecting Category]]>
+            </line>
+            <line>
+              <![CDATA[Category is selected for item :Pass]]>
+            </line>
+            <line>
+              <![CDATA[tap on edit :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Selected food :Pass]]>
+            </line>
+            <line>
+              <![CDATA[added category name :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on done:Pass]]>
+            </line>
+            <line>
+              <![CDATA[tap on back :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Checking addeded Location in location list]]>
+            </line>
+            <line>
+              <![CDATA[Added Category is listed :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Selecting Category]]>
+            </line>
+            <line>
+              <![CDATA[Category is selected for item :Pass]]>
+            </line>
+            <line>
+              <![CDATA[tap on Delete :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Deleted]]>
+            </line>
+            <line>
+              <![CDATA[tap on yes delete :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Deleted category is not listed   :Pass]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- MEC_WF2_Category_Create_Edit_Delete_Category -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.sysco.test.WorkFlow@7dc7cbad]" name="tearDown" is-config="true" duration-ms="2097" started-at="2016-07-29T17:15:49Z" finished-at="2016-07-29T17:15:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.sysco.test.WorkFlow -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite2 -->
+</testng-results>

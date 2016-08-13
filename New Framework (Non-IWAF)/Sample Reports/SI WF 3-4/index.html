@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-Suite">
+              <span class="suite-name border-passed">Suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Suite">
+                    <span>Suite1.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-Suite">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-Suite">
+                    <span>2 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-Suite">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-Suite">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Suite">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-Suite">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">2 methods,   2 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Suite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.sysco.test.WorkFlow" hash-for-method="SI_WF3_OG_CustomMultipleLocation_CustomMultipleCategory">SI_WF3_OG_CustomMultipleLocation_CustomMultipleCategory</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.sysco.test.WorkFlow" hash-for-method="SI_WF4_OG_DefaultLocation_CustomCategory">SI_WF4_OG_DefaultLocation_CustomCategory</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.sysco.test.WorkFlow</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="SI_WF3_OG_CustomMultipleLocation_CustomMultipleCategory">
+                  </a> <!-- SI_WF3_OG_CustomMultipleLocation_CustomMultipleCategory -->
+                  <span class="method-name">SI_WF3_OG_CustomMultipleLocation_CustomMultipleCategory</span>
+                  <em>
+(SI - WF 3-OG + Cus Loc + Cust Category)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="SI_WF4_OG_DefaultLocation_CustomCategory">
+                  </a> <!-- SI_WF4_OG_DefaultLocation_CustomCategory -->
+                  <span class="method-name">SI_WF4_OG_DefaultLocation_CustomCategory</span>
+                  <em>
+(SI - WF 4-OG + Default Loc + Custom Category )                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+        </div> <!-- panel Suite -->
+        <div panel-name="test-xml-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">/Users/naveen_raj04/Desktop/UOM_Files/WorkspaceUOM/Sysco_UOM_JSN_iOS_Integrated/Suite1.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Suite&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;org.uncommons.reportng.HTMLReporter&quot;/&gt;
+    &lt;listener class-name=&quot;org.uncommons.reportng.JUnitXMLReporter&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test name=&quot;Test&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.sysco.test.WorkFlow&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;SI_WF3_OG_CustomMultipleLocation_CustomMultipleCategory()&quot;/&gt;
+          &lt;include name=&quot;SI_WF4_OG_DefaultLocation_CustomCategory()&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.sysco.test.WorkFlow --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Test --&gt;
+&lt;/suite&gt; &lt;!-- Suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Test (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">SI - WF 3</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">SI_WF3_OG_CustomMultipleLocation_CustomMultipleCategory</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">SI - WF 4</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">SI_WF4_OG_DefaultLocation_CustomCategory</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Suite');
+function tableData_Suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(2);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'SI_WF4_OG_DefaultLocation_CustomCategory')
+data.setCell(0, 2, 'com.sysco.test.WorkFlow')
+data.setCell(0, 3, 285336);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'SI_WF3_OG_CustomMultipleLocation_CustomMultipleCategory')
+data.setCell(1, 2, 'com.sysco.test.WorkFlow')
+data.setCell(1, 3, 256247);
+window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 9 minutes</span>
+              <div id="times-div-Suite">
+              </div> <!-- times-div-Suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">SI_WF4_OG_DefaultLocation_CustomCategory</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">Login page verification :Pass</span>
+                <span class="reporter-method-output">Save username verification :Pass</span>
+                <span class="reporter-method-output">Sign In</span>
+                <span class="reporter-method-output">Sign in :Pass</span>
+                <span class="reporter-method-output">Navigating to Setup inventory page :Pass</span>
+                <span class="reporter-method-output">Tapped on skip :Pass</span>
+                <span class="reporter-method-output">Selected  orderguide  from SetupInventoryImportItems:Pass</span>
+                <span class="reporter-method-output">Tapped on Continue :Pass</span>
+                <span class="reporter-method-output">default location clickElemented :Pass</span>
+                <span class="reporter-method-output">Tapped on Continue :Pass</span>
+                <span class="reporter-method-output">Custom Category selected from Food cost page :Pass</span>
+                <span class="reporter-method-output">Tapped on Continue :Pass</span>
+                <span class="reporter-method-output">Creating multiple custom category</span>
+                <span class="reporter-method-output">Custom Categories created:Pass</span>
+                <span class="reporter-method-output">Tapped on Next : Pass</span>
+                <span class="reporter-method-output">Multiple items selected :Pass</span>
+                <span class="reporter-method-output">Tapped on Next : Pass</span>
+                <span class="reporter-method-output">Multiple items selected :Pass</span>
+                <span class="reporter-method-output">Tapped on done:Pass</span>
+                <span class="reporter-method-output">Tapped on TakeHome :Pass</span>
+                <span class="reporter-method-output">In locations Page</span>
+                <span class="reporter-method-output">Navigating to Locations page :Pass</span>
+                <span class="reporter-method-output">Order of locations verify</span>
+                <span class="reporter-method-output">VerifyOrderOfLocations:Pass</span>
+                <span class="reporter-method-output">tap on back :Pass</span>
+                <span class="reporter-method-output">Tapped  TrackInventory from inventory tools page:Pass</span>
+                <span class="reporter-method-output">Order of locations verify</span>
+                <span class="reporter-method-output">VerifyOrderOfLocations:Pass</span>
+                <span class="reporter-method-output">Selecting location</span>
+                <span class="reporter-method-output">Location is selected for item :Pass</span>
+                <span class="reporter-method-output">No location Items verification </span>
+                <span class="reporter-method-output">No items present in no location: Pass</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">SI_WF3_OG_CustomMultipleLocation_CustomMultipleCategory</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">Login page verification :Pass</span>
+                <span class="reporter-method-output">Save username verification :Pass</span>
+                <span class="reporter-method-output">Sign In</span>
+                <span class="reporter-method-output">Sign in :Pass</span>
+                <span class="reporter-method-output">Navigating to Setup inventory page :Pass</span>
+                <span class="reporter-method-output">Tapped on skip :Pass</span>
+                <span class="reporter-method-output">Selected  orderguide  from SetupInventoryImportItems:Pass</span>
+                <span class="reporter-method-output">Tapped on Continue :Pass</span>
+                <span class="reporter-method-output">custom location clickElemented :Pass</span>
+                <span class="reporter-method-output">Tapped on Continue :Pass</span>
+                <span class="reporter-method-output">Custom locations page verify </span>
+                <span class="reporter-method-output">All options are there</span>
+                <span class="reporter-method-output">Custom  location verification done :Pass</span>
+                <span class="reporter-method-output">added location name :Pass</span>
+                <span class="reporter-method-output">Entering type Dry</span>
+                <span class="reporter-method-output">Entered type in add Locations page :Pass</span>
+                <span class="reporter-method-output">Entered type in add Locations page :Pass</span>
+                <span class="reporter-method-output">Entering anotherloc</span>
+                <span class="reporter-method-output">Entered second loc in Locations page :Pass</span>
+                <span class="reporter-method-output">Entering Location name</span>
+                <span class="reporter-method-output">Entered location name2 in add Locations page :Pass</span>
+                <span class="reporter-method-output">Entering type Dry</span>
+                <span class="reporter-method-output">Entered type in add Locations page :Pass</span>
+                <span class="reporter-method-output">Entered type in add Locations page :Pass</span>
+                <span class="reporter-method-output">Tapped on Next : Pass</span>
+                <span class="reporter-method-output"> Adding Item from Order Guide</span>
+                <span class="reporter-method-output">Multiple items selected :Pass</span>
+                <span class="reporter-method-output">Tapped on Next : Pass</span>
+                <span class="reporter-method-output">Multiple items selected :Pass</span>
+                <span class="reporter-method-output">Tapped on done:Pass</span>
+                <span class="reporter-method-output">Custom Category selected from Food cost page :Pass</span>
+                <span class="reporter-method-output">Tapped on Continue :Pass</span>
+                <span class="reporter-method-output">Category page verify </span>
+                <span class="reporter-method-output">Verify Options On Create custom category page:Pass</span>
+                <span class="reporter-method-output">Create custom Category page verification done :Pass</span>
+                <span class="reporter-method-output">Creating multiple custom category</span>
+                <span class="reporter-method-output">Custom Categories created:Pass</span>
+                <span class="reporter-method-output">Tapped on Next : Pass</span>
+                <span class="reporter-method-output">Multiple items selected :Pass</span>
+                <span class="reporter-method-output">Multiple items selected :Pass</span>
+                <span class="reporter-method-output">Tapped on Next : Pass</span>
+                <span class="reporter-method-output">Multiple items selected :Pass</span>
+                <span class="reporter-method-output">Tapped on done:Pass</span>
+                <span class="reporter-method-output">Tapped on TakeHome :Pass</span>
+                <span class="reporter-method-output">Tapped  TrackInventory from inventory tools page:Pass</span>
+                <span class="reporter-method-output">Selecting location</span>
+                <span class="reporter-method-output">Location is selected for item :Pass</span>
+                <span class="reporter-method-output">locationItem verify </span>
+                <span class="reporter-method-output">Item verification done :Pass</span>
+                <span class="reporter-method-output">tap on back :Pass</span>
+                <span class="reporter-method-output">Selecting location</span>
+                <span class="reporter-method-output">Location is selected for item :Pass</span>
+                <span class="reporter-method-output">locationItem verify </span>
+                <span class="reporter-method-output">Item verification done :Pass</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">37 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.sysco.test.WorkFlow</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">SI_WF34_OG_CustomLocation_SuggestedCategory</span>
+                <br/>
+                <span class="ignored-method-name">SI_WF36_CustomList_MultipleList_ListNames_SuggestedCat</span>
+                <br/>
+                <span class="ignored-method-name">SI_WF29_CustomListSingleList_CustomCategoryOnLocationsPage_defaultcategory</span>
+                <br/>
+                <span class="ignored-method-name">SI_WF6_OG_SkipLocation_SkipCategory</span>
+                <br/>
+                <span class="ignored-method-name">SI_WF22_CustomList_DefaultLoc_Customcategory</span>
+                <br/>
+                <span class="ignored-method-name">MIL_WF2_Location_AddItems__MultipleLocation</span>
+                <br/>
+                <span class="ignored-method-name">MIL_WF5_Locations_ItemEdit_UpdateLocation</span>
+                <br/>
+                <span class="ignored-method-name">MIL_WF1_WF4_Location_AddItems</span>
+                <br/>
+                <span class="ignored-method-name">SI_WF20_CustomList_CustomLoc_Customcategory</span>
+                <br/>
+                <span class="ignored-method-name">SI_WF31_CustomList_MultipleList_ListNames_Skipcategory</span>
+                <br/>
+                <span class="ignored-method-name">SI_WF5_OG_CustomLocation_DefaultCategory</span>
+                <br/>
+                <span class="ignored-method-name">MIL_WF6_Create_Edit_Delete_Locations</span>
+                <br/>
+                <span class="ignored-method-name">SI_WF30_CustomListSingleList_CustomCategoryOnLocationsPage_customcategory</span>
+                <br/>
+                <span class="ignored-method-name">SI_WF35_CustomListSingleList_CustomCategoryOnLocationsPage_suggestedcategory</span>
+                <br/>
+                <span class="ignored-method-name">SI_WF21_CustomList_CustomLoc_Customcategory_FewItems</span>
+                <br/>
+                <span class="ignored-method-name">SI_WF1_OG_DefaultLocation_DefaultCategory</span>
+                <br/>
+                <span class="ignored-method-name">SI_WF19_CustomList_defaultLoc_defaultcategory</span>
+                <br/>
+                <span class="ignored-method-name">SI_WF26_CustomList_SkipLoc_defaultcategory_NU</span>
+                <br/>
+                <span class="ignored-method-name">MIL_WF3_Location_SearchItems</span>
+                <br/>
+                <span class="ignored-method-name">MSP1_MSP2_Add_View_ManageSuppliers</span>
+                <br/>
+                <span class="ignored-method-name">MIL_WF10_TrackInventory_Location_item_productcard_updateqtyUOM</span>
+                <br/>
+                <span class="ignored-method-name">MP_WF1_Purchases_FoodCost</span>
+                <br/>
+                <span class="ignored-method-name">MEC_WF1_Locations_ItemEdit_UpdateCategory_MA</span>
+                <br/>
+                <span class="ignored-method-name">SI_WF7_OG_DefaultLocation_SkipCategory</span>
+                <br/>
+                <span class="ignored-method-name">SI_WF25_CustomList_DefaultLoc_Skipcategory</span>
+                <br/>
+                <span class="ignored-method-name">MEC_WF2_Category_Create_Edit_Delete_Category</span>
+                <br/>
+                <span class="ignored-method-name">SI_WF23_CustomList_CustomLoc_defaultcategory</span>
+                <br/>
+                <span class="ignored-method-name">TI_WF1_WF2_Location_Item_UOMQuantity</span>
+                <br/>
+                <span class="ignored-method-name">SI_WF8_OG_SkipLocation_DefaultCategory</span>
+                <br/>
+                <span class="ignored-method-name">MPI_1_CreatePrepItem_LinkLocation_Category_NU</span>
+                <br/>
+                <span class="ignored-method-name">SI_WF32_CustomList_SingleList_CustomCatLoc_Skipcategory</span>
+                <br/>
+                <span class="ignored-method-name">SI_WF28_CustomList_MultipleList_ListNames_Customcategory</span>
+                <br/>
+                <span class="ignored-method-name">MIL_WF7_TrackInventory_Location_Edit_Delete_Items_location_MA</span>
+                <br/>
+                <span class="ignored-method-name">SI_WF33_OG_DefaultLocation_SuggestedCategory</span>
+                <br/>
+                <span class="ignored-method-name">SI_WF27_CustomList_MultipleList_ListNames_DefaultCat</span>
+                <br/>
+                <span class="ignored-method-name">MNS_1_CreateNonSyscoItem_LinkSupplier_Location_Category</span>
+                <br/>
+                <span class="ignored-method-name">SI_WF24_CustomList_SkipLoc_Skipcategory</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.sysco.test.WorkFlow</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">SI_WF3_OG_CustomMultipleLocation_CustomMultipleCategory</span>
+                <span class="method-start">20092 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">276342 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">278325 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">SI_WF4_OG_DefaultLocation_CustomCategory</span>
+                <span class="method-start">296424 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">581761 ms</span>
+              </div> <!-- configuration-method after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

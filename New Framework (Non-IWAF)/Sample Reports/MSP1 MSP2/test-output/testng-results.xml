@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[Login page verification :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Sign In]]>
+    </line>
+    <line>
+      <![CDATA[Sign in :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Navigating to Setup inventory page :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on skip :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Selected  orderguide  from SetupInventoryImportItems:Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on Continue :Pass]]>
+    </line>
+    <line>
+      <![CDATA[default location clickElemented :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on Continue :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on DoThisLater :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on TakeHome :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapping on Suppliers from Inventory tools page]]>
+    </line>
+    <line>
+      <![CDATA[Tap on Suppliers from Inventory tools page]]>
+    </line>
+    <line>
+      <![CDATA[In Vendors Page]]>
+    </line>
+    <line>
+      <![CDATA[Navigating to Vendors page :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Verify the Supplier Page]]>
+    </line>
+    <line>
+      <![CDATA[clickElement on ADD Vendor Button]]>
+    </line>
+    <line>
+      <![CDATA[Add vendor button clickElement :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Adding vendor details]]>
+    </line>
+    <line>
+      <![CDATA[Vendor details entered  :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on done:Pass]]>
+    </line>
+    <line>
+      <![CDATA[tap on back :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Vendor is selected for item :Pass]]>
+    </line>
+    <line>
+      <![CDATA[tap on Edit :Pass]]>
+    </line>
+    <line>
+      <![CDATA[view vendor name :Pass]]>
+    </line>
+    <line>
+      <![CDATA[view vendor no   :Pass]]>
+    </line>
+    <line>
+      <![CDATA[view vendor Address   :Pass]]>
+    </line>
+    <line>
+      <![CDATA[view vendor Contact   :Pass]]>
+    </line>
+    <line>
+      <![CDATA[view vendor Email   :Pass]]>
+    </line>
+    <line>
+      <![CDATA[view vendor Note  :Pass]]>
+    </line>
+    <line>
+      <![CDATA[view vendor detail   :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Adding vendor details]]>
+    </line>
+    <line>
+      <![CDATA[Vendor details entered  :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on done:Pass]]>
+    </line>
+    <line>
+      <![CDATA[tap on back :Pass]]>
+    </line>
+    <line>
+      <![CDATA[clickElement on ADD Vendor Button]]>
+    </line>
+    <line>
+      <![CDATA[Add vendor button clickElement :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Adding vendor details]]>
+    </line>
+    <line>
+      <![CDATA[Vendor details entered  :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Tapped on Cancel]]>
+    </line>
+    <line>
+      <![CDATA[Searching for cancelled supplier]]>
+    </line>
+    <line>
+      <![CDATA[Supplier which was cancelleld is not present: Pass]]>
+    </line>
+    <line>
+      <![CDATA[Vendor is selected for item :Pass]]>
+    </line>
+    <line>
+      <![CDATA[tap on Edit :Pass]]>
+    </line>
+    <line>
+      <![CDATA[view vendor name :Pass]]>
+    </line>
+    <line>
+      <![CDATA[view vendor no   :Pass]]>
+    </line>
+    <line>
+      <![CDATA[view vendor Address   :Pass]]>
+    </line>
+    <line>
+      <![CDATA[view vendor Contact   :Pass]]>
+    </line>
+    <line>
+      <![CDATA[view vendor Email   :Pass]]>
+    </line>
+    <line>
+      <![CDATA[view vendor Note  :Pass]]>
+    </line>
+    <line>
+      <![CDATA[view vendor detail   :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Delete a vendor]]>
+    </line>
+    <line>
+      <![CDATA[Deleting vender :Pass]]>
+    </line>
+    <line>
+      <![CDATA[Selecting vendor]]>
+    </line>
+    <line>
+      <![CDATA[Deleted supplier is not listed on supplier page :Pass]]>
+    </line>
+  </reporter-output>
+  <suite name="Suite2" duration-ms="329470" started-at="2016-07-29T11:22:47Z" finished-at="2016-07-29T11:28:16Z">
+    <groups>
+      <group name="MSP-1 MSP-2">
+        <method signature="WorkFlow.MSP1_MSP2_Add_View_ManageSuppliers()[pri:0, instance:com.sysco.test.WorkFlow@7dc7cbad]" name="MSP1_MSP2_Add_View_ManageSuppliers" class="com.sysco.test.WorkFlow"/>
+      </group> <!-- MSP-1 MSP-2 -->
+    </groups>
+    <test name="Test" duration-ms="329470" started-at="2016-07-29T11:22:47Z" finished-at="2016-07-29T11:28:16Z">
+      <class name="com.sysco.test.WorkFlow">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.sysco.test.WorkFlow@7dc7cbad]" name="setUp" is-config="true" duration-ms="18841" started-at="2016-07-29T16:52:47Z" finished-at="2016-07-29T16:53:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="MSP1_MSP2_Add_View_ManageSuppliers()[pri:0, instance:com.sysco.test.WorkFlow@7dc7cbad]" name="MSP1_MSP2_Add_View_ManageSuppliers" duration-ms="309195" started-at="2016-07-29T16:53:06Z" description="MSP-1 MSP-2 Home Screen--&gt;Suppliers--&gt;Add new Suppliers/View/Maintain Suppliers" finished-at="2016-07-29T16:58:15Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Login page verification :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Sign In]]>
+            </line>
+            <line>
+              <![CDATA[Sign in :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Navigating to Setup inventory page :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on skip :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Selected  orderguide  from SetupInventoryImportItems:Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on Continue :Pass]]>
+            </line>
+            <line>
+              <![CDATA[default location clickElemented :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on Continue :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on DoThisLater :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on TakeHome :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapping on Suppliers from Inventory tools page]]>
+            </line>
+            <line>
+              <![CDATA[Tap on Suppliers from Inventory tools page]]>
+            </line>
+            <line>
+              <![CDATA[In Vendors Page]]>
+            </line>
+            <line>
+              <![CDATA[Navigating to Vendors page :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Verify the Supplier Page]]>
+            </line>
+            <line>
+              <![CDATA[clickElement on ADD Vendor Button]]>
+            </line>
+            <line>
+              <![CDATA[Add vendor button clickElement :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Adding vendor details]]>
+            </line>
+            <line>
+              <![CDATA[Vendor details entered  :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on done:Pass]]>
+            </line>
+            <line>
+              <![CDATA[tap on back :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Vendor is selected for item :Pass]]>
+            </line>
+            <line>
+              <![CDATA[tap on Edit :Pass]]>
+            </line>
+            <line>
+              <![CDATA[view vendor name :Pass]]>
+            </line>
+            <line>
+              <![CDATA[view vendor no   :Pass]]>
+            </line>
+            <line>
+              <![CDATA[view vendor Address   :Pass]]>
+            </line>
+            <line>
+              <![CDATA[view vendor Contact   :Pass]]>
+            </line>
+            <line>
+              <![CDATA[view vendor Email   :Pass]]>
+            </line>
+            <line>
+              <![CDATA[view vendor Note  :Pass]]>
+            </line>
+            <line>
+              <![CDATA[view vendor detail   :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Adding vendor details]]>
+            </line>
+            <line>
+              <![CDATA[Vendor details entered  :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on done:Pass]]>
+            </line>
+            <line>
+              <![CDATA[tap on back :Pass]]>
+            </line>
+            <line>
+              <![CDATA[clickElement on ADD Vendor Button]]>
+            </line>
+            <line>
+              <![CDATA[Add vendor button clickElement :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Adding vendor details]]>
+            </line>
+            <line>
+              <![CDATA[Vendor details entered  :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Tapped on Cancel]]>
+            </line>
+            <line>
+              <![CDATA[Searching for cancelled supplier]]>
+            </line>
+            <line>
+              <![CDATA[Supplier which was cancelleld is not present: Pass]]>
+            </line>
+            <line>
+              <![CDATA[Vendor is selected for item :Pass]]>
+            </line>
+            <line>
+              <![CDATA[tap on Edit :Pass]]>
+            </line>
+            <line>
+              <![CDATA[view vendor name :Pass]]>
+            </line>
+            <line>
+              <![CDATA[view vendor no   :Pass]]>
+            </line>
+            <line>
+              <![CDATA[view vendor Address   :Pass]]>
+            </line>
+            <line>
+              <![CDATA[view vendor Contact   :Pass]]>
+            </line>
+            <line>
+              <![CDATA[view vendor Email   :Pass]]>
+            </line>
+            <line>
+              <![CDATA[view vendor Note  :Pass]]>
+            </line>
+            <line>
+              <![CDATA[view vendor detail   :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Delete a vendor]]>
+            </line>
+            <line>
+              <![CDATA[Deleting vender :Pass]]>
+            </line>
+            <line>
+              <![CDATA[Selecting vendor]]>
+            </line>
+            <line>
+              <![CDATA[Deleted supplier is not listed on supplier page :Pass]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- MSP1_MSP2_Add_View_ManageSuppliers -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.sysco.test.WorkFlow@7dc7cbad]" name="tearDown" is-config="true" duration-ms="1416" started-at="2016-07-29T16:58:15Z" finished-at="2016-07-29T16:58:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.sysco.test.WorkFlow -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite2 -->
+</testng-results>

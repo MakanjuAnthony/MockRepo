@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite2">
+    <listeners>
+      <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+      <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+  <test name="Test">
+    <classes>
+      <class name="com.sysco.test.WorkFlow"/>
+      	<methods>
+       
+<!-- <include name="SI_WF1_OG_DefaultLocation_DefaultCategory"></include>  -->
+<!-- <include name="SI_WF3_OG_CustomMultipleLocation_CustomMultipleCategory"></include> -->
+<!-- <include name="SI_WF4_OG_DefaultLocation_CustomCategory"></include> -->
+<!-- <include name="SI_WF5_OG_CustomLocation_DefaultCategory"></include> -->
+<!-- <include name="SI_WF6_OG_SkipLocation_SkipCategory"></include> -->
+<!-- <include name="SI_WF7_OG_DefaultLocation_SkipCategory"></include> -->
+<include name="SI_WF8_OG_SkipLocation_DefaultCategory"></include>
+<!-- <include name="SI_WF19_CustomList_defaultLoc_defaultcategory"></include> -->
+<!-- <include name="SI_WF20_CustomList_CustomLoc_Customcategory"></include> -->
+<!-- <include name="SI_WF21_CustomList_CustomLoc_Customcategory_FewItems"></include> -->
+<!-- <include name="SI_WF22_CustomList_DefaultLoc_Customcategory"></include> -->
+<!-- <include name="SI_WF23_CustomList_CustomLoc_defaultcategory"></include> -->
+<!-- <include name="SI_WF24_CustomList_SkipLoc_Skipcategory"></include> -->
+<!-- <include name="SI_WF25_CustomList_DefaultLoc_Skipcategory()"></include> -->
+<!-- <include name="SI_WF26_CustomList_SkipLoc_defaultcategory_NU"></include> -->
+<!-- <include name="SI_WF27_CustomList_MultipleList_ListNames_DefaultCat"></include> -->
+<!-- <include name="SI_WF28_CustomList_MultipleList_ListNames_Customcategory"></include> -->
+<!-- <include name="SI_WF29_CustomListSingleList_CustomCategoryOnLocationsPage_defaultcategory"></include> -->
+<!-- <include name="SI_WF30_CustomListSingleList_CustomCategoryOnLocationsPage_customcategory"></include> -->
+<!-- <include name="SI_WF31_CustomList_MultipleList_ListNames_Skipcategory"></include> -->
+<!-- <include name="SI_WF32_CustomList_SingleList_CustomCatLoc_Skipcategory"></include> -->
+<!-- <include name="SI_WF33_OG_DefaultLocation_SuggestedCategory"></include> -->
+<!-- <include name="SI_WF34_OG_CustomLocation_SuggestedCategory"></include> -->
+<!-- <include name="SI_WF35_CustomListSingleList_CustomCategoryOnLocationsPage_suggestedcategory"></include> -->
+<!-- <include name="SI_WF36_CustomList_MultipleList_ListNames_SuggestedCat"></include> -->
+<!-- <include name="TI_WF1_WF2_Location_Item_UOMQuantity"></include> -->
+<!-- <include name="MIL_WF1_WF4_Location_AddItems"></include> -->
+<!-- <include name="MIL_WF2_Location_AddItems__MultipleLocation"></include> -->
+<!-- <include name="MIL_WF3_Location_SearchItems"></include> -->
+<!-- <include name="MIL_WF5_Locations_ItemEdit_UpdateLocation"></include> -->
+<!-- <include name="MIL_WF6_Create_Edit_Delete_Locations"></include> -->
+<!-- <include name="MIL_WF7_TrackInventory_Location_Edit_Delete_Items_location_MA"></include> -->
+<!-- <include name="MIL_WF10_TrackInventory_Location_item_productcard_updateqtyUOM"></include> -->
+<!-- <include name="MEC_WF1_Locations_ItemEdit_UpdateCategory"></include> -->
+<!-- <include name="MEC_WF2_Category_Create_Edit_Delete_Category"></include> -->
+<!-- <include name="MP_WF1_Purchases_FoodCost"></include> -->
+<!-- <include name="MNS_1_CreateNonSyscoItem_LinkSupplier_Location_Category"></include> -->
+<!-- <include name="MNS_1_1_CreateNonSyscoItem_LinkSupplier_Location_Category"></include> -->
+<!-- <include name="MNS_1_3_CreateNonSyscoItem_LinkSupplier_Location_Category"></include> -->
+<!-- <include name="MNS_1_2_CreateNonSyscoItem_LinkSupplier_Location_Category"></include> -->
+<!-- <include name="MPI_1_CreatePrepItem_LinkLocation_Category_NU"></include> -->
+<!-- <include name="MPI_2_CreatePrepItem_LinkLocation_Category_NU"></include> -->
+<!-- <include name="MSP1_MSP2_Add_View_ManageSuppliers"></include> -->
+             
+      </methods>
+    </classes>
+  </test> 
+</suite> 

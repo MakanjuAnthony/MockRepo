@@ -1,0 +1,387 @@
+<html><head> 
+		 <meta charset="UTF-8"> 
+		 <style type="text/css"> 
+			 body { 
+				 background-color: #000000; 
+				 font-family: Verdana, Geneva, sans-serif; 
+				 text-align: center; 
+			 } 
+
+			 small { 
+				 font-size: 0.7em; 
+			 } 
+
+			 table { 
+				 border: 1px solid #4D7C7B; 
+				 border-collapse: collapse; 
+				 border-spacing: 0px; 
+				 width: 1000px; 
+				 margin-left: auto; 
+				 margin-right: auto; 
+			 } 
+
+			 tr.heading { 
+				 background-color: #4D7C7B; 
+				 color: #FFFF95; 
+				 font-size: 0.9em; 
+				 font-weight: bold; 
+				 word-break:normal;
+			 } 
+
+			 tr.subheading { 
+				 background-color: #FFFF95; 
+				 color: #4D7C7B; 
+				 font-weight: bold; 
+				 font-size: 0.9em; 
+				 text-align: justify; 
+				 word-break:normal;
+			 } 
+
+			 tr.section { 
+				 background-color: #89B6B5; 
+				 color: #333300; 
+				 cursor: pointer; 
+				 font-weight: bold; 
+				 font-size: 0.9em; 
+				 text-align: justify; 
+			 } 
+
+			 tr.subsection { 
+				 cursor: pointer; 
+			 } 
+
+			 tr.content { 
+				 background-color: #FAFAC5; 
+				 color: #000000; 
+				 font-size: 0.9em; 
+				 display: table-row; 
+			 } 
+
+			 td, th { 
+				 padding: 4px; 
+				 text-align: inherit\0/; 
+				 word-break:normal;
+			 } 
+
+			 td.justified { 
+				 text-align: justify; 
+			 } 
+
+			 td.pass { 
+				 font-weight: bold; 
+				 color: green; 
+			 } 
+
+			 td.fail { 
+				 font-weight: bold; 
+				 color: red; 
+			 } 
+
+			 td.done, td.screenshot { 
+				 font-weight: bold; 
+				 color: black; 
+			 } 
+
+			 td.debug { 
+				 font-weight: bold; 
+				 color: blue; 
+			 } 
+
+			 td.warning { 
+				 font-weight: bold; 
+				 color: orange; 
+			 } 
+			 .ontop {
+				z-index: 999;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				display: none;
+				position: absolute;				
+				background-color: #cccccc;
+				color: #aaaaaa;
+				/*opacity: .4;*/
+				filter: alpha(opacity = 50);
+			}
+			.popup {
+				width: 80%;
+				height: 80%;
+				position: absolute;
+				color: #000000;
+				background-color: #ffffff;
+				/* To align popup window at the center of screen*/
+				top: 30%;
+				left: 20%;
+				margin-top: -150px;
+				margin-left: -100px;
+			}
+			.footerhover{
+				cursor: pointer
+			}
+			
+		 </style> 
+
+		 <script> 
+		 var obj;
+			 function toggleMenu(objID) { 
+				 if (!document.getElementById) return; 
+				 var ob = document.getElementById(objID).style; 
+				 if(ob.display === 'none') { 
+					 try { 
+						 ob.display='table-row-group'; 
+					 } catch(ex) { 
+						 ob.display='block'; 
+					 } 
+				 } 
+				 else { 
+					 ob.display='none'; 
+				 } 
+			 } 
+			 function toggleSubMenu(objId) { 
+				 for(i=1; i<10000; i++) { 
+					 var ob = document.getElementById(objId.concat(i)); 
+					 if(ob === null) { 
+						 break; 
+					 } 
+					 if(ob.style.display === 'none') { 
+						 try { 
+							 ob.style.display='table-row'; 
+						 } catch(ex) { 
+							 ob.style.display='block'; 
+						 } 
+					 } 
+					 else { 
+						 ob.style.display='none'; 
+					 } 
+				 } 
+			 } 
+			 function toggleFooterLinks(objID){
+			 currentdisplay=document.getElementById(objID).style.display;
+				if (currentdisplay=='none')
+					currentdisplay='block';
+				else
+					currentdisplay='none';
+			 document.getElementById(objID).style.display = currentdisplay;
+			 }
+			 //To show screenshot, video and stack trace
+			 function pop(div) {
+				document.getElementById(div).style.display = 'block';
+				obj=div;
+			}
+			function hide(div) {
+				document.getElementById(div).style.display = 'none';
+			}
+			//To detect escape button
+			document.onkeydown = function(evt) {
+				evt = evt || window.event;
+				if (evt.keyCode == 27) {
+					hide(obj);
+				}
+			};
+		 </script> 
+	 </head>
+		<table id="header"> 
+			 <colgroup> 
+				 <col style="width: 25%"> 
+				 <col style="width: 25%"> 
+				 <col style="width: 25%"> 
+				 <col style="width: 25%"> 
+			 </colgroup> 
+
+			 <thead> 
+				 <tr class="heading"> 
+					 <th colspan="4" style="font-family:Copperplate Gothic Bold; font-size:1.4em;"> 
+						 submitOrder_Submitted_AddMoreItems_MyCustomList Results 
+					 </th> 
+				 </tr> 
+				 <tr class="subheading"> 
+					 <th>&nbsp;Date&nbsp;&amp;&nbsp;Time</th> 
+					 <th>&nbsp;:&nbsp;12 Apr, 2016 6:04:36 PM</th> 
+					 <th>&nbsp;Duration</th> 
+					 <th>&nbsp;:&nbsp;0h:3m:48s:499ms</th> 
+				 </tr> 
+				 <tr class="subheading"> 
+					 <th>&nbsp;Start&nbsp;Iteration</th> 
+					 <th>&nbsp;:&nbsp;1</th> 
+					 <th>&nbsp;End&nbsp;Iteration</th> 
+					 <th>&nbsp;:&nbsp;1</th> 
+				 </tr> 
+				 <tr class="subheading"> 
+					 <th>&nbsp;Browser</th> 
+					 <th>&nbsp;:&nbsp;Browser</th> 
+					 <th>&nbsp;Application&nbsp;URL</th> 
+					 <th>&nbsp;:<a href="about:blank" target="about_blank">about:blank</a></th> 
+				 </tr> 
+			 </thead> 
+		 </table>
+ <table id = "main">
+	 <thead align="left">
+ 				 <tr class="heading"> 
+					 <th>Step-No</th> 
+					 <th>Step Description</th> 
+					 <th>Step-Time</th> 
+					 </tr>
+	 </thead> 
+	<tbody> 
+	 <tr class="section"> 
+			 <td colspan="5" onclick="toggleMenu('Iteration1')">+ Iteration: 1</td> 
+	 </tr> 
+	</tbody>
+	<tbody id="Iteration1" style = "display:table-row-group;">
+	<tr class="subheading subsection"> 
+		<td colspan="5" onclick="toggleSubMenu('Iteration1')">&nbsp;+ </td> 
+	</tr> 
+ <tr class="content" id="Iteration11"> 
+	 <td>1</td> 
+	 <td class="justified"> <b><FONT SIZE="2">Opened Login Page </FONT></b><br></td> 
+	 <td>18:05:08</td> 
+</tr> 
+	<tr class="subheading subsection"> 
+		<td colspan="5" onclick="toggleSubMenu('Iteration1Verify login Page Elements')">&nbsp;+ Verify login Page Elements</td> 
+	</tr> 
+ <tr class="content" id="Iteration1Verify login Page Elements1"> 
+	 <td>2</td> 
+	 <td class="justified"> <b><FONT SIZE="2">Sysco logo  displayed:Pass</FONT></b><br></td> 
+	 <td>18:05:28</td> 
+</tr> 
+ <tr class="content" id="Iteration1Verify login Page Elements2"> 
+	 <td>3</td> 
+	 <td class="justified"> <b><FONT SIZE="2">Enter User Name</FONT></b><br></td> 
+	 <td>18:05:35</td> 
+</tr> 
+ <tr class="content" id="Iteration1Verify login Page Elements3"> 
+	 <td>4</td> 
+	 <td class="justified"> <b><FONT SIZE="2">Enter Password</FONT></b><br></td> 
+	 <td>18:05:37</td> 
+</tr> 
+ <tr class="content" id="Iteration1Verify login Page Elements4"> 
+	 <td>5</td> 
+	 <td class="justified"> <b><FONT SIZE="2">Click on Login  Button</FONT></b><br></td> 
+	 <td>18:05:39</td> 
+</tr> 
+ <tr class="content" id="Iteration1Verify login Page Elements5"> 
+	 <td>6</td> 
+	 <td class="justified"> <b><FONT SIZE="2">User Logged In: Pass</FONT></b><br></td> 
+	 <td>18:05:39</td> 
+</tr> 
+ <tr class="content" id="Iteration1Verify login Page Elements6"> 
+	 <td>7</td> 
+	 <td class="justified"> <b><FONT SIZE="2">at openList</FONT></b><br></td> 
+	 <td>18:05:54</td> 
+</tr> 
+ <tr class="content" id="Iteration1Verify login Page Elements7"> 
+	 <td>8</td> 
+	 <td class="justified"> <b><FONT SIZE="2">Clicked on submitted list in home Page: Pass</FONT></b><br></td> 
+	 <td>18:06:00</td> 
+</tr> 
+ <tr class="content" id="Iteration1Verify login Page Elements8"> 
+	 <td>9</td> 
+	 <td class="justified"> <b><FONT SIZE="2">at  HistoricalOrders Page</FONT></b><br></td> 
+	 <td>18:06:10</td> 
+</tr> 
+ <tr class="content" id="Iteration1Verify login Page Elements9"> 
+	 <td>10</td> 
+	 <td class="justified"> <b><FONT SIZE="2">Select on Delivered Item in SubmittedOrdersPage Page: Pass</FONT></b><br></td> 
+	 <td>18:06:16</td> 
+</tr> 
+ <tr class="content" id="Iteration1Verify login Page Elements10"> 
+	 <td>11</td> 
+	 <td class="justified"> <b><FONT SIZE="2">at My active order</FONT></b><br></td> 
+	 <td>18:06:36</td> 
+</tr> 
+ <tr class="content" id="Iteration1Verify login Page Elements11"> 
+	 <td>12</td> 
+	 <td class="justified"> <b><FONT SIZE="2">Clicked on SubmittedPage Modify button: Pass</FONT></b><br></td> 
+	 <td>18:06:37</td> 
+</tr> 
+ <tr class="content" id="Iteration1Verify login Page Elements12"> 
+	 <td>13</td> 
+	 <td class="justified"> <b><FONT SIZE="2">at ModifyOrder_Popup</FONT></b><br></td> 
+	 <td>18:06:37</td> 
+</tr> 
+ <tr class="content" id="Iteration1Verify login Page Elements13"> 
+	 <td>14</td> 
+	 <td class="justified"> <b><FONT SIZE="2">Clicked on SubmittedPage Submitted_ModifyOrder_Continue button: Pass</FONT></b><br></td> 
+	 <td>18:06:43</td> 
+</tr> 
+ <tr class="content" id="Iteration1Verify login Page Elements14"> 
+	 <td>15</td> 
+	 <td class="justified"> <b><FONT SIZE="2">at My active order</FONT></b><br></td> 
+	 <td>18:06:44</td> 
+</tr> 
+ <tr class="content" id="Iteration1Verify login Page Elements15"> 
+	 <td>16</td> 
+	 <td class="justified"> <b><FONT SIZE="2">Clicked on My Active order Sumbit button: Pass</FONT></b><br></td> 
+	 <td>18:07:00</td> 
+</tr> 
+ <tr class="content" id="Iteration1Verify login Page Elements16"> 
+	 <td>17</td> 
+	 <td class="justified"> <b><FONT SIZE="2">at createNewOrder_MyCustomLists</FONT></b><br></td> 
+	 <td>18:07:01</td> 
+</tr> 
+ <tr class="content" id="Iteration1Verify login Page Elements17"> 
+	 <td>18</td> 
+	 <td class="justified"> <b><FONT SIZE="2">Create new order via myCustomList  From Lists Page: Pass</FONT></b><br></td> 
+	 <td>18:07:01</td> 
+</tr> 
+ <tr class="content" id="Iteration1Verify login Page Elements18"> 
+	 <td>19</td> 
+	 <td class="justified"> <b><FONT SIZE="2">at  CustomListsPage</FONT></b><br></td> 
+	 <td>18:07:01</td> 
+</tr> 
+ <tr class="content" id="Iteration1Verify login Page Elements19"> 
+	 <td>20</td> 
+	 <td class="justified"><b><font color='red'>Element [lists_ItemSelect ] is not present.</font></b></td> 
+	 <td></td> 
+</tr> 
+<table id="footer"> 
+			 <colgroup> 
+				 <col style="width: 25%"> 
+				 <col style="width: 25%"> 
+				 <col style="width: 25%"> 
+				 <col style="width: 25%"> 
+			 </colgroup> 
+
+			 <tfoot> 
+				 <tr class="heading"> 
+					 <th colspan="5"></th> 
+				 </tr> 
+				 <tr title="Press ESC to close" class="subheading"> 
+					 <td onclick=pop('stacktrace1') class="footerhover"> &nbsp;StackTrace</td> 
+					 <td onclick=pop('screenshot1') class="footerhover">&nbsp;Screenshot</td> 
+					 <td onclick=pop('video1') class="footerhover">&nbsp;Video</td> 
+				 </tr> 
+			 </tfoot> 
+			 <table>
+			 <tr  class="heading">
+				<td> <div class="ontop popup" title="Press ESC to close" id='stacktrace1'>zRfghY.e: Element [lists_ItemSelect ] is not present.
+	at zRfghY.d.a(SynchronizationAction.java:90)
+	at zRfghY.d.b(SynchronizationAction.java:63)
+	at zRfghY.c.waitForTargetPresent(CommandImpl.java:271)
+	at com.components.pages.MyCustomListsPage.customListstItem_Click(Unknown Source)
+	at com.tests.SampleTest.submitOrder_Submitted_AddMoreItems_MyCustomList(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+</div></td>
+				<td> <img class="ontop popup" title="Press ESC to close" id='screenshot1' src="/Users/naveen_raj04/Desktop/Sysco_Workspace_IntegratedCode/LegacyAutomationApril/Test/build/test-output/archive1/screenshots/submitOrder_Submitted_AddMoreItems_MyCustomList_Screenshot.png"></td>
+				<td>
+					<video  title="Press ESC to close" id='video1' class="ontop popup" controls autoplay>
+					<source src="">
+				</td>
+			</tr>
+			
+			</table>
+</table>
+</html>

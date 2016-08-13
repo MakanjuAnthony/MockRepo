@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite2]">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+  <test name="Test(failed)">
+    <classes>
+      <class name="com.sysco.test.WorkFlow">
+        <methods>
+          <include name="SI_WF25_CustomList_DefaultLoc_Skipcategory"/>
+          <include name="SI_WF23_CustomList_CustomLoc_defaultcategory"/>
+          <include name="SI_WF26_CustomList_SkipLoc_defaultcategory_NU"/>
+          <include name="SI_WF22_CustomList_DefaultLoc_Customcategory"/>
+          <include name="SI_WF29_CustomListSingleList_CustomCategoryOnLocationsPage_defaultcategory"/>
+          <include name="SI_WF28_CustomList_MultipleList_ListNames_Customcategory"/>
+          <include name="tearDown"/>
+          <include name="SI_WF27_CustomList_MultipleList_ListNames_DefaultCat"/>
+          <include name="SI_WF31_CustomList_MultipleList_ListNames_Skipcategory"/>
+          <include name="SI_WF24_CustomList_SkipLoc_Skipcategory"/>
+          <include name="SI_WF30_CustomListSingleList_CustomCategoryOnLocationsPage_customcategory"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.sysco.test.WorkFlow -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite2] -->
