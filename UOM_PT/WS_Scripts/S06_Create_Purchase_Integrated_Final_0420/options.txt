@@ -1,9 +1,0 @@
--+
--DCCI
--D_IDA_XL
--DWINNT
--IG:\11_UOM\Scripts\QA\Sprint5\S06_Create_Purchase_Integrated_Final_0420
--IC:\Program Files (x86)\HP\LoadRunner\include
--eg:\11_uom\scripts\qa\sprint5\s06_create_purchase_integrated_final_0420\\logfile.log
-g:\11_uom\scripts\qa\sprint5\s06_create_purchase_integrated_final_0420\\combined_S06_Create_Purchase_Integrated_Final_0420.c
-g:\11_uom\scripts\qa\sprint5\s06_create_purchase_integrated_final_0420\\pre_cci.c

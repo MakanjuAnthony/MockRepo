@@ -1,2 +1,0 @@
-UOMQuantityData : !!com.components.yaml.UOMQuantityData { Quantity       : 5, UOM            : EA, }UOMQuantityData1: !!com.components.yaml.UOMQuantityData { Quantity       : 8.6, UOM            : EA, }
-UOMQuantityData3: !!com.components.yaml.UOMQuantityData { Quantity       : 2, UOM            : EA, }

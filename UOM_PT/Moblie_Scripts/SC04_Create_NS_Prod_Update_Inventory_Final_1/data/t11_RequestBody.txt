@@ -1,3 +1,0 @@
-"{\"name\":\"PT_Prod04\",\"supplier\":\"1c6caa9c-2f6d-48b5-9f37-5c0c771cc26c\",\"materialId\":\""
-"Nsp04\",\"brand\":\"Pbrand4\",\"nickName\":\"\",\"averageWeightPerCase\":5,\"packSize\":{\"pac"
-"k\":\"5\",\"size\":\"5\",\"uom\":\"\"},\"type\":\"nonsysco\"}"

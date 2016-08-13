@@ -1,1 +1,0 @@
-"{\"id\":\"\",\"type\":\"location\",\"name\":\"PT_loc_F\",\"storage\":\"F\"}"

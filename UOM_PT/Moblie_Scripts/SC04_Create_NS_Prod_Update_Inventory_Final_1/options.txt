@@ -1,9 +1,0 @@
--+
--DCCI
--D_IDA_XL
--DWINNT
--IE:\UOM\Mobility Scripts\Final\SC04_Create_NS_Prod_Update_Inventory_Final_1
--IC:\Program Files (x86)\HP\LoadRunner\include
--ee:\uom\mobility scripts\final\sc04_create_ns_prod_update_inventory_final_1\\logfile.log
-e:\uom\mobility scripts\final\sc04_create_ns_prod_update_inventory_final_1\\combined_SC04_Create_NS_Prod_Update_Inventory_Final_1.c
-e:\uom\mobility scripts\final\sc04_create_ns_prod_update_inventory_final_1\\pre_cci.c

@@ -1,9 +1,0 @@
-HTTP/1.1 201 Created
-Access-Control-Allow-Credentials: true
-Access-Control-Allow-Methods: GET,HEAD,PUT,POST,DELETE
-Access-Control-Allow-Origin: file://
-Content-Type: application/json; charset=utf-8
-Date: Mon, 23 May 2016 22:50:01 GMT
-Content-Length: 298
-Connection: keep-alive
-

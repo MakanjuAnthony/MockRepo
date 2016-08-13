@@ -1,8 +1,0 @@
-[t-1]
-Pass2=t3
-Pass3=t4
-PassCount=3
-Pass1=t1
-[t4]
-PassCount=1
-Pass1=t2

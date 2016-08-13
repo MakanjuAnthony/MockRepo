@@ -1,2 +1,0 @@
-"{\"lists\":[{\"id\":\"27128\",\"name\":\"PTNormal41_4/19/2016 11:50:39 AM_List\",\"type\":\"C\""
-",\"owner\":\"PTNormal41\"}],\"groups\":\"default\"}"

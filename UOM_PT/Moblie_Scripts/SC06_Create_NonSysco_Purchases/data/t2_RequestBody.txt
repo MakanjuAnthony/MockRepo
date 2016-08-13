@@ -1,3 +1,0 @@
-"{\"supplier\":\"5ced9cda-9a01-4539-b14a-419fb64182c9\",\"invoiceNumber\":\"2345\",\"date\":\"2"
-"016-05-22\",\"invoiceTotal\":100,\"expenseCategory\":\"02ddd82a-24aa-41e1-8e49-446e4f237584\","
-"\"expenseAmount\":\"100\",\"items\":[]}"

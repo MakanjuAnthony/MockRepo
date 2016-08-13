@@ -1,9 +1,0 @@
--+
--DCCI
--D_IDA_XL
--DWINNT
--IG:\11_UOM\Scripts\QA\Sprint5\S04_Create_Inventory_Integrated_Final_Exp_Category
--IC:\Program Files (x86)\HP\LoadRunner\include
--eg:\11_uom\scripts\qa\sprint5\s04_create_inventory_integrated_final_exp_category\\logfile.log
-g:\11_uom\scripts\qa\sprint5\s04_create_inventory_integrated_final_exp_category\\combined_S04_Create_Inventory_Integrated_Final_Exp_Category.c
-g:\11_uom\scripts\qa\sprint5\s04_create_inventory_integrated_final_exp_category\\pre_cci.c

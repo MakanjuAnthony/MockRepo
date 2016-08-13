@@ -1,6 +1,0 @@
-HTTP/1.1 200 OK
-Content-Type: application/json
-Date: Tue, 10 May 2016 06:52:58 GMT
-Content-Length: 50
-Connection: keep-alive
-

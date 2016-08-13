@@ -1,9 +1,0 @@
--+
--DCCI
--D_IDA_XL
--DWINNT
--IG:\11_UOM\Scripts\MobileScripts\SC07_Create_And_Update_Inventory_Custom_List
--IC:\Program Files (x86)\HP\LoadRunner\include
--eg:\11_uom\scripts\mobilescripts\sc07_create_and_update_inventory_custom_list\\logfile.log
-g:\11_uom\scripts\mobilescripts\sc07_create_and_update_inventory_custom_list\\combined_SC07_Create_And_Update_Inventory_Custom_List.c
-g:\11_uom\scripts\mobilescripts\sc07_create_and_update_inventory_custom_list\\pre_cci.c

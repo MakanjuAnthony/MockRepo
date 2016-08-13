@@ -1,8 +1,0 @@
-HTTP/1.1 201 Created
-Date: Mon, 01 Feb 2016 16:18:40 GMT
-Access-Control-Allow-Origin: http://10.239.251.82:8080
-Access-Control-Expose-Headers: 
-Location: http://10.239.251.82:8080/accounts/10223
-Content-Type: application/json
-Content-Length: 628
-

@@ -1,8 +1,0 @@
-CategoryData : !!com.components.yaml.CategoryData {
- Name        : Test,
- Name1       : ABC,
- }
- 
-CategoryData1: !!com.components.yaml.CategoryData {
- Name        : ABC,
- }

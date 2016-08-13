@@ -1,9 +1,0 @@
-GET /v1/groups?type=location HTTP/1.1
-Authorization: Bearer 067|116079|116079
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.97 Safari/537.36
-Accept-Encoding: gzip, deflate, sdch
-Accept-Language: en-US,en;q=0.8
-Accept: */*
-Connection: Keep-Alive
-Host: internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com
-

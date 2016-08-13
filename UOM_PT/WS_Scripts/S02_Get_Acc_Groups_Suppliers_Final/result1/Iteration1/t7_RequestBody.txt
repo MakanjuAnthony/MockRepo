@@ -1,4 +1,0 @@
-"{\n"
-" "name": "PT_Group12217U",\n"
-" "storage": "D2"\n"
-"}"

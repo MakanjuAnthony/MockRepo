@@ -1,3 +1,0 @@
-Error: Parameter 'P_OpCo': No more unique values for this parameter in table 'P_OpCo.dat' [unique range is 1-47]. The Vuser is aborted according to "When Out Of Values" policy.	[MsgId: MERR-13870]
-Error: Parameter 'P_OpCo': No more unique values for this parameter in table 'P_OpCo.dat' [unique range is 48-94]. The Vuser is aborted according to "When Out Of Values" policy.	[MsgId: MERR-13870]
-Error: Parameter 'P_OpCo': No more unique values for this parameter in table 'P_OpCo.dat' [unique range is 95-141]. The Vuser is aborted according to "When Out Of Values" policy.	[MsgId: MERR-13870]

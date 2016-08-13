@@ -1,7 +1,0 @@
-HTTP/1.1 201 Created
-Content-Type: application/json
-Date: Tue, 10 May 2016 07:05:41 GMT
-Location: http://internal-qa-uom-services-private-elb-306417685.us-east-1.elb.amazonaws.com/purchases/a9172e6a-1acc-48a8-aebc-93b73ffcda6d
-Content-Length: 622
-Connection: keep-alive
-

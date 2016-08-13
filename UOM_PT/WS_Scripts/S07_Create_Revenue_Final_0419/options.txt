@@ -1,9 +1,0 @@
--+
--DCCI
--D_IDA_XL
--DWINNT
--IG:\11_UOM\Scripts\QA\Sprint5\S07_Create_Revenue_Final_0419
--IC:\Program Files (x86)\HP\LoadRunner\include
--eg:\11_uom\scripts\qa\sprint5\s07_create_revenue_final_0419\\logfile.log
-g:\11_uom\scripts\qa\sprint5\s07_create_revenue_final_0419\\combined_S07_Create_Revenue_Final_0419.c
-g:\11_uom\scripts\qa\sprint5\s07_create_revenue_final_0419\\pre_cci.c

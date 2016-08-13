@@ -1,9 +1,0 @@
--+
--DCCI
--D_IDA_XL
--DWINNT
--IE:\UOM\Mobility Scripts\Final\SC01_Manage_Locations
--IC:\Program Files (x86)\HP\LoadRunner\include
--ee:\uom\mobility scripts\final\sc01_manage_locations\\logfile.log
-e:\uom\mobility scripts\final\sc01_manage_locations\\combined_SC01_Manage_Locations.c
-e:\uom\mobility scripts\final\sc01_manage_locations\\pre_cci.c

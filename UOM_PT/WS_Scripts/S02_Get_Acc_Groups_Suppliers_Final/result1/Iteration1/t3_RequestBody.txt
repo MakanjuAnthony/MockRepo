@@ -1,6 +1,0 @@
-"{\n"
-" "name": "PT_Group12217",\n"
-" "type": "expenseCategory",\n"
-" "storage": "D",\n"
-" "foodType": "nonFood"\n"
-"}"
