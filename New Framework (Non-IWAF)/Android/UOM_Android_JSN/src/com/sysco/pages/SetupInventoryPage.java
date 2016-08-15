@@ -187,7 +187,9 @@ public class SetupInventoryPage extends JSN_Framework {
 			
 		public static final String SuccessMsg3 = "//*[contains(text(),'Your inventory can be accessed at any time from the inventory tools homepage. You can add items, track your inventory, enter purchases, and view food costs and trends.')]";
 			
-
+		public static  String selectedCategoryName;//Added 8/13/16
+		public static String verificationFoodOrNonFood;//Added 8/13/16
+		
 		public static final String OrderGuideDesc = "//*[@class='mm-c-inventory-setup']//*[contains(text(),'Import from purchase history')]";
 			
 		public static final String CustomListsDesc ="//*[@class='mm-c-inventory-setup']//*[contains(text(),'Use my custom lists to import items and locations')]";
@@ -1676,12 +1678,74 @@ public class SetupInventoryPage extends JSN_Framework {
 			clickElement(Category_Select);
 			
 			Reporter.log("Selecting category from Pdt card :Pass");
+			switchToWebContext();// Added 8/13/16
 			
+		} catch (Exception e) {
+			Reporter.log("Selecting category from Pdt card :Fail");
+			//switchToNativeContext();Commented out 8/13/16
+			switchToWebContext();// Added 8/13/16
+			takeScreenshot(finalPath1);
+			
+			Assert.assertTrue(false);
+		}
+
+		return this;
+
+	}
+	
+	@SuppressWarnings("rawtypes")
+	public SetupInventoryPage SelectCategory_PdtCard1(String string) throws InterruptedException, IOException {
+		String string2 = "Issue";
+		String finalPath1 = Screenshot.drivePath + string + string2 + Screenshot.pathExtension;
+
+		try {
+
+			selectedCategoryName=LocationsPage.firstItemSelectedFromLocationCatAndLocNameArray[0];
+			selectedCategoryName = selectedCategoryName.trim();
+			System.out.println(selectedCategoryName);
+			if(selectedCategoryName.contains("Non-Food")){ 
+				System.out.println("inside if");
+				switchToNativeContext();
+			final String FoodCategory_Select ="//android.widget.Spinner[@index='6']";
+				//UIAApplication[1]/UIAWindow[1]/UIAPopover[1]/UIATableView[1]/UIATableCell[2]/UIAStaticText[1]
+				//"//*[contains(text(),'Food') and not(contains(text(),'Non-Food'))]";
+				String catSelect="//android.widget.CheckedTextView[@index='1']";
+				
+				waitForElementPresent(catSelect);
+				clickElement(catSelect);			
+				waitForElementPresent(FoodCategory_Select);
+				System.out.println("element found");
+				clickElement(FoodCategory_Select);
+				System.out.println("element clicked");
+				switchToWebContext();
+				Reporter.log("Selecting food category from Pdt card :Pass");
+				verificationFoodOrNonFood="Non-Food";
+			}
+			else{
+				switchToNativeContext();
+				System.out.println("inside else");
+				final String FoodCategory_Select ="//android.widget.Spinner[@index='6']";
+				//android.view.View[contains @index='7']";//
+				//android.widget.Spinner[@content-desc='Food']"
+				//"//*[contains(text(),'Non-Food') and not(contains(text(),'Food'))]";
+				String catSelect="//android.widget.CheckedTextView[@index='2']";
+				waitForElementPresent(catSelect);
+				clickElement(catSelect);
+				waitForElementPresent(FoodCategory_Select);
+				System.out.println("element found");
+				clickElement(FoodCategory_Select);
+				System.out.println("clicked food category");
+
+				switchToWebContext();
+				Reporter.log("Selecting Non food category from Pdt card :Pass");
+				verificationFoodOrNonFood="Food";
+			}
+
 		} catch (Exception e) {
 			Reporter.log("Selecting category from Pdt card :Fail");
 			switchToNativeContext();
 			takeScreenshot(finalPath1);
-			
+
 			Assert.assertTrue(false);
 		}
 

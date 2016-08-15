@@ -9,8 +9,8 @@
     <classes>
       <class name="com.sysco.test.WorkFlow">
         <methods>
+          <include name="SI_WF33_OG_DefaultLocation_SuggestedCategory"/>
           <include name="tearDown"/>
-          <include name="MNS_1_1_CreateNonSyscoItem_LinkSupplier_Location_Category"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- com.sysco.test.WorkFlow -->

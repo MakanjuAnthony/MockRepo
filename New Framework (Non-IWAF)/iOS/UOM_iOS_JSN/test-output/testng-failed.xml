@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite2]">
+<suite name="Failed suite [Suite]">
   <listeners>
     <listener class-name="org.uncommons.reportng.HTMLReporter"/>
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
@@ -9,11 +9,13 @@
     <classes>
       <class name="com.sysco.test.WorkFlow">
         <methods>
-          <include name="tearDown"/>
-          <include name="MNS_1_CreateNonSyscoItem_LinkSupplier_Location_Category"/>
+          <include name="SI_WF6_OG_SkipLocation_SkipCategory"/>
+          <include name="SI_WF5_OG_CustomLocation_DefaultCategory"/>
+          <include name="SI_WF3_OG_CustomMultipleLocation_CustomMultipleCategory"/>
+          <include name="SI_WF4_OG_DefaultLocation_CustomCategory"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- com.sysco.test.WorkFlow -->
     </classes>
   </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite2] -->
+</suite> <!-- Failed suite [Suite] -->
