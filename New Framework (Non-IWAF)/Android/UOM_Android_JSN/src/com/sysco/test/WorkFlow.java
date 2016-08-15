@@ -10,7 +10,6 @@ import java.net.URL;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import org.bouncycastle.crypto.tls.AlwaysValidVerifyer;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -38,46 +37,27 @@ public class WorkFlow extends JSN_Framework{
     FoodCostPage foodCostpage=new FoodCostPage();
     ListPage listPage=new ListPage();
 
-    //testing code 
-    
 	DataPoolCoordinates datapool=new DataPoolCoordinates();
-	
-	
 	/*
 	 * Validating user is able to setup inventory by adding items from OrderGuide and then assign those items to Default location and Default category. 
 	 * Validating location displayed for first item section on default locations and verifying count of items displayed on each default location.
 	 * Prerequisite:Normal/MA User with OG items.
 	 */
 
-/*	@SuppressWarnings("rawtypes")
+	@SuppressWarnings("rawtypes")
 	@BeforeMethod
 	public  void setUp() throws Exception{
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("platformName", "android");
 		capabilities.setCapability("platformVersion", "6.0.1");
-		capabilities.setCapability("deviceName", "1215fc6c06180a04");
-		capabilities.setCapability("app", "D:/Periyasamy_Nainar/Download_08122016/UOMQA_SQ-debug.apk");
+		capabilities.setCapability("deviceName", "Galaxy S6");
+		capabilities.setCapability("app", "/Users/MrDon/Desktop/UOMProject/UOMQA_SQ-debug.apk");
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 	//	driver = new AppiumDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);  
 		switchToWebContext();	
-		System.out.println("test");
-		System.out.println("adding a code for tsting point");
 	}
-	*/
-	@BeforeMethod
-	public  void setUp() throws Exception{
-		DesiredCapabilities capabilities = new DesiredCapabilities();
-		capabilities.setCapability("platformName", "android");
-		capabilities.setCapability("platformVersion", "6.0");
-		capabilities.setCapability("deviceName", "Galaxy Note4");
-		capabilities.setCapability("app", "\\Users\\anthony.makanju\\Downloads\\UOMQA_SQ-debug.apk");
-		capabilities.setCapability("chromedriverExecutable", "/Users/anthony.makanju/Desktop/chromedriver.exe");
-		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);   
-		switchToWebContext();
-		
-	}
+	
 	
 	
 	/*@BeforeMethod
@@ -91,7 +71,7 @@ public class WorkFlow extends JSN_Framework{
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);  
 		switchToWebContext();	
 	}*/
-	@AfterMethod(alwaysRun=true)
+	@AfterMethod
 	public  void tearDown() throws Exception{
 		/*driver.close();
 		driver.closeApp();*/
@@ -137,23 +117,6 @@ public class WorkFlow extends JSN_Framework{
 		locationsPage.VerifyItemsOnDefaultLocation(datapool.readFromExcelLocationInfo().locationNameDataPool[8], "SI - WF 1-Verified dry");
 		locationsPage.TapOnBack("SI - WF 1-Tapped on Back");
 		//.VerifyCountOfItemsInLocation(locDataDry.LocationName, "");
-		
-		
-		locationsPage.SelectLocation(DataPoolCoordinates.locationNameDataPool[6], "SI - WF 1-Selected cooler");
-		datapool.readFromExcelLocationInfo();
-		locationsPage.VerifyItemsOnDefaultLocation(DataPoolCoordinates.locationNameDataPool[6], "SI - WF 1-Verified cooler"); 
-		locationsPage.LocationFirstItemClickAndItemDetailsCaptured("SI - WF 1-Selected First Item From Location");
-		locationsPage.TapOnEdit("SI - WF 1-Tapped on Edit");
-		setupInventoryPage.SelectCategory_PdtCard(datapool.readFromExcelCategoryInfo().categoryNameDataPool[1], "Category selected");
-		locationsPage.TapOnDone("SI - WF 1-Tapped on Done");
-		locationsPage.TapOnBack("SI - WF 1-Tapped on Back");
-		locationsPage.LocationFirstItemClickAndItemDetailsCapturedVerification("SI - WF 1-LocationFirstItemClickAndItemDetailsCapturedVerification");
-
-		locationsPage.VerifyItemsOnDefaultLocation(datapool.readFromExcelLocationInfo().locationNameDataPool[6], "SI - WF 1-Verified cooler");
-		locationsPage.TapOnBack("SI - WF 1-Tapped on Back");
-		categoryPage.TapOnBack("SI-WF1-Tapped on back");
-		homePage.HamburgerMenu("SI - WF 1-tapped hamburger");
-		homePage.HamMenu_Logout("SI - WF 1-tapped logout");
 	}
 
 
@@ -388,7 +351,7 @@ public class WorkFlow extends JSN_Framework{
 		locationsPage.TapOnBack("SI - WF 7-Tapped Back");
 		locationsPage.VerifyLocationList(datapool.readFromExcelLocationInfo().locationNameDataPool[2], "SI - WF 7-Verifing AddedLocation");
 		locationsPage.SelectLocation(datapool.readFromExcelLocationInfo().locationNameDataPool[2], "SI - WF 7-Selecting AddedLocation");
-		locationsPage.TapAddLocation("MIL - WF 1 WF 4-Tapped ADD");
+		locationsPage.TapAddLocation("MIL - WF 1 WF 4-Tapped ADD") ;
 		setupInventoryPage.SearchItem(datapool.readFromExcelSearchInfo().searchNameDataPool[1],"SI - WF 7-Search item");
 		setupInventoryPage.SelectItemFrom_Catalog("SI - WF 7-Selected item from OG");
 		setupInventoryPage.TapOnDone("SI - WF 7-Done");
@@ -1194,14 +1157,14 @@ public class WorkFlow extends JSN_Framework{
 		*/locationsPage.SelectLocation("List2", "SI - WF 27-select added location");
 		locationsPage.VerifyListItemsOnLocation("1358522","208845","SI - WF 27-Item verification");
 		
-		locationsPage.TapOnDone("SI - WF 31-Tapped Done");
+		locationsPage.TapOnBack("SI - WF 31-Tapped on Back");
 		/*locationsPage.SelectLocation(datapool.readFromExcelUserInfo().listNameDataPool[3], "SI - WF 31-select added location");
 		locationsPage.VerifyListItemsOnLocation(datapool.readFromExcelUserInfo().listProduct1DataPool[3],datapool.readFromExcelUserInfo().listProduct2DataPool[3],"SI - WF 31-Item verification");
 		*/
 		locationsPage.SelectLocation("List3", "SI - WF 27-select added location");
 		locationsPage.VerifyListItemsOnLocation("1141142","1145283","SI - WF 27-Item verification");
 		
-		locationsPage.TapOnDone("SI - WF 31-Tapped Done");      
+		locationsPage.TapOnBack("SI - WF 31-Tapped on Back");    
 	
 	}
 	
@@ -1271,27 +1234,7 @@ public class WorkFlow extends JSN_Framework{
 		setupInventoryPage.TapTakeHome("SI - WF 33-Tapped Take me Home");
 		inventoryToolPage.InvTools_TrackInventory("SI- WF 33-Selected track inventory");
 		locationsPage.VerifyOrderOfLocations(datapool.readFromExcelLocationInfo().locationNameDataPool[6], datapool.readFromExcelLocationInfo().locationNameDataPool[7], datapool.readFromExcelLocationInfo().locationNameDataPool[8],datapool.readFromExcelLocationInfo().locationNameDataPool[5], "SI - WF 33-Verified order of locations");
-		//Login into UOM application as Customer Personal
-		locationsPage.TapOnBack("SI - WF 33-Tapped on Back");
-		homePage.HamburgerMenu("SI - WF 33-tapped hamburger");
-		homePage.HamMenu_Logout("SI - WF 33-tapped logout");
-		loginPage.verifyLoginPage("SI - WF 33-LoginPage");
-		loginPage.saveUsernameCheckBoxclickElement("SI - WF 33-save username");	
-		loginPage.signIn(datapool.readFromExcelUserInfo().userNameDataPool[user],datapool.readFromExcelUserInfo().passwordDataPool[user],"SI - WF 33-Login");
-		//Select Track Inventory and navigate to any location inventory list
-		inventoryToolPage.InvTools_TrackInventory("SI - WF 33-Selected track inventory");
-		locationsPage.SelectLocation(DataPoolCoordinates.locationNameDataPool[6], "SI - WF 33-Selected cooler");
-		datapool.readFromExcelLocationInfo();
-		locationsPage.VerifyItemsOnDefaultLocation(DataPoolCoordinates.locationNameDataPool[6], "SI - WF 33-Verified cooler");
-		//Tap on any sysco item 
-		locationsPage.LocationFirstItemClickAndItemDetailsCaptured("SI - WF 33-Selected First Item From Location");
-		//verify if location and category fields are editable
-		locationsPage.VerifyItemsOnDefaultLocation(datapool.readFromExcelLocationInfo().locationNameDataPool[6], "SI - WF 1-Verified cooler");
-		locationsPage.TapOnBack("SI - WF 33-Tapped on Back");
-		categoryPage.TapOnBack("SI-WF33-Tapped on back");
-		categoryPage.TapOnBack("SI-WF33-Tapped on back");
-		homePage.HamburgerMenu("SI - WF 33-tapped hamburger");
-		homePage.HamMenu_Logout("SI - WF 33-tapped logout");
+
 
 		;
 
@@ -1305,10 +1248,11 @@ public class WorkFlow extends JSN_Framework{
 	 * Prerequisite:Normal/MA User with OG items.
 	 */
 
+	
 	@Test(groups={"SI - WF 34"},priority=22, description = "SI - WF 34-OG + Custom Loc + Suggested Category")
 	public void SI_WF34_OG_CustomLocation_SuggestedCategory() throws Exception {	
 
-		user=14;
+		user=1;
 
 		loginPage.verifyLoginPage("SI - WF 34-LoginPage");
 		loginPage.saveUsernameCheckBoxclickElement("SI - WF 34-save username");	
@@ -1341,18 +1285,19 @@ public class WorkFlow extends JSN_Framework{
 		locationsPage.ItemVerifyOnLocation1("SI - WF 34-Verify item inside location1");
 		locationsPage.SyscoCategoryIdentify("SI - WF 34-Category identification for Syscoitems in location1");
 		categoryPage.VerifyOGSyscoItemsSuggestedCategoryLocation1("SI - WF 34-Category verification for Syscoitems in location1");
-		categoryPage.TapOnDone("SI - WF 34-Tapped Done2");
+		categoryPage.TapOnBack("SI - WF 34-Tapped on Back");
 		locationsPage.SelectLocation(datapool.readFromExcelLocationInfo().locationNameDataPool[3], "SI - WF 34-select added location2");
 		locationsPage.ItemVerifyOnLocation2( "SI - WF 34-Verify item inside location2");
 		locationsPage.SyscoCategoryIdentify("SI - WF 34-Category identification for Syscoitems in location2");
 		categoryPage.VerifyOGSyscoItemsSuggestedCategoryLocation1("SI - WF 34-Category verification for Syscoitems in location2");
 
-		categoryPage.TapOnDone("SI - WF 34-Tapped Done3");
+		categoryPage.TapOnBack("SI - WF 34-Tapped on Back");
 
 		;
 
 
 	}
+
 	
 	
 	/*
@@ -1434,7 +1379,7 @@ public class WorkFlow extends JSN_Framework{
 		*/locationsPage.SelectLocation("List2", "SI - WF 27-select added location");
 		locationsPage.VerifyListItemsOnLocation("1358522","208845","SI - WF 27-Item verification");
 		
-		locationsPage.TapOnDone("SI - WF 36-Tapped Done");
+		locationsPage.TapOnBack("SI - WF 36-Tapped on Back");
 		/*locationsPage.SelectLocation(datapool.readFromExcelUserInfo().listNameDataPool[3], "SI - WF 36-select added location");
 		locationsPage.VerifyListItemsOnLocation(datapool.readFromExcelUserInfo().listProduct1DataPool[3],datapool.readFromExcelUserInfo().listProduct2DataPool[3],"SI - WF 36-Item verification");
 		*/locationsPage.SelectLocation("List3", "SI - WF 27-select added location");
@@ -1446,11 +1391,12 @@ public class WorkFlow extends JSN_Framework{
 		categoryPage.VerifySuggestedCategory("SI - WF 36-Verified Category");
 		
 		locationsPage.SyscoProductSelect("SI - WF 36-Select Product");
-		locationsPage.TapOnEdit("SI - WF 36-Tapped Edit");
+		locationsPage.TapOnEdit1("SI - WF 36-Tapped Edit");
 		locationsPage.AddCategory_AddProductDetailsPage("SI - WF 36-CategorySelect");
 		
 		categoryPage.TapAnySuggestedCategory("SI - WF 36- tapped on a suggested category");
-		categoryPage.TapOnDone("SI - WF 36-Tapped Done");
+		locationsPage.TapOnBack("SI - WF 36-Tapped on Back");
+		//categoryPage.TapOnDone("SI - WF 36-Tapped Done");
 		categoryPage.TapOnBack("SI - WF 36-Tapped Back");
 		categoryPage.VerifySelectedSuggestedCategory("SI - WF 36-Verified Category");
 		categoryPage.TapOnDone("SI - WF 36-Tapped Done");      
@@ -2876,9 +2822,8 @@ user=2;
 					
 					setupInventoryPage.TapOnCancel("MNS-1-Tapped Done,Nonsyscoitem is not added");
 					inventoryToolPage.InvTools_TrackInventory("MNS-1-Selected track inventory");
-					locationsPage.SelectLocation(datapool.readFromExcelLocationInfo().locationNameDataPool[5], "SI - WF 1-Selected No Location");
-					setupInventoryPage.verifyNonSyscoPrepItemSetupInv( datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[0],"MIL-WF10-Verify nonsysco item added");
-					
+					locationsPage.SelectLocation(datapool.readFromExcelLocationInfo().locationNameDataPool[5], "SI-WF29-Selecting no location");
+					locationsPage.NoItemsCheckInNoLocation("SI-WF29-Item verification in no location");
 					
 	}
 	
@@ -2909,9 +2854,9 @@ user=2;
 		categoryPage.selectMultipleItemsFromCategory2("SI - WF 4-selectMultipleItemsFromCategory2");
 		setupInventoryPage.TapOnDone("SI - WF 4-Tapped Done2");
 		setupInventoryPage.TapTakeHome("SI - WF 4-Tapped Continue4") ;
-		inventoryToolPage.InvTools_Locations("SI-WF4-Selected Locations");
-		locationsPage.VerifyOrderOfLocations(datapool.readFromExcelLocationInfo().locationNameDataPool[6], datapool.readFromExcelUserInfo().locationNameDataPool[7], datapool.readFromExcelUserInfo().locationNameDataPool[8], datapool.readFromExcelUserInfo().locationNameDataPool[5], "SI-WF4-Verified order of locations");
-		locationsPage.TapOnBack("SI-WF4-Tapped Back");
+		//inventoryToolPage.InvTools_Locations("SI-WF4-Selected Locations");
+//		locationsPage.VerifyOrderOfLocations(datapool.readFromExcelLocationInfo().locationNameDataPool[6], datapool.readFromExcelUserInfo().locationNameDataPool[7], datapool.readFromExcelUserInfo().locationNameDataPool[8], datapool.readFromExcelUserInfo().locationNameDataPool[5], "SI-WF4-Verified order of locations");
+//		locationsPage.TapOnBack("SI-WF4-Tapped Back");
 		
 		
 		//create supplier 2
@@ -2925,15 +2870,15 @@ user=2;
 				vendorPage.TapOnBack("MSP-1,MSP-2-Back tapped");
 				
 				//create category 1
-				 inventoryToolPage.InvTools_Category("MEC-WF 2-Expense Category Tap");
+				 //inventoryToolPage.InvTools_Category("MEC-WF 2-Expense Category Tap");
 
-				 categoryPage.TapAdd("MEC-WF 2-Add Expense Category Tap");
+				/* categoryPage.TapAdd("MEC-WF 2-Add Expense Category Tap");
 				 categoryPage.AddCategoryName(datapool.readFromExcelCategoryInfo().categoryNameDataPool[1], "MEC-WF 2-Enter Category Name");
 				 categoryPage.AddCategoryFood("MEC-WF 2-Enter type food");
 				 categoryPage.TapOnDone("MEC-WF 2-Tapped Done");
 				 categoryPage.TapOnBack("MEC-WF 2-Tapped Back");
 				 categoryPage.VerifyCategoryList(datapool.readFromExcelCategoryInfo().categoryNameDataPool[1], "MEC-WF 2-Verifying added category list");
-				 categoryPage.TapOnBack("MEC-WF 2-Tapped Back");
+				 categoryPage.TapOnBack("MEC-WF 2-Tapped Back");*/
 				
 				//Non sysco pdt card page
 					inventoryToolPage.InvTools_CreateNonSysco("MNS-1-Tapped Nonsysco item");
@@ -2943,6 +2888,7 @@ user=2;
 					
 					
 					setupInventoryPage.SelectCategory_PdtCard(datapool.readFromExcelCategoryInfo().categoryNameDataPool[1], "Category selected");
+					//setupInventoryPage.SelectCategory_ProductCard("MNS-1-Category selected");
 					
 					setupInventoryPage.TapOnDone("MNS-1-Tapped Done,Nonsyscoitem added");
 					inventoryToolPage.InvTools_TrackInventory("MNS-1-Selected track inventory");
@@ -3082,34 +3028,34 @@ user=2;
 			//linking category
 
 			setupInventoryPage.SelectCategory_PdtCard(datapool.readFromExcelCategoryInfo().categoryNameDataPool[1], "Category selected");
-			
-			//setupInventoryPage.TapOnDone("MNS-1-Tapped Done,Nonsyscoitem added");
-			//inventoryToolPage.InvTools_TrackInventory("MNS-1-Selected track inventory");
-			//locationsPage.SelectLocation(datapool.readFromExcelLocationInfo().locationNameDataPool[5], "SI - WF 1-Selected No Location");
-
-			//locationsPage.VerifyItemsOnDefaultLocation(datapool.readFromExcelLocationInfo().locationNameDataPool[6], "SI - WF 1-Verified cooler");
-			
-			
-			
-			//linking location
+	
+		   //linking location
 			locationsPage.AddLocation_AddProductDetailsPage("MPI-1-Select Add/Select location option");
 			locationsPage.TapAddLocation("MPI-1-Tapped ADD Location");
 			locationsPage.AddLocName(datapool.readFromExcelLocationInfo().locationNameDataPool[6],"MPI-1-Added location name");
-			//locationsPage.AddLocationCooler("MPI-1-Tapped Cooler");
 			locationsPage.TapOnDone("MPI-1-Tapped Done3");
-			locationsPage.TapOnBack("MPI-1-Tapped Back1");
-			//locationsPage.VerifyLocationList(datapool.readFromExcelLocationInfo().locationNameDataPool[1], "MPI-1-Verifing Added Location");
-			//locationsPage.SelectLocation(datapool.readFromExcelLocationInfo().locationNameDataPool[1], "MPI-1-Selecting Added Location");
-			//locationsPage.LocationDoneSelection("MPI-1-Selecting Done");
-
-
-			inventoryToolPage.InvTools_TrackInventory("MPI-1-Selected track inventory");
-			//locationsPage.SelectLocation(datapool.readFromExcelLocationInfo().locationNameDataPool[1], "MPI-1-Select added location");
-			//setupInventoryPage.verifyNonSyscoPrepItemSetupInv(datapool.readFromExcelPrepItemInfo().prepItemDataPool[0],"MPI-1-Verify Prep item added");
-			//locationsPage.NonSyscoPrepCategoryIdentify(datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[0],datapool.readFromExcelPrepItemInfo().prepItemDataPool[0],"MPI-1-Category idenitification for Prepitem");
-			//categoryPage.VerifyPrepCustomCategory(datapool.readFromExcelCategoryInfo().categoryNameDataPool[1], "MPI-1-Category verification");
 			
-			locationsPage.ProductSelect(datapool.readFromExcelPrepItemInfo().prepItemDataPool[0], "MNS-1-Product select");
+			inventoryToolPage.InvTools_TrackInventory("MPI-1-Selected track inventory");
+			locationsPage.SelectLocation(datapool.readFromExcelLocationInfo().locationNameDataPool[6], "MPI-1-Select added location");
+			setupInventoryPage.verifyNonSyscoPrepItemSetupInv(datapool.readFromExcelPrepItemInfo().prepItemDataPool[0],"MPI-1-Verify Prep item added");
+			//locationsPage.NonSyscoPrepCategoryIdentify(null,datapool.readFromExcelPrepItemInfo().prepItemDataPool[0],"MPI-1-Category idenitification for Prepitem");
+			//categoryPage.VerifyPrepCustomCategory(datapool.readFromExcelCategoryInfo().categoryNameDataPool[1], "MPI-1-Category verification");
+			//setupInventoryPage.verifyNonSyscoPrepItemSetupInv(datapool.readFromExcelPrepItemInfo().prepItemDataPool[0],"MIL-WF10-Verify nonsysco item added");
+			
+			locationsPage.ProductSelect(datapool.readFromExcelPrepItemInfo().prepItemDataPool[0],"MPI-1-Prep item selected");
+			locationsPage.TapOnEdit("tapped on edit");
+			/*setupInventoryPage.ViewItemDetails(datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[0], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[1], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[2],datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[3], 
+					datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[4], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[5], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[6],
+					datapool.readFromExcelCategoryInfo().categoryNameDataPool[3], datapool.readFromExcelLocationInfo().locationNameDataPool[6], "MNS-1-NonSyscoItem details entered");
+			locationsPage.TapOnCancel("tapped on edit");
+			locationsPage.TapOnBack("Tapped on Back");
+			*/
+			
+			
+			
+			
+			
+			setupInventoryPage.ClickProduct(datapool.readFromExcelPrepItemInfo().prepItemDataPool[0],"MIL-WF10-Verify nonsysco item added");
 			locationsPage.TapOnEdit("MNS-1-Tap on edit");
 				
 			setupInventoryPage.EnterItemDetails(datapool.readFromExcelPrepItemInfo().prepItemDataPool[7], datapool.readFromExcelPrepItemInfo().prepItemDataPool[8], datapool.readFromExcelPrepItemInfo().prepItemDataPool[9],datapool.readFromExcelPrepItemInfo().prepItemDataPool[10], datapool.readFromExcelPrepItemInfo().prepItemDataPool[11], datapool.readFromExcelPrepItemInfo().prepItemDataPool[12], datapool.readFromExcelPrepItemInfo().prepItemDataPool[13], "MNS-1-PrepItem details entered");

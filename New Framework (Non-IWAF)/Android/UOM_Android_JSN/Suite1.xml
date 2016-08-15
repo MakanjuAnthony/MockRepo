@@ -9,7 +9,7 @@
     <classes>
       <class name="com.sysco.test.WorkFlow"/>
       <methods>
-        <include name="SI_WF33_OG_DefaultLocation_SuggestedCategory"></include>
+        <include name="MNS_1_1_CreateNonSyscoItem_LinkSupplier_Location_Category"></include>
         
        
       

@@ -10,7 +10,7 @@
       <class name="com.sysco.test.WorkFlow"/>
       	<methods>
       
-<include name="SI_WF1_OG_DefaultLocation_DefaultCategory"></include>
+<include name="SI_WF36_CustomList_MultipleList_ListNames_SuggestedCat"></include>
           
       </methods>
     </classes>

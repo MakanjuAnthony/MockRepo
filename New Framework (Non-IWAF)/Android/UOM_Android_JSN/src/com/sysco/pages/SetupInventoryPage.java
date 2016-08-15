@@ -86,7 +86,7 @@ public class SetupInventoryPage extends JSN_Framework {
 		public static final String Supplier_Select = "//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.ListView[1]/android.widget.CheckedTextView[2]";
 		public static final String Add_Catogory = "//*[@id='expense-add']/div/select";
 		public static final String Category_Select="//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.ListView[1]/android.widget.CheckedTextView[2]";
-
+		public static final String Category_Selection="//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.ListView[1]/android.widget.CheckedTextView[2]";
 
 			
 
@@ -187,9 +187,7 @@ public class SetupInventoryPage extends JSN_Framework {
 			
 		public static final String SuccessMsg3 = "//*[contains(text(),'Your inventory can be accessed at any time from the inventory tools homepage. You can add items, track your inventory, enter purchases, and view food costs and trends.')]";
 			
-		public static  String selectedCategoryName;//Added 8/13/16
-		public static String verificationFoodOrNonFood;//Added 8/13/16
-		
+
 		public static final String OrderGuideDesc = "//*[@class='mm-c-inventory-setup']//*[contains(text(),'Import from purchase history')]";
 			
 		public static final String CustomListsDesc ="//*[@class='mm-c-inventory-setup']//*[contains(text(),'Use my custom lists to import items and locations')]";
@@ -771,6 +769,141 @@ public class SetupInventoryPage extends JSN_Framework {
 		return this;
 
 	}
+	@SuppressWarnings("rawtypes")
+	public SetupInventoryPage ClickProduct(String product,
+			String string) throws InterruptedException, IOException {
+		String string2 = "Issue";
+
+		String finalPath1 = Screenshot.drivePath + string + string2
+				+ Screenshot.pathExtension;
+		try {
+
+			final String SetUpInventory_1stItemHeading = 
+					"//*[@class='mm-c-product-list']//*[@class='Grid__innerScrollContainer']//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
+							+ product + "')]";
+            
+			waitForElementToBeClickable(SetUpInventory_1stItemHeading);
+			clickElement(SetUpInventory_1stItemHeading);
+			
+				Reporter.log("Item Click in Setup Inventory:Pass");
+				
+					
+			
+
+		}
+
+		catch (Exception e) {
+			Reporter.log("Item Found in Setup Inventory:Fail");
+			switchToNativeContext();
+			takeScreenshot(finalPath1);
+			
+
+			Assert.assertTrue(false);
+		}
+
+		return this;
+
+	}
+	/*@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
+	public SetupInventoryPage ViewItemDetails(String name, String upc,
+			String pack, String size, String weight, String price,String brand,String category,String location,
+			String string) throws InterruptedException, IOException {
+		String string1 = "Success";
+		String string2 = "Issue";
+
+		String finalPath = Screenshot.drivePath + string + string1
+				+ Screenshot.pathExtension;
+		String finalPath1 = Screenshot.drivePath + string + string2
+				+ Screenshot.pathExtension;
+		try {
+
+			switchToNativeContext();
+			public static final String AddProductPage_ProductName_Native ="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[1]";
+			waitForElementPresent(AddProductPage_ProductName_Native);
+			
+
+			if (isElementPresent(AddProductPage_ProductName_Native)) {
+
+			String	Name = getElementText(AddProductPage_ProductName_Native);
+			
+				if (Name.equals(name)) {
+					Reporter.log("view item name detail :Pass");
+				}
+			}
+			public static final String AddProductPage_UPC_Native="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[2]";
+
+
+			if (isElementPresent(AddProductPage_UPC_Native)) {
+
+				String UPC = getElementText(AddProductPage_UPC_Native);
+				
+				if (UPC.equals(upc)) {
+					Reporter.log("view item upc detail  :Pass");
+				}
+			}
+			public static final String AddProductPage_Pack_Native="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[3]";
+
+			if (isElementPresent(AddProductPage_Pack_Native)) {
+
+				String Pack = getElementText(AddProductPage_Pack_Native);
+				
+				if (Pack.equals(pack)) {
+					Reporter.log("view item pack detail   :Pass");
+							
+				}
+			}
+			public static final String AddProductPage_Size_Native="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[4]";
+
+			if (isElementPresent(AddProductPage_Size_Native)) {
+
+				String Size = getElementText(AddProductPage_Size_Native);
+				
+				if (Size.equals(size)) {
+					Reporter.log("view itm size detail   :Pass");
+							
+				}
+			}
+			public static final String AddProductPage_Weight_Native="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[5]";
+
+			if (isElementPresent(AddProductPage_Weight_Native)) {
+
+				String Weight = getElementText(AddProductPage_Weight_Native);
+				
+				if (Weight.equals(weight)) {
+					Reporter.log("view item weight detail   :Pass");
+				}
+			}
+			
+			public static final String EditcategoryOption_PdtCard="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[5]";
+			if (isElementPresent(EditcategoryOption_PdtCard)) {
+
+				String Category = getElementText(EditcategoryOption_PdtCard);
+				
+				if (Category.equals(category)) {
+					Reporter.log("view item category detail  :Pass");
+				}
+			}
+			public static final String EditLocationOption_PdtCard=
+			if (isElementPresent(EditLocationOption_PdtCard)) {
+				
+				String Location = getElementText(EditLocationOption_PdtCard);
+				
+				if (Location.equals(location)) {
+					Reporter.log("view item location detail  :Pass");
+				}
+			}
+		
+			Reporter.log("view item detail   :Pass");
+			switchToWebContext();
+		} catch (Exception e) {
+			switchToNativeContext();
+			takeScreenshot(finalPath1);
+			Reporter.log("view item detail  :Fail");
+			Assert.assertTrue(false);
+		}
+
+		return this;
+	}*/
 
 	@SuppressWarnings("rawtypes")
 	public SetupInventoryPage Prep_Prompt(String string) throws InterruptedException, IOException {
@@ -1678,12 +1811,10 @@ public class SetupInventoryPage extends JSN_Framework {
 			clickElement(Category_Select);
 			
 			Reporter.log("Selecting category from Pdt card :Pass");
-			switchToWebContext();// Added 8/13/16
 			
 		} catch (Exception e) {
 			Reporter.log("Selecting category from Pdt card :Fail");
-			//switchToNativeContext();Commented out 8/13/16
-			switchToWebContext();// Added 8/13/16
+			switchToNativeContext();
 			takeScreenshot(finalPath1);
 			
 			Assert.assertTrue(false);
@@ -1692,60 +1823,34 @@ public class SetupInventoryPage extends JSN_Framework {
 		return this;
 
 	}
-	
 	@SuppressWarnings("rawtypes")
-	public SetupInventoryPage SelectCategory_PdtCard1(String string) throws InterruptedException, IOException {
+	public SetupInventoryPage SelectCategory_ProductCard(String keyword,String string) throws InterruptedException, IOException {
 		String string2 = "Issue";
 		String finalPath1 = Screenshot.drivePath + string + string2 + Screenshot.pathExtension;
-
+		
 		try {
-
-			selectedCategoryName=LocationsPage.firstItemSelectedFromLocationCatAndLocNameArray[0];
-			selectedCategoryName = selectedCategoryName.trim();
-			System.out.println(selectedCategoryName);
-			if(selectedCategoryName.contains("Non-Food")){ 
-				System.out.println("inside if");
-				switchToNativeContext();
-			final String FoodCategory_Select ="//android.widget.Spinner[@index='6']";
-				//UIAApplication[1]/UIAWindow[1]/UIAPopover[1]/UIATableView[1]/UIATableCell[2]/UIAStaticText[1]
-				//"//*[contains(text(),'Food') and not(contains(text(),'Non-Food'))]";
-				String catSelect="//android.widget.CheckedTextView[@index='1']";
+			
+			
+			
+			waitForElementToBeClickable(Add_Catogory );
+			clickElement(Add_Catogory );
 				
-				waitForElementPresent(catSelect);
-				clickElement(catSelect);			
-				waitForElementPresent(FoodCategory_Select);
-				System.out.println("element found");
-				clickElement(FoodCategory_Select);
-				System.out.println("element clicked");
-				switchToWebContext();
-				Reporter.log("Selecting food category from Pdt card :Pass");
-				verificationFoodOrNonFood="Non-Food";
-			}
-			else{
-				switchToNativeContext();
-				System.out.println("inside else");
-				final String FoodCategory_Select ="//android.widget.Spinner[@index='6']";
-				//android.view.View[contains @index='7']";//
-				//android.widget.Spinner[@content-desc='Food']"
-				//"//*[contains(text(),'Non-Food') and not(contains(text(),'Food'))]";
-				String catSelect="//android.widget.CheckedTextView[@index='2']";
-				waitForElementPresent(catSelect);
-				clickElement(catSelect);
-				waitForElementPresent(FoodCategory_Select);
-				System.out.println("element found");
-				clickElement(FoodCategory_Select);
-				System.out.println("clicked food category");
+			switchToNativeContext();
 
-				switchToWebContext();
-				Reporter.log("Selecting Non food category from Pdt card :Pass");
-				verificationFoodOrNonFood="Food";
-			}
+			//final String Category_Select ="//*[contains(text(),'" + keyword+ "')]";
+					
 
+			waitForElementPresent(Category_Selection);
+			
+			clickElement(Category_Selection);
+			
+			Reporter.log("Selecting category from Pdt card :Pass");
+			
 		} catch (Exception e) {
 			Reporter.log("Selecting category from Pdt card :Fail");
 			switchToNativeContext();
 			takeScreenshot(finalPath1);
-
+			
 			Assert.assertTrue(false);
 		}
 

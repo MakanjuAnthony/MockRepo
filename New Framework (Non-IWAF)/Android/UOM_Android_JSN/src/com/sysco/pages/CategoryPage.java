@@ -125,8 +125,9 @@ import io.appium.java_client.ios.IOSDriver;
 			public static String Selected_SuggCat1;
 			public static final String Select_SuggCat_Dairy = "//*[@id='list-item']//*[contains(text(),'Dairy')]";
 			public static final String Select_SuggCat_Meat = "//*[@id='list-item']//*[contains(text(),'Meat')]";
-		
+			public static final String Select_SuggCat_Meat1 = "//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.ListView[1]/android.widget.CheckedTextView[3]";
 			public static final String SuggestedCategory_Dairy= "//*[@id='list-item']//span[contains(text(),'Dairy')]";
+			public static final String Select_SuggCat_Dairy1= "//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.ListView[1]/android.widget.CheckedTextView[2]";
 			public static final String SuggestedCategory_Meat= "//*[@id='list-item']//span[contains(text(),'Meat')]";
 			public static final String SuggestedCategory_Poultry= "//*[@id='list-item']//span[contains(text(),'Poultry')]";
 			public static final String SuggestedCategory_Seafood= "//*[@id='list-item']//span[contains(text(),'Seafood')]";
@@ -1248,7 +1249,7 @@ import io.appium.java_client.ios.IOSDriver;
 		    
 		
 		try{
-
+switchToNativeContext();
 			if(SyscoCategory1[0].equalsIgnoreCase("Dairy"))
 				{waitForElementToBeClickable(Select_SuggCat_Meat).clickElement(Select_SuggCat_Meat);
 				Selected_SuggCat1="Meat";
@@ -1257,6 +1258,7 @@ import io.appium.java_client.ios.IOSDriver;
 				{waitForElementToBeClickable(Select_SuggCat_Dairy).clickElement(Select_SuggCat_Dairy);
 				Selected_SuggCat1="Dairy";
 				}
+			switchToWebContext();
 				Reporter.log("Suggested Category is selected for item :Pass");						
 			}
 			

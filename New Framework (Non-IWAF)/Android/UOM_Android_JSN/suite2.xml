@@ -10,14 +10,14 @@
       <class name="com.sysco.test.WorkFlow"/>
       	<methods>
        
-<!-- <include name="SI_WF1_OG_DefaultLocation_DefaultCategory"></include> -->
+<!-- <include name="SI_WF1_OG_DefaultLocation_DefaultCategory"></include>  -->
 <!-- <include name="SI_WF3_OG_CustomMultipleLocation_CustomMultipleCategory"></include> -->
 <!-- <include name="SI_WF4_OG_DefaultLocation_CustomCategory"></include> -->
 <!-- <include name="SI_WF5_OG_CustomLocation_DefaultCategory"></include> -->
 <!-- <include name="SI_WF6_OG_SkipLocation_SkipCategory"></include> -->
 <!-- <include name="SI_WF7_OG_DefaultLocation_SkipCategory"></include> -->
 <!-- <include name="SI_WF8_OG_SkipLocation_DefaultCategory"></include> -->
-<include name="SI_WF19_CustomList_defaultLoc_defaultcategory"></include>
+<!-- <include name="SI_WF19_CustomList_defaultLoc_defaultcategory"></include> -->
 <!-- <include name="SI_WF20_CustomList_CustomLoc_Customcategory"></include> -->
 <!-- <include name="SI_WF21_CustomList_CustomLoc_Customcategory_FewItems"></include> -->
 <!-- <include name="SI_WF22_CustomList_DefaultLoc_Customcategory"></include> -->
