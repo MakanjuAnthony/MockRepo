@@ -2,7 +2,9 @@
 package com.sysco.test;
 
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 
 
@@ -10,6 +12,10 @@ import java.net.URL;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -50,15 +56,36 @@ public class WorkFlow extends JSN_Framework{
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("platformName", "android");
 		capabilities.setCapability("platformVersion", "6.0.1");
-		capabilities.setCapability("deviceName", "Galaxy S6");
-		capabilities.setCapability("app", "/Users/MrDon/Desktop/UOMProject/UOMQA_SQ-debug.apk");
-		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-	//	driver = new AppiumDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+		capabilities.setCapability("deviceName", "1215fc6c06180a04");
+		capabilities.setCapability("autoWebview", "true");
+		//capabilities.setCapability("app", "/Users/MrDon/Desktop/UOMProject/UOMQA_SQ-debug.apk");
+		//driver = new AndroidDriver(new URL("http://127.0.0.1:4725/wd/hub"), capabilities);
+		driver = new AndroidDriver(new URL("http://127.0.0.1:4725/wd/hub"),capabilities);
+		
+		//driver = new AppiumDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);  
-		switchToWebContext();	
+		//switchToWebContext();	
 	}
+	@Test(groups={"Do not upload"},priority=0, description = "SI - WF 1-OG + Dafault Loc + Default Category")
 	
-	
+	public  void clear() throws Exception{
+		/*driver.close();
+		driver.closeApp();*/
+		HttpClient client = new DefaultHttpClient();
+		HttpPost post = new HttpPost("http://uom-qa.na.sysco.net:8081/tasks/cleanupDataForAccount?opCo=056&customerId=000026");
+
+		HttpResponse response = client.execute(post);
+		BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+
+		StringBuffer result = new StringBuffer();
+		String line = "";
+		while ((line = rd.readLine()) != null) {
+		    result.append(line);
+		}
+		System.out.println(result);
+
+		driver.quit();
+	}
 	
 	/*@BeforeMethod
 	public  void setUp() throws Exception{
@@ -1309,7 +1336,7 @@ public class WorkFlow extends JSN_Framework{
 	@Test(groups={"SI - WF 35"},priority=23, description = "SI - WF 35-Custom List + Select single  List +Custom Categories as location+Suggested Cat")
 	public void SI_WF35_CustomListSingleList_CustomCategoryOnLocationsPage_suggestedcategory() throws Exception {
 
-		user=2;
+		user=24;
 		loginPage.verifyLoginPage("SI - WF 35-LoginPage");
 		loginPage.saveUsernameCheckBoxclickElement("SI - WF 35-Save Username");
 		loginPage.signIn(datapool.readFromExcelUserInfo().userNameDataPool[user],datapool.readFromExcelUserInfo().passwordDataPool[user],"SI - WF 35-LoginPage");

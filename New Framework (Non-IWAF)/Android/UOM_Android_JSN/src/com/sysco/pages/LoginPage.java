@@ -77,17 +77,14 @@ public class LoginPage extends JSN_Framework {
 
 		try {
 
-			waitForElementToBeClickable(HomUserName);
-
+			/*waitForElementToBeClickable(HomUserName);
 			clickElement(HomUserName);
-			clearElement(HomUserName);
+			clearElement(HomUserName);*/
 			sendText(HomUserName, UserName);
-
 			waitForElementToBeClickable(HomPwd);
 			clickElement(HomPwd);
 			sendText(HomPwd, Password);
-
-				if (isElementPresent(HomLogin)) {
+			if (isElementPresent(HomLogin)) {
 				clickElement(HomLogin);
 			}
 
@@ -101,9 +98,9 @@ public class LoginPage extends JSN_Framework {
 
 		} catch (Exception e) {
 			Reporter.log("Sign in :Fail");
-			switchToNativeContext();
+			//switchToNativeContext();
 			takeScreenshot(finalPath2);
-			
+			e.printStackTrace();
 			Assert.assertTrue(false);
 		}
 		return this;
@@ -124,7 +121,7 @@ switchToWebContext();
 			Reporter.log("Save username verification :Fail");
 			switchToNativeContext();
 			takeScreenshot(finalPath1);
-			
+			e.printStackTrace();
 			Assert.assertTrue(false);
 		}
 		return this;

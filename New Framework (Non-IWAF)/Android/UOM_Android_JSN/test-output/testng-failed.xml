@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite2]">
-  <listeners>
-    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
-    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
-  </listeners>
-  <test name="Test(failed)">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
       <class name="com.sysco.test.WorkFlow">
         <methods>
-          <include name="SI_WF36_CustomList_MultipleList_ListNames_SuggestedCat"/>
-          <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="SI_WF35_CustomListSingleList_CustomCategoryOnLocationsPage_suggestedcategory"/>
         </methods>
       </class> <!-- com.sysco.test.WorkFlow -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite2] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

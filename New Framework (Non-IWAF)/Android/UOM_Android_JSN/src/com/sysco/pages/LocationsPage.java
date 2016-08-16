@@ -72,13 +72,14 @@ public static final String LocationCooler =
 
 	public static final String AddLocation_LocTypeCoolerWeb = 
 			"(//*[@class='mm-c-location__details-radio']//*[@class='radio'])[1]";
-	public static final String AddLocation_LocTypeCooler = "//*[@value='C']";
-	
-	//public static final String AddWeb =  "//*[@id='add-nav']/a/i";
-	public static final String AddWeb="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.widget.Spinner[2]";
+	//public static final String AddLocation_LocTypeCooler = "//*[@value='C']";
+	public static final String AddLocation_LocTypeCooler = "//*[contains(text(),'COOLER')]";
+	public static final String AddWeb =  "//*[@id='add-nav']/a/i";
+	//public static final String AddWeb="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.widget.Spinner[2]";
 	public static final String AddWeb1="//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.ListView[1]/android.widget.CheckedTextView[3]";
 
 	public static final String EditWeb =  "//*[@id='edit-nav']/a/i";
+	//public static final String EditWeb =  "//*[@id='edit-nav']/a";
 	/*public static final String AddLocation_LocTypeCooler = 
 			"//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIAElement[1]";*/
 			public static final String EditNative =  "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[3]/android.widget.ListView[2]";
@@ -1056,9 +1057,42 @@ public static final String LocationCooler =
 			waitFor(2);
 		
 			//final String Locname ="//*[@id='list-item']";
-			final String Locname ="//*[text()='"+name+"']";
-		System.out.println(Locname);	
+		//	final String Locname ="//*[text()='"+name+"']";
+		//System.out.println(Locname);	
 			//final String Locname ="//*[contains(text(),'"+locationName +"')]";
+final String Locname ="//*[text()='"+locationName +"']";
+		
+		//	final String Locname ="//*[@class='mm-c-product-list__location'and contains(text(),'"+locationName +"')]";
+			waitForElementToBeClickable(Locname);
+			clickElement(Locname);
+
+			Reporter.log("Location is selected for item :Pass");
+		}
+
+		catch (Exception e) {
+			Reporter.log("Location is selected for item   :Fail");
+			switchToNativeContext();
+			takeScreenshot(finalPath1);
+			
+			Assert.assertTrue(false);
+		}
+		return this;
+
+	}
+	public LocationsPage SelectLocationSmall(String name, String string) throws InterruptedException, IOException {
+		String string2 = "Issue";
+		String finalPath1 = Screenshot.drivePath + string + string2 + Screenshot.pathExtension;
+
+		Reporter.log("Selecting location");
+		try {
+			String locationName = name;
+     System.out.println(locationName);
+			waitFor(2);
+		
+			//final String Locname ="//*[@id='list-item']";
+			final String Locname ="//*[@class='mm-c-product-list__location']//*[text()='"+locationName +"']";
+		
+		//	final String Locname ="//*[@class='mm-c-product-list__location'and contains(text(),'"+locationName +"')]";
 			waitForElementToBeClickable(Locname);
 			clickElement(Locname);
 
@@ -1835,8 +1869,11 @@ Thread.sleep(5000);
 		Reporter.log("Quantity verification ");
 		try {
 
-			String locationInputTextBox3 = "//*[@class='mm-c-product-list']//*[@class='item-input mm-u-input-border mm-c-product-list__qty form-control'and @placeholder='"
-					+ qty + "']";
+			//String locationInputTextBox3 = "//*[@class='mm-c-product-list']//*[@class='item-input mm-u-input-border mm-c-product-list__qty form-control'and @placeholder='"
+			//		+ qty + "']";
+			 String var1[]= qty.split("/.");
+            System.out.println("variable:"+var1[0]);
+			String locationInputTextBox3 = "//*[@class='item-input mm-u-input-border mm-c-product-list__qty form-control'and @placeholder='5']";
 			final String InputTextBoxCheck1 = locationInputTextBox3;
 
 			boolean flag = isElementPresentAfterWait(InputTextBoxCheck1, 5);
