@@ -77,12 +77,15 @@ public class LoginPage extends JSN_Framework {
 
 		try {
 
-			/*waitForElementToBeClickable(HomUserName);
+		//	waitForElementToBeClickable(HomUserName);
+			waitForElementPresent(HomUserName);
 			clickElement(HomUserName);
-			clearElement(HomUserName);*/
+			clearElement(HomUserName);
 			sendText(HomUserName, UserName);
+			waitForElement(1);
 			waitForElementToBeClickable(HomPwd);
 			clickElement(HomPwd);
+			System.out.println(Password);
 			sendText(HomPwd, Password);
 			if (isElementPresent(HomLogin)) {
 				clickElement(HomLogin);
