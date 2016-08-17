@@ -61,16 +61,13 @@ public class WorkFlow extends JSN_Framework{
 		capabilities.setCapability("autoWebview", "true");
 		//capabilities.setCapability("app", "/Users/MrDon/Desktop/UOMProject/UOMQA_SQ-debug.apk");
 		//driver = new AndroidDriver(new URL("http://127.0.0.1:4725/wd/hub"), capabilities);
-		driver = new AndroidDriver(new URL("http://127.0.0.1:4725/wd/hub"),capabilities);
+		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
 		
 		//driver = new AppiumDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);  
-		//switchToWebContext();	
+	//	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);  
+		switchToWebContext();	
 	}
-	//@Test(groups={"Do not upload"},priority=0, description = "SI - WF 1-OG + Dafault Loc + Default Category")
-	
-	
-	
+
 	/*@BeforeMethod
 	public  void setUp() throws Exception{
 		DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -104,13 +101,9 @@ public class WorkFlow extends JSN_Framework{
 		}
 		driver.quit();
 	}
-	@AfterMethod
-	public  void tearDown() throws Exception{
-		/*driver.close();
-		driver.closeApp();*/
-		driver.quit();
-	}
 	
+	
+
 
 	@Test(groups={"SI - WF 1"},priority=0, description = "SI - WF 1-OG + Dafault Loc + Default Category")
 	public void SI_WF1_OG_DefaultLocation_DefaultCategory() throws Exception {
@@ -895,7 +888,7 @@ public class WorkFlow extends JSN_Framework{
 	public void SI_WF27_CustomList_MultipleList_ListNames_DefaultCat() throws Exception {	
 
 
-		user=1;
+		user=4;
 		
 		loginPage.verifyLoginPage("SI - WF 27-LoginPage");
 		loginPage.saveUsernameCheckBoxclickElement("SI - WF 27-Save Username");
@@ -910,11 +903,12 @@ public class WorkFlow extends JSN_Framework{
 		listPage.tapContinue("SI - WF 27-Tapped Continue1");
 		/*listPage.SelectListwithItems(datapool.readFromExcelUserInfo().listNameDataPool[2], "SI - WF 27-select list");
 		listPage.SelectListwithItems(datapool.readFromExcelUserInfo().listNameDataPool[3], "SI - WF 27-select list");
-		*/listPage.SelectListwithItems("List2", "SI - WF 27-select list");
+		*/
+		listPage.SelectListwithItems("List2", "SI - WF 27-select list");
 		listPage.SelectListwithItems("List3", "SI - WF 27-select list");
 		listPage.TapOnNext("SI - WF 27-tapped next");
 
-		locationsPage.ListNames("SI - WF 27-Tapped Custom location");
+		locationsPage.ListNames("SI - WF 27-Tapped on List Names");
 		locationsPage.tapContinue("SI - WF 27-Tapped Continue");
 
 		categoryPage.defaultCategories("SI - WF 27-Tapped Default category");
@@ -927,13 +921,14 @@ public class WorkFlow extends JSN_Framework{
 		*/locationsPage.SelectLocation("List2", "SI - WF 27-select added location");
 		locationsPage.VerifyListItemsOnLocation("1358522","208845","SI - WF 27-Item verification");
 		
-		locationsPage.TapOnDone("SI - WF 1-Tapped Done");
+	//	locationsPage.TapOnDone("SI - WF 1-Tapped Done");
+		locationsPage.TapOnBack("SI - WF 1-Tapped Back");
 		/*locationsPage.SelectLocation(datapool.readFromExcelUserInfo().listNameDataPool[3], "SI - WF 27-select added location");
 		locationsPage.VerifyListItemsOnLocation(datapool.readFromExcelUserInfo().listProduct1DataPool[3],datapool.readFromExcelUserInfo().listProduct2DataPool[3],"SI - WF 27-Item verification");
 		*/locationsPage.SelectLocation("List3", "SI - WF 27-select added location");
 		locationsPage.VerifyListItemsOnLocation("1141142","1145283","SI - WF 27-Item verification");
 		
-		locationsPage.TapOnDone("SI - WF 27-Tapped Done") ;     
+		locationsPage.TapOnBack("SI - WF 1-Tapped Back");
 		
 	}
 	
@@ -1342,7 +1337,7 @@ public class WorkFlow extends JSN_Framework{
 	@Test(groups={"SI - WF 35"},priority=23, description = "SI - WF 35-Custom List + Select single  List +Custom Categories as location+Suggested Cat")
 	public void SI_WF35_CustomListSingleList_CustomCategoryOnLocationsPage_suggestedcategory() throws Exception {
 
-		user=24;
+		user=4;
 		loginPage.verifyLoginPage("SI - WF 35-LoginPage");
 		loginPage.saveUsernameCheckBoxclickElement("SI - WF 35-Save Username");
 		loginPage.signIn(datapool.readFromExcelUserInfo().userNameDataPool[user],datapool.readFromExcelUserInfo().passwordDataPool[user],"SI - WF 35-LoginPage");
@@ -1355,11 +1350,12 @@ public class WorkFlow extends JSN_Framework{
 		listPage.TapCustomList("SI - WF 35-custom list Selected");
 		listPage.tapContinue("SI - WF 35-Tapped Continue1");
 	//	listPage.SelectListwithItems(datapool.readFromExcelUserInfo().listNameDataPool[1], "SI - WF 35-select list");
-		listPage.SelectListwithItems("List4", "SI - WF 35-select list");
-		
+	
+		listPage.SelectListwithItems("List4", "SI - WF 35-select list");   
+		  
 		listPage.TapOnNext("SI - WF 35-tapped next");
 
-		locationsPage.CustomCategories("SI - WF 35-Tapped Default category in Location Page");
+		locationsPage.CustomCategories("SI - WF 35-Tapped Customer category in Location Page");
 		locationsPage.tapContinue("SI - WF 35-Tapped Continue2");
 
 		categoryPage.SuggestedCategories("SI - WF 35-SuggestedCategories Tapped");
@@ -3167,7 +3163,7 @@ user=2;
 			homePage.ClickAccount(datapool.readFromExcelUserInfo().userNameDataPool[user],"Clicked account");
 			accountsPage.Fourth_AccountSelection(datapool.readFromExcelUserInfo().userNameDataPool[user],"MSP-1,MSP-2-FirstAccountSelect");
 
-		
+	
 			inventoryToolPage.InvTools_SetUpInventory("SI - WF 1-SetupInventoryTap");
 			setupInventoryPage.TapOnSkip("SI - WF 1-Skip1 Tapped");
 			setupInventoryPage.TapOrderGuide("SI - WF 1-OG Selected");

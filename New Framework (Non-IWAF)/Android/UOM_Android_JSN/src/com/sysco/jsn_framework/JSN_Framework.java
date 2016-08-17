@@ -85,7 +85,7 @@ public  JSN_Framework switchToWebContext() throws InterruptedException{
 			
 			//System.out.println(driver.context((String) contextNames1.toArray()[1]));
 		}
-	Thread.sleep(2500);
+	//Thread.sleep(2500);
 	return this;
 	}
 
@@ -180,6 +180,11 @@ public  JSN_Framework waitFor(long time) throws InterruptedException{
 		new WebDriverWait(driver, time);
 		return this;
 	}
+
+public  void waitForElement(long time) throws InterruptedException{	
+	Thread.sleep(time*1000);
+	
+}
 
 public  JSN_Framework takeScreenshot(String screenshotPathAddress) throws InterruptedException, IOException{
 	//String screenShotPathAddress = "/Users/naveen_raj04/Desktop/Sysco/"+screenshotName+".jpeg";
