@@ -18,6 +18,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.sysco.pages.*;
@@ -42,7 +43,7 @@ public class WorkFlow extends JSN_Framework{
 	PurchasesPage purchasespage=new PurchasesPage();
     FoodCostPage foodCostpage=new FoodCostPage();
     ListPage listPage=new ListPage();
-
+    static int user;
 	DataPoolCoordinates datapool=new DataPoolCoordinates();
 	/*
 	 * Validating user is able to setup inventory by adding items from OrderGuide and then assign those items to Default location and Default category. 
@@ -66,26 +67,9 @@ public class WorkFlow extends JSN_Framework{
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);  
 		//switchToWebContext();	
 	}
-	@Test(groups={"Do not upload"},priority=0, description = "SI - WF 1-OG + Dafault Loc + Default Category")
+	//@Test(groups={"Do not upload"},priority=0, description = "SI - WF 1-OG + Dafault Loc + Default Category")
 	
-	public  void clear() throws Exception{
-		/*driver.close();
-		driver.closeApp();*/
-		HttpClient client = new DefaultHttpClient();
-		HttpPost post = new HttpPost("http://uom-qa.na.sysco.net:8081/tasks/cleanupDataForAccount?opCo=056&customerId=000026");
-
-		HttpResponse response = client.execute(post);
-		BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
-
-		StringBuffer result = new StringBuffer();
-		String line = "";
-		while ((line = rd.readLine()) != null) {
-		    result.append(line);
-		}
-		System.out.println(result);
-
-		driver.quit();
-	}
+	
 	
 	/*@BeforeMethod
 	public  void setUp() throws Exception{
@@ -98,13 +82,35 @@ public class WorkFlow extends JSN_Framework{
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);  
 		switchToWebContext();	
 	}*/
+	@AfterTest
+	public  void clear() throws Exception{
+		/*driver.close();
+		driver.closeApp();*/
+		HttpClient client = new DefaultHttpClient();
+		String accountNumber = datapool.readFromExcelUserInfo().accountDataPool[user];
+		if(!accountNumber.equalsIgnoreCase("accountNumber"))
+		{
+			HttpPost post = new HttpPost("http://uom-qa.na.sysco.net:8081/tasks/cleanupDataForAccount?opCo=056&customerId="+datapool.readFromExcelUserInfo().accountDataPool[user]);
+	
+			HttpResponse response = client.execute(post);
+			BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+	
+			StringBuffer result = new StringBuffer();
+			String line = "";
+			while ((line = rd.readLine()) != null) {
+			    result.append(line);
+			}
+			System.out.println(result);
+		}
+		driver.quit();
+	}
 	@AfterMethod
 	public  void tearDown() throws Exception{
 		/*driver.close();
 		driver.closeApp();*/
 		driver.quit();
 	}
-	int user;
+	
 
 	@Test(groups={"SI - WF 1"},priority=0, description = "SI - WF 1-OG + Dafault Loc + Default Category")
 	public void SI_WF1_OG_DefaultLocation_DefaultCategory() throws Exception {
@@ -2458,6 +2464,11 @@ public class WorkFlow extends JSN_Framework{
 	  * Prerequisite:Normal/MA User with OG items
 	  * 
 	  */
+	 @Test(groups={"MEC - WF 2"},priority=34, description = "MEC - WF 2-Creating, editing and deleting category ")
+	 public void test() throws Exception {	
+		 user=1;
+	 
+	 }
 
 	 @Test(groups={"MEC - WF 2"},priority=34, description = "MEC - WF 2-Creating, editing and deleting category ")
 	 public void MEC_WF2_Category_Create_Edit_Delete_Category() throws Exception {	

@@ -99,7 +99,7 @@ import io.appium.java_client.ios.IOSDriver;
 		    
 		
 			public static final String Done="//UIAStaticText[@label='Done']";
-			public static final String DoneWeb="//*[@id='done-nav']/a";
+			public static final String DoneWeb="//li[@id='done-nav']";
 		
 			public static final String Back ="//*[@id='back-nav']/a/i";
 			public static final String AddWeb= "//*[@id='add-nav']/a/i";
@@ -610,6 +610,7 @@ import io.appium.java_client.ios.IOSDriver;
 		    		
 		    		
 		    			waitForElementToBeClickable(DoneWeb);
+		    			
 		    		if (isElementPresent(DoneWeb))
 		    		{
 		    			
