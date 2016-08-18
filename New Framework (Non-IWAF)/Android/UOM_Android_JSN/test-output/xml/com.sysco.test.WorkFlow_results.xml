@@ -4,19 +4,15 @@
            failures="1"
            errors="0"
            skipped="0"
-           time="49.433">
+           time="71.549">
   <properties />
-            <testcase name="SI_WF36_CustomList_MultipleList_ListNames_SuggestedCat" time="49.433" classname="com.sysco.test.WorkFlow">
-                <failure type="java.lang.AssertionError"
-                  message="expected [true] but found [false]"
+            <testcase name="SI_WF23_CustomList_CustomLoc_defaultcategory" time="71.549" classname="com.sysco.test.WorkFlow">
+                <failure type="java.lang.NullPointerException"
+                  message="(null)"
               >
-<![CDATA[java.lang.AssertionError: expected [true] but found [false]
-  org.testng.Assert.fail(Assert.java:94)
-  org.testng.Assert.failNotEquals(Assert.java:494)
-  org.testng.Assert.assertTrue(Assert.java:42)
-  org.testng.Assert.assertTrue(Assert.java:52)
-  com.sysco.pages.CategoryPage.TapAnySuggestedCategory(CategoryPage.java:1272)
-  com.sysco.test.WorkFlow.SI_WF36_CustomList_MultipleList_ListNames_SuggestedCat(WorkFlow.java:1397)
+<![CDATA[java.lang.NullPointerException
+  com.sysco.pages.LocationsPage.CustomLocItemsCheckInNoLocation(LocationsPage.java:3241)
+  com.sysco.test.WorkFlow.SI_WF23_CustomList_CustomLoc_defaultcategory(WorkFlow.java:722)
   sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
   sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

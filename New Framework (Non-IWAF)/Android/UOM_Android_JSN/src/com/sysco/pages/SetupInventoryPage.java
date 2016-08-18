@@ -24,6 +24,7 @@ import java.util.logging.Logger;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.SwipeElementDirection;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 
 import org.openqa.selenium.By;
@@ -119,6 +120,7 @@ public class SetupInventoryPage extends JSN_Framework {
 		public static String CategoryName;
 		public static String ItemNameSelected;
 		public static String ItemNameAdded;
+		public static String verificationFoodOrNonFood;
 
 		public static final String setupInventryFirstProduct = 	"//*[@id='content-container']/div/div/div[1]/div/div/div/div/div[3]/h4";
 			
@@ -1176,9 +1178,7 @@ public class SetupInventoryPage extends JSN_Framework {
 			clickElement(Search);
 			sendText(Search, keyword);
 
-			((IOSDriver) driver).findElement(
-					By.xpath("//*[@placeholder='Search']"))
-					.sendKeys(Keys.ENTER);
+			((AndroidDriver) driver).findElement(By.xpath("//*[@placeholder='Search']")).sendKeys(Keys.ENTER);
 
 			CategoryName = getElementText(Category_Header);
 
@@ -1365,7 +1365,7 @@ public class SetupInventoryPage extends JSN_Framework {
 			final String SetUpInventory_1stItemHeading = 
 					
 					"//*[@class='mm-c-product-list']//*[@class='Grid__innerScrollContainer']//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
-							+ AddedItemId1_1[0] + "')]";
+							+ AddedItemId1_3[0] + "')]";
 			final String SetUpInventory_2ndItemHeading = 
 					
 					"//*[@class='mm-c-product-list']//*[@class='Grid__innerScrollContainer']//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
@@ -1373,8 +1373,8 @@ public class SetupInventoryPage extends JSN_Framework {
 			final String SetUpInventory_3rdItemHeading = 
 				
 					"//*[@class='mm-c-product-list']//*[@class='Grid__innerScrollContainer']//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
-							+ AddedItemId1_3[0] + "')]";
-
+							+ AddedItemId1_1[0] + "')]";
+/*
 			waitFor(10);
 			Boolean boolean1 = isElementPresent(
 					SetUpInventory_1stItemHeading);
@@ -1387,15 +1387,16 @@ public class SetupInventoryPage extends JSN_Framework {
 			int count = 0;
 			if (boolean1) {
 				LocationsPage.count++;
+				
 
 			}
 			if (boolean2) {
 				LocationsPage.count++;
-
+			
 			}
 			if (boolean3) {
 				LocationsPage.count++;
-
+			
 			}
 
 			if (noOfElements == LocationsPage.count) {
@@ -1407,7 +1408,21 @@ public class SetupInventoryPage extends JSN_Framework {
 			}
 
 			Reporter.log("Multiple Items Found in Setup Inventory :Pass");
-					
+					*/
+			int count = 0;
+			waitForElementToBeClickable(SetUpInventory_1stItemHeading);
+			boolean flag1_1 = isElementPresentAfterWait(SetUpInventory_1stItemHeading, 3);
+			boolean flag1_2 = isElementPresentAfterWait(SetUpInventory_2ndItemHeading, 3);
+			boolean flag1_3 = isElementPresentAfterWait(SetUpInventory_3rdItemHeading, 3);
+
+		
+			System.out.println(flag1_1);
+			
+			if (!(flag1_1 && flag1_2 && flag1_3)) {
+				throw new Exception();
+			}
+			Reporter.log("Multiple Items Found in Setup Inventory :Pass");
+			count=3;
 		}
 
 		catch (Exception e) {
@@ -1439,7 +1454,7 @@ public class SetupInventoryPage extends JSN_Framework {
 			sendText(Search, AddedItemId1_2[0]);
 
 			
-			((IOSDriver) driver).findElement(
+			((AndroidDriver) driver).findElement(
 					By.xpath("//*[@placeholder='Search']"))
 					.sendKeys(Keys.ENTER);
 
@@ -1561,11 +1576,11 @@ public class SetupInventoryPage extends JSN_Framework {
 				takeScreenshot(finalPath1);
 				
 						
-				Set<String> contextNames1 = ((IOSDriver) driver)
+				Set<String> contextNames1 = ((AndroidDriver) driver)
 						.getContextHandles();
 				for (String contextName : contextNames1) {
 				}
-				((IOSDriver) driver)
+				((AndroidDriver) driver)
 						.context((String) contextNames1.toArray()[1]);
 
 				vp.TapOnBack("Pressback1");
@@ -1671,7 +1686,7 @@ public class SetupInventoryPage extends JSN_Framework {
 			sendText(Search, ItemName2_2[1]);
 
 			
-			((IOSDriver) driver).findElement(
+			((AndroidDriver) driver).findElement(
 					By.xpath("//*[@placeholder='Search']"))
 					.sendKeys(Keys.ENTER);
 

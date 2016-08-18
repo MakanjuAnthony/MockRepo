@@ -9,7 +9,7 @@
     <classes>
       <class name="com.sysco.test.WorkFlow"/>
       <methods>
-        <include name="MNS_1_1_CreateNonSyscoItem_LinkSupplier_Location_Category"></include>
+        <include name="MPI_2_CreatePrepItem_LinkLocation_Category_NU"></include>
         
        
       
