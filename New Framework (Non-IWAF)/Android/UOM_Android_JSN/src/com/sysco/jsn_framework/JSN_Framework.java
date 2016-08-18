@@ -67,17 +67,34 @@ public class JSN_Framework {
 			return this;
 			}*/
 	 
-public  JSN_Framework switchToWebContext(){
-	Set<String> contextNames1 = driver.getContextHandles();
-	for (String contextName : contextNames1){
-	System.out.println("inside loop "+contextNames1);
-	}
-	System.out.println(driver.context((String) contextNames1.toArray()[1]));
-	return this;
-	}
+	 public  JSN_Framework switchToWebContext() throws InterruptedException{
+			Set<String> contextNames1 = driver.getContextHandles();
+			System.out.println("inside loop "+contextNames1);
+			String context ="";
+			//sThread.sleep(2500);
+			if(!(driver.getContext().toLowerCase().contains("webview")))
+			{
+				for (String contextName : contextNames1){
+					if(contextName.toUpperCase().contains("WEBVIEW"))
+					{
+						System.out.println("contextName "+contextName);
+						driver.context(contextName);
+						break;
+					}
+				}
+					
+					//System.out.println(driver.context((String) contextNames1.toArray()[1]));
+				}
+			//Thread.sleep(2500);
+			return this;
+			}
+
 
 public  JSN_Framework switchToNativeContext(){
-	driver.context("NATIVE_APP");
+	if(!(driver.getContext().toLowerCase().contains("native_app")))
+	{
+		driver.context("NATIVE_APP");
+	}
 	return this;
 	}
 
