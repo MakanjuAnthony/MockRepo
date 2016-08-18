@@ -9,7 +9,7 @@
     <classes>
       <class name="com.sysco.test.WorkFlow">
         <methods>
-          <include name="SI_WF36_CustomList_MultipleList_ListNames_SuggestedCat"/>
+          <include name="SI_WF23_CustomList_CustomLoc_defaultcategory"/>
           <include name="tearDown"/>
           <include name="setUp"/>
         </methods>

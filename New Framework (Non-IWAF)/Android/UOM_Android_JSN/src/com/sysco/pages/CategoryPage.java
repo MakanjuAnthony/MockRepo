@@ -99,7 +99,7 @@ import io.appium.java_client.ios.IOSDriver;
 		    
 		
 			public static final String Done="//UIAStaticText[@label='Done']";
-			public static final String DoneWeb="//li[@id='done-nav']";
+			public static final String DoneWeb="//*[@id='done-nav']/a";
 		
 			public static final String Back ="//*[@id='back-nav']/a/i";
 			public static final String AddWeb= "//*[@id='add-nav']/a/i";
@@ -610,7 +610,6 @@ import io.appium.java_client.ios.IOSDriver;
 		    		
 		    		
 		    			waitForElementToBeClickable(DoneWeb);
-		    			
 		    		if (isElementPresent(DoneWeb))
 		    		{
 		    			
@@ -631,6 +630,7 @@ import io.appium.java_client.ios.IOSDriver;
 		    	
 		    	return this;
 		    }
+		
 		
 		
 		@SuppressWarnings("rawtypes")
@@ -1243,28 +1243,28 @@ import io.appium.java_client.ios.IOSDriver;
 			
 		}
 		@SuppressWarnings("rawtypes")
-		public CategoryPage TapAnySuggestedCategory(String string) throws InterruptedException, IOException
+		public CategoryPage TapAnySuggestedCategory(String SyscoCategory1,String SyscoCategory2,String string) throws InterruptedException, IOException
 		{
 			  String string2="Issue";
 		    String finalPath1=Screenshot.drivePath+string+string2+Screenshot.pathExtension;
-		    
+		    System.out.println(SyscoCategory1);
+		    System.out.println(SyscoCategory2);
 		
 		try{
 switchToNativeContext();
-			if(SyscoCategory1[0].equalsIgnoreCase("Dairy"))
-				{waitForElementToBeClickable(Select_SuggCat_Meat).clickElement(Select_SuggCat_Meat);
+			if(SyscoCategory1.equalsIgnoreCase("Dairy"))
+				{waitForElementToBeClickable(Select_SuggCat_Meat1).clickElement(Select_SuggCat_Meat1);
 				Selected_SuggCat1="Meat";
+				
 				}
 			else
-				{waitForElementToBeClickable(Select_SuggCat_Dairy).clickElement(Select_SuggCat_Dairy);
+				{waitForElementToBeClickable(Select_SuggCat_Dairy1).clickElement(Select_SuggCat_Dairy1);
 				Selected_SuggCat1="Dairy";
 				}
 			switchToWebContext();
 				Reporter.log("Suggested Category is selected for item :Pass");						
 			}
-			
-			
-			
+		    
 			catch(Exception e){
 				Reporter.log("Suggested Category is selected for item   :Fail");
 				switchToNativeContext(); 
@@ -1276,18 +1276,18 @@ switchToNativeContext();
 			
 		}
 		@SuppressWarnings("rawtypes")
-		public CategoryPage VerifySelectedSuggestedCategory(String string) throws InterruptedException, IOException
+		public CategoryPage VerifySelectedSuggestedCategory(String SyscoCategory2,String string) throws InterruptedException, IOException
 		{
 			  String string2="Issue";
 		    String finalPath1=Screenshot.drivePath+string+string2+Screenshot.pathExtension;
 		    try{
-			if(SyscoCategory1[0].equalsIgnoreCase(Selected_SuggCat1))
-				 throw new Exception();
+			if(SyscoCategory2.equalsIgnoreCase(Selected_SuggCat1))
+				throw new Exception();
 			else
-				System.out.println("Suggested Category is changed for item :Pass");
+				
 				Reporter.log("Suggested Category is changed for item :Pass");	
-			
-			
+			 
+				
 			}
 			
 			

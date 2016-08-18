@@ -1,6 +1,7 @@
-action=ASK
+action=IGNORE
 configured=true
 eclipse.preferences.version=1
 email=luckyon447@gmail.com
 name=naga lakshmi
 problemsZipEtag="a0f741-539b81b47a880"
+rememberSendAction=RESTART

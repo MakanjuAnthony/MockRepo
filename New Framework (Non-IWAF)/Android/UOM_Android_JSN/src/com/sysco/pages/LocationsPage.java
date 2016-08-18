@@ -68,22 +68,28 @@ public static final String LocationCooler =
 			"//*[@id='mount']/div/div/div[2]/div/div/div[2]/div[1]/div/div/div/div/div[2]/div[2]/h4";
 
 	public static final String AddLocation_LocName = "//*[@id='name']";
-	public static final String AddLocation_LocationName = "//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.ListView[1]/android.widget.CheckedTextView[2]";
-
+	//public static final String AddLocation_LocationName = "//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.ListView[1]/android.widget.CheckedTextView[2]";
+	//public static final String AddLocation_LocationName = "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.widget.Spinner[2]";
+	public static final String AddLocation_LocationName="//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.ListView[1]/android.widget.CheckedTextView[2]";
 	public static final String AddLocation_LocTypeCoolerWeb = 
 			"(//*[@class='mm-c-location__details-radio']//*[@class='radio'])[1]";
 	//public static final String AddLocation_LocTypeCooler = "//*[@value='C']";
-	public static final String AddLocation_LocTypeCooler = "//*[contains(text(),'COOLER')]";
-	public static final String AddWeb =  "//*[@id='add-nav']/a/i";
+	public static final String AddLocation_LocTypeCooler = "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.view.View[4]/android.widget.RadioButton[1]";
+
+	
+	//public static final String AddWeb =  "//*[@id='add-nav']/a/i";
 	//public static final String AddWeb="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.widget.Spinner[2]";
 	public static final String AddWeb1="//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.ListView[1]/android.widget.CheckedTextView[3]";
+	//public static final String AddWeb="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[3]/android.widget.ListView[2]/android.view.View[1]";
+	public static final String AddWeb="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.widget.Spinner[2]";
+	public static final String AddWeb2="//*[@id='add-nav']/a";
+
 
 	public static final String EditWeb =  "//*[@id='edit-nav']/a/i";
-	//public static final String EditWeb =  "//*[@id='edit-nav']/a";
 	/*public static final String AddLocation_LocTypeCooler = 
 			"//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIAElement[1]";*/
 			public static final String EditNative =  "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[3]/android.widget.ListView[2]";
-
+			public static final String EditNative1 ="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[3]/android.widget.ListView[2]/android.view.View[1]";
 	public static final String AddLocation_LocTypeFreezer = 
 			"//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIAElement[2]";
 
@@ -146,6 +152,12 @@ public static final String LocationCooler =
 	public static final String Update =  "//UIAStaticText[@label='Update']";
 	public static final String Delete =
 			"//*[@id='delete-button' and contains(text(),'Delete Location')]";
+	public static final String ClickOnIcon =
+			"//*[@id=‘content-container’]/div[1]/div/div/div[1]/div[1]/div/div[1]/i";
+	public static final String ClickOnIcon1 =
+			"//*[@id=‘content-container’]/div[1]/div/div/div[1]/div[1]/div/div[1]/i";
+	public static final String ClickOnIcon2 =
+			"//*[@id=‘content-container’]/div[1]/div/div/div[3]/div[1]/div/div[1]/i";
 	public static final String YesDelete = 
 			"//*[@id='yes-button' and contains(text(),'Yes, Delete')]";
 
@@ -159,7 +171,7 @@ public static final String LocationCooler =
 	public static final String AddProductPage_AddLocations = "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[8]/android.view.View[1]";
 			//"#expense-add > div > select";
 	public static final String ProductDetailsPage = 
-			"//*[@class='navbar-brand']//*[contains(text(),'Product Details')]";
+			"//*[contains(text(),'Product Details')]";
 
 	public static final String Locations_1stItemSelect = 
 			"(//*[@class='mm-c-product-minlist mm-c-product__sysco']//*[@class='mm-o-icon'])[1]";
@@ -184,6 +196,7 @@ public static final String LocationCooler =
 
 	public static int locationsNoOfElements1;
 	public static int locationsNoOfElements2;
+	public static String[] firstItemSelectedFromLocationId_1;
 
 	public static String LocationsItemPresent1_1;
 	public static String LocationsItemPresent1_2;
@@ -638,6 +651,38 @@ public static final String LocationCooler =
 		return this;
 
 	}
+	public LocationsPage LocationFirstItemClickAndItemDetailsCapturedVerification(String firstItemSelectedFromLocationId,String string) throws InterruptedException, IOException
+	{	
+		String string2="Issue";
+		String finalPath1=Screenshot.drivePath+string+string2+Screenshot.pathExtension;
+		Reporter.log("First item select from location");
+		waitFor(5);
+	try{
+		
+		final String Location_SelectedItemID= 
+				"//*[contains(text(),'"
+						+ firstItemSelectedFromLocationId + "')]";
+		waitForElementPresent(Location_SelectedItemID);
+		String selectedProduct= "//*[contains(text(),'"+ firstItemSelectedFromLocationId + "')]/ancestor::div[@class='mm-c-product-list__description']/following-sibling::div[@class='mm-c-product-list__location']//h6";
+		String catVerification=getElementText(selectedProduct);
+		String[] catVerificationCatNameObservedArray = catVerification.split("/");
+		catVerificationCatNameObservedArray[0]=catVerificationCatNameObservedArray[0].trim();
+		if (catVerificationCatNameObservedArray[0].equalsIgnoreCase(SetupInventoryPage.verificationFoodOrNonFood)) {
+			throw new Exception();
+		}
+	
+		}
+		
+			catch(Exception e){
+				Reporter.log("Category changed in product cart reflected after tapping back :Fail");
+				switchToNativeContext();
+				takeScreenshot(finalPath1);
+			
+			Assert.assertTrue(false);
+		}
+		return this;
+		
+	}
 
 	@SuppressWarnings("rawtypes")
 	public LocationsPage AddLocations1_name(String locname, String string) throws InterruptedException, IOException {
@@ -990,6 +1035,32 @@ public static final String LocationCooler =
 
 	}
 	@SuppressWarnings("rawtypes")
+	public LocationsPage TapAddLocation1(String string) throws InterruptedException, IOException {
+		String string2 = "Issue";
+		String finalPath1 = Screenshot.drivePath + string + string2 + Screenshot.pathExtension;
+
+		try {
+             
+			waitForElementToBeClickable(AddWeb2);
+			if (isElementPresent(AddWeb2)) {
+				clickElement(AddWeb2);
+			
+				
+
+			}
+			Reporter.log("Navigating to Add Locations page :Pass");
+		} catch (Exception e) {
+			Reporter.log("Navigating to Add Locations page :Fail");
+			switchToNativeContext();
+			takeScreenshot(finalPath1);
+			
+			Assert.assertTrue(false);
+		}
+
+		return this;
+
+	}
+	@SuppressWarnings("rawtypes")
 	public LocationsPage TapAddLocationName(String string) throws InterruptedException, IOException {
 		String string2 = "Issue";
 		String finalPath1 = Screenshot.drivePath + string + string2 + Screenshot.pathExtension;
@@ -1057,42 +1128,9 @@ public static final String LocationCooler =
 			waitFor(2);
 		
 			//final String Locname ="//*[@id='list-item']";
-		//	final String Locname ="//*[text()='"+name+"']";
-		//System.out.println(Locname);	
+			final String Locname ="//*[text()='"+name+"']";
+		System.out.println(Locname);	
 			//final String Locname ="//*[contains(text(),'"+locationName +"')]";
-final String Locname ="//*[text()='"+locationName +"']";
-		
-		//	final String Locname ="//*[@class='mm-c-product-list__location'and contains(text(),'"+locationName +"')]";
-			waitForElementToBeClickable(Locname);
-			clickElement(Locname);
-
-			Reporter.log("Location is selected for item :Pass");
-		}
-
-		catch (Exception e) {
-			Reporter.log("Location is selected for item   :Fail");
-			switchToNativeContext();
-			takeScreenshot(finalPath1);
-			
-			Assert.assertTrue(false);
-		}
-		return this;
-
-	}
-	public LocationsPage SelectLocationSmall(String name, String string) throws InterruptedException, IOException {
-		String string2 = "Issue";
-		String finalPath1 = Screenshot.drivePath + string + string2 + Screenshot.pathExtension;
-
-		Reporter.log("Selecting location");
-		try {
-			String locationName = name;
-     System.out.println(locationName);
-			waitFor(2);
-		
-			//final String Locname ="//*[@id='list-item']";
-			final String Locname ="//*[@class='mm-c-product-list__location']//*[text()='"+locationName +"']";
-		
-		//	final String Locname ="//*[@class='mm-c-product-list__location'and contains(text(),'"+locationName +"')]";
 			waitForElementToBeClickable(Locname);
 			clickElement(Locname);
 
@@ -1117,9 +1155,9 @@ final String Locname ="//*[text()='"+locationName +"']";
 
 		try {
 			waitForElementToBeClickable(AddLocation_LocName);
-			//clearElement(AddLocation_LocName);
-			clickElement(AddLocation_LocName);
-			//sendText(AddLocation_LocName, locationName);
+			clearElement(AddLocation_LocName);
+			//clickElement(AddLocation_LocName);
+			sendText(AddLocation_LocName, locationName);
 			Reporter.log("added location name :Pass");
 		}
 
@@ -1167,10 +1205,11 @@ final String Locname ="//*[text()='"+locationName +"']";
 		String finalPath1 = Screenshot.drivePath + string + string2 + Screenshot.pathExtension;
 
 		try {
-
+switchToNativeContext();
 			
 			waitForElementToBeClickable(AddLocation_LocTypeCooler);
 			clickElement(AddLocation_LocTypeCooler);
+			switchToWebContext();
 			System.out.println("selected cooler");
 
 			
@@ -1325,10 +1364,11 @@ final String Locname ="//*[text()='"+locationName +"']";
 		String finalPath1 = Screenshot.drivePath + string + string2 + Screenshot.pathExtension;
 		Reporter.log("Editing");
 		try {
-
+switchToNativeContext();
 			waitForElementToBeClickable(EditWeb);
 			if (isElementPresent(EditWeb)) {
 				clickElement(EditWeb);
+				switchToWebContext();
 				Reporter.log("tap on edit :Pass");
 			}
 
@@ -1342,6 +1382,32 @@ final String Locname ="//*[text()='"+locationName +"']";
 
 		return this;
 	}
+	@SuppressWarnings("rawtypes")
+	public LocationsPage TapOnEdit2(String string) throws InterruptedException, IOException {
+		String string2 = "Issue";
+
+		String finalPath1 = Screenshot.drivePath + string + string2 + Screenshot.pathExtension;
+		Reporter.log("Editing");
+		try {
+switchToNativeContext();
+			waitForElementToBeClickable(EditNative1);
+			if (isElementPresent(EditNative1)) {
+				clickElement(EditNative1);
+				switchToWebContext();
+				Reporter.log("tap on edit :Pass");
+			}
+
+		} catch (Exception e) {
+			Reporter.log("tap on edit :Fail");
+			switchToNativeContext();
+			
+			takeScreenshot(finalPath1);
+			Assert.assertTrue(false);
+		}
+
+		return this;
+	}
+
 
 	@SuppressWarnings("rawtypes")
 	public LocationsPage TapOnEdit1(String string) throws InterruptedException, IOException {
@@ -1360,6 +1426,47 @@ final String Locname ="//*[text()='"+locationName +"']";
 
 		} catch (Exception e) {
 			Reporter.log("tap on edit :Fail");
+			switchToNativeContext();
+			
+			takeScreenshot(finalPath1);
+			Assert.assertTrue(false);
+		}
+
+		return this;
+	}
+	@SuppressWarnings("rawtypes")
+	public LocationsPage TapOnDeleteIcon(String string) throws InterruptedException, IOException {
+		String string2 = "Issue";
+		String finalPath1 = Screenshot.drivePath + string + string2 + Screenshot.pathExtension;
+		Reporter.log("Icon cliking");
+		try {
+
+			waitFor(2);
+			waitForElementToBeClickable(ClickOnIcon);
+			if (isElementPresent(ClickOnIcon)) {
+
+				clickElement(ClickOnIcon);
+				
+				
+				
+			}
+			waitFor(2);
+				waitForElementToBeClickable(ClickOnIcon1);
+				if (isElementPresent(ClickOnIcon1)) {
+
+					clickElement(ClickOnIcon1);
+				}
+					waitFor(2);
+					waitForElementToBeClickable(ClickOnIcon2);
+					if (isElementPresent(ClickOnIcon2)) {
+
+						clickElement(ClickOnIcon2);
+					}
+				Reporter.log("tap on Icon :Pass");
+			}
+
+		catch (Exception e) {
+			Reporter.log("tap on icon :Fail");
 			switchToNativeContext();
 			
 			takeScreenshot(finalPath1);
@@ -1532,16 +1639,16 @@ final String Locname ="//*[text()='"+locationName +"']";
 		Reporter.log("Selecting an item from location ");
 		try {
 
-			final String Product_Select ="//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'" + item+ "')]/ancestor::div[@class='mm-c-product-list__details-wrapper']//*[@class='mm-c-product-list__image']//a";
-		
+			//final String Product_Select ="//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'" + item+ "')]/ancestor::div[@class='mm-c-product-list__details-wrapper']//*[@class='mm-c-product-list__image']//a";
+			final String Product_Select ="//*[text()='"+item+"']";
 		System.out.println(Product_Select);	
 		
 		System.out.println(isElementPresent(Product_Select));
-			waitForElementToBeClickable(Product_Select);
+		waitForElementPresent(Product_Select);
 
 			clickElement(Product_Select);
 
-			waitForElementToBeClickable(ProductDetailsPage);
+			waitForElementPresent(ProductDetailsPage);
 
 			Reporter.log("Selecting an item from location :Pass");
 		} catch (Exception e) {
@@ -1761,6 +1868,9 @@ Thread.sleep(5000);
 					"//*[contains(text(),'" + Loc1AddedItemId_2[0] + "')]";
 			 final String Location1_ThirdItemSelectedVerify = 
 					"//*[contains(text(),'" + Loc1AddedItemId_3[0] + "')]";
+			 System.out.println(Location1_FirstItemSelectedVerify);
+			 System.out.println(Location1_SecondItemSelectedVerify);
+			 System.out.println(Location1_ThirdItemSelectedVerify);
 			
 			System.out.println("ids"+Loc1AddedItemId_2[0]);
 			waitForElementToBeClickable(Location1_FirstItemSelectedVerify);
@@ -1788,6 +1898,7 @@ Thread.sleep(5000);
 
 	}
 
+	
 	@SuppressWarnings("rawtypes")
 	public LocationsPage AddCategory_AddProductDetailsPage(String string) throws InterruptedException, IOException {
 
@@ -1869,11 +1980,8 @@ Thread.sleep(5000);
 		Reporter.log("Quantity verification ");
 		try {
 
-			//String locationInputTextBox3 = "//*[@class='mm-c-product-list']//*[@class='item-input mm-u-input-border mm-c-product-list__qty form-control'and @placeholder='"
-			//		+ qty + "']";
-			 String var1[]= qty.split("/.");
-            System.out.println("variable:"+var1[0]);
-			String locationInputTextBox3 = "//*[@class='item-input mm-u-input-border mm-c-product-list__qty form-control'and @placeholder='5']";
+			String locationInputTextBox3 = "//*[@class='mm-c-product-list']//*[@class='item-input mm-u-input-border mm-c-product-list__qty form-control'and @placeholder='"
+					+ qty + "']";
 			final String InputTextBoxCheck1 = locationInputTextBox3;
 
 			boolean flag = isElementPresentAfterWait(InputTextBoxCheck1, 5);
@@ -2229,7 +2337,12 @@ System.out.println(flag1);
 						"//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
 								+ LocationsDeleteItemName1_1
 								+ "')]/following-sibling::div[@class='mm-c-product-list__details']";
+				
+				//final String keyword1 ="//*[contains(text(),'" + Loc1AddedItemId_1[0] + "')]";
+				System.out.println(keyword1);
+				clickElement(keyword1);
 				String LocationsDeleteItemId = getElementText(keyword1);
+				
 				LocationsDeleteItemId1_1 = LocationsDeleteItemId.split("\\s+");
 				clickElement(Locations_Item1Delete); // deleting first
 															// item in location
@@ -2241,7 +2354,9 @@ System.out.println(flag1);
 								+ LocationsDeleteItemName1_2
 								+ "')]/following-sibling::div[@class='mm-c-product-list__details']";
 						
+				//final String keyword2 ="//*[contains(text(),'" + LocationsDeleteItemName1_2 + "')]";
 				LocationsDeleteItemId = getElementText(keyword2);
+				System.out.println(keyword2);
 				LocationsDeleteItemId1_2 = LocationsDeleteItemId.split("\\s+");
 				clickElement(Locations_Item2Delete); // deleting 2nd item
 															// in location
@@ -2939,8 +3054,11 @@ System.out.println(flag1);
 
 			final String LocationnameNumberVerification =
 					"//*[contains(text(),'" + locationName + "')]";
+			
 
 			waitForElementToBeClickable(LocationnameNumberVerification);
+			clickElement(LocationnameNumberVerification);
+			
 
 			String locationNameToBeVerified = getElementText(LocationnameNumberVerification);
 

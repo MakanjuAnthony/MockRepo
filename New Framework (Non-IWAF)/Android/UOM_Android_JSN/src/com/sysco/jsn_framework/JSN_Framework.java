@@ -67,33 +67,17 @@ public class JSN_Framework {
 			return this;
 			}*/
 	 
-public  JSN_Framework switchToWebContext() throws InterruptedException{
+public  JSN_Framework switchToWebContext(){
 	Set<String> contextNames1 = driver.getContextHandles();
+	for (String contextName : contextNames1){
 	System.out.println("inside loop "+contextNames1);
-	String context ="";
-	//sThread.sleep(2500);
-	if(!(driver.getContext().toLowerCase().contains("webview")))
-	{
-		for (String contextName : contextNames1){
-			if(contextName.toUpperCase().contains("WEBVIEW"))
-			{
-				System.out.println("contextName "+contextName);
-				driver.context(contextName);
-				break;
-			}
-		}
-			
-			//System.out.println(driver.context((String) contextNames1.toArray()[1]));
-		}
-	//Thread.sleep(2500);
+	}
+	System.out.println(driver.context((String) contextNames1.toArray()[1]));
 	return this;
 	}
 
 public  JSN_Framework switchToNativeContext(){
-	if(!(driver.getContext().toLowerCase().contains("native_app")))
-	{
-		driver.context("NATIVE_APP");
-	}
+	driver.context("NATIVE_APP");
 	return this;
 	}
 
@@ -102,6 +86,7 @@ public  JSN_Framework waitForElementPresent(String element) throws InterruptedEx
 	new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(element)));
 		return this;
 	}
+
 public JSN_Framework waitForElementPresentByName(String element) throws InterruptedException{ 
 new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOfElementLocated(By.name(element)));
 return this; 
@@ -180,11 +165,6 @@ public  JSN_Framework waitFor(long time) throws InterruptedException{
 		new WebDriverWait(driver, time);
 		return this;
 	}
-
-public  void waitForElement(long time) throws InterruptedException{	
-	Thread.sleep(time*1000);
-	
-}
 
 public  JSN_Framework takeScreenshot(String screenshotPathAddress) throws InterruptedException, IOException{
 	//String screenShotPathAddress = "/Users/naveen_raj04/Desktop/Sysco/"+screenshotName+".jpeg";

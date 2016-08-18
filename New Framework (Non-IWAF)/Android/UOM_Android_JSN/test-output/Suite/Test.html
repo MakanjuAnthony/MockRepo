@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Aug 11 13:22:55 CDT 2016</td>
+<td>Started on:</td><td>Mon Aug 15 19:22:56 CDT 2016</td>
 </tr>
-<tr><td>Total time:</td><td>63 seconds (63564 ms)</td>
+<tr><td>Total time:</td><td>85 seconds (85578 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,7 +75,7 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.sysco.test.WorkFlow.MNS_1_1_CreateNonSyscoItem_LinkSupplier_Location_Category()'><b>MNS_1_1_CreateNonSyscoItem_LinkSupplier_Location_Category</b><br>Test class: com.sysco.test.WorkFlow<br>Test method: MNS-1-Manage_Create Non-Sysco Item_Link Supplier_Location_Expense Category<br/>
+<td title='com.sysco.test.WorkFlow.MPI_2_CreatePrepItem_LinkLocation_Category_NU()'><b>MPI_2_CreatePrepItem_LinkLocation_Category_NU</b><br>Test class: com.sysco.test.WorkFlow<br>Test method: MPI-1-Manage_Create Prep Item_LinkLocation_Expense Category<br/>
 <a href="#Output-1483298597" onClick='toggleBox("Output-1483298597", this, "Show output", "Hide output");'>Show output</a>
 
 <a href="#Output-1483298597" onClick="toggleAllBoxes();">Show all outputs</a>
@@ -84,20 +84,58 @@ Login page verification :Pass<br/>
 Save username verification :Pass<br/>
 Sign In<br/>
 Sign in :Pass<br/>
-Tapped  TrackInventory from inventory tools page:Fail<br/>
+Navigating to Setup inventory page :Pass<br/>
+Tapped on skip :Pass<br/>
+Selected  orderguide  from SetupInventoryImportItems:Pass<br/>
+Tapped on Continue :Pass<br/>
+default location clickElemented :Pass<br/>
+Tapped on Continue :Pass<br/>
+Tapped on DoThisLater :Pass<br/>
+Tapped on TakeHome :Pass<br/>
+In categories Page<br/>
+Navigating to categories page :Pass<br/>
+Navigating to Add categories page :Pass<br/>
+added category name :Pass<br/>
+Selected food :Pass<br/>
+Tapped on done:Pass<br/>
+tap on back :Pass<br/>
+Checking addeded Location in location list<br/>
+Added Category is listed :Pass<br/>
+tap on back :Pass<br/>
+Selecting Create Nonsysco item from inventory tools page <br/>
+Tapped Create Prep Item from inventory tools page:Pass<br/>
+Entering details of  item<br/>
+Entering Product name<br/>
+Entering Product id<br/>
+Entering Pack<br/>
+Entering size<br/>
+Entering weight<br/>
+Item details are entered :Pass<br/>
+Selecting category from Pdt card :Pass<br/>
+Selected locations : Pass<br/>
+Navigating to Add Locations page :Pass<br/>
+added location name :Pass<br/>
+Tapped on done:Pass<br/>
+Tapped  TrackInventory from inventory tools page:Pass<br/>
+Selecting location<br/>
+Location is selected for item :Pass<br/>
+Item Found in Setup Inventory:Pass<br/>
+category verify <br/>
+Categories identified for nonsyscoitems :Pass<br/>
+Item Found in Setup Inventory:Fail<br/>
 </div>
 </td>
 <td><div><pre>java.lang.AssertionError: expected [true] but found [false]
-	at com.sysco.pages.InventoryToolPage.InvTools_TrackInventory(InventoryToolPage.java:122)
-	at com.sysco.test.WorkFlow.MNS_1_1_CreateNonSyscoItem_LinkSupplier_Location_Category(WorkFlow.java:2710)
+	at com.sysco.pages.SetupInventoryPage.ClickProduct(SetupInventoryPage.java:801)
+	at com.sysco.test.WorkFlow.MPI_2_CreatePrepItem_LinkLocation_Category_NU(WorkFlow.java:3058)
 ... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1483298597", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
 <div class='stack-trace' id='stack-trace1483298597'><pre>java.lang.AssertionError: expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.failNotEquals(Assert.java:494)
 	at org.testng.Assert.assertTrue(Assert.java:42)
 	at org.testng.Assert.assertTrue(Assert.java:52)
-	at com.sysco.pages.InventoryToolPage.InvTools_TrackInventory(InventoryToolPage.java:122)
-	at com.sysco.test.WorkFlow.MNS_1_1_CreateNonSyscoItem_LinkSupplier_Location_Category(WorkFlow.java:2710)
+	at com.sysco.pages.SetupInventoryPage.ClickProduct(SetupInventoryPage.java:801)
+	at com.sysco.test.WorkFlow.MPI_2_CreatePrepItem_LinkLocation_Category_NU(WorkFlow.java:3058)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -123,7 +161,7 @@ Tapped  TrackInventory from inventory tools page:Fail<br/>
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
 </pre></div></td>
-<td>44</td>
+<td>72</td>
 <td>com.sysco.test.WorkFlow@3cef309d</td></tr>
 </table><p>
 </body>
