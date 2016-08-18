@@ -81,11 +81,12 @@ public static final String LocationCooler =
 	//public static final String AddWeb="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.widget.Spinner[2]";
 	public static final String AddWeb1="//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.ListView[1]/android.widget.CheckedTextView[3]";
 	//public static final String AddWeb="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[3]/android.widget.ListView[2]/android.view.View[1]";
-	public static final String AddWeb="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.widget.Spinner[2]";
+	//public static final String AddWeb="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.widget.Spinner[2]";
+	public static final String AddWeb="//*[@id='add-nav']/a/i";
 	public static final String AddWeb2="//*[@id='add-nav']/a";
 
 
-	public static final String EditWeb =  "//*[@id='edit-nav']/a/i";
+	public static final String EditWeb =  "//a[contains(text(),'Edit')]";
 	/*public static final String AddLocation_LocTypeCooler = 
 			"//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIAElement[1]";*/
 			public static final String EditNative =  "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[3]/android.widget.ListView[2]";
@@ -472,7 +473,7 @@ public static final String LocationCooler =
 		try {
 
 			//waitForElementToBeClickable(SetUp_Pg2Title);
-			Thread.sleep(7000);
+			Thread.sleep(3000);
 			waitForElementToBeClickable(DefaultLocation);
 			clickElement(DefaultLocation);
 
@@ -565,6 +566,7 @@ public static final String LocationCooler =
 			if (isElementPresent(Done)) {
 
 				clickElement(Done);
+				waitForElement(8);
 				Reporter.log("Tapped on done:Pass");
 
 				switchToWebContext();
@@ -1014,7 +1016,7 @@ public static final String LocationCooler =
 		String finalPath1 = Screenshot.drivePath + string + string2 + Screenshot.pathExtension;
 
 		try {
-             switchToNativeContext();
+           //  switchToNativeContext();
 			waitForElementToBeClickable(AddWeb);
 			if (isElementPresent(AddWeb)) {
 				clickElement(AddWeb);
@@ -1268,6 +1270,7 @@ switchToNativeContext();
 			if (isElementPresent(Back)) {
 
 				clickElement(Back);
+				waitForElement(5);
 
 				Reporter.log("tap on back :Pass");
 			}
@@ -1298,6 +1301,8 @@ switchToNativeContext();
 			waitForElementToBeClickable(LocAdded);
 			if (isElementPresent(LocAdded)) {
 				Reporter.log("Location is added :Pass");
+			}else{
+				throw new Exception("Location is not added :Fail");
 			}
 
 		} catch (Exception e) {
@@ -1364,7 +1369,7 @@ switchToNativeContext();
 		String finalPath1 = Screenshot.drivePath + string + string2 + Screenshot.pathExtension;
 		Reporter.log("Editing");
 		try {
-switchToNativeContext();
+//switchToNativeContext();
 			waitForElementToBeClickable(EditWeb);
 			if (isElementPresent(EditWeb)) {
 				clickElement(EditWeb);
@@ -3611,6 +3616,35 @@ System.out.println(flag1);
 		return this;
 	}
 
+	
+	public LocationsPage SyscoProductSelectForOG(String string) throws InterruptedException, IOException {
+		String string2 = "Issue";
+		String finalPath1 = Screenshot.drivePath + string + string2 + Screenshot.pathExtension;
+		Reporter.log("Selecting sysco item from location ");
+		try {
+
+			final String Product_Select =
+					"((//*[@class='mm-c-product-list__details-wrapper']//*[@class='mm-c-product-list__details']//*[contains(text(),'"
+							+ SetupInventoryPage.AddedItemId1_1[0]
+							+ "')]/ancestor::div[@class='mm-c-product-list__details-wrapper'])//a)[1]";
+					
+
+			waitForElementToBeClickable(Product_Select);
+			
+			clickElement(Product_Select);
+			waitForElementToBeClickable(ProductDetailsPage);
+			Reporter.log("Selecting an item from location :Pass");
+		} catch (Exception e) {
+			Reporter.log("Selecting an item from location :Fail");
+			switchToNativeContext();
+			takeScreenshot(finalPath1);
+			
+			Assert.assertTrue(false);
+		}
+
+		return this;
+
+	}
 
 
 }

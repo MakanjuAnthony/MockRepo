@@ -151,6 +151,7 @@ public class VendorPage extends JSN_Framework {
 			if (isElementPresent(DoneWeb)) {
 
 				clickElement(DoneWeb);
+				waitForElement(9);
 				Reporter.log("Tapped on done:Pass");
 
 			}
@@ -201,12 +202,15 @@ public class VendorPage extends JSN_Framework {
 		try {
 
 			String vendorName = name;
+			switchToNativeContext();
 
 			final String VD_Vendorname = 
-					"//*[@id='list-item']//*[contains(text(),'" + vendorName
+					"//android.widget.CheckedTextView[contains(@text,'" + vendorName
 							+ "')]";
 			waitForElementToBeClickable(VD_Vendorname);
 			clickElement(VD_Vendorname);
+			
+			switchToWebContext();
 
 			Reporter.log("Vendor is selected for item :Pass");
 		}

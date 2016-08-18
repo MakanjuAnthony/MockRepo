@@ -82,7 +82,7 @@ public class SetupInventoryPage extends JSN_Framework {
 			
 		public static final String AddProduct_Page = "//*[@class='navbar-brand']//*[contains(text(),'Add Product')]";
 			
-		public static final String AddProductPage_AddSupplier ="//*[@class='row']//*[contains(text(),'Add/Select Supplier')]";
+		public static final String AddProductPage_AddSupplier ="//select[@name='supplier']";
 		
 		public static final String Supplier_Select = "//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.ListView[1]/android.widget.CheckedTextView[2]";
 		public static final String Add_Catogory = "//*[@id='expense-add']/div/select";
@@ -162,9 +162,9 @@ public class SetupInventoryPage extends JSN_Framework {
 			
 		public static final String Search = "//*[@placeholder='Search']";
 
-		public static final String AddProductPage_AddLocations = "//*[@class='row']//*[contains(text(),'Add/Select Location(s)')]";
+		public static final String AddProductPage_AddLocations = "//select[@name='locations[0].groupId']";   
 			
-		public static final String AddProductPage_AddCategory = "//*[@class='row']//*[contains(text(),'Add/Select Expense Category')]";
+		public static final String AddProductPage_AddCategory = "//select[@name='expense']";
 			
 		public static final String DoThisLater ="//*[contains(text(),'Do This Later')]";
 
@@ -452,16 +452,26 @@ public class SetupInventoryPage extends JSN_Framework {
 	}
 
 	@SuppressWarnings("rawtypes")
-	public SetupInventoryPage verifyOGItemsOnSetupInv(String string) throws InterruptedException, IOException {
+	//updated by periya - Added additional param to send expected value, without that it was not working as we are modifying the name in some workflow
+	public SetupInventoryPage verifyOGItemsOnSetupInv(String strExpected, String string) throws InterruptedException, IOException {
 		String string2 = "Issue";
+		
+		String SetUpInventory_1stItemHeading ="";
 
 		String finalPath1 = Screenshot.drivePath + string + string2
 				+ Screenshot.pathExtension;
 		try {
 
-			final String SetUpInventory_1stItemHeading = 
+			if(strExpected.isEmpty()){
+			SetUpInventory_1stItemHeading = 
 					"//*[@class='mm-c-product-list']//*[@class='Grid__innerScrollContainer']//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
-							+ SetupInventoryPage.AddedItemId1_1[0] + "')]";
+							+ SetupInventoryPage.AddedItemId1_1[0] + "')]";  }
+			
+			else{
+				 SetUpInventory_1stItemHeading = 
+							"//*[@class='mm-c-product-list']//*[@class='Grid__innerScrollContainer']//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
+									+ strExpected + "')]";
+			}
 					
 			waitFor(10);
 			Boolean boolean1 = isElementPresent(
@@ -489,23 +499,32 @@ public class SetupInventoryPage extends JSN_Framework {
 
 	}
 
+	//updated by periya - Added additional param to send expected value, without that it was not working as we are modifying the name in some workflow
 	@SuppressWarnings({ "unused", "rawtypes" })
-	public SetupInventoryPage verifySearchItemsOnSetupInv(String string) throws InterruptedException, IOException {
+	public SetupInventoryPage verifySearchItemsOnSetupInv(String str,String string) throws InterruptedException, IOException {
 		String string1 = "Success";
 		String string2 = "Issue";
+		waitForElement(3);
 
 		String finalPath = Screenshot.drivePath + string + string1
 				+ Screenshot.pathExtension;
 		String finalPath1 = Screenshot.drivePath + string + string2
 				+ Screenshot.pathExtension;
+		String SetUpInventory_1stItemHeading = "";
 		try {
 
 			
 			if (isElementPresent(Category_Header)) {
-
-				final String SetUpInventory_1stItemHeading = 
+				
+				if(str.isEmpty()){
+					 SetUpInventory_1stItemHeading = 
 						"//*[@class='mm-c-product-list']//*[@class='Grid__innerScrollContainer']//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
 								+ SearchItemName + "')]";
+				}else{
+					 SetUpInventory_1stItemHeading = 
+								"//*[@class='mm-c-product-list']//*[@class='Grid__innerScrollContainer']//*[@class='mm-c-product-list__details-wrapper']//*[contains(text(),'"
+										+ str + "')]";
+				}
 
 				waitFor(10);
 				Boolean boolean1 = isElementPresent(
@@ -548,6 +567,7 @@ public class SetupInventoryPage extends JSN_Framework {
 			if (isElementPresent(Done)) {
 
 				clickElement(Done);
+				waitForElement(9);
 				
 				switchToWebContext();
 				Reporter.log("Tapped on done:Pass");
@@ -1177,8 +1197,11 @@ public class SetupInventoryPage extends JSN_Framework {
 			waitForElementToBeClickable(Search);
 			clickElement(Search);
 			sendText(Search, keyword);
-
+			
 			((AndroidDriver) driver).findElement(By.xpath("//*[@placeholder='Search']")).sendKeys(Keys.ENTER);
+			waitForElement(5);
+			
+			
 
 			CategoryName = getElementText(Category_Header);
 
@@ -1548,6 +1571,7 @@ public class SetupInventoryPage extends JSN_Framework {
 
 		try {
 
+			waitForElement(1);
 			waitForElementToBeClickable(Category_Header);
 
 			if (isElementPresent(OrderGuide_FirstItemSelect)) {
@@ -1557,7 +1581,7 @@ public class SetupInventoryPage extends JSN_Framework {
 
 				final String keyword1 = 
 						
-						"//*[@class='mm-c-product-minlist__item']//*[contains(text(),'"
+						"//*[contains(text(),'"
 								+ SearchItemName
 								+ "')]/following-sibling::div[@class='mm-c-product-minlist__details']";
 						
@@ -1902,6 +1926,8 @@ public class SetupInventoryPage extends JSN_Framework {
 			}
 
 			return this;
+			
+	
 
 		}
 }

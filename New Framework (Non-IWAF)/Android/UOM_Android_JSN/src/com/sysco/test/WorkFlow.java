@@ -52,13 +52,15 @@ public class WorkFlow extends JSN_Framework{
 	public  void setUp() throws Exception{
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("platformName", "android");
-		capabilities.setCapability("platformVersion", "6.0.1");
-		capabilities.setCapability("deviceName", "Galaxy S6");
+		capabilities.setCapability("platformVersion", "5.0");
+		//capabilities.setCapability("deviceName", "1215fc6c06180a04");
+	//	capabilities.setCapability("deviceName", "1215fc0ca5601603");  
+		capabilities.setCapability("deviceName", "e347bcf0");
 		capabilities.setCapability("autoWebview", "true");
 		//capabilities.setCapability("app", "/Users/MrDon/Desktop/UOMProject/UOMQA_SQ-debug.apk");
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 	//	driver = new AppiumDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);  
+	//	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);  
 		switchToWebContext();	
 	}
 	
@@ -84,8 +86,7 @@ public class WorkFlow extends JSN_Framework{
 	//int user;
 	@AfterTest
 	public  void clear() throws Exception{
-		/*driver.close();
-		driver.closeApp();*/
+		
 		HttpClient client = new DefaultHttpClient();
 		String accountNumber = datapool.readFromExcelUserInfo().accountDataPool[user];
 		if(!accountNumber.equalsIgnoreCase("accountNumber"))
@@ -380,7 +381,7 @@ public class WorkFlow extends JSN_Framework{
 		setupInventoryPage.SearchItem(datapool.readFromExcelSearchInfo().searchNameDataPool[1],"SI - WF 7-Search item");
 		setupInventoryPage.SelectItemFrom_Catalog("SI - WF 7-Selected item from OG");
 		setupInventoryPage.TapOnDone("SI - WF 7-Done");
-		setupInventoryPage.verifySearchItemsOnSetupInv("SI - WF 7-Verify item selected");
+		setupInventoryPage.verifySearchItemsOnSetupInv("","SI - WF 7-Verify item selected");
 	
 		;
 
@@ -1525,18 +1526,28 @@ public class WorkFlow extends JSN_Framework{
 		homePage.ClickAccount(datapool.readFromExcelUserInfo().userNameDataPool[user],"MIL-WF1-WF4-Clicked account");
 		accountsPage.First_AccountSelection(datapool.readFromExcelUserInfo().userNameDataPool[user],"MIL-WF1-WF4-FirstAccountSelect");
 
-
 		//setting up inventory    
 		inventoryToolPage.InvTools_SetUpInventory("MIL-WF1-WF4-SetupInventoryTap");
 		setupInventoryPage.TapOnSkip("MIL-WF1-WF4-Skip1 Tapped");
 		setupInventoryPage.TapOrderGuide("MIL-WF1-WF4-OG Selected");
 		setupInventoryPage.tapContinue("MIL-WF1-WF4-Tapped Continue");
-		locationsPage.DefaultLocation("MIL-WF1-WF4-Tapped Custom location");
+		locationsPage.DefaultLocation("MIL-WF1-WF4-Tapped Default location");
 		locationsPage.tapContinue("MIL-WF1-WF4-Tapped Continue");
 		setupInventoryPage.TapOnDOThisLater("MIL-WF1-WF4-Tapped do this later");
 		setupInventoryPage.TapTakeHome("MIL-WF1-WF4-Tapped TakeMeHome");
-		inventoryToolPage.InvTools_TrackInventory("MIL-WF1-WF4-TrackinventoryTap");
-
+		
+		//Add supplier
+		inventoryToolPage.InvTools_Suppliers("MSP-1,MSP-2-Tapped on suppliers");
+		vendorPage.Add_Supplier("MIL-WF1-WF4-AddVendorTap");
+		vendorPage.AddSupplier_Details(datapool.readFromExcelSupplier1Info().supplier1DataPool[0], datapool.readFromExcelSupplier1Info().supplier1DataPool[1], datapool.readFromExcelSupplier1Info().supplier1DataPool[2],
+					datapool.readFromExcelSupplier1Info().supplier1DataPool[3], datapool.readFromExcelSupplier1Info().supplier1DataPool[4], datapool.readFromExcelSupplier1Info().supplier1DataPool[5], "MIL-WF1-WF4-AddVendorDetails");
+		vendorPage.TapOnDone("MIL-WF1-WF4-Done");
+		vendorPage.TapOnBack("MIL-WF1-WF4-Back");
+		vendorPage.TapOnBack("MIL-WF1-WF4-Back");		
+		
+		
+		inventoryToolPage.InvTools_TrackInventory("MIL-WF1-WF4-TrackinventoryTap");		
+		//add location 
 		locationsPage.TapAddLocation("MIL-WF1-WF4-Tapped ADD");
 		locationsPage.AddLocationName(datapool.readFromExcelLocationInfo().locationNameDataPool[3],"MIL-WF1-WF4-Enter location name");
 		locationsPage.AddLocationCooler("MIL-WF1-WF4-Tapped Cooler");
@@ -1553,11 +1564,7 @@ public class WorkFlow extends JSN_Framework{
 		setupInventoryPage.EnterItemDetails(datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[0],datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[1],datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[2],
 				datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[3], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[4], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[5], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[6], "MIL-WF1-WF4-NonSyscoItem details entered");
 		setupInventoryPage.AddSupplier_AddProductDetailsPage("MIL-WF1-WF4-select supplier");
-		vendorPage.Add_Supplier("MIL-WF1-WF4-AddVendorTap");
-		vendorPage.AddSupplier_Details(datapool.readFromExcelSupplier1Info().supplier1DataPool[0], datapool.readFromExcelSupplier1Info().supplier1DataPool[1], datapool.readFromExcelSupplier1Info().supplier1DataPool[2],
-				datapool.readFromExcelSupplier1Info().supplier1DataPool[3], datapool.readFromExcelSupplier1Info().supplier1DataPool[4], datapool.readFromExcelSupplier1Info().supplier1DataPool[5], "MIL-WF1-WF4-AddVendorDetails");
-		vendorPage.TapOnDone("MIL-WF1-WF4-Done");
-		vendorPage.TapOnBack("MIL-WF1-WF4-Back");
+		
 		vendorPage.SupplierSelect(datapool.readFromExcelSupplier1Info().supplier1DataPool[0],"MIL-WF1-WF4-SupplierSelect");
 		vendorPage.TapOnDone("MIL-WF1-WF4-Done");
 
@@ -1577,11 +1584,13 @@ public class WorkFlow extends JSN_Framework{
 		setupInventoryPage.SearchItem(datapool.readFromExcelSearchInfo().searchNameDataPool[1],"MIL-WF1-WF4-Search item");
 		setupInventoryPage.SelectItemFrom_Catalog("MIL-WF1-WF4-Selected item from OG");
 		setupInventoryPage.TapOnDone("MIL-WF1-WF4-Done");
-		setupInventoryPage.verifySearchItemsOnSetupInv("MIL-WF1-WF4-Verify item selected");
-		setupInventoryPage.TapOnDone("MIL-WF1-WF4-Tapped Done");
+		setupInventoryPage.verifySearchItemsOnSetupInv("","MIL-WF1-WF4-Verify item selected");
+		//setupInventoryPage.TapOnDone("MIL-WF1-WF4-Tapped Done");  
+		locationsPage.TapOnBack("MIL-WF1-WF4-Tapped Done");  
+		
 		//assiging nickname to catalog item
 		locationsPage.SelectLocation(datapool.readFromExcelLocationInfo().locationNameDataPool[3], "MIL-WF1-WF4-Selecting AddedLocation");
-		locationsPage.SyscoProductSelect("MIL-WF1-WF4-Select Product");
+	    locationsPage.SyscoProductSelect("MIL-WF1-WF4-Select Product");
 		locationsPage.TapOnEdit("MIL-WF1-WF4-Tapped Edit");
 		locationsPage.EditProduct_NickName(datapool.readFromExcelProductNickNameInfo().productNickNameDataPool[0], "MIL-WF1-WF4-Entering Nickname");
 		locationsPage.TapOnDone("MIL-WF1-WF4-Tapped Done");
@@ -1592,20 +1601,18 @@ public class WorkFlow extends JSN_Framework{
 		locationsPage.AddItemFrom_OrderGuide("MIL-WF1-WF4-Tapped NonSysco");
 		setupInventoryPage.SelectItemFrom_OrderGuide("MIL-WF1-WF4-Selected item from OG");
 		setupInventoryPage.TapOnDone("MIL-WF1-WF4-Tapped Done");
-		setupInventoryPage.verifyOGItemsOnSetupInv("MIL-WF1-WF4-Verify item selected");  
-		setupInventoryPage.TapOnDone("MIL-WF1-WF4-Tapped Done"); 
+		setupInventoryPage.verifyOGItemsOnSetupInv("","MIL-WF1-WF4-Verify item selected");  
+		//setupInventoryPage.TapOnDone("MIL-WF1-WF4-Tapped Done"); 
 
-		locationsPage.SyscoProductSelect("MIL-WF1-WF4-Select Product");
+		locationsPage.SyscoProductSelectForOG("MIL-WF1-WF4-Select Product");
 		locationsPage.TapOnEdit("MIL-WF1-WF4-Tapped Edit");
 		locationsPage.EditProduct_NickName("nickName", "MIL-WF1-WF4-Entering Nickname");
 		locationsPage.TapOnDone("MIL-WF1-WF4-Tapped Done");
 		locationsPage.TapOnBack("MIL-WF1-WF4-Tapped Back");
 
 
-		setupInventoryPage.verifySearchItemsOnSetupInv("MIL-WF1-WF4-Verify item selected");
-
-
-		setupInventoryPage.verifyOGItemsOnSetupInv("MIL  - WF 1 WF 4-Verify item selected"); 
+		setupInventoryPage.verifySearchItemsOnSetupInv(datapool.readFromExcelProductNickNameInfo().productNickNameDataPool[0],"MIL-WF1-WF4-Verify item selected");
+		setupInventoryPage.verifyOGItemsOnSetupInv("nickName","MIL  - WF 1 WF 4-Verify item selected"); 
 
 		setupInventoryPage.verifyNonSyscoPrepItemSetupInv(datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[0],"MIL-WF1-WF4-Verify item selected");
 		setupInventoryPage.verifyNonSyscoPrepItemSetupInv(datapool.readFromExcelPrepItemInfo().prepItemDataPool[0],"MIL-WF1-WF4-Verify item selected");
