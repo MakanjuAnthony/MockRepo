@@ -81,8 +81,12 @@ public static final String LocationCooler =
 	//public static final String AddWeb="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.widget.Spinner[2]";
 	public static final String AddWeb1="//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.ListView[1]/android.widget.CheckedTextView[3]";
 	//public static final String AddWeb="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[3]/android.widget.ListView[2]/android.view.View[1]";
+
 	//public static final String AddWeb="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.widget.Spinner[2]";
 	public static final String AddWeb="//*[@id='add-nav']/a/i";
+
+	//public static final String AddWeb="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.widget.Spinner[2]";
+
 	public static final String AddWeb2="//*[@id='add-nav']/a";
 
 
@@ -1017,6 +1021,7 @@ public static final String LocationCooler =
 
 		try {
            //  switchToNativeContext();
+
 			waitForElementToBeClickable(AddWeb);
 			if (isElementPresent(AddWeb)) {
 				clickElement(AddWeb);
@@ -3648,3 +3653,4 @@ System.out.println(flag1);
 
 
 }
+

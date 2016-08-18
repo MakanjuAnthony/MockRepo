@@ -20,7 +20,7 @@
 package com.sysco.locators;
 public class Screenshot
 {
-	public static	String drivePath="/Users/MrDon/Desktop/Lucky/Screenshots";
+	public static	String drivePath="/Users/parvathy_p/Desktop/ScriptSS";
 	public static String pathExtension=".png";
 
 	public static String string1="Success";

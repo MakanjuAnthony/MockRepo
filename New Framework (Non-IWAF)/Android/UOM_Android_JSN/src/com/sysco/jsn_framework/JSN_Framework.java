@@ -78,6 +78,7 @@ public class JSN_Framework {
 					if(contextName.toUpperCase().contains("WEBVIEW"))
 					{
 						System.out.println("contextName "+contextName);
+						System.out.println("to web context");
 						driver.context(contextName);
 						break;
 					}
@@ -93,6 +94,7 @@ public class JSN_Framework {
 public  JSN_Framework switchToNativeContext(){
 	if(!(driver.getContext().toLowerCase().contains("native_app")))
 	{
+		System.out.println("to native app");
 		driver.context("NATIVE_APP");
 	}
 	return this;
@@ -188,8 +190,9 @@ public  JSN_Framework waitFor(long time) throws InterruptedException{
 
 public  JSN_Framework takeScreenshot(String screenshotPathAddress) throws InterruptedException, IOException{
 	//String screenShotPathAddress = "/Users/naveen_raj04/Desktop/Sysco/"+screenshotName+".jpeg";
-	File sourceFile=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	FileUtils.copyFile(sourceFile,new File(screenshotPathAddress));
+	//commenting it temporary
+	//File sourceFile=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	//FileUtils.copyFile(sourceFile,new File(screenshotPathAddress));
 	return this;
 }
 public  JSN_Framework getElementCount(String xpath){

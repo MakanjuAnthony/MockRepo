@@ -92,7 +92,9 @@ import io.appium.java_client.ios.IOSDriver;
 			public static	int CategoryNoOfElements1;
 			public static	int CategorysNoOfElements2;
 			public static final String ADD_CategoryName= "//*[@id='name']";
-			public static final String AddCategory_FoodWeb= "(//*[@class='mm-c-expense__details-radio']//*[@class='radio'])[1]";
+			//public static final String AddCategory_FoodWeb= "(//*[@class='mm-c-expense__details-radio']//*[@class='radio'])[1]";
+			public static final String AddCategory_FoodWeb= "(//label[@for='foodType'])[1]";
+			//(//input[@type='radio'])[1]
 			public static final String AddCategory_Food="//android.widget.RadioButton[@content-desc='FOOD']";
 			
 			public static final String AddCategory_NonFood="//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIAElement[2]";
@@ -103,7 +105,9 @@ import io.appium.java_client.ios.IOSDriver;
 		
 			public static final String Back ="//*[@id='back-nav']/a/i";
 			public static final String AddWeb= "//*[@id='add-nav']/a/i";
-			public static final String EditWeb = "//*[@id='edit-nav']/a/i";
+			//public static final String EditWeb = "//*[@id='edit-nav']/a/i";
+			public static final String EditWeb = "//a[contains(text(),'Edit')]";
+			
 			public static final String Delete ="//*[@id='delete-button' and contains(text(),'Delete Expense Category')]";
 			public static final String YesDelete ="//*[@id='yes-button' and contains(text(),'Yes, Delete')]";
 		
@@ -577,7 +581,7 @@ import io.appium.java_client.ios.IOSDriver;
 		   		
 		   		try{
 		  		
-	           waitForElementToBeClickable(AddCategory_FoodWeb);
+		   			waitForElementToBeClickable(AddCategory_FoodWeb);
 		   		    clickElement(AddCategory_FoodWeb);
 		   		
 		   			 		Reporter.log("Selected food :Pass");

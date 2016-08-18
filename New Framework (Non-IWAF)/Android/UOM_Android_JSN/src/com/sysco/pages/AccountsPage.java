@@ -196,7 +196,7 @@ public class AccountsPage extends JSN_Framework{
 	public AccountsPage First_AccountSelection(String str1, String string) throws InterruptedException, IOException {
 		String finalPath1 = Screenshot.drivePath + string + Screenshot.string2 + Screenshot.pathExtension;
 		try {
-			if ((str1.equalsIgnoreCase("sqsauser32")) || (str1.equalsIgnoreCase("sqsauser33"))) {
+			if ((str1.equalsIgnoreCase("sqsauser32")) || (str1.equalsIgnoreCase("sqsauser33"))||(str1.equalsIgnoreCase("squomsa39"))) {
 				waitForElementToBeClickable(Accounts_1Account).clickElement(Accounts_1Account);
 				if (isElementPresentAfterWait(InventoryToolsPage_Accountinfo, 20)) {
 					T_AccountInfo = getElementText(InventoryToolsPage_Accountinfo);
