@@ -60,7 +60,8 @@ public class VendorPage extends JSN_Framework {
 	public static final String VendorDetails_contact = 	"//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIATextField[4]";
 	public static final String VendorDetails_email = "//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIATextField[5]";
 	public static final String VendorDetails_note =	"//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIATextField[6]";
-	public static final String Edit = "//*[@id='edit-nav']//*[@class='mm-o-icon icon-edit']";
+	public static final String Edit = "//*[@id='edit-nav']//a[contains(text(),'Edit')]";
+	
 	public static String Name;
 	public static final String ADD_VendorDelete = "//*[@id='delete-button' and contains(text(),'Delete Supplier')]";
 	public static final String Delete_Yes = 	"//*[@id='yes-button' and contains(text(),'Yes, Delete')]";
@@ -76,20 +77,20 @@ public class VendorPage extends JSN_Framework {
 	public static final String ADD_VendorNoteLabel =  "//*[contains(text(),'NOTE/COMMENTS')]";
 	public static final String Cancel = "//*[contains(text(),'Cancel')]";
 
+	public static final String VendorDetails_name_Android ="(//android.widget.EditText)[1]";
+	public static final String VendorDetails_number_Android ="(//android.widget.EditText)[2]";
+	public static final String VendorDetails_address_Android ="(//android.widget.EditText)[3]";	      
+	public static final String VendorDetails_contact_Android ="(//android.widget.EditText)[4]";
+	public static final String VendorDetails_email_Android ="(//android.widget.EditText)[5]";
+	public static final String VendorDetails_note_Android ="(//android.widget.EditText)[6]";
 	
-	
-	
-	public static final String VendorDetails_name_Android ="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[1]";
+	//public static final String VendorDetails_name_Android ="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[1]";
+	//public static final String VendorDetails_number_Android ="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[2]";
+	//public static final String VendorDetails_address_Android ="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[3]";
+	//public static final String VendorDetails_contact_Android ="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[4]";
+	//public static final String VendorDetails_email_Android ="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[5]";
 			
-	public static final String VendorDetails_number_Android ="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[2]";
-			
-	public static final String VendorDetails_address_Android ="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[3]";
-			
-	public static final String VendorDetails_contact_Android ="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[4]";
-			
-	public static final String VendorDetails_email_Android ="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[5]";
-			
-	public static final String VendorDetails_note_Android ="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[6]";
+	//public static final String VendorDetails_note_Android ="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]/android.widget.EditText[6]";
 				
 	
 	
@@ -373,6 +374,8 @@ public class VendorPage extends JSN_Framework {
 			
 				if (Name.equals(name)) {
 					Reporter.log("view vendor name :Pass");
+				}else{
+					throw new Exception("view vendor name :Fail");
 				}
 			}
 
@@ -381,6 +384,9 @@ public class VendorPage extends JSN_Framework {
 				String Num = getElementText(VendorDetails_number_Android);
 				if (Num.equals(number)) {
 					Reporter.log("view vendor no   :Pass");
+				}
+				else{
+					throw new Exception("view vendor no :Fail");
 				}
 			}
 
@@ -391,6 +397,9 @@ public class VendorPage extends JSN_Framework {
 					Reporter.log("view vendor Address   :Pass");
 							
 				}
+				else{
+					throw new Exception("view vendor Address :Fail");
+				}
 			}
 
 			if (isElementPresent(VendorDetails_contact_Android)) {
@@ -399,6 +408,8 @@ public class VendorPage extends JSN_Framework {
 				if (Contact.equals(contactinfo)) {
 					Reporter.log("view vendor Contact   :Pass");
 							
+				}else{
+					throw new Exception("view vendor Contact :Fail");
 				}
 			}
 
@@ -408,6 +419,9 @@ public class VendorPage extends JSN_Framework {
 				if (Email.equals(email)) {
 					Reporter.log("view vendor Email   :Pass");
 				}
+				else{
+					throw new Exception("view vendor Email :Fail");
+				}
 			}
 
 			if (isElementPresent(VendorDetails_note_Android)) {
@@ -415,6 +429,9 @@ public class VendorPage extends JSN_Framework {
 				String Note = getElementText(VendorDetails_note_Android);
 				if (Note.equals(note)) {
 					Reporter.log("view vendor Note  :Pass");
+				}
+				else{
+					throw new Exception("view vendor Note :Fail");
 				}
 			}
 
@@ -431,7 +448,6 @@ public class VendorPage extends JSN_Framework {
 
 		return this;
 	}
-	
 	
 	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
 	public VendorPage DeleteSupplier(String string) throws InterruptedException, IOException {

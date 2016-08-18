@@ -2,16 +2,16 @@
 package com.sysco.test;
 
 
+import java.io.BufferedReader;
 import java.io.IOException;
-
-
-
+import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.sysco.pages.*;
@@ -22,7 +22,10 @@ import io.appium.java_client.ios.IOSDriver;
 import com.sysco.jsn_framework.*;
 import com.sysco.locators.DataPoolCoordinates;
 import com.sysco.pages.*;
-
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
 public class WorkFlow extends JSN_Framework{
 
 	LoginPage loginPage=new LoginPage();
@@ -36,7 +39,7 @@ public class WorkFlow extends JSN_Framework{
 	PurchasesPage purchasespage=new PurchasesPage();
     FoodCostPage foodCostpage=new FoodCostPage();
     ListPage listPage=new ListPage();
-
+    static int user;
 	DataPoolCoordinates datapool=new DataPoolCoordinates();
 	/*
 	 * Validating user is able to setup inventory by adding items from OrderGuide and then assign those items to Default location and Default category. 
@@ -51,7 +54,8 @@ public class WorkFlow extends JSN_Framework{
 		capabilities.setCapability("platformName", "android");
 		capabilities.setCapability("platformVersion", "6.0.1");
 		capabilities.setCapability("deviceName", "Galaxy S6");
-		capabilities.setCapability("app", "/Users/MrDon/Desktop/UOMProject/UOMQA_SQ-debug.apk");
+		capabilities.setCapability("autoWebview", "true");
+		//capabilities.setCapability("app", "/Users/MrDon/Desktop/UOMProject/UOMQA_SQ-debug.apk");
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 	//	driver = new AppiumDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);  
@@ -75,10 +79,31 @@ public class WorkFlow extends JSN_Framework{
 	public  void tearDown() throws Exception{
 		/*driver.close();
 		driver.closeApp();*/
+		//driver.quit();
+	}
+	//int user;
+	@AfterTest
+	public  void clear() throws Exception{
+		/*driver.close();
+		driver.closeApp();*/
+		HttpClient client = new DefaultHttpClient();
+		String accountNumber = datapool.readFromExcelUserInfo().accountDataPool[user];
+		if(!accountNumber.equalsIgnoreCase("accountNumber"))
+		{
+			HttpPost post = new HttpPost("http://uom-qa.na.sysco.net:8081/tasks/cleanupDataForAccount?opCo=056&customerId="+datapool.readFromExcelUserInfo().accountDataPool[user]);
+	
+			HttpResponse response = client.execute(post);
+			BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+	
+			StringBuffer result = new StringBuffer();
+			String line = "";
+			while ((line = rd.readLine()) != null) {
+			    result.append(line);
+			}
+			System.out.println(result);
+		}
 		driver.quit();
 	}
-	int user;
-
 	@Test(groups={"SI - WF 1"},priority=0, description = "SI - WF 1-OG + Dafault Loc + Default Category")
 	public void SI_WF1_OG_DefaultLocation_DefaultCategory() throws Exception {
 
@@ -862,7 +887,7 @@ public class WorkFlow extends JSN_Framework{
 	public void SI_WF27_CustomList_MultipleList_ListNames_DefaultCat() throws Exception {	
 
 
-		user=1;
+		user=4;
 		
 		loginPage.verifyLoginPage("SI - WF 27-LoginPage");
 		loginPage.saveUsernameCheckBoxclickElement("SI - WF 27-Save Username");
@@ -893,14 +918,14 @@ public class WorkFlow extends JSN_Framework{
 		locationsPage.VerifyListItemsOnLocation(datapool.readFromExcelUserInfo().listProduct1DataPool[2],datapool.readFromExcelUserInfo().listProduct2DataPool[2],"SI - WF 27-Item verification");
 		*/locationsPage.SelectLocation("List2", "SI - WF 27-select added location");
 		locationsPage.VerifyListItemsOnLocation("1358522","208845","SI - WF 27-Item verification");
-		
-		locationsPage.TapOnDone("SI - WF 1-Tapped Done");
+		locationsPage.TapOnBack("SI - WF 1-Tapped Back");
+		//locationsPage.TapOnDone("SI - WF 1-Tapped Done");
 		/*locationsPage.SelectLocation(datapool.readFromExcelUserInfo().listNameDataPool[3], "SI - WF 27-select added location");
 		locationsPage.VerifyListItemsOnLocation(datapool.readFromExcelUserInfo().listProduct1DataPool[3],datapool.readFromExcelUserInfo().listProduct2DataPool[3],"SI - WF 27-Item verification");
 		*/locationsPage.SelectLocation("List3", "SI - WF 27-select added location");
 		locationsPage.VerifyListItemsOnLocation("1141142","1145283","SI - WF 27-Item verification");
-		
-		locationsPage.TapOnDone("SI - WF 27-Tapped Done") ;     
+		locationsPage.TapOnBack("SI - WF 1-Tapped Back");
+		//locationsPage.TapOnDone("SI - WF 27-Tapped Done") ;     
 		
 	}
 	
@@ -1309,7 +1334,7 @@ public class WorkFlow extends JSN_Framework{
 	@Test(groups={"SI - WF 35"},priority=23, description = "SI - WF 35-Custom List + Select single  List +Custom Categories as location+Suggested Cat")
 	public void SI_WF35_CustomListSingleList_CustomCategoryOnLocationsPage_suggestedcategory() throws Exception {
 
-		user=2;
+		user=4;
 		loginPage.verifyLoginPage("SI - WF 35-LoginPage");
 		loginPage.saveUsernameCheckBoxclickElement("SI - WF 35-Save Username");
 		loginPage.signIn(datapool.readFromExcelUserInfo().userNameDataPool[user],datapool.readFromExcelUserInfo().passwordDataPool[user],"SI - WF 35-LoginPage");
@@ -3131,7 +3156,11 @@ user=2;
 			
 		}
 		
-
+		 @Test(groups={"MEC - WF 2"},priority=34, description = "MEC - WF 2-Creating, editing and deleting category ")
+		 public void test() throws Exception {	
+			 user=1;
+		 
+		 }
 	 
 }
 

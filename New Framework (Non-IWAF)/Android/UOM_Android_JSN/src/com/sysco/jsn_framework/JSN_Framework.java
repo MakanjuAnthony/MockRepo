@@ -155,7 +155,10 @@ public  Boolean isElementPresentAfterWait(String elementPresent, int time){
 	return  element;
 	}
 
-
+public  void waitForElement(long time) throws InterruptedException{	
+	 Thread.sleep(time*1000);
+	 	
+	 }
 public  String getElementText(String elementText){
 		String test=driver.findElement(By.xpath(elementText)).getText();
 		return test;

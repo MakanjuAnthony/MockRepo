@@ -82,7 +82,7 @@ public class LoginPage extends JSN_Framework {
 			clickElement(HomUserName);
 			clearElement(HomUserName);
 			sendText(HomUserName, UserName);
-
+			waitForElement(1);
 			waitForElementToBeClickable(HomPwd);
 			clickElement(HomPwd);
 			sendText(HomPwd, Password);
