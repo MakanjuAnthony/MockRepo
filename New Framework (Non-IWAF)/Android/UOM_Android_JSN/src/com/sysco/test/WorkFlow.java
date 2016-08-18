@@ -44,7 +44,7 @@ public class WorkFlow extends JSN_Framework{
 	 * Prerequisite:Normal/MA User with OG items.
 	 */
 
-	@SuppressWarnings("rawtypes")
+/*	@SuppressWarnings("rawtypes")
 	@BeforeMethod
 	public  void setUp() throws Exception{
 		DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -57,7 +57,7 @@ public class WorkFlow extends JSN_Framework{
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);  
 		switchToWebContext();	
 	}
-	
+	*/
 	
 	
 	/*@BeforeMethod
