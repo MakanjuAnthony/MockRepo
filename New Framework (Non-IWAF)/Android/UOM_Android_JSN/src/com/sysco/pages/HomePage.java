@@ -41,7 +41,7 @@ public class HomePage extends JSN_Framework{
 //	public static final String InvToolsPage = "//UIAStaticText[@label='Inventory Tools']";
 	public static final String HamLogout = "//*[@class='mm-c-menu']//*[@id='logout']";
 //	public static final String VendorsPage = "//UIAStaticText[@label='Vendors']";
-	public static final String selectAcc = "//*[@class='navbar-brand']//*[contains(text(),'Please select an account')]";
+	public static final String selectAcc = "//a[contains(text(),'Please select an account')]";
 
 
 	/* Functions on the Page are defined below */
@@ -108,7 +108,7 @@ public class HomePage extends JSN_Framework{
 		
 		try{	
 			
-			if ((str1.equalsIgnoreCase("sqsauser32")) || (str1.equalsIgnoreCase("sqsauser33")) ){
+			if ((str1.equalsIgnoreCase("sqsauser32")) || (str1.equalsIgnoreCase("sqsauser33"))|| (str1.equalsIgnoreCase("squomsa39"))){
 				if (isElementPresent(selectAcc))
 			{
 			clickElement(selectAcc);

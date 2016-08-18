@@ -53,10 +53,10 @@ public class WorkFlow extends JSN_Framework{
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("platformName", "android");
 		capabilities.setCapability("platformVersion", "6.0.1");
-		capabilities.setCapability("deviceName", "Galaxy S6");
+		capabilities.setCapability("deviceName", "1215fc6c06180a04");
 		capabilities.setCapability("autoWebview", "true");
 		//capabilities.setCapability("app", "/Users/MrDon/Desktop/UOMProject/UOMQA_SQ-debug.apk");
-		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+		driver = new AndroidDriver(new URL("http://127.0.0.1:4725/wd/hub"), capabilities);
 	//	driver = new AppiumDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);  
 		switchToWebContext();	
@@ -691,7 +691,7 @@ public class WorkFlow extends JSN_Framework{
 	@Test(groups={"SI - WF 23"},priority=11, description = "SI - WF 23-Custom List + Custom Loc + default Category")
 	public void SI_WF23_CustomList_CustomLoc_defaultcategory() throws Exception {	
 
-	user=1;	
+		user=1;	
 		loginPage.verifyLoginPage("SI - WF 23-LoginPage");
 		loginPage.saveUsernameCheckBoxclickElement("SI - WF 23-Save Username");
 		loginPage.signIn(datapool.readFromExcelUserInfo().userNameDataPool[user],datapool.readFromExcelUserInfo().passwordDataPool[user],"SI - WF 23-LoginPage");
@@ -735,7 +735,7 @@ public class WorkFlow extends JSN_Framework{
 		
 		categoryPage.VerifyCustomListItemsDefaultCategoryLocation1("SI- WF 23-Verifying default categories in location1");
 		categoryPage.TapOnBack("SI - WF 1-Tapped Done");
-	
+		
 		locationsPage.SelectLocation(datapool.readFromExcelLocationInfo().locationNameDataPool[3], "SI - WF 23-select added location");
 		locationsPage.ItemVerifyOnLocation2("SI - WF 23-Item verification in location2");
 		locationsPage.SyscoCategoryIdentify("SI - WF 23-Category Identification in location1");
@@ -2286,60 +2286,57 @@ public class WorkFlow extends JSN_Framework{
 		 loginPage.signIn(datapool.readFromExcelUserInfo().userNameDataPool[user],datapool.readFromExcelUserInfo().passwordDataPool[user],"MEC-WF 1-Login");	
 		 homePage.ClickAccount(datapool.readFromExcelUserInfo().userNameDataPool[user],"MEC-WF 1-Clicked account");
 		 accountsPage.First_AccountSelection(datapool.readFromExcelUserInfo().userNameDataPool[user],"MEC-WF 1-FirstAccountSelect");
-
-
 		 inventoryToolPage.InvTools_SetUpInventory("SI - WF 19-SetupInventoryTap");
-
-
 		 setupInventoryPage.TapOnSkip("MIL - WF 10 NU-Skip1 Tapped");
 		 setupInventoryPage.TapOrderGuide("MIL - WF 10 NU Selected");
 		 setupInventoryPage.tapContinue("MIL - WF 10 NU-Tapped Continue");
-
 		 locationsPage.DefaultLocation("MIL-WF 2-Tapped Custom location");
 		 locationsPage.tapContinue("MIL-WF 2-Tapped Continue");
-
-
 		 setupInventoryPage.TapOnDOThisLater("MIL-WF6-Tapped do this later");
 		 setupInventoryPage.TapTakeHome("MIL-WF 2-Tapped take me home");
-
-
-
+		 
+		 
+		 //Add supplier
+		 inventoryToolPage.InvTools_Suppliers("MEC-WF 2-Edit or Add Suppier");
+		 setupInventoryPage.AddSupplier_AddProductDetailsPage("MEC-WF 2-select supplier");
+         vendorPage.Add_Supplier("MEC-WF 2--AddVendorTap");
+		 vendorPage.AddSupplier_Details(datapool.readFromExcelSupplier1Info().supplier1DataPool[0], datapool.readFromExcelSupplier1Info().supplier1DataPool[1], datapool.readFromExcelSupplier1Info().supplier1DataPool[2],
+		 datapool.readFromExcelSupplier1Info().supplier1DataPool[3], datapool.readFromExcelSupplier1Info().supplier1DataPool[4], datapool.readFromExcelSupplier1Info().supplier1DataPool[5], "MEC-WF 2--AddVendorDetails");
+		 vendorPage.TapOnDone("MEC-WF 2-Done");
+		 vendorPage.TapOnBack("MEC-WF 2-Back");
+		 
 		 inventoryToolPage.InvTools_TrackInventory("MEC-WF 1-TrackinventoryTap");
-
-
 		 locationsPage.TapAddLocation("MEC-WF 1-Tapped ADD");
 		 locationsPage.AddLocationName(datapool.readFromExcelLocationInfo().locationNameDataPool[2],"MEC-WF 1-Enter location name");
 		 locationsPage.AddLocationCooler("MEC-WF 1-Tapped Cooler");
 		 locationsPage.TapOnDone("MEC-WF 1-Tapped Done");
 		 locationsPage.TapOnBack("MEC-WF 1-Tapped Back");
+		 
 		 locationsPage.VerifyLocationList(datapool.readFromExcelLocationInfo().locationNameDataPool[2], "MEC-WF 1-Verifing AddedLocation");
 		 //nonsysco item addition 
+		 
 		 locationsPage.SelectLocation(datapool.readFromExcelLocationInfo().locationNameDataPool[2], "MEC-WF 1-Selecting AddedLocation");
 		 locationsPage.TapAddLocation("MEC-WF 1-Tapped ADD");
 
-
 		 setupInventoryPage.AddItemFrom_NonSysco("MEC-WF 1-Tapped NonSysco");
 		 setupInventoryPage.EnterItemDetails(datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[0],datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[1],datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[2],
-				 datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[3], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[4], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[5], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[6], "MEC WF 1 NonSyscoItem details entered");
-		 setupInventoryPage.AddSupplier_AddProductDetailsPage("MEC-WF 1-select supplier");
-
-		 vendorPage.Add_Supplier("MEC-WF 1-AddVendorTap");
+		 datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[3], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[4], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[5], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[6], "MEC WF 1 NonSyscoItem details entered");
+		 
+		 //setupInventoryPage.AddSupplier_AddProductDetailsPage("MEC-WF 1-select supplier");
+         //vendorPage.Add_Supplier("MEC-WF 1-AddVendorTap");
 		 vendorPage.AddSupplier_Details(datapool.readFromExcelSupplier1Info().supplier1DataPool[0], datapool.readFromExcelSupplier1Info().supplier1DataPool[1], datapool.readFromExcelSupplier1Info().supplier1DataPool[2],
-				 datapool.readFromExcelSupplier1Info().supplier1DataPool[3], datapool.readFromExcelSupplier1Info().supplier1DataPool[4], datapool.readFromExcelSupplier1Info().supplier1DataPool[5], "MEC WF1-AddVendorDetails");vendorPage.TapOnDone("MEC-WF 1-Tapped Done");
-				 vendorPage.TapOnBack("MEC-WF 1-Tapped Back");
-				 vendorPage.SupplierSelect(datapool.readFromExcelSupplier1Info().supplier1DataPool[0],"MEC-WF 1-SupplierSelect");
-				 vendorPage.TapOnDone("MEC-WF 1-Tapped Done");
-
-
-				 setupInventoryPage.verifyNonSyscoPrepItemSetupInv(datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[0],"MEC-WF 1-Verify item selected");
-
-
-				 locationsPage.ProductSelect(datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[0], "MEC-WF 1-Select Product");
-				 locationsPage.TapOnEdit("MEC-WF 1-Tapped Edit");
-
-
-				 locationsPage.AddCategory_AddProductDetailsPage("MEC-WF 1-CategorySelect");
-				 locationsPage.TapAddLocation("MEC-WF 1-Tapped Add");
+		 datapool.readFromExcelSupplier1Info().supplier1DataPool[3], datapool.readFromExcelSupplier1Info().supplier1DataPool[4], datapool.readFromExcelSupplier1Info().supplier1DataPool[5], "MEC WF1-AddVendorDetails");vendorPage.TapOnDone("MEC-WF 1-Tapped Done");
+		 vendorPage.TapOnBack("MEC-WF 1-Tapped Back");
+		 vendorPage.SupplierSelect(datapool.readFromExcelSupplier1Info().supplier1DataPool[0],"MEC-WF 1-SupplierSelect");
+		 vendorPage.TapOnDone("MEC-WF 1-Tapped Done");
+         
+		 setupInventoryPage.verifyNonSyscoPrepItemSetupInv(datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[0],"MEC-WF 1-Verify item selected");
+		 locationsPage.ProductSelect(datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[0], "MEC-WF 1-Select Product");
+		 locationsPage.TapOnEdit("MEC-WF 1-Tapped Edit");
+         
+         
+		 locationsPage.AddCategory_AddProductDetailsPage("MEC-WF 1-CategorySelect");
+		 locationsPage.TapAddLocation("MEC-WF 1-Tapped Add");
 
 				 categoryPage.AddCategoryName(datapool.readFromExcelCategoryInfo().categoryNameDataPool[1], "MEC-WF 1-Enter Category Name");
 				 categoryPage.AddLocationCooler("MEC-WF 1-Enter type Cooler");
@@ -3163,5 +3160,6 @@ user=2;
 		 }
 	 
 }
+
 
 

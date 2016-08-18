@@ -41,7 +41,7 @@ import io.appium.java_client.TouchAction;
 public class InventoryToolPage extends JSN_Framework {
 	private static final Logger LOGGER= Logger.getLogger(InventoryToolPage.class.getCanonicalName());
 	
-	public static final String InvTool_SetUpInv = "//*[@id='menu-item']/a/div/span[contains(text(),'Setup Inventory')]";
+	public static final String InvTool_SetUpInv = "//span[contains(text(),'Setup Inventory')]";
 	public static final String TrackInventory = "//*[@id='menu-item']/a/div";
 	////*[@id="menu-item"]/a/div/h4
 	//public static final String TrackInventory = "//*[@id='menu-item']/a/div/span[contains(text(),'Track Inventory')]";
