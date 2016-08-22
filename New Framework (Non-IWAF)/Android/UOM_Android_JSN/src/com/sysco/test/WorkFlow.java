@@ -104,6 +104,46 @@ public class WorkFlow extends JSN_Framework{
 		}
 		driver.quit();
 	}
+	
+	@Test(groups={"SI - WF 1"},priority=0, description = "SI - WF 1-OG + Dafault Loc + Default Category")
+	public void Test_DefaultLocation_DefaultCategory() throws Exception {
+
+
+
+		user=1;
+
+		loginPage.verifyLoginPage("SI - WF 1-LoginPage");
+		loginPage.saveUsernameCheckBoxclickElement("SI - WF 1-save username");	
+		loginPage.signIn(datapool.readFromExcelUserInfo().userNameDataPool[user],datapool.readFromExcelUserInfo().passwordDataPool[user],"SI - WF 1-Login");	
+		homePage.ClickAccount(datapool.readFromExcelUserInfo().userNameDataPool[user],"Clicked account");
+		accountsPage.First_AccountSelection(datapool.readFromExcelUserInfo().userNameDataPool[user],"SI - WF 1-FirstAccountSelect");
+		inventoryToolPage.InvTools_SetUpInventory("SI - WF 1-SetupInventoryTap");
+		setupInventoryPage.TapOnSkip("SI - WF 1-Skip1 Tapped");
+		setupInventoryPage.VerifyOptionsOnImportItems("SI - WF 1-Verified import items page");
+		setupInventoryPage.TapOrderGuide("SI - WF 1-OG Selected");
+		setupInventoryPage.tapContinue("SI - WF 1-Tapped Continue");
+		locationsPage.VerifyOptionsOnSetupLocations("SI - WF 1-Location page verified");
+		locationsPage.DefaultLocation("SI - WF 1-Tapped Custom location");
+		locationsPage.tapContinue("SI - WF 1-Tapped Continue");
+		categoryPage.VerifyOptionsOnSetUpFoodCost("SI - WF 1-Category page verified");
+		categoryPage.defaultCategories("SI - WF 1-Tapped Default category");
+		categoryPage.tapComplete("SI - WF 1-Tapped Complete");
+		setupInventoryPage.TapTakeHome("SI - WF 1-Tapped take me home")  ; 
+		inventoryToolPage.InvTools_TrackInventory("SI - WF 1-Selected track inventory");
+		locationsPage.SelectLocation(datapool.readFromExcelLocationInfo().locationNameDataPool[6], "SI - WF 1-Selected cooler");
+
+		locationsPage.VerifyItemsOnDefaultLocation(datapool.readFromExcelLocationInfo().locationNameDataPool[6], "SI - WF 1-Verified cooler");
+		locationsPage.TapOnBack("SI - WF 1-Tapped on Back");
+		//	.VerifyCountOfItemsInLocation(locDataCooler.LocationName, "")
+		locationsPage.SelectLocation(datapool.readFromExcelLocationInfo().locationNameDataPool[7], "SI - WF 1-Selected freezer");
+		locationsPage.VerifyItemsOnDefaultLocation(datapool.readFromExcelLocationInfo().locationNameDataPool[7], "SI - WF 1-Verified freezer");
+		locationsPage.TapOnBack("SI - WF 1-Tapped on Back");
+		//.VerifyCountOfItemsInLocation(locDataFreezer.LocationName, "")
+		locationsPage.SelectLocation(datapool.readFromExcelLocationInfo().locationNameDataPool[8], "SI - WF 1-Selected dry");
+		locationsPage.VerifyItemsOnDefaultLocation(datapool.readFromExcelLocationInfo().locationNameDataPool[8], "SI - WF 1-Verified dry");
+		locationsPage.TapOnBack("SI - WF 1-Tapped on Back");
+		//.VerifyCountOfItemsInLocation(locDataDry.LocationName, "");
+	}
 	@Test(groups={"SI - WF 1"},priority=0, description = "SI - WF 1-OG + Dafault Loc + Default Category")
 	public void SI_WF1_OG_DefaultLocation_DefaultCategory() throws Exception {
 
