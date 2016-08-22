@@ -3515,6 +3515,140 @@ user=10;
 
 			;
 		}
+		@Test(groups={"FC-WF6"},priority=0, description = "FC-WF6-TrackInventory-FoodCost")
+		public void FC_WF7_CustomList_CustomLoc_SuggestedCategory_TrackInventory_FoodCost() throws Exception
+		{
+		//	LoginData loginData =LoginData.fetch("LoginData12");
+		//	LocationsData locationsData1 =LocationsData.fetch("LocationsData");
+		//	LocationsData locationsData2 =LocationsData.fetch("LocatiosData1");
+		//	UOMQuantityData uomQuantityData=UOMQuantityData.fetch("UOMQuantityData");
+		//	UOMQuantityData uomQuantityData1=UOMQuantityData.fetch("UOMQuantityData2");
+		//	PurchasesData purchasesData=PurchasesData.fetch("PurchasesData");
+		//	ListData listData=ListData.fetch("ListData5");
+		//	NonSyscoItemData nonSyscoItemData =NonSyscoItemData.fetch("NonSyscoItmData");
+		//	VendorDetailsData vendorDetailsData =VendorDetailsData.fetch("VDNonsysco");
+			
+		user=8;
+			
+			loginPage.verifyLoginPage("FC-WF4-LoginPage");
+			loginPage.signIn(datapool.readFromExcelUserInfo().userNameDataPool[user],datapool.readFromExcelUserInfo().passwordDataPool[user],"FC-WF4-LoginPage");
+			homePage.ClickAccount(datapool.readFromExcelUserInfo().userNameDataPool[user],"FC-WF4-Clicked account");
+			accountsPage.Fourth_AccountSelection(datapool.readFromExcelUserInfo().userNameDataPool[user],"FC-WF4-FirstAccountSelect");
+		
+
+			
+			inventoryToolPage.InvTools_SetUpInventory("FC-WF6-SetupInventoryTap");
+
+			
+			setupInventoryPage.TapOnSkip("FC-WF6-Skip Tapped");
+
+			listPage.TapCustomList("FC-WF6-custom list Selected");
+			listPage.tapContinue("FC-WF6-Tapped Continue");
+			listPage.SelectListwithItems(datapool.readFromExcelList6Info().list6DataPool[0], "FC-WF6-select list");
+			listPage.TapOnNext("FC-WF6-tapped next");
+
+
+
+			locationsPage.CustomLocation("FC-WF6-Tapped Custom location");
+			locationsPage.tapContinue("FC-WF6-Tapped Continue");
+
+			locationsPage.EnterLocationName(datapool.readFromExcelLocationInfo().locationNameDataPool[2],"FC-WF6-Enter location name");
+			locationsPage.AddLocations1_TypeDry("FC-WF6-Tapped Dry1");
+
+			locationsPage.AddLocations2("");
+			locationsPage.AddLocations2_name(datapool.readFromExcelLocationInfo().locationNameDataPool[3],"");
+			locationsPage.AddLocations2_TypeDry("FC-WF6-Tapped Dry2");
+			locationsPage.TapOnNext("FC-WF6-Tapped Next");
+
+			locationsPage.selectMultipleItemsFromLocation1("FC-WF6-Selected Multiple items");
+			locationsPage.TapOnNext("FC-WF6-Tapped Next");
+
+			locationsPage.selectMultipleItemsFromLocation2("FC-WF6-Selected Multiple items");
+			locationsPage.TapOnDone("FC-WF6-Tapped Done");
+
+			
+			categoryPage.SuggestedCategories("FC-WF6-SuggestedCategories Tapped");
+			categoryPage.tapContinue("FC-WF6-Tapped Continue");
+			
+			setupInventoryPage.TapTakeHome("FC-WF6-Tapped Continue")  ; 
+
+
+			inventoryToolPage.InvTools_TrackInventory("FC-WF6-Selected track inventory");
+		
+			//inv_274,276
+			//adding nonsysco item with category non food
+			
+			locationsPage.SelectLocation(datapool.readFromExcelLocationInfo().locationNameDataPool[2], "FC-WF6-Selected cooler");
+			locationsPage.TapAddLocation("FC-WF6-Tapped ADD");
+			
+			setupInventoryPage.AddItemFrom_NonSysco("FC-WF6-Tapped NonSysco");
+			setupInventoryPage.EnterItemDetails(datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[0],datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[1], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[2],datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[3],datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[4], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[5], datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[6], "FC-WF6-NonSyscoItem details entered");
+			setupInventoryPage.AddSupplier_AddProductDetailsPage("FC-WF6-select supplier");
+			
+			vendorPage.Add_Supplier("FC-WF6-AddVendorTap");
+			vendorPage.AddSupplier_Details(datapool.readFromExcelSupplier2Info().supplier2DataPool[0], datapool.readFromExcelSupplier2Info().supplier2DataPool[1], datapool.readFromExcelSupplier2Info().supplier2DataPool[2], datapool.readFromExcelSupplier2Info().supplier2DataPool[3], datapool.readFromExcelSupplier2Info().supplier2DataPool[4], datapool.readFromExcelSupplier2Info().supplier2DataPool[5], "FC-WF6-AddVendorDetails");
+			vendorPage.TapOnDone("FC-WF6-Done");
+			vendorPage.TapOnBack("FC-WF6-Back");
+			vendorPage.SupplierSelect(datapool.readFromExcelSupplier2Info().supplier2DataPool[0],"FC-WF6-SupplierSelect");
+			
+			locationsPage.AddCategory_AddProductDetailsPage("FC-WF6-CategorySelect");
+			
+			categoryPage.SelectCategory(datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[21], "FC-WF6-Select Category Name");
+			categoryPage.TapOnDone("FC-WF6-Done");
+			categoryPage.TapOnBack("FC-WF6-Back");
+		
+			
+			locationsPage.SelectLocation(datapool.readFromExcelLocationInfo().locationNameDataPool[2], "FC-WF6-Selected cooler");
+			locationsPage.ItemQtyEnterById(datapool.readFromExcelList6Info().list6DataPool[1],datapool.readFromExcelUOMQuantityInfo().uomQuantityDataPool[0],"FC-WF6-Entering Quantity1 to food item");
+			locationsPage.ItemQtyEnterById(datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[1],datapool.readFromExcelUOMQuantityInfo().uomQuantityDataPool[0],"FC-WF6-Entering Quantity1 to food item");
+			locationsPage.TapOnDone("FC-WF6-Tapped done");
+			
+			locationsPage.SelectLocation(datapool.readFromExcelLocationInfo().locationNameDataPool[3], "FC-WF6-Selected cooler");
+			locationsPage.ItemQtyEnterById(datapool.readFromExcelList6Info().list6DataPool[1],datapool.readFromExcelUOMQuantityInfo().uomQuantityDataPool[0],"FC-WF6-Entering Quantity1 to food item");
+		//	.ItemQtyEnterById(nonSyscoItemData.UPC,uomQuantityData.Quantity,"FC-WF6-Entering Quantity1 to food item")
+			locationsPage.TapOnDone("FC-WF6-Tapped done");
+			
+			locationsPage.TapOnBack("FC-WF6-Tapped on Back");
+		
+			inventoryToolPage.InvTools_CloseInventory("FC-WF6-Tapped close inventory");
+			inventoryToolPage.InvTools_ClosedInventoryYes("FC-WF6-Tapped Yes,Close");
+		
+			
+			inventoryToolPage.InvTools_TrackInventory("FC-WF6-Selected track inventory");
+
+			locationsPage.SelectLocation(datapool.readFromExcelLocationInfo().locationNameDataPool[2], "FC-WF6-Selected cooler");
+			locationsPage.ItemQtyEnterById(datapool.readFromExcelList6Info().list6DataPool[1],datapool.readFromExcelUOMQuantityInfo().uomQuantityDataPool[2],"FC-WF6-Entering Quantity1 to food item");
+			locationsPage.ItemQtyEnterById(datapool.readFromExcelNonSyscoItemInfo().nonSyscoItemDataPool[1],datapool.readFromExcelUOMQuantityInfo().uomQuantityDataPool[2],"FC-WF6-Entering Quantity1 to food item");
+			locationsPage.TapOnDone("FC-WF6-Tapped done");
+			
+			locationsPage.SelectLocation(datapool.readFromExcelLocationInfo().locationNameDataPool[3], "FC-WF6-Selected cooler");
+			locationsPage.ItemQtyEnterById(datapool.readFromExcelList6Info().list6DataPool[1],datapool.readFromExcelUOMQuantityInfo().uomQuantityDataPool[2],"FC-WF6-Entering Quantity1 to food item");
+		//	.ItemQtyEnterById(nonSyscoItemData.UPC,uomQuantityData1.Quantity,"FC-WF6-Entering Quantity1 to food item")
+			locationsPage.TapOnDone("FC-WF6-Tapped done");
+		
+			locationsPage.TapOnBack("FC-WF6-Tapped on Back");
+			
+		
+			inventoryToolPage.InvTools_CloseInventory("FC-WF6-Tapped close inventory");
+			inventoryToolPage.InvTools_ClosedInventoryYes("FC-WF6-Tapped Yes,Close");
+		
+			inventoryToolPage.InvTools_FoodCost("FC-WF6-Tapped food cost");
+			
+			
+			//	price validation
+			foodCostPage.VerifyBeginningInventory(datapool.readFromExcelUOMQuantityInfo().uomQuantityDataPool[0], datapool.readFromExcelList6Info().list6DataPool[3], "FC-WF6-Verify Beginning inventory value");
+			foodCostPage.VerifyEndingInventory(datapool.readFromExcelUOMQuantityInfo().uomQuantityDataPool[2], datapool.readFromExcelList6Info().list6DataPool[3], "FC-WF6-Verify Ending inventory value");
+			foodCostPage.VerifyNetPurchases("FC-WF6-Verify net purchase value");
+			foodCostPage.VerifyCostOfGoodsSold("FC-WF6-Verify cost of goods sold value");
+			foodCostPage.EnterRevenue(datapool.readFromExcelPurchasesInfo().purchasesDataPool[6], "FC-WF6-Entered Revenue");
+			foodCostPage.CalculateFoodCost("FC-WF6-Calculated food cost");
+			
+			locationsPage.TapOnBack("FC-WF6-Tapped on Back");
+			
+
+			;
+		}
+
 
 
 	
