@@ -3559,7 +3559,8 @@ user=10;
 			locationsPage.AddLocations2_name(datapool.readFromExcelLocationInfo().locationNameDataPool[3],"");
 			locationsPage.AddLocations2_TypeDry("FC-WF6-Tapped Dry2");
 			locationsPage.TapOnNext("FC-WF6-Tapped Next");
-
+			locationsPage.TapOnNext("FC-WF7-Tapped Next");
+			locationsPage.TapOnNext("FC-WF8-Tapped Next");
 			locationsPage.selectMultipleItemsFromLocation1("FC-WF6-Selected Multiple items");
 			locationsPage.TapOnNext("FC-WF6-Tapped Next");
 
